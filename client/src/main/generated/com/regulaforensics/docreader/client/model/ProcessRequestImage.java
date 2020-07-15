@@ -60,6 +60,7 @@ public class ProcessRequestImage {
    *
    * @return lightIndex
    */
+  @javax.annotation.Nullable
   public int getLightIndex() {
     return lightIndex;
   }

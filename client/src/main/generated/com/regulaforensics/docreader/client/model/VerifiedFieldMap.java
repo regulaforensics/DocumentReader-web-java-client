@@ -24,6 +24,11 @@ public class VerifiedFieldMap {
   @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
   private int wFieldType;
 
+  public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
+
+  @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
+  private int wLCID;
+
   public static final String SERIALIZED_NAME_FIELD_M_R_Z = "Field_MRZ";
 
   @SerializedName(SERIALIZED_NAME_FIELD_M_R_Z)
@@ -49,11 +54,6 @@ public class VerifiedFieldMap {
   @SerializedName(SERIALIZED_NAME_MATRIX)
   private List<Integer> matrix = null;
 
-  public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
-
-  @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
-  private int wLCID;
-
   public VerifiedFieldMap withWFieldType(int wFieldType) {
     this.wFieldType = wFieldType;
     return this;
@@ -71,6 +71,25 @@ public class VerifiedFieldMap {
 
   public void setwFieldType(int wFieldType) {
     this.wFieldType = wFieldType;
+  }
+
+  public VerifiedFieldMap withWLCID(int wLCID) {
+    this.wLCID = wLCID;
+    return this;
+  }
+
+  /**
+   * Get wLCID
+   *
+   * @return wLCID
+   */
+  @javax.annotation.Nullable
+  public int getwLCID() {
+    return wLCID;
+  }
+
+  public void setwLCID(int wLCID) {
+    this.wLCID = wLCID;
   }
 
   public VerifiedFieldMap withFieldMRZ(String fieldMRZ) {
@@ -187,25 +206,6 @@ public class VerifiedFieldMap {
     this.matrix = matrix;
   }
 
-  public VerifiedFieldMap withWLCID(int wLCID) {
-    this.wLCID = wLCID;
-    return this;
-  }
-
-  /**
-   * Get wLCID
-   *
-   * @return wLCID
-   */
-  @javax.annotation.Nullable
-  public int getwLCID() {
-    return wLCID;
-  }
-
-  public void setwLCID(int wLCID) {
-    this.wLCID = wLCID;
-  }
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -216,17 +216,17 @@ public class VerifiedFieldMap {
     }
     VerifiedFieldMap verifiedFieldMap = (VerifiedFieldMap) o;
     return Objects.equals(this.wFieldType, verifiedFieldMap.wFieldType)
+        && Objects.equals(this.wLCID, verifiedFieldMap.wLCID)
         && Objects.equals(this.fieldMRZ, verifiedFieldMap.fieldMRZ)
         && Objects.equals(this.fieldVisual, verifiedFieldMap.fieldVisual)
         && Objects.equals(this.fieldBarcode, verifiedFieldMap.fieldBarcode)
         && Objects.equals(this.fieldRFID, verifiedFieldMap.fieldRFID)
-        && Objects.equals(this.matrix, verifiedFieldMap.matrix)
-        && Objects.equals(this.wLCID, verifiedFieldMap.wLCID);
+        && Objects.equals(this.matrix, verifiedFieldMap.matrix);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wFieldType, fieldMRZ, fieldVisual, fieldBarcode, fieldRFID, matrix, wLCID);
+    return Objects.hash(wFieldType, wLCID, fieldMRZ, fieldVisual, fieldBarcode, fieldRFID, matrix);
   }
 
   @Override
@@ -234,12 +234,12 @@ public class VerifiedFieldMap {
     StringBuilder sb = new StringBuilder();
     sb.append("class VerifiedFieldMap {\n");
     sb.append("    wFieldType: ").append(toIndentedString(wFieldType)).append("\n");
+    sb.append("    wLCID: ").append(toIndentedString(wLCID)).append("\n");
     sb.append("    fieldMRZ: ").append(toIndentedString(fieldMRZ)).append("\n");
     sb.append("    fieldVisual: ").append(toIndentedString(fieldVisual)).append("\n");
     sb.append("    fieldBarcode: ").append(toIndentedString(fieldBarcode)).append("\n");
     sb.append("    fieldRFID: ").append(toIndentedString(fieldRFID)).append("\n");
     sb.append("    matrix: ").append(toIndentedString(matrix)).append("\n");
-    sb.append("    wLCID: ").append(toIndentedString(wLCID)).append("\n");
     sb.append("}");
     return sb.toString();
   }
