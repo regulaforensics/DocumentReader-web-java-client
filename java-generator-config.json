@@ -1,0 +1,17 @@
+{
+  "artifactId": "docreader",
+  "artifactVersion": "5.1.0",
+  "groupId": "com.regulaforensics.docreader",
+  "library": "okhttp-gson",
+  "useRuntimeException": true,
+  "invokerPackage": "com.regulaforensics.docreader.client",
+  "modelPackage": "com.regulaforensics.docreader.client.model",
+  "apiPackage": "com.regulaforensics.docreader.client.api",
+  "sourceFolder": "src/main/generated",
+  "languageSpecificPrimitives": [
+    "int"
+  ],
+  "typeMappings": {
+    "Integer": "int"
+  }
+}

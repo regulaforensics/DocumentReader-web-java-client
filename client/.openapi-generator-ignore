@@ -1,0 +1,21 @@
+*.gradle
+docs/
+README.md
+.gitignore
+.travis.yml
+build.sbt
+git_push.sh
+gradle.properties
+gradlew
+gradlew.bat
+pom.xml
+gradle/**
+api/**
+src/test/**
+
+src/main/AndroidManifest.xml
+
+# classes, modified after generation
+**/ContainerList.java
+**/DocVisualExtendedInfo.java
+**/*AllOf.java
