@@ -1,12 +1,13 @@
 {
-  "artifactId": "docreader",
+  "artifactId": "webclient",
   "artifactVersion": "5.1.0",
-  "groupId": "com.regulaforensics.docreader",
+  "groupId": "com.regula.documentreader",
   "library": "okhttp-gson",
   "useRuntimeException": true,
-  "invokerPackage": "com.regulaforensics.docreader.client",
-  "modelPackage": "com.regulaforensics.docreader.client.model",
-  "apiPackage": "com.regulaforensics.docreader.client.api",
+  "hideGenerationTimestamp": true,
+  "invokerPackage": "com.regula.documentreader.webclient",
+  "modelPackage": "com.regula.documentreader.webclient.model",
+  "apiPackage": "com.regula.documentreader.webclient.api",
   "sourceFolder": "src/main/generated",
   "languageSpecificPrimitives": [
     "int"

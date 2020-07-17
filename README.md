@@ -41,8 +41,8 @@ Then use next command from the project root.
 ```bash
 \
 ENUM_MAPPINGS="TextFieldType=Integer,GraphicFieldType=Integer,Scenario=String,DocumentFormat=Integer,\
-Light=Integer,Result=Integer,FieldSource=String,VerificationResult=Integer,RfidLocation=Integer,\
-DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=Integer,CheckResult=Integer,\
+Light=Integer,Result=Integer,VerificationResult=Integer,RfidLocation=Integer,\
+DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=String,CheckResult=Integer,\
 LCID=Integer" \
 \
 && docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
@@ -61,13 +61,13 @@ openapitools/openapi-generator-cli generate \
 openapitools/openapi-generator-cli generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,TextField=com.regulaforensics.docreader.client.model.ext.TextField \
+--import-mappings $ENUM_MAPPINGS,TextField=com.regula.documentreader.webclient.model.ext.TextField \
 \
 && docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
 openapitools/openapi-generator-cli generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,Text=com.regulaforensics.docreader.client.model.ext.Text \
+--import-mappings $ENUM_MAPPINGS,Text=com.regula.documentreader.webclient.model.ext.Text \
 \
 && ./gradlew -p ./ goJF
 ```
