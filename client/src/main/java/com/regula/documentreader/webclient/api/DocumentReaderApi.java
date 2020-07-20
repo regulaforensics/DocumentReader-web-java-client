@@ -4,6 +4,7 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
+// todo add constructors with path and etc
 public class DocumentReaderApi extends DefaultApi {
 
   /**

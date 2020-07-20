@@ -5,7 +5,7 @@ plugins {
 
 
 application {
-    mainClass.set("com.regulaforensics.docreader.client.example.Main")
+    mainClass.set("com.regula.documentreader.webclient.example.Main")
 }
 
 java {

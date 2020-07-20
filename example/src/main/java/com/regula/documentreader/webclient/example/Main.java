@@ -28,7 +28,7 @@ public class Main {
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
-                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.LEXICAL_ANALYSIS);
+                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.LEXICAL_ANALYSIS, 37);
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 

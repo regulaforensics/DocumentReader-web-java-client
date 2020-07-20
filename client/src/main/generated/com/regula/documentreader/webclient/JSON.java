@@ -46,58 +46,174 @@ public class JSON {
   private LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
   private ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
 
+  public static Map<String, Class> childOfChosenDocumentTypeResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put(
+        "8", DocumentTypesCandidatesResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put(
+        "ChosenDocumentTypeResult", ChosenDocumentTypeResult.class);
+  }
+
+  public static Map<String, Class> childOfDocumentTypesCandidatesResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put(
+        "8", DocumentTypesCandidatesResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put(
+        "9", ChosenDocumentTypeResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put(
+        "DocumentTypesCandidatesResult", DocumentTypesCandidatesResult.class);
+  }
+
+  public static Map<String, Class> childOfGraphicsResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfGraphicsResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("GraphicsResult", GraphicsResult.class);
+  }
+
+  public static Map<String, Class> childOfLexicalAnalysisResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put(
+        "LexicalAnalysisResult", LexicalAnalysisResult.class);
+  }
+
+  public static Map<String, Class> childOfRawImageResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfRawImageResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfRawImageResultByDiscriminatorValue.put("RawImageResult", RawImageResult.class);
+  }
+
+  public static Map<String, Class> childOfResultItemByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfResultItemByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfResultItemByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfResultItemByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfResultItemByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfResultItemByDiscriminatorValue.put("33", StatusResult.class);
+    childOfResultItemByDiscriminatorValue.put("36", TextResult.class);
+    childOfResultItemByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfResultItemByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfResultItemByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfResultItemByDiscriminatorValue.put(
+        "ChosenDocumentTypeResult", ChosenDocumentTypeResult.class);
+    childOfResultItemByDiscriminatorValue.put(
+        "DocumentTypesCandidatesResult", DocumentTypesCandidatesResult.class);
+    childOfResultItemByDiscriminatorValue.put("GraphicsResult", GraphicsResult.class);
+    childOfResultItemByDiscriminatorValue.put("LexicalAnalysisResult", LexicalAnalysisResult.class);
+    childOfResultItemByDiscriminatorValue.put("RawImageResult", RawImageResult.class);
+    childOfResultItemByDiscriminatorValue.put("StatusResult", StatusResult.class);
+    childOfResultItemByDiscriminatorValue.put("TextResult", TextResult.class);
+    childOfResultItemByDiscriminatorValue.put("ResultItem", ResultItem.class);
+  }
+
+  public static Map<String, Class> childOfStatusResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfStatusResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfStatusResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfStatusResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfStatusResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfStatusResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfStatusResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfStatusResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfStatusResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfStatusResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfStatusResultByDiscriminatorValue.put("StatusResult", StatusResult.class);
+  }
+
+  public static Map<String, Class> childOfTextDataResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfTextDataResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+  }
+
+  public static Map<String, Class> childOfTextResultByDiscriminatorValue =
+      new HashMap<String, Class>();
+
+  static {
+    childOfTextResultByDiscriminatorValue.put("1", RawImageResult.class);
+    childOfTextResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfTextResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
+    childOfTextResultByDiscriminatorValue.put("19", GraphicsResult.class);
+    childOfTextResultByDiscriminatorValue.put("33", StatusResult.class);
+    childOfTextResultByDiscriminatorValue.put("36", TextResult.class);
+    childOfTextResultByDiscriminatorValue.put("6", GraphicsResult.class);
+    childOfTextResultByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
+    childOfTextResultByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
+    childOfTextResultByDiscriminatorValue.put("TextResult", TextResult.class);
+  }
+
   public static GsonBuilder createGson() {
     GsonFireBuilder fireBuilder =
         new GsonFireBuilder()
-            .registerTypeSelector(
-                BarcodeTextDataResult.class,
-                new TypeSelector() {
-                  @Override
-                  public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "BarcodeTextDataResult", BarcodeTextDataResult.class);
-                    return getClassByDiscriminator(
-                        classByDiscriminatorValue,
-                        getDiscriminatorValue(readElement, "result_type"));
-                  }
-                })
             .registerTypeSelector(
                 ChosenDocumentTypeResult.class,
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "ChosenDocumentTypeResult", ChosenDocumentTypeResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfChosenDocumentTypeResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -106,24 +222,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentTypesCandidatesResult", DocumentTypesCandidatesResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfDocumentTypesCandidatesResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -132,23 +232,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put("GraphicsResult", GraphicsResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfGraphicsResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -157,50 +242,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "LexicalAnalysisResult", LexicalAnalysisResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
-                        getDiscriminatorValue(readElement, "result_type"));
-                  }
-                })
-            .registerTypeSelector(
-                MrzOcrExtendedResult.class,
-                new TypeSelector() {
-                  @Override
-                  public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "MrzOcrExtendedResult", MrzOcrExtendedResult.class);
-                    return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfLexicalAnalysisResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -209,23 +252,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put("RawImageResult", RawImageResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfRawImageResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -234,65 +262,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "BarcodeTextDataResult", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put(
-                        "ChosenDocumentTypeResult", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentTypesCandidatesResult", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("GraphicsResult", GraphicsResult.class);
-                    classByDiscriminatorValue.put(
-                        "LexicalAnalysisResult", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put(
-                        "MrzOcrExtendedResult", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("RawImageResult", RawImageResult.class);
-                    classByDiscriminatorValue.put("RfidTextDataResult", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("StatusResult", StatusResult.class);
-                    classByDiscriminatorValue.put("TextResult", TextResult.class);
-                    classByDiscriminatorValue.put(
-                        "VisualOcrExtendedResult", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("ResultItem", ResultItem.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
-                        getDiscriminatorValue(readElement, "result_type"));
-                  }
-                })
-            .registerTypeSelector(
-                RfidTextDataResult.class,
-                new TypeSelector() {
-                  @Override
-                  public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put("RfidTextDataResult", RfidTextDataResult.class);
-                    return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfResultItemByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -301,23 +272,8 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put("StatusResult", StatusResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfStatusResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 })
@@ -326,52 +282,27 @@ public class JSON {
                 new TypeSelector() {
                   @Override
                   public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put("TextResult", TextResult.class);
                     return getClassByDiscriminator(
-                        classByDiscriminatorValue,
-                        getDiscriminatorValue(readElement, "result_type"));
-                  }
-                })
-            .registerTypeSelector(
-                VisualOcrExtendedResult.class,
-                new TypeSelector() {
-                  @Override
-                  public Class getClassForElement(JsonElement readElement) {
-                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
-                    classByDiscriminatorValue.put("1", RawImageResult.class);
-                    classByDiscriminatorValue.put("102", RfidTextDataResult.class);
-                    classByDiscriminatorValue.put("103", GraphicsResult.class);
-                    classByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put("17", VisualOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("18", BarcodeTextDataResult.class);
-                    classByDiscriminatorValue.put("19", GraphicsResult.class);
-                    classByDiscriminatorValue.put("3", MrzOcrExtendedResult.class);
-                    classByDiscriminatorValue.put("33", StatusResult.class);
-                    classByDiscriminatorValue.put("36", TextResult.class);
-                    classByDiscriminatorValue.put("6", GraphicsResult.class);
-                    classByDiscriminatorValue.put("8", DocumentTypesCandidatesResult.class);
-                    classByDiscriminatorValue.put("9", ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "VisualOcrExtendedResult", VisualOcrExtendedResult.class);
-                    return getClassByDiscriminator(
-                        classByDiscriminatorValue,
+                        childOfTextResultByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
                   }
                 });
+
+    // rewrite, to support default mappings
+    fireBuilder.registerTypeSelector(
+        ResultItem.class,
+        new TypeSelector() {
+          @Override
+          public Class getClassForElement(JsonElement readElement) {
+            String result_type = getDiscriminatorValue(readElement, "result_type");
+            Class clazz = childOfResultItemByDiscriminatorValue.get(result_type);
+            if (clazz == null) {
+              clazz = RawResultItem.class;
+            }
+            return clazz;
+          }
+        });
+
     GsonBuilder builder = fireBuilder.createGsonBuilder();
     return builder;
   }
