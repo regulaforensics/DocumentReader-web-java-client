@@ -98,6 +98,7 @@ public class Status {
    *
    * @return portrait
    */
+  @javax.annotation.Nullable
   public int getPortrait() {
     return portrait;
   }
@@ -116,6 +117,7 @@ public class Status {
    *
    * @return rfid
    */
+  @javax.annotation.Nullable
   public int getRfid() {
     return rfid;
   }
@@ -134,6 +136,7 @@ public class Status {
    *
    * @return stopList
    */
+  @javax.annotation.Nullable
   public int getStopList() {
     return stopList;
   }
@@ -152,6 +155,7 @@ public class Status {
    *
    * @return detailsRFID
    */
+  @javax.annotation.Nullable
   public DetailsRFID getDetailsRFID() {
     return detailsRFID;
   }

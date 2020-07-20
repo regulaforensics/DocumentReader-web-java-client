@@ -14,12 +14,12 @@ package com.regula.documentreader.webclient.model;
 
 public class CheckResult {
 
-  /** Check was performed and result is negative */
+  /** Check was performed and result is NEGATIVE */
   public static final int ERROR = 0;
 
-  /** Check was performed and result is positive */
+  /** Check was performed and result is POSITIVE */
   public static final int OK = 1;
 
-  /** Check was not performed */
+  /** Check was NOT PERFORMED */
   public static final int WAS_NOT_DONE = 2;
 }

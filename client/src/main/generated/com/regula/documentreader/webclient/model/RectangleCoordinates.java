@@ -15,65 +15,27 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** RectangleCoordinates */
+/** Coordinates of the rectangle region in the normalized image of the document. */
 public class RectangleCoordinates {
-  public static final String SERIALIZED_NAME_TOP = "top";
-
-  @SerializedName(SERIALIZED_NAME_TOP)
-  private int top;
-
-  public static final String SERIALIZED_NAME_BOTTOM = "bottom";
-
-  @SerializedName(SERIALIZED_NAME_BOTTOM)
-  private int bottom;
-
   public static final String SERIALIZED_NAME_LEFT = "left";
 
   @SerializedName(SERIALIZED_NAME_LEFT)
   private int left;
+
+  public static final String SERIALIZED_NAME_TOP = "top";
+
+  @SerializedName(SERIALIZED_NAME_TOP)
+  private int top;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
 
   @SerializedName(SERIALIZED_NAME_RIGHT)
   private int right;
 
-  public RectangleCoordinates withTop(int top) {
-    this.top = top;
-    return this;
-  }
+  public static final String SERIALIZED_NAME_BOTTOM = "bottom";
 
-  /**
-   * Get top
-   *
-   * @return top
-   */
-  @javax.annotation.Nullable
-  public int getTop() {
-    return top;
-  }
-
-  public void setTop(int top) {
-    this.top = top;
-  }
-
-  public RectangleCoordinates withBottom(int bottom) {
-    this.bottom = bottom;
-    return this;
-  }
-
-  /**
-   * Get bottom
-   *
-   * @return bottom
-   */
-  @javax.annotation.Nullable
-  public int getBottom() {
-    return bottom;
-  }
-
-  public void setBottom(int bottom) {
-    this.bottom = bottom;
-  }
+  @SerializedName(SERIALIZED_NAME_BOTTOM)
+  private int bottom;
 
   public RectangleCoordinates withLeft(int left) {
     this.left = left;
@@ -85,13 +47,30 @@ public class RectangleCoordinates {
    *
    * @return left
    */
-  @javax.annotation.Nullable
   public int getLeft() {
     return left;
   }
 
   public void setLeft(int left) {
     this.left = left;
+  }
+
+  public RectangleCoordinates withTop(int top) {
+    this.top = top;
+    return this;
+  }
+
+  /**
+   * Get top
+   *
+   * @return top
+   */
+  public int getTop() {
+    return top;
+  }
+
+  public void setTop(int top) {
+    this.top = top;
   }
 
   public RectangleCoordinates withRight(int right) {
@@ -104,13 +83,30 @@ public class RectangleCoordinates {
    *
    * @return right
    */
-  @javax.annotation.Nullable
   public int getRight() {
     return right;
   }
 
   public void setRight(int right) {
     this.right = right;
+  }
+
+  public RectangleCoordinates withBottom(int bottom) {
+    this.bottom = bottom;
+    return this;
+  }
+
+  /**
+   * Get bottom
+   *
+   * @return bottom
+   */
+  public int getBottom() {
+    return bottom;
+  }
+
+  public void setBottom(int bottom) {
+    this.bottom = bottom;
   }
 
   @Override
@@ -122,25 +118,25 @@ public class RectangleCoordinates {
       return false;
     }
     RectangleCoordinates rectangleCoordinates = (RectangleCoordinates) o;
-    return Objects.equals(this.top, rectangleCoordinates.top)
-        && Objects.equals(this.bottom, rectangleCoordinates.bottom)
-        && Objects.equals(this.left, rectangleCoordinates.left)
-        && Objects.equals(this.right, rectangleCoordinates.right);
+    return Objects.equals(this.left, rectangleCoordinates.left)
+        && Objects.equals(this.top, rectangleCoordinates.top)
+        && Objects.equals(this.right, rectangleCoordinates.right)
+        && Objects.equals(this.bottom, rectangleCoordinates.bottom);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(top, bottom, left, right);
+    return Objects.hash(left, top, right, bottom);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RectangleCoordinates {\n");
-    sb.append("    top: ").append(toIndentedString(top)).append("\n");
-    sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
     sb.append("    left: ").append(toIndentedString(left)).append("\n");
+    sb.append("    top: ").append(toIndentedString(top)).append("\n");
     sb.append("    right: ").append(toIndentedString(right)).append("\n");
+    sb.append("    bottom: ").append(toIndentedString(bottom)).append("\n");
     sb.append("}");
     return sb.toString();
   }

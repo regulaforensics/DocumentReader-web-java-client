@@ -61,7 +61,7 @@ public class ProcessParams {
   }
 
   /**
-   * Types of results to extract. See &#39;Result&#39; enum for available options.
+   * Types of results to return in response. See &#39;Result&#39; enum for available options.
    *
    * @return resultTypeOutput
    */

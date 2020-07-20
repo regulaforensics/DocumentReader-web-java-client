@@ -48,7 +48,7 @@ public class TextFieldValue {
   }
 
   /**
-   * Get value
+   * Parsed/processed value. Date format converted for output, delimiters removed
    *
    * @return value
    */
@@ -66,7 +66,7 @@ public class TextFieldValue {
   }
 
   /**
-   * Get originalValue
+   * Original value as seen in the document
    *
    * @return originalValue
    */
@@ -85,7 +85,7 @@ public class TextFieldValue {
   }
 
   /**
-   * Index of image from input list
+   * Page index of the image from input list
    *
    * @return pageIndex
    */
@@ -121,8 +121,8 @@ public class TextFieldValue {
   }
 
   /**
-   * Value correct recognition probability. Combined probability from single characters
-   * probabilities minimum: 0 maximum: 100
+   * Min recognition probability. Combined minimum probability from single characters probabilities
+   * minimum: 0 maximum: 100
    *
    * @return probability
    */

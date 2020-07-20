@@ -17,11 +17,6 @@ import java.util.Objects;
 
 /** GraphicField */
 public class GraphicField {
-  public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
-
-  @SerializedName(SERIALIZED_NAME_FIELD_RECT)
-  private RectangleCoordinates fieldRect;
-
   public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
@@ -30,7 +25,68 @@ public class GraphicField {
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
   @SerializedName(SERIALIZED_NAME_IMAGE)
-  private RawImageContainer image;
+  private ImageData image;
+
+  public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_RECT)
+  private RectangleCoordinates fieldRect;
+
+  public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_D_G = "RFID_OriginDG";
+
+  @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G)
+  private int rfIDOriginDG;
+
+  public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_D_G_TAG = "RFID_OriginDGTag";
+
+  @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G_TAG)
+  private int rfIDOriginDGTag;
+
+  public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY = "RFID_OriginTagEntry";
+
+  @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY)
+  private int rfIDOriginTagEntry;
+
+  public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_ENTRY_VIEW = "RFID_OriginEntryView";
+
+  @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_ENTRY_VIEW)
+  private int rfIDOriginEntryView;
+
+  public GraphicField withFieldType(int fieldType) {
+    this.fieldType = fieldType;
+    return this;
+  }
+
+  /**
+   * Get fieldType
+   *
+   * @return fieldType
+   */
+  public int getFieldType() {
+    return fieldType;
+  }
+
+  public void setFieldType(int fieldType) {
+    this.fieldType = fieldType;
+  }
+
+  public GraphicField withImage(ImageData image) {
+    this.image = image;
+    return this;
+  }
+
+  /**
+   * Get image
+   *
+   * @return image
+   */
+  public ImageData getImage() {
+    return image;
+  }
+
+  public void setImage(ImageData image) {
+    this.image = image;
+  }
 
   public GraphicField withFieldRect(RectangleCoordinates fieldRect) {
     this.fieldRect = fieldRect;
@@ -51,42 +107,81 @@ public class GraphicField {
     this.fieldRect = fieldRect;
   }
 
-  public GraphicField withFieldType(int fieldType) {
-    this.fieldType = fieldType;
+  public GraphicField withRfIDOriginDG(int rfIDOriginDG) {
+    this.rfIDOriginDG = rfIDOriginDG;
     return this;
   }
 
   /**
-   * Get fieldType
+   * Information data group. Only for Result.RFID_TEXT results.
    *
-   * @return fieldType
+   * @return rfIDOriginDG
    */
   @javax.annotation.Nullable
-  public int getFieldType() {
-    return fieldType;
+  public int getRfIDOriginDG() {
+    return rfIDOriginDG;
   }
 
-  public void setFieldType(int fieldType) {
-    this.fieldType = fieldType;
+  public void setRfIDOriginDG(int rfIDOriginDG) {
+    this.rfIDOriginDG = rfIDOriginDG;
   }
 
-  public GraphicField withImage(RawImageContainer image) {
-    this.image = image;
+  public GraphicField withRfIDOriginDGTag(int rfIDOriginDGTag) {
+    this.rfIDOriginDGTag = rfIDOriginDGTag;
     return this;
   }
 
   /**
-   * Get image
+   * Index of the source record of the image with biometric information in the information data
+   * group. Only for Result.RFID_TEXT results.
    *
-   * @return image
+   * @return rfIDOriginDGTag
    */
   @javax.annotation.Nullable
-  public RawImageContainer getImage() {
-    return image;
+  public int getRfIDOriginDGTag() {
+    return rfIDOriginDGTag;
   }
 
-  public void setImage(RawImageContainer image) {
-    this.image = image;
+  public void setRfIDOriginDGTag(int rfIDOriginDGTag) {
+    this.rfIDOriginDGTag = rfIDOriginDGTag;
+  }
+
+  public GraphicField withRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+    this.rfIDOriginTagEntry = rfIDOriginTagEntry;
+    return this;
+  }
+
+  /**
+   * Index of the text field record in information data group. Only for Result.RFID_TEXT results.
+   *
+   * @return rfIDOriginTagEntry
+   */
+  @javax.annotation.Nullable
+  public int getRfIDOriginTagEntry() {
+    return rfIDOriginTagEntry;
+  }
+
+  public void setRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+    this.rfIDOriginTagEntry = rfIDOriginTagEntry;
+  }
+
+  public GraphicField withRfIDOriginEntryView(int rfIDOriginEntryView) {
+    this.rfIDOriginEntryView = rfIDOriginEntryView;
+    return this;
+  }
+
+  /**
+   * Biometric sample variant index. Only for Result.RFID_TEXT results.
+   *
+   * @return rfIDOriginEntryView
+   */
+  @javax.annotation.Nullable
+  public int getRfIDOriginEntryView() {
+    return rfIDOriginEntryView;
+  }
+
+  public void setRfIDOriginEntryView(int rfIDOriginEntryView) {
+    this.rfIDOriginEntryView = rfIDOriginEntryView;
   }
 
   @Override
@@ -98,23 +193,40 @@ public class GraphicField {
       return false;
     }
     GraphicField graphicField = (GraphicField) o;
-    return Objects.equals(this.fieldRect, graphicField.fieldRect)
-        && Objects.equals(this.fieldType, graphicField.fieldType)
-        && Objects.equals(this.image, graphicField.image);
+    return Objects.equals(this.fieldType, graphicField.fieldType)
+        && Objects.equals(this.image, graphicField.image)
+        && Objects.equals(this.fieldRect, graphicField.fieldRect)
+        && Objects.equals(this.rfIDOriginDG, graphicField.rfIDOriginDG)
+        && Objects.equals(this.rfIDOriginDGTag, graphicField.rfIDOriginDGTag)
+        && Objects.equals(this.rfIDOriginTagEntry, graphicField.rfIDOriginTagEntry)
+        && Objects.equals(this.rfIDOriginEntryView, graphicField.rfIDOriginEntryView);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldRect, fieldType, image);
+    return Objects.hash(
+        fieldType,
+        image,
+        fieldRect,
+        rfIDOriginDG,
+        rfIDOriginDGTag,
+        rfIDOriginTagEntry,
+        rfIDOriginEntryView);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GraphicField {\n");
-    sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
     sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
+    sb.append("    rfIDOriginDG: ").append(toIndentedString(rfIDOriginDG)).append("\n");
+    sb.append("    rfIDOriginDGTag: ").append(toIndentedString(rfIDOriginDGTag)).append("\n");
+    sb.append("    rfIDOriginTagEntry: ").append(toIndentedString(rfIDOriginTagEntry)).append("\n");
+    sb.append("    rfIDOriginEntryView: ")
+        .append(toIndentedString(rfIDOriginEntryView))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }

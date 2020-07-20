@@ -22,7 +22,7 @@ public class TextFieldType {
    */
   public static final int ISSUING_STATE_CODE = 1;
 
-  /** Document Number */
+  /** Document number */
   public static final int DOCUMENT_NUMBER = 2;
 
   /** Document expiration date */
@@ -31,7 +31,7 @@ public class TextFieldType {
   /** Date of issue */
   public static final int DATE_OF_ISSUE = 4;
 
-  /** Date Of Birth */
+  /** Date of birth */
   public static final int DATE_OF_BIRTH = 5;
 
   /** Place of birth */
@@ -118,7 +118,7 @@ public class TextFieldType {
   /** Full name of the document class */
   public static final int DOCUMENT_CLASS_NAME = 37;
 
-  /** Full name of issuing State */
+  /** Full name of issuing state */
   public static final int ISSUING_STATE_NAME = 38;
 
   /** Place of document issue */
@@ -175,7 +175,7 @@ public class TextFieldType {
   /** Document series */
   public static final int DOCUMENT_SERIES = 56;
 
-  /** Vehicle Registration certificate number */
+  /** Vehicle registration certificate number */
   public static final int REG_CERT_REG_NUMBER = 57;
 
   /** Vehicle model */
@@ -223,7 +223,7 @@ public class TextFieldType {
   /** End date of residence */
   public static final int RESIDENT_UNTIL = 72;
 
-  /** Issuing authority code (entered for the 2nd page of the passport of the Russian Federation) */
+  /** Issuing authority code */
   public static final int AUTHORITY_CODE = 73;
 
   /** Place of birth address (region) */
@@ -407,11 +407,12 @@ public class TextFieldType {
   public static final int AUTHORITY_RUS = 133;
 
   /**
-   * Digital code of the state of issue of the document in accordance with ISO 3166-1 (ICAOdoc9303)
+   * Digital code of the state of issue of the document in accordance with ISO 3166-1 (ICAO Doc
+   * 9303)
    */
   public static final int ISSUING_STATE_CODE_NUMERIC = 134;
 
-  /** Digital code of nationality in accordance with ISO 3166-1 (ICAOdoc 9303) */
+  /** Digital code of nationality in accordance with ISO 3166-1 (ICAO Doc 9303) */
   public static final int NATIONALITY_CODE_NUMERIC = 135;
 
   /** Vehicle engine power */
@@ -450,10 +451,10 @@ public class TextFieldType {
   /** Vehicle identification number */
   public static final int REG_CERT_VIN = 147;
 
-  /** Check digit for Vehicle identification number */
+  /** Check digit for vehicle identification number */
   public static final int REG_CERT_VIN_CHECK_DIGIT = 148;
 
-  /** Checksum for Vehicle identification number */
+  /** Checksum for vehicle identification number */
   public static final int REG_CERT_VIN_CHECKSUM = 149;
 
   /** Check digit of the first line of the MRZ */
@@ -522,7 +523,7 @@ public class TextFieldType {
   /** Territorial validity */
   public static final int TERRITORIAL_VALIDITY = 171;
 
-  /** MRZ strings With Correct CheckSums */
+  /** MRZ strings with correct checksums (calculated) */
   public static final int MRZ_STRINGS_WITH_CORRECT_CHECK_SUMS = 172;
 
   /** Restriction code for commercial driving license */
@@ -576,7 +577,7 @@ public class TextFieldType {
   /** Address (locality) */
   public static final int ADDRESS_LOCATION = 189;
 
-  /** Domain\sector */
+  /** Domain/sector */
   public static final int SECTION = 190;
 
   /** OCR number */
@@ -606,7 +607,7 @@ public class TextFieldType {
   /** Voter */
   public static final int VOTER = 199;
 
-  /** Type\number of previous document */
+  /** Type/number of previous document */
   public static final int PREVIOUS_TYPE = 200;
 
   /** Field from MRZ */
@@ -699,7 +700,7 @@ public class TextFieldType {
   /** Salary level */
   public static final int PAY_GRADE = 278;
 
-  /** Rank / status / title */
+  /** Rank/status/title */
   public static final int RANK = 279;
 
   /** Number confirming the right to receive benefits */
@@ -792,7 +793,7 @@ public class TextFieldType {
   /** Biometric data id */
   public static final int BIOMETRIC_FORMAT_OWNER = 309;
 
-  /** Biometric data formet */
+  /** Biometric data format */
   public static final int BIOMETRIC_FORMAT_TYPE = 310;
 
   /** Phone number */
@@ -855,7 +856,7 @@ public class TextFieldType {
   /** DS-certificate expiration date */
   public static final int DS_CERTIFICATE_VALID_TO = 330;
 
-  /** Vehicle category / restriction / conditions from data group DG1 of the eDL application */
+  /** Vehicle category/restriction/conditions from data group DG1 of the eDL application */
   public static final int VRC_DATA_OBJECT_ENTRY = 331;
 
   /** Type confirmation number */
@@ -960,7 +961,7 @@ public class TextFieldType {
   /** Frequent flyer number */
   public static final int CHECK_IN_SEQUENCE_NUMBER = 367;
 
-  /** Airline Frequent flyer indicator */
+  /** Airline frequent flyer indicator */
   public static final int AIRLINE_DESIGNATOR_OF_BOARDING_PASS_ISSUER = 368;
 
   /** Ticket number */
@@ -1158,10 +1159,10 @@ public class TextFieldType {
   /** Civil status */
   public static final int CIVIL_STATUS = 433;
 
-  /** NUmber of seats */
+  /** Number of seats */
   public static final int NUMBER_OF_SEATS = 434;
 
-  /** NUmber of standing places */
+  /** Number of standing places */
   public static final int NUMBER_OF_STANDING_PLACES = 435;
 
   /** Max speed */

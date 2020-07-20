@@ -20,9 +20,9 @@ public class RawImageResult extends ResultItem {
   public static final String SERIALIZED_NAME_RAW_IMAGE_CONTAINER = "RawImageContainer";
 
   @SerializedName(SERIALIZED_NAME_RAW_IMAGE_CONTAINER)
-  private RawImageContainer rawImageContainer;
+  private ImageData rawImageContainer;
 
-  public RawImageResult withRawImageContainer(RawImageContainer rawImageContainer) {
+  public RawImageResult withRawImageContainer(ImageData rawImageContainer) {
     this.rawImageContainer = rawImageContainer;
     return this;
   }
@@ -32,11 +32,11 @@ public class RawImageResult extends ResultItem {
    *
    * @return rawImageContainer
    */
-  public RawImageContainer getRawImageContainer() {
+  public ImageData getRawImageContainer() {
     return rawImageContainer;
   }
 
-  public void setRawImageContainer(RawImageContainer rawImageContainer) {
+  public void setRawImageContainer(ImageData rawImageContainer) {
     this.rawImageContainer = rawImageContainer;
   }
 

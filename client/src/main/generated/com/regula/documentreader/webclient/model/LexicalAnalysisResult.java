@@ -18,7 +18,8 @@ import java.util.Objects;
 /**
  * Lexical data analysis allows you to compare the results of reading the text data of the MRZ, the
  * document filling area, barcodes and data from the memory of the RFID chip for an additional
- * assessment of the authenticity of the document
+ * assessment of the authenticity of the document. Single result for all pages. Deprecated since
+ * 5.2. Instead consider to use text(36) type.
  */
 public class LexicalAnalysisResult extends ResultItem {
   public static final String SERIALIZED_NAME_LIST_VERIFIED_FIELDS = "ListVerifiedFields";

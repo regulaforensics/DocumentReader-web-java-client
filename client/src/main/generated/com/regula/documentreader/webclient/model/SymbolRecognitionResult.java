@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Describes the result of recognizing a single character in text field line */
+/** Describes a single character recognition results in the text field line */
 public class SymbolRecognitionResult {
   public static final String SERIALIZED_NAME_SYMBOL_RECT = "SymbolRect";
 
@@ -27,7 +27,7 @@ public class SymbolRecognitionResult {
   public static final String SERIALIZED_NAME_LIST_OF_CANDIDATES = "ListOfCandidates";
 
   @SerializedName(SERIALIZED_NAME_LIST_OF_CANDIDATES)
-  private List<SymbolCandidate> listOfCandidates = null;
+  private List<SymbolCandidate> listOfCandidates = new ArrayList<SymbolCandidate>();
 
   public SymbolRecognitionResult withSymbolRect(RectangleCoordinates symbolRect) {
     this.symbolRect = symbolRect;
@@ -39,7 +39,6 @@ public class SymbolRecognitionResult {
    *
    * @return symbolRect
    */
-  @javax.annotation.Nullable
   public RectangleCoordinates getSymbolRect() {
     return symbolRect;
   }
@@ -54,20 +53,16 @@ public class SymbolRecognitionResult {
   }
 
   public SymbolRecognitionResult addListOfCandidatesItem(SymbolCandidate listOfCandidatesItem) {
-    if (this.listOfCandidates == null) {
-      this.listOfCandidates = new ArrayList<SymbolCandidate>();
-    }
     this.listOfCandidates.add(listOfCandidatesItem);
     return this;
   }
 
   /**
-   * Array of candidate characters. Sorted in decreasing order of recognition probabilities (the
+   * Array of candidate characters. Sorted in descending order of recognition probabilities (the
    * first element has highest probability)
    *
    * @return listOfCandidates
    */
-  @javax.annotation.Nullable
   public List<SymbolCandidate> getListOfCandidates() {
     return listOfCandidates;
   }

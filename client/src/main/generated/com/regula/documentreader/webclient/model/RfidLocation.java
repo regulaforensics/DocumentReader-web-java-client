@@ -20,6 +20,6 @@ public class RfidLocation {
   /** The RFID chip is located in the document data page */
   public static final int MAIN_PAGE = 1;
 
-  /** The RFID chip is located in the back end of the document */
+  /** The RFID chip is located in the back page or inlay of the document */
   public static final int BACK_PAGE = 2;
 }

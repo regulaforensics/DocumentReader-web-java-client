@@ -186,7 +186,7 @@ public class TextField {
 
   /**
    * Validity of all field values for given source. If there are two values on different pages for
-   * one field-source pair, than validity also will include logical match checking. If such values
+   * one field-source pair, then validity also will include logical match checking. If such values
    * do not match, validity will return error.
    *
    * @return validityList

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Contains all document textual fields with validity and cross-source compare checks */
+/** Contains all document text fields data with validity and cross-source compare checks */
 public class Text {
   public static final String SERIALIZED_NAME_STATUS = "status";
 

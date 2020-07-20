@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Describes recognizing a single row in multi-line text field of a document */
+/** Describes single row recognition results in multi-line text field of a document */
 public class StringRecognitionResult {
   public static final String SERIALIZED_NAME_STRING_RESULT = "StringResult";
 
   @SerializedName(SERIALIZED_NAME_STRING_RESULT)
-  private List<SymbolRecognitionResult> stringResult = null;
+  private List<SymbolRecognitionResult> stringResult = new ArrayList<SymbolRecognitionResult>();
 
   public StringRecognitionResult withStringResult(List<SymbolRecognitionResult> stringResult) {
     this.stringResult = stringResult;
@@ -30,9 +30,6 @@ public class StringRecognitionResult {
   }
 
   public StringRecognitionResult addStringResultItem(SymbolRecognitionResult stringResultItem) {
-    if (this.stringResult == null) {
-      this.stringResult = new ArrayList<SymbolRecognitionResult>();
-    }
     this.stringResult.add(stringResultItem);
     return this;
   }
@@ -42,7 +39,6 @@ public class StringRecognitionResult {
    *
    * @return stringResult
    */
-  @javax.annotation.Nullable
   public List<SymbolRecognitionResult> getStringResult() {
     return stringResult;
   }

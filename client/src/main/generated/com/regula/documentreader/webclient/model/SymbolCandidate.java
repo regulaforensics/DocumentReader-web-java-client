@@ -15,9 +15,7 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/**
- * Describes the result of recognizing an individual character in the string field of the document
- */
+/** Describes an individual character recognition candidate */
 public class SymbolCandidate {
   public static final String SERIALIZED_NAME_SYMBOL_CODE = "SymbolCode";
 
@@ -35,11 +33,10 @@ public class SymbolCandidate {
   }
 
   /**
-   * ASCII symbol code
+   * Unicode symbol code
    *
    * @return symbolCode
    */
-  @javax.annotation.Nullable
   public int getSymbolCode() {
     return symbolCode;
   }
@@ -58,7 +55,6 @@ public class SymbolCandidate {
    *
    * @return symbolProbability
    */
-  @javax.annotation.Nullable
   public int getSymbolProbability() {
     return symbolProbability;
   }

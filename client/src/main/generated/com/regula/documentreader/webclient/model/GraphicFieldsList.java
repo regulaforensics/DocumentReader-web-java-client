@@ -22,7 +22,7 @@ public class GraphicFieldsList {
   public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
 
   @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
-  private List<GraphicField> pArrayFields = null;
+  private List<GraphicField> pArrayFields = new ArrayList<GraphicField>();
 
   public GraphicFieldsList withPArrayFields(List<GraphicField> pArrayFields) {
     this.pArrayFields = pArrayFields;
@@ -30,9 +30,6 @@ public class GraphicFieldsList {
   }
 
   public GraphicFieldsList addPArrayFieldsItem(GraphicField pArrayFieldsItem) {
-    if (this.pArrayFields == null) {
-      this.pArrayFields = new ArrayList<GraphicField>();
-    }
     this.pArrayFields.add(pArrayFieldsItem);
     return this;
   }
@@ -42,7 +39,6 @@ public class GraphicFieldsList {
    *
    * @return pArrayFields
    */
-  @javax.annotation.Nullable
   public List<GraphicField> getpArrayFields() {
     return pArrayFields;
   }

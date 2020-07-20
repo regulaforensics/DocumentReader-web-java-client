@@ -20,7 +20,7 @@ public class Result {
    */
   public static final int RAW_IMAGE = 1;
 
-  /** Returns check statuses with detailes, grouped by source */
+  /** Returns check statuses with details, grouped by source */
   public static final int STATUS = 33;
 
   /**
@@ -42,9 +42,9 @@ public class Result {
   public static final int RFID_TEXT = 102;
 
   /**
-   * Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
-   * the document filling area, barcodes and data from the memory of the RFID chip for an additional
-   * assessment of the authenticity of the document
+   * Deprecated, use TEXT type. Lexical data analysis allows you to compare the results of reading
+   * the text data of the MRZ, the document filling area, barcodes and data from the memory of the
+   * RFID chip for an additional assessment of the authenticity of the document
    */
   public static final int LEXICAL_ANALYSIS = 15;
 

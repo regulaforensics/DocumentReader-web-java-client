@@ -153,7 +153,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get pagesCount
+   * Number of processed pages in the document
    *
    * @return pagesCount
    */

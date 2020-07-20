@@ -15,7 +15,10 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** GraphicsResult */
+/**
+ * Graphics fields extracted from one the document source. Returns separate results for each
+ * provided page.
+ */
 public class GraphicsResult extends ResultItem {
   public static final String SERIALIZED_NAME_DOC_GRAPHICS_INFO = "DocGraphicsInfo";
 
@@ -32,7 +35,6 @@ public class GraphicsResult extends ResultItem {
    *
    * @return docGraphicsInfo
    */
-  @javax.annotation.Nullable
   public GraphicFieldsList getDocGraphicsInfo() {
     return docGraphicsInfo;
   }
