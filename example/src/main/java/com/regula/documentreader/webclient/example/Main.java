@@ -5,8 +5,8 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
+import com.regula.documentreader.webclient.model.Light;
 import com.regula.documentreader.webclient.model.Source;
-import com.regula.documentreader.webclient.model.TextFieldType;
 import com.regula.documentreader.webclient.model.ext.RecognitionParams;
 import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args) throws IOException, ApiException {
 
         byte[] imageBytes = readFile("australia_passport.jpg");
-        var image = new ProcessRequestImage(imageBytes);
+        var image = new ProcessRequestImage(imageBytes, Light.WHITE);
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
