@@ -5,27 +5,20 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
-import javax.print.Doc;
-
 public class DocumentReaderApi extends DefaultApi {
+
+  private String license;
 
   public DocumentReaderApi() {
     super();
   }
 
   public DocumentReaderApi(String basePath) {
-    super();
-
-    ApiClient apiClient = this.getApiClient();
-    apiClient.setBasePath(basePath);
+    this(basePath, false, false);
   }
 
   public DocumentReaderApi(String basePath, boolean debugging) {
-    super();
-
-    ApiClient apiCLient = this.getApiClient();
-    apiCLient.setBasePath(basePath);
-    apiCLient.setDebugging(debugging);
+    this(basePath, debugging, false);
   }
 
   public DocumentReaderApi(String basePath, boolean debugging, boolean verifyingSsl) {
@@ -50,6 +43,20 @@ public class DocumentReaderApi extends DefaultApi {
    *     response body
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
+    processRequest.getSystemInfo().withLicense(this.license);
     return new RecognitionResponse(super.apiProcess(processRequest));
+  }
+
+  public DocumentReaderApi withLicense(String license) {
+    this.license = license;
+    return this;
+  }
+
+  public String getLicense() {
+    return this.license;
+  }
+
+  public void setLicense(String license) {
+    this.license = license;
   }
 }

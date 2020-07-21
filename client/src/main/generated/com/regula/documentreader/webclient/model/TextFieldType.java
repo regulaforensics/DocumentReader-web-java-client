@@ -991,166 +991,166 @@ public class TextFieldType {
   /** Veteran */
   public static final int VETERAN = 377;
 
-  /** Validity date of A1 driver&#x60;s license */
+  /** Validity date of A1 driver’s license */
   public static final int DL_CLASS_CODE_A1_FROM = 378;
 
-  /** Expiration date of A1 driver&#x60;s license */
+  /** Expiration date of A1 driver’s license */
   public static final int DL_CLASS_CODE_A1_TO = 379;
 
-  /** Restrictions for A1 driver&#x60;s license */
+  /** Restrictions for A1 driver’s license */
   public static final int DL_CLASS_CODE_A1_NOTES = 380;
 
-  /** Validity date of A driver&#x60;s license */
+  /** Validity date of A driver’s license */
   public static final int DL_CLASS_CODE_A_FROM = 381;
 
-  /** Expiration date of A driver&#x60;s license */
+  /** Expiration date of A driver’s license */
   public static final int DL_CLASS_CODE_A_TO = 382;
 
-  /** Restrictions for A driver&#x60;s license */
+  /** Restrictions for A driver’s license */
   public static final int DL_CLASS_CODE_A_NOTES = 383;
 
-  /** Validity date of B driver&#x60;s license */
+  /** Validity date of B driver’s license */
   public static final int DL_CLASS_CODE_B_FROM = 384;
 
-  /** Expiration date of B driver&#x60;s license */
+  /** Expiration date of B driver’s license */
   public static final int DL_CLASS_CODE_B_TO = 385;
 
-  /** Restrictions for B driver&#x60;s license */
+  /** Restrictions for B driver’s license */
   public static final int DL_CLASS_CODE_B_NOTES = 386;
 
-  /** Validity date of C1 driver&#x60;s license */
+  /** Validity date of C1 driver’s license */
   public static final int DL_CLASS_CODE_C1_FROM = 387;
 
-  /** Expiration date of C1 driver&#x60;s license */
+  /** Expiration date of C1 driver’s license */
   public static final int DL_CLASS_CODE_C1_TO = 388;
 
-  /** Restrictions for C1 driver&#x60;s license */
+  /** Restrictions for C1 driver’s license */
   public static final int DL_CLASS_CODE_C1_NOTES = 389;
 
-  /** Validity date of C driver&#x60;s license */
+  /** Validity date of C driver’s license */
   public static final int DL_CLASS_CODE_C_FROM = 390;
 
-  /** Expiration date of C driver&#x60;s license */
+  /** Expiration date of C driver’s license */
   public static final int DL_CLASS_CODE_C_TO = 391;
 
-  /** Restrictions for C driver&#x60;s license */
+  /** Restrictions for C driver’s license */
   public static final int DL_CLASS_CODE_C_NOTES = 392;
 
-  /** Validity date of D1 driver&#x60;s license */
+  /** Validity date of D1 driver’s license */
   public static final int DL_CLASS_CODE_D1_FROM = 393;
 
-  /** Expiration date of D1 driver&#x60;s license */
+  /** Expiration date of D1 driver’s license */
   public static final int DL_CLASS_CODE_D1_TO = 394;
 
-  /** Restrictions for D1 driver&#x60;s license */
+  /** Restrictions for D1 driver’s license */
   public static final int DL_CLASS_CODE_D1_NOTES = 395;
 
-  /** Validity date of D driver&#x60;s license */
+  /** Validity date of D driver’s license */
   public static final int DL_CLASS_CODE_D_FROM = 396;
 
-  /** Expiration date of D driver&#x60;s license */
+  /** Expiration date of D driver’s license */
   public static final int DL_CLASS_CODE_D_TO = 397;
 
-  /** Restrictions for D driver&#x60;s license */
+  /** Restrictions for D driver’s license */
   public static final int DL_CLASS_CODE_D_NOTES = 398;
 
-  /** Validity date of BE driver&#x60;s license */
+  /** Validity date of BE driver’s license */
   public static final int DL_CLASS_CODE_BE_FROM = 399;
 
-  /** Expiration date of BE driver&#x60;s license */
+  /** Expiration date of BE driver’s license */
   public static final int DL_CLASS_CODE_BE_TO = 400;
 
-  /** Restrictions for BE driver&#x60;s license */
+  /** Restrictions for BE driver’s license */
   public static final int DL_CLASS_CODE_BE_NOTES = 401;
 
-  /** Validity date of C1E driver&#x60;s license */
+  /** Validity date of C1E driver’s license */
   public static final int DL_CLASS_CODE_C1E_FROM = 402;
 
-  /** Expiration date of C1E driver&#x60;s license */
+  /** Expiration date of C1E driver’s license */
   public static final int DL_CLASS_CODE_C1E_TO = 403;
 
-  /** Restrictions for C1E driver&#x60;s license */
+  /** Restrictions for C1E driver’s license */
   public static final int DL_CLASS_CODE_C1E_NOTES = 404;
 
-  /** Validity date of CE driver&#x60;s license */
+  /** Validity date of CE driver’s license */
   public static final int DL_CLASS_CODE_CE_FROM = 405;
 
-  /** Expiration date of CE driver&#x60;s license */
+  /** Expiration date of CE driver’s license */
   public static final int DL_CLASS_CODE_CE_TO = 406;
 
-  /** Restrictions for CE driver&#x60;s license */
+  /** Restrictions for CE driver’s license */
   public static final int DL_CLASS_CODE_CE_NOTES = 407;
 
-  /** Validity date of D1E driver&#x60;s license */
+  /** Validity date of D1E driver’s license */
   public static final int DL_CLASS_CODE_D1E_FROM = 408;
 
-  /** Expiration date of D1E driver&#x60;s license */
+  /** Expiration date of D1E driver’s license */
   public static final int DL_CLASS_CODE_D1E_TO = 409;
 
-  /** Restrictions for D1E driver&#x60;s license */
+  /** Restrictions for D1E driver’s license */
   public static final int DL_CLASS_CODE_D1E_NOTES = 410;
 
-  /** Validity date of DE driver&#x60;s license */
+  /** Validity date of DE driver’s license */
   public static final int DL_CLASS_CODE_DE_FROM = 411;
 
-  /** Expiration date of DE driver&#x60;s license */
+  /** Expiration date of DE driver’s license */
   public static final int DL_CLASS_CODE_DE_TO = 412;
 
-  /** Restrictions for DE driver&#x60;s license */
+  /** Restrictions for DE driver’s license */
   public static final int DL_CLASS_CODE_DE_NOTES = 413;
 
-  /** Validity date of M driver&#x60;s license */
+  /** Validity date of M driver’s license */
   public static final int DL_CLASS_CODE_M_FROM = 414;
 
-  /** Expiration date of M driver&#x60;s license */
+  /** Expiration date of M driver’s license */
   public static final int DL_CLASS_CODE_M_TO = 415;
 
-  /** Restrictions for M driver&#x60;s license */
+  /** Restrictions for M driver’s license */
   public static final int DL_CLASS_CODE_M_NOTES = 416;
 
-  /** Validity date of L driver&#x60;s license */
+  /** Validity date of L driver’s license */
   public static final int DL_CLASS_CODE_L_FROM = 417;
 
-  /** Expiration date of L driver&#x60;s license */
+  /** Expiration date of L driver’s license */
   public static final int DL_CLASS_CODE_L_TO = 418;
 
-  /** Restrictions for L driver&#x60;s license */
+  /** Restrictions for L driver’s license */
   public static final int DL_CLASS_CODE_L_NOTES = 419;
 
-  /** Validity date of T driver&#x60;s license */
+  /** Validity date of T driver’s license */
   public static final int DL_CLASS_CODE_T_FROM = 420;
 
-  /** Expiration date of T driver&#x60;s license */
+  /** Expiration date of T driver’s license */
   public static final int DL_CLASS_CODE_T_TO = 421;
 
-  /** Restrictions for T driver&#x60;s license */
+  /** Restrictions for T driver’s license */
   public static final int DL_CLASS_CODE_T_NOTES = 422;
 
-  /** Validity date of AM driver&#x60;s license */
+  /** Validity date of AM driver’s license */
   public static final int DL_CLASS_CODE_AM_FROM = 423;
 
-  /** Expiration date of AM driver&#x60;s license */
+  /** Expiration date of AM driver’s license */
   public static final int DL_CLASS_CODE_AM_TO = 424;
 
-  /** Restrictions for AM driver&#x60;s license */
+  /** Restrictions for AM driver’s license */
   public static final int DL_CLASS_CODE_AM_NOTES = 425;
 
-  /** Validity date of A2 driver&#x60;s license */
+  /** Validity date of A2 driver’s license */
   public static final int DL_CLASS_CODE_A2_FROM = 426;
 
-  /** Expiration date of A2 driver&#x60;s license */
+  /** Expiration date of A2 driver’s license */
   public static final int DL_CLASS_CODE_A2_TO = 427;
 
-  /** Restrictions for A2 driver&#x60;s license */
+  /** Restrictions for A2 driver’s license */
   public static final int DL_CLASS_CODE_A2_NOTES = 428;
 
-  /** Validity date of B1 driver&#x60;s license */
+  /** Validity date of B1 driver’s license */
   public static final int DL_CLASS_CODE_B1_FROM = 429;
 
-  /** Expiration date of B1 driver&#x60;s license */
+  /** Expiration date of B1 driver’s license */
   public static final int DL_CLASS_CODE_B1_TO = 430;
 
-  /** Restrictions for B1 driver&#x60;s license */
+  /** Restrictions for B1 driver’s license */
   public static final int DL_CLASS_CODE_B1_NOTES = 431;
 
   /** Last name at birth */
@@ -1264,76 +1264,76 @@ public class TextFieldType {
   /** Birth century */
   public static final int CENTURY_DATE_OF_BIRTH = 468;
 
-  /** Validity date of A3 driver&#x60;s license */
+  /** Validity date of A3 driver’s license */
   public static final int DL_CLASS_CODE_A3_FROM = 469;
 
-  /** Expiration date of A3 driver&#x60;s license */
+  /** Expiration date of A3 driver’s license */
   public static final int DL_CLASS_CODE_A3_TO = 470;
 
-  /** Restrictions for A3 driver&#x60;s license */
+  /** Restrictions for A3 driver’s license */
   public static final int DL_CLASS_CODE_A3_NOTES = 471;
 
-  /** Validity date of C2 driver&#x60;s license */
+  /** Validity date of C2 driver’s license */
   public static final int DL_CLASS_CODE_C2_FROM = 472;
 
-  /** Expiration date of C2 driver&#x60;s license */
+  /** Expiration date of C2 driver’s license */
   public static final int DL_CLASS_CODE_C2_TO = 473;
 
-  /** Restrictions for C2 driver&#x60;s license */
+  /** Restrictions for C2 driver’s license */
   public static final int DL_CLASS_CODE_C2_NOTES = 474;
 
-  /** Validity date of B2 driver&#x60;s license */
+  /** Validity date of B2 driver’s license */
   public static final int DL_CLASS_CODE_B2_FROM = 475;
 
-  /** Expiration date of B2 driver&#x60;s license */
+  /** Expiration date of B2 driver’s license */
   public static final int DL_CLASS_CODE_B2_TO = 476;
 
-  /** Restrictions for B2 driver&#x60;s license */
+  /** Restrictions for B2 driver’s license */
   public static final int DL_CLASS_CODE_B2_NOTES = 477;
 
-  /** Validity date of D2 driver&#x60;s license */
+  /** Validity date of D2 driver’s license */
   public static final int DL_CLASS_CODE_D2_FROM = 478;
 
-  /** Expiration date of D2 driver&#x60;s license */
+  /** Expiration date of D2 driver’s license */
   public static final int DL_CLASS_CODE_D2_TO = 479;
 
-  /** Restrictions for D2 driver&#x60;s license */
+  /** Restrictions for D2 driver’s license */
   public static final int DL_CLASS_CODE_D2_NOTES = 480;
 
-  /** Validity date of B2E driver&#x60;s license */
+  /** Validity date of B2E driver’s license */
   public static final int DL_CLASS_CODE_B2E_FROM = 481;
 
-  /** Expiration date of B2E driver&#x60;s license */
+  /** Expiration date of B2E driver’s license */
   public static final int DL_CLASS_CODE_B2E_TO = 482;
 
-  /** Restrictions for B2E driver&#x60;s license */
+  /** Restrictions for B2E driver’s license */
   public static final int DL_CLASS_CODE_B2E_NOTES = 483;
 
-  /** Validity date of G driver&#x60;s license */
+  /** Validity date of G driver’s license */
   public static final int DL_CLASS_CODE_G_FROM = 484;
 
-  /** Expiration date of G driver&#x60;s license */
+  /** Expiration date of G driver’s license */
   public static final int DL_CLASS_CODE_G_TO = 485;
 
-  /** Restrictions for G driver&#x60;s license */
+  /** Restrictions for G driver’s license */
   public static final int DL_CLASS_CODE_G_NOTES = 486;
 
-  /** Validity date of J driver&#x60;s license */
+  /** Validity date of J driver’s license */
   public static final int DL_CLASS_CODE_J_FROM = 487;
 
-  /** Expiration date of J driver&#x60;s license */
+  /** Expiration date of J driver’s license */
   public static final int DL_CLASS_CODE_J_TO = 488;
 
-  /** Restrictions for J driver&#x60;s license */
+  /** Restrictions for J driver’s license */
   public static final int DL_CLASS_CODE_J_NOTES = 489;
 
-  /** Validity date of LC driver&#x60;s license */
+  /** Validity date of LC driver’s license */
   public static final int DL_CLASS_CODE_LC_FROM = 490;
 
-  /** Expiration date of LC driver&#x60;s license */
+  /** Expiration date of LC driver’s license */
   public static final int DL_CLASS_CODE_LC_TO = 491;
 
-  /** Restrictions for LC driver&#x60;s license */
+  /** Restrictions for LC driver’s license */
   public static final int DL_CLASS_CODE_LC_NOTES = 492;
 
   /** Bank card number */
@@ -1429,131 +1429,219 @@ public class TextFieldType {
   /** Years since issue */
   public static final int YEARS_SINCE_ISSUE = 523;
 
+  /** Validity date of BTP driver’s license */
   public static final int DL_CLASS_CODE_BTP_FROM = 524;
 
+  /** Restrictions for BTP driver’s license */
   public static final int DL_CLASS_CODE_BTP_NOTES = 525;
 
+  /** Expiration date of BTP driver’s license */
   public static final int DL_CLASS_CODE_BTP_TO = 526;
 
+  /** Validity date of C3 driver’s license */
   public static final int DL_CLASS_CODE_C3_FROM = 527;
 
+  /** Restrictions for C3 driver’s license */
   public static final int DL_CLASS_CODE_C3_NOTES = 528;
 
+  /** Expiration date of C3 driver’s license */
   public static final int DL_CLASS_CODE_C3_TO = 529;
 
+  /** Validity date of E driver’s license */
   public static final int DL_CLASS_CODE_E_FROM = 530;
 
+  /** Restrictions for E driver’s license */
   public static final int DL_CLASS_CODE_E_NOTES = 531;
 
+  /** Expiration date of E driver’s license */
   public static final int DL_CLASS_CODE_E_TO = 532;
 
+  /** Validity date of F driver’s license */
   public static final int DL_CLASS_CODE_F_FROM = 533;
 
+  /** Restrictions for F driver’s license */
   public static final int DL_CLASS_CODE_F_NOTES = 534;
 
+  /** Expiration date of F driver’s license */
   public static final int DL_CLASS_CODE_F_TO = 535;
 
+  /** Validity date of FA driver’s license */
   public static final int DL_CLASS_CODE_FA_FROM = 536;
 
+  /** Restrictions for FA driver’s license */
   public static final int DL_CLASS_CODE_FA_NOTES = 537;
 
+  /** Expiration date of FA driver’s license */
   public static final int DL_CLASS_CODE_FA_TO = 538;
 
+  /** Validity date of FA1 driver’s license */
   public static final int DL_CLASS_CODE_FA1_FROM = 539;
 
+  /** Restrictions for FA1 driver’s license */
   public static final int DL_CLASS_CODE_FA1_NOTES = 540;
 
+  /** Expiration date of FA1 driver’s license */
   public static final int DL_CLASS_CODE_FA1_TO = 541;
 
+  /** Validity date of FB driver’s license */
   public static final int DL_CLASS_CODE_FB_FROM = 542;
 
+  /** Restrictions for FB driver’s license */
   public static final int DL_CLASS_CODE_FB_NOTES = 543;
 
+  /** Expiration date of FB driver’s license */
   public static final int DL_CLASS_CODE_FB_TO = 544;
 
+  /** Validity date of G1 driver’s license */
   public static final int DL_CLASS_CODE_G1_FROM = 545;
 
+  /** Restrictions for G1 driver’s license */
   public static final int DL_CLASS_CODE_G1_NOTES = 546;
 
+  /** Expiration date of G1 driver’s license */
   public static final int DL_CLASS_CODE_G1_TO = 547;
 
+  /** Validity date of H driver’s license */
   public static final int DL_CLASS_CODE_H_FROM = 548;
 
+  /** Restrictions for H driver’s license */
   public static final int DL_CLASS_CODE_H_NOTES = 549;
 
+  /** Expiration date of H driver’s license */
   public static final int DL_CLASS_CODE_H_TO = 550;
 
+  /** Validity date of I driver’s license */
   public static final int DL_CLASS_CODE_I_FROM = 551;
 
+  /** Restrictions for I driver’s license */
   public static final int DL_CLASS_CODE_I_NOTES = 552;
 
+  /** Expiration date of I driver’s license */
   public static final int DL_CLASS_CODE_I_TO = 553;
 
+  /** Validity date of K driver’s license */
   public static final int DL_CLASS_CODE_K_FROM = 554;
 
+  /** Restrictions for K driver’s license */
   public static final int DL_CLASS_CODE_K_NOTES = 555;
 
+  /** Expiration date of K driver’s license */
   public static final int DL_CLASS_CODE_K_TO = 556;
 
+  /** Validity date of LK driver’s license */
   public static final int DL_CLASS_CODE_LK_FROM = 557;
 
+  /** Restrictions for LK driver’s license */
   public static final int DL_CLASS_CODE_LK_NOTES = 558;
 
+  /** Expiration date of LK driver’s license */
   public static final int DL_CLASS_CODE_LK_TO = 559;
 
+  /** Validity date of N driver’s license */
   public static final int DL_CLASS_CODE_N_FROM = 560;
 
+  /** Restrictions for N driver’s license */
   public static final int DL_CLASS_CODE_N_NOTES = 561;
 
+  /** Expiration date of N driver’s license */
   public static final int DL_CLASS_CODE_N_TO = 562;
 
+  /** Validity date of S driver’s license */
   public static final int DL_CLASS_CODE_S_FROM = 563;
 
+  /** Restrictions for S driver’s license */
   public static final int DL_CLASS_CODE_S_NOTES = 564;
 
+  /** Expiration date of S driver’s license */
   public static final int DL_CLASS_CODE_S_TO = 565;
 
+  /** Validity date of TB driver’s license */
   public static final int DL_CLASS_CODE_TB_FROM = 566;
 
+  /** Restrictions for TB driver’s license */
   public static final int DL_CLASS_CODE_TB_NOTES = 567;
 
+  /** Expiration date of TB driver’s license */
   public static final int DL_CLASS_CODE_TB_TO = 568;
 
+  /** Validity date of TM driver’s license */
   public static final int DL_CLASS_CODE_TM_FROM = 569;
 
+  /** Restrictions for TM driver’s license */
   public static final int DL_CLASS_CODE_TM_NOTES = 570;
 
+  /** Expiration date of TM driver’s license */
   public static final int DL_CLASS_CODE_TM_TO = 571;
 
+  /** Validity date of TR driver’s license */
   public static final int DL_CLASS_CODE_TR_FROM = 572;
 
+  /** Restrictions for TR driver’s license */
   public static final int DL_CLASS_CODE_TR_NOTES = 573;
 
+  /** Expiration date of TR driver’s license */
   public static final int DL_CLASS_CODE_TR_TO = 574;
 
+  /** Validity date of TV driver’s license */
   public static final int DL_CLASS_CODE_TV_FROM = 575;
 
+  /** Restrictions for TV driver’s license */
   public static final int DL_CLASS_CODE_TV_NOTES = 576;
 
+  /** Expiration date of TV driver’s license */
   public static final int DL_CLASS_CODE_TV_TO = 577;
 
+  /** Validity date of V driver’s license */
   public static final int DL_CLASS_CODE_V_FROM = 578;
 
+  /** Restrictions for V driver’s license */
   public static final int DL_CLASS_CODE_V_NOTES = 579;
 
+  /** Expiration date of V driver’s license */
   public static final int DL_CLASS_CODE_V_TO = 580;
 
+  /** Validity date of W driver’s license */
   public static final int DL_CLASS_CODE_W_FROM = 581;
 
+  /** Restrictions for W driver’s license */
   public static final int DL_CLASS_CODE_W_NOTES = 582;
 
+  /** Expiration date of W driver’s license */
   public static final int DL_CLASS_CODE_W_TO = 583;
 
+  /** URL */
   public static final int URL = 584;
 
+  /** Caliber */
   public static final int CALIBER = 585;
 
+  /** Model */
   public static final int MODEL = 586;
 
+  /** Make */
   public static final int MAKE = 587;
+
+  /** Number of cylinders */
+  public static final int NUMBER_OF_CYLINDERS = 588;
+
+  /** Surname of husband after registration */
+  public static final int SURNAME_OF_HUSBAND_AFTER_REGISTRATION = 589;
+
+  /** Surname of wife after registration */
+  public static final int SURNAME_OF_WIFE_AFTER_REGISTRATION = 590;
+
+  /** Date of birth of wife */
+  public static final int DATE_OF_BIRTH_OF_WIFE = 591;
+
+  /** Date of birth of husband */
+  public static final int DATE_OF_BIRTH_OF_HUSBAND = 592;
+
+  /** Citizenship of first person */
+  public static final int CITIZENSHIP_OF_FIRST_PERSON = 593;
+
+  /** Citizenship of second person */
+  public static final int CITIZENSHIP_OF_SECOND_PERSON = 594;
+
+  /** CVV code */
+  public static final int CVV = 595;
 }
