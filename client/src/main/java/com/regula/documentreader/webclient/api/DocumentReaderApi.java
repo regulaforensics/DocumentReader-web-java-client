@@ -1,11 +1,45 @@
 package com.regula.documentreader.webclient.api;
 
+import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
-// todo add constructors with path and etc
+import javax.print.Doc;
+
 public class DocumentReaderApi extends DefaultApi {
+
+  public DocumentReaderApi() {
+    super();
+  }
+
+  public DocumentReaderApi(String basePath) {
+    super();
+
+    ApiClient apiClient = this.getApiClient();
+    apiClient.setBasePath(basePath);
+  }
+
+  public DocumentReaderApi(String basePath, boolean debugging) {
+    super();
+
+    ApiClient apiCLient = this.getApiClient();
+    apiCLient.setBasePath(basePath);
+    apiCLient.setDebugging(debugging);
+  }
+
+  public DocumentReaderApi(String basePath, boolean debugging, boolean verifyingSsl) {
+    super();
+
+    ApiClient apiCLient = this.getApiClient();
+    apiCLient.setBasePath(basePath);
+    apiCLient.setDebugging(debugging);
+    apiCLient.setVerifyingSsl(verifyingSsl);
+  }
+
+  public DocumentReaderApi(ApiClient apiClient) {
+    super(apiClient);
+  }
 
   /**
    * Reads list of documents and return extracted data
