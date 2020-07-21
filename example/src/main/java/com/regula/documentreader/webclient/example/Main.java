@@ -19,13 +19,15 @@ public class Main {
     public static final String API_BASE_PATH = "API_BASE_PATH";
     public static final String TEST_LICENSE = "TEST_LICENSE";
 
+    
     public static void main(String[] args) throws IOException, ApiException {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {
             apiBaseUrl = "http://localhost:8080";
         }
-        var license = System.getenv(TEST_LICENSE);
+        var license = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purpouses
+        
 
         byte[] imageBytes = readFile("australia_passport.jpg");
         var image = new ProcessRequestImage(imageBytes, Light.WHITE);
@@ -37,7 +39,7 @@ public class Main {
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
         var api = new DocumentReaderApi(apiBaseUrl);
-        api.setLicense(license);
+        api.setLicense(license); // used here only for smoke test purpouses, most of clinets will attach transaction on server side
 
         RecognitionResponse response = api.process(request);
 
