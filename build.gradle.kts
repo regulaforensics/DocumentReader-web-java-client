@@ -5,8 +5,7 @@ plugins {
 }
 
 allprojects {
-    group = "com.regulaforensics.docreader"
-    version = "5.1.0"
+    group = "com.regula.documentreader"
 
     repositories {
         jcenter()
