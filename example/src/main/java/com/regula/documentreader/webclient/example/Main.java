@@ -36,7 +36,7 @@ public class Main {
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
-        DocumentReaderApi api = new DocumentReaderApi(apiBaseUrl);
+        var api = new DocumentReaderApi(apiBaseUrl);
         api.setLicense(license);
 
         RecognitionResponse response = api.process(request);
