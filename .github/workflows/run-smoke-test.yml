@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  run_test:
+  run_smoke_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
