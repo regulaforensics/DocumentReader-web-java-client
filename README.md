@@ -12,7 +12,20 @@ You are invited to contribute [new features, fixes, or updates](https://github.c
 
 
 ## Install package
-tbd maven deploy
+Add __Regula Forensics, Inc.__ maven repository to repositories section in your `build.gradle`,
+and declare client as regular dependency.
+
+```gradle
+repositories {
+    maven {
+        url = uri("https://maven.regulaforensics.com/RegulaDocumentReaderWebClient")
+    }
+}
+
+dependencies {
+    implementation("com.regula.documentreader:webclient:5.2.0")
+}
+```
 
 ## Example
 Performing request:
