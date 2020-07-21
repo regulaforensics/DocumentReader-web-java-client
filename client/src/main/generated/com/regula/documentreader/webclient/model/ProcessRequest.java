@@ -29,6 +29,11 @@ public class ProcessRequest {
   @SerializedName(SERIALIZED_NAME_LIST)
   private List<ProcessRequestImage> list = new ArrayList<ProcessRequestImage>();
 
+  public static final String SERIALIZED_NAME_SYSTEM_INFO = "systemInfo";
+
+  @SerializedName(SERIALIZED_NAME_SYSTEM_INFO)
+  private ProcessSystemInfo systemInfo;
+
   public ProcessRequest withProcessParam(ProcessParams processParam) {
     this.processParam = processParam;
     return this;
@@ -70,6 +75,25 @@ public class ProcessRequest {
     this.list = list;
   }
 
+  public ProcessRequest withSystemInfo(ProcessSystemInfo systemInfo) {
+    this.systemInfo = systemInfo;
+    return this;
+  }
+
+  /**
+   * Get systemInfo
+   *
+   * @return systemInfo
+   */
+  @javax.annotation.Nullable
+  public ProcessSystemInfo getSystemInfo() {
+    return systemInfo;
+  }
+
+  public void setSystemInfo(ProcessSystemInfo systemInfo) {
+    this.systemInfo = systemInfo;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -80,12 +104,13 @@ public class ProcessRequest {
     }
     ProcessRequest processRequest = (ProcessRequest) o;
     return Objects.equals(this.processParam, processRequest.processParam)
-        && Objects.equals(this.list, processRequest.list);
+        && Objects.equals(this.list, processRequest.list)
+        && Objects.equals(this.systemInfo, processRequest.systemInfo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processParam, list);
+    return Objects.hash(processParam, list, systemInfo);
   }
 
   @Override
@@ -94,6 +119,7 @@ public class ProcessRequest {
     sb.append("class ProcessRequest {\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -3,13 +3,8 @@ package com.regula.documentreader.webclient.example;
 
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
-import com.regula.documentreader.webclient.model.CheckResult;
-import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
-import com.regula.documentreader.webclient.model.Light;
-import com.regula.documentreader.webclient.model.Source;
+import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.RecognitionParams;
-import com.regula.documentreader.webclient.model.Result;
-import com.regula.documentreader.webclient.model.Scenario;
 import com.regula.documentreader.webclient.model.ext.RecognitionRequest;
 import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
@@ -21,7 +16,18 @@ import java.util.List;
 import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_NUMBER;
 
 public class Main {
+    public static final String API_BASE_PATH = "API_BASE_PATH";
+    public static final String TEST_LICENSE = "TEST_LICENSE";
+
+    
     public static void main(String[] args) throws IOException, ApiException {
+
+        var apiBaseUrl = System.getenv(API_BASE_PATH);
+        if (apiBaseUrl == null) {
+            apiBaseUrl = "http://localhost:8080";
+        }
+        var license = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purpouses
+        
 
         byte[] imageBytes = readFile("australia_passport.jpg");
         var image = new ProcessRequestImage(imageBytes, Light.WHITE);
@@ -32,7 +38,9 @@ public class Main {
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
-        var api = new DocumentReaderApi();
+        var api = new DocumentReaderApi(apiBaseUrl);
+        api.setLicense(license); // used here only for smoke test purpouses, most of clinets will attach transaction on server side
+
         RecognitionResponse response = api.process(request);
 
         var status = response.status();
