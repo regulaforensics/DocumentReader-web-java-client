@@ -1,11 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
-import com.regula.documentreader.webclient.model.ProcessResponse;
-import com.regula.documentreader.webclient.model.Result;
-import com.regula.documentreader.webclient.model.ResultItem;
-import com.regula.documentreader.webclient.model.Status;
-import com.regula.documentreader.webclient.model.StatusResult;
-import com.regula.documentreader.webclient.model.TextResult;
+import com.regula.documentreader.webclient.model.*;
 
 public class RecognitionResponse {
   private final ProcessResponse originalResponse;
@@ -30,6 +25,14 @@ public class RecognitionResponse {
     StatusResult result = resultByType(Result.STATUS);
     if (result != null) {
       return result.getStatus();
+    }
+    return null;
+  }
+
+  public Images images() {
+    ImagesResult result = resultByType(Result.IMAGES);
+    if (result != null) {
+      return result.getImages();
     }
     return null;
   }

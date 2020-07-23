@@ -29,7 +29,7 @@ public class ImageData {
   }
 
   /**
-   * base64 encoded image
+   * Image base64 into byte format.
    *
    * @return image
    */

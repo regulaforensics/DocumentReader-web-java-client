@@ -62,4 +62,7 @@ public class Result {
 
   /** Returns description of determined document type, if any */
   public static final int DOCUMENT_TYPE = 9;
+
+  /** Extract images from document rfid and barcode */
+  public static final int IMAGES = 37;
 }

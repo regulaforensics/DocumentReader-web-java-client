@@ -15,30 +15,29 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** ProcessSystemInfo */
-public class ProcessSystemInfo {
-  public static final String SERIALIZED_NAME_LICENSE = "license";
+/** ImagesResult */
+public class ImagesResult extends ResultItem {
+  public static final String SERIALIZED_NAME_IMAGES = "Images";
 
-  @SerializedName(SERIALIZED_NAME_LICENSE)
-  private String license;
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private Images images;
 
-  public ProcessSystemInfo withLicense(String license) {
-    this.license = license;
+  public ImagesResult withImages(Images images) {
+    this.images = images;
     return this;
   }
 
   /**
-   * License in base64 format
+   * Get images
    *
-   * @return license
+   * @return images
    */
-  @javax.annotation.Nullable
-  public String getLicense() {
-    return license;
+  public Images getImages() {
+    return images;
   }
 
-  public void setLicense(String license) {
-    this.license = license;
+  public void setImages(Images images) {
+    this.images = images;
   }
 
   @Override
@@ -49,20 +48,21 @@ public class ProcessSystemInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProcessSystemInfo processSystemInfo = (ProcessSystemInfo) o;
-    return Objects.equals(this.license, processSystemInfo.license);
+    ImagesResult imagesResult = (ImagesResult) o;
+    return Objects.equals(this.images, imagesResult.images) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(license);
+    return Objects.hash(images, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProcessSystemInfo {\n");
-    sb.append("    license: ").append(toIndentedString(license)).append("\n");
+    sb.append("class ImagesResult {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
   }
