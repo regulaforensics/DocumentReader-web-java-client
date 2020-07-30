@@ -11,30 +11,34 @@ import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
 import java.io.IOException;
 
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
+import static com.regula.documentreader.webclient.model.GraphicFieldType.PORTRAIT;
 import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_NUMBER;
 
 public class Main {
     public static final String API_BASE_PATH = "API_BASE_PATH";
     public static final String TEST_LICENSE = "TEST_LICENSE";
 
-    
-    public static void main(String[] args) throws IOException, ApiException {
+
+    public static void main(String[] args) throws IOException, ApiException, URISyntaxException {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {
             apiBaseUrl = "http://localhost:8080";
         }
         var license = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purpouses
-        
+
 
         byte[] imageBytes = readFile("australia_passport.jpg");
         var image = new ProcessRequestImage(imageBytes, Light.WHITE);
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
-                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.LEXICAL_ANALYSIS, 37);
+                .withResultTypeOutput(Result.RAW_IMAGE, Result.STATUS, Result.TEXT, Result.IMAGES);
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
@@ -64,6 +68,12 @@ public class Main {
         System.out.format("      MRZ-Visual values comparison: %s%n", docNumberMrzVisualMatching);
         System.out.format("-----------------------------------------------------------------");
 
+        var normalizedInputImage = response.normalizedInputImage();
+        var portraitField = response.images().getField(PORTRAIT);
+        var portraitFromVisual = portraitField.getValue(Source.VISUAL);
+        saveFile("portraitFromVisual.jpg", portraitFromVisual);
+        saveFile("normalizedInputImage.jpg", normalizedInputImage);
+
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
     }
@@ -71,5 +81,9 @@ public class Main {
     private static byte[] readFile(String filePath) throws IOException {
         var classLoader = Main.class.getClassLoader();
         return classLoader.getResourceAsStream(filePath).readAllBytes();
+    }
+
+    private static void saveFile(String filePath, byte[] data) throws IOException, URISyntaxException {
+        Files.write(Path.of(filePath), data);
     }
 }

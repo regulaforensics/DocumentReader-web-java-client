@@ -27,7 +27,8 @@ public class Images {
   public static final String SERIALIZED_NAME_FIELD_LIST = "fieldList";
 
   @SerializedName(SERIALIZED_NAME_FIELD_LIST)
-  private List<ImagesField> fieldList = new ArrayList<ImagesField>();
+  private List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList =
+      new ArrayList<com.regula.documentreader.webclient.model.ext.ImagesField>();
 
   public Images withAvailableSourceList(List<ImagesAvailableSource> availableSourceList) {
     this.availableSourceList = availableSourceList;
@@ -52,12 +53,14 @@ public class Images {
     this.availableSourceList = availableSourceList;
   }
 
-  public Images withFieldList(List<ImagesField> fieldList) {
+  public Images withFieldList(
+      List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList) {
     this.fieldList = fieldList;
     return this;
   }
 
-  public Images addFieldListItem(ImagesField fieldListItem) {
+  public Images addFieldListItem(
+      com.regula.documentreader.webclient.model.ext.ImagesField fieldListItem) {
     this.fieldList.add(fieldListItem);
     return this;
   }
@@ -67,11 +70,12 @@ public class Images {
    *
    * @return fieldList
    */
-  public List<ImagesField> getFieldList() {
+  public List<com.regula.documentreader.webclient.model.ext.ImagesField> getFieldList() {
     return fieldList;
   }
 
-  public void setFieldList(List<ImagesField> fieldList) {
+  public void setFieldList(
+      List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList) {
     this.fieldList = fieldList;
   }
 

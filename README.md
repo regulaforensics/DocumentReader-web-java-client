@@ -101,13 +101,15 @@ openapitools/openapi-generator-cli generate \
 openapitools/openapi-generator-cli generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,TextField=com.regula.documentreader.webclient.model.ext.TextField \
+--import-mappings $ENUM_MAPPINGS,TextField=com.regula.documentreader.webclient.model.ext.TextField,\
+ImagesField=com.regula.documentreader.webclient.model.ext.ImagesField \
 \
 && docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
 openapitools/openapi-generator-cli generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,Text=com.regula.documentreader.webclient.model.ext.Text \
+--import-mappings $ENUM_MAPPINGS,Text=com.regula.documentreader.webclient.model.ext.Text,\
+Images=com.regula.documentreader.webclient.model.ext.Images \
 \
 && ./gradlew -p ./ goJF
 ```

@@ -20,9 +20,9 @@ public class ImagesResult extends ResultItem {
   public static final String SERIALIZED_NAME_IMAGES = "Images";
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
-  private Images images;
+  private com.regula.documentreader.webclient.model.ext.Images images;
 
-  public ImagesResult withImages(Images images) {
+  public ImagesResult withImages(com.regula.documentreader.webclient.model.ext.Images images) {
     this.images = images;
     return this;
   }
@@ -32,11 +32,11 @@ public class ImagesResult extends ResultItem {
    *
    * @return images
    */
-  public Images getImages() {
+  public com.regula.documentreader.webclient.model.ext.Images getImages() {
     return images;
   }
 
-  public void setImages(Images images) {
+  public void setImages(com.regula.documentreader.webclient.model.ext.Images images) {
     this.images = images;
   }
 

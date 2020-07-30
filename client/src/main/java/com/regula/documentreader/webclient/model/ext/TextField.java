@@ -8,10 +8,6 @@ import javax.annotation.Nullable;
 
 public class TextField extends com.regula.documentreader.webclient.model.TextField {
 
-  public String getValue() {
-    return "todo";
-  }
-
   @Nullable
   public String getValue(String source, boolean original) {
     for (TextFieldValue value : getValueList()) {

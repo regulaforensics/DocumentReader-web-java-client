@@ -28,7 +28,6 @@ src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldsList.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicsResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ImageData.java
-src/main/generated/com/regula/documentreader/webclient/model/Images.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesAvailableSource.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesField.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesFieldValue.java
