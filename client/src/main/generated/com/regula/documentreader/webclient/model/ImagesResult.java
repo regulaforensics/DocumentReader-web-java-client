@@ -13,32 +13,31 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.Arrays;
 import java.util.Objects;
 
-/** ImageData */
-public class ImageData {
-  public static final String SERIALIZED_NAME_IMAGE = "image";
+/** ImagesResult */
+public class ImagesResult extends ResultItem {
+  public static final String SERIALIZED_NAME_IMAGES = "Images";
 
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  private byte[] image;
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private Images images;
 
-  public ImageData withImage(byte[] image) {
-    this.image = image;
+  public ImagesResult withImages(Images images) {
+    this.images = images;
     return this;
   }
 
   /**
-   * Base64 encoded image
+   * Get images
    *
-   * @return image
+   * @return images
    */
-  public byte[] getImage() {
-    return image;
+  public Images getImages() {
+    return images;
   }
 
-  public void setImage(byte[] image) {
-    this.image = image;
+  public void setImages(Images images) {
+    this.images = images;
   }
 
   @Override
@@ -49,20 +48,21 @@ public class ImageData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageData imageData = (ImageData) o;
-    return Arrays.equals(this.image, imageData.image);
+    ImagesResult imagesResult = (ImagesResult) o;
+    return Objects.equals(this.images, imagesResult.images) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(image));
+    return Objects.hash(images, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageData {\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("class ImagesResult {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
   }

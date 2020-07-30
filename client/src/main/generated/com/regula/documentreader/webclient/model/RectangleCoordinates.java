@@ -15,7 +15,7 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** Coordinates of the rectangle region in the normalized image of the document. */
+/** Coordinates of the rectangle region in the normalized image of the document */
 public class RectangleCoordinates {
   public static final String SERIALIZED_NAME_LEFT = "left";
 

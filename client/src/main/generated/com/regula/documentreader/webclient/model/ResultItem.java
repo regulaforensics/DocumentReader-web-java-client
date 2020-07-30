@@ -15,7 +15,7 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** Common fields for all results objects */
+/** Common fields for all result objects */
 public class ResultItem {
   public static final String SERIALIZED_NAME_BUF_LENGTH = "buf_length";
 
@@ -124,7 +124,7 @@ public class ResultItem {
   }
 
   /**
-   * Get resultType
+   * Same as Result type, but used for safe parsing of not-described values. See Result type.
    *
    * @return resultType
    */

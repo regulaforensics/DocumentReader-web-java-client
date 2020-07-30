@@ -43,7 +43,7 @@ public class Text {
   public static final String SERIALIZED_NAME_AVAILABLE_SOURCE_LIST = "availableSourceList";
 
   @SerializedName(SERIALIZED_NAME_AVAILABLE_SOURCE_LIST)
-  private List<AvailableSource> availableSourceList = new ArrayList<AvailableSource>();
+  private List<TextAvailableSource> availableSourceList = new ArrayList<TextAvailableSource>();
 
   public Text withStatus(int status) {
     this.status = status;
@@ -125,12 +125,12 @@ public class Text {
     this.fieldList = fieldList;
   }
 
-  public Text withAvailableSourceList(List<AvailableSource> availableSourceList) {
+  public Text withAvailableSourceList(List<TextAvailableSource> availableSourceList) {
     this.availableSourceList = availableSourceList;
     return this;
   }
 
-  public Text addAvailableSourceListItem(AvailableSource availableSourceListItem) {
+  public Text addAvailableSourceListItem(TextAvailableSource availableSourceListItem) {
     this.availableSourceList.add(availableSourceListItem);
     return this;
   }
@@ -140,11 +140,11 @@ public class Text {
    *
    * @return availableSourceList
    */
-  public List<AvailableSource> getAvailableSourceList() {
+  public List<TextAvailableSource> getAvailableSourceList() {
     return availableSourceList;
   }
 
-  public void setAvailableSourceList(List<AvailableSource> availableSourceList) {
+  public void setAvailableSourceList(List<TextAvailableSource> availableSourceList) {
     this.availableSourceList = availableSourceList;
   }
 

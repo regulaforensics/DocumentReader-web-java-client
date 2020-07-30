@@ -16,7 +16,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
 /**
- * Graphics fields extracted from one the document source. Returns separate results for each
+ * Graphic fields extracted from one of the document sources. Returns separate results for each
  * provided page.
  */
 public class GraphicsResult extends ResultItem {

@@ -13,12 +13,11 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Objects;
 
-/** TextFieldValue */
-public class TextFieldValue {
+/** ImagesFieldValue */
+public class ImagesFieldValue {
   public static final String SERIALIZED_NAME_SOURCE = "source";
 
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -27,27 +26,27 @@ public class TextFieldValue {
   public static final String SERIALIZED_NAME_VALUE = "value";
 
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private String value;
+  private byte[] value;
 
   public static final String SERIALIZED_NAME_ORIGINAL_VALUE = "originalValue";
 
   @SerializedName(SERIALIZED_NAME_ORIGINAL_VALUE)
-  private String originalValue;
-
-  public static final String SERIALIZED_NAME_ORIGINAL_SYMBOLS = "originalSymbols";
-
-  @SerializedName(SERIALIZED_NAME_ORIGINAL_SYMBOLS)
-  private List<OriginalSymbol> originalSymbols = null;
+  private byte[] originalValue;
 
   public static final String SERIALIZED_NAME_PAGE_INDEX = "pageIndex";
 
   @SerializedName(SERIALIZED_NAME_PAGE_INDEX)
   private int pageIndex;
 
-  public static final String SERIALIZED_NAME_PROBABILITY = "probability";
+  public static final String SERIALIZED_NAME_LIGHT_INDEX = "lightIndex";
 
-  @SerializedName(SERIALIZED_NAME_PROBABILITY)
-  private int probability;
+  @SerializedName(SERIALIZED_NAME_LIGHT_INDEX)
+  private int lightIndex;
+
+  public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
+
+  @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
+  private int containerType;
 
   public static final String SERIALIZED_NAME_FIELD_RECT = "fieldRect";
 
@@ -59,7 +58,7 @@ public class TextFieldValue {
   @SerializedName(SERIALIZED_NAME_RFID_ORIGIN)
   private RfidOrigin rfidOrigin;
 
-  public TextFieldValue withSource(String source) {
+  public ImagesFieldValue withSource(String source) {
     this.source = source;
     return this;
   }
@@ -77,71 +76,44 @@ public class TextFieldValue {
     this.source = source;
   }
 
-  public TextFieldValue withValue(String value) {
+  public ImagesFieldValue withValue(byte[] value) {
     this.value = value;
     return this;
   }
 
   /**
-   * Parsed/processed value. Date format converted for output, delimiters removed
+   * Base64 encoded image
    *
    * @return value
    */
-  public String getValue() {
+  public byte[] getValue() {
     return value;
   }
 
-  public void setValue(String value) {
+  public void setValue(byte[] value) {
     this.value = value;
   }
 
-  public TextFieldValue withOriginalValue(String originalValue) {
+  public ImagesFieldValue withOriginalValue(byte[] originalValue) {
     this.originalValue = originalValue;
     return this;
   }
 
   /**
-   * Original value as seen in the document
+   * Base64 encoded image
    *
    * @return originalValue
    */
   @javax.annotation.Nullable
-  public String getOriginalValue() {
+  public byte[] getOriginalValue() {
     return originalValue;
   }
 
-  public void setOriginalValue(String originalValue) {
+  public void setOriginalValue(byte[] originalValue) {
     this.originalValue = originalValue;
   }
 
-  public TextFieldValue withOriginalSymbols(List<OriginalSymbol> originalSymbols) {
-    this.originalSymbols = originalSymbols;
-    return this;
-  }
-
-  public TextFieldValue addOriginalSymbolsItem(OriginalSymbol originalSymbolsItem) {
-    if (this.originalSymbols == null) {
-      this.originalSymbols = new ArrayList<OriginalSymbol>();
-    }
-    this.originalSymbols.add(originalSymbolsItem);
-    return this;
-  }
-
-  /**
-   * Get originalSymbols
-   *
-   * @return originalSymbols
-   */
-  @javax.annotation.Nullable
-  public List<OriginalSymbol> getOriginalSymbols() {
-    return originalSymbols;
-  }
-
-  public void setOriginalSymbols(List<OriginalSymbol> originalSymbols) {
-    this.originalSymbols = originalSymbols;
-  }
-
-  public TextFieldValue withPageIndex(int pageIndex) {
+  public ImagesFieldValue withPageIndex(int pageIndex) {
     this.pageIndex = pageIndex;
     return this;
   }
@@ -159,27 +131,43 @@ public class TextFieldValue {
     this.pageIndex = pageIndex;
   }
 
-  public TextFieldValue withProbability(int probability) {
-    this.probability = probability;
+  public ImagesFieldValue withLightIndex(int lightIndex) {
+    this.lightIndex = lightIndex;
     return this;
   }
 
   /**
-   * Min recognition probability. Combined minimum probability from single characters probabilities
-   * minimum: 0 maximum: 100
+   * Get lightIndex
    *
-   * @return probability
+   * @return lightIndex
    */
-  @javax.annotation.Nullable
-  public int getProbability() {
-    return probability;
+  public int getLightIndex() {
+    return lightIndex;
   }
 
-  public void setProbability(int probability) {
-    this.probability = probability;
+  public void setLightIndex(int lightIndex) {
+    this.lightIndex = lightIndex;
   }
 
-  public TextFieldValue withFieldRect(RectangleCoordinates fieldRect) {
+  public ImagesFieldValue withContainerType(int containerType) {
+    this.containerType = containerType;
+    return this;
+  }
+
+  /**
+   * Same as Result type, but used for safe parsing of not-described values. See Result type.
+   *
+   * @return containerType
+   */
+  public int getContainerType() {
+    return containerType;
+  }
+
+  public void setContainerType(int containerType) {
+    this.containerType = containerType;
+  }
+
+  public ImagesFieldValue withFieldRect(RectangleCoordinates fieldRect) {
     this.fieldRect = fieldRect;
     return this;
   }
@@ -198,7 +186,7 @@ public class TextFieldValue {
     this.fieldRect = fieldRect;
   }
 
-  public TextFieldValue withRfidOrigin(RfidOrigin rfidOrigin) {
+  public ImagesFieldValue withRfidOrigin(RfidOrigin rfidOrigin) {
     this.rfidOrigin = rfidOrigin;
     return this;
   }
@@ -225,26 +213,26 @@ public class TextFieldValue {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TextFieldValue textFieldValue = (TextFieldValue) o;
-    return Objects.equals(this.source, textFieldValue.source)
-        && Objects.equals(this.value, textFieldValue.value)
-        && Objects.equals(this.originalValue, textFieldValue.originalValue)
-        && Objects.equals(this.originalSymbols, textFieldValue.originalSymbols)
-        && Objects.equals(this.pageIndex, textFieldValue.pageIndex)
-        && Objects.equals(this.probability, textFieldValue.probability)
-        && Objects.equals(this.fieldRect, textFieldValue.fieldRect)
-        && Objects.equals(this.rfidOrigin, textFieldValue.rfidOrigin);
+    ImagesFieldValue imagesFieldValue = (ImagesFieldValue) o;
+    return Objects.equals(this.source, imagesFieldValue.source)
+        && Arrays.equals(this.value, imagesFieldValue.value)
+        && Arrays.equals(this.originalValue, imagesFieldValue.originalValue)
+        && Objects.equals(this.pageIndex, imagesFieldValue.pageIndex)
+        && Objects.equals(this.lightIndex, imagesFieldValue.lightIndex)
+        && Objects.equals(this.containerType, imagesFieldValue.containerType)
+        && Objects.equals(this.fieldRect, imagesFieldValue.fieldRect)
+        && Objects.equals(this.rfidOrigin, imagesFieldValue.rfidOrigin);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
         source,
-        value,
-        originalValue,
-        originalSymbols,
+        Arrays.hashCode(value),
+        Arrays.hashCode(originalValue),
         pageIndex,
-        probability,
+        lightIndex,
+        containerType,
         fieldRect,
         rfidOrigin);
   }
@@ -252,13 +240,13 @@ public class TextFieldValue {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TextFieldValue {\n");
+    sb.append("class ImagesFieldValue {\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    originalValue: ").append(toIndentedString(originalValue)).append("\n");
-    sb.append("    originalSymbols: ").append(toIndentedString(originalSymbols)).append("\n");
     sb.append("    pageIndex: ").append(toIndentedString(pageIndex)).append("\n");
-    sb.append("    probability: ").append(toIndentedString(probability)).append("\n");
+    sb.append("    lightIndex: ").append(toIndentedString(lightIndex)).append("\n");
+    sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
     sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
     sb.append("    rfidOrigin: ").append(toIndentedString(rfidOrigin)).append("\n");
     sb.append("}");

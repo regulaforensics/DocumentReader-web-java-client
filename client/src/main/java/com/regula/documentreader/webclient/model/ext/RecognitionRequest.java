@@ -3,7 +3,6 @@ package com.regula.documentreader.webclient.model.ext;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessSystemInfo;
-
 import java.util.Collections;
 import java.util.List;
 

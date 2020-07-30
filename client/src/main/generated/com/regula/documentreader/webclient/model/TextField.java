@@ -44,6 +44,11 @@ public class TextField {
   @SerializedName(SERIALIZED_NAME_COMPARISON_STATUS)
   private int comparisonStatus;
 
+  public static final String SERIALIZED_NAME_VALUE = "value";
+
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private String value;
+
   public static final String SERIALIZED_NAME_VALUE_LIST = "valueList";
 
   @SerializedName(SERIALIZED_NAME_VALUE_LIST)
@@ -151,6 +156,24 @@ public class TextField {
     this.comparisonStatus = comparisonStatus;
   }
 
+  public TextField withValue(String value) {
+    this.value = value;
+    return this;
+  }
+
+  /**
+   * The most confidence value, selected from valueList
+   *
+   * @return value
+   */
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(String value) {
+    this.value = value;
+  }
+
   public TextField withValueList(List<TextFieldValue> valueList) {
     this.valueList = valueList;
     return this;
@@ -236,6 +259,7 @@ public class TextField {
         && Objects.equals(this.status, textField.status)
         && Objects.equals(this.validityStatus, textField.validityStatus)
         && Objects.equals(this.comparisonStatus, textField.comparisonStatus)
+        && Objects.equals(this.value, textField.value)
         && Objects.equals(this.valueList, textField.valueList)
         && Objects.equals(this.validityList, textField.validityList)
         && Objects.equals(this.comparisonList, textField.comparisonList);
@@ -249,6 +273,7 @@ public class TextField {
         status,
         validityStatus,
         comparisonStatus,
+        value,
         valueList,
         validityList,
         comparisonList);
@@ -263,6 +288,7 @@ public class TextField {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    validityStatus: ").append(toIndentedString(validityStatus)).append("\n");
     sb.append("    comparisonStatus: ").append(toIndentedString(comparisonStatus)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    valueList: ").append(toIndentedString(valueList)).append("\n");
     sb.append("    validityList: ").append(toIndentedString(validityList)).append("\n");
     sb.append("    comparisonList: ").append(toIndentedString(comparisonList)).append("\n");

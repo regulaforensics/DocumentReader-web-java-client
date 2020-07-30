@@ -113,7 +113,7 @@ public class GraphicField {
   }
 
   /**
-   * Information data group. Only for Result.RFID_TEXT results.
+   * Source data group file. Only for Result.RFID_GRAPHICS result.
    *
    * @return rfIDOriginDG
    */
@@ -133,7 +133,7 @@ public class GraphicField {
 
   /**
    * Index of the source record of the image with biometric information in the information data
-   * group. Only for Result.RFID_TEXT results.
+   * group. Only for Result.RFID_GRAPHICS result.
    *
    * @return rfIDOriginDGTag
    */
@@ -152,7 +152,7 @@ public class GraphicField {
   }
 
   /**
-   * Index of the text field record in information data group. Only for Result.RFID_TEXT results.
+   * Index of the template in the record with biometric data. Only for Result.RFID_GRAPHICS result.
    *
    * @return rfIDOriginTagEntry
    */
@@ -171,7 +171,7 @@ public class GraphicField {
   }
 
   /**
-   * Biometric sample variant index. Only for Result.RFID_TEXT results.
+   * Index of the variant of the biometric data template. Only for Result.RFID_GRAPHICS result.
    *
    * @return rfIDOriginEntryView
    */

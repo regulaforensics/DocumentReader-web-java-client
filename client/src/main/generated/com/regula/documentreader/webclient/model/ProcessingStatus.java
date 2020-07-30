@@ -14,9 +14,12 @@ package com.regula.documentreader.webclient.model;
 
 public class ProcessingStatus {
 
-  /** Processing not finished yet */
+  /** Processing was not finished */
   public static final int NOT_FINISHED = 0;
 
-  /** Processing already finished */
+  /** Processing finished */
   public static final int FINISHED = 1;
+
+  /** Processing finished by timeout */
+  public static final int TIMEOUT = 2;
 }

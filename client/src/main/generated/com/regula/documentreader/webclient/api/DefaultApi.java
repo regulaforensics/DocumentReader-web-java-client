@@ -56,7 +56,9 @@ public class DefaultApi {
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
   public okhttp3.Call apiProcessCall(ProcessRequest processRequest, final ApiCallback _callback)
@@ -120,7 +122,9 @@ public class DefaultApi {
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
   public ProcessResponse apiProcess(ProcessRequest processRequest) throws ApiException {
@@ -138,7 +142,9 @@ public class DefaultApi {
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
   public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(ProcessRequest processRequest)
@@ -158,7 +164,9 @@ public class DefaultApi {
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
   public okhttp3.Call apiProcessAsync(

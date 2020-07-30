@@ -15,51 +15,54 @@ package com.regula.documentreader.webclient.model;
 public class Result {
 
   /**
-   * Returns cropped and rotated image of document. Most of coordinates in other types defined on
+   * Contains cropped and rotated image of document. Most of coordinates in other types defined on
    * that image
    */
   public static final int RAW_IMAGE = 1;
 
-  /** Returns check statuses with details, grouped by source */
+  /** Contains check statuses with details, grouped by source */
   public static final int STATUS = 33;
 
   /**
-   * Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and
-   * cross-source compare checks
+   * Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity
+   * and cross-source compare checks
    */
   public static final int TEXT = 36;
 
-  /** Reading MRZ text fields */
+  /** Contains images from all document sources (mrz, rfid, visual, barcode) */
+  public static final int IMAGES = 37;
+
+  /** Contains MRZ OCR results */
   public static final int MRZ_TEXT = 3;
 
-  /** Reading text fields from visual document area */
+  /** Contains Visual zone OCR results */
   public static final int VISUAL_TEXT = 17;
 
-  /** Reading barcode text fields */
+  /** Contains barcode parsing result with text fields */
   public static final int BARCODE_TEXT = 18;
 
-  /** Reading RFID text fields */
+  /** Contains RFID parsing result with text fields */
   public static final int RFID_TEXT = 102;
 
   /**
-   * Deprecated, use TEXT type. Lexical data analysis allows you to compare the results of reading
-   * the text data of the MRZ, the document filling area, barcodes and data from the memory of the
-   * RFID chip for an additional assessment of the authenticity of the document
+   * Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone
+   * OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of
+   * the document (this is an old format, better use TEXT type)
    */
   public static final int LEXICAL_ANALYSIS = 15;
 
-  /** Extract graphics fields from visual document area */
+  /** Contains cropped graphic fields from Visual zone */
   public static final int VISUAL_GRAPHICS = 6;
 
-  /** Extract graphics fields from document barcode */
+  /** Contains barcode parsing result with graphic fields */
   public static final int BARCODE_GRAPHICS = 19;
 
-  /** Extract graphics fields from document rfid */
+  /** Contains RFID parsing result with graphic fields */
   public static final int RFID_GRAPHICS = 103;
 
-  /** Lists document type candidates with their probabilities and descriptions */
+  /** Contains list of document type candidates with their probabilities and descriptions */
   public static final int DOCUMENT_TYPE_CANDIDATES = 8;
 
-  /** Returns description of determined document type, if any */
+  /** Contains description of determined document type, if any */
   public static final int DOCUMENT_TYPE = 9;
 }

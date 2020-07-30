@@ -22,13 +22,18 @@ public class ProcessSystemInfo {
   @SerializedName(SERIALIZED_NAME_LICENSE)
   private String license;
 
+  public static final String SERIALIZED_NAME_RECAPTCHA_TOKEN = "recaptcha_token";
+
+  @SerializedName(SERIALIZED_NAME_RECAPTCHA_TOKEN)
+  private String recaptchaToken;
+
   public ProcessSystemInfo withLicense(String license) {
     this.license = license;
     return this;
   }
 
   /**
-   * Document reader license.
+   * Base64 encoded license file
    *
    * @return license
    */
@@ -41,6 +46,25 @@ public class ProcessSystemInfo {
     this.license = license;
   }
 
+  public ProcessSystemInfo withRecaptchaToken(String recaptchaToken) {
+    this.recaptchaToken = recaptchaToken;
+    return this;
+  }
+
+  /**
+   * For internal use. Demo-sites recaptcha token.
+   *
+   * @return recaptchaToken
+   */
+  @javax.annotation.Nullable
+  public String getRecaptchaToken() {
+    return recaptchaToken;
+  }
+
+  public void setRecaptchaToken(String recaptchaToken) {
+    this.recaptchaToken = recaptchaToken;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +74,13 @@ public class ProcessSystemInfo {
       return false;
     }
     ProcessSystemInfo processSystemInfo = (ProcessSystemInfo) o;
-    return Objects.equals(this.license, processSystemInfo.license);
+    return Objects.equals(this.license, processSystemInfo.license)
+        && Objects.equals(this.recaptchaToken, processSystemInfo.recaptchaToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(license);
+    return Objects.hash(license, recaptchaToken);
   }
 
   @Override
@@ -63,6 +88,7 @@ public class ProcessSystemInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessSystemInfo {\n");
     sb.append("    license: ").append(toIndentedString(license)).append("\n");
+    sb.append("    recaptchaToken: ").append(toIndentedString(recaptchaToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

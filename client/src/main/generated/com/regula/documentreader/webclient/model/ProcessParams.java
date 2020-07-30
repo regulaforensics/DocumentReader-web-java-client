@@ -14,7 +14,9 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /** ProcessParams */
@@ -28,6 +30,36 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE_OUTPUT)
   private List<Integer> resultTypeOutput = null;
+
+  public static final String SERIALIZED_NAME_DOUBLE_PAGE_SPREAD = "doublePageSpread";
+
+  @SerializedName(SERIALIZED_NAME_DOUBLE_PAGE_SPREAD)
+  private Boolean doublePageSpread;
+
+  public static final String SERIALIZED_NAME_FIELD_TYPES_FILTER = "fieldTypesFilter";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_TYPES_FILTER)
+  private List<Integer> fieldTypesFilter = null;
+
+  public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
+
+  @SerializedName(SERIALIZED_NAME_DATE_FORMAT)
+  private String dateFormat;
+
+  public static final String SERIALIZED_NAME_IMAGE_DPI_OUT_MAX = "imageDpiOutMax";
+
+  @SerializedName(SERIALIZED_NAME_IMAGE_DPI_OUT_MAX)
+  private int imageDpiOutMax;
+
+  public static final String SERIALIZED_NAME_ALREADY_CROPPED = "alreadyCropped";
+
+  @SerializedName(SERIALIZED_NAME_ALREADY_CROPPED)
+  private Boolean alreadyCropped;
+
+  public static final String SERIALIZED_NAME_CUSTOM_PARAMS = "customParams";
+
+  @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
+  private Map<String, Object> customParams = null;
 
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
@@ -61,7 +93,7 @@ public class ProcessParams {
   }
 
   /**
-   * Types of results to return in response. See &#39;Result&#39; enum for available options.
+   * Types of results to return in response. See &#39;Result&#39; enum for available options
    *
    * @return resultTypeOutput
    */
@@ -74,6 +106,148 @@ public class ProcessParams {
     this.resultTypeOutput = resultTypeOutput;
   }
 
+  public ProcessParams withDoublePageSpread(Boolean doublePageSpread) {
+    this.doublePageSpread = doublePageSpread;
+    return this;
+  }
+
+  /**
+   * This option can be set to true if the image you provide contains double page spread of the
+   * passport and you want to process both pages in one go. It makes sense to use it for documents
+   * that have meaningful information on both pages, like Russian domestic passport, or some others.
+   * By default is set to false.
+   *
+   * @return doublePageSpread
+   */
+  @javax.annotation.Nullable
+  public Boolean getDoublePageSpread() {
+    return doublePageSpread;
+  }
+
+  public void setDoublePageSpread(Boolean doublePageSpread) {
+    this.doublePageSpread = doublePageSpread;
+  }
+
+  public ProcessParams withFieldTypesFilter(List<Integer> fieldTypesFilter) {
+    this.fieldTypesFilter = fieldTypesFilter;
+    return this;
+  }
+
+  public ProcessParams addFieldTypesFilterItem(int fieldTypesFilterItem) {
+    if (this.fieldTypesFilter == null) {
+      this.fieldTypesFilter = new ArrayList<Integer>();
+    }
+    this.fieldTypesFilter.add(fieldTypesFilterItem);
+    return this;
+  }
+
+  /**
+   * List of text field types to extract. If empty, all text fields from template will be extracted.
+   * Narrowing the list can shorten processing time. By default is empty.
+   *
+   * @return fieldTypesFilter
+   */
+  @javax.annotation.Nullable
+  public List<Integer> getFieldTypesFilter() {
+    return fieldTypesFilter;
+  }
+
+  public void setFieldTypesFilter(List<Integer> fieldTypesFilter) {
+    this.fieldTypesFilter = fieldTypesFilter;
+  }
+
+  public ProcessParams withDateFormat(String dateFormat) {
+    this.dateFormat = dateFormat;
+    return this;
+  }
+
+  /**
+   * This option allows you to set dates format so that solution will return dates in this format.
+   * For example, if you supply &#39;MM/dd/yyyy&#39;, and document have printed date &#39;09 JUL
+   * 2020&#39; for the date os issue, you will get &#39;07/09/2020&#39; as a result. By default it
+   * is set to system locale default (where the service is running).
+   *
+   * @return dateFormat
+   */
+  @javax.annotation.Nullable
+  public String getDateFormat() {
+    return dateFormat;
+  }
+
+  public void setDateFormat(String dateFormat) {
+    this.dateFormat = dateFormat;
+  }
+
+  public ProcessParams withImageDpiOutMax(int imageDpiOutMax) {
+    this.imageDpiOutMax = imageDpiOutMax;
+    return this;
+  }
+
+  /**
+   * This option controls maximum resolution in dpi of output images. Resolution will remain
+   * original in case 0 is supplied. By default is set to return images in response with resolution
+   * not greater than 300 dpi.
+   *
+   * @return imageDpiOutMax
+   */
+  @javax.annotation.Nullable
+  public int getImageDpiOutMax() {
+    return imageDpiOutMax;
+  }
+
+  public void setImageDpiOutMax(int imageDpiOutMax) {
+    this.imageDpiOutMax = imageDpiOutMax;
+  }
+
+  public ProcessParams withAlreadyCropped(Boolean alreadyCropped) {
+    this.alreadyCropped = alreadyCropped;
+    return this;
+  }
+
+  /**
+   * This option can be set to true if you know for sure that the image you provide contains already
+   * cropped document by its edges. This was designed to process on the server side images captured
+   * and cropped on mobile. By default is set to false.
+   *
+   * @return alreadyCropped
+   */
+  @javax.annotation.Nullable
+  public Boolean getAlreadyCropped() {
+    return alreadyCropped;
+  }
+
+  public void setAlreadyCropped(Boolean alreadyCropped) {
+    this.alreadyCropped = alreadyCropped;
+  }
+
+  public ProcessParams withCustomParams(Map<String, Object> customParams) {
+    this.customParams = customParams;
+    return this;
+  }
+
+  public ProcessParams putCustomParamsItem(String key, Object customParamsItem) {
+    if (this.customParams == null) {
+      this.customParams = new HashMap<String, Object>();
+    }
+    this.customParams.put(key, customParamsItem);
+    return this;
+  }
+
+  /**
+   * This option allows to pass custom processing parameters that can be implemented in future
+   * without changing API.
+   *
+   * @return customParams
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getCustomParams() {
+    return customParams;
+  }
+
+  public void setCustomParams(Map<String, Object> customParams) {
+    this.customParams = customParams;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -84,12 +258,26 @@ public class ProcessParams {
     }
     ProcessParams processParams = (ProcessParams) o;
     return Objects.equals(this.scenario, processParams.scenario)
-        && Objects.equals(this.resultTypeOutput, processParams.resultTypeOutput);
+        && Objects.equals(this.resultTypeOutput, processParams.resultTypeOutput)
+        && Objects.equals(this.doublePageSpread, processParams.doublePageSpread)
+        && Objects.equals(this.fieldTypesFilter, processParams.fieldTypesFilter)
+        && Objects.equals(this.dateFormat, processParams.dateFormat)
+        && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
+        && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
+        && Objects.equals(this.customParams, processParams.customParams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scenario, resultTypeOutput);
+    return Objects.hash(
+        scenario,
+        resultTypeOutput,
+        doublePageSpread,
+        fieldTypesFilter,
+        dateFormat,
+        imageDpiOutMax,
+        alreadyCropped,
+        customParams);
   }
 
   @Override
@@ -98,6 +286,12 @@ public class ProcessParams {
     sb.append("class ProcessParams {\n");
     sb.append("    scenario: ").append(toIndentedString(scenario)).append("\n");
     sb.append("    resultTypeOutput: ").append(toIndentedString(resultTypeOutput)).append("\n");
+    sb.append("    doublePageSpread: ").append(toIndentedString(doublePageSpread)).append("\n");
+    sb.append("    fieldTypesFilter: ").append(toIndentedString(fieldTypesFilter)).append("\n");
+    sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
+    sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
+    sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
+    sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
