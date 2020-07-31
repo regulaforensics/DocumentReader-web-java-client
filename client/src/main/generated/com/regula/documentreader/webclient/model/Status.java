@@ -17,10 +17,10 @@ import java.util.Objects;
 
 /** Status */
 public class Status {
-  public static final String SERIALIZED_NAME_COMPLETE = "complete";
+  public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
-  @SerializedName(SERIALIZED_NAME_COMPLETE)
-  private int complete;
+  @SerializedName(SERIALIZED_NAME_OVERALL_STATUS)
+  private int overallStatus;
 
   public static final String SERIALIZED_NAME_OPTICAL = "optical";
 
@@ -52,22 +52,22 @@ public class Status {
   @SerializedName(SERIALIZED_NAME_DETAILS_OPTICAL)
   private DetailsOptical detailsOptical;
 
-  public Status withComplete(int complete) {
-    this.complete = complete;
+  public Status withOverallStatus(int overallStatus) {
+    this.overallStatus = overallStatus;
     return this;
   }
 
   /**
-   * Get complete
+   * Get overallStatus
    *
-   * @return complete
+   * @return overallStatus
    */
-  public int getComplete() {
-    return complete;
+  public int getOverallStatus() {
+    return overallStatus;
   }
 
-  public void setComplete(int complete) {
-    this.complete = complete;
+  public void setOverallStatus(int overallStatus) {
+    this.overallStatus = overallStatus;
   }
 
   public Status withOptical(int optical) {
@@ -191,7 +191,7 @@ public class Status {
       return false;
     }
     Status status = (Status) o;
-    return Objects.equals(this.complete, status.complete)
+    return Objects.equals(this.overallStatus, status.overallStatus)
         && Objects.equals(this.optical, status.optical)
         && Objects.equals(this.portrait, status.portrait)
         && Objects.equals(this.rfid, status.rfid)
@@ -202,14 +202,15 @@ public class Status {
 
   @Override
   public int hashCode() {
-    return Objects.hash(complete, optical, portrait, rfid, stopList, detailsRFID, detailsOptical);
+    return Objects.hash(
+        overallStatus, optical, portrait, rfid, stopList, detailsRFID, detailsOptical);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Status {\n");
-    sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
+    sb.append("    overallStatus: ").append(toIndentedString(overallStatus)).append("\n");
     sb.append("    optical: ").append(toIndentedString(optical)).append("\n");
     sb.append("    portrait: ").append(toIndentedString(portrait)).append("\n");
     sb.append("    rfid: ").append(toIndentedString(rfid)).append("\n");

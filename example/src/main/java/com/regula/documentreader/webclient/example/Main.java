@@ -48,7 +48,7 @@ public class Main {
         RecognitionResponse response = api.process(request);
 
         var status = response.status();
-        var docOverallStatus = status.getComplete() == CheckResult.OK ? "valid" : "not valid";
+        var docOverallStatus = status.getOverallStatus() == CheckResult.OK ? "valid" : "not valid";
         var docOpticalTextStatus = status.getDetailsOptical().getText();
 
         var docNumberField = response.text().getField(DOCUMENT_NUMBER);
@@ -68,7 +68,7 @@ public class Main {
         System.out.format("      MRZ-Visual values comparison: %s%n", docNumberMrzVisualMatching);
         System.out.format("-----------------------------------------------------------------");
 
-        var normalizedInputImage = response.normalizedInputImage();
+        var normalizedInputImage = response.images().normalizedInputImage();
         var portraitField = response.images().getField(PORTRAIT);
         var portraitFromVisual = portraitField.getValue(Source.VISUAL);
         saveFile("portraitFromVisual.jpg", portraitFromVisual);

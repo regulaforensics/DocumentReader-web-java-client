@@ -24,16 +24,7 @@ public class RecognitionResponse {
     return originalResponse;
   }
 
-  @Nullable
-  public byte[] normalizedInputImage() {
-    RawImageResult result = resultByType(Result.RAW_IMAGE);
-    if (result != null) {
-      return result.getRawImageContainer().getImage();
-    }
-    return null;
-  }
-
-  public List<byte[]> normalizedInputImages() {
+  private List<byte[]> normalizedInputImages() {
     List<RawImageResult> results = resultsByType(Result.RAW_IMAGE);
     if (results != null) {
       List<byte[]> images = new ArrayList<>();
@@ -67,7 +58,7 @@ public class RecognitionResponse {
   public Images images() {
     ImagesResult result = resultByType(Result.IMAGES);
     if (result != null) {
-      return result.getImages();
+      return result.getImages().withNormalizedInputImages(normalizedInputImages());
     }
     return null;
   }
