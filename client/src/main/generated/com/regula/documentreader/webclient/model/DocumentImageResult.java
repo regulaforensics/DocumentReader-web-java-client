@@ -15,31 +15,29 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** DocumentTypesCandidatesResult */
-public class DocumentTypesCandidatesResult extends ResultItem {
-  public static final String SERIALIZED_NAME_CANDIDATES_LIST = "CandidatesList";
+/** DocumentImageResult */
+public class DocumentImageResult extends ResultItem {
+  public static final String SERIALIZED_NAME_RAW_IMAGE_CONTAINER = "RawImageContainer";
 
-  @SerializedName(SERIALIZED_NAME_CANDIDATES_LIST)
-  private DocumentTypesCandidatesList candidatesList;
+  @SerializedName(SERIALIZED_NAME_RAW_IMAGE_CONTAINER)
+  private ImageData rawImageContainer;
 
-  public DocumentTypesCandidatesResult withCandidatesList(
-      DocumentTypesCandidatesList candidatesList) {
-    this.candidatesList = candidatesList;
+  public DocumentImageResult withRawImageContainer(ImageData rawImageContainer) {
+    this.rawImageContainer = rawImageContainer;
     return this;
   }
 
   /**
-   * Get candidatesList
+   * Get rawImageContainer
    *
-   * @return candidatesList
+   * @return rawImageContainer
    */
-  @javax.annotation.Nullable
-  public DocumentTypesCandidatesList getCandidatesList() {
-    return candidatesList;
+  public ImageData getRawImageContainer() {
+    return rawImageContainer;
   }
 
-  public void setCandidatesList(DocumentTypesCandidatesList candidatesList) {
-    this.candidatesList = candidatesList;
+  public void setRawImageContainer(ImageData rawImageContainer) {
+    this.rawImageContainer = rawImageContainer;
   }
 
   @Override
@@ -50,22 +48,22 @@ public class DocumentTypesCandidatesResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentTypesCandidatesResult documentTypesCandidatesResult = (DocumentTypesCandidatesResult) o;
-    return Objects.equals(this.candidatesList, documentTypesCandidatesResult.candidatesList)
+    DocumentImageResult documentImageResult = (DocumentImageResult) o;
+    return Objects.equals(this.rawImageContainer, documentImageResult.rawImageContainer)
         && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(candidatesList, super.hashCode());
+    return Objects.hash(rawImageContainer, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentTypesCandidatesResult {\n");
+    sb.append("class DocumentImageResult {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    candidatesList: ").append(toIndentedString(candidatesList)).append("\n");
+    sb.append("    rawImageContainer: ").append(toIndentedString(rawImageContainer)).append("\n");
     sb.append("}");
     return sb.toString();
   }
