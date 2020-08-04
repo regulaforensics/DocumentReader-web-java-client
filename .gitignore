@@ -2,5 +2,5 @@
 .idea
 build
 gradle.properties
-normalizedInputImage.jpg
-portraitFromVisual.jpg
+document-image.jpg
+portrait.jpg

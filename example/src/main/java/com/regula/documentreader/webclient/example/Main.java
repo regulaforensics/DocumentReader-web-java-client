@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import static com.regula.documentreader.webclient.model.GraphicFieldType.DOCUMENT_FRONT;
 import static com.regula.documentreader.webclient.model.GraphicFieldType.PORTRAIT;
 import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_NUMBER;
 
@@ -38,12 +39,12 @@ public class Main {
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
-                .withResultTypeOutput(Result.RAW_IMAGE, Result.STATUS, Result.TEXT, Result.IMAGES);
+                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.IMAGES);
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
         var api = new DocumentReaderApi(apiBaseUrl);
-        api.setLicense(license); // used here only for smoke test purpouses, most of clinets will attach transaction on server side
+        api.setLicense(license);
 
         RecognitionResponse response = api.process(request);
 
@@ -68,11 +69,11 @@ public class Main {
         System.out.format("      MRZ-Visual values comparison: %s%n", docNumberMrzVisualMatching);
         System.out.format("-----------------------------------------------------------------");
 
-        var normalizedInputImage = response.images().normalizedInputImage();
+        var documentImage = response.images().getField(DOCUMENT_FRONT).getValue();
         var portraitField = response.images().getField(PORTRAIT);
         var portraitFromVisual = portraitField.getValue(Source.VISUAL);
-        saveFile("portraitFromVisual.jpg", portraitFromVisual);
-        saveFile("normalizedInputImage.jpg", normalizedInputImage);
+        saveFile("portrait.jpg", portraitFromVisual);
+        saveFile("document-image.jpg", documentImage);
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
