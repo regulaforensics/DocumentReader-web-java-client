@@ -9,9 +9,9 @@ import com.regula.documentreader.webclient.model.ext.RecognitionRequest;
 import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
+import javax.annotation.Nullable;
 import java.io.IOException;
 
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -25,13 +25,14 @@ public class Main {
     public static final String TEST_LICENSE = "TEST_LICENSE";
 
 
-    public static void main(String[] args) throws IOException, ApiException, URISyntaxException {
+    public static void main(String[] args) throws IOException, ApiException {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {
             apiBaseUrl = "http://localhost:8080";
         }
-        var license = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purpouses
+        var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
+        var licenseFromFile = readFile("regula.license");
 
 
         byte[] imageBytes = readFile("australia_passport.jpg");
@@ -44,7 +45,8 @@ public class Main {
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
         var api = new DocumentReaderApi(apiBaseUrl);
-        api.setLicense(license);
+        if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
+        if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
         RecognitionResponse response = api.process(request);
 
@@ -72,19 +74,23 @@ public class Main {
         var documentImage = response.images().getField(DOCUMENT_FRONT).getValue();
         var portraitField = response.images().getField(PORTRAIT);
         var portraitFromVisual = portraitField.getValue(Source.VISUAL);
-        saveFile("portrait.jpg", portraitFromVisual);
         saveFile("document-image.jpg", documentImage);
+        saveFile("portrait.jpg", portraitFromVisual);
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
     }
 
+    @Nullable
     private static byte[] readFile(String filePath) throws IOException {
-        var classLoader = Main.class.getClassLoader();
-        return classLoader.getResourceAsStream(filePath).readAllBytes();
+        var inputStream = Main.class.getClassLoader().getResourceAsStream(filePath);
+        if (inputStream != null) {
+            return inputStream.readAllBytes();
+        }
+        return null;
     }
 
-    private static void saveFile(String filePath, byte[] data) throws IOException, URISyntaxException {
+    private static void saveFile(String filePath, byte[] data) throws IOException {
         Files.write(Path.of(filePath), data);
     }
 }

@@ -4,6 +4,7 @@ import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
+import okio.ByteString;
 
 public class DocumentReaderApi extends DefaultApi {
 
@@ -58,5 +59,9 @@ public class DocumentReaderApi extends DefaultApi {
 
   public void setLicense(String license) {
     this.license = license;
+  }
+
+  public void setLicense(byte[] license) {
+    this.license = ByteString.of(license).base64();
   }
 }
