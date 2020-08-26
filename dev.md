@@ -25,7 +25,7 @@ Then use next command from the project root.
 ENUM_MAPPINGS="TextFieldType=Integer,GraphicFieldType=Integer,Scenario=String,DocumentFormat=Integer,\
 Light=Integer,Result=Integer,VerificationResult=Integer,RfidLocation=Integer,\
 DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=String,CheckResult=Integer,\
-LCID=Integer" \
+LCID=Integer,DocumentType=Integer" \
 \
 && docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
 openapitools/openapi-generator-cli generate \

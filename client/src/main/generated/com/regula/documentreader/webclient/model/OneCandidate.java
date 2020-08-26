@@ -41,7 +41,7 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_FD_S_I_D_LIST = "FDSIDList";
 
   @SerializedName(SERIALIZED_NAME_FD_S_I_D_LIST)
-  private TFDSIDList fdSIDList;
+  private FDSIDList fdSIDList;
 
   public static final String SERIALIZED_NAME_NECESSARY_LIGHTS = "NecessaryLights";
 
@@ -141,7 +141,7 @@ public class OneCandidate {
     this.rfIDPresence = rfIDPresence;
   }
 
-  public OneCandidate withFdSIDList(TFDSIDList fdSIDList) {
+  public OneCandidate withFdSIDList(FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
     return this;
   }
@@ -152,11 +152,11 @@ public class OneCandidate {
    * @return fdSIDList
    */
   @javax.annotation.Nullable
-  public TFDSIDList getFdSIDList() {
+  public FDSIDList getFdSIDList() {
     return fdSIDList;
   }
 
-  public void setFdSIDList(TFDSIDList fdSIDList) {
+  public void setFdSIDList(FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
   }
 
