@@ -35,7 +35,7 @@ public class GraphicFieldType {
   /**
    * Cropped and rotated with perspective compensation (front side) of a document. Single input
    * image can contain multiple document side/pages, which will be returned as separated results.
-   * Most coordinates in other types defined on that images.
+   * Most coordinates in other types defined on that image.
    */
   public static final int DOCUMENT_FRONT = 207;
 

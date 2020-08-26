@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 /** Extended document type info and Regula&#39;s &#39;Information Reference Systems&#39; links */
-public class TFDSIDList {
+public class FDSIDList {
   public static final String SERIALIZED_NAME_I_C_A_O = "ICAO";
 
   @SerializedName(SERIALIZED_NAME_I_C_A_O)
@@ -32,7 +32,7 @@ public class TFDSIDList {
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
 
   @SerializedName(SERIALIZED_NAME_D_TYPE)
-  private DocumentType dType;
+  private int dType;
 
   public static final String SERIALIZED_NAME_D_FORMAT = "dFormat";
 
@@ -69,7 +69,7 @@ public class TFDSIDList {
   @SerializedName(SERIALIZED_NAME_D_STATE_NAME)
   private String dStateName;
 
-  public TFDSIDList withICAO(String ICAO) {
+  public FDSIDList withICAO(String ICAO) {
     this.ICAO = ICAO;
     return this;
   }
@@ -88,12 +88,12 @@ public class TFDSIDList {
     this.ICAO = ICAO;
   }
 
-  public TFDSIDList withList(List<Integer> list) {
+  public FDSIDList withList(List<Integer> list) {
     this.list = list;
     return this;
   }
 
-  public TFDSIDList addListItem(int listItem) {
+  public FDSIDList addListItem(int listItem) {
     if (this.list == null) {
       this.list = new ArrayList<Integer>();
     }
@@ -115,7 +115,7 @@ public class TFDSIDList {
     this.list = list;
   }
 
-  public TFDSIDList withDType(DocumentType dType) {
+  public FDSIDList withDType(int dType) {
     this.dType = dType;
     return this;
   }
@@ -126,15 +126,15 @@ public class TFDSIDList {
    * @return dType
    */
   @javax.annotation.Nullable
-  public DocumentType getdType() {
+  public int getdType() {
     return dType;
   }
 
-  public void setdType(DocumentType dType) {
+  public void setdType(int dType) {
     this.dType = dType;
   }
 
-  public TFDSIDList withDFormat(int dFormat) {
+  public FDSIDList withDFormat(int dFormat) {
     this.dFormat = dFormat;
     return this;
   }
@@ -153,7 +153,7 @@ public class TFDSIDList {
     this.dFormat = dFormat;
   }
 
-  public TFDSIDList withDMRZ(Boolean dMRZ) {
+  public FDSIDList withDMRZ(Boolean dMRZ) {
     this.dMRZ = dMRZ;
     return this;
   }
@@ -172,7 +172,7 @@ public class TFDSIDList {
     this.dMRZ = dMRZ;
   }
 
-  public TFDSIDList withDDescription(String dDescription) {
+  public FDSIDList withDDescription(String dDescription) {
     this.dDescription = dDescription;
     return this;
   }
@@ -191,7 +191,7 @@ public class TFDSIDList {
     this.dDescription = dDescription;
   }
 
-  public TFDSIDList withDYear(String dYear) {
+  public FDSIDList withDYear(String dYear) {
     this.dYear = dYear;
     return this;
   }
@@ -210,7 +210,7 @@ public class TFDSIDList {
     this.dYear = dYear;
   }
 
-  public TFDSIDList withDCountryName(String dCountryName) {
+  public FDSIDList withDCountryName(String dCountryName) {
     this.dCountryName = dCountryName;
     return this;
   }
@@ -229,7 +229,7 @@ public class TFDSIDList {
     this.dCountryName = dCountryName;
   }
 
-  public TFDSIDList withDStateCode(String dStateCode) {
+  public FDSIDList withDStateCode(String dStateCode) {
     this.dStateCode = dStateCode;
     return this;
   }
@@ -248,7 +248,7 @@ public class TFDSIDList {
     this.dStateCode = dStateCode;
   }
 
-  public TFDSIDList withDStateName(String dStateName) {
+  public FDSIDList withDStateName(String dStateName) {
     this.dStateName = dStateName;
     return this;
   }
@@ -275,17 +275,17 @@ public class TFDSIDList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TFDSIDList tfDSIDList = (TFDSIDList) o;
-    return Objects.equals(this.ICAO, tfDSIDList.ICAO)
-        && Objects.equals(this.list, tfDSIDList.list)
-        && Objects.equals(this.dType, tfDSIDList.dType)
-        && Objects.equals(this.dFormat, tfDSIDList.dFormat)
-        && Objects.equals(this.dMRZ, tfDSIDList.dMRZ)
-        && Objects.equals(this.dDescription, tfDSIDList.dDescription)
-        && Objects.equals(this.dYear, tfDSIDList.dYear)
-        && Objects.equals(this.dCountryName, tfDSIDList.dCountryName)
-        && Objects.equals(this.dStateCode, tfDSIDList.dStateCode)
-        && Objects.equals(this.dStateName, tfDSIDList.dStateName);
+    FDSIDList fdSIDList = (FDSIDList) o;
+    return Objects.equals(this.ICAO, fdSIDList.ICAO)
+        && Objects.equals(this.list, fdSIDList.list)
+        && Objects.equals(this.dType, fdSIDList.dType)
+        && Objects.equals(this.dFormat, fdSIDList.dFormat)
+        && Objects.equals(this.dMRZ, fdSIDList.dMRZ)
+        && Objects.equals(this.dDescription, fdSIDList.dDescription)
+        && Objects.equals(this.dYear, fdSIDList.dYear)
+        && Objects.equals(this.dCountryName, fdSIDList.dCountryName)
+        && Objects.equals(this.dStateCode, fdSIDList.dStateCode)
+        && Objects.equals(this.dStateName, fdSIDList.dStateName);
   }
 
   @Override
@@ -306,7 +306,7 @@ public class TFDSIDList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TFDSIDList {\n");
+    sb.append("class FDSIDList {\n");
     sb.append("    ICAO: ").append(toIndentedString(ICAO)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    dType: ").append(toIndentedString(dType)).append("\n");

@@ -40,7 +40,7 @@ public class Main {
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
-                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.IMAGES);
+                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.IMAGES, Result.DOCUMENT_TYPE);
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
 
