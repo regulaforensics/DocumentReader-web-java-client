@@ -15,43 +15,11 @@ Instead of using enums, generator produces static constants.
 
 To regenerate models from openapi definition, 
 clone [latest open api definitions](https://github.com/regulaforensics/DocumentReader-api-openapi)
-and set `DEFINITION_FOLDER` as path to cloned directory.
+and set `DOCS_DEFINITION_FOLDER` as path to cloned directory.
 ```bash
-DEFINITION_FOLDER="/home/user/projects/DocumentReader-api-openapi"
+export DOCS_DEFINITION_FOLDER="/home/user/projects/DocumentReader-api-openapi"
 ```
 Then use next command from the project root.
 ```bash
-\
-ENUM_MAPPINGS="TextFieldType=Integer,GraphicFieldType=Integer,Scenario=String,DocumentFormat=Integer,\
-Light=Integer,Result=Integer,VerificationResult=Integer,RfidLocation=Integer,\
-DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=String,CheckResult=Integer,\
-LCID=Integer,DocumentType=Integer" \
-\
-&& docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
-openapitools/openapi-generator-cli generate \
--i /definitions/index.yml -g java -o /client/client \
--c /client/java-generator-config.json -t /client/client/generator-templates/ \
-\
-&& docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
-openapitools/openapi-generator-cli generate \
--i /client/docs/openapi/index.yml -g java -o /client/clients/java/client \
--i /definitions/index.yml -g java -o /client/client \
--c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS \
-\
-&& docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
-openapitools/openapi-generator-cli generate \
--i /definitions/index.yml -g java -o /client/client \
--c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,TextField=com.regula.documentreader.webclient.model.ext.TextField,\
-ImagesField=com.regula.documentreader.webclient.model.ext.ImagesField \
-\
-&& docker run --rm -v "${PWD}:/client" -v "${DEFINITION_FOLDER}:/definitions" \
-openapitools/openapi-generator-cli generate \
--i /definitions/index.yml -g java -o /client/client \
--c /client/java-generator-config.json -t /client/client/generator-templates/ \
---import-mappings $ENUM_MAPPINGS,Text=com.regula.documentreader.webclient.model.ext.Text,\
-Images=com.regula.documentreader.webclient.model.ext.Images \
-\
-&& ./gradlew -p ./ goJF
+./update-models.sh
 ```
