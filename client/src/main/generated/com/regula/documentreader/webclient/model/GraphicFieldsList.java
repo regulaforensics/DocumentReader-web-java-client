@@ -29,11 +29,6 @@ public class GraphicFieldsList {
     return this;
   }
 
-  public GraphicFieldsList addPArrayFieldsItem(GraphicField pArrayFieldsItem) {
-    this.pArrayFields.add(pArrayFieldsItem);
-    return this;
-  }
-
   /**
    * Get pArrayFields
    *

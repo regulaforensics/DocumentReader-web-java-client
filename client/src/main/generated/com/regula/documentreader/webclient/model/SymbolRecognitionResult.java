@@ -52,11 +52,6 @@ public class SymbolRecognitionResult {
     return this;
   }
 
-  public SymbolRecognitionResult addListOfCandidatesItem(SymbolCandidate listOfCandidatesItem) {
-    this.listOfCandidates.add(listOfCandidatesItem);
-    return this;
-  }
-
   /**
    * Array of candidate characters. Sorted in descending order of recognition probabilities (the
    * first element has highest probability)

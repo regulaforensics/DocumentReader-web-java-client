@@ -37,6 +37,11 @@ public class ProcessResponse {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_INFO)
   private TransactionInfo transactionInfo;
 
+  public static final String SERIALIZED_NAME_LOG = "log";
+
+  @SerializedName(SERIALIZED_NAME_LOG)
+  private String log;
+
   public ProcessResponse withChipPage(int chipPage) {
     this.chipPage = chipPage;
     return this;
@@ -109,6 +114,25 @@ public class ProcessResponse {
     this.transactionInfo = transactionInfo;
   }
 
+  public ProcessResponse withLog(String log) {
+    this.log = log;
+    return this;
+  }
+
+  /**
+   * Base64 encoded transaction processing log
+   *
+   * @return log
+   */
+  @javax.annotation.Nullable
+  public String getLog() {
+    return log;
+  }
+
+  public void setLog(String log) {
+    this.log = log;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -121,12 +145,13 @@ public class ProcessResponse {
     return Objects.equals(this.chipPage, processResponse.chipPage)
         && Objects.equals(this.processingFinished, processResponse.processingFinished)
         && Objects.equals(this.containerList, processResponse.containerList)
-        && Objects.equals(this.transactionInfo, processResponse.transactionInfo);
+        && Objects.equals(this.transactionInfo, processResponse.transactionInfo)
+        && Objects.equals(this.log, processResponse.log);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chipPage, processingFinished, containerList, transactionInfo);
+    return Objects.hash(chipPage, processingFinished, containerList, transactionInfo, log);
   }
 
   @Override
@@ -137,6 +162,7 @@ public class ProcessResponse {
     sb.append("    processingFinished: ").append(toIndentedString(processingFinished)).append("\n");
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    transactionInfo: ").append(toIndentedString(transactionInfo)).append("\n");
+    sb.append("    log: ").append(toIndentedString(log)).append("\n");
     sb.append("}");
     return sb.toString();
   }

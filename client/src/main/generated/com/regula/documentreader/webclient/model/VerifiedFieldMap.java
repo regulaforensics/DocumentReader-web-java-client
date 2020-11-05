@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -52,7 +51,7 @@ public class VerifiedFieldMap {
   public static final String SERIALIZED_NAME_MATRIX = "Matrix";
 
   @SerializedName(SERIALIZED_NAME_MATRIX)
-  private List<Integer> matrix = null;
+  private List<int> matrix = null;
 
   public VerifiedFieldMap withWFieldType(int wFieldType) {
     this.wFieldType = wFieldType;
@@ -168,16 +167,8 @@ public class VerifiedFieldMap {
     this.fieldRFID = fieldRFID;
   }
 
-  public VerifiedFieldMap withMatrix(List<Integer> matrix) {
+  public VerifiedFieldMap withMatrix(List<int> matrix) {
     this.matrix = matrix;
-    return this;
-  }
-
-  public VerifiedFieldMap addMatrixItem(int matrixItem) {
-    if (this.matrix == null) {
-      this.matrix = new ArrayList<Integer>();
-    }
-    this.matrix.add(matrixItem);
     return this;
   }
 
@@ -198,11 +189,11 @@ public class VerifiedFieldMap {
    * @return matrix
    */
   @javax.annotation.Nullable
-  public List<Integer> getMatrix() {
+  public List<int> getMatrix() {
     return matrix;
   }
 
-  public void setMatrix(List<Integer> matrix) {
+  public void setMatrix(List<int> matrix) {
     this.matrix = matrix;
   }
 

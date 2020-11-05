@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -50,14 +49,6 @@ public class DocumentTypesCandidatesList {
 
   public DocumentTypesCandidatesList withCandidates(List<OneCandidate> candidates) {
     this.candidates = candidates;
-    return this;
-  }
-
-  public DocumentTypesCandidatesList addCandidatesItem(OneCandidate candidatesItem) {
-    if (this.candidates == null) {
-      this.candidates = new ArrayList<OneCandidate>();
-    }
-    this.candidates.add(candidatesItem);
     return this;
   }
 

@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -116,14 +115,6 @@ public class TextFieldValue {
 
   public TextFieldValue withOriginalSymbols(List<OriginalSymbol> originalSymbols) {
     this.originalSymbols = originalSymbols;
-    return this;
-  }
-
-  public TextFieldValue addOriginalSymbolsItem(OriginalSymbol originalSymbolsItem) {
-    if (this.originalSymbols == null) {
-      this.originalSymbols = new ArrayList<OriginalSymbol>();
-    }
-    this.originalSymbols.add(originalSymbolsItem);
     return this;
   }
 

@@ -105,12 +105,6 @@ public class Text {
     return this;
   }
 
-  public Text addFieldListItem(
-      com.regula.documentreader.webclient.model.ext.TextField fieldListItem) {
-    this.fieldList.add(fieldListItem);
-    return this;
-  }
-
   /**
    * Get fieldList
    *
@@ -127,11 +121,6 @@ public class Text {
 
   public Text withAvailableSourceList(List<TextAvailableSource> availableSourceList) {
     this.availableSourceList = availableSourceList;
-    return this;
-  }
-
-  public Text addAvailableSourceListItem(TextAvailableSource availableSourceListItem) {
-    this.availableSourceList.add(availableSourceListItem);
     return this;
   }
 

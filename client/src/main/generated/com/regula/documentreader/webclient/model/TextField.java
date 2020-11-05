@@ -24,6 +24,11 @@ public class TextField {
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
   private int fieldType;
 
+  public static final String SERIALIZED_NAME_FIELD_NAME = "fieldName";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_NAME)
+  private String fieldName;
+
   public static final String SERIALIZED_NAME_LCID = "lcid";
 
   @SerializedName(SERIALIZED_NAME_LCID)
@@ -81,6 +86,25 @@ public class TextField {
 
   public void setFieldType(int fieldType) {
     this.fieldType = fieldType;
+  }
+
+  public TextField withFieldName(String fieldName) {
+    this.fieldName = fieldName;
+    return this;
+  }
+
+  /**
+   * Field name. Only use to search values for fields with fieldType&#x3D;50(other). In general, use
+   * fieldType for lookup.
+   *
+   * @return fieldName
+   */
+  public String getFieldName() {
+    return fieldName;
+  }
+
+  public void setFieldName(String fieldName) {
+    this.fieldName = fieldName;
   }
 
   public TextField withLcid(int lcid) {
@@ -179,11 +203,6 @@ public class TextField {
     return this;
   }
 
-  public TextField addValueListItem(TextFieldValue valueListItem) {
-    this.valueList.add(valueListItem);
-    return this;
-  }
-
   /**
    * Get valueList
    *
@@ -199,11 +218,6 @@ public class TextField {
 
   public TextField withValidityList(List<SourceValidity> validityList) {
     this.validityList = validityList;
-    return this;
-  }
-
-  public TextField addValidityListItem(SourceValidity validityListItem) {
-    this.validityList.add(validityListItem);
     return this;
   }
 
@@ -224,11 +238,6 @@ public class TextField {
 
   public TextField withComparisonList(List<CrossSourceValueComparison> comparisonList) {
     this.comparisonList = comparisonList;
-    return this;
-  }
-
-  public TextField addComparisonListItem(CrossSourceValueComparison comparisonListItem) {
-    this.comparisonList.add(comparisonListItem);
     return this;
   }
 
@@ -255,6 +264,7 @@ public class TextField {
     }
     TextField textField = (TextField) o;
     return Objects.equals(this.fieldType, textField.fieldType)
+        && Objects.equals(this.fieldName, textField.fieldName)
         && Objects.equals(this.lcid, textField.lcid)
         && Objects.equals(this.status, textField.status)
         && Objects.equals(this.validityStatus, textField.validityStatus)
@@ -269,6 +279,7 @@ public class TextField {
   public int hashCode() {
     return Objects.hash(
         fieldType,
+        fieldName,
         lcid,
         status,
         validityStatus,
@@ -284,6 +295,7 @@ public class TextField {
     StringBuilder sb = new StringBuilder();
     sb.append("class TextField {\n");
     sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
+    sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    lcid: ").append(toIndentedString(lcid)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    validityStatus: ").append(toIndentedString(validityStatus)).append("\n");

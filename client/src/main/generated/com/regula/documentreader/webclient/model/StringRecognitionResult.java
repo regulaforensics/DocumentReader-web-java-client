@@ -29,11 +29,6 @@ public class StringRecognitionResult {
     return this;
   }
 
-  public StringRecognitionResult addStringResultItem(SymbolRecognitionResult stringResultItem) {
-    this.stringResult.add(stringResultItem);
-    return this;
-  }
-
   /**
    * Array of recognition results for individual characters of a string
    *

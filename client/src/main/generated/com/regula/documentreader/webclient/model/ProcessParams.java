@@ -13,8 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -29,7 +27,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_RESULT_TYPE_OUTPUT = "resultTypeOutput";
 
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE_OUTPUT)
-  private List<Integer> resultTypeOutput = null;
+  private List<int> resultTypeOutput = null;
 
   public static final String SERIALIZED_NAME_DOUBLE_PAGE_SPREAD = "doublePageSpread";
 
@@ -39,7 +37,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_FIELD_TYPES_FILTER = "fieldTypesFilter";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPES_FILTER)
-  private List<Integer> fieldTypesFilter = null;
+  private List<int> fieldTypesFilter = null;
 
   public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
 
@@ -61,6 +59,16 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
   private Map<String, Object> customParams = null;
 
+  public static final String SERIALIZED_NAME_LOG = "log";
+
+  @SerializedName(SERIALIZED_NAME_LOG)
+  private Boolean log;
+
+  public static final String SERIALIZED_NAME_FORCE_DOC_I_D = "forceDocID";
+
+  @SerializedName(SERIALIZED_NAME_FORCE_DOC_I_D)
+  private int forceDocID;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -79,16 +87,8 @@ public class ProcessParams {
     this.scenario = scenario;
   }
 
-  public ProcessParams withResultTypeOutput(List<Integer> resultTypeOutput) {
+  public ProcessParams withResultTypeOutput(List<int> resultTypeOutput) {
     this.resultTypeOutput = resultTypeOutput;
-    return this;
-  }
-
-  public ProcessParams addResultTypeOutputItem(int resultTypeOutputItem) {
-    if (this.resultTypeOutput == null) {
-      this.resultTypeOutput = new ArrayList<Integer>();
-    }
-    this.resultTypeOutput.add(resultTypeOutputItem);
     return this;
   }
 
@@ -98,11 +98,11 @@ public class ProcessParams {
    * @return resultTypeOutput
    */
   @javax.annotation.Nullable
-  public List<Integer> getResultTypeOutput() {
+  public List<int> getResultTypeOutput() {
     return resultTypeOutput;
   }
 
-  public void setResultTypeOutput(List<Integer> resultTypeOutput) {
+  public void setResultTypeOutput(List<int> resultTypeOutput) {
     this.resultTypeOutput = resultTypeOutput;
   }
 
@@ -128,16 +128,8 @@ public class ProcessParams {
     this.doublePageSpread = doublePageSpread;
   }
 
-  public ProcessParams withFieldTypesFilter(List<Integer> fieldTypesFilter) {
+  public ProcessParams withFieldTypesFilter(List<int> fieldTypesFilter) {
     this.fieldTypesFilter = fieldTypesFilter;
-    return this;
-  }
-
-  public ProcessParams addFieldTypesFilterItem(int fieldTypesFilterItem) {
-    if (this.fieldTypesFilter == null) {
-      this.fieldTypesFilter = new ArrayList<Integer>();
-    }
-    this.fieldTypesFilter.add(fieldTypesFilterItem);
     return this;
   }
 
@@ -148,11 +140,11 @@ public class ProcessParams {
    * @return fieldTypesFilter
    */
   @javax.annotation.Nullable
-  public List<Integer> getFieldTypesFilter() {
+  public List<int> getFieldTypesFilter() {
     return fieldTypesFilter;
   }
 
-  public void setFieldTypesFilter(List<Integer> fieldTypesFilter) {
+  public void setFieldTypesFilter(List<int> fieldTypesFilter) {
     this.fieldTypesFilter = fieldTypesFilter;
   }
 
@@ -225,14 +217,6 @@ public class ProcessParams {
     return this;
   }
 
-  public ProcessParams putCustomParamsItem(String key, Object customParamsItem) {
-    if (this.customParams == null) {
-      this.customParams = new HashMap<String, Object>();
-    }
-    this.customParams.put(key, customParamsItem);
-    return this;
-  }
-
   /**
    * This option allows to pass custom processing parameters that can be implemented in future
    * without changing API.
@@ -246,6 +230,44 @@ public class ProcessParams {
 
   public void setCustomParams(Map<String, Object> customParams) {
     this.customParams = customParams;
+  }
+
+  public ProcessParams withLog(Boolean log) {
+    this.log = log;
+    return this;
+  }
+
+  /**
+   * This option can be set to true if you need to get base64 string of transaction processing log.
+   *
+   * @return log
+   */
+  @javax.annotation.Nullable
+  public Boolean getLog() {
+    return log;
+  }
+
+  public void setLog(Boolean log) {
+    this.log = log;
+  }
+
+  public ProcessParams withForceDocID(int forceDocID) {
+    this.forceDocID = forceDocID;
+    return this;
+  }
+
+  /**
+   * Force use of specific template ID and skip document type identification step.
+   *
+   * @return forceDocID
+   */
+  @javax.annotation.Nullable
+  public int getForceDocID() {
+    return forceDocID;
+  }
+
+  public void setForceDocID(int forceDocID) {
+    this.forceDocID = forceDocID;
   }
 
   @Override
@@ -264,7 +286,9 @@ public class ProcessParams {
         && Objects.equals(this.dateFormat, processParams.dateFormat)
         && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
         && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
-        && Objects.equals(this.customParams, processParams.customParams);
+        && Objects.equals(this.customParams, processParams.customParams)
+        && Objects.equals(this.log, processParams.log)
+        && Objects.equals(this.forceDocID, processParams.forceDocID);
   }
 
   @Override
@@ -277,7 +301,9 @@ public class ProcessParams {
         dateFormat,
         imageDpiOutMax,
         alreadyCropped,
-        customParams);
+        customParams,
+        log,
+        forceDocID);
   }
 
   @Override
@@ -292,6 +318,8 @@ public class ProcessParams {
     sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
     sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
     sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
+    sb.append("    log: ").append(toIndentedString(log)).append("\n");
+    sb.append("    forceDocID: ").append(toIndentedString(forceDocID)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,11 +35,6 @@ public class Images {
     return this;
   }
 
-  public Images addAvailableSourceListItem(ImagesAvailableSource availableSourceListItem) {
-    this.availableSourceList.add(availableSourceListItem);
-    return this;
-  }
-
   /**
    * Get availableSourceList
    *
@@ -56,12 +51,6 @@ public class Images {
   public Images withFieldList(
       List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList) {
     this.fieldList = fieldList;
-    return this;
-  }
-
-  public Images addFieldListItem(
-      com.regula.documentreader.webclient.model.ext.ImagesField fieldListItem) {
-    this.fieldList.add(fieldListItem);
     return this;
   }
 

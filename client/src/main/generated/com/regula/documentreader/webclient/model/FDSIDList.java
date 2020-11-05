@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ public class FDSIDList {
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
-  private List<Integer> list = null;
+  private List<int> list = null;
 
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
 
@@ -88,16 +87,8 @@ public class FDSIDList {
     this.ICAO = ICAO;
   }
 
-  public FDSIDList withList(List<Integer> list) {
+  public FDSIDList withList(List<int> list) {
     this.list = list;
-    return this;
-  }
-
-  public FDSIDList addListItem(int listItem) {
-    if (this.list == null) {
-      this.list = new ArrayList<Integer>();
-    }
-    this.list.add(listItem);
     return this;
   }
 
@@ -107,11 +98,11 @@ public class FDSIDList {
    * @return list
    */
   @javax.annotation.Nullable
-  public List<Integer> getList() {
+  public List<int> getList() {
     return list;
   }
 
-  public void setList(List<Integer> list) {
+  public void setList(List<int> list) {
     this.list = list;
   }
 

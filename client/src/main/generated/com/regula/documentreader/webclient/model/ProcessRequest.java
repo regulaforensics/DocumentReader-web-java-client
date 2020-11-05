@@ -57,11 +57,6 @@ public class ProcessRequest {
     return this;
   }
 
-  public ProcessRequest addListItem(ProcessRequestImage listItem) {
-    this.list.add(listItem);
-    return this;
-  }
-
   /**
    * Get list
    *

@@ -75,11 +75,6 @@ public class ImagesField {
     return this;
   }
 
-  public ImagesField addValueListItem(ImagesFieldValue valueListItem) {
-    this.valueList.add(valueListItem);
-    return this;
-  }
-
   /**
    * Get valueList
    *

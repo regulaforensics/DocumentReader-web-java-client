@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,14 +25,6 @@ public class ListVerifiedFields {
 
   public ListVerifiedFields withPFieldMaps(List<VerifiedFieldMap> pFieldMaps) {
     this.pFieldMaps = pFieldMaps;
-    return this;
-  }
-
-  public ListVerifiedFields addPFieldMapsItem(VerifiedFieldMap pFieldMapsItem) {
-    if (this.pFieldMaps == null) {
-      this.pFieldMaps = new ArrayList<VerifiedFieldMap>();
-    }
-    this.pFieldMaps.add(pFieldMapsItem);
     return this;
   }
 
