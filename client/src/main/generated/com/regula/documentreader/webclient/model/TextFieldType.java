@@ -1644,4 +1644,91 @@ public class TextFieldType {
 
   /** CVV code */
   public static final int CVV = 595;
+
+  /** Date of insurance expiry */
+  public static final int DATE_OF_INSURANCE_EXPIRY = 596;
+
+  /** Mortgage */
+  public static final int MORTGAGE_BY = 597;
+
+  /** Old document number */
+  public static final int OLD_DOCUMENT_NUMBER = 598;
+
+  /** Old date of issue */
+  public static final int OLD_DATE_OF_ISSUE = 599;
+
+  /** Old place of issue */
+  public static final int OLD_PLACE_OF_ISSUE = 600;
+
+  /** Validity date of LR driver’s license */
+  public static final int DL_CLASS_CODE_LR_FROM = 601;
+
+  /** Expiration date of LR driver’s license */
+  public static final int DL_CLASS_CODE_LR_TO = 602;
+
+  /** Restrictions for LR driver’s license */
+  public static final int DL_CLASS_CODE_LR_NOTES = 603;
+
+  /** Validity date of MR driver’s license */
+  public static final int DL_CLASS_CODE_MR_FROM = 604;
+
+  /** Expiration date of MR driver’s license */
+  public static final int DL_CLASS_CODE_MR_TO = 605;
+
+  /** Restrictions for MR driver’s license */
+  public static final int DL_CLASS_CODE_MR_NOTES = 606;
+
+  /** Validity date of HR driver’s license */
+  public static final int DL_CLASS_CODE_HR_FROM = 607;
+
+  /** Expiration date of HR driver’s license */
+  public static final int DL_CLASS_CODE_HR_TO = 608;
+
+  /** Restrictions for HR driver’s license */
+  public static final int DL_CLASS_CODE_HR_NOTES = 609;
+
+  /** Validity date of HC driver’s license */
+  public static final int DL_CLASS_CODE_HC_FROM = 610;
+
+  /** Expiration date of HC driver’s license */
+  public static final int DL_CLASS_CODE_HC_TO = 611;
+
+  /** Restrictions for HC driver’s license */
+  public static final int DL_CLASS_CODE_HC_NOTES = 612;
+
+  /** Validity date of MC driver’s license */
+  public static final int DL_CLASS_CODE_MC_FROM = 613;
+
+  /** Expiration date of MC driver’s license */
+  public static final int DL_CLASS_CODE_MC_TO = 614;
+
+  /** Restrictions for MC driver’s license */
+  public static final int DL_CLASS_CODE_MC_NOTES = 615;
+
+  /** Validity date of RE driver’s license */
+  public static final int DL_CLASS_CODE_RE_FROM = 616;
+
+  /** Expiration date of RE driver’s license */
+  public static final int DL_CLASS_CODE_RE_TO = 617;
+
+  /** Restrictions for RE driver’s license */
+  public static final int DL_CLASS_CODE_RE_NOTES = 618;
+
+  /** Validity date of R driver’s license */
+  public static final int DL_CLASS_CODE_R_FROM = 619;
+
+  /** Expiration date of R driver’s license */
+  public static final int DL_CLASS_CODE_R_TO = 620;
+
+  /** Restrictions for R driver’s license */
+  public static final int DL_CLASS_CODE_R_NOTES = 621;
+
+  /** Validity date of CA driver’s license */
+  public static final int DL_CLASS_CODE_CA_FROM = 622;
+
+  /** Expiration date of CA driver’s license */
+  public static final int DL_CLASS_CODE_CA_TO = 623;
+
+  /** Restrictions for CA driver’s license */
+  public static final int DL_CLASS_CODE_CA_NOTES = 624;
 }

@@ -61,6 +61,16 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
   private Map<String, Object> customParams = null;
 
+  public static final String SERIALIZED_NAME_LOG = "log";
+
+  @SerializedName(SERIALIZED_NAME_LOG)
+  private Boolean log;
+
+  public static final String SERIALIZED_NAME_FORCE_DOC_I_D = "forceDocID";
+
+  @SerializedName(SERIALIZED_NAME_FORCE_DOC_I_D)
+  private int forceDocID;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -248,6 +258,44 @@ public class ProcessParams {
     this.customParams = customParams;
   }
 
+  public ProcessParams withLog(Boolean log) {
+    this.log = log;
+    return this;
+  }
+
+  /**
+   * This option can be set to true if you need to get base64 string of transaction processing log.
+   *
+   * @return log
+   */
+  @javax.annotation.Nullable
+  public Boolean getLog() {
+    return log;
+  }
+
+  public void setLog(Boolean log) {
+    this.log = log;
+  }
+
+  public ProcessParams withForceDocID(int forceDocID) {
+    this.forceDocID = forceDocID;
+    return this;
+  }
+
+  /**
+   * Force use of specific template ID and skip document type identification step.
+   *
+   * @return forceDocID
+   */
+  @javax.annotation.Nullable
+  public int getForceDocID() {
+    return forceDocID;
+  }
+
+  public void setForceDocID(int forceDocID) {
+    this.forceDocID = forceDocID;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -264,7 +312,9 @@ public class ProcessParams {
         && Objects.equals(this.dateFormat, processParams.dateFormat)
         && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
         && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
-        && Objects.equals(this.customParams, processParams.customParams);
+        && Objects.equals(this.customParams, processParams.customParams)
+        && Objects.equals(this.log, processParams.log)
+        && Objects.equals(this.forceDocID, processParams.forceDocID);
   }
 
   @Override
@@ -277,7 +327,9 @@ public class ProcessParams {
         dateFormat,
         imageDpiOutMax,
         alreadyCropped,
-        customParams);
+        customParams,
+        log,
+        forceDocID);
   }
 
   @Override
@@ -292,6 +344,8 @@ public class ProcessParams {
     sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
     sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
     sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
+    sb.append("    log: ").append(toIndentedString(log)).append("\n");
+    sb.append("    forceDocID: ").append(toIndentedString(forceDocID)).append("\n");
     sb.append("}");
     return sb.toString();
   }

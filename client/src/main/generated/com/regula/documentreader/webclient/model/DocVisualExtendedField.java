@@ -24,6 +24,11 @@ public class DocVisualExtendedField {
   @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
   private int wFieldType;
 
+  public static final String SERIALIZED_NAME_FIELD_NAME = "FieldName";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_NAME)
+  private String fieldName;
+
   public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
 
   @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
@@ -70,6 +75,25 @@ public class DocVisualExtendedField {
 
   public void setwFieldType(int wFieldType) {
     this.wFieldType = wFieldType;
+  }
+
+  public DocVisualExtendedField withFieldName(String fieldName) {
+    this.fieldName = fieldName;
+    return this;
+  }
+
+  /**
+   * Field name. Only use to search values for fields with fieldType&#x3D;50(other). In general, use
+   * wFieldType for lookup.
+   *
+   * @return fieldName
+   */
+  public String getFieldName() {
+    return fieldName;
+  }
+
+  public void setFieldName(String fieldName) {
+    this.fieldName = fieldName;
   }
 
   public DocVisualExtendedField withWLCID(int wLCID) {
@@ -204,6 +228,7 @@ public class DocVisualExtendedField {
     }
     DocVisualExtendedField docVisualExtendedField = (DocVisualExtendedField) o;
     return Objects.equals(this.wFieldType, docVisualExtendedField.wFieldType)
+        && Objects.equals(this.fieldName, docVisualExtendedField.fieldName)
         && Objects.equals(this.wLCID, docVisualExtendedField.wLCID)
         && Objects.equals(this.stringsResult, docVisualExtendedField.stringsResult)
         && Objects.equals(this.bufText, docVisualExtendedField.bufText)
@@ -215,7 +240,14 @@ public class DocVisualExtendedField {
   @Override
   public int hashCode() {
     return Objects.hash(
-        wFieldType, wLCID, stringsResult, bufText, fieldRect, rfIDOriginDG, rfIDOriginTagEntry);
+        wFieldType,
+        fieldName,
+        wLCID,
+        stringsResult,
+        bufText,
+        fieldRect,
+        rfIDOriginDG,
+        rfIDOriginTagEntry);
   }
 
   @Override
@@ -223,6 +255,7 @@ public class DocVisualExtendedField {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocVisualExtendedField {\n");
     sb.append("    wFieldType: ").append(toIndentedString(wFieldType)).append("\n");
+    sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    wLCID: ").append(toIndentedString(wLCID)).append("\n");
     sb.append("    stringsResult: ").append(toIndentedString(stringsResult)).append("\n");
     sb.append("    bufText: ").append(toIndentedString(bufText)).append("\n");
