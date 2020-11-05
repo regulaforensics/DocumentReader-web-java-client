@@ -15,11 +15,7 @@ Instead of using enums, generator produces static constants.
 
 To regenerate models from openapi definition, 
 clone [latest open api definitions](https://github.com/regulaforensics/DocumentReader-api-openapi)
-and set `DOCS_DEFINITION_FOLDER` as path to cloned directory.
-```bash
-export DOCS_DEFINITION_FOLDER="/home/user/projects/DocumentReader-api-openapi"
-```
-Then use next command from the project root.
+and use next command from the project root.
 ```bash
 ./update-models.sh
 ```
