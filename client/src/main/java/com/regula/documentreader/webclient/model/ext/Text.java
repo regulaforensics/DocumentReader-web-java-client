@@ -30,10 +30,35 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
 
   @Nullable
   public String getFieldValue(int fieldType) {
-    TextField field = getField(fieldType);
+    return getFieldValue(fieldType, 0);
+  }
+
+  @Nullable
+  public TextField getFieldByName(String fieldName, int lcid) {
+    for (TextField field : getFieldList()) {
+      if (field.getFieldName().equals(fieldName) && field.getLcid() == lcid) {
+        return field;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public TextField getFieldByName(String fieldName) {
+    return getFieldByName(fieldName, 0);
+  }
+
+  @Nullable
+  public String getFieldValueByName(String fieldName, int lcid) {
+    TextField field = getFieldByName(fieldName, lcid);
     if (field != null) {
       return field.getValue();
     }
     return null;
+  }
+
+  @Nullable
+  public String getFieldValueByName(String fieldName) {
+    return getFieldValueByName(fieldName, 0);
   }
 }

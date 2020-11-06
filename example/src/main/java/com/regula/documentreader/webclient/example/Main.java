@@ -55,6 +55,8 @@ public class Main {
         var docOpticalTextStatus = status.getDetailsOptical().getText();
 
         var docNumberField = response.text().getField(DOCUMENT_NUMBER);
+        var docNumberFieldByName = response.text().getFieldByName("Document Number");
+
         var docNumberVisual = docNumberField.getValue(Source.VISUAL);
         var docNumberMrz = docNumberField.getValue(Source.MRZ);
         var docNumberVisualValidity = docNumberField.sourceValidity(Source.VISUAL);
