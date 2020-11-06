@@ -14,7 +14,6 @@ openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${DOCS_DEFINITION_FOLDER}:/definitions" \
 openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
--i /client/docs/openapi/index.yml -g java -o /client/clients/java/client \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
 --import-mappings $ENUM_MAPPINGS \
