@@ -30,7 +30,7 @@ public class CrossSourceValueComparison {
   public static final String SERIALIZED_NAME_STATUS = "status";
 
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private int status;
+  private Integer status;
 
   public CrossSourceValueComparison withSourceLeft(String sourceLeft) {
     this.sourceLeft = sourceLeft;
@@ -68,7 +68,7 @@ public class CrossSourceValueComparison {
     this.sourceRight = sourceRight;
   }
 
-  public CrossSourceValueComparison withStatus(int status) {
+  public CrossSourceValueComparison withStatus(Integer status) {
     this.status = status;
     return this;
   }
@@ -78,11 +78,11 @@ public class CrossSourceValueComparison {
    *
    * @return status
    */
-  public int getStatus() {
+  public Integer getStatus() {
     return status;
   }
 
-  public void setStatus(int status) {
+  public void setStatus(Integer status) {
     this.status = status;
   }
 

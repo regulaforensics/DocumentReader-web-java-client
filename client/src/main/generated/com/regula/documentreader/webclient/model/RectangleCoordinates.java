@@ -20,24 +20,24 @@ public class RectangleCoordinates {
   public static final String SERIALIZED_NAME_LEFT = "left";
 
   @SerializedName(SERIALIZED_NAME_LEFT)
-  private int left;
+  private Integer left;
 
   public static final String SERIALIZED_NAME_TOP = "top";
 
   @SerializedName(SERIALIZED_NAME_TOP)
-  private int top;
+  private Integer top;
 
   public static final String SERIALIZED_NAME_RIGHT = "right";
 
   @SerializedName(SERIALIZED_NAME_RIGHT)
-  private int right;
+  private Integer right;
 
   public static final String SERIALIZED_NAME_BOTTOM = "bottom";
 
   @SerializedName(SERIALIZED_NAME_BOTTOM)
-  private int bottom;
+  private Integer bottom;
 
-  public RectangleCoordinates withLeft(int left) {
+  public RectangleCoordinates withLeft(Integer left) {
     this.left = left;
     return this;
   }
@@ -47,15 +47,15 @@ public class RectangleCoordinates {
    *
    * @return left
    */
-  public int getLeft() {
+  public Integer getLeft() {
     return left;
   }
 
-  public void setLeft(int left) {
+  public void setLeft(Integer left) {
     this.left = left;
   }
 
-  public RectangleCoordinates withTop(int top) {
+  public RectangleCoordinates withTop(Integer top) {
     this.top = top;
     return this;
   }
@@ -65,15 +65,15 @@ public class RectangleCoordinates {
    *
    * @return top
    */
-  public int getTop() {
+  public Integer getTop() {
     return top;
   }
 
-  public void setTop(int top) {
+  public void setTop(Integer top) {
     this.top = top;
   }
 
-  public RectangleCoordinates withRight(int right) {
+  public RectangleCoordinates withRight(Integer right) {
     this.right = right;
     return this;
   }
@@ -83,15 +83,15 @@ public class RectangleCoordinates {
    *
    * @return right
    */
-  public int getRight() {
+  public Integer getRight() {
     return right;
   }
 
-  public void setRight(int right) {
+  public void setRight(Integer right) {
     this.right = right;
   }
 
-  public RectangleCoordinates withBottom(int bottom) {
+  public RectangleCoordinates withBottom(Integer bottom) {
     this.bottom = bottom;
     return this;
   }
@@ -101,11 +101,11 @@ public class RectangleCoordinates {
    *
    * @return bottom
    */
-  public int getBottom() {
+  public Integer getBottom() {
     return bottom;
   }
 
-  public void setBottom(int bottom) {
+  public void setBottom(Integer bottom) {
     this.bottom = bottom;
   }
 

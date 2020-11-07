@@ -22,12 +22,12 @@ public class VerifiedFieldMap {
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
   @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
-  private int wFieldType;
+  private Integer wFieldType;
 
   public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
 
   @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
-  private int wLCID;
+  private Integer wLCID;
 
   public static final String SERIALIZED_NAME_FIELD_M_R_Z = "Field_MRZ";
 
@@ -54,7 +54,7 @@ public class VerifiedFieldMap {
   @SerializedName(SERIALIZED_NAME_MATRIX)
   private List<Integer> matrix = null;
 
-  public VerifiedFieldMap withWFieldType(int wFieldType) {
+  public VerifiedFieldMap withWFieldType(Integer wFieldType) {
     this.wFieldType = wFieldType;
     return this;
   }
@@ -65,15 +65,15 @@ public class VerifiedFieldMap {
    * @return wFieldType
    */
   @javax.annotation.Nullable
-  public int getwFieldType() {
+  public Integer getwFieldType() {
     return wFieldType;
   }
 
-  public void setwFieldType(int wFieldType) {
+  public void setwFieldType(Integer wFieldType) {
     this.wFieldType = wFieldType;
   }
 
-  public VerifiedFieldMap withWLCID(int wLCID) {
+  public VerifiedFieldMap withWLCID(Integer wLCID) {
     this.wLCID = wLCID;
     return this;
   }
@@ -84,11 +84,11 @@ public class VerifiedFieldMap {
    * @return wLCID
    */
   @javax.annotation.Nullable
-  public int getwLCID() {
+  public Integer getwLCID() {
     return wLCID;
   }
 
-  public void setwLCID(int wLCID) {
+  public void setwLCID(Integer wLCID) {
     this.wLCID = wLCID;
   }
 
@@ -173,7 +173,7 @@ public class VerifiedFieldMap {
     return this;
   }
 
-  public VerifiedFieldMap addMatrixItem(int matrixItem) {
+  public VerifiedFieldMap addMatrixItem(Integer matrixItem) {
     if (this.matrix == null) {
       this.matrix = new ArrayList<Integer>();
     }

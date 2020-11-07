@@ -20,29 +20,29 @@ public class ResultItem {
   public static final String SERIALIZED_NAME_BUF_LENGTH = "buf_length";
 
   @SerializedName(SERIALIZED_NAME_BUF_LENGTH)
-  private int bufLength;
+  private Integer bufLength;
 
   public static final String SERIALIZED_NAME_LIGHT = "light";
 
   @SerializedName(SERIALIZED_NAME_LIGHT)
-  private int light;
+  private Integer light;
 
   public static final String SERIALIZED_NAME_LIST_IDX = "list_idx";
 
   @SerializedName(SERIALIZED_NAME_LIST_IDX)
-  private int listIdx;
+  private Integer listIdx;
 
   public static final String SERIALIZED_NAME_PAGE_IDX = "page_idx";
 
   @SerializedName(SERIALIZED_NAME_PAGE_IDX)
-  private int pageIdx;
+  private Integer pageIdx;
 
   public static final String SERIALIZED_NAME_RESULT_TYPE = "result_type";
 
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
-  protected int resultType;
+  protected Integer resultType = 0;
 
-  public ResultItem withBufLength(int bufLength) {
+  public ResultItem withBufLength(Integer bufLength) {
     this.bufLength = bufLength;
     return this;
   }
@@ -53,15 +53,15 @@ public class ResultItem {
    * @return bufLength
    */
   @javax.annotation.Nullable
-  public int getBufLength() {
+  public Integer getBufLength() {
     return bufLength;
   }
 
-  public void setBufLength(int bufLength) {
+  public void setBufLength(Integer bufLength) {
     this.bufLength = bufLength;
   }
 
-  public ResultItem withLight(int light) {
+  public ResultItem withLight(Integer light) {
     this.light = light;
     return this;
   }
@@ -72,15 +72,15 @@ public class ResultItem {
    * @return light
    */
   @javax.annotation.Nullable
-  public int getLight() {
+  public Integer getLight() {
     return light;
   }
 
-  public void setLight(int light) {
+  public void setLight(Integer light) {
     this.light = light;
   }
 
-  public ResultItem withListIdx(int listIdx) {
+  public ResultItem withListIdx(Integer listIdx) {
     this.listIdx = listIdx;
     return this;
   }
@@ -91,15 +91,15 @@ public class ResultItem {
    * @return listIdx
    */
   @javax.annotation.Nullable
-  public int getListIdx() {
+  public Integer getListIdx() {
     return listIdx;
   }
 
-  public void setListIdx(int listIdx) {
+  public void setListIdx(Integer listIdx) {
     this.listIdx = listIdx;
   }
 
-  public ResultItem withPageIdx(int pageIdx) {
+  public ResultItem withPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
     return this;
   }
@@ -110,15 +110,15 @@ public class ResultItem {
    * @return pageIdx
    */
   @javax.annotation.Nullable
-  public int getPageIdx() {
+  public Integer getPageIdx() {
     return pageIdx;
   }
 
-  public void setPageIdx(int pageIdx) {
+  public void setPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
   }
 
-  public ResultItem withResultType(int resultType) {
+  public ResultItem withResultType(Integer resultType) {
     this.resultType = resultType;
     return this;
   }
@@ -128,11 +128,11 @@ public class ResultItem {
    *
    * @return resultType
    */
-  public int getResultType() {
+  public Integer getResultType() {
     return resultType;
   }
 
-  public void setResultType(int resultType) {
+  public void setResultType(Integer resultType) {
     this.resultType = resultType;
   }
 

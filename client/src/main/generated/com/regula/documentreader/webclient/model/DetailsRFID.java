@@ -20,39 +20,39 @@ public class DetailsRFID {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
   @SerializedName(SERIALIZED_NAME_OVERALL_STATUS)
-  private int overallStatus;
+  private Integer overallStatus;
 
   public static final String SERIALIZED_NAME_A_A = "AA";
 
   @SerializedName(SERIALIZED_NAME_A_A)
-  private int AA;
+  private Integer AA;
 
   public static final String SERIALIZED_NAME_B_A_C = "BAC";
 
   @SerializedName(SERIALIZED_NAME_B_A_C)
-  private int BAC;
+  private Integer BAC;
 
   public static final String SERIALIZED_NAME_C_A = "CA";
 
   @SerializedName(SERIALIZED_NAME_C_A)
-  private int CA;
+  private Integer CA;
 
   public static final String SERIALIZED_NAME_P_A = "PA";
 
   @SerializedName(SERIALIZED_NAME_P_A)
-  private int PA;
+  private Integer PA;
 
   public static final String SERIALIZED_NAME_P_A_C_E = "PACE";
 
   @SerializedName(SERIALIZED_NAME_P_A_C_E)
-  private int PACE;
+  private Integer PACE;
 
   public static final String SERIALIZED_NAME_T_A = "TA";
 
   @SerializedName(SERIALIZED_NAME_T_A)
-  private int TA;
+  private Integer TA;
 
-  public DetailsRFID withOverallStatus(int overallStatus) {
+  public DetailsRFID withOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
     return this;
   }
@@ -62,15 +62,15 @@ public class DetailsRFID {
    *
    * @return overallStatus
    */
-  public int getOverallStatus() {
+  public Integer getOverallStatus() {
     return overallStatus;
   }
 
-  public void setOverallStatus(int overallStatus) {
+  public void setOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
   }
 
-  public DetailsRFID withAA(int AA) {
+  public DetailsRFID withAA(Integer AA) {
     this.AA = AA;
     return this;
   }
@@ -80,15 +80,15 @@ public class DetailsRFID {
    *
    * @return AA
    */
-  public int getAA() {
+  public Integer getAA() {
     return AA;
   }
 
-  public void setAA(int AA) {
+  public void setAA(Integer AA) {
     this.AA = AA;
   }
 
-  public DetailsRFID withBAC(int BAC) {
+  public DetailsRFID withBAC(Integer BAC) {
     this.BAC = BAC;
     return this;
   }
@@ -98,15 +98,15 @@ public class DetailsRFID {
    *
    * @return BAC
    */
-  public int getBAC() {
+  public Integer getBAC() {
     return BAC;
   }
 
-  public void setBAC(int BAC) {
+  public void setBAC(Integer BAC) {
     this.BAC = BAC;
   }
 
-  public DetailsRFID withCA(int CA) {
+  public DetailsRFID withCA(Integer CA) {
     this.CA = CA;
     return this;
   }
@@ -116,15 +116,15 @@ public class DetailsRFID {
    *
    * @return CA
    */
-  public int getCA() {
+  public Integer getCA() {
     return CA;
   }
 
-  public void setCA(int CA) {
+  public void setCA(Integer CA) {
     this.CA = CA;
   }
 
-  public DetailsRFID withPA(int PA) {
+  public DetailsRFID withPA(Integer PA) {
     this.PA = PA;
     return this;
   }
@@ -134,15 +134,15 @@ public class DetailsRFID {
    *
    * @return PA
    */
-  public int getPA() {
+  public Integer getPA() {
     return PA;
   }
 
-  public void setPA(int PA) {
+  public void setPA(Integer PA) {
     this.PA = PA;
   }
 
-  public DetailsRFID withPACE(int PACE) {
+  public DetailsRFID withPACE(Integer PACE) {
     this.PACE = PACE;
     return this;
   }
@@ -152,15 +152,15 @@ public class DetailsRFID {
    *
    * @return PACE
    */
-  public int getPACE() {
+  public Integer getPACE() {
     return PACE;
   }
 
-  public void setPACE(int PACE) {
+  public void setPACE(Integer PACE) {
     this.PACE = PACE;
   }
 
-  public DetailsRFID withTA(int TA) {
+  public DetailsRFID withTA(Integer TA) {
     this.TA = TA;
     return this;
   }
@@ -170,11 +170,11 @@ public class DetailsRFID {
    *
    * @return TA
    */
-  public int getTA() {
+  public Integer getTA() {
     return TA;
   }
 
-  public void setTA(int TA) {
+  public void setTA(Integer TA) {
     this.TA = TA;
   }
 

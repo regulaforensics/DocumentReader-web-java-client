@@ -36,17 +36,17 @@ public class ImagesFieldValue {
   public static final String SERIALIZED_NAME_PAGE_INDEX = "pageIndex";
 
   @SerializedName(SERIALIZED_NAME_PAGE_INDEX)
-  private int pageIndex;
+  private Integer pageIndex;
 
   public static final String SERIALIZED_NAME_LIGHT_INDEX = "lightIndex";
 
   @SerializedName(SERIALIZED_NAME_LIGHT_INDEX)
-  private int lightIndex;
+  private Integer lightIndex;
 
   public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
-  private int containerType;
+  private Integer containerType = 0;
 
   public static final String SERIALIZED_NAME_FIELD_RECT = "fieldRect";
 
@@ -113,7 +113,7 @@ public class ImagesFieldValue {
     this.originalValue = originalValue;
   }
 
-  public ImagesFieldValue withPageIndex(int pageIndex) {
+  public ImagesFieldValue withPageIndex(Integer pageIndex) {
     this.pageIndex = pageIndex;
     return this;
   }
@@ -123,15 +123,15 @@ public class ImagesFieldValue {
    *
    * @return pageIndex
    */
-  public int getPageIndex() {
+  public Integer getPageIndex() {
     return pageIndex;
   }
 
-  public void setPageIndex(int pageIndex) {
+  public void setPageIndex(Integer pageIndex) {
     this.pageIndex = pageIndex;
   }
 
-  public ImagesFieldValue withLightIndex(int lightIndex) {
+  public ImagesFieldValue withLightIndex(Integer lightIndex) {
     this.lightIndex = lightIndex;
     return this;
   }
@@ -141,15 +141,15 @@ public class ImagesFieldValue {
    *
    * @return lightIndex
    */
-  public int getLightIndex() {
+  public Integer getLightIndex() {
     return lightIndex;
   }
 
-  public void setLightIndex(int lightIndex) {
+  public void setLightIndex(Integer lightIndex) {
     this.lightIndex = lightIndex;
   }
 
-  public ImagesFieldValue withContainerType(int containerType) {
+  public ImagesFieldValue withContainerType(Integer containerType) {
     this.containerType = containerType;
     return this;
   }
@@ -159,11 +159,11 @@ public class ImagesFieldValue {
    *
    * @return containerType
    */
-  public int getContainerType() {
+  public Integer getContainerType() {
     return containerType;
   }
 
-  public void setContainerType(int containerType) {
+  public void setContainerType(Integer containerType) {
     this.containerType = containerType;
   }
 

@@ -20,14 +20,14 @@ public class ImagesAvailableSource {
   public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
-  private int containerType;
+  private Integer containerType = 0;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
 
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
 
-  public ImagesAvailableSource withContainerType(int containerType) {
+  public ImagesAvailableSource withContainerType(Integer containerType) {
     this.containerType = containerType;
     return this;
   }
@@ -38,11 +38,11 @@ public class ImagesAvailableSource {
    * @return containerType
    */
   @javax.annotation.Nullable
-  public int getContainerType() {
+  public Integer getContainerType() {
     return containerType;
   }
 
-  public void setContainerType(int containerType) {
+  public void setContainerType(Integer containerType) {
     this.containerType = containerType;
   }
 

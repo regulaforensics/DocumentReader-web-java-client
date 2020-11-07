@@ -22,7 +22,7 @@ public class TextField {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "fieldType";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  private int fieldType;
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_FIELD_NAME = "fieldName";
 
@@ -32,22 +32,22 @@ public class TextField {
   public static final String SERIALIZED_NAME_LCID = "lcid";
 
   @SerializedName(SERIALIZED_NAME_LCID)
-  private int lcid;
+  private Integer lcid;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
 
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private int status;
+  private Integer status;
 
   public static final String SERIALIZED_NAME_VALIDITY_STATUS = "validityStatus";
 
   @SerializedName(SERIALIZED_NAME_VALIDITY_STATUS)
-  private int validityStatus;
+  private Integer validityStatus;
 
   public static final String SERIALIZED_NAME_COMPARISON_STATUS = "comparisonStatus";
 
   @SerializedName(SERIALIZED_NAME_COMPARISON_STATUS)
-  private int comparisonStatus;
+  private Integer comparisonStatus;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
 
@@ -70,7 +70,7 @@ public class TextField {
   private List<CrossSourceValueComparison> comparisonList =
       new ArrayList<CrossSourceValueComparison>();
 
-  public TextField withFieldType(int fieldType) {
+  public TextField withFieldType(Integer fieldType) {
     this.fieldType = fieldType;
     return this;
   }
@@ -80,11 +80,11 @@ public class TextField {
    *
    * @return fieldType
    */
-  public int getFieldType() {
+  public Integer getFieldType() {
     return fieldType;
   }
 
-  public void setFieldType(int fieldType) {
+  public void setFieldType(Integer fieldType) {
     this.fieldType = fieldType;
   }
 
@@ -107,7 +107,7 @@ public class TextField {
     this.fieldName = fieldName;
   }
 
-  public TextField withLcid(int lcid) {
+  public TextField withLcid(Integer lcid) {
     this.lcid = lcid;
     return this;
   }
@@ -118,15 +118,15 @@ public class TextField {
    * @return lcid
    */
   @javax.annotation.Nullable
-  public int getLcid() {
+  public Integer getLcid() {
     return lcid;
   }
 
-  public void setLcid(int lcid) {
+  public void setLcid(Integer lcid) {
     this.lcid = lcid;
   }
 
-  public TextField withStatus(int status) {
+  public TextField withStatus(Integer status) {
     this.status = status;
     return this;
   }
@@ -136,15 +136,15 @@ public class TextField {
    *
    * @return status
    */
-  public int getStatus() {
+  public Integer getStatus() {
     return status;
   }
 
-  public void setStatus(int status) {
+  public void setStatus(Integer status) {
     this.status = status;
   }
 
-  public TextField withValidityStatus(int validityStatus) {
+  public TextField withValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
     return this;
   }
@@ -154,15 +154,15 @@ public class TextField {
    *
    * @return validityStatus
    */
-  public int getValidityStatus() {
+  public Integer getValidityStatus() {
     return validityStatus;
   }
 
-  public void setValidityStatus(int validityStatus) {
+  public void setValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
   }
 
-  public TextField withComparisonStatus(int comparisonStatus) {
+  public TextField withComparisonStatus(Integer comparisonStatus) {
     this.comparisonStatus = comparisonStatus;
     return this;
   }
@@ -172,11 +172,11 @@ public class TextField {
    *
    * @return comparisonStatus
    */
-  public int getComparisonStatus() {
+  public Integer getComparisonStatus() {
     return comparisonStatus;
   }
 
-  public void setComparisonStatus(int comparisonStatus) {
+  public void setComparisonStatus(Integer comparisonStatus) {
     this.comparisonStatus = comparisonStatus;
   }
 

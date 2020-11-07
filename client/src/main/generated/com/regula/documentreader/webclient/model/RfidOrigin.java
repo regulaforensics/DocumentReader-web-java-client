@@ -20,24 +20,24 @@ public class RfidOrigin {
   public static final String SERIALIZED_NAME_DG = "dg";
 
   @SerializedName(SERIALIZED_NAME_DG)
-  private int dg;
+  private Integer dg;
 
   public static final String SERIALIZED_NAME_DG_TAG = "dgTag";
 
   @SerializedName(SERIALIZED_NAME_DG_TAG)
-  private int dgTag;
+  private Integer dgTag;
 
   public static final String SERIALIZED_NAME_TAG_ENTRY = "tagEntry";
 
   @SerializedName(SERIALIZED_NAME_TAG_ENTRY)
-  private int tagEntry;
+  private Integer tagEntry;
 
   public static final String SERIALIZED_NAME_ENTRY_VIEW = "entryView";
 
   @SerializedName(SERIALIZED_NAME_ENTRY_VIEW)
-  private int entryView;
+  private Integer entryView;
 
-  public RfidOrigin withDg(int dg) {
+  public RfidOrigin withDg(Integer dg) {
     this.dg = dg;
     return this;
   }
@@ -47,15 +47,15 @@ public class RfidOrigin {
    *
    * @return dg
    */
-  public int getDg() {
+  public Integer getDg() {
     return dg;
   }
 
-  public void setDg(int dg) {
+  public void setDg(Integer dg) {
     this.dg = dg;
   }
 
-  public RfidOrigin withDgTag(int dgTag) {
+  public RfidOrigin withDgTag(Integer dgTag) {
     this.dgTag = dgTag;
     return this;
   }
@@ -67,15 +67,15 @@ public class RfidOrigin {
    * @return dgTag
    */
   @javax.annotation.Nullable
-  public int getDgTag() {
+  public Integer getDgTag() {
     return dgTag;
   }
 
-  public void setDgTag(int dgTag) {
+  public void setDgTag(Integer dgTag) {
     this.dgTag = dgTag;
   }
 
-  public RfidOrigin withTagEntry(int tagEntry) {
+  public RfidOrigin withTagEntry(Integer tagEntry) {
     this.tagEntry = tagEntry;
     return this;
   }
@@ -86,15 +86,15 @@ public class RfidOrigin {
    * @return tagEntry
    */
   @javax.annotation.Nullable
-  public int getTagEntry() {
+  public Integer getTagEntry() {
     return tagEntry;
   }
 
-  public void setTagEntry(int tagEntry) {
+  public void setTagEntry(Integer tagEntry) {
     this.tagEntry = tagEntry;
   }
 
-  public RfidOrigin withEntryView(int entryView) {
+  public RfidOrigin withEntryView(Integer entryView) {
     this.entryView = entryView;
     return this;
   }
@@ -105,11 +105,11 @@ public class RfidOrigin {
    * @return entryView
    */
   @javax.annotation.Nullable
-  public int getEntryView() {
+  public Integer getEntryView() {
     return entryView;
   }
 
-  public void setEntryView(int entryView) {
+  public void setEntryView(Integer entryView) {
     this.entryView = entryView;
   }
 

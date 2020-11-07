@@ -20,14 +20,14 @@ public class SymbolCandidate {
   public static final String SERIALIZED_NAME_SYMBOL_CODE = "SymbolCode";
 
   @SerializedName(SERIALIZED_NAME_SYMBOL_CODE)
-  private int symbolCode;
+  private Integer symbolCode;
 
   public static final String SERIALIZED_NAME_SYMBOL_PROBABILITY = "SymbolProbability";
 
   @SerializedName(SERIALIZED_NAME_SYMBOL_PROBABILITY)
-  private int symbolProbability;
+  private Integer symbolProbability;
 
-  public SymbolCandidate withSymbolCode(int symbolCode) {
+  public SymbolCandidate withSymbolCode(Integer symbolCode) {
     this.symbolCode = symbolCode;
     return this;
   }
@@ -37,15 +37,15 @@ public class SymbolCandidate {
    *
    * @return symbolCode
    */
-  public int getSymbolCode() {
+  public Integer getSymbolCode() {
     return symbolCode;
   }
 
-  public void setSymbolCode(int symbolCode) {
+  public void setSymbolCode(Integer symbolCode) {
     this.symbolCode = symbolCode;
   }
 
-  public SymbolCandidate withSymbolProbability(int symbolProbability) {
+  public SymbolCandidate withSymbolProbability(Integer symbolProbability) {
     this.symbolProbability = symbolProbability;
     return this;
   }
@@ -55,11 +55,11 @@ public class SymbolCandidate {
    *
    * @return symbolProbability
    */
-  public int getSymbolProbability() {
+  public Integer getSymbolProbability() {
     return symbolProbability;
   }
 
-  public void setSymbolProbability(int symbolProbability) {
+  public void setSymbolProbability(Integer symbolProbability) {
     this.symbolProbability = symbolProbability;
   }
 

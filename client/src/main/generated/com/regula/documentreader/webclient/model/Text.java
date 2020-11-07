@@ -22,17 +22,17 @@ public class Text {
   public static final String SERIALIZED_NAME_STATUS = "status";
 
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private int status;
+  private Integer status;
 
   public static final String SERIALIZED_NAME_VALIDITY_STATUS = "validityStatus";
 
   @SerializedName(SERIALIZED_NAME_VALIDITY_STATUS)
-  private int validityStatus;
+  private Integer validityStatus;
 
   public static final String SERIALIZED_NAME_COMPARISON_STATUS = "comparisonStatus";
 
   @SerializedName(SERIALIZED_NAME_COMPARISON_STATUS)
-  private int comparisonStatus;
+  private Integer comparisonStatus;
 
   public static final String SERIALIZED_NAME_FIELD_LIST = "fieldList";
 
@@ -45,7 +45,7 @@ public class Text {
   @SerializedName(SERIALIZED_NAME_AVAILABLE_SOURCE_LIST)
   private List<TextAvailableSource> availableSourceList = new ArrayList<TextAvailableSource>();
 
-  public Text withStatus(int status) {
+  public Text withStatus(Integer status) {
     this.status = status;
     return this;
   }
@@ -55,15 +55,15 @@ public class Text {
    *
    * @return status
    */
-  public int getStatus() {
+  public Integer getStatus() {
     return status;
   }
 
-  public void setStatus(int status) {
+  public void setStatus(Integer status) {
     this.status = status;
   }
 
-  public Text withValidityStatus(int validityStatus) {
+  public Text withValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
     return this;
   }
@@ -73,15 +73,15 @@ public class Text {
    *
    * @return validityStatus
    */
-  public int getValidityStatus() {
+  public Integer getValidityStatus() {
     return validityStatus;
   }
 
-  public void setValidityStatus(int validityStatus) {
+  public void setValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
   }
 
-  public Text withComparisonStatus(int comparisonStatus) {
+  public Text withComparisonStatus(Integer comparisonStatus) {
     this.comparisonStatus = comparisonStatus;
     return this;
   }
@@ -91,11 +91,11 @@ public class Text {
    *
    * @return comparisonStatus
    */
-  public int getComparisonStatus() {
+  public Integer getComparisonStatus() {
     return comparisonStatus;
   }
 
-  public void setComparisonStatus(int comparisonStatus) {
+  public void setComparisonStatus(Integer comparisonStatus) {
     this.comparisonStatus = comparisonStatus;
   }
 

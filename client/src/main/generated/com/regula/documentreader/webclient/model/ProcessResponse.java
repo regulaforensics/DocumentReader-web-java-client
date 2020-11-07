@@ -20,12 +20,12 @@ public class ProcessResponse {
   public static final String SERIALIZED_NAME_CHIP_PAGE = "ChipPage";
 
   @SerializedName(SERIALIZED_NAME_CHIP_PAGE)
-  private int chipPage;
+  private Integer chipPage;
 
   public static final String SERIALIZED_NAME_PROCESSING_FINISHED = "ProcessingFinished";
 
   @SerializedName(SERIALIZED_NAME_PROCESSING_FINISHED)
-  private int processingFinished;
+  private Integer processingFinished;
 
   public static final String SERIALIZED_NAME_CONTAINER_LIST = "ContainerList";
 
@@ -42,7 +42,7 @@ public class ProcessResponse {
   @SerializedName(SERIALIZED_NAME_LOG)
   private String log;
 
-  public ProcessResponse withChipPage(int chipPage) {
+  public ProcessResponse withChipPage(Integer chipPage) {
     this.chipPage = chipPage;
     return this;
   }
@@ -52,15 +52,15 @@ public class ProcessResponse {
    *
    * @return chipPage
    */
-  public int getChipPage() {
+  public Integer getChipPage() {
     return chipPage;
   }
 
-  public void setChipPage(int chipPage) {
+  public void setChipPage(Integer chipPage) {
     this.chipPage = chipPage;
   }
 
-  public ProcessResponse withProcessingFinished(int processingFinished) {
+  public ProcessResponse withProcessingFinished(Integer processingFinished) {
     this.processingFinished = processingFinished;
     return this;
   }
@@ -70,11 +70,11 @@ public class ProcessResponse {
    *
    * @return processingFinished
    */
-  public int getProcessingFinished() {
+  public Integer getProcessingFinished() {
     return processingFinished;
   }
 
-  public void setProcessingFinished(int processingFinished) {
+  public void setProcessingFinished(Integer processingFinished) {
     this.processingFinished = processingFinished;
   }
 

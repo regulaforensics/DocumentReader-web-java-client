@@ -25,12 +25,12 @@ public class ProcessRequestImage {
   public static final String SERIALIZED_NAME_LIGHT_INDEX = "LightIndex";
 
   @SerializedName(SERIALIZED_NAME_LIGHT_INDEX)
-  private int lightIndex;
+  private Integer lightIndex;
 
   public static final String SERIALIZED_NAME_PAGE_IDX = "page_idx";
 
   @SerializedName(SERIALIZED_NAME_PAGE_IDX)
-  private int pageIdx = 0;
+  private Integer pageIdx = 0;
 
   public ProcessRequestImage withImageData(ImageData imageData) {
     this.imageData = imageData;
@@ -50,7 +50,7 @@ public class ProcessRequestImage {
     this.imageData = imageData;
   }
 
-  public ProcessRequestImage withLightIndex(int lightIndex) {
+  public ProcessRequestImage withLightIndex(Integer lightIndex) {
     this.lightIndex = lightIndex;
     return this;
   }
@@ -61,15 +61,15 @@ public class ProcessRequestImage {
    * @return lightIndex
    */
   @javax.annotation.Nullable
-  public int getLightIndex() {
+  public Integer getLightIndex() {
     return lightIndex;
   }
 
-  public void setLightIndex(int lightIndex) {
+  public void setLightIndex(Integer lightIndex) {
     this.lightIndex = lightIndex;
   }
 
-  public ProcessRequestImage withPageIdx(int pageIdx) {
+  public ProcessRequestImage withPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
     return this;
   }
@@ -80,11 +80,11 @@ public class ProcessRequestImage {
    * @return pageIdx
    */
   @javax.annotation.Nullable
-  public int getPageIdx() {
+  public Integer getPageIdx() {
     return pageIdx;
   }
 
-  public void setPageIdx(int pageIdx) {
+  public void setPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
   }
 
