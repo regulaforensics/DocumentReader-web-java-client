@@ -20,27 +20,27 @@ public class Status {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
   @SerializedName(SERIALIZED_NAME_OVERALL_STATUS)
-  private int overallStatus;
+  private Integer overallStatus;
 
   public static final String SERIALIZED_NAME_OPTICAL = "optical";
 
   @SerializedName(SERIALIZED_NAME_OPTICAL)
-  private int optical;
+  private Integer optical;
 
   public static final String SERIALIZED_NAME_PORTRAIT = "portrait";
 
   @SerializedName(SERIALIZED_NAME_PORTRAIT)
-  private int portrait;
+  private Integer portrait;
 
   public static final String SERIALIZED_NAME_RFID = "rfid";
 
   @SerializedName(SERIALIZED_NAME_RFID)
-  private int rfid;
+  private Integer rfid;
 
   public static final String SERIALIZED_NAME_STOP_LIST = "stopList";
 
   @SerializedName(SERIALIZED_NAME_STOP_LIST)
-  private int stopList;
+  private Integer stopList;
 
   public static final String SERIALIZED_NAME_DETAILS_R_F_I_D = "detailsRFID";
 
@@ -52,7 +52,7 @@ public class Status {
   @SerializedName(SERIALIZED_NAME_DETAILS_OPTICAL)
   private DetailsOptical detailsOptical;
 
-  public Status withOverallStatus(int overallStatus) {
+  public Status withOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
     return this;
   }
@@ -62,15 +62,15 @@ public class Status {
    *
    * @return overallStatus
    */
-  public int getOverallStatus() {
+  public Integer getOverallStatus() {
     return overallStatus;
   }
 
-  public void setOverallStatus(int overallStatus) {
+  public void setOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
   }
 
-  public Status withOptical(int optical) {
+  public Status withOptical(Integer optical) {
     this.optical = optical;
     return this;
   }
@@ -80,15 +80,15 @@ public class Status {
    *
    * @return optical
    */
-  public int getOptical() {
+  public Integer getOptical() {
     return optical;
   }
 
-  public void setOptical(int optical) {
+  public void setOptical(Integer optical) {
     this.optical = optical;
   }
 
-  public Status withPortrait(int portrait) {
+  public Status withPortrait(Integer portrait) {
     this.portrait = portrait;
     return this;
   }
@@ -99,15 +99,15 @@ public class Status {
    * @return portrait
    */
   @javax.annotation.Nullable
-  public int getPortrait() {
+  public Integer getPortrait() {
     return portrait;
   }
 
-  public void setPortrait(int portrait) {
+  public void setPortrait(Integer portrait) {
     this.portrait = portrait;
   }
 
-  public Status withRfid(int rfid) {
+  public Status withRfid(Integer rfid) {
     this.rfid = rfid;
     return this;
   }
@@ -118,15 +118,15 @@ public class Status {
    * @return rfid
    */
   @javax.annotation.Nullable
-  public int getRfid() {
+  public Integer getRfid() {
     return rfid;
   }
 
-  public void setRfid(int rfid) {
+  public void setRfid(Integer rfid) {
     this.rfid = rfid;
   }
 
-  public Status withStopList(int stopList) {
+  public Status withStopList(Integer stopList) {
     this.stopList = stopList;
     return this;
   }
@@ -137,11 +137,11 @@ public class Status {
    * @return stopList
    */
   @javax.annotation.Nullable
-  public int getStopList() {
+  public Integer getStopList() {
     return stopList;
   }
 
-  public void setStopList(int stopList) {
+  public void setStopList(Integer stopList) {
     this.stopList = stopList;
   }
 

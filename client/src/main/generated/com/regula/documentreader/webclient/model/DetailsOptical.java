@@ -20,44 +20,44 @@ public class DetailsOptical {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
   @SerializedName(SERIALIZED_NAME_OVERALL_STATUS)
-  private int overallStatus;
+  private Integer overallStatus;
 
   public static final String SERIALIZED_NAME_DOC_TYPE = "docType";
 
   @SerializedName(SERIALIZED_NAME_DOC_TYPE)
-  private int docType;
+  private Integer docType;
 
   public static final String SERIALIZED_NAME_EXPIRY = "expiry";
 
   @SerializedName(SERIALIZED_NAME_EXPIRY)
-  private int expiry;
+  private Integer expiry;
 
   public static final String SERIALIZED_NAME_IMAGE_Q_A = "imageQA";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_Q_A)
-  private int imageQA;
+  private Integer imageQA;
 
   public static final String SERIALIZED_NAME_MRZ = "mrz";
 
   @SerializedName(SERIALIZED_NAME_MRZ)
-  private int mrz;
+  private Integer mrz;
 
   public static final String SERIALIZED_NAME_PAGES_COUNT = "pagesCount";
 
   @SerializedName(SERIALIZED_NAME_PAGES_COUNT)
-  private int pagesCount;
+  private Integer pagesCount;
 
   public static final String SERIALIZED_NAME_SECURITY = "security";
 
   @SerializedName(SERIALIZED_NAME_SECURITY)
-  private int security;
+  private Integer security;
 
   public static final String SERIALIZED_NAME_TEXT = "text";
 
   @SerializedName(SERIALIZED_NAME_TEXT)
-  private int text;
+  private Integer text;
 
-  public DetailsOptical withOverallStatus(int overallStatus) {
+  public DetailsOptical withOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
     return this;
   }
@@ -67,15 +67,15 @@ public class DetailsOptical {
    *
    * @return overallStatus
    */
-  public int getOverallStatus() {
+  public Integer getOverallStatus() {
     return overallStatus;
   }
 
-  public void setOverallStatus(int overallStatus) {
+  public void setOverallStatus(Integer overallStatus) {
     this.overallStatus = overallStatus;
   }
 
-  public DetailsOptical withDocType(int docType) {
+  public DetailsOptical withDocType(Integer docType) {
     this.docType = docType;
     return this;
   }
@@ -85,15 +85,15 @@ public class DetailsOptical {
    *
    * @return docType
    */
-  public int getDocType() {
+  public Integer getDocType() {
     return docType;
   }
 
-  public void setDocType(int docType) {
+  public void setDocType(Integer docType) {
     this.docType = docType;
   }
 
-  public DetailsOptical withExpiry(int expiry) {
+  public DetailsOptical withExpiry(Integer expiry) {
     this.expiry = expiry;
     return this;
   }
@@ -103,15 +103,15 @@ public class DetailsOptical {
    *
    * @return expiry
    */
-  public int getExpiry() {
+  public Integer getExpiry() {
     return expiry;
   }
 
-  public void setExpiry(int expiry) {
+  public void setExpiry(Integer expiry) {
     this.expiry = expiry;
   }
 
-  public DetailsOptical withImageQA(int imageQA) {
+  public DetailsOptical withImageQA(Integer imageQA) {
     this.imageQA = imageQA;
     return this;
   }
@@ -121,15 +121,15 @@ public class DetailsOptical {
    *
    * @return imageQA
    */
-  public int getImageQA() {
+  public Integer getImageQA() {
     return imageQA;
   }
 
-  public void setImageQA(int imageQA) {
+  public void setImageQA(Integer imageQA) {
     this.imageQA = imageQA;
   }
 
-  public DetailsOptical withMrz(int mrz) {
+  public DetailsOptical withMrz(Integer mrz) {
     this.mrz = mrz;
     return this;
   }
@@ -139,15 +139,15 @@ public class DetailsOptical {
    *
    * @return mrz
    */
-  public int getMrz() {
+  public Integer getMrz() {
     return mrz;
   }
 
-  public void setMrz(int mrz) {
+  public void setMrz(Integer mrz) {
     this.mrz = mrz;
   }
 
-  public DetailsOptical withPagesCount(int pagesCount) {
+  public DetailsOptical withPagesCount(Integer pagesCount) {
     this.pagesCount = pagesCount;
     return this;
   }
@@ -157,15 +157,15 @@ public class DetailsOptical {
    *
    * @return pagesCount
    */
-  public int getPagesCount() {
+  public Integer getPagesCount() {
     return pagesCount;
   }
 
-  public void setPagesCount(int pagesCount) {
+  public void setPagesCount(Integer pagesCount) {
     this.pagesCount = pagesCount;
   }
 
-  public DetailsOptical withSecurity(int security) {
+  public DetailsOptical withSecurity(Integer security) {
     this.security = security;
     return this;
   }
@@ -175,15 +175,15 @@ public class DetailsOptical {
    *
    * @return security
    */
-  public int getSecurity() {
+  public Integer getSecurity() {
     return security;
   }
 
-  public void setSecurity(int security) {
+  public void setSecurity(Integer security) {
     this.security = security;
   }
 
-  public DetailsOptical withText(int text) {
+  public DetailsOptical withText(Integer text) {
     this.text = text;
     return this;
   }
@@ -193,11 +193,11 @@ public class DetailsOptical {
    *
    * @return text
    */
-  public int getText() {
+  public Integer getText() {
     return text;
   }
 
-  public void setText(int text) {
+  public void setText(Integer text) {
     this.text = text;
   }
 

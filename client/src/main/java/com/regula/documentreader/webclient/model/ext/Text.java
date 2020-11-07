@@ -1,7 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.LCID;
-
 import java.util.Objects;
 import javax.annotation.Nullable;
 

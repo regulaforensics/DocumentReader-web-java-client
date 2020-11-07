@@ -32,12 +32,12 @@ public class FDSIDList {
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
 
   @SerializedName(SERIALIZED_NAME_D_TYPE)
-  private int dType;
+  private Integer dType;
 
   public static final String SERIALIZED_NAME_D_FORMAT = "dFormat";
 
   @SerializedName(SERIALIZED_NAME_D_FORMAT)
-  private int dFormat;
+  private Integer dFormat;
 
   public static final String SERIALIZED_NAME_D_M_R_Z = "dMRZ";
 
@@ -93,7 +93,7 @@ public class FDSIDList {
     return this;
   }
 
-  public FDSIDList addListItem(int listItem) {
+  public FDSIDList addListItem(Integer listItem) {
     if (this.list == null) {
       this.list = new ArrayList<Integer>();
     }
@@ -115,7 +115,7 @@ public class FDSIDList {
     this.list = list;
   }
 
-  public FDSIDList withDType(int dType) {
+  public FDSIDList withDType(Integer dType) {
     this.dType = dType;
     return this;
   }
@@ -126,15 +126,15 @@ public class FDSIDList {
    * @return dType
    */
   @javax.annotation.Nullable
-  public int getdType() {
+  public Integer getdType() {
     return dType;
   }
 
-  public void setdType(int dType) {
+  public void setdType(Integer dType) {
     this.dType = dType;
   }
 
-  public FDSIDList withDFormat(int dFormat) {
+  public FDSIDList withDFormat(Integer dFormat) {
     this.dFormat = dFormat;
     return this;
   }
@@ -145,11 +145,11 @@ public class FDSIDList {
    * @return dFormat
    */
   @javax.annotation.Nullable
-  public int getdFormat() {
+  public Integer getdFormat() {
     return dFormat;
   }
 
-  public void setdFormat(int dFormat) {
+  public void setdFormat(Integer dFormat) {
     this.dFormat = dFormat;
   }
 

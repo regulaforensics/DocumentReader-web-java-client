@@ -22,14 +22,14 @@ public class DocumentTypesCandidatesList {
   public static final String SERIALIZED_NAME_REC_RESULT = "RecResult";
 
   @SerializedName(SERIALIZED_NAME_REC_RESULT)
-  private int recResult;
+  private Integer recResult;
 
   public static final String SERIALIZED_NAME_CANDIDATES = "Candidates";
 
   @SerializedName(SERIALIZED_NAME_CANDIDATES)
   private List<OneCandidate> candidates = null;
 
-  public DocumentTypesCandidatesList withRecResult(int recResult) {
+  public DocumentTypesCandidatesList withRecResult(Integer recResult) {
     this.recResult = recResult;
     return this;
   }
@@ -40,11 +40,11 @@ public class DocumentTypesCandidatesList {
    * @return recResult
    */
   @javax.annotation.Nullable
-  public int getRecResult() {
+  public Integer getRecResult() {
     return recResult;
   }
 
-  public void setRecResult(int recResult) {
+  public void setRecResult(Integer recResult) {
     this.recResult = recResult;
   }
 

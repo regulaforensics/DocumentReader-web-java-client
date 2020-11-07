@@ -27,7 +27,7 @@ public class ImagesField {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "fieldType";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  private int fieldType;
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_VALUE_LIST = "valueList";
 
@@ -52,7 +52,7 @@ public class ImagesField {
     this.fieldName = fieldName;
   }
 
-  public ImagesField withFieldType(int fieldType) {
+  public ImagesField withFieldType(Integer fieldType) {
     this.fieldType = fieldType;
     return this;
   }
@@ -62,11 +62,11 @@ public class ImagesField {
    *
    * @return fieldType
    */
-  public int getFieldType() {
+  public Integer getFieldType() {
     return fieldType;
   }
 
-  public void setFieldType(int fieldType) {
+  public void setFieldType(Integer fieldType) {
     this.fieldType = fieldType;
   }
 

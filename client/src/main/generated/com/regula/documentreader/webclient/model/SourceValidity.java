@@ -25,7 +25,7 @@ public class SourceValidity {
   public static final String SERIALIZED_NAME_STATUS = "status";
 
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private int status;
+  private Integer status;
 
   public SourceValidity withSource(String source) {
     this.source = source;
@@ -45,7 +45,7 @@ public class SourceValidity {
     this.source = source;
   }
 
-  public SourceValidity withStatus(int status) {
+  public SourceValidity withStatus(Integer status) {
     this.status = status;
     return this;
   }
@@ -55,11 +55,11 @@ public class SourceValidity {
    *
    * @return status
    */
-  public int getStatus() {
+  public Integer getStatus() {
     return status;
   }
 
-  public void setStatus(int status) {
+  public void setStatus(Integer status) {
     this.status = status;
   }
 

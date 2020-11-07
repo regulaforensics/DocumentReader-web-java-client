@@ -8,11 +8,5 @@
   "invokerPackage": "com.regula.documentreader.webclient",
   "modelPackage": "com.regula.documentreader.webclient.model",
   "apiPackage": "com.regula.documentreader.webclient.api",
-  "sourceFolder": "src/main/generated",
-  "languageSpecificPrimitives": [
-    "int"
-  ],
-  "typeMappings": {
-    "Integer": "int"
-  }
+  "sourceFolder": "src/main/generated"
 }

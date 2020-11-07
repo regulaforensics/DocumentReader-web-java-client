@@ -20,19 +20,19 @@ public class OriginalSymbol {
   public static final String SERIALIZED_NAME_CODE = "code";
 
   @SerializedName(SERIALIZED_NAME_CODE)
-  private int code;
+  private Integer code;
 
   public static final String SERIALIZED_NAME_PROBABILITY = "probability";
 
   @SerializedName(SERIALIZED_NAME_PROBABILITY)
-  private int probability;
+  private Integer probability;
 
   public static final String SERIALIZED_NAME_RECT = "rect";
 
   @SerializedName(SERIALIZED_NAME_RECT)
   private RectangleCoordinates rect;
 
-  public OriginalSymbol withCode(int code) {
+  public OriginalSymbol withCode(Integer code) {
     this.code = code;
     return this;
   }
@@ -43,15 +43,15 @@ public class OriginalSymbol {
    * @return code
    */
   @javax.annotation.Nullable
-  public int getCode() {
+  public Integer getCode() {
     return code;
   }
 
-  public void setCode(int code) {
+  public void setCode(Integer code) {
     this.code = code;
   }
 
-  public OriginalSymbol withProbability(int probability) {
+  public OriginalSymbol withProbability(Integer probability) {
     this.probability = probability;
     return this;
   }
@@ -62,11 +62,11 @@ public class OriginalSymbol {
    * @return probability
    */
   @javax.annotation.Nullable
-  public int getProbability() {
+  public Integer getProbability() {
     return probability;
   }
 
-  public void setProbability(int probability) {
+  public void setProbability(Integer probability) {
     this.probability = probability;
   }
 

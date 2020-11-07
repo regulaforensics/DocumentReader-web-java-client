@@ -49,7 +49,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_IMAGE_DPI_OUT_MAX = "imageDpiOutMax";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_DPI_OUT_MAX)
-  private int imageDpiOutMax;
+  private Integer imageDpiOutMax;
 
   public static final String SERIALIZED_NAME_ALREADY_CROPPED = "alreadyCropped";
 
@@ -69,7 +69,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_FORCE_DOC_I_D = "forceDocID";
 
   @SerializedName(SERIALIZED_NAME_FORCE_DOC_I_D)
-  private int forceDocID;
+  private Integer forceDocID;
 
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
@@ -94,7 +94,7 @@ public class ProcessParams {
     return this;
   }
 
-  public ProcessParams addResultTypeOutputItem(int resultTypeOutputItem) {
+  public ProcessParams addResultTypeOutputItem(Integer resultTypeOutputItem) {
     if (this.resultTypeOutput == null) {
       this.resultTypeOutput = new ArrayList<Integer>();
     }
@@ -143,7 +143,7 @@ public class ProcessParams {
     return this;
   }
 
-  public ProcessParams addFieldTypesFilterItem(int fieldTypesFilterItem) {
+  public ProcessParams addFieldTypesFilterItem(Integer fieldTypesFilterItem) {
     if (this.fieldTypesFilter == null) {
       this.fieldTypesFilter = new ArrayList<Integer>();
     }
@@ -188,7 +188,7 @@ public class ProcessParams {
     this.dateFormat = dateFormat;
   }
 
-  public ProcessParams withImageDpiOutMax(int imageDpiOutMax) {
+  public ProcessParams withImageDpiOutMax(Integer imageDpiOutMax) {
     this.imageDpiOutMax = imageDpiOutMax;
     return this;
   }
@@ -201,11 +201,11 @@ public class ProcessParams {
    * @return imageDpiOutMax
    */
   @javax.annotation.Nullable
-  public int getImageDpiOutMax() {
+  public Integer getImageDpiOutMax() {
     return imageDpiOutMax;
   }
 
-  public void setImageDpiOutMax(int imageDpiOutMax) {
+  public void setImageDpiOutMax(Integer imageDpiOutMax) {
     this.imageDpiOutMax = imageDpiOutMax;
   }
 
@@ -277,7 +277,7 @@ public class ProcessParams {
     this.log = log;
   }
 
-  public ProcessParams withForceDocID(int forceDocID) {
+  public ProcessParams withForceDocID(Integer forceDocID) {
     this.forceDocID = forceDocID;
     return this;
   }
@@ -288,11 +288,11 @@ public class ProcessParams {
    * @return forceDocID
    */
   @javax.annotation.Nullable
-  public int getForceDocID() {
+  public Integer getForceDocID() {
     return forceDocID;
   }
 
-  public void setForceDocID(int forceDocID) {
+  public void setForceDocID(Integer forceDocID) {
     this.forceDocID = forceDocID;
   }
 

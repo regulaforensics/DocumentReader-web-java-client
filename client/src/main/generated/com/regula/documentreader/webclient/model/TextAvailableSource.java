@@ -25,12 +25,12 @@ public class TextAvailableSource {
   public static final String SERIALIZED_NAME_VALIDITY_STATUS = "validityStatus";
 
   @SerializedName(SERIALIZED_NAME_VALIDITY_STATUS)
-  private int validityStatus;
+  private Integer validityStatus;
 
   public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
-  private int containerType;
+  private Integer containerType = 0;
 
   public TextAvailableSource withSource(String source) {
     this.source = source;
@@ -50,7 +50,7 @@ public class TextAvailableSource {
     this.source = source;
   }
 
-  public TextAvailableSource withValidityStatus(int validityStatus) {
+  public TextAvailableSource withValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
     return this;
   }
@@ -60,15 +60,15 @@ public class TextAvailableSource {
    *
    * @return validityStatus
    */
-  public int getValidityStatus() {
+  public Integer getValidityStatus() {
     return validityStatus;
   }
 
-  public void setValidityStatus(int validityStatus) {
+  public void setValidityStatus(Integer validityStatus) {
     this.validityStatus = validityStatus;
   }
 
-  public TextAvailableSource withContainerType(int containerType) {
+  public TextAvailableSource withContainerType(Integer containerType) {
     this.containerType = containerType;
     return this;
   }
@@ -79,11 +79,11 @@ public class TextAvailableSource {
    * @return containerType
    */
   @javax.annotation.Nullable
-  public int getContainerType() {
+  public Integer getContainerType() {
     return containerType;
   }
 
-  public void setContainerType(int containerType) {
+  public void setContainerType(Integer containerType) {
     this.containerType = containerType;
   }
 

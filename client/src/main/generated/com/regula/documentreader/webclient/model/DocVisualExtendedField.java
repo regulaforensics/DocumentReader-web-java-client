@@ -22,7 +22,7 @@ public class DocVisualExtendedField {
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
   @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
-  private int wFieldType;
+  private Integer wFieldType;
 
   public static final String SERIALIZED_NAME_FIELD_NAME = "FieldName";
 
@@ -32,7 +32,7 @@ public class DocVisualExtendedField {
   public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
 
   @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
-  private int wLCID;
+  private Integer wLCID;
 
   public static final String SERIALIZED_NAME_STRINGS_RESULT = "StringsResult";
 
@@ -52,14 +52,14 @@ public class DocVisualExtendedField {
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_D_G = "RFID_OriginDG";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G)
-  private int rfIDOriginDG;
+  private Integer rfIDOriginDG;
 
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY = "RFID_OriginTagEntry";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY)
-  private int rfIDOriginTagEntry;
+  private Integer rfIDOriginTagEntry;
 
-  public DocVisualExtendedField withWFieldType(int wFieldType) {
+  public DocVisualExtendedField withWFieldType(Integer wFieldType) {
     this.wFieldType = wFieldType;
     return this;
   }
@@ -69,11 +69,11 @@ public class DocVisualExtendedField {
    *
    * @return wFieldType
    */
-  public int getwFieldType() {
+  public Integer getwFieldType() {
     return wFieldType;
   }
 
-  public void setwFieldType(int wFieldType) {
+  public void setwFieldType(Integer wFieldType) {
     this.wFieldType = wFieldType;
   }
 
@@ -96,7 +96,7 @@ public class DocVisualExtendedField {
     this.fieldName = fieldName;
   }
 
-  public DocVisualExtendedField withWLCID(int wLCID) {
+  public DocVisualExtendedField withWLCID(Integer wLCID) {
     this.wLCID = wLCID;
     return this;
   }
@@ -106,11 +106,11 @@ public class DocVisualExtendedField {
    *
    * @return wLCID
    */
-  public int getwLCID() {
+  public Integer getwLCID() {
     return wLCID;
   }
 
-  public void setwLCID(int wLCID) {
+  public void setwLCID(Integer wLCID) {
     this.wLCID = wLCID;
   }
 
@@ -180,7 +180,7 @@ public class DocVisualExtendedField {
     this.fieldRect = fieldRect;
   }
 
-  public DocVisualExtendedField withRfIDOriginDG(int rfIDOriginDG) {
+  public DocVisualExtendedField withRfIDOriginDG(Integer rfIDOriginDG) {
     this.rfIDOriginDG = rfIDOriginDG;
     return this;
   }
@@ -191,15 +191,15 @@ public class DocVisualExtendedField {
    * @return rfIDOriginDG
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginDG() {
+  public Integer getRfIDOriginDG() {
     return rfIDOriginDG;
   }
 
-  public void setRfIDOriginDG(int rfIDOriginDG) {
+  public void setRfIDOriginDG(Integer rfIDOriginDG) {
     this.rfIDOriginDG = rfIDOriginDG;
   }
 
-  public DocVisualExtendedField withRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+  public DocVisualExtendedField withRfIDOriginTagEntry(Integer rfIDOriginTagEntry) {
     this.rfIDOriginTagEntry = rfIDOriginTagEntry;
     return this;
   }
@@ -210,11 +210,11 @@ public class DocVisualExtendedField {
    * @return rfIDOriginTagEntry
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginTagEntry() {
+  public Integer getRfIDOriginTagEntry() {
     return rfIDOriginTagEntry;
   }
 
-  public void setRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+  public void setRfIDOriginTagEntry(Integer rfIDOriginTagEntry) {
     this.rfIDOriginTagEntry = rfIDOriginTagEntry;
   }
 

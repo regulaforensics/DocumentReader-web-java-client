@@ -20,7 +20,7 @@ public class GraphicField {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  private int fieldType;
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
@@ -35,24 +35,24 @@ public class GraphicField {
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_D_G = "RFID_OriginDG";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G)
-  private int rfIDOriginDG;
+  private Integer rfIDOriginDG;
 
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_D_G_TAG = "RFID_OriginDGTag";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G_TAG)
-  private int rfIDOriginDGTag;
+  private Integer rfIDOriginDGTag;
 
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY = "RFID_OriginTagEntry";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY)
-  private int rfIDOriginTagEntry;
+  private Integer rfIDOriginTagEntry;
 
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_ENTRY_VIEW = "RFID_OriginEntryView";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_ENTRY_VIEW)
-  private int rfIDOriginEntryView;
+  private Integer rfIDOriginEntryView;
 
-  public GraphicField withFieldType(int fieldType) {
+  public GraphicField withFieldType(Integer fieldType) {
     this.fieldType = fieldType;
     return this;
   }
@@ -62,11 +62,11 @@ public class GraphicField {
    *
    * @return fieldType
    */
-  public int getFieldType() {
+  public Integer getFieldType() {
     return fieldType;
   }
 
-  public void setFieldType(int fieldType) {
+  public void setFieldType(Integer fieldType) {
     this.fieldType = fieldType;
   }
 
@@ -107,7 +107,7 @@ public class GraphicField {
     this.fieldRect = fieldRect;
   }
 
-  public GraphicField withRfIDOriginDG(int rfIDOriginDG) {
+  public GraphicField withRfIDOriginDG(Integer rfIDOriginDG) {
     this.rfIDOriginDG = rfIDOriginDG;
     return this;
   }
@@ -118,15 +118,15 @@ public class GraphicField {
    * @return rfIDOriginDG
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginDG() {
+  public Integer getRfIDOriginDG() {
     return rfIDOriginDG;
   }
 
-  public void setRfIDOriginDG(int rfIDOriginDG) {
+  public void setRfIDOriginDG(Integer rfIDOriginDG) {
     this.rfIDOriginDG = rfIDOriginDG;
   }
 
-  public GraphicField withRfIDOriginDGTag(int rfIDOriginDGTag) {
+  public GraphicField withRfIDOriginDGTag(Integer rfIDOriginDGTag) {
     this.rfIDOriginDGTag = rfIDOriginDGTag;
     return this;
   }
@@ -138,15 +138,15 @@ public class GraphicField {
    * @return rfIDOriginDGTag
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginDGTag() {
+  public Integer getRfIDOriginDGTag() {
     return rfIDOriginDGTag;
   }
 
-  public void setRfIDOriginDGTag(int rfIDOriginDGTag) {
+  public void setRfIDOriginDGTag(Integer rfIDOriginDGTag) {
     this.rfIDOriginDGTag = rfIDOriginDGTag;
   }
 
-  public GraphicField withRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+  public GraphicField withRfIDOriginTagEntry(Integer rfIDOriginTagEntry) {
     this.rfIDOriginTagEntry = rfIDOriginTagEntry;
     return this;
   }
@@ -157,15 +157,15 @@ public class GraphicField {
    * @return rfIDOriginTagEntry
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginTagEntry() {
+  public Integer getRfIDOriginTagEntry() {
     return rfIDOriginTagEntry;
   }
 
-  public void setRfIDOriginTagEntry(int rfIDOriginTagEntry) {
+  public void setRfIDOriginTagEntry(Integer rfIDOriginTagEntry) {
     this.rfIDOriginTagEntry = rfIDOriginTagEntry;
   }
 
-  public GraphicField withRfIDOriginEntryView(int rfIDOriginEntryView) {
+  public GraphicField withRfIDOriginEntryView(Integer rfIDOriginEntryView) {
     this.rfIDOriginEntryView = rfIDOriginEntryView;
     return this;
   }
@@ -176,11 +176,11 @@ public class GraphicField {
    * @return rfIDOriginEntryView
    */
   @javax.annotation.Nullable
-  public int getRfIDOriginEntryView() {
+  public Integer getRfIDOriginEntryView() {
     return rfIDOriginEntryView;
   }
 
-  public void setRfIDOriginEntryView(int rfIDOriginEntryView) {
+  public void setRfIDOriginEntryView(Integer rfIDOriginEntryView) {
     this.rfIDOriginEntryView = rfIDOriginEntryView;
   }
 

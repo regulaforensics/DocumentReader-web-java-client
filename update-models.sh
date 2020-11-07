@@ -11,6 +11,7 @@ LCID=Integer,DocumentType=Integer" \
 openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
 -i /definitions/index.yml -g java -o /client/client \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
+--type-mappings "Integer=int" \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "${DOCS_DEFINITION_FOLDER}:/definitions" \
 openapitools/openapi-generator-cli:v5.0.0-beta2 generate \

@@ -42,12 +42,12 @@ public class TextFieldValue {
   public static final String SERIALIZED_NAME_PAGE_INDEX = "pageIndex";
 
   @SerializedName(SERIALIZED_NAME_PAGE_INDEX)
-  private int pageIndex;
+  private Integer pageIndex;
 
   public static final String SERIALIZED_NAME_PROBABILITY = "probability";
 
   @SerializedName(SERIALIZED_NAME_PROBABILITY)
-  private int probability;
+  private Integer probability;
 
   public static final String SERIALIZED_NAME_FIELD_RECT = "fieldRect";
 
@@ -141,7 +141,7 @@ public class TextFieldValue {
     this.originalSymbols = originalSymbols;
   }
 
-  public TextFieldValue withPageIndex(int pageIndex) {
+  public TextFieldValue withPageIndex(Integer pageIndex) {
     this.pageIndex = pageIndex;
     return this;
   }
@@ -151,15 +151,15 @@ public class TextFieldValue {
    *
    * @return pageIndex
    */
-  public int getPageIndex() {
+  public Integer getPageIndex() {
     return pageIndex;
   }
 
-  public void setPageIndex(int pageIndex) {
+  public void setPageIndex(Integer pageIndex) {
     this.pageIndex = pageIndex;
   }
 
-  public TextFieldValue withProbability(int probability) {
+  public TextFieldValue withProbability(Integer probability) {
     this.probability = probability;
     return this;
   }
@@ -171,11 +171,11 @@ public class TextFieldValue {
    * @return probability
    */
   @javax.annotation.Nullable
-  public int getProbability() {
+  public Integer getProbability() {
     return probability;
   }
 
-  public void setProbability(int probability) {
+  public void setProbability(Integer probability) {
     this.probability = probability;
   }
 
