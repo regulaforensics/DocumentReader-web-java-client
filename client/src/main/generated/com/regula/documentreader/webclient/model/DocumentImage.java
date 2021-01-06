@@ -13,56 +13,32 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.Arrays;
 import java.util.Objects;
 
-/** ProcessSystemInfo */
-public class ProcessSystemInfo {
-  public static final String SERIALIZED_NAME_LICENSE = "license";
+/** DocumentImage */
+public class DocumentImage {
+  public static final String SERIALIZED_NAME_IMAGE = "image";
 
-  @SerializedName(SERIALIZED_NAME_LICENSE)
-  private String license;
+  @SerializedName(SERIALIZED_NAME_IMAGE)
+  private byte[] image;
 
-  public static final String SERIALIZED_NAME_RECAPTCHA_TOKEN = "recaptcha_token";
-
-  @SerializedName(SERIALIZED_NAME_RECAPTCHA_TOKEN)
-  private String recaptchaToken;
-
-  public ProcessSystemInfo withLicense(String license) {
-    this.license = license;
+  public DocumentImage withImage(byte[] image) {
+    this.image = image;
     return this;
   }
 
   /**
-   * Base64 encoded license file
+   * Base64 encoded image
    *
-   * @return license
+   * @return image
    */
-  @javax.annotation.Nullable
-  public String getLicense() {
-    return license;
+  public byte[] getImage() {
+    return image;
   }
 
-  public void setLicense(String license) {
-    this.license = license;
-  }
-
-  public ProcessSystemInfo withRecaptchaToken(String recaptchaToken) {
-    this.recaptchaToken = recaptchaToken;
-    return this;
-  }
-
-  /**
-   * For internal use. Demo-sites recaptcha token.
-   *
-   * @return recaptchaToken
-   */
-  @javax.annotation.Nullable
-  public String getRecaptchaToken() {
-    return recaptchaToken;
-  }
-
-  public void setRecaptchaToken(String recaptchaToken) {
-    this.recaptchaToken = recaptchaToken;
+  public void setImage(byte[] image) {
+    this.image = image;
   }
 
   @Override
@@ -73,22 +49,20 @@ public class ProcessSystemInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProcessSystemInfo processSystemInfo = (ProcessSystemInfo) o;
-    return Objects.equals(this.license, processSystemInfo.license)
-        && Objects.equals(this.recaptchaToken, processSystemInfo.recaptchaToken);
+    DocumentImage documentImage = (DocumentImage) o;
+    return Arrays.equals(this.image, documentImage.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(license, recaptchaToken);
+    return Objects.hash(Arrays.hashCode(image));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProcessSystemInfo {\n");
-    sb.append("    license: ").append(toIndentedString(license)).append("\n");
-    sb.append("    recaptchaToken: ").append(toIndentedString(recaptchaToken)).append("\n");
+    sb.append("class DocumentImage {\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }
