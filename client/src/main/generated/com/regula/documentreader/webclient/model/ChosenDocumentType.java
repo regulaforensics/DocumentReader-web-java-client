@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /** Contains information about one document type candidate */
-public class OneCandidate {
+public class ChosenDocumentType {
   public static final String SERIALIZED_NAME_DOCUMENT_NAME = "DocumentName";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NAME)
@@ -26,7 +26,7 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_I_D = "ID";
 
   @SerializedName(SERIALIZED_NAME_I_D)
-  private Integer ID;
+  private int ID;
 
   public static final String SERIALIZED_NAME_P = "P";
 
@@ -36,7 +36,7 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_RF_I_D_PRESENCE = "RFID_Presence";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_PRESENCE)
-  private Integer rfIDPresence;
+  private int rfIDPresence;
 
   public static final String SERIALIZED_NAME_FD_S_I_D_LIST = "FDSIDList";
 
@@ -46,25 +46,25 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_NECESSARY_LIGHTS = "NecessaryLights";
 
   @SerializedName(SERIALIZED_NAME_NECESSARY_LIGHTS)
-  private Integer necessaryLights;
+  private int necessaryLights;
 
   public static final String SERIALIZED_NAME_CHECK_AUTHENTICITY = "CheckAuthenticity";
 
   @SerializedName(SERIALIZED_NAME_CHECK_AUTHENTICITY)
-  private Integer checkAuthenticity;
+  private int checkAuthenticity;
 
   public static final String SERIALIZED_NAME_UV_EXP = "UVExp";
 
   @SerializedName(SERIALIZED_NAME_UV_EXP)
-  private Integer uvExp;
+  private int uvExp;
 
   public static final String SERIALIZED_NAME_AUTHENTICITY_NECESSARY_LIGHTS =
       "AuthenticityNecessaryLights";
 
   @SerializedName(SERIALIZED_NAME_AUTHENTICITY_NECESSARY_LIGHTS)
-  private Integer authenticityNecessaryLights;
+  private int authenticityNecessaryLights;
 
-  public OneCandidate withDocumentName(String documentName) {
+  public ChosenDocumentType withDocumentName(String documentName) {
     this.documentName = documentName;
     return this;
   }
@@ -83,7 +83,7 @@ public class OneCandidate {
     this.documentName = documentName;
   }
 
-  public OneCandidate withID(Integer ID) {
+  public ChosenDocumentType withID(int ID) {
     this.ID = ID;
     return this;
   }
@@ -94,15 +94,15 @@ public class OneCandidate {
    * @return ID
    */
   @javax.annotation.Nullable
-  public Integer getID() {
+  public int getID() {
     return ID;
   }
 
-  public void setID(Integer ID) {
+  public void setID(int ID) {
     this.ID = ID;
   }
 
-  public OneCandidate withP(BigDecimal P) {
+  public ChosenDocumentType withP(BigDecimal P) {
     this.P = P;
     return this;
   }
@@ -122,7 +122,7 @@ public class OneCandidate {
     this.P = P;
   }
 
-  public OneCandidate withRfIDPresence(Integer rfIDPresence) {
+  public ChosenDocumentType withRfIDPresence(int rfIDPresence) {
     this.rfIDPresence = rfIDPresence;
     return this;
   }
@@ -133,15 +133,15 @@ public class OneCandidate {
    * @return rfIDPresence
    */
   @javax.annotation.Nullable
-  public Integer getRfIDPresence() {
+  public int getRfIDPresence() {
     return rfIDPresence;
   }
 
-  public void setRfIDPresence(Integer rfIDPresence) {
+  public void setRfIDPresence(int rfIDPresence) {
     this.rfIDPresence = rfIDPresence;
   }
 
-  public OneCandidate withFdSIDList(FDSIDList fdSIDList) {
+  public ChosenDocumentType withFdSIDList(FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
     return this;
   }
@@ -160,7 +160,7 @@ public class OneCandidate {
     this.fdSIDList = fdSIDList;
   }
 
-  public OneCandidate withNecessaryLights(Integer necessaryLights) {
+  public ChosenDocumentType withNecessaryLights(int necessaryLights) {
     this.necessaryLights = necessaryLights;
     return this;
   }
@@ -172,15 +172,15 @@ public class OneCandidate {
    * @return necessaryLights
    */
   @javax.annotation.Nullable
-  public Integer getNecessaryLights() {
+  public int getNecessaryLights() {
     return necessaryLights;
   }
 
-  public void setNecessaryLights(Integer necessaryLights) {
+  public void setNecessaryLights(int necessaryLights) {
     this.necessaryLights = necessaryLights;
   }
 
-  public OneCandidate withCheckAuthenticity(Integer checkAuthenticity) {
+  public ChosenDocumentType withCheckAuthenticity(int checkAuthenticity) {
     this.checkAuthenticity = checkAuthenticity;
     return this;
   }
@@ -192,15 +192,15 @@ public class OneCandidate {
    * @return checkAuthenticity
    */
   @javax.annotation.Nullable
-  public Integer getCheckAuthenticity() {
+  public int getCheckAuthenticity() {
     return checkAuthenticity;
   }
 
-  public void setCheckAuthenticity(Integer checkAuthenticity) {
+  public void setCheckAuthenticity(int checkAuthenticity) {
     this.checkAuthenticity = checkAuthenticity;
   }
 
-  public OneCandidate withUvExp(Integer uvExp) {
+  public ChosenDocumentType withUvExp(int uvExp) {
     this.uvExp = uvExp;
     return this;
   }
@@ -212,15 +212,15 @@ public class OneCandidate {
    * @return uvExp
    */
   @javax.annotation.Nullable
-  public Integer getUvExp() {
+  public int getUvExp() {
     return uvExp;
   }
 
-  public void setUvExp(Integer uvExp) {
+  public void setUvExp(int uvExp) {
     this.uvExp = uvExp;
   }
 
-  public OneCandidate withAuthenticityNecessaryLights(Integer authenticityNecessaryLights) {
+  public ChosenDocumentType withAuthenticityNecessaryLights(int authenticityNecessaryLights) {
     this.authenticityNecessaryLights = authenticityNecessaryLights;
     return this;
   }
@@ -232,11 +232,11 @@ public class OneCandidate {
    * @return authenticityNecessaryLights
    */
   @javax.annotation.Nullable
-  public Integer getAuthenticityNecessaryLights() {
+  public int getAuthenticityNecessaryLights() {
     return authenticityNecessaryLights;
   }
 
-  public void setAuthenticityNecessaryLights(Integer authenticityNecessaryLights) {
+  public void setAuthenticityNecessaryLights(int authenticityNecessaryLights) {
     this.authenticityNecessaryLights = authenticityNecessaryLights;
   }
 
@@ -248,17 +248,17 @@ public class OneCandidate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OneCandidate oneCandidate = (OneCandidate) o;
-    return Objects.equals(this.documentName, oneCandidate.documentName)
-        && Objects.equals(this.ID, oneCandidate.ID)
-        && Objects.equals(this.P, oneCandidate.P)
-        && Objects.equals(this.rfIDPresence, oneCandidate.rfIDPresence)
-        && Objects.equals(this.fdSIDList, oneCandidate.fdSIDList)
-        && Objects.equals(this.necessaryLights, oneCandidate.necessaryLights)
-        && Objects.equals(this.checkAuthenticity, oneCandidate.checkAuthenticity)
-        && Objects.equals(this.uvExp, oneCandidate.uvExp)
+    ChosenDocumentType chosenDocumentType = (ChosenDocumentType) o;
+    return Objects.equals(this.documentName, chosenDocumentType.documentName)
+        && Objects.equals(this.ID, chosenDocumentType.ID)
+        && Objects.equals(this.P, chosenDocumentType.P)
+        && Objects.equals(this.rfIDPresence, chosenDocumentType.rfIDPresence)
+        && Objects.equals(this.fdSIDList, chosenDocumentType.fdSIDList)
+        && Objects.equals(this.necessaryLights, chosenDocumentType.necessaryLights)
+        && Objects.equals(this.checkAuthenticity, chosenDocumentType.checkAuthenticity)
+        && Objects.equals(this.uvExp, chosenDocumentType.uvExp)
         && Objects.equals(
-            this.authenticityNecessaryLights, oneCandidate.authenticityNecessaryLights);
+            this.authenticityNecessaryLights, chosenDocumentType.authenticityNecessaryLights);
   }
 
   @Override
@@ -278,7 +278,7 @@ public class OneCandidate {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OneCandidate {\n");
+    sb.append("class ChosenDocumentType {\n");
     sb.append("    documentName: ").append(toIndentedString(documentName)).append("\n");
     sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
     sb.append("    P: ").append(toIndentedString(P)).append("\n");

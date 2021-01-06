@@ -17,19 +17,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** DocumentTypesCandidatesList */
-public class DocumentTypesCandidatesList {
+/** DocumentTypesCandidates */
+public class DocumentTypesCandidates {
   public static final String SERIALIZED_NAME_REC_RESULT = "RecResult";
 
   @SerializedName(SERIALIZED_NAME_REC_RESULT)
-  private Integer recResult;
+  private int recResult;
 
   public static final String SERIALIZED_NAME_CANDIDATES = "Candidates";
 
   @SerializedName(SERIALIZED_NAME_CANDIDATES)
   private List<OneCandidate> candidates = null;
 
-  public DocumentTypesCandidatesList withRecResult(Integer recResult) {
+  public DocumentTypesCandidates withRecResult(int recResult) {
     this.recResult = recResult;
     return this;
   }
@@ -40,20 +40,20 @@ public class DocumentTypesCandidatesList {
    * @return recResult
    */
   @javax.annotation.Nullable
-  public Integer getRecResult() {
+  public int getRecResult() {
     return recResult;
   }
 
-  public void setRecResult(Integer recResult) {
+  public void setRecResult(int recResult) {
     this.recResult = recResult;
   }
 
-  public DocumentTypesCandidatesList withCandidates(List<OneCandidate> candidates) {
+  public DocumentTypesCandidates withCandidates(List<OneCandidate> candidates) {
     this.candidates = candidates;
     return this;
   }
 
-  public DocumentTypesCandidatesList addCandidatesItem(OneCandidate candidatesItem) {
+  public DocumentTypesCandidates addCandidatesItem(OneCandidate candidatesItem) {
     if (this.candidates == null) {
       this.candidates = new ArrayList<OneCandidate>();
     }
@@ -83,9 +83,9 @@ public class DocumentTypesCandidatesList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentTypesCandidatesList documentTypesCandidatesList = (DocumentTypesCandidatesList) o;
-    return Objects.equals(this.recResult, documentTypesCandidatesList.recResult)
-        && Objects.equals(this.candidates, documentTypesCandidatesList.candidates);
+    DocumentTypesCandidates documentTypesCandidates = (DocumentTypesCandidates) o;
+    return Objects.equals(this.recResult, documentTypesCandidates.recResult)
+        && Objects.equals(this.candidates, documentTypesCandidates.candidates);
   }
 
   @Override
@@ -96,7 +96,7 @@ public class DocumentTypesCandidatesList {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentTypesCandidatesList {\n");
+    sb.append("class DocumentTypesCandidates {\n");
     sb.append("    recResult: ").append(toIndentedString(recResult)).append("\n");
     sb.append("    candidates: ").append(toIndentedString(candidates)).append("\n");
     sb.append("}");

@@ -19,21 +19,22 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.ApiResponse;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
-import com.regula.documentreader.webclient.model.DeviceInfo;
+import com.regula.documentreader.webclient.model.ProcessRequest;
+import com.regula.documentreader.webclient.model.ProcessResponse;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultApi {
+public class ProcessApi {
   private ApiClient localVarApiClient;
 
-  public DefaultApi() {
+  public ProcessApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public DefaultApi(ApiClient apiClient) {
+  public ProcessApi(ApiClient apiClient) {
     this.localVarApiClient = apiClient;
   }
 
@@ -46,22 +47,26 @@ public class DefaultApi {
   }
 
   /**
-   * Build call for ping
+   * Build call for apiProcess
    *
+   * @param processRequest (required)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call pingCall(final ApiCallback _callback) throws ApiException {
-    Object localVarPostBody = null;
+  public okhttp3.Call apiProcessCall(ProcessRequest processRequest, final ApiCallback _callback)
+      throws ApiException {
+    Object localVarPostBody = processRequest;
 
     // create path and map variables
-    String localVarPath = "/api/ping";
+    String localVarPath = "/api/process";
 
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -74,8 +79,7 @@ public class DefaultApi {
       localVarHeaderParams.put("Accept", localVarAccept);
     }
 
-    final String[] localVarContentTypes = {};
-
+    final String[] localVarContentTypes = {"application/json"};
     final String localVarContentType =
         localVarApiClient.selectHeaderContentType(localVarContentTypes);
     localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -83,7 +87,7 @@ public class DefaultApi {
     String[] localVarAuthNames = new String[] {};
     return localVarApiClient.buildCall(
         localVarPath,
-        "GET",
+        "POST",
         localVarQueryParams,
         localVarCollectionQueryParams,
         localVarPostBody,
@@ -95,63 +99,82 @@ public class DefaultApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call pingValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+  private okhttp3.Call apiProcessValidateBeforeCall(
+      ProcessRequest processRequest, final ApiCallback _callback) throws ApiException {
 
-    okhttp3.Call localVarCall = pingCall(_callback);
+    // verify the required parameter 'processRequest' is set
+    if (processRequest == null) {
+      throw new ApiException(
+          "Missing the required parameter 'processRequest' when calling apiProcess(Async)");
+    }
+
+    okhttp3.Call localVarCall = apiProcessCall(processRequest, _callback);
     return localVarCall;
   }
 
   /**
-   * Server health check
+   * Process list of documents images and return extracted data
    *
-   * @return DeviceInfo
+   * @param processRequest (required)
+   * @return ProcessResponse
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public DeviceInfo ping() throws ApiException {
-    ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo();
+  public ProcessResponse apiProcess(ProcessRequest processRequest) throws ApiException {
+    ApiResponse<ProcessResponse> localVarResp = apiProcessWithHttpInfo(processRequest);
     return localVarResp.getData();
   }
 
   /**
-   * Server health check
+   * Process list of documents images and return extracted data
    *
-   * @return ApiResponse&lt;DeviceInfo&gt;
+   * @param processRequest (required)
+   * @return ApiResponse&lt;ProcessResponse&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<DeviceInfo> pingWithHttpInfo() throws ApiException {
-    okhttp3.Call localVarCall = pingValidateBeforeCall(null);
-    Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
+  public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(ProcessRequest processRequest)
+      throws ApiException {
+    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, null);
+    Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
 
   /**
-   * Server health check (asynchronously)
+   * Process list of documents images and return extracted data (asynchronously)
    *
+   * @param processRequest (required)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
    * @http.response.details
    *     <table summary="Response Details" border="1">
    * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-   * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
+   * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
+   * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
+   * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call pingAsync(final ApiCallback<DeviceInfo> _callback) throws ApiException {
+  public okhttp3.Call apiProcessAsync(
+      ProcessRequest processRequest, final ApiCallback<ProcessResponse> _callback)
+      throws ApiException {
 
-    okhttp3.Call localVarCall = pingValidateBeforeCall(_callback);
-    Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
+    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, _callback);
+    Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
   }
