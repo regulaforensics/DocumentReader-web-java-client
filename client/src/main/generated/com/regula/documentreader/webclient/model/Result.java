@@ -66,4 +66,7 @@ public class Result {
 
   /** Contains description of determined document type, if any */
   public static final int DOCUMENT_TYPE = 9;
+
+  /** Contains result of document authenticity checks */
+  public static final int AUTHENTICITY = 20;
 }

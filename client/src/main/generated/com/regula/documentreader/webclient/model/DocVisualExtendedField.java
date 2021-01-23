@@ -153,6 +153,7 @@ public class DocVisualExtendedField {
    *
    * @return bufText
    */
+  @javax.annotation.Nullable
   public String getBufText() {
     return bufText;
   }

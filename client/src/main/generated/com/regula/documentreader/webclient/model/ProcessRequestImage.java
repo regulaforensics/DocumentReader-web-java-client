@@ -22,10 +22,10 @@ public class ProcessRequestImage {
   @SerializedName(SERIALIZED_NAME_IMAGE_DATA)
   private ImageData imageData;
 
-  public static final String SERIALIZED_NAME_LIGHT_INDEX = "LightIndex";
+  public static final String SERIALIZED_NAME_LIGHT = "light";
 
-  @SerializedName(SERIALIZED_NAME_LIGHT_INDEX)
-  private Integer lightIndex;
+  @SerializedName(SERIALIZED_NAME_LIGHT)
+  private Integer light;
 
   public static final String SERIALIZED_NAME_PAGE_IDX = "page_idx";
 
@@ -50,23 +50,23 @@ public class ProcessRequestImage {
     this.imageData = imageData;
   }
 
-  public ProcessRequestImage withLightIndex(Integer lightIndex) {
-    this.lightIndex = lightIndex;
+  public ProcessRequestImage withLight(Integer light) {
+    this.light = light;
     return this;
   }
 
   /**
-   * Get lightIndex
+   * Get light
    *
-   * @return lightIndex
+   * @return light
    */
   @javax.annotation.Nullable
-  public Integer getLightIndex() {
-    return lightIndex;
+  public Integer getLight() {
+    return light;
   }
 
-  public void setLightIndex(Integer lightIndex) {
-    this.lightIndex = lightIndex;
+  public void setLight(Integer light) {
+    this.light = light;
   }
 
   public ProcessRequestImage withPageIdx(Integer pageIdx) {
@@ -98,13 +98,13 @@ public class ProcessRequestImage {
     }
     ProcessRequestImage processRequestImage = (ProcessRequestImage) o;
     return Objects.equals(this.imageData, processRequestImage.imageData)
-        && Objects.equals(this.lightIndex, processRequestImage.lightIndex)
+        && Objects.equals(this.light, processRequestImage.light)
         && Objects.equals(this.pageIdx, processRequestImage.pageIdx);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(imageData, lightIndex, pageIdx);
+    return Objects.hash(imageData, light, pageIdx);
   }
 
   @Override
@@ -112,7 +112,7 @@ public class ProcessRequestImage {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessRequestImage {\n");
     sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
-    sb.append("    lightIndex: ").append(toIndentedString(lightIndex)).append("\n");
+    sb.append("    light: ").append(toIndentedString(light)).append("\n");
     sb.append("    pageIdx: ").append(toIndentedString(pageIdx)).append("\n");
     sb.append("}");
     return sb.toString();
