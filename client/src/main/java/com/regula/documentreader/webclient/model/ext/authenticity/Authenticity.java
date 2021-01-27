@@ -9,7 +9,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     @Nullable
     public SecurityFeature uvLuminescence() {
         int uvLuminescenceType = 1;
-        return new SecurityFeature(this.resultByType(uvLuminescenceType));
+        return this.securityFeatureOrNull(uvLuminescenceType);
     }
 
     @Nullable
