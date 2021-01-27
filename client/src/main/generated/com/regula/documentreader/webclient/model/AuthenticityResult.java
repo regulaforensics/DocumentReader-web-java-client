@@ -13,6 +13,8 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
+
 import java.util.Objects;
 
 /** AuthenticityResult */
@@ -20,10 +22,10 @@ public class AuthenticityResult extends ResultItem {
   public static final String SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST = "AuthenticityCheckList";
 
   @SerializedName(SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST)
-  private com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList;
+  private Authenticity authenticityCheckList;
 
   public AuthenticityResult withAuthenticityCheckList(
-      com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList) {
+      Authenticity authenticityCheckList) {
     this.authenticityCheckList = authenticityCheckList;
     return this;
   }
@@ -33,12 +35,12 @@ public class AuthenticityResult extends ResultItem {
    *
    * @return authenticityCheckList
    */
-  public com.regula.documentreader.webclient.model.ext.Authenticity getAuthenticityCheckList() {
+  public Authenticity getAuthenticityCheckList() {
     return authenticityCheckList;
   }
 
   public void setAuthenticityCheckList(
-      com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList) {
+      Authenticity authenticityCheckList) {
     this.authenticityCheckList = authenticityCheckList;
   }
 

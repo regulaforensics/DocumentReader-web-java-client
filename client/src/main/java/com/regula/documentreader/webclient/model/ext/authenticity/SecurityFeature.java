@@ -1,4 +1,4 @@
-package com.regula.documentreader.webclient.model.ext;
+package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.SecurityFeatureResult;
@@ -12,8 +12,8 @@ public class SecurityFeature extends AuthenticityResult<SecurityFeatureResult> {
     }
 
     @Nullable
-    public SecurityFeatureResult resultByElementType(int elementType) {
-        for (SecurityFeatureResult result : this.results()) {
+    public SecurityFeatureResult itemByElementType(int elementType) {
+        for (SecurityFeatureResult result : this.items()) {
             if (result.getElementType() == elementType) {
                 return result;
             }

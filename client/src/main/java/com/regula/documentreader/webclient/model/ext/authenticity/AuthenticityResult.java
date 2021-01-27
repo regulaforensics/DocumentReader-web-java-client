@@ -1,4 +1,4 @@
-package com.regula.documentreader.webclient.model.ext;
+package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 
@@ -15,7 +15,7 @@ public abstract class AuthenticityResult<T> {
         return this.authenticityCheckResult;
     }
 
-    public List<T> results() {
+    public List<T> items() {
         return (List<T>) this.authenticityCheckResult.getList();
     }
 }

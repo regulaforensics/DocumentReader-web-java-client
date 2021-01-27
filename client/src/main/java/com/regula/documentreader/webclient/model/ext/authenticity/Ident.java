@@ -1,4 +1,4 @@
-package com.regula.documentreader.webclient.model.ext;
+package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.IdentResult;
@@ -12,8 +12,8 @@ public class Ident extends AuthenticityResult<IdentResult> {
     }
 
     @Nullable
-    public IdentResult resultByElementType(int elementType) {
-        for (IdentResult result : this.results()) {
+    public IdentResult itemByElementType(int elementType) {
+        for (IdentResult result : this.items()) {
             if (result.getElementType() == elementType) {
                 return result;
             }

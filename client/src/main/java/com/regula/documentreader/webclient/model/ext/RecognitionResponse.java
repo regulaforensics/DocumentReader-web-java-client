@@ -8,6 +8,8 @@ import com.regula.documentreader.webclient.model.ResultItem;
 import com.regula.documentreader.webclient.model.Status;
 import com.regula.documentreader.webclient.model.StatusResult;
 import com.regula.documentreader.webclient.model.TextResult;
+import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
