@@ -13,87 +13,102 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
 
     public SecurityFeature irB900() {
         int irB900Type = 2;
-        return new SecurityFeature(this.resultByType(irB900Type));
+        return this.securityFeatureOrNull(irB900Type);
     }
 
     public Ident imagePattern() {
         int imagePatternType = 4;
-        return new Ident(this.resultByType(imagePatternType));
+        return this.identOrNull(imagePatternType);
     }
 
     public SecurityFeature axialProtection() {
         int axialProtectionType = 8;
-        return new SecurityFeature(this.resultByType(axialProtectionType));
+        return this.securityFeatureOrNull(axialProtectionType);
     }
 
     public Fiber uvFiber() {
         int uvFiberType = 16;
-        return new Fiber(this.resultByType(uvFiberType));
+        return this.fiberOrNull(uvFiberType);
     }
 
     public Ident irVisibility() {
         int irVisibilityType = 32;
-        return new Ident(this.resultByType(irVisibilityType));
+        return this.identOrNull(irVisibilityType);
     }
 
-    public OCRSecurityTest ocrSecurityTest() {
-        int ocrSecurityTestType = 64;
-        return new OCRSecurityTest(this.resultByType(ocrSecurityTestType));
+    public OCRSecurityText ocrSecurityText() {
+        int ocrSecurityTextType = 64;
+        return this.ocrSecurityTextOrNull(ocrSecurityTextType);
     }
 
     public ImageIdent ipi() {
         int ipiType = 128;
-        return new ImageIdent(this.resultByType(ipiType));
+        return this.imageIdentOrNull(ipiType);
     }
 
     public ImageIdent irImage() {
         int irImageType = 256;
-        return new ImageIdent(this.resultByType(irImageType));
+        return this.imageIdentOrNull(irImageType);
     }
 
     public SecurityFeature embedImage() {
         int embedImageType = 512;
-        return new SecurityFeature(this.resultByType(embedImageType));
+        return this.securityFeatureOrNull(embedImageType);
     }
 
     public Ident ovi() {
         int oviType = 1024;
-        return new Ident(this.resultByType(oviType));
+        return this.identOrNull(oviType);
     }
 
     public Ident irLuminescence() {
         int irLuminescenceType = 2048;
-        return new Ident(this.resultByType(irLuminescenceType));
+        return this.identOrNull(irLuminescenceType);
     }
 
     public SecurityFeature holograms() {
         int hologramsType = 4096;
-        return new SecurityFeature(this.resultByType(hologramsType));
+        return this.securityFeatureOrNull(hologramsType);
     }
 
     public SecurityFeature imageArea() {
         int imageAreaType = 8192;
-        return new SecurityFeature(this.resultByType(imageAreaType));
+        return this.securityFeatureOrNull(imageAreaType);
     }
 
     public Fiber uvBackground() {
         int uvBackgroundType = 16384;
-        return new Fiber(this.resultByType(uvBackgroundType));
+        return this.fiberOrNull(uvBackgroundType);
     }
 
     public Ident portraitComparison() {
         int portraitComparisonType = 32768;
-        return new Ident(this.resultByType(portraitComparisonType));
+        return this.identOrNull(portraitComparisonType);
     }
 
     public SecurityFeature barcodeFormatCheck() {
         int barcodeFormatCheckType = 65536;
-        return new SecurityFeature(this.resultByType(barcodeFormatCheckType));
+        return this.securityFeatureOrNull(barcodeFormatCheckType);
     }
 
     public Ident kinegram() {
         int kinegramType = 131072;
-        return new Ident(this.resultByType(kinegramType));
+        return this.identOrNull(kinegramType);
+    }
+
+    public Ident letterScreen() {
+        int letterScreenType = 262144;
+        return this.identOrNull(letterScreenType);
+    }
+
+    public Ident hologramsDetection() {
+        int hologramsDetectionType = 524288;
+        return this.identOrNull(hologramsDetectionType);
+    }
+
+    public Ident fingerprintComparison() {
+        int fingerprintComparisonType = 1048576;
+        return this.identOrNull(fingerprintComparisonType);
     }
 
     @Nullable
@@ -102,6 +117,46 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
             if (checkResult.getType() == type) {
                 return checkResult;
             }
+        }
+        return null;
+    }
+
+    private Fiber fiberOrNull(int type) {
+        AuthenticityCheckResult result = this.resultByType(type);
+        if (result != null) {
+            return new Fiber(result);
+        }
+        return null;
+    }
+
+    private Ident identOrNull(int type) {
+        AuthenticityCheckResult result = this.resultByType(type);
+        if (result != null) {
+            return new Ident(result);
+        }
+        return null;
+    }
+
+    private ImageIdent imageIdentOrNull(int type) {
+        AuthenticityCheckResult result = this.resultByType(type);
+        if (result != null) {
+            return new ImageIdent(result);
+        }
+        return null;
+    }
+
+    private OCRSecurityText ocrSecurityTextOrNull(int type) {
+        AuthenticityCheckResult result = this.resultByType(type);
+        if (result != null) {
+            return new OCRSecurityText(result);
+        }
+        return null;
+    }
+
+    private SecurityFeature securityFeatureOrNull(int type) {
+        AuthenticityCheckResult result = this.resultByType(type);
+        if (result != null) {
+            return new SecurityFeature(result);
         }
         return null;
     }
