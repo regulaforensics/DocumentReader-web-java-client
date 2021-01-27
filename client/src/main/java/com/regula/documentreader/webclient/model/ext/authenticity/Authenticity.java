@@ -84,6 +84,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
         return this.securityFeatureOrNull(hologramsType);
     }
 
+    @Nullable
     public SecurityFeature imageArea() {
         int imageAreaType = 8192;
         return this.securityFeatureOrNull(imageAreaType);
