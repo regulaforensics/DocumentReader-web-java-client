@@ -133,6 +133,12 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     }
 
     @Nullable
+    public SecurityFeature cancellingDocumentDetector() {
+        int cancellingDocumentDetectorType = 2097152;
+        return this.securityFeatureOrNull(cancellingDocumentDetectorType);
+    }
+
+    @Nullable
     public AuthenticityCheckResult resultByType(int type) {
         for (AuthenticityCheckResult checkResult : this.getList()) {
             if (checkResult.getType() == type) {
