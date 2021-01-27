@@ -3,15 +3,20 @@ package com.regula.documentreader.webclient.example;
 
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
-import com.regula.documentreader.webclient.model.*;
+import com.regula.documentreader.webclient.model.CheckResult;
+import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
+import com.regula.documentreader.webclient.model.Light;
+import com.regula.documentreader.webclient.model.Result;
+import com.regula.documentreader.webclient.model.Scenario;
+import com.regula.documentreader.webclient.model.SecurityFeatureType;
+import com.regula.documentreader.webclient.model.Source;
+import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
 import com.regula.documentreader.webclient.model.ext.RecognitionParams;
 import com.regula.documentreader.webclient.model.ext.RecognitionRequest;
-import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
@@ -34,15 +39,29 @@ public class Main {
         var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
         var licenseFromFile = readFile("regula.license");
 
+        byte[] whitePage0 = readFile("WHITE.jpg");
+        byte[] irPage0 = readFile("IR.jpg");
+        byte[] uvPage0 = readFile("UV.jpg");
 
-        byte[] imageBytes = readFile("australia_passport.jpg");
-        var image = new ProcessRequestImage(imageBytes, Light.WHITE);
+        var whitePageRequestImage = new ProcessRequestImage(whitePage0, Light.WHITE, 0);
+        var irPageRequestImage = new ProcessRequestImage(irPage0, Light.IR, 0);
+        var uvPageRequestImage = new ProcessRequestImage(uvPage0, Light.UV, 0);
 
         var requestParams = new RecognitionParams()
-                .withScenario(Scenario.FULL_PROCESS)
-                .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.IMAGES, Result.DOCUMENT_TYPE);
+                .withScenario(Scenario.FULL_AUTH)
+                .withResultTypeOutput(
+                        // actual results
+                        Result.STATUS, Result.AUTHENTICITY, Result.TEXT, Result.IMAGES,
+                        Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES,
+                        // legacy results
+                        Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
+                        Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
+                        Result.LEXICAL_ANALYSIS
+                );
 
-        RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
+        RecognitionRequest request = new RecognitionRequest(
+                requestParams, List.of(whitePageRequestImage, irPageRequestImage, uvPageRequestImage)
+        );
 
         var api = new DocumentReaderApi(apiBaseUrl);
         if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
@@ -63,6 +82,9 @@ public class Main {
         var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
         var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
 
+        var docAuthenticity = response.authenticity();
+        var docIRB900 = docAuthenticity.irB900();
+        var docBlank = docIRB900.resultByElementType(SecurityFeatureType.BLANK);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.format("           Document Overall Status: %s%n", docOverallStatus);

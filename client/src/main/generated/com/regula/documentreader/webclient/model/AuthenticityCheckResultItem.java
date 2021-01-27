@@ -30,7 +30,7 @@ public class AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_ELEMENT_DIAGNOSE = "ElementDiagnose";
 
   @SerializedName(SERIALIZED_NAME_ELEMENT_DIAGNOSE)
-  private CheckDiagnose elementDiagnose;
+  private Integer elementDiagnose;
 
   public AuthenticityCheckResultItem withType(Integer type) {
     this.type = type;
@@ -70,7 +70,7 @@ public class AuthenticityCheckResultItem {
     this.elementResult = elementResult;
   }
 
-  public AuthenticityCheckResultItem withElementDiagnose(CheckDiagnose elementDiagnose) {
+  public AuthenticityCheckResultItem withElementDiagnose(Integer elementDiagnose) {
     this.elementDiagnose = elementDiagnose;
     return this;
   }
@@ -81,11 +81,11 @@ public class AuthenticityCheckResultItem {
    * @return elementDiagnose
    */
   @javax.annotation.Nullable
-  public CheckDiagnose getElementDiagnose() {
+  public Integer getElementDiagnose() {
     return elementDiagnose;
   }
 
-  public void setElementDiagnose(CheckDiagnose elementDiagnose) {
+  public void setElementDiagnose(Integer elementDiagnose) {
     this.elementDiagnose = elementDiagnose;
   }
 

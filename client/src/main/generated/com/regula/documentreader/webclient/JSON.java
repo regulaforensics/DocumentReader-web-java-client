@@ -676,6 +676,19 @@ public class JSON {
             return clazz;
           }
         });
+    fireBuilder.registerTypeSelector(
+        AuthenticityCheckResultItem.class,
+        new TypeSelector() {
+          @Override
+          public Class getClassForElement(JsonElement readElement) {
+            String result_type = getDiscriminatorValue(readElement, "Type");
+            Class clazz = childOfAuthenticityCheckResultItemByDiscriminatorValue.get(result_type);
+            if (clazz == null) {
+              clazz = RawAuthenticityCheckResultItem.class;
+            }
+            return clazz;
+          }
+        });
 
     GsonBuilder builder = fireBuilder.createGsonBuilder();
     return builder;

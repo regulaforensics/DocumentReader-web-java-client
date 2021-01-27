@@ -20,7 +20,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_CRITICAL_FLAG = "CriticalFlag";
 
   @SerializedName(SERIALIZED_NAME_CRITICAL_FLAG)
-  private Critical criticalFlag;
+  private Integer criticalFlag;
 
   public static final String SERIALIZED_NAME_LIGHT_TYPE = "LightType";
 
@@ -67,7 +67,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_RESERVED2)
   private Integer reserved2;
 
-  public OCRSecurityTextResult withCriticalFlag(Critical criticalFlag) {
+  public OCRSecurityTextResult withCriticalFlag(Integer criticalFlag) {
     this.criticalFlag = criticalFlag;
     return this;
   }
@@ -78,11 +78,11 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
    * @return criticalFlag
    */
   @javax.annotation.Nullable
-  public Critical getCriticalFlag() {
+  public Integer getCriticalFlag() {
     return criticalFlag;
   }
 
-  public void setCriticalFlag(Critical criticalFlag) {
+  public void setCriticalFlag(Integer criticalFlag) {
     this.criticalFlag = criticalFlag;
   }
 

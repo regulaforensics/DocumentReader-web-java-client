@@ -20,9 +20,10 @@ public class AuthenticityResult extends ResultItem {
   public static final String SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST = "AuthenticityCheckList";
 
   @SerializedName(SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST)
-  private AuthenticityCheckList authenticityCheckList;
+  private com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList;
 
-  public AuthenticityResult withAuthenticityCheckList(AuthenticityCheckList authenticityCheckList) {
+  public AuthenticityResult withAuthenticityCheckList(
+      com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList) {
     this.authenticityCheckList = authenticityCheckList;
     return this;
   }
@@ -32,11 +33,12 @@ public class AuthenticityResult extends ResultItem {
    *
    * @return authenticityCheckList
    */
-  public AuthenticityCheckList getAuthenticityCheckList() {
+  public com.regula.documentreader.webclient.model.ext.Authenticity getAuthenticityCheckList() {
     return authenticityCheckList;
   }
 
-  public void setAuthenticityCheckList(AuthenticityCheckList authenticityCheckList) {
+  public void setAuthenticityCheckList(
+      com.regula.documentreader.webclient.model.ext.Authenticity authenticityCheckList) {
     this.authenticityCheckList = authenticityCheckList;
   }
 

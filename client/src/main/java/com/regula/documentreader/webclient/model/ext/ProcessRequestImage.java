@@ -15,8 +15,13 @@ public class ProcessRequestImage
     this.setImageData(new ImageData().withImage(image));
   }
 
-  public ProcessRequestImage(byte[] image, Integer lightIndex) {
+  public ProcessRequestImage(byte[] image, Integer light) {
     this(image);
-    this.setLightIndex(lightIndex);
+    this.setLight(light);
+  }
+
+  public ProcessRequestImage(byte[] image, Integer light, Integer pageIdx) {
+    this(image, light);
+    this.setPageIdx(pageIdx);
   }
 }

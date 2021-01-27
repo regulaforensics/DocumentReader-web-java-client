@@ -18,14 +18,10 @@ src/main/generated/com/regula/documentreader/webclient/auth/Authentication.java
 src/main/generated/com/regula/documentreader/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/documentreader/webclient/auth/HttpBearerAuth.java
 src/main/generated/com/regula/documentreader/webclient/model/AreaContainer.java
-src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckList.java
-src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckResult.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckResultItem.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResult.java
-src/main/generated/com/regula/documentreader/webclient/model/CheckDiagnose.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentType.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentTypeResult.java
-src/main/generated/com/regula/documentreader/webclient/model/Critical.java
 src/main/generated/com/regula/documentreader/webclient/model/CrossSourceValueComparison.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsOptical.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsRFID.java
@@ -66,7 +62,6 @@ src/main/generated/com/regula/documentreader/webclient/model/RectangleCoordinate
 src/main/generated/com/regula/documentreader/webclient/model/ResultItem.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidOrigin.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureResult.java
-src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureType.java
 src/main/generated/com/regula/documentreader/webclient/model/SourceValidity.java
 src/main/generated/com/regula/documentreader/webclient/model/Status.java
 src/main/generated/com/regula/documentreader/webclient/model/StatusResult.java
@@ -80,4 +75,3 @@ src/main/generated/com/regula/documentreader/webclient/model/TextFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/TextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java
-src/main/generated/com/regula/documentreader/webclient/model/Visibility.java

@@ -1,5 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
+import com.regula.documentreader.webclient.model.AuthenticityResult;
 import com.regula.documentreader.webclient.model.ImagesResult;
 import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.Result;
@@ -45,6 +46,15 @@ public class RecognitionResponse {
     ImagesResult result = resultByType(Result.IMAGES);
     if (result != null) {
       return result.getImages();
+    }
+    return null;
+  }
+
+  @Nullable
+  public Authenticity authenticity() {
+    AuthenticityResult result = resultByType(Result.AUTHENTICITY);
+    if (result != null) {
+      return result.getAuthenticityCheckList();
     }
     return null;
   }

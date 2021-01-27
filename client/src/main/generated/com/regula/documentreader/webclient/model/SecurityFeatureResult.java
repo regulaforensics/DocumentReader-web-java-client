@@ -22,7 +22,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_ELEMENT_TYPE = "ElementType";
 
   @SerializedName(SERIALIZED_NAME_ELEMENT_TYPE)
-  private SecurityFeatureType elementType;
+  private Integer elementType;
 
   public static final String SERIALIZED_NAME_ELEMENT_RECT = "ElementRect";
 
@@ -32,12 +32,12 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_VISIBILITY = "Visibility";
 
   @SerializedName(SERIALIZED_NAME_VISIBILITY)
-  private Visibility visibility;
+  private Integer visibility;
 
   public static final String SERIALIZED_NAME_CRITICAL_FLAG = "CriticalFlag";
 
   @SerializedName(SERIALIZED_NAME_CRITICAL_FLAG)
-  private Critical criticalFlag;
+  private Integer criticalFlag;
 
   public static final String SERIALIZED_NAME_AREA_LIST = "AreaList";
 
@@ -49,7 +49,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_RESERVED2)
   private Integer reserved2;
 
-  public SecurityFeatureResult withElementType(SecurityFeatureType elementType) {
+  public SecurityFeatureResult withElementType(Integer elementType) {
     this.elementType = elementType;
     return this;
   }
@@ -60,11 +60,11 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
    * @return elementType
    */
   @javax.annotation.Nullable
-  public SecurityFeatureType getElementType() {
+  public Integer getElementType() {
     return elementType;
   }
 
-  public void setElementType(SecurityFeatureType elementType) {
+  public void setElementType(Integer elementType) {
     this.elementType = elementType;
   }
 
@@ -87,7 +87,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
     this.elementRect = elementRect;
   }
 
-  public SecurityFeatureResult withVisibility(Visibility visibility) {
+  public SecurityFeatureResult withVisibility(Integer visibility) {
     this.visibility = visibility;
     return this;
   }
@@ -98,15 +98,15 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
    * @return visibility
    */
   @javax.annotation.Nullable
-  public Visibility getVisibility() {
+  public Integer getVisibility() {
     return visibility;
   }
 
-  public void setVisibility(Visibility visibility) {
+  public void setVisibility(Integer visibility) {
     this.visibility = visibility;
   }
 
-  public SecurityFeatureResult withCriticalFlag(Critical criticalFlag) {
+  public SecurityFeatureResult withCriticalFlag(Integer criticalFlag) {
     this.criticalFlag = criticalFlag;
     return this;
   }
@@ -117,11 +117,11 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
    * @return criticalFlag
    */
   @javax.annotation.Nullable
-  public Critical getCriticalFlag() {
+  public Integer getCriticalFlag() {
     return criticalFlag;
   }
 
-  public void setCriticalFlag(Critical criticalFlag) {
+  public void setCriticalFlag(Integer criticalFlag) {
     this.criticalFlag = criticalFlag;
   }
 

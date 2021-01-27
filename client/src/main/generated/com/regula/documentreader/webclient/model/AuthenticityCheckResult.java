@@ -22,7 +22,7 @@ public class AuthenticityCheckResult {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private SecurityFeatureType type;
+  private Integer type;
 
   public static final String SERIALIZED_NAME_RESULT = "Result";
 
@@ -32,13 +32,9 @@ public class AuthenticityCheckResult {
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
-  private List<
-          AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult>
-      list =
-          new ArrayList<
-              AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult>();
+  private List<AuthenticityCheckResultItem> list = new ArrayList<AuthenticityCheckResultItem>();
 
-  public AuthenticityCheckResult withType(SecurityFeatureType type) {
+  public AuthenticityCheckResult withType(Integer type) {
     this.type = type;
     return this;
   }
@@ -48,11 +44,11 @@ public class AuthenticityCheckResult {
    *
    * @return type
    */
-  public SecurityFeatureType getType() {
+  public Integer getType() {
     return type;
   }
 
-  public void setType(SecurityFeatureType type) {
+  public void setType(Integer type) {
     this.type = type;
   }
 
@@ -74,16 +70,12 @@ public class AuthenticityCheckResult {
     this.result = result;
   }
 
-  public AuthenticityCheckResult withList(
-      List<AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult>
-          list) {
+  public AuthenticityCheckResult withList(List<AuthenticityCheckResultItem> list) {
     this.list = list;
     return this;
   }
 
-  public AuthenticityCheckResult addListItem(
-      AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult
-          listItem) {
+  public AuthenticityCheckResult addListItem(AuthenticityCheckResultItem listItem) {
     this.list.add(listItem);
     return this;
   }
@@ -93,14 +85,11 @@ public class AuthenticityCheckResult {
    *
    * @return list
    */
-  public List<AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult>
-      getList() {
+  public List<AuthenticityCheckResultItem> getList() {
     return list;
   }
 
-  public void setList(
-      List<AnyOfSecurityFeatureResultIdentResultFiberResultOCRSecurityTextResultPhotoIdentResult>
-          list) {
+  public void setList(List<AuthenticityCheckResultItem> list) {
     this.list = list;
   }
 
