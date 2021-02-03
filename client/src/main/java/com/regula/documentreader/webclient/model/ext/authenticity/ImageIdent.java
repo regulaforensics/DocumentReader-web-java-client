@@ -5,7 +5,7 @@ import com.regula.documentreader.webclient.model.PhotoIdentResult;
 
 public class ImageIdent extends AuthenticityResult<PhotoIdentResult> {
 
-    public ImageIdent(AuthenticityCheckResult authenticityCheckResult) {
-        super(authenticityCheckResult);
-    }
+  public ImageIdent(AuthenticityCheckResult authenticityCheckResult) {
+    super(authenticityCheckResult);
+  }
 }

@@ -13,6 +13,8 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /** ProcessResponse */
@@ -41,6 +43,11 @@ public class ProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_LOG)
   private String log;
+
+  public static final String SERIALIZED_NAME_PASS_BACK_OBJECT = "passBackObject";
+
+  @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
+  private Map<String, Object> passBackObject = null;
 
   public ProcessResponse withChipPage(Integer chipPage) {
     this.chipPage = chipPage;
@@ -133,6 +140,33 @@ public class ProcessResponse {
     this.log = log;
   }
 
+  public ProcessResponse withPassBackObject(Map<String, Object> passBackObject) {
+    this.passBackObject = passBackObject;
+    return this;
+  }
+
+  public ProcessResponse putPassBackObjectItem(String key, Object passBackObjectItem) {
+    if (this.passBackObject == null) {
+      this.passBackObject = new HashMap<String, Object>();
+    }
+    this.passBackObject.put(key, passBackObjectItem);
+    return this;
+  }
+
+  /**
+   * Free-form object provided in request. See passBackObject property of ProcessRequest.
+   *
+   * @return passBackObject
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getPassBackObject() {
+    return passBackObject;
+  }
+
+  public void setPassBackObject(Map<String, Object> passBackObject) {
+    this.passBackObject = passBackObject;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -146,12 +180,14 @@ public class ProcessResponse {
         && Objects.equals(this.processingFinished, processResponse.processingFinished)
         && Objects.equals(this.containerList, processResponse.containerList)
         && Objects.equals(this.transactionInfo, processResponse.transactionInfo)
-        && Objects.equals(this.log, processResponse.log);
+        && Objects.equals(this.log, processResponse.log)
+        && Objects.equals(this.passBackObject, processResponse.passBackObject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chipPage, processingFinished, containerList, transactionInfo, log);
+    return Objects.hash(
+        chipPage, processingFinished, containerList, transactionInfo, log, passBackObject);
   }
 
   @Override
@@ -163,6 +199,7 @@ public class ProcessResponse {
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    transactionInfo: ").append(toIndentedString(transactionInfo)).append("\n");
     sb.append("    log: ").append(toIndentedString(log)).append("\n");
+    sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
     sb.append("}");
     return sb.toString();
   }

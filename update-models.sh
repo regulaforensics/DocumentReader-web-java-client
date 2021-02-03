@@ -33,7 +33,7 @@ openapitools/openapi-generator-cli:v5.0.0-beta2 generate \
 -c /client/java-generator-config.json -t /client/client/generator-templates/ \
 --import-mappings $ENUM_MAPPINGS,Text=com.regula.documentreader.webclient.model.ext.Text,\
 Images=com.regula.documentreader.webclient.model.ext.Images,\
-AuthenticityCheckList=com.regula.documentreader.webclient.model.ext.Authenticity \
+AuthenticityCheckList=com.regula.documentreader.webclient.model.ext.authenticity.Authenticity \
 \
 || exit 1
 

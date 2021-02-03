@@ -14,7 +14,9 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /** ProcessRequest */
@@ -33,6 +35,11 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_SYSTEM_INFO)
   private ProcessSystemInfo systemInfo;
+
+  public static final String SERIALIZED_NAME_PASS_BACK_OBJECT = "passBackObject";
+
+  @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
+  private Map<String, Object> passBackObject = null;
 
   public ProcessRequest withProcessParam(ProcessParams processParam) {
     this.processParam = processParam;
@@ -94,6 +101,34 @@ public class ProcessRequest {
     this.systemInfo = systemInfo;
   }
 
+  public ProcessRequest withPassBackObject(Map<String, Object> passBackObject) {
+    this.passBackObject = passBackObject;
+    return this;
+  }
+
+  public ProcessRequest putPassBackObjectItem(String key, Object passBackObjectItem) {
+    if (this.passBackObject == null) {
+      this.passBackObject = new HashMap<String, Object>();
+    }
+    this.passBackObject.put(key, passBackObjectItem);
+    return this;
+  }
+
+  /**
+   * Free-form object to be included in response. Must be object, not list or simple value. Do not
+   * affect document processing. Use it freely to pass your app params. Stored in process logs.
+   *
+   * @return passBackObject
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getPassBackObject() {
+    return passBackObject;
+  }
+
+  public void setPassBackObject(Map<String, Object> passBackObject) {
+    this.passBackObject = passBackObject;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -105,12 +140,13 @@ public class ProcessRequest {
     ProcessRequest processRequest = (ProcessRequest) o;
     return Objects.equals(this.processParam, processRequest.processParam)
         && Objects.equals(this.list, processRequest.list)
-        && Objects.equals(this.systemInfo, processRequest.systemInfo);
+        && Objects.equals(this.systemInfo, processRequest.systemInfo)
+        && Objects.equals(this.passBackObject, processRequest.passBackObject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processParam, list, systemInfo);
+    return Objects.hash(processParam, list, systemInfo, passBackObject);
   }
 
   @Override
@@ -120,6 +156,7 @@ public class ProcessRequest {
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
+    sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
     sb.append("}");
     return sb.toString();
   }
