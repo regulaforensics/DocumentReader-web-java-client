@@ -19,3 +19,4 @@ src/main/AndroidManifest.xml
 **/ContainerList.java
 **/DocVisualExtendedInfo.java
 **/*AllOf.java
+**/AuthenticityCheckResult.java
