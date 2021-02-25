@@ -1,144 +1,88 @@
 package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
+import com.regula.documentreader.webclient.model.AuthenticityResultType;
 import javax.annotation.Nullable;
 
 public class Authenticity extends com.regula.documentreader.webclient.model.AuthenticityCheckList {
 
   @Nullable
-  public SecurityFeature uvLuminescence() {
-    int uvLuminescenceType = 1;
-    return this.securityFeatureOrNull(uvLuminescenceType);
+  public SecurityFeatureChecks uvLuminescenceChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.UV_LUMINESCENCE);
   }
 
   @Nullable
-  public SecurityFeature irB900() {
-    int irB900Type = 2;
-    return this.securityFeatureOrNull(irB900Type);
+  public SecurityFeatureChecks irB900Checks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.IR_B900);
   }
 
   @Nullable
-  public Ident imagePattern() {
-    int imagePatternType = 4;
-    return this.identOrNull(imagePatternType);
+  public IdentChecks imagePatternChecks() {
+    return this.identOrNull(AuthenticityResultType.IMAGE_PATTERN);
   }
 
   @Nullable
-  public SecurityFeature axialProtection() {
-    int axialProtectionType = 8;
-    return this.securityFeatureOrNull(axialProtectionType);
+  public SecurityFeatureChecks axialProtectionChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.AXIAL_PROTECTION);
   }
 
   @Nullable
-  public Fiber uvFiber() {
-    int uvFiberType = 16;
-    return this.fiberOrNull(uvFiberType);
+  public FiberChecks uvFiberChecks() {
+    return this.fiberOrNull(AuthenticityResultType.UV_FIBERS);
   }
 
   @Nullable
-  public Ident irVisibility() {
-    int irVisibilityType = 32;
-    return this.identOrNull(irVisibilityType);
+  public IdentChecks irVisibilityChecks() {
+    return this.identOrNull(AuthenticityResultType.IR_VISIBILITY);
   }
 
   @Nullable
-  public OCRSecurityText ocrSecurityText() {
-    int ocrSecurityTextType = 64;
-    return this.ocrSecurityTextOrNull(ocrSecurityTextType);
+  public OCRSecurityTextChecks ocrSecurityTextChecks() {
+    return this.ocrSecurityTextOrNull(AuthenticityResultType.OCR_SECURITY_TEXT);
   }
 
   @Nullable
-  public ImageIdent ipi() {
-    int ipiType = 128;
-    return this.imageIdentOrNull(ipiType);
+  public ImageIdentChecks ipiChecks() {
+    return this.imageIdentOrNull(AuthenticityResultType.IPI);
   }
 
   @Nullable
-  public ImageIdent irImage() {
-    int irImageType = 256;
-    return this.imageIdentOrNull(irImageType);
+  public SecurityFeatureChecks embedImageChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.PHOTO_EMBED_TYPE);
   }
 
   @Nullable
-  public SecurityFeature embedImage() {
-    int embedImageType = 512;
-    return this.securityFeatureOrNull(embedImageType);
+  public SecurityFeatureChecks hologramsChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.HOLOGRAMS);
   }
 
   @Nullable
-  public Ident ovi() {
-    int oviType = 1024;
-    return this.identOrNull(oviType);
+  public SecurityFeatureChecks imageAreaChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.PHOTO_AREA);
   }
 
   @Nullable
-  public Ident irLuminescence() {
-    int irLuminescenceType = 2048;
-    return this.identOrNull(irLuminescenceType);
+  public IdentChecks portraitComparisonChecks() {
+    return this.identOrNull(AuthenticityResultType.PORTRAIT_COMPARISON);
   }
 
   @Nullable
-  public SecurityFeature holograms() {
-    int hologramsType = 4096;
-    return this.securityFeatureOrNull(hologramsType);
+  public SecurityFeatureChecks barcodeFormatCheckChecks() {
+    return this.securityFeatureOrNull(AuthenticityResultType.BARCODE_FORMAT_CHECK);
   }
 
   @Nullable
-  public SecurityFeature imageArea() {
-    int imageAreaType = 8192;
-    return this.securityFeatureOrNull(imageAreaType);
+  public IdentChecks kinegramChecks() {
+    return this.identOrNull(AuthenticityResultType.KINEGRAM);
   }
 
   @Nullable
-  public Fiber uvBackground() {
-    int uvBackgroundType = 16384;
-    return this.fiberOrNull(uvBackgroundType);
+  public IdentChecks letterScreenChecks() {
+    return this.identOrNull(AuthenticityResultType.LETTER_SCREEN);
   }
 
   @Nullable
-  public Ident portraitComparison() {
-    int portraitComparisonType = 32768;
-    return this.identOrNull(portraitComparisonType);
-  }
-
-  @Nullable
-  public SecurityFeature barcodeFormatCheck() {
-    int barcodeFormatCheckType = 65536;
-    return this.securityFeatureOrNull(barcodeFormatCheckType);
-  }
-
-  @Nullable
-  public Ident kinegram() {
-    int kinegramType = 131072;
-    return this.identOrNull(kinegramType);
-  }
-
-  @Nullable
-  public Ident letterScreen() {
-    int letterScreenType = 262144;
-    return this.identOrNull(letterScreenType);
-  }
-
-  @Nullable
-  public Ident hologramsDetection() {
-    int hologramsDetectionType = 524288;
-    return this.identOrNull(hologramsDetectionType);
-  }
-
-  @Nullable
-  public Ident fingerprintComparison() {
-    int fingerprintComparisonType = 1048576;
-    return this.identOrNull(fingerprintComparisonType);
-  }
-
-  @Nullable
-  public SecurityFeature cancellingDocumentDetector() {
-    int cancellingDocumentDetectorType = 2097152;
-    return this.securityFeatureOrNull(cancellingDocumentDetectorType);
-  }
-
-  @Nullable
-  public AuthenticityCheckResult resultByType(int type) {
+  private AuthenticityCheckResult resultByType(int type) {
     for (AuthenticityCheckResult checkResult : this.getList()) {
       if (checkResult.getType() == type) {
         return checkResult;
@@ -147,42 +91,42 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private Fiber fiberOrNull(int type) {
+  private FiberChecks fiberOrNull(int type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
-      return new Fiber(result);
+      return new FiberChecks(result);
     }
     return null;
   }
 
-  private Ident identOrNull(int type) {
+  private IdentChecks identOrNull(int type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
-      return new Ident(result);
+      return new IdentChecks(result);
     }
     return null;
   }
 
-  private ImageIdent imageIdentOrNull(int type) {
+  private ImageIdentChecks imageIdentOrNull(int type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
-      return new ImageIdent(result);
+      return new ImageIdentChecks(result);
     }
     return null;
   }
 
-  private OCRSecurityText ocrSecurityTextOrNull(int type) {
+  private OCRSecurityTextChecks ocrSecurityTextOrNull(int type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
-      return new OCRSecurityText(result);
+      return new OCRSecurityTextChecks(result);
     }
     return null;
   }
 
-  private SecurityFeature securityFeatureOrNull(int type) {
+  private SecurityFeatureChecks securityFeatureOrNull(int type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
-      return new SecurityFeature(result);
+      return new SecurityFeatureChecks(result);
     }
     return null;
   }

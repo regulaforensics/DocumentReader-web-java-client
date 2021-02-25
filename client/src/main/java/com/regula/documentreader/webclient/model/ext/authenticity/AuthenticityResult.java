@@ -15,6 +15,7 @@ public abstract class AuthenticityResult<T> {
   }
 
   public List<T> items() {
+    //noinspection unchecked
     return (List<T>) this.authenticityCheckResult.getList();
   }
 }

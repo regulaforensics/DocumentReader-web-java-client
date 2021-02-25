@@ -4,14 +4,14 @@ import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.SecurityFeatureResult;
 import javax.annotation.Nullable;
 
-public class SecurityFeature extends AuthenticityResult<SecurityFeatureResult> {
+public class SecurityFeatureChecks extends AuthenticityResult<SecurityFeatureResult> {
 
-  public SecurityFeature(AuthenticityCheckResult authenticityCheckResult) {
+  public SecurityFeatureChecks(AuthenticityCheckResult authenticityCheckResult) {
     super(authenticityCheckResult);
   }
 
   @Nullable
-  public SecurityFeatureResult itemByElementType(int elementType) {
+  public SecurityFeatureResult checksByElement(int elementType) {
     for (SecurityFeatureResult result : this.items()) {
       if (result.getElementType() == elementType) {
         return result;

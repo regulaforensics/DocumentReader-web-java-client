@@ -53,7 +53,12 @@ public class RecognitionResponse {
 
   @Nullable
   public Authenticity authenticity() {
-    AuthenticityResult result = resultByType(Result.AUTHENTICITY);
+    return authenticity(0);
+  }
+
+  @Nullable
+  public Authenticity authenticity(int page_idx) {
+    AuthenticityResult result = getResult(Result.AUTHENTICITY, page_idx);
     if (result != null) {
       return result.getAuthenticityCheckList();
     }
@@ -63,6 +68,15 @@ public class RecognitionResponse {
   public <R> R resultByType(int type) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type) {
+        return (R) item;
+      }
+    }
+    return null;
+  }
+
+  public <R> R getResult(int type, int page_idx) {
+    for (ResultItem item : originalResponse.getContainerList().getList()) {
+      if (item.getResultType() == type && item.getPageIdx() == page_idx) {
         return (R) item;
       }
     }

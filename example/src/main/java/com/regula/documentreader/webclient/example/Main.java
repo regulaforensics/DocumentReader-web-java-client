@@ -84,13 +84,11 @@ public class Main {
 
         var docAuthenticity = response.authenticity();
 
-        var docIRB900 = docAuthenticity.irB900();
-        var docIRB900Items = docIRB900.items();
-        var docIRB900Blank = docIRB900.itemByElementType(SecurityFeatureType.BLANK);
+        var docIRB900 = docAuthenticity.irB900Checks();
+        var docIRB900Blank = docIRB900.checksByElement(SecurityFeatureType.BLANK);
 
-        var docImagePattern = docAuthenticity.imagePattern();
-        var docImagePatternItems = docImagePattern.items();
-        var docImagePatternBlank = docImagePattern.itemByElementType(SecurityFeatureType.BLANK);
+        var docImagePattern = docAuthenticity.imagePatternChecks();
+        var docImagePatternBlank = docImagePattern.checksByElement(SecurityFeatureType.BLANK);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.format("           Document Overall Status: %s%n", docOverallStatus);

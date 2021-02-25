@@ -4,14 +4,14 @@ import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.IdentResult;
 import javax.annotation.Nullable;
 
-public class Ident extends AuthenticityResult<IdentResult> {
+public class IdentChecks extends AuthenticityResult<IdentResult> {
 
-  public Ident(AuthenticityCheckResult authenticityCheckResult) {
+  public IdentChecks(AuthenticityCheckResult authenticityCheckResult) {
     super(authenticityCheckResult);
   }
 
   @Nullable
-  public IdentResult itemByElementType(int elementType) {
+  public IdentResult checksByElement(int elementType) {
     for (IdentResult result : this.items()) {
       if (result.getElementType() == elementType) {
         return result;

@@ -20,7 +20,7 @@ public class OriginalSymbol {
   public static final String SERIALIZED_NAME_CODE = "code";
 
   @SerializedName(SERIALIZED_NAME_CODE)
-  private Integer code;
+  private Long code;
 
   public static final String SERIALIZED_NAME_PROBABILITY = "probability";
 
@@ -32,7 +32,7 @@ public class OriginalSymbol {
   @SerializedName(SERIALIZED_NAME_RECT)
   private RectangleCoordinates rect;
 
-  public OriginalSymbol withCode(Integer code) {
+  public OriginalSymbol withCode(Long code) {
     this.code = code;
     return this;
   }
@@ -43,11 +43,11 @@ public class OriginalSymbol {
    * @return code
    */
   @javax.annotation.Nullable
-  public Integer getCode() {
+  public Long getCode() {
     return code;
   }
 
-  public void setCode(Integer code) {
+  public void setCode(Long code) {
     this.code = code;
   }
 

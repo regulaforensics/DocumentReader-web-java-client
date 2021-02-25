@@ -2,7 +2,7 @@
 
 DOCS_DEFINITION_FOLDER="${PWD}/../DocumentReader-web-openapi" \
 \
-&& ENUM_MAPPINGS="TextFieldType=Integer,GraphicFieldType=Integer,Scenario=String,DocumentFormat=Integer,\
+&& ENUM_MAPPINGS="MeasureSystem=Integer,TextFieldType=Integer,GraphicFieldType=Integer,Scenario=String,DocumentFormat=Integer,\
 Light=Integer,Result=Integer,VerificationResult=Integer,RfidLocation=Integer,\
 DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=String,CheckResult=Integer,\
 LCID=Integer,DocumentType=Integer,CheckDiagnose=Integer,Critical=Integer,AuthenticityResultType=Integer,\

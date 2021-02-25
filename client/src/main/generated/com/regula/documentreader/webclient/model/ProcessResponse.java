@@ -59,6 +59,7 @@ public class ProcessResponse {
    *
    * @return chipPage
    */
+  @javax.annotation.Nullable
   public Integer getChipPage() {
     return chipPage;
   }

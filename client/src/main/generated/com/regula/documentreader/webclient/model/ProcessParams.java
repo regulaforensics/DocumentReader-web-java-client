@@ -46,6 +46,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_DATE_FORMAT)
   private String dateFormat;
 
+  public static final String SERIALIZED_NAME_MEASURE_SYSTEM = "measureSystem";
+
+  @SerializedName(SERIALIZED_NAME_MEASURE_SYSTEM)
+  private Integer measureSystem;
+
   public static final String SERIALIZED_NAME_IMAGE_DPI_OUT_MAX = "imageDpiOutMax";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_DPI_OUT_MAX)
@@ -218,6 +223,25 @@ public class ProcessParams {
 
   public void setDateFormat(String dateFormat) {
     this.dateFormat = dateFormat;
+  }
+
+  public ProcessParams withMeasureSystem(Integer measureSystem) {
+    this.measureSystem = measureSystem;
+    return this;
+  }
+
+  /**
+   * Get measureSystem
+   *
+   * @return measureSystem
+   */
+  @javax.annotation.Nullable
+  public Integer getMeasureSystem() {
+    return measureSystem;
+  }
+
+  public void setMeasureSystem(Integer measureSystem) {
+    this.measureSystem = measureSystem;
   }
 
   public ProcessParams withImageDpiOutMax(Integer imageDpiOutMax) {
@@ -463,6 +487,7 @@ public class ProcessParams {
         && Objects.equals(this.doublePageSpread, processParams.doublePageSpread)
         && Objects.equals(this.fieldTypesFilter, processParams.fieldTypesFilter)
         && Objects.equals(this.dateFormat, processParams.dateFormat)
+        && Objects.equals(this.measureSystem, processParams.measureSystem)
         && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
         && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
         && Objects.equals(this.customParams, processParams.customParams)
@@ -485,6 +510,7 @@ public class ProcessParams {
         doublePageSpread,
         fieldTypesFilter,
         dateFormat,
+        measureSystem,
         imageDpiOutMax,
         alreadyCropped,
         customParams,
@@ -507,6 +533,7 @@ public class ProcessParams {
     sb.append("    doublePageSpread: ").append(toIndentedString(doublePageSpread)).append("\n");
     sb.append("    fieldTypesFilter: ").append(toIndentedString(fieldTypesFilter)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
+    sb.append("    measureSystem: ").append(toIndentedString(measureSystem)).append("\n");
     sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
     sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
     sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
