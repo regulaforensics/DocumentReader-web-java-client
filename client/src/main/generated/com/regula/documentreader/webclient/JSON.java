@@ -861,6 +861,9 @@ public class JSON {
           if (date.endsWith("+0000")) {
             date = date.substring(0, date.length() - 5) + "Z";
           }
+          if (date.contains(" ")) {
+            date = date.replace(' ', 'T');
+          }
           return OffsetDateTime.parse(date, formatter);
       }
     }
