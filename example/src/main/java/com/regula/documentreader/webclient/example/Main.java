@@ -2,9 +2,9 @@ package com.regula.documentreader.webclient.example;
 
 
 import com.regula.documentreader.webclient.ApiException;
+import com.regula.documentreader.webclient.RawResultItem;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.model.CheckResult;
-import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
 import com.regula.documentreader.webclient.model.Light;
 import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
@@ -56,7 +56,8 @@ public class Main {
                         // legacy results
                         Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
                         Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
-                        Result.LEXICAL_ANALYSIS
+                        Result.LEXICAL_ANALYSIS,
+                        85
                 );
 
         RecognitionRequest request = new RecognitionRequest(
@@ -110,7 +111,10 @@ public class Main {
         saveFile("portrait.jpg", portraitFromVisual);
 
         // how to get low lvl individual results
-        LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
+        RawResultItem docPositionResult = response.resultByType(85);
+        var docPosition = docPositionResult.getRaw().get("DocumentPosition").getAsJsonObject();
+        var angle  = docPosition.get("Angle").getAsFloat();
+        System.out.println(angle);
     }
 
     @Nullable
