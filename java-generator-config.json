@@ -8,5 +8,12 @@
   "invokerPackage": "com.regula.documentreader.webclient",
   "modelPackage": "com.regula.documentreader.webclient.model",
   "apiPackage": "com.regula.documentreader.webclient.api",
-  "sourceFolder": "src/main/generated"
+  "sourceFolder": "src/main/generated",
+  "typeMappings" : {
+    "TextField" : "com.regula.documentreader.webclient.model.ext.TextField",
+    "ImagesField" : "com.regula.documentreader.webclient.model.ext.ImagesField",
+    "Text": "com.regula.documentreader.webclient.model.ext.Text",
+    "Images" : "com.regula.documentreader.webclient.model.ext.Images",
+    "AuthenticityCheckList" : "com.regula.documentreader.webclient.model.ext.authenticity.Authenticity"
+  }
 }

@@ -103,6 +103,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_CHECK_REQUIRED_TEXT_FIELDS)
   private Boolean checkRequiredTextFields = false;
 
+  public static final String SERIALIZED_NAME_RETURN_CROPPED_BARCODE = "returnCroppedBarcode";
+
+  @SerializedName(SERIALIZED_NAME_RETURN_CROPPED_BARCODE)
+  private Boolean returnCroppedBarcode = false;
+
   public static final String SERIALIZED_NAME_IMAGE_Q_A = "imageQA";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_Q_A)
@@ -454,6 +459,25 @@ public class ProcessParams {
     this.checkRequiredTextFields = checkRequiredTextFields;
   }
 
+  public ProcessParams withReturnCroppedBarcode(Boolean returnCroppedBarcode) {
+    this.returnCroppedBarcode = returnCroppedBarcode;
+    return this;
+  }
+
+  /**
+   * When enabled, returns cropped barcode images for unknown documents
+   *
+   * @return returnCroppedBarcode
+   */
+  @javax.annotation.Nullable
+  public Boolean getReturnCroppedBarcode() {
+    return returnCroppedBarcode;
+  }
+
+  public void setReturnCroppedBarcode(Boolean returnCroppedBarcode) {
+    this.returnCroppedBarcode = returnCroppedBarcode;
+  }
+
   public ProcessParams withImageQA(ImageQA imageQA) {
     this.imageQA = imageQA;
     return this;
@@ -499,6 +523,7 @@ public class ProcessParams {
         && Objects.equals(
             this.generateDoublePageSpreadImage, processParams.generateDoublePageSpreadImage)
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
+        && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
         && Objects.equals(this.imageQA, processParams.imageQA);
   }
 
@@ -521,6 +546,7 @@ public class ProcessParams {
         updateOCRValidityByGlare,
         generateDoublePageSpreadImage,
         checkRequiredTextFields,
+        returnCroppedBarcode,
         imageQA);
   }
 
@@ -549,6 +575,9 @@ public class ProcessParams {
         .append("\n");
     sb.append("    checkRequiredTextFields: ")
         .append(toIndentedString(checkRequiredTextFields))
+        .append("\n");
+    sb.append("    returnCroppedBarcode: ")
+        .append(toIndentedString(returnCroppedBarcode))
         .append("\n");
     sb.append("    imageQA: ").append(toIndentedString(imageQA)).append("\n");
     sb.append("}");
