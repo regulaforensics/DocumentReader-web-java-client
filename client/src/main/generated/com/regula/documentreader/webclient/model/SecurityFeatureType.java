@@ -14,65 +14,99 @@ package com.regula.documentreader.webclient.model;
 
 public class SecurityFeatureType {
 
-  public static final int BLANK = 0;
+  /** */
+  public static final int Blank = 0;
 
-  public static final int FILL = 1;
+  /** */
+  public static final int Fill = 1;
 
-  public static final int PHOTO = 2;
+  /** */
+  public static final int Photo = 2;
 
+  /** */
   public static final int MRZ = 3;
 
-  public static final int FALSE_LUMINESCENCE = 4;
+  /** */
+  public static final int FalseLuminescene = 4;
 
-  public static final int HOLO_SIMPLE = 5;
+  /** */
+  public static final int HoloSimple = 5;
 
-  public static final int HOLO_VERIFY_STATIC = 6;
+  /** */
+  public static final int HoloVerifyStatic = 6;
 
-  public static final int HOLO_VERIFY_MULTI_STATIC = 7;
+  /** */
+  public static final int HoloVerifyMultyStatic = 7;
 
-  public static final int HOLO_VERIFY_DYNAMIC = 8;
+  /** */
+  public static final int HoloVerifyDinamic = 8;
 
-  public static final int PATTERN_NOT_INTERRUPTED = 9;
+  /** */
+  public static final int PatternNotInterrupted = 9;
 
-  public static final int PATTERN_NOT_SHIFTED = 10;
+  /** */
+  public static final int PatternNotShifted = 10;
 
-  public static final int PATTERN_SAME_COLORS = 11;
+  /** */
+  public static final int PatternSameColors = 11;
 
-  public static final int PATTERN_IR_INVISIBLE = 12;
+  /** */
+  public static final int PatternIRInvisible = 12;
 
-  public static final int PHOTO_SIZE_CHECK = 13;
+  /** */
+  public static final int PhotoSizeCheck = 13;
 
-  public static final int PORTRAIT_COMPARISON_VS_GHOST = 14;
+  /** */
+  public static final int Portrait_Comparison_vsGhost = 14;
 
-  public static final int PORTRAIT_COMPARISON_VS_RFID = 15;
+  /** */
+  public static final int Portrait_Comparison_vsRFID = 15;
 
-  public static final int PORTRAIT_COMPARISON_VS_VISUAL = 16;
+  /** */
+  public static final int Portrait_Comparison_vsVisual = 16;
 
-  public static final int BARCODE = 17;
+  /** */
+  public static final int Barcode = 17;
 
-  public static final int PATTERN_DIFFERENT_LINES_THICKNESS = 18;
+  /** */
+  public static final int Pattern_DifferentLinesThickness = 18;
 
-  public static final int PORTRAIT_COMPARISON_VS_CAMERA = 19;
+  /** */
+  public static final int Portrait_Comparison_vsCamera = 19;
 
-  public static final int PORTRAIT_COMPARISON_RFID_VS_CAMERA = 20;
+  /** */
+  public static final int Portrait_Comparison_RFIDvsCamera = 20;
 
-  public static final int GHOST_PHOTO = 21;
+  /** */
+  public static final int GhostPhoto = 21;
 
-  public static final int CLEAR_GHOST_PHOTO = 22;
+  /** */
+  public static final int ClearGhostPhoto = 22;
 
-  public static final int INVISIBLE_OBJECT = 23;
+  /** */
+  public static final int InvisibleObject = 23;
 
-  public static final int LOW_CONTRAST_OBJECT = 24;
+  /** */
+  public static final int LowContrastObject = 24;
 
-  public static final int PHOTO_COLOR = 25;
+  /** */
+  public static final int Photo_Color = 25;
 
-  public static final int PHOTO_SHAPE = 26;
+  /** */
+  public static final int Photo_Shape = 26;
 
-  public static final int PHOTO_CORNERS = 27;
+  /** */
+  public static final int Photo_Corners = 27;
 
-  public static final int PORTRAIT_COMPARISON_EXT_VS_VISUAL = 29;
+  /** */
+  public static final int Document_Cancelling_Detector = 28;
 
-  public static final int PORTRAIT_COMPARISON_EXT_VS_RFID = 30;
+  /** */
+  public static final int Portrait_Comparison_ExtvsVisual = 29;
 
-  public static final int PORTRAIT_COMPARISON_EXT_VS_CAMERA = 31;
+  /** */
+  public static final int Portrait_Comparison_ExtvsRFID = 30;
+
+  /** */
+  public static final int Portrait_Comparison_ExtvsLive = 31;
 }

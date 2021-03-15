@@ -22,7 +22,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_ELEMENT_TYPE = "ElementType";
 
   @SerializedName(SERIALIZED_NAME_ELEMENT_TYPE)
-  private Integer elementType;
+  private SecurityFeatureType2 elementType;
 
   public static final String SERIALIZED_NAME_LIGHT_INDEX = "LightIndex";
 
@@ -54,7 +54,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
   private List<AreaContainer> areaList = null;
 
-  public IdentResult withElementType(Integer elementType) {
+  public IdentResult withElementType(SecurityFeatureType2 elementType) {
     this.elementType = elementType;
     return this;
   }
@@ -65,11 +65,11 @@ public class IdentResult extends AuthenticityCheckResultItem {
    * @return elementType
    */
   @javax.annotation.Nullable
-  public Integer getElementType() {
+  public SecurityFeatureType2 getElementType() {
     return elementType;
   }
 
-  public void setElementType(Integer elementType) {
+  public void setElementType(SecurityFeatureType2 elementType) {
     this.elementType = elementType;
   }
 

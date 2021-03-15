@@ -22,7 +22,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_ELEMENT_TYPE = "ElementType";
 
   @SerializedName(SERIALIZED_NAME_ELEMENT_TYPE)
-  private Integer elementType;
+  private SecurityFeatureType2 elementType;
 
   public static final String SERIALIZED_NAME_ELEMENT_RECT = "ElementRect";
 
@@ -49,7 +49,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_RESERVED2)
   private Integer reserved2;
 
-  public SecurityFeatureResult withElementType(Integer elementType) {
+  public SecurityFeatureResult withElementType(SecurityFeatureType2 elementType) {
     this.elementType = elementType;
     return this;
   }
@@ -60,11 +60,11 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
    * @return elementType
    */
   @javax.annotation.Nullable
-  public Integer getElementType() {
+  public SecurityFeatureType2 getElementType() {
     return elementType;
   }
 
-  public void setElementType(Integer elementType) {
+  public void setElementType(SecurityFeatureType2 elementType) {
     this.elementType = elementType;
   }
 
