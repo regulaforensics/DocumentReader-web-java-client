@@ -1,6 +1,8 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.AuthenticityResult;
+import com.regula.documentreader.webclient.model.ImageQualityCheckList;
+import com.regula.documentreader.webclient.model.ImageQualityResult;
 import com.regula.documentreader.webclient.model.ImagesResult;
 import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.Result;
@@ -61,6 +63,20 @@ public class RecognitionResponse {
     AuthenticityResult result = getResult(Result.AUTHENTICITY, page_idx);
     if (result != null) {
       return result.getAuthenticityCheckList();
+    }
+    return null;
+  }
+
+  @Nullable
+  public ImageQualityCheckList imageQualityChecks() {
+    return imageQualityChecks(0);
+  }
+
+  @Nullable
+  public ImageQualityCheckList imageQualityChecks(int page_idx) {
+    ImageQualityResult result = getResult(Result.IMAGE_QUALITY, page_idx);
+    if (result != null) {
+      return result.getImageQualityCheckList();
     }
     return null;
   }

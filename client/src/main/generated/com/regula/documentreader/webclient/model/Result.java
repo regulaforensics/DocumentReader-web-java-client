@@ -21,6 +21,9 @@ public class Result {
    */
   public static final int DOCUMENT_IMAGE = 1;
 
+  /** Contains image quality check results */
+  public static final int IMAGE_QUALITY = 30;
+
   /** Contains check statuses with details, grouped by source */
   public static final int STATUS = 33;
 
