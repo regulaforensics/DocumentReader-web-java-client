@@ -14,21 +14,21 @@ package com.regula.documentreader.webclient.model;
 
 public class ImageQualityCheckType {
 
-  /** */
+  /** Signals glare presence on the image */
   public static final int ImageGlares = 0;
 
-  /** */
+  /** Signals whether image is in focus */
   public static final int ImageFocus = 1;
 
-  /** */
+  /** Signals if image resolution is below threshold */
   public static final int ImageResolution = 2;
 
-  /** */
+  /** Signals if image is colorless */
   public static final int ImageColorness = 3;
 
-  /** */
+  /** Signals if document in the image has prespective distortion above threshold */
   public static final int Perspective = 4;
 
-  /** */
+  /** Signals if document is not fully present in the image */
   public static final int Bounds = 5;
 }

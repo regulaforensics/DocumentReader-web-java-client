@@ -15,15 +15,14 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** ImageQualityListResult */
-public class ImageQualityListResult extends ResultItem {
+/** ImageQualityResult */
+public class ImageQualityResult extends ResultItem {
   public static final String SERIALIZED_NAME_IMAGE_QUALITY_CHECK_LIST = "ImageQualityCheckList";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_QUALITY_CHECK_LIST)
-  private ImageQualityChecks imageQualityCheckList;
+  private ImageQualityCheckList imageQualityCheckList;
 
-  public ImageQualityListResult withImageQualityCheckList(
-      ImageQualityChecks imageQualityCheckList) {
+  public ImageQualityResult withImageQualityCheckList(ImageQualityCheckList imageQualityCheckList) {
     this.imageQualityCheckList = imageQualityCheckList;
     return this;
   }
@@ -33,12 +32,11 @@ public class ImageQualityListResult extends ResultItem {
    *
    * @return imageQualityCheckList
    */
-  @javax.annotation.Nullable
-  public ImageQualityChecks getImageQualityCheckList() {
+  public ImageQualityCheckList getImageQualityCheckList() {
     return imageQualityCheckList;
   }
 
-  public void setImageQualityCheckList(ImageQualityChecks imageQualityCheckList) {
+  public void setImageQualityCheckList(ImageQualityCheckList imageQualityCheckList) {
     this.imageQualityCheckList = imageQualityCheckList;
   }
 
@@ -50,8 +48,8 @@ public class ImageQualityListResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageQualityListResult imageQualityListResult = (ImageQualityListResult) o;
-    return Objects.equals(this.imageQualityCheckList, imageQualityListResult.imageQualityCheckList)
+    ImageQualityResult imageQualityResult = (ImageQualityResult) o;
+    return Objects.equals(this.imageQualityCheckList, imageQualityResult.imageQualityCheckList)
         && super.equals(o);
   }
 
@@ -63,7 +61,7 @@ public class ImageQualityListResult extends ResultItem {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageQualityListResult {\n");
+    sb.append("class ImageQualityResult {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    imageQualityCheckList: ")
         .append(toIndentedString(imageQualityCheckList))

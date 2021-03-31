@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** ImageQualityChecks */
-public class ImageQualityChecks {
+/** ImageQualityCheckList */
+public class ImageQualityCheckList {
   public static final String SERIALIZED_NAME_RESULT = "result";
 
   @SerializedName(SERIALIZED_NAME_RESULT)
@@ -27,9 +27,9 @@ public class ImageQualityChecks {
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
-  private List<ImageQualityCheck> list = null;
+  private List<ImageQualityCheck> list = new ArrayList<ImageQualityCheck>();
 
-  public ImageQualityChecks withResult(Integer result) {
+  public ImageQualityCheckList withResult(Integer result) {
     this.result = result;
     return this;
   }
@@ -39,7 +39,6 @@ public class ImageQualityChecks {
    *
    * @return result
    */
-  @javax.annotation.Nullable
   public Integer getResult() {
     return result;
   }
@@ -48,15 +47,12 @@ public class ImageQualityChecks {
     this.result = result;
   }
 
-  public ImageQualityChecks withList(List<ImageQualityCheck> list) {
+  public ImageQualityCheckList withList(List<ImageQualityCheck> list) {
     this.list = list;
     return this;
   }
 
-  public ImageQualityChecks addListItem(ImageQualityCheck listItem) {
-    if (this.list == null) {
-      this.list = new ArrayList<ImageQualityCheck>();
-    }
+  public ImageQualityCheckList addListItem(ImageQualityCheck listItem) {
     this.list.add(listItem);
     return this;
   }
@@ -66,7 +62,6 @@ public class ImageQualityChecks {
    *
    * @return list
    */
-  @javax.annotation.Nullable
   public List<ImageQualityCheck> getList() {
     return list;
   }
@@ -83,9 +78,9 @@ public class ImageQualityChecks {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImageQualityChecks imageQualityChecks = (ImageQualityChecks) o;
-    return Objects.equals(this.result, imageQualityChecks.result)
-        && Objects.equals(this.list, imageQualityChecks.list);
+    ImageQualityCheckList imageQualityCheckList = (ImageQualityCheckList) o;
+    return Objects.equals(this.result, imageQualityCheckList.result)
+        && Objects.equals(this.list, imageQualityCheckList.list);
   }
 
   @Override
@@ -96,7 +91,7 @@ public class ImageQualityChecks {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImageQualityChecks {\n");
+    sb.append("class ImageQualityCheckList {\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");

@@ -21,8 +21,8 @@ public class Result {
    */
   public static final int DOCUMENT_IMAGE = 1;
 
-  /** Todo add description */
-  public static final int IMAGE_QUALITY_LIST = 30;
+  /** Contains image quality check results */
+  public static final int IMAGE_QUALITY = 30;
 
   /** Contains check statuses with details, grouped by source */
   public static final int STATUS = 33;
@@ -72,7 +72,4 @@ public class Result {
 
   /** Contains result of document authenticity checks */
   public static final int AUTHENTICITY = 20;
-
-  /** imageQA descripiton */
-  public static final int IMAGE_QUALITY = 30;
 }
