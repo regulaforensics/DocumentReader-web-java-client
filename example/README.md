@@ -2,8 +2,8 @@
 
 :bulb: Before you start: if you just want to play with an online demo, visit our [playground](https://api.regulaforensics.com).
 
-:warning: NOTE: If you don't specify a custom Document Reader endpoint, Regula demo SaaS will be used by default. 
-Sending requests to that SaaS, you agree with our [privacy policy](https://api.regulaforensics.com/terms) 
+:warning: NOTE: If you don't specify a custom Document Reader endpoint, Regula demo API will be used by default. 
+Sending requests to that API, you agree with our [privacy policy](https://api.regulaforensics.com/terms) 
 and [license usage agreement](https://downloads.regulaforensics.com/work/SDK/doc/Eula.pdf).
 
 
@@ -22,7 +22,7 @@ git clone https://github.com/regulaforensics/DocumentReader-web-java-client.git
 cd DocumentReader-web-java-client
 ```
 
-### Running using Regula Document Reader web API demo SaaS
+### Running using Regula Document Reader demo web API  
 :warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
 
 Execute example:
