@@ -2,6 +2,11 @@
 
 :bulb: Before you start: if you just want to play with an online demo, visit our [playground](https://api.regulaforensics.com).
 
+:warning: NOTE: If you don't specify custom endpoint, by default Regula Document Reader Web API demo SaaS will be used. 
+Performing request against that SaaS, your agree with our [privacy policy](https://api.regulaforensics.com/terms) 
+and [license usage agreement](https://downloads.regulaforensics.com/work/SDK/doc/Eula.pdf).
+
+
 Requirements:
 - installed java 11+
 
@@ -17,29 +22,26 @@ git clone https://github.com/regulaforensics/DocumentReader-web-java-client.git
 cd DocumentReader-web-java-client
 ```
 
-### Running with local Regula Document Reader web API installation
-
+### Running using Regula Document Reader web API demo SaaS
 :warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
-
-Follow [the instructions](https://docs.regulaforensics.com/web/quick-start-guide) to run Regula Document Reader web API. 
-Assuming you have successfully launched instance, use next line command to run example:
-```bash
-./gradlew :example:run
-
-# If Regula Document Reader web API is running not on localhost, specify host via env variable:
-API_BASE_PATH="http://192.168.0.101:8080" ./gradlew :example:run
-```
-
-### Running using Regula Document Reader web API test SaaS
-
-:warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
-
-Get your [free trial here](https://mobile.regulaforensics.com/). You should obtain `regula.license` file. 
-Copy it to [example resources](../example/src/main/resources) folder. You are ready for running!
 
 Execute example:
 ```bash
-API_BASE_PATH="https://test-api.regulaforensics.com" ./gradlew :example:run
+./gradlew :example:run
+```
+
+### Running with local Regula Document Reader web API installation
+:warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
+
+Get your [free trial here](https://mobile.regulaforensics.com/). You should obtain `regula.license` file.
+Copy it to [example resources](../example/src/main/resources) folder. You are ready for running!
+
+Follow [the instructions](https://docs.regulaforensics.com/web/quick-start-guide) to run Regula Document Reader web API. 
+Assuming you have successfully launched instance, use next line command to run example:
+
+
+```bash
+API_BASE_PATH="http://127.0.0.1:8080" ./gradlew :example:run
 ```
 
 ### Output 

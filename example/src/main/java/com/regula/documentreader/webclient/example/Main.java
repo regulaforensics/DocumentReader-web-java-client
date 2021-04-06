@@ -34,7 +34,7 @@ public class Main {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {
-            apiBaseUrl = "http://localhost:8080";
+            apiBaseUrl = "https://api.regulaforensics.com";
         }
         var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
         var licenseFromFile = readFile("regula.license");
