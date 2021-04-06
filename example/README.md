@@ -2,8 +2,8 @@
 
 :bulb: Before you start: if you just want to play with an online demo, visit our [playground](https://api.regulaforensics.com).
 
-:warning: NOTE: If you don't specify custom endpoint, by default Regula Document Reader Web API demo SaaS will be used. 
-Performing request against that SaaS, your agree with our [privacy policy](https://api.regulaforensics.com/terms) 
+:warning: NOTE: If you don't specify a custom Document Reader endpoint, Regula demo SaaS will be used by default. 
+Sending requests to that SaaS, you agree with our [privacy policy](https://api.regulaforensics.com/terms) 
 and [license usage agreement](https://downloads.regulaforensics.com/work/SDK/doc/Eula.pdf).
 
 
