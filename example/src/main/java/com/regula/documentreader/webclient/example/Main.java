@@ -34,7 +34,7 @@ public class Main {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {
-            apiBaseUrl = "http://localhost:8080";
+            apiBaseUrl = "https://api.regulaforensics.com";
         }
         var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
         var licenseFromFile = readFile("regula.license");
@@ -111,6 +111,7 @@ public class Main {
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
+        System.exit(0);
     }
 
     @Nullable

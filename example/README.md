@@ -2,48 +2,50 @@
 
 :bulb: Before you start: if you just want to play with an online demo, visit our [playground](https://api.regulaforensics.com).
 
+:warning: NOTE: If a custom Document Reader endpoint is not specified, demo web API will be used by default.
+By sending requests to demo Regula Document Reader web API, 
+you agree with our [Privacy Policy](https://api.regulaforensics.com/terms) 
+and [License Agreement](https://downloads.regulaforensics.com/work/SDK/doc/Eula.pdf).
+
+
 Requirements:
 - installed java 11+
 
-Verify Java version:
+Java version verification:
 ```bash
 java --version  
 >  openjdk 14.0.1 2020-04-14
 ```
 
-Cloning example:
+Example of cloning:
 ```bash
 git clone https://github.com/regulaforensics/DocumentReader-web-java-client.git
 cd DocumentReader-web-java-client
 ```
 
-### Running with local Regula Document Reader web API installation
+### Running the client with demo Regula Document Reader web API  
+:warning: NOTE: for some systems, the `gradlew.bat` command should be used instead of `./gradlew`.
 
-:warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
-
-Follow [the instructions](https://docs.regulaforensics.com/web/quick-start-guide) to run Regula Document Reader web API. 
-Assuming you have successfully launched instance, use next line command to run example:
+Example of execution:
 ```bash
 ./gradlew :example:run
-
-# If Regula Document Reader web API is running not on localhost, specify host via env variable:
-API_BASE_PATH="http://192.168.0.101:8080" ./gradlew :example:run
 ```
 
-### Running using Regula Document Reader web API test SaaS
+### Running the client with local Regula Document Reader web API installation
+:warning: NOTE: for some systems, the `gradlew.bat` command should be used instead of `./gradlew`.
 
-:warning: NOTE: for some systems `gradlew.bat` command should be used, instead of `./gradlew`.
+Get your [free trial here](https://mobile.regulaforensics.com/). When you receive the `regula.license` file, 
+copy it to the [example resources](../example/src/main/resources) folder. Now you are ready for start!
 
-Get your [free trial here](https://mobile.regulaforensics.com/). You should obtain `regula.license` file. 
-Copy it to [example resources](../example/src/main/resources) folder. You are ready for running!
+Follow [the instructions](https://docs.regulaforensics.com/web-service/quick-start-guide) to run Regula Document Reader web API.
+If the instance has been launched successfully, use the following line command to run the example:
 
-Execute example:
 ```bash
-API_BASE_PATH="https://test-api.regulaforensics.com" ./gradlew :example:run
+API_BASE_PATH="http://127.0.0.1:8080" ./gradlew :example:run
 ```
 
 ### Output 
-This sample generates next text output:
+This sample generates the following text output:
 ```text
     ---------------------------------------------------------------------------
                    Document Overall Status: not valid
@@ -54,5 +56,6 @@ This sample generates next text output:
               MRZ-Visual values comparison: 1
     ---------------------------------------------------------------------------
 ```
-Also, it creates [portrait](portrait.jpg) and [document image](document-image.jpg) pictures inside current folder.
-Edit [example](../example/src/main/java/com/regula/documentreader/webclient/example/Main.java) on your own , and re-run to see your results.
+Also, it stores [portrait](portrait.jpg) and [document image](document-image.jpg) images in the current folder.
+You can modify [this example](../example/src/main/java/com/regula/documentreader/webclient/example/Main.java) 
+and re-run it to get your own results.

@@ -19,5 +19,5 @@ jobs:
           java-package: jdk
       - run: ./gradlew clean :example:run
         env:
-          API_BASE_PATH: "https://testapi.regulaforensics.com"
+          API_BASE_PATH: "https://test-api.regulaforensics.com"
           TEST_LICENSE: ${{secrets.TEST_LICENSE}}
