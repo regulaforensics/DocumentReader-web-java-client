@@ -1731,4 +1731,13 @@ public class TextFieldType {
 
   /** Restrictions for CA driver’s license */
   public static final int DL_CLASS_CODE_CA_NOTES = 624;
+
+  /** Citizenship Status */
+  public static final int CITIZENSHIP_STATUS = 625;
+
+  /** Military Service From */
+  public static final int MILITARY_SERVICE_FROM = 626;
+
+  /** Military Service To */
+  public static final int MILITARY_SERVICE_TO = 627;
 }
