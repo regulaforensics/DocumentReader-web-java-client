@@ -27,7 +27,7 @@ public class AreaArray {
   public static final String SERIALIZED_NAME_POINTS = "Points";
 
   @SerializedName(SERIALIZED_NAME_POINTS)
-  private PointArray points;
+  private List<PointArray> points = null;
 
   public AreaArray withList(List<RectangleCoordinates> list) {
     this.list = list;
@@ -56,8 +56,16 @@ public class AreaArray {
     this.list = list;
   }
 
-  public AreaArray withPoints(PointArray points) {
+  public AreaArray withPoints(List<PointArray> points) {
     this.points = points;
+    return this;
+  }
+
+  public AreaArray addPointsItem(PointArray pointsItem) {
+    if (this.points == null) {
+      this.points = new ArrayList<PointArray>();
+    }
+    this.points.add(pointsItem);
     return this;
   }
 
@@ -67,11 +75,11 @@ public class AreaArray {
    * @return points
    */
   @javax.annotation.Nullable
-  public PointArray getPoints() {
+  public List<PointArray> getPoints() {
     return points;
   }
 
-  public void setPoints(PointArray points) {
+  public void setPoints(List<PointArray> points) {
     this.points = points;
   }
 
