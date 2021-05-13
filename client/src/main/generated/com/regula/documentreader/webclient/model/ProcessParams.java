@@ -131,7 +131,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_LOG_LEVEL = "logLevel";
 
   @SerializedName(SERIALIZED_NAME_LOG_LEVEL)
-  private LogLevel logLevel;
+  private String logLevel;
 
   public static final String SERIALIZED_NAME_DEPERSONALIZE_LOG = "depersonalizeLog";
 
@@ -581,7 +581,7 @@ public class ProcessParams {
     this.documentAreaMin = documentAreaMin;
   }
 
-  public ProcessParams withLogLevel(LogLevel logLevel) {
+  public ProcessParams withLogLevel(String logLevel) {
     this.logLevel = logLevel;
     return this;
   }
@@ -592,11 +592,11 @@ public class ProcessParams {
    * @return logLevel
    */
   @javax.annotation.Nullable
-  public LogLevel getLogLevel() {
+  public String getLogLevel() {
     return logLevel;
   }
 
-  public void setLogLevel(LogLevel logLevel) {
+  public void setLogLevel(String logLevel) {
     this.logLevel = logLevel;
   }
 

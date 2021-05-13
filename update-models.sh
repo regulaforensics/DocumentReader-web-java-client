@@ -6,7 +6,8 @@ DOCS_DEFINITION_FOLDER="${PWD}/../DocumentReader-web-openapi" \
 Light=Integer,Result=Integer,VerificationResult=Integer,RfidLocation=Integer,\
 DocumentTypeRecognitionResult=Integer,ProcessingStatus=Integer,Source=String,CheckResult=Integer,\
 LCID=Integer,DocumentType=Integer,CheckDiagnose=Integer,Critical=Integer,AuthenticityResultType=Integer,\
-SecurityFeatureType=Integer,Visibility=Integer,ImageQualityCheckType=Integer" \
+SecurityFeatureType=Integer,Visibility=Integer,ImageQualityCheckType=Integer,\
+LogLevel=String" \
 \
 && docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}:/client" -v "$DOCS_DEFINITION_FOLDER:/definitions" \
 openapitools/openapi-generator-cli:v5.0.0-beta2 generate \

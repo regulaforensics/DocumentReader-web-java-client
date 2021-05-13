@@ -52,7 +52,6 @@ src/main/generated/com/regula/documentreader/webclient/model/ImagesFieldValue.ja
 src/main/generated/com/regula/documentreader/webclient/model/ImagesResult.java
 src/main/generated/com/regula/documentreader/webclient/model/LexicalAnalysisResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.java
-src/main/generated/com/regula/documentreader/webclient/model/LogLevel.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
 src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
