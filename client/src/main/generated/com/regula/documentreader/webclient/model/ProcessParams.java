@@ -113,6 +113,31 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_IMAGE_Q_A)
   private ImageQA imageQA;
 
+  public static final String SERIALIZED_NAME_FORCE_DOC_FORMAT = "forceDocFormat";
+
+  @SerializedName(SERIALIZED_NAME_FORCE_DOC_FORMAT)
+  private Integer forceDocFormat;
+
+  public static final String SERIALIZED_NAME_NO_GRAPHICS = "noGraphics";
+
+  @SerializedName(SERIALIZED_NAME_NO_GRAPHICS)
+  private Boolean noGraphics = false;
+
+  public static final String SERIALIZED_NAME_DOCUMENT_AREA_MIN = "documentAreaMin";
+
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_AREA_MIN)
+  private Float documentAreaMin = 0f;
+
+  public static final String SERIALIZED_NAME_LOG_LEVEL = "logLevel";
+
+  @SerializedName(SERIALIZED_NAME_LOG_LEVEL)
+  private LogLevel logLevel;
+
+  public static final String SERIALIZED_NAME_DEPERSONALIZE_LOG = "depersonalizeLog";
+
+  @SerializedName(SERIALIZED_NAME_DEPERSONALIZE_LOG)
+  private Boolean depersonalizeLog = false;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -497,6 +522,103 @@ public class ProcessParams {
     this.imageQA = imageQA;
   }
 
+  public ProcessParams withForceDocFormat(Integer forceDocFormat) {
+    this.forceDocFormat = forceDocFormat;
+    return this;
+  }
+
+  /**
+   * Get forceDocFormat
+   *
+   * @return forceDocFormat
+   */
+  @javax.annotation.Nullable
+  public Integer getForceDocFormat() {
+    return forceDocFormat;
+  }
+
+  public void setForceDocFormat(Integer forceDocFormat) {
+    this.forceDocFormat = forceDocFormat;
+  }
+
+  public ProcessParams withNoGraphics(Boolean noGraphics) {
+    this.noGraphics = noGraphics;
+    return this;
+  }
+
+  /**
+   * When enabled no graphic fields will be cropped from document image.
+   *
+   * @return noGraphics
+   */
+  @javax.annotation.Nullable
+  public Boolean getNoGraphics() {
+    return noGraphics;
+  }
+
+  public void setNoGraphics(Boolean noGraphics) {
+    this.noGraphics = noGraphics;
+  }
+
+  public ProcessParams withDocumentAreaMin(Float documentAreaMin) {
+    this.documentAreaMin = documentAreaMin;
+    return this;
+  }
+
+  /**
+   * Specifies minimal area of the image that document should cover to be treated as candidate when
+   * locating. Value should be in range from 0 to 1, where 1 is when document should fully cover the
+   * image.
+   *
+   * @return documentAreaMin
+   */
+  @javax.annotation.Nullable
+  public Float getDocumentAreaMin() {
+    return documentAreaMin;
+  }
+
+  public void setDocumentAreaMin(Float documentAreaMin) {
+    this.documentAreaMin = documentAreaMin;
+  }
+
+  public ProcessParams withLogLevel(LogLevel logLevel) {
+    this.logLevel = logLevel;
+    return this;
+  }
+
+  /**
+   * Get logLevel
+   *
+   * @return logLevel
+   */
+  @javax.annotation.Nullable
+  public LogLevel getLogLevel() {
+    return logLevel;
+  }
+
+  public void setLogLevel(LogLevel logLevel) {
+    this.logLevel = logLevel;
+  }
+
+  public ProcessParams withDepersonalizeLog(Boolean depersonalizeLog) {
+    this.depersonalizeLog = depersonalizeLog;
+    return this;
+  }
+
+  /**
+   * When enabled all personal data will be forcibly removed from the logs.
+   *
+   * @return depersonalizeLog
+   */
+  @javax.annotation.Nullable
+  public Boolean getDepersonalizeLog() {
+    return depersonalizeLog;
+  }
+
+  public void setDepersonalizeLog(Boolean depersonalizeLog) {
+    this.depersonalizeLog = depersonalizeLog;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -524,7 +646,12 @@ public class ProcessParams {
             this.generateDoublePageSpreadImage, processParams.generateDoublePageSpreadImage)
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
         && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
-        && Objects.equals(this.imageQA, processParams.imageQA);
+        && Objects.equals(this.imageQA, processParams.imageQA)
+        && Objects.equals(this.forceDocFormat, processParams.forceDocFormat)
+        && Objects.equals(this.noGraphics, processParams.noGraphics)
+        && Objects.equals(this.documentAreaMin, processParams.documentAreaMin)
+        && Objects.equals(this.logLevel, processParams.logLevel)
+        && Objects.equals(this.depersonalizeLog, processParams.depersonalizeLog);
   }
 
   @Override
@@ -547,7 +674,12 @@ public class ProcessParams {
         generateDoublePageSpreadImage,
         checkRequiredTextFields,
         returnCroppedBarcode,
-        imageQA);
+        imageQA,
+        forceDocFormat,
+        noGraphics,
+        documentAreaMin,
+        logLevel,
+        depersonalizeLog);
   }
 
   @Override
@@ -580,6 +712,11 @@ public class ProcessParams {
         .append(toIndentedString(returnCroppedBarcode))
         .append("\n");
     sb.append("    imageQA: ").append(toIndentedString(imageQA)).append("\n");
+    sb.append("    forceDocFormat: ").append(toIndentedString(forceDocFormat)).append("\n");
+    sb.append("    noGraphics: ").append(toIndentedString(noGraphics)).append("\n");
+    sb.append("    documentAreaMin: ").append(toIndentedString(documentAreaMin)).append("\n");
+    sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
+    sb.append("    depersonalizeLog: ").append(toIndentedString(depersonalizeLog)).append("\n");
     sb.append("}");
     return sb.toString();
   }
