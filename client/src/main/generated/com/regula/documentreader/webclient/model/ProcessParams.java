@@ -36,6 +36,12 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_DOUBLE_PAGE_SPREAD)
   private Boolean doublePageSpread;
 
+  public static final String SERIALIZED_NAME_GENERATE_DOUBLE_PAGE_SPREAD_IMAGE =
+      "generateDoublePageSpreadImage";
+
+  @SerializedName(SERIALIZED_NAME_GENERATE_DOUBLE_PAGE_SPREAD_IMAGE)
+  private Boolean generateDoublePageSpreadImage;
+
   public static final String SERIALIZED_NAME_FIELD_TYPES_FILTER = "fieldTypesFilter";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPES_FILTER)
@@ -71,6 +77,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_LOG)
   private Boolean log;
 
+  public static final String SERIALIZED_NAME_LOG_LEVEL = "logLevel";
+
+  @SerializedName(SERIALIZED_NAME_LOG_LEVEL)
+  private String logLevel;
+
   public static final String SERIALIZED_NAME_FORCE_DOC_I_D = "forceDocID";
 
   @SerializedName(SERIALIZED_NAME_FORCE_DOC_I_D)
@@ -79,34 +90,28 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_MATCH_TEXT_FIELD_MASK = "matchTextFieldMask";
 
   @SerializedName(SERIALIZED_NAME_MATCH_TEXT_FIELD_MASK)
-  private Boolean matchTextFieldMask = true;
+  private Boolean matchTextFieldMask;
 
   public static final String SERIALIZED_NAME_FAST_DOC_DETECT = "fastDocDetect";
 
   @SerializedName(SERIALIZED_NAME_FAST_DOC_DETECT)
-  private Boolean fastDocDetect = true;
+  private Boolean fastDocDetect;
 
   public static final String SERIALIZED_NAME_UPDATE_O_C_R_VALIDITY_BY_GLARE =
       "updateOCRValidityByGlare";
 
   @SerializedName(SERIALIZED_NAME_UPDATE_O_C_R_VALIDITY_BY_GLARE)
-  private Boolean updateOCRValidityByGlare = false;
-
-  public static final String SERIALIZED_NAME_GENERATE_DOUBLE_PAGE_SPREAD_IMAGE =
-      "generateDoublePageSpreadImage";
-
-  @SerializedName(SERIALIZED_NAME_GENERATE_DOUBLE_PAGE_SPREAD_IMAGE)
-  private Boolean generateDoublePageSpreadImage;
+  private Boolean updateOCRValidityByGlare;
 
   public static final String SERIALIZED_NAME_CHECK_REQUIRED_TEXT_FIELDS = "checkRequiredTextFields";
 
   @SerializedName(SERIALIZED_NAME_CHECK_REQUIRED_TEXT_FIELDS)
-  private Boolean checkRequiredTextFields = false;
+  private Boolean checkRequiredTextFields;
 
   public static final String SERIALIZED_NAME_RETURN_CROPPED_BARCODE = "returnCroppedBarcode";
 
   @SerializedName(SERIALIZED_NAME_RETURN_CROPPED_BARCODE)
-  private Boolean returnCroppedBarcode = false;
+  private Boolean returnCroppedBarcode;
 
   public static final String SERIALIZED_NAME_IMAGE_Q_A = "imageQA";
 
@@ -121,22 +126,37 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_NO_GRAPHICS = "noGraphics";
 
   @SerializedName(SERIALIZED_NAME_NO_GRAPHICS)
-  private Boolean noGraphics = false;
+  private Boolean noGraphics;
 
   public static final String SERIALIZED_NAME_DOCUMENT_AREA_MIN = "documentAreaMin";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_AREA_MIN)
-  private Float documentAreaMin = 0f;
-
-  public static final String SERIALIZED_NAME_LOG_LEVEL = "logLevel";
-
-  @SerializedName(SERIALIZED_NAME_LOG_LEVEL)
-  private String logLevel;
+  private Float documentAreaMin;
 
   public static final String SERIALIZED_NAME_DEPERSONALIZE_LOG = "depersonalizeLog";
 
   @SerializedName(SERIALIZED_NAME_DEPERSONALIZE_LOG)
-  private Boolean depersonalizeLog = false;
+  private Boolean depersonalizeLog;
+
+  public static final String SERIALIZED_NAME_MULTI_DOC_ON_IMAGE = "multiDocOnImage";
+
+  @SerializedName(SERIALIZED_NAME_MULTI_DOC_ON_IMAGE)
+  private Boolean multiDocOnImage;
+
+  public static final String SERIALIZED_NAME_SHIFT_EXPIRY_DATE = "shiftExpiryDate";
+
+  @SerializedName(SERIALIZED_NAME_SHIFT_EXPIRY_DATE)
+  private Integer shiftExpiryDate;
+
+  public static final String SERIALIZED_NAME_MINIMAL_HOLDER_AGE = "minimalHolderAge";
+
+  @SerializedName(SERIALIZED_NAME_MINIMAL_HOLDER_AGE)
+  private Integer minimalHolderAge;
+
+  public static final String SERIALIZED_NAME_RETURN_UNCROPPED_IMAGE = "returnUncroppedImage";
+
+  @SerializedName(SERIALIZED_NAME_RETURN_UNCROPPED_IMAGE)
+  private Boolean returnUncroppedImage;
 
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
@@ -203,6 +223,27 @@ public class ProcessParams {
 
   public void setDoublePageSpread(Boolean doublePageSpread) {
     this.doublePageSpread = doublePageSpread;
+  }
+
+  public ProcessParams withGenerateDoublePageSpreadImage(Boolean generateDoublePageSpreadImage) {
+    this.generateDoublePageSpreadImage = generateDoublePageSpreadImage;
+    return this;
+  }
+
+  /**
+   * When enabled together with \&quot;doublePageSpread\&quot; and there is a passport with two
+   * pages spread in the image, pages will be cropped, straightened and aligned together, as if the
+   * document was captured on a flatbed scanner.
+   *
+   * @return generateDoublePageSpreadImage
+   */
+  @javax.annotation.Nullable
+  public Boolean getGenerateDoublePageSpreadImage() {
+    return generateDoublePageSpreadImage;
+  }
+
+  public void setGenerateDoublePageSpreadImage(Boolean generateDoublePageSpreadImage) {
+    this.generateDoublePageSpreadImage = generateDoublePageSpreadImage;
   }
 
   public ProcessParams withFieldTypesFilter(List<Integer> fieldTypesFilter) {
@@ -363,6 +404,25 @@ public class ProcessParams {
     this.log = log;
   }
 
+  public ProcessParams withLogLevel(String logLevel) {
+    this.logLevel = logLevel;
+    return this;
+  }
+
+  /**
+   * Get logLevel
+   *
+   * @return logLevel
+   */
+  @javax.annotation.Nullable
+  public String getLogLevel() {
+    return logLevel;
+  }
+
+  public void setLogLevel(String logLevel) {
+    this.logLevel = logLevel;
+  }
+
   public ProcessParams withForceDocID(Integer forceDocID) {
     this.forceDocID = forceDocID;
     return this;
@@ -441,27 +501,6 @@ public class ProcessParams {
 
   public void setUpdateOCRValidityByGlare(Boolean updateOCRValidityByGlare) {
     this.updateOCRValidityByGlare = updateOCRValidityByGlare;
-  }
-
-  public ProcessParams withGenerateDoublePageSpreadImage(Boolean generateDoublePageSpreadImage) {
-    this.generateDoublePageSpreadImage = generateDoublePageSpreadImage;
-    return this;
-  }
-
-  /**
-   * When enabled together with \&quot;doublePageSpread\&quot; and there is a passport with two
-   * pages spread in the image, pages will be cropped, straightened and aligned together, as if the
-   * document was captured on a flatbed scanner.
-   *
-   * @return generateDoublePageSpreadImage
-   */
-  @javax.annotation.Nullable
-  public Boolean getGenerateDoublePageSpreadImage() {
-    return generateDoublePageSpreadImage;
-  }
-
-  public void setGenerateDoublePageSpreadImage(Boolean generateDoublePageSpreadImage) {
-    this.generateDoublePageSpreadImage = generateDoublePageSpreadImage;
   }
 
   public ProcessParams withCheckRequiredTextFields(Boolean checkRequiredTextFields) {
@@ -581,25 +620,6 @@ public class ProcessParams {
     this.documentAreaMin = documentAreaMin;
   }
 
-  public ProcessParams withLogLevel(String logLevel) {
-    this.logLevel = logLevel;
-    return this;
-  }
-
-  /**
-   * Get logLevel
-   *
-   * @return logLevel
-   */
-  @javax.annotation.Nullable
-  public String getLogLevel() {
-    return logLevel;
-  }
-
-  public void setLogLevel(String logLevel) {
-    this.logLevel = logLevel;
-  }
-
   public ProcessParams withDepersonalizeLog(Boolean depersonalizeLog) {
     this.depersonalizeLog = depersonalizeLog;
     return this;
@@ -619,6 +639,87 @@ public class ProcessParams {
     this.depersonalizeLog = depersonalizeLog;
   }
 
+  public ProcessParams withMultiDocOnImage(Boolean multiDocOnImage) {
+    this.multiDocOnImage = multiDocOnImage;
+    return this;
+  }
+
+  /**
+   * This option allows locating and cropping multiple documents from one image if enabled.
+   *
+   * @return multiDocOnImage
+   */
+  @javax.annotation.Nullable
+  public Boolean getMultiDocOnImage() {
+    return multiDocOnImage;
+  }
+
+  public void setMultiDocOnImage(Boolean multiDocOnImage) {
+    this.multiDocOnImage = multiDocOnImage;
+  }
+
+  public ProcessParams withShiftExpiryDate(Integer shiftExpiryDate) {
+    this.shiftExpiryDate = shiftExpiryDate;
+    return this;
+  }
+
+  /**
+   * This option allows shifting the date of expiry into the future or past for number of months
+   * specified. This is useful, for example, in some cases when document might be still valid for
+   * some period after original expiration date to prevent negative validity status for such
+   * documents. Or by shifting the date to the past will set negative validity for the documents
+   * that is about to expire in a specified number of months.
+   *
+   * @return shiftExpiryDate
+   */
+  @javax.annotation.Nullable
+  public Integer getShiftExpiryDate() {
+    return shiftExpiryDate;
+  }
+
+  public void setShiftExpiryDate(Integer shiftExpiryDate) {
+    this.shiftExpiryDate = shiftExpiryDate;
+  }
+
+  public ProcessParams withMinimalHolderAge(Integer minimalHolderAge) {
+    this.minimalHolderAge = minimalHolderAge;
+    return this;
+  }
+
+  /**
+   * This options allows specifying the minimal age in years of the document holder for the document
+   * to be considered valid.
+   *
+   * @return minimalHolderAge
+   */
+  @javax.annotation.Nullable
+  public Integer getMinimalHolderAge() {
+    return minimalHolderAge;
+  }
+
+  public void setMinimalHolderAge(Integer minimalHolderAge) {
+    this.minimalHolderAge = minimalHolderAge;
+  }
+
+  public ProcessParams withReturnUncroppedImage(Boolean returnUncroppedImage) {
+    this.returnUncroppedImage = returnUncroppedImage;
+    return this;
+  }
+
+  /**
+   * This option allows returning input images in output if enabled.
+   *
+   * @return returnUncroppedImage
+   */
+  @javax.annotation.Nullable
+  public Boolean getReturnUncroppedImage() {
+    return returnUncroppedImage;
+  }
+
+  public void setReturnUncroppedImage(Boolean returnUncroppedImage) {
+    this.returnUncroppedImage = returnUncroppedImage;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -631,6 +732,8 @@ public class ProcessParams {
     return Objects.equals(this.scenario, processParams.scenario)
         && Objects.equals(this.resultTypeOutput, processParams.resultTypeOutput)
         && Objects.equals(this.doublePageSpread, processParams.doublePageSpread)
+        && Objects.equals(
+            this.generateDoublePageSpreadImage, processParams.generateDoublePageSpreadImage)
         && Objects.equals(this.fieldTypesFilter, processParams.fieldTypesFilter)
         && Objects.equals(this.dateFormat, processParams.dateFormat)
         && Objects.equals(this.measureSystem, processParams.measureSystem)
@@ -638,20 +741,22 @@ public class ProcessParams {
         && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
         && Objects.equals(this.customParams, processParams.customParams)
         && Objects.equals(this.log, processParams.log)
+        && Objects.equals(this.logLevel, processParams.logLevel)
         && Objects.equals(this.forceDocID, processParams.forceDocID)
         && Objects.equals(this.matchTextFieldMask, processParams.matchTextFieldMask)
         && Objects.equals(this.fastDocDetect, processParams.fastDocDetect)
         && Objects.equals(this.updateOCRValidityByGlare, processParams.updateOCRValidityByGlare)
-        && Objects.equals(
-            this.generateDoublePageSpreadImage, processParams.generateDoublePageSpreadImage)
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
         && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
         && Objects.equals(this.imageQA, processParams.imageQA)
         && Objects.equals(this.forceDocFormat, processParams.forceDocFormat)
         && Objects.equals(this.noGraphics, processParams.noGraphics)
         && Objects.equals(this.documentAreaMin, processParams.documentAreaMin)
-        && Objects.equals(this.logLevel, processParams.logLevel)
-        && Objects.equals(this.depersonalizeLog, processParams.depersonalizeLog);
+        && Objects.equals(this.depersonalizeLog, processParams.depersonalizeLog)
+        && Objects.equals(this.multiDocOnImage, processParams.multiDocOnImage)
+        && Objects.equals(this.shiftExpiryDate, processParams.shiftExpiryDate)
+        && Objects.equals(this.minimalHolderAge, processParams.minimalHolderAge)
+        && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage);
   }
 
   @Override
@@ -660,6 +765,7 @@ public class ProcessParams {
         scenario,
         resultTypeOutput,
         doublePageSpread,
+        generateDoublePageSpreadImage,
         fieldTypesFilter,
         dateFormat,
         measureSystem,
@@ -667,19 +773,22 @@ public class ProcessParams {
         alreadyCropped,
         customParams,
         log,
+        logLevel,
         forceDocID,
         matchTextFieldMask,
         fastDocDetect,
         updateOCRValidityByGlare,
-        generateDoublePageSpreadImage,
         checkRequiredTextFields,
         returnCroppedBarcode,
         imageQA,
         forceDocFormat,
         noGraphics,
         documentAreaMin,
-        logLevel,
-        depersonalizeLog);
+        depersonalizeLog,
+        multiDocOnImage,
+        shiftExpiryDate,
+        minimalHolderAge,
+        returnUncroppedImage);
   }
 
   @Override
@@ -689,6 +798,9 @@ public class ProcessParams {
     sb.append("    scenario: ").append(toIndentedString(scenario)).append("\n");
     sb.append("    resultTypeOutput: ").append(toIndentedString(resultTypeOutput)).append("\n");
     sb.append("    doublePageSpread: ").append(toIndentedString(doublePageSpread)).append("\n");
+    sb.append("    generateDoublePageSpreadImage: ")
+        .append(toIndentedString(generateDoublePageSpreadImage))
+        .append("\n");
     sb.append("    fieldTypesFilter: ").append(toIndentedString(fieldTypesFilter)).append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
     sb.append("    measureSystem: ").append(toIndentedString(measureSystem)).append("\n");
@@ -696,14 +808,12 @@ public class ProcessParams {
     sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
     sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
     sb.append("    log: ").append(toIndentedString(log)).append("\n");
+    sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
     sb.append("    forceDocID: ").append(toIndentedString(forceDocID)).append("\n");
     sb.append("    matchTextFieldMask: ").append(toIndentedString(matchTextFieldMask)).append("\n");
     sb.append("    fastDocDetect: ").append(toIndentedString(fastDocDetect)).append("\n");
     sb.append("    updateOCRValidityByGlare: ")
         .append(toIndentedString(updateOCRValidityByGlare))
-        .append("\n");
-    sb.append("    generateDoublePageSpreadImage: ")
-        .append(toIndentedString(generateDoublePageSpreadImage))
         .append("\n");
     sb.append("    checkRequiredTextFields: ")
         .append(toIndentedString(checkRequiredTextFields))
@@ -715,8 +825,13 @@ public class ProcessParams {
     sb.append("    forceDocFormat: ").append(toIndentedString(forceDocFormat)).append("\n");
     sb.append("    noGraphics: ").append(toIndentedString(noGraphics)).append("\n");
     sb.append("    documentAreaMin: ").append(toIndentedString(documentAreaMin)).append("\n");
-    sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
     sb.append("    depersonalizeLog: ").append(toIndentedString(depersonalizeLog)).append("\n");
+    sb.append("    multiDocOnImage: ").append(toIndentedString(multiDocOnImage)).append("\n");
+    sb.append("    shiftExpiryDate: ").append(toIndentedString(shiftExpiryDate)).append("\n");
+    sb.append("    minimalHolderAge: ").append(toIndentedString(minimalHolderAge)).append("\n");
+    sb.append("    returnUncroppedImage: ")
+        .append(toIndentedString(returnUncroppedImage))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
