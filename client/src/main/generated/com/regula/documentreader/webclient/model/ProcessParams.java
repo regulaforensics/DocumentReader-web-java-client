@@ -158,6 +158,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_RETURN_UNCROPPED_IMAGE)
   private Boolean returnUncroppedImage;
 
+  public static final String SERIALIZED_NAME_MRZ_FORMATS_FILTER = "mrzFormatsFilter";
+
+  @SerializedName(SERIALIZED_NAME_MRZ_FORMATS_FILTER)
+  private List<MRZFormat> mrzFormatsFilter = null;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -720,6 +725,33 @@ public class ProcessParams {
     this.returnUncroppedImage = returnUncroppedImage;
   }
 
+  public ProcessParams withMrzFormatsFilter(List<MRZFormat> mrzFormatsFilter) {
+    this.mrzFormatsFilter = mrzFormatsFilter;
+    return this;
+  }
+
+  public ProcessParams addMrzFormatsFilterItem(MRZFormat mrzFormatsFilterItem) {
+    if (this.mrzFormatsFilter == null) {
+      this.mrzFormatsFilter = new ArrayList<MRZFormat>();
+    }
+    this.mrzFormatsFilter.add(mrzFormatsFilterItem);
+    return this;
+  }
+
+  /**
+   * This option allows limiting MRZ formats to be recognized by specifying them in array.
+   *
+   * @return mrzFormatsFilter
+   */
+  @javax.annotation.Nullable
+  public List<MRZFormat> getMrzFormatsFilter() {
+    return mrzFormatsFilter;
+  }
+
+  public void setMrzFormatsFilter(List<MRZFormat> mrzFormatsFilter) {
+    this.mrzFormatsFilter = mrzFormatsFilter;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -756,7 +788,8 @@ public class ProcessParams {
         && Objects.equals(this.multiDocOnImage, processParams.multiDocOnImage)
         && Objects.equals(this.shiftExpiryDate, processParams.shiftExpiryDate)
         && Objects.equals(this.minimalHolderAge, processParams.minimalHolderAge)
-        && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage);
+        && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
+        && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter);
   }
 
   @Override
@@ -788,7 +821,8 @@ public class ProcessParams {
         multiDocOnImage,
         shiftExpiryDate,
         minimalHolderAge,
-        returnUncroppedImage);
+        returnUncroppedImage,
+        mrzFormatsFilter);
   }
 
   @Override
@@ -832,6 +866,7 @@ public class ProcessParams {
     sb.append("    returnUncroppedImage: ")
         .append(toIndentedString(returnUncroppedImage))
         .append("\n");
+    sb.append("    mrzFormatsFilter: ").append(toIndentedString(mrzFormatsFilter)).append("\n");
     sb.append("}");
     return sb.toString();
   }
