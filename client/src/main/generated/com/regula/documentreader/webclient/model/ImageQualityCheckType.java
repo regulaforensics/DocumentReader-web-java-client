@@ -31,4 +31,10 @@ public class ImageQualityCheckType {
 
   /** Signals if document is not fully present in the image */
   public static final int Bounds = 5;
+
+  /** Signals if an image is captured from screen */
+  public static final int ScreenCapture = 6;
+
+  /** Signals if the portrait is present */
+  public static final int Portrait = 7;
 }
