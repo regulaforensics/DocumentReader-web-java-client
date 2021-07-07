@@ -39,28 +39,18 @@ public class Main {
         var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
         var licenseFromFile = readFile("regula.license");
 
-        byte[] whitePage0 = readFile("WHITE.jpg");
-        byte[] irPage0 = readFile("IR.jpg");
-        byte[] uvPage0 = readFile("UV.jpg");
-
-        var whitePageRequestImage = new ProcessRequestImage(whitePage0, Light.WHITE, 0);
-        var irPageRequestImage = new ProcessRequestImage(irPage0, Light.IR, 0);
-        var uvPageRequestImage = new ProcessRequestImage(uvPage0, Light.UV, 0);
+        var frontImage = new ProcessRequestImage(readFile("front.jpeg"), Light.WHITE);
+        var backImage = new ProcessRequestImage(readFile("back.jpeg"), Light.WHITE);
 
         var requestParams = new RecognitionParams()
-                .withScenario(Scenario.FULL_AUTH)
+                .withScenario(Scenario.FULL_PROCESS)
                 .withResultTypeOutput(
                         // actual results
-                        Result.STATUS, Result.AUTHENTICITY, Result.TEXT, Result.IMAGES,
-                        Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
-                        // legacy results
-                        Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
-                        Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
-                        Result.LEXICAL_ANALYSIS
+                        Result.STATUS, Result.TEXT, Result.IMAGES, Result.DOCUMENT_TYPE
                 );
 
         RecognitionRequest request = new RecognitionRequest(
-                requestParams, List.of(whitePageRequestImage, irPageRequestImage, uvPageRequestImage)
+                requestParams, List.of(frontImage,backImage)
         );
 
         var api = new DocumentReaderApi(apiBaseUrl);
