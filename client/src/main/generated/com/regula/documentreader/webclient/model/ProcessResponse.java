@@ -13,6 +13,7 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -48,6 +49,11 @@ public class ProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   private Map<String, Object> passBackObject = null;
+
+  public static final String SERIALIZED_NAME_MORE_PAGES_AVAILABLE = "morePagesAvailable";
+
+  @SerializedName(SERIALIZED_NAME_MORE_PAGES_AVAILABLE)
+  private BigDecimal morePagesAvailable;
 
   public ProcessResponse withChipPage(Integer chipPage) {
     this.chipPage = chipPage;
@@ -168,6 +174,25 @@ public class ProcessResponse {
     this.passBackObject = passBackObject;
   }
 
+  public ProcessResponse withMorePagesAvailable(BigDecimal morePagesAvailable) {
+    this.morePagesAvailable = morePagesAvailable;
+    return this;
+  }
+
+  /**
+   * Get morePagesAvailable
+   *
+   * @return morePagesAvailable
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getMorePagesAvailable() {
+    return morePagesAvailable;
+  }
+
+  public void setMorePagesAvailable(BigDecimal morePagesAvailable) {
+    this.morePagesAvailable = morePagesAvailable;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -182,13 +207,20 @@ public class ProcessResponse {
         && Objects.equals(this.containerList, processResponse.containerList)
         && Objects.equals(this.transactionInfo, processResponse.transactionInfo)
         && Objects.equals(this.log, processResponse.log)
-        && Objects.equals(this.passBackObject, processResponse.passBackObject);
+        && Objects.equals(this.passBackObject, processResponse.passBackObject)
+        && Objects.equals(this.morePagesAvailable, processResponse.morePagesAvailable);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        chipPage, processingFinished, containerList, transactionInfo, log, passBackObject);
+        chipPage,
+        processingFinished,
+        containerList,
+        transactionInfo,
+        log,
+        passBackObject,
+        morePagesAvailable);
   }
 
   @Override
@@ -201,6 +233,7 @@ public class ProcessResponse {
     sb.append("    transactionInfo: ").append(toIndentedString(transactionInfo)).append("\n");
     sb.append("    log: ").append(toIndentedString(log)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
+    sb.append("    morePagesAvailable: ").append(toIndentedString(morePagesAvailable)).append("\n");
     sb.append("}");
     return sb.toString();
   }
