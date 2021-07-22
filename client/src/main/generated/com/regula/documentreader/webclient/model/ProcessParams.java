@@ -72,6 +72,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
   private Map<String, Object> customParams = null;
 
+  public static final String SERIALIZED_NAME_CONFIG = "config";
+
+  @SerializedName(SERIALIZED_NAME_CONFIG)
+  private List<PerDocumentConfig> config = null;
+
   public static final String SERIALIZED_NAME_LOG = "log";
 
   @SerializedName(SERIALIZED_NAME_LOG)
@@ -162,6 +167,12 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_MRZ_FORMATS_FILTER)
   private List<String> mrzFormatsFilter = null;
+
+  public static final String SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE =
+      "forceReadMrzBeforeLocate";
+
+  @SerializedName(SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE)
+  private Boolean forceReadMrzBeforeLocate;
 
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
@@ -388,6 +399,34 @@ public class ProcessParams {
 
   public void setCustomParams(Map<String, Object> customParams) {
     this.customParams = customParams;
+  }
+
+  public ProcessParams withConfig(List<PerDocumentConfig> config) {
+    this.config = config;
+    return this;
+  }
+
+  public ProcessParams addConfigItem(PerDocumentConfig configItem) {
+    if (this.config == null) {
+      this.config = new ArrayList<PerDocumentConfig>();
+    }
+    this.config.add(configItem);
+    return this;
+  }
+
+  /**
+   * This option allows to set additional custom configuration per document type. If recognized
+   * document has id specified in config, processing adjusts according to designated configuration.
+   *
+   * @return config
+   */
+  @javax.annotation.Nullable
+  public List<PerDocumentConfig> getConfig() {
+    return config;
+  }
+
+  public void setConfig(List<PerDocumentConfig> config) {
+    this.config = config;
   }
 
   public ProcessParams withLog(Boolean log) {
@@ -752,6 +791,28 @@ public class ProcessParams {
     this.mrzFormatsFilter = mrzFormatsFilter;
   }
 
+  public ProcessParams withForceReadMrzBeforeLocate(Boolean forceReadMrzBeforeLocate) {
+    this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
+    return this;
+  }
+
+  /**
+   * This option can be set to true to make sure that in series processing MRZ is located fully
+   * inside the result document image, if present on the document. Enabling this option may add
+   * extra processing time, by disabling optimizations, but allows more stability in output image
+   * quality.
+   *
+   * @return forceReadMrzBeforeLocate
+   */
+  @javax.annotation.Nullable
+  public Boolean getForceReadMrzBeforeLocate() {
+    return forceReadMrzBeforeLocate;
+  }
+
+  public void setForceReadMrzBeforeLocate(Boolean forceReadMrzBeforeLocate) {
+    this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -772,6 +833,7 @@ public class ProcessParams {
         && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
         && Objects.equals(this.alreadyCropped, processParams.alreadyCropped)
         && Objects.equals(this.customParams, processParams.customParams)
+        && Objects.equals(this.config, processParams.config)
         && Objects.equals(this.log, processParams.log)
         && Objects.equals(this.logLevel, processParams.logLevel)
         && Objects.equals(this.forceDocID, processParams.forceDocID)
@@ -789,7 +851,8 @@ public class ProcessParams {
         && Objects.equals(this.shiftExpiryDate, processParams.shiftExpiryDate)
         && Objects.equals(this.minimalHolderAge, processParams.minimalHolderAge)
         && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
-        && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter);
+        && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter)
+        && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate);
   }
 
   @Override
@@ -805,6 +868,7 @@ public class ProcessParams {
         imageDpiOutMax,
         alreadyCropped,
         customParams,
+        config,
         log,
         logLevel,
         forceDocID,
@@ -822,7 +886,8 @@ public class ProcessParams {
         shiftExpiryDate,
         minimalHolderAge,
         returnUncroppedImage,
-        mrzFormatsFilter);
+        mrzFormatsFilter,
+        forceReadMrzBeforeLocate);
   }
 
   @Override
@@ -841,6 +906,7 @@ public class ProcessParams {
     sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
     sb.append("    alreadyCropped: ").append(toIndentedString(alreadyCropped)).append("\n");
     sb.append("    customParams: ").append(toIndentedString(customParams)).append("\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    log: ").append(toIndentedString(log)).append("\n");
     sb.append("    logLevel: ").append(toIndentedString(logLevel)).append("\n");
     sb.append("    forceDocID: ").append(toIndentedString(forceDocID)).append("\n");
@@ -867,6 +933,9 @@ public class ProcessParams {
         .append(toIndentedString(returnUncroppedImage))
         .append("\n");
     sb.append("    mrzFormatsFilter: ").append(toIndentedString(mrzFormatsFilter)).append("\n");
+    sb.append("    forceReadMrzBeforeLocate: ")
+        .append(toIndentedString(forceReadMrzBeforeLocate))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
