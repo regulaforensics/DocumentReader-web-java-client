@@ -15,54 +15,30 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** ProcessSystemInfo */
-public class ProcessSystemInfo {
-  public static final String SERIALIZED_NAME_LICENSE = "license";
+/** Contains information about document position on the input image, its center, angle, etc */
+public class DocumentPositionResult extends ResultItem {
+  public static final String SERIALIZED_NAME_DOCUMENT_POSITION = "DocumentPosition";
 
-  @SerializedName(SERIALIZED_NAME_LICENSE)
-  private String license;
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_POSITION)
+  private DocumentPosition documentPosition;
 
-  public static final String SERIALIZED_NAME_RECAPTCHA_TOKEN = "recaptcha_token";
-
-  @SerializedName(SERIALIZED_NAME_RECAPTCHA_TOKEN)
-  private String recaptchaToken;
-
-  public ProcessSystemInfo withLicense(String license) {
-    this.license = license;
+  public DocumentPositionResult withDocumentPosition(DocumentPosition documentPosition) {
+    this.documentPosition = documentPosition;
     return this;
   }
 
   /**
-   * Base64 encoded license file
+   * Get documentPosition
    *
-   * @return license
+   * @return documentPosition
    */
   @javax.annotation.Nullable
-  public String getLicense() {
-    return license;
+  public DocumentPosition getDocumentPosition() {
+    return documentPosition;
   }
 
-  public void setLicense(String license) {
-    this.license = license;
-  }
-
-  public ProcessSystemInfo withRecaptchaToken(String recaptchaToken) {
-    this.recaptchaToken = recaptchaToken;
-    return this;
-  }
-
-  /**
-   * For internal use. Demo-sites recaptcha token.
-   *
-   * @return recaptchaToken
-   */
-  @javax.annotation.Nullable
-  public String getRecaptchaToken() {
-    return recaptchaToken;
-  }
-
-  public void setRecaptchaToken(String recaptchaToken) {
-    this.recaptchaToken = recaptchaToken;
+  public void setDocumentPosition(DocumentPosition documentPosition) {
+    this.documentPosition = documentPosition;
   }
 
   @Override
@@ -73,22 +49,22 @@ public class ProcessSystemInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProcessSystemInfo processSystemInfo = (ProcessSystemInfo) o;
-    return Objects.equals(this.license, processSystemInfo.license)
-        && Objects.equals(this.recaptchaToken, processSystemInfo.recaptchaToken);
+    DocumentPositionResult documentPositionResult = (DocumentPositionResult) o;
+    return Objects.equals(this.documentPosition, documentPositionResult.documentPosition)
+        && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(license, recaptchaToken);
+    return Objects.hash(documentPosition, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProcessSystemInfo {\n");
-    sb.append("    license: ").append(toIndentedString(license)).append("\n");
-    sb.append("    recaptchaToken: ").append(toIndentedString(recaptchaToken)).append("\n");
+    sb.append("class DocumentPositionResult {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    documentPosition: ").append(toIndentedString(documentPosition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
