@@ -27,25 +27,25 @@ public class ImageQA {
   @SerializedName(SERIALIZED_NAME_ANGLE_THRESHOLD)
   private Integer angleThreshold;
 
-  public static final String SERIALIZED_NAME_DISABLE_FOCUS_CHECK = "disableFocusCheck";
+  public static final String SERIALIZED_NAME_FOCUS_CHECK = "focusCheck";
 
-  @SerializedName(SERIALIZED_NAME_DISABLE_FOCUS_CHECK)
-  private Boolean disableFocusCheck;
+  @SerializedName(SERIALIZED_NAME_FOCUS_CHECK)
+  private Boolean focusCheck;
 
-  public static final String SERIALIZED_NAME_DISABLE_GLARES_CHECK = "disableGlaresCheck";
+  public static final String SERIALIZED_NAME_GLARES_CHECK = "glaresCheck";
 
-  @SerializedName(SERIALIZED_NAME_DISABLE_GLARES_CHECK)
-  private Boolean disableGlaresCheck;
+  @SerializedName(SERIALIZED_NAME_GLARES_CHECK)
+  private Boolean glaresCheck;
 
-  public static final String SERIALIZED_NAME_DISABLE_COLORNESS_CHECK = "disableColornessCheck";
+  public static final String SERIALIZED_NAME_COLORNESS_CHECK = "colornessCheck";
 
-  @SerializedName(SERIALIZED_NAME_DISABLE_COLORNESS_CHECK)
-  private Boolean disableColornessCheck;
+  @SerializedName(SERIALIZED_NAME_COLORNESS_CHECK)
+  private Boolean colornessCheck;
 
-  public static final String SERIALIZED_NAME_DISABLE_MOIRE_CHECK = "disableMoireCheck";
+  public static final String SERIALIZED_NAME_MOIRE_CHECK = "moireCheck";
 
-  @SerializedName(SERIALIZED_NAME_DISABLE_MOIRE_CHECK)
-  private Boolean disableMoireCheck;
+  @SerializedName(SERIALIZED_NAME_MOIRE_CHECK)
+  private Boolean moireCheck;
 
   public ImageQA withDpiThreshold(Integer dpiThreshold) {
     this.dpiThreshold = dpiThreshold;
@@ -87,80 +87,80 @@ public class ImageQA {
     this.angleThreshold = angleThreshold;
   }
 
-  public ImageQA withDisableFocusCheck(Boolean disableFocusCheck) {
-    this.disableFocusCheck = disableFocusCheck;
+  public ImageQA withFocusCheck(Boolean focusCheck) {
+    this.focusCheck = focusCheck;
     return this;
   }
 
   /**
    * This option disabled focus check during performing image quality validation
    *
-   * @return disableFocusCheck
+   * @return focusCheck
    */
   @javax.annotation.Nullable
-  public Boolean getDisableFocusCheck() {
-    return disableFocusCheck;
+  public Boolean getFocusCheck() {
+    return focusCheck;
   }
 
-  public void setDisableFocusCheck(Boolean disableFocusCheck) {
-    this.disableFocusCheck = disableFocusCheck;
+  public void setFocusCheck(Boolean focusCheck) {
+    this.focusCheck = focusCheck;
   }
 
-  public ImageQA withDisableGlaresCheck(Boolean disableGlaresCheck) {
-    this.disableGlaresCheck = disableGlaresCheck;
+  public ImageQA withGlaresCheck(Boolean glaresCheck) {
+    this.glaresCheck = glaresCheck;
     return this;
   }
 
   /**
    * This option disabled glares check during performing image quality validation
    *
-   * @return disableGlaresCheck
+   * @return glaresCheck
    */
   @javax.annotation.Nullable
-  public Boolean getDisableGlaresCheck() {
-    return disableGlaresCheck;
+  public Boolean getGlaresCheck() {
+    return glaresCheck;
   }
 
-  public void setDisableGlaresCheck(Boolean disableGlaresCheck) {
-    this.disableGlaresCheck = disableGlaresCheck;
+  public void setGlaresCheck(Boolean glaresCheck) {
+    this.glaresCheck = glaresCheck;
   }
 
-  public ImageQA withDisableColornessCheck(Boolean disableColornessCheck) {
-    this.disableColornessCheck = disableColornessCheck;
+  public ImageQA withColornessCheck(Boolean colornessCheck) {
+    this.colornessCheck = colornessCheck;
     return this;
   }
 
   /**
    * This option disabled colorness check during performing image quality validation
    *
-   * @return disableColornessCheck
+   * @return colornessCheck
    */
   @javax.annotation.Nullable
-  public Boolean getDisableColornessCheck() {
-    return disableColornessCheck;
+  public Boolean getColornessCheck() {
+    return colornessCheck;
   }
 
-  public void setDisableColornessCheck(Boolean disableColornessCheck) {
-    this.disableColornessCheck = disableColornessCheck;
+  public void setColornessCheck(Boolean colornessCheck) {
+    this.colornessCheck = colornessCheck;
   }
 
-  public ImageQA withDisableMoireCheck(Boolean disableMoireCheck) {
-    this.disableMoireCheck = disableMoireCheck;
+  public ImageQA withMoireCheck(Boolean moireCheck) {
+    this.moireCheck = moireCheck;
     return this;
   }
 
   /**
    * This option disabled moire patterns check during performing image quality validation
    *
-   * @return disableMoireCheck
+   * @return moireCheck
    */
   @javax.annotation.Nullable
-  public Boolean getDisableMoireCheck() {
-    return disableMoireCheck;
+  public Boolean getMoireCheck() {
+    return moireCheck;
   }
 
-  public void setDisableMoireCheck(Boolean disableMoireCheck) {
-    this.disableMoireCheck = disableMoireCheck;
+  public void setMoireCheck(Boolean moireCheck) {
+    this.moireCheck = moireCheck;
   }
 
   @Override
@@ -174,21 +174,16 @@ public class ImageQA {
     ImageQA imageQA = (ImageQA) o;
     return Objects.equals(this.dpiThreshold, imageQA.dpiThreshold)
         && Objects.equals(this.angleThreshold, imageQA.angleThreshold)
-        && Objects.equals(this.disableFocusCheck, imageQA.disableFocusCheck)
-        && Objects.equals(this.disableGlaresCheck, imageQA.disableGlaresCheck)
-        && Objects.equals(this.disableColornessCheck, imageQA.disableColornessCheck)
-        && Objects.equals(this.disableMoireCheck, imageQA.disableMoireCheck);
+        && Objects.equals(this.focusCheck, imageQA.focusCheck)
+        && Objects.equals(this.glaresCheck, imageQA.glaresCheck)
+        && Objects.equals(this.colornessCheck, imageQA.colornessCheck)
+        && Objects.equals(this.moireCheck, imageQA.moireCheck);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        dpiThreshold,
-        angleThreshold,
-        disableFocusCheck,
-        disableGlaresCheck,
-        disableColornessCheck,
-        disableMoireCheck);
+        dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, moireCheck);
   }
 
   @Override
@@ -197,12 +192,10 @@ public class ImageQA {
     sb.append("class ImageQA {\n");
     sb.append("    dpiThreshold: ").append(toIndentedString(dpiThreshold)).append("\n");
     sb.append("    angleThreshold: ").append(toIndentedString(angleThreshold)).append("\n");
-    sb.append("    disableFocusCheck: ").append(toIndentedString(disableFocusCheck)).append("\n");
-    sb.append("    disableGlaresCheck: ").append(toIndentedString(disableGlaresCheck)).append("\n");
-    sb.append("    disableColornessCheck: ")
-        .append(toIndentedString(disableColornessCheck))
-        .append("\n");
-    sb.append("    disableMoireCheck: ").append(toIndentedString(disableMoireCheck)).append("\n");
+    sb.append("    focusCheck: ").append(toIndentedString(focusCheck)).append("\n");
+    sb.append("    glaresCheck: ").append(toIndentedString(glaresCheck)).append("\n");
+    sb.append("    colornessCheck: ").append(toIndentedString(colornessCheck)).append("\n");
+    sb.append("    moireCheck: ").append(toIndentedString(moireCheck)).append("\n");
     sb.append("}");
     return sb.toString();
   }
