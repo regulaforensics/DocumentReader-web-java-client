@@ -174,6 +174,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE)
   private Boolean forceReadMrzBeforeLocate;
 
+  public static final String SERIALIZED_NAME_PARSE_BARCODES = "parseBarcodes";
+
+  @SerializedName(SERIALIZED_NAME_PARSE_BARCODES)
+  private Boolean parseBarcodes;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -813,6 +818,25 @@ public class ProcessParams {
     this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
   }
 
+  public ProcessParams withParseBarcodes(Boolean parseBarcodes) {
+    this.parseBarcodes = parseBarcodes;
+    return this;
+  }
+
+  /**
+   * This option can be set to false to stop parsing after barcode is read.
+   *
+   * @return parseBarcodes
+   */
+  @javax.annotation.Nullable
+  public Boolean getParseBarcodes() {
+    return parseBarcodes;
+  }
+
+  public void setParseBarcodes(Boolean parseBarcodes) {
+    this.parseBarcodes = parseBarcodes;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -852,7 +876,8 @@ public class ProcessParams {
         && Objects.equals(this.minimalHolderAge, processParams.minimalHolderAge)
         && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
         && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter)
-        && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate);
+        && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate)
+        && Objects.equals(this.parseBarcodes, processParams.parseBarcodes);
   }
 
   @Override
@@ -887,7 +912,8 @@ public class ProcessParams {
         minimalHolderAge,
         returnUncroppedImage,
         mrzFormatsFilter,
-        forceReadMrzBeforeLocate);
+        forceReadMrzBeforeLocate,
+        parseBarcodes);
   }
 
   @Override
@@ -936,6 +962,7 @@ public class ProcessParams {
     sb.append("    forceReadMrzBeforeLocate: ")
         .append(toIndentedString(forceReadMrzBeforeLocate))
         .append("\n");
+    sb.append("    parseBarcodes: ").append(toIndentedString(parseBarcodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

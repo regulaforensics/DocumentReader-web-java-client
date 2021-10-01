@@ -465,4 +465,8 @@ public class DocumentType {
   public static final int CERTIFICATE_OF_COMPETENCY = 237;
 
   public static final int CERTIFICATE_OF_PROFICIENCY = 238;
+
+  public static final int TRADE_LICENSE = 239;
+
+  public static final int PASSPORT_PAGE = 240;
 }
