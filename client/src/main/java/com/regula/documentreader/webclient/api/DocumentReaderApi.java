@@ -1,11 +1,21 @@
 package com.regula.documentreader.webclient.api;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Configuration;
+import com.regula.documentreader.webclient.Pair;
 import com.regula.documentreader.webclient.model.DeviceInfo;
+import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
+import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 import okio.ByteString;
 
 public class DocumentReaderApi {
@@ -66,6 +76,38 @@ public class DocumentReaderApi {
   public RecognitionResponse process(ProcessRequest processRequest) {
     processRequest.getSystemInfo().withLicense(this.license);
     return new RecognitionResponse(processApi.apiProcess(processRequest));
+  }
+
+  public RecognitionResponse process(byte[] processRequest, ProcessParams processParams) {
+    if (processParams != null) {
+      Gson converter = processApi.getApiClient().getJSON().getGson();
+      JsonObject parsedProcessRequest =
+          converter.fromJson(new String(processRequest), JsonObject.class);
+      JsonElement params = converter.toJsonTree(processParams);
+      parsedProcessRequest.add("processParam", params);
+      processRequest = converter.toJson(parsedProcessRequest).getBytes();
+    }
+
+    ApiClient client = processApi.getApiClient();
+    okhttp3.Call apiCall = newProcessCall(processRequest);
+    Type respType = new TypeToken<ProcessResponse>() {}.getType();
+    return new RecognitionResponse((ProcessResponse) client.execute(apiCall, respType).getData());
+  }
+
+  private okhttp3.Call newProcessCall(byte[] processRequest) {
+    return processApi
+        .getApiClient()
+        .buildCall(
+            "/api/process",
+            "POST",
+            new ArrayList<Pair>(),
+            new ArrayList<Pair>(),
+            processRequest,
+            new HashMap<String, String>(),
+            new HashMap<String, String>(),
+            new HashMap<String, Object>(),
+            new String[] {},
+            null);
   }
 
   public DocumentReaderApi withLicense(String license) {
