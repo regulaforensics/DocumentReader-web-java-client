@@ -73,6 +73,8 @@ public class Main {
         System.out.format("Web API version %s%n", info.getVersion());
 
         RecognitionResponse response = api.process(request);
+        // to send raw request(ex encrypted one) with overriding processing params here use next api
+        // RecognitionResponse response = api.process(request, requestParams);
 
         var status = response.status();
         var docOverallStatus = status.getOverallStatus() == CheckResult.OK ? "valid" : "not valid";
