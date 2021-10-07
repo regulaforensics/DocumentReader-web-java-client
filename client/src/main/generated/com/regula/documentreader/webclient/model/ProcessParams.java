@@ -182,7 +182,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_CONVERT_CASE = "convertCase";
 
   @SerializedName(SERIALIZED_NAME_CONVERT_CASE)
-  private TextPostProcessing convertCase;
+  private Integer convertCase;
 
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
@@ -842,7 +842,7 @@ public class ProcessParams {
     this.parseBarcodes = parseBarcodes;
   }
 
-  public ProcessParams withConvertCase(TextPostProcessing convertCase) {
+  public ProcessParams withConvertCase(Integer convertCase) {
     this.convertCase = convertCase;
     return this;
   }
@@ -853,11 +853,11 @@ public class ProcessParams {
    * @return convertCase
    */
   @javax.annotation.Nullable
-  public TextPostProcessing getConvertCase() {
+  public Integer getConvertCase() {
     return convertCase;
   }
 
-  public void setConvertCase(TextPostProcessing convertCase) {
+  public void setConvertCase(Integer convertCase) {
     this.convertCase = convertCase;
   }
 
