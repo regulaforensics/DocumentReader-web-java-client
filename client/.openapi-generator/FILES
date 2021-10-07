@@ -83,6 +83,7 @@ src/main/generated/com/regula/documentreader/webclient/model/TextAvailableSource
 src/main/generated/com/regula/documentreader/webclient/model/TextDataResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TextField.java
 src/main/generated/com/regula/documentreader/webclient/model/TextFieldValue.java
+src/main/generated/com/regula/documentreader/webclient/model/TextPostProcessing.java
 src/main/generated/com/regula/documentreader/webclient/model/TextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java
