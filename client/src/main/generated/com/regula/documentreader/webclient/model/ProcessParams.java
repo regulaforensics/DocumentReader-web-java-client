@@ -179,6 +179,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_PARSE_BARCODES)
   private Boolean parseBarcodes;
 
+  public static final String SERIALIZED_NAME_CONVERT_CASE = "convertCase";
+
+  @SerializedName(SERIALIZED_NAME_CONVERT_CASE)
+  private TextPostProcessing convertCase;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -837,6 +842,25 @@ public class ProcessParams {
     this.parseBarcodes = parseBarcodes;
   }
 
+  public ProcessParams withConvertCase(TextPostProcessing convertCase) {
+    this.convertCase = convertCase;
+    return this;
+  }
+
+  /**
+   * Get convertCase
+   *
+   * @return convertCase
+   */
+  @javax.annotation.Nullable
+  public TextPostProcessing getConvertCase() {
+    return convertCase;
+  }
+
+  public void setConvertCase(TextPostProcessing convertCase) {
+    this.convertCase = convertCase;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -877,7 +901,8 @@ public class ProcessParams {
         && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
         && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter)
         && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate)
-        && Objects.equals(this.parseBarcodes, processParams.parseBarcodes);
+        && Objects.equals(this.parseBarcodes, processParams.parseBarcodes)
+        && Objects.equals(this.convertCase, processParams.convertCase);
   }
 
   @Override
@@ -913,7 +938,8 @@ public class ProcessParams {
         returnUncroppedImage,
         mrzFormatsFilter,
         forceReadMrzBeforeLocate,
-        parseBarcodes);
+        parseBarcodes,
+        convertCase);
   }
 
   @Override
@@ -963,6 +989,7 @@ public class ProcessParams {
         .append(toIndentedString(forceReadMrzBeforeLocate))
         .append("\n");
     sb.append("    parseBarcodes: ").append(toIndentedString(parseBarcodes)).append("\n");
+    sb.append("    convertCase: ").append(toIndentedString(convertCase)).append("\n");
     sb.append("}");
     return sb.toString();
   }
