@@ -118,10 +118,10 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_RETURN_CROPPED_BARCODE)
   private Boolean returnCroppedBarcode;
 
-  public static final String SERIALIZED_NAME_IMAGE_Q_A = "imageQA";
+  public static final String SERIALIZED_NAME_IMAGE_QA = "imageQa";
 
-  @SerializedName(SERIALIZED_NAME_IMAGE_Q_A)
-  private ImageQA imageQA;
+  @SerializedName(SERIALIZED_NAME_IMAGE_QA)
+  private ImageQA imageQa;
 
   public static final String SERIALIZED_NAME_FORCE_DOC_FORMAT = "forceDocFormat";
 
@@ -596,23 +596,23 @@ public class ProcessParams {
     this.returnCroppedBarcode = returnCroppedBarcode;
   }
 
-  public ProcessParams withImageQA(ImageQA imageQA) {
-    this.imageQA = imageQA;
+  public ProcessParams withImageQa(ImageQA imageQa) {
+    this.imageQa = imageQa;
     return this;
   }
 
   /**
-   * Get imageQA
+   * Get imageQa
    *
-   * @return imageQA
+   * @return imageQa
    */
   @javax.annotation.Nullable
-  public ImageQA getImageQA() {
-    return imageQA;
+  public ImageQA getImageQa() {
+    return imageQa;
   }
 
-  public void setImageQA(ImageQA imageQA) {
-    this.imageQA = imageQA;
+  public void setImageQa(ImageQA imageQa) {
+    this.imageQa = imageQa;
   }
 
   public ProcessParams withForceDocFormat(Integer forceDocFormat) {
@@ -890,7 +890,7 @@ public class ProcessParams {
         && Objects.equals(this.updateOCRValidityByGlare, processParams.updateOCRValidityByGlare)
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
         && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
-        && Objects.equals(this.imageQA, processParams.imageQA)
+        && Objects.equals(this.imageQa, processParams.imageQa)
         && Objects.equals(this.forceDocFormat, processParams.forceDocFormat)
         && Objects.equals(this.noGraphics, processParams.noGraphics)
         && Objects.equals(this.documentAreaMin, processParams.documentAreaMin)
@@ -927,7 +927,7 @@ public class ProcessParams {
         updateOCRValidityByGlare,
         checkRequiredTextFields,
         returnCroppedBarcode,
-        imageQA,
+        imageQa,
         forceDocFormat,
         noGraphics,
         documentAreaMin,
@@ -973,7 +973,7 @@ public class ProcessParams {
     sb.append("    returnCroppedBarcode: ")
         .append(toIndentedString(returnCroppedBarcode))
         .append("\n");
-    sb.append("    imageQA: ").append(toIndentedString(imageQA)).append("\n");
+    sb.append("    imageQa: ").append(toIndentedString(imageQa)).append("\n");
     sb.append("    forceDocFormat: ").append(toIndentedString(forceDocFormat)).append("\n");
     sb.append("    noGraphics: ").append(toIndentedString(noGraphics)).append("\n");
     sb.append("    documentAreaMin: ").append(toIndentedString(documentAreaMin)).append("\n");
