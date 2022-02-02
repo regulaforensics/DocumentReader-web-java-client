@@ -93,7 +93,7 @@ public class ImageQA {
   }
 
   /**
-   * This option disabled focus check during performing image quality validation
+   * This option enables focus check while performing image quality validation.
    *
    * @return focusCheck
    */
@@ -112,7 +112,7 @@ public class ImageQA {
   }
 
   /**
-   * This option disabled glares check during performing image quality validation
+   * This option enables glares check while performing image quality validation.
    *
    * @return glaresCheck
    */
@@ -131,7 +131,7 @@ public class ImageQA {
   }
 
   /**
-   * This option disabled colorness check during performing image quality validation
+   * This option enables colorness check while performing image quality validation.
    *
    * @return colornessCheck
    */
@@ -150,7 +150,7 @@ public class ImageQA {
   }
 
   /**
-   * This option disabled moire patterns check during performing image quality validation
+   * This option enables moire patterns check while performing image quality validation.
    *
    * @return moireCheck
    */
