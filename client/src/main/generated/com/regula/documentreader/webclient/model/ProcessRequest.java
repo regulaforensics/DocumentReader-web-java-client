@@ -21,6 +21,11 @@ import java.util.Objects;
 
 /** ProcessRequest */
 public class ProcessRequest {
+  public static final String SERIALIZED_NAME_TAG = "tag";
+
+  @SerializedName(SERIALIZED_NAME_TAG)
+  private String tag;
+
   public static final String SERIALIZED_NAME_PROCESS_PARAM = "processParam";
 
   @SerializedName(SERIALIZED_NAME_PROCESS_PARAM)
@@ -40,6 +45,25 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   private Map<String, Object> passBackObject = null;
+
+  public ProcessRequest withTag(String tag) {
+    this.tag = tag;
+    return this;
+  }
+
+  /**
+   * session id
+   *
+   * @return tag
+   */
+  @javax.annotation.Nullable
+  public String getTag() {
+    return tag;
+  }
+
+  public void setTag(String tag) {
+    this.tag = tag;
+  }
 
   public ProcessRequest withProcessParam(ProcessParams processParam) {
     this.processParam = processParam;
@@ -138,7 +162,8 @@ public class ProcessRequest {
       return false;
     }
     ProcessRequest processRequest = (ProcessRequest) o;
-    return Objects.equals(this.processParam, processRequest.processParam)
+    return Objects.equals(this.tag, processRequest.tag)
+        && Objects.equals(this.processParam, processRequest.processParam)
         && Objects.equals(this.list, processRequest.list)
         && Objects.equals(this.systemInfo, processRequest.systemInfo)
         && Objects.equals(this.passBackObject, processRequest.passBackObject);
@@ -146,13 +171,14 @@ public class ProcessRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(processParam, list, systemInfo, passBackObject);
+    return Objects.hash(tag, processParam, list, systemInfo, passBackObject);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessRequest {\n");
+    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
