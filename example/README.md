@@ -37,7 +37,7 @@ Example of execution:
 Get your [free trial here](https://mobile.regulaforensics.com/). When you receive the `regula.license` file, 
 copy it to the [example resources](../example/src/main/resources) folder. Now you are ready for start!
 
-Follow [the instructions](https://docs.regulaforensics.com/web-service/quick-start-guide) to run Regula Document Reader web API.
+Follow [the instructions](https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/) to run Regula Document Reader web API.
 If the instance has been launched successfully, use the following line command to run the example:
 
 ```bash
