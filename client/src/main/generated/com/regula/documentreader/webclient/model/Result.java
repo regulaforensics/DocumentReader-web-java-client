@@ -75,4 +75,10 @@ public class Result {
 
   /** Contains information about document position on the input image, its center, angle, etc */
   public static final int DOCUMENT_POSITION = 85;
+
+  /** Contains license */
+  public static final int LICENSE = 50;
+
+  /** Contains encrypted ResultContainerList */
+  public static final int ENCRYPTED_RCL = 49;
 }

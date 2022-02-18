@@ -29,7 +29,12 @@ public class ProcessRequest {
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
-  private List<ProcessRequestImage> list = new ArrayList<ProcessRequestImage>();
+  private List<ProcessRequestImage> list = null;
+
+  public static final String SERIALIZED_NAME_CONTAINER_LIST = "ContainerList";
+
+  @SerializedName(SERIALIZED_NAME_CONTAINER_LIST)
+  private ContainerList containerList;
 
   public static final String SERIALIZED_NAME_SYSTEM_INFO = "systemInfo";
 
@@ -65,6 +70,9 @@ public class ProcessRequest {
   }
 
   public ProcessRequest addListItem(ProcessRequestImage listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<ProcessRequestImage>();
+    }
     this.list.add(listItem);
     return this;
   }
@@ -74,12 +82,32 @@ public class ProcessRequest {
    *
    * @return list
    */
+  @javax.annotation.Nullable
   public List<ProcessRequestImage> getList() {
     return list;
   }
 
   public void setList(List<ProcessRequestImage> list) {
     this.list = list;
+  }
+
+  public ProcessRequest withContainerList(ContainerList containerList) {
+    this.containerList = containerList;
+    return this;
+  }
+
+  /**
+   * Get containerList
+   *
+   * @return containerList
+   */
+  @javax.annotation.Nullable
+  public ContainerList getContainerList() {
+    return containerList;
+  }
+
+  public void setContainerList(ContainerList containerList) {
+    this.containerList = containerList;
   }
 
   public ProcessRequest withSystemInfo(ProcessSystemInfo systemInfo) {
@@ -140,13 +168,14 @@ public class ProcessRequest {
     ProcessRequest processRequest = (ProcessRequest) o;
     return Objects.equals(this.processParam, processRequest.processParam)
         && Objects.equals(this.list, processRequest.list)
+        && Objects.equals(this.containerList, processRequest.containerList)
         && Objects.equals(this.systemInfo, processRequest.systemInfo)
         && Objects.equals(this.passBackObject, processRequest.passBackObject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(processParam, list, systemInfo, passBackObject);
+    return Objects.hash(processParam, list, containerList, systemInfo, passBackObject);
   }
 
   @Override
@@ -155,6 +184,7 @@ public class ProcessRequest {
     sb.append("class ProcessRequest {\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
     sb.append("}");
