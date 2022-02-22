@@ -27,4 +27,10 @@ public class RecognitionRequest extends ProcessRequest {
     }
     withSystemInfo(new ProcessSystemInfo());
   }
+
+  public RecognitionRequest(ProcessParams params, ContainerListRequest containerList) {
+    withProcessParam(params);
+    withContainerList(containerList);
+    withSystemInfo(new ProcessSystemInfo());
+  }
 }
