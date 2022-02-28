@@ -11,6 +11,6 @@ public class EncryptedRCLRequest extends EncryptedRCLResult {
         setListIdx(list_idx);
         setPageIdx(page_idx);
         setBufLength(encryptedRCL.length);
-        setResultType(Result.LICENSE);
+        setResultType(Result.ENCRYPTED_RCL);
     }
 }

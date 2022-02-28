@@ -76,7 +76,6 @@ public class DocumentReaderApi {
   public RecognitionResponse process(ProcessRequest processRequest) {
     processRequest.getSystemInfo().withLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest);
-    System.out.println(response.toString());
     return new RecognitionResponse(response);
   }
 

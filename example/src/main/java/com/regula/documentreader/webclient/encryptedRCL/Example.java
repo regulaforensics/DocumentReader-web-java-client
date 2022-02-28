@@ -32,8 +32,8 @@ public class Example {
         var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
         var licenseFromFile = readFile("regula.license");
 
-        byte[] licenseBase64 = readFile("license.txt");
-        byte[] encryptedRCLBase64 = readFile("encrypted-rcl.txt");
+        byte[] licenseBase64 = readFile("license.bin");
+        byte[] encryptedRCLBase64 = readFile("encrypted-rcl.bin");
 
         // byte[] licenseData = Base64.getDecoder().decode(licenseBase64.getBytes(StandardCharsets.UTF_8));
         // byte[] encryptedRCLData = Base64.getDecoder().decode(encryptedRCLBase64.getBytes(StandardCharsets.UTF_8));
@@ -44,22 +44,19 @@ public class Example {
         var license = new ProcessRequestLicense(licenseBase64, 0, 0, 0);
         var encryptedRCL = new EncryptedRCLRequest(encryptedRCLBase64, 0, 0, 0);
 
+        var containerList = new ContainerList();
+        containerList.setList(List.of(license, encryptedRCL));
+        // containerList.setCout
+
         var requestParams = new RecognitionParams()
-                .withScenario(Scenario.FULL_AUTH)
-                .withResultTypeOutput(
-                        // actual results
-                        Result.STATUS, Result.AUTHENTICITY, Result.TEXT, Result.IMAGES,
-                        Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
-                        Result.DOCUMENT_POSITION,
-                        // legacy results
-                        Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
-                        Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
-                        Result.LEXICAL_ANALYSIS
-                );
+                .withScenario(Scenario.FULL_PROCESS)
+                .withDoublePageSpread(true)
+                .withMeasureSystem(0)
+                .withDateFormat("M/d/yyyy")
+                .withAlreadyCropped(true);
 
         RecognitionRequest request = new RecognitionRequest(
-                requestParams, new ContainerListRequest(List.of(license, encryptedRCL))
-        );
+                requestParams, containerList);
 
         var api = new DocumentReaderApi(apiBaseUrl);
         if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
@@ -85,14 +82,6 @@ public class Example {
         var docNumberVisualValidity = docNumberField.sourceValidity(Source.VISUAL);
         var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
         var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
-
-        var docAuthenticity = response.authenticity();
-
-        var docIRB900 = docAuthenticity.irB900Checks();
-        var docIRB900Blank = docIRB900.checksByElement(SecurityFeatureType.BLANK);
-
-        var docImagePattern = docAuthenticity.imagePatternChecks();
-        var docImagePatternBlank = docImagePattern.checksByElement(SecurityFeatureType.BLANK);
 
         System.out.println("-----------------------------------------------------------------");
         System.out.format("           Document Overall Status: %s%n", docOverallStatus);
