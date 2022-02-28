@@ -35,18 +35,11 @@ public class Example {
         byte[] licenseBase64 = readFile("license.bin");
         byte[] encryptedRCLBase64 = readFile("encrypted-rcl.bin");
 
-        // byte[] licenseData = Base64.getDecoder().decode(licenseBase64.getBytes(StandardCharsets.UTF_8));
-        // byte[] encryptedRCLData = Base64.getDecoder().decode(encryptedRCLBase64.getBytes(StandardCharsets.UTF_8));
-
-//        byte[] licenseData = new byte[1];
-//        byte[] encryptedRCLData = new byte[1];
-
         var license = new ProcessRequestLicense(licenseBase64, 0, 0, 0);
         var encryptedRCL = new EncryptedRCLRequest(encryptedRCLBase64, 0, 0, 0);
 
         var containerList = new ContainerList();
         containerList.setList(List.of(license, encryptedRCL));
-        // containerList.setCout
 
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
