@@ -1,5 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
+import com.regula.documentreader.webclient.model.ContainerList;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessSystemInfo;
@@ -25,6 +26,12 @@ public class RecognitionRequest extends ProcessRequest {
     for (ProcessRequestImage image : images) {
       addListItem(image);
     }
+    withSystemInfo(new ProcessSystemInfo());
+  }
+
+  public RecognitionRequest(ProcessParams params, ContainerList containerList) {
+    withProcessParam(params);
+    withContainerList(containerList);
     withSystemInfo(new ProcessSystemInfo());
   }
 }

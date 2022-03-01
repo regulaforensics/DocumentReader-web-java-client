@@ -36,6 +36,7 @@ src/main/generated/com/regula/documentreader/webclient/model/DocumentPositionRes
 src/main/generated/com/regula/documentreader/webclient/model/DocumentTypesCandidates.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentTypesCandidatesList.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentTypesCandidatesResult.java
+src/main/generated/com/regula/documentreader/webclient/model/EncryptedRCLResult.java
 src/main/generated/com/regula/documentreader/webclient/model/FDSIDList.java
 src/main/generated/com/regula/documentreader/webclient/model/FiberResult.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
@@ -53,6 +54,7 @@ src/main/generated/com/regula/documentreader/webclient/model/ImagesField.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesResult.java
 src/main/generated/com/regula/documentreader/webclient/model/LexicalAnalysisResult.java
+src/main/generated/com/regula/documentreader/webclient/model/LicenseResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
