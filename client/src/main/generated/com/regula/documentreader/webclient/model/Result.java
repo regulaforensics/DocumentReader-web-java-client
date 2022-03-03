@@ -76,6 +76,9 @@ public class Result {
   /** Contains information about document position on the input image, its center, angle, etc */
   public static final int DOCUMENT_POSITION = 85;
 
+  /** Contains raw information about barcodes on the input image */
+  public static final int BARCODES = 5;
+
   /** Contains license */
   public static final int LICENSE = 50;
 
