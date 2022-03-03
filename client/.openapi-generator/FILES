@@ -22,12 +22,16 @@ src/main/generated/com/regula/documentreader/webclient/model/AreaContainer.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckList.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckResultItem.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResult.java
+src/main/generated/com/regula/documentreader/webclient/model/BcPDF417INFO.java
+src/main/generated/com/regula/documentreader/webclient/model/BcROIDETECT.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentType.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentTypeResult.java
 src/main/generated/com/regula/documentreader/webclient/model/CrossSourceValueComparison.java
+src/main/generated/com/regula/documentreader/webclient/model/DataModule.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsOptical.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsRFID.java
 src/main/generated/com/regula/documentreader/webclient/model/DeviceInfo.java
+src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedField.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentImage.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentImageResult.java
@@ -59,6 +63,7 @@ src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
 src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
+src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
 src/main/generated/com/regula/documentreader/webclient/model/PerDocumentConfig.java
 src/main/generated/com/regula/documentreader/webclient/model/PhotoIdentResult.java
 src/main/generated/com/regula/documentreader/webclient/model/Point.java
