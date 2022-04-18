@@ -13,74 +13,56 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
-/** AreaArray */
-public class AreaArray {
-  public static final String SERIALIZED_NAME_LIST = "List";
+/** GlaresCheckParams */
+public class GlaresCheckParams {
+  public static final String SERIALIZED_NAME_IMG_MARGIN_PART = "imgMarginPart";
 
-  @SerializedName(SERIALIZED_NAME_LIST)
-  private List<RectangleCoordinates> list = null;
+  @SerializedName(SERIALIZED_NAME_IMG_MARGIN_PART)
+  private Float imgMarginPart;
 
-  public static final String SERIALIZED_NAME_POINTS = "Points";
+  public static final String SERIALIZED_NAME_MAX_GLARING_PART = "maxGlaringPart";
 
-  @SerializedName(SERIALIZED_NAME_POINTS)
-  private List<PointArray> points = null;
+  @SerializedName(SERIALIZED_NAME_MAX_GLARING_PART)
+  private Float maxGlaringPart;
 
-  public AreaArray withList(List<RectangleCoordinates> list) {
-    this.list = list;
-    return this;
-  }
-
-  public AreaArray addListItem(RectangleCoordinates listItem) {
-    if (this.list == null) {
-      this.list = new ArrayList<RectangleCoordinates>();
-    }
-    this.list.add(listItem);
+  public GlaresCheckParams withImgMarginPart(Float imgMarginPart) {
+    this.imgMarginPart = imgMarginPart;
     return this;
   }
 
   /**
-   * Get list
+   * Margin from the edges of the image. 0.35 &#x3D; 35%
    *
-   * @return list
+   * @return imgMarginPart
    */
   @javax.annotation.Nullable
-  public List<RectangleCoordinates> getList() {
-    return list;
+  public Float getImgMarginPart() {
+    return imgMarginPart;
   }
 
-  public void setList(List<RectangleCoordinates> list) {
-    this.list = list;
+  public void setImgMarginPart(Float imgMarginPart) {
+    this.imgMarginPart = imgMarginPart;
   }
 
-  public AreaArray withPoints(List<PointArray> points) {
-    this.points = points;
-    return this;
-  }
-
-  public AreaArray addPointsItem(PointArray pointsItem) {
-    if (this.points == null) {
-      this.points = new ArrayList<PointArray>();
-    }
-    this.points.add(pointsItem);
+  public GlaresCheckParams withMaxGlaringPart(Float maxGlaringPart) {
+    this.maxGlaringPart = maxGlaringPart;
     return this;
   }
 
   /**
-   * Get points
+   * The maximum allowable part of the area occupied by the glare. The same: 0.06 &#x3D; 6%
    *
-   * @return points
+   * @return maxGlaringPart
    */
   @javax.annotation.Nullable
-  public List<PointArray> getPoints() {
-    return points;
+  public Float getMaxGlaringPart() {
+    return maxGlaringPart;
   }
 
-  public void setPoints(List<PointArray> points) {
-    this.points = points;
+  public void setMaxGlaringPart(Float maxGlaringPart) {
+    this.maxGlaringPart = maxGlaringPart;
   }
 
   @Override
@@ -91,22 +73,22 @@ public class AreaArray {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AreaArray areaArray = (AreaArray) o;
-    return Objects.equals(this.list, areaArray.list)
-        && Objects.equals(this.points, areaArray.points);
+    GlaresCheckParams glaresCheckParams = (GlaresCheckParams) o;
+    return Objects.equals(this.imgMarginPart, glaresCheckParams.imgMarginPart)
+        && Objects.equals(this.maxGlaringPart, glaresCheckParams.maxGlaringPart);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(list, points);
+    return Objects.hash(imgMarginPart, maxGlaringPart);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AreaArray {\n");
-    sb.append("    list: ").append(toIndentedString(list)).append("\n");
-    sb.append("    points: ").append(toIndentedString(points)).append("\n");
+    sb.append("class GlaresCheckParams {\n");
+    sb.append("    imgMarginPart: ").append(toIndentedString(imgMarginPart)).append("\n");
+    sb.append("    maxGlaringPart: ").append(toIndentedString(maxGlaringPart)).append("\n");
     sb.append("}");
     return sb.toString();
   }
