@@ -202,7 +202,7 @@ public class ProcessParams {
   public static final String SERIALIZED_NAME_DOCUMENT_GROUP_FILTER = "documentGroupFilter";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_GROUP_FILTER)
-  private String documentGroupFilter;
+  private List<Integer> documentGroupFilter = null;
 
   public static final String SERIALIZED_NAME_RESPECT_IMAGE_QUALITY = "respectImageQuality";
 
@@ -944,8 +944,16 @@ public class ProcessParams {
     this.processAuth = processAuth;
   }
 
-  public ProcessParams withDocumentGroupFilter(String documentGroupFilter) {
+  public ProcessParams withDocumentGroupFilter(List<Integer> documentGroupFilter) {
     this.documentGroupFilter = documentGroupFilter;
+    return this;
+  }
+
+  public ProcessParams addDocumentGroupFilterItem(Integer documentGroupFilterItem) {
+    if (this.documentGroupFilter == null) {
+      this.documentGroupFilter = new ArrayList<Integer>();
+    }
+    this.documentGroupFilter.add(documentGroupFilterItem);
     return this;
   }
 
@@ -955,11 +963,11 @@ public class ProcessParams {
    * @return documentGroupFilter
    */
   @javax.annotation.Nullable
-  public String getDocumentGroupFilter() {
+  public List<Integer> getDocumentGroupFilter() {
     return documentGroupFilter;
   }
 
-  public void setDocumentGroupFilter(String documentGroupFilter) {
+  public void setDocumentGroupFilter(List<Integer> documentGroupFilter) {
     this.documentGroupFilter = documentGroupFilter;
   }
 
