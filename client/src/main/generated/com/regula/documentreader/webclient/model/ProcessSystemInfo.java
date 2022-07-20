@@ -27,6 +27,11 @@ public class ProcessSystemInfo {
   @SerializedName(SERIALIZED_NAME_RECAPTCHA_TOKEN)
   private String recaptchaToken;
 
+  public static final String SERIALIZED_NAME_COMMIT_TRANSACTIONS = "commitTransactions";
+
+  @SerializedName(SERIALIZED_NAME_COMMIT_TRANSACTIONS)
+  private Boolean commitTransactions;
+
   public ProcessSystemInfo withLicense(String license) {
     this.license = license;
     return this;
@@ -65,6 +70,25 @@ public class ProcessSystemInfo {
     this.recaptchaToken = recaptchaToken;
   }
 
+  public ProcessSystemInfo withCommitTransactions(Boolean commitTransactions) {
+    this.commitTransactions = commitTransactions;
+    return this;
+  }
+
+  /**
+   * Get commitTransactions
+   *
+   * @return commitTransactions
+   */
+  @javax.annotation.Nullable
+  public Boolean getCommitTransactions() {
+    return commitTransactions;
+  }
+
+  public void setCommitTransactions(Boolean commitTransactions) {
+    this.commitTransactions = commitTransactions;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -75,12 +99,13 @@ public class ProcessSystemInfo {
     }
     ProcessSystemInfo processSystemInfo = (ProcessSystemInfo) o;
     return Objects.equals(this.license, processSystemInfo.license)
-        && Objects.equals(this.recaptchaToken, processSystemInfo.recaptchaToken);
+        && Objects.equals(this.recaptchaToken, processSystemInfo.recaptchaToken)
+        && Objects.equals(this.commitTransactions, processSystemInfo.commitTransactions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(license, recaptchaToken);
+    return Objects.hash(license, recaptchaToken, commitTransactions);
   }
 
   @Override
@@ -89,6 +114,7 @@ public class ProcessSystemInfo {
     sb.append("class ProcessSystemInfo {\n");
     sb.append("    license: ").append(toIndentedString(license)).append("\n");
     sb.append("    recaptchaToken: ").append(toIndentedString(recaptchaToken)).append("\n");
+    sb.append("    commitTransactions: ").append(toIndentedString(commitTransactions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
