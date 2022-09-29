@@ -204,6 +204,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_DOCUMENT_GROUP_FILTER)
   private List<Integer> documentGroupFilter = null;
 
+  public static final String SERIALIZED_NAME_PROCESS_AUTH = "processAuth";
+
+  @SerializedName(SERIALIZED_NAME_PROCESS_AUTH)
+  private List<Integer> processAuth = null;
+
   public ProcessParams withScenario(String scenario) {
     this.scenario = scenario;
     return this;
@@ -972,6 +977,35 @@ public class ProcessParams {
     this.documentGroupFilter = documentGroupFilter;
   }
 
+  public ProcessParams withProcessAuth(List<Integer> processAuth) {
+    this.processAuth = processAuth;
+    return this;
+  }
+
+  public ProcessParams addProcessAuthItem(Integer processAuthItem) {
+    if (this.processAuth == null) {
+      this.processAuth = new ArrayList<Integer>();
+    }
+    this.processAuth.add(processAuthItem);
+    return this;
+  }
+
+  /**
+   * Authenticity checks that should be performed regardless of the document type. The available
+   * checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license
+   * checks can be added.
+   *
+   * @return processAuth
+   */
+  @javax.annotation.Nullable
+  public List<Integer> getProcessAuth() {
+    return processAuth;
+  }
+
+  public void setProcessAuth(List<Integer> processAuth) {
+    this.processAuth = processAuth;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1017,7 +1051,8 @@ public class ProcessParams {
         && Objects.equals(this.convertCase, processParams.convertCase)
         && Objects.equals(this.splitNames, processParams.splitNames)
         && Objects.equals(this.disablePerforationOCR, processParams.disablePerforationOCR)
-        && Objects.equals(this.documentGroupFilter, processParams.documentGroupFilter);
+        && Objects.equals(this.documentGroupFilter, processParams.documentGroupFilter)
+        && Objects.equals(this.processAuth, processParams.processAuth);
   }
 
   @Override
@@ -1058,7 +1093,8 @@ public class ProcessParams {
         convertCase,
         splitNames,
         disablePerforationOCR,
-        documentGroupFilter);
+        documentGroupFilter,
+        processAuth);
   }
 
   @Override
@@ -1119,6 +1155,7 @@ public class ProcessParams {
     sb.append("    documentGroupFilter: ")
         .append(toIndentedString(documentGroupFilter))
         .append("\n");
+    sb.append("    processAuth: ").append(toIndentedString(processAuth)).append("\n");
     sb.append("}");
     return sb.toString();
   }
