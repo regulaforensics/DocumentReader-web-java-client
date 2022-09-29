@@ -83,4 +83,13 @@ public class GraphicFieldType {
 
   /** Fingerprint (little, right hand) */
   public static final int FINGER_RIGHT_LITTLE = 309;
+
+  /** Fingerprint (four without thumb on right hand) */
+  public static final int FINGER_RIGHT_FOUR_FINGERS = 313;
+
+  /** Fingerprint (four without thumb on left hand */
+  public static final int FINGER_LEFT_FOUR_FINGERS = 314;
+
+  /** Fingerprint (two thumbs) */
+  public static final int FINGER_TWO_THUMBS = 315;
 }

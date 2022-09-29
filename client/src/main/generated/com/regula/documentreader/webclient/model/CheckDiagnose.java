@@ -171,4 +171,6 @@ public class CheckDiagnose {
   public static final int PORTRAIT_COMPARISON_NO_PORTRAIT_DETECTED = 156;
 
   public static final int LAST_DIAGNOSE_VALUE = 157;
+
+  public static final int FIELD_POS_CORRECTOR_PHOTO_REPLACED = 82;
 }

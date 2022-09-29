@@ -13,8 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /** SecurityFeatureResult */
@@ -42,7 +40,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_AREA_LIST = "AreaList";
 
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
-  private List<AreaContainer> areaList = null;
+  private AreaContainer areaList;
 
   public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
 
@@ -125,16 +123,8 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
     this.criticalFlag = criticalFlag;
   }
 
-  public SecurityFeatureResult withAreaList(List<AreaContainer> areaList) {
+  public SecurityFeatureResult withAreaList(AreaContainer areaList) {
     this.areaList = areaList;
-    return this;
-  }
-
-  public SecurityFeatureResult addAreaListItem(AreaContainer areaListItem) {
-    if (this.areaList == null) {
-      this.areaList = new ArrayList<AreaContainer>();
-    }
-    this.areaList.add(areaListItem);
     return this;
   }
 
@@ -144,11 +134,11 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
    * @return areaList
    */
   @javax.annotation.Nullable
-  public List<AreaContainer> getAreaList() {
+  public AreaContainer getAreaList() {
     return areaList;
   }
 
-  public void setAreaList(List<AreaContainer> areaList) {
+  public void setAreaList(AreaContainer areaList) {
     this.areaList = areaList;
   }
 

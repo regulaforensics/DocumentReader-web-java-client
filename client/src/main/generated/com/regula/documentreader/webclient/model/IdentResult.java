@@ -13,8 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /** IdentResult */
@@ -52,7 +50,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_AREA_LIST = "AreaList";
 
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
-  private List<AreaContainer> areaList = null;
+  private AreaContainer areaList;
 
   public IdentResult withElementType(Integer elementType) {
     this.elementType = elementType;
@@ -168,16 +166,8 @@ public class IdentResult extends AuthenticityCheckResultItem {
     this.percentValue = percentValue;
   }
 
-  public IdentResult withAreaList(List<AreaContainer> areaList) {
+  public IdentResult withAreaList(AreaContainer areaList) {
     this.areaList = areaList;
-    return this;
-  }
-
-  public IdentResult addAreaListItem(AreaContainer areaListItem) {
-    if (this.areaList == null) {
-      this.areaList = new ArrayList<AreaContainer>();
-    }
-    this.areaList.add(areaListItem);
     return this;
   }
 
@@ -187,11 +177,11 @@ public class IdentResult extends AuthenticityCheckResultItem {
    * @return areaList
    */
   @javax.annotation.Nullable
-  public List<AreaContainer> getAreaList() {
+  public AreaContainer getAreaList() {
     return areaList;
   }
 
-  public void setAreaList(List<AreaContainer> areaList) {
+  public void setAreaList(AreaContainer areaList) {
     this.areaList = areaList;
   }
 

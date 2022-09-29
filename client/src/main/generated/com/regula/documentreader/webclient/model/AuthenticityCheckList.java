@@ -19,10 +19,34 @@ import java.util.Objects;
 
 /** AuthenticityCheckList */
 public class AuthenticityCheckList {
+  public static final String SERIALIZED_NAME_COUNT = "Count";
+
+  @SerializedName(SERIALIZED_NAME_COUNT)
+  private Integer count;
+
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
   private List<AuthenticityCheckResult> list = new ArrayList<AuthenticityCheckResult>();
+
+  public AuthenticityCheckList withCount(Integer count) {
+    this.count = count;
+    return this;
+  }
+
+  /**
+   * Count of items in List
+   *
+   * @return count
+   */
+  @javax.annotation.Nullable
+  public Integer getCount() {
+    return count;
+  }
+
+  public void setCount(Integer count) {
+    this.count = count;
+  }
 
   public AuthenticityCheckList withList(List<AuthenticityCheckResult> list) {
     this.list = list;
@@ -56,18 +80,20 @@ public class AuthenticityCheckList {
       return false;
     }
     AuthenticityCheckList authenticityCheckList = (AuthenticityCheckList) o;
-    return Objects.equals(this.list, authenticityCheckList.list);
+    return Objects.equals(this.count, authenticityCheckList.count)
+        && Objects.equals(this.list, authenticityCheckList.list);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(list);
+    return Objects.hash(count, list);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AuthenticityCheckList {\n");
+    sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");
     return sb.toString();
