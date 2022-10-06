@@ -50,6 +50,7 @@ public class ProcessApi {
    * Build call for apiProcess
    *
    * @param processRequest (required)
+   * @param xRequestID (optional)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
@@ -61,7 +62,8 @@ public class ProcessApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call apiProcessCall(ProcessRequest processRequest, final ApiCallback _callback)
+  public okhttp3.Call apiProcessCall(
+      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
       throws ApiException {
     Object localVarPostBody = processRequest;
 
@@ -71,6 +73,10 @@ public class ProcessApi {
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    if (xRequestID != null) {
+      localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+    }
+
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
     final String[] localVarAccepts = {"application/json"};
@@ -100,7 +106,8 @@ public class ProcessApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiProcessValidateBeforeCall(
-      ProcessRequest processRequest, final ApiCallback _callback) throws ApiException {
+      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
+      throws ApiException {
 
     // verify the required parameter 'processRequest' is set
     if (processRequest == null) {
@@ -108,7 +115,7 @@ public class ProcessApi {
           "Missing the required parameter 'processRequest' when calling apiProcess(Async)");
     }
 
-    okhttp3.Call localVarCall = apiProcessCall(processRequest, _callback);
+    okhttp3.Call localVarCall = apiProcessCall(processRequest, xRequestID, _callback);
     return localVarCall;
   }
 
@@ -116,6 +123,7 @@ public class ProcessApi {
    * Process list of documents images and return extracted data
    *
    * @param processRequest (required)
+   * @param xRequestID (optional)
    * @return ProcessResponse
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -127,8 +135,9 @@ public class ProcessApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ProcessResponse apiProcess(ProcessRequest processRequest) throws ApiException {
-    ApiResponse<ProcessResponse> localVarResp = apiProcessWithHttpInfo(processRequest);
+  public ProcessResponse apiProcess(ProcessRequest processRequest, String xRequestID)
+      throws ApiException {
+    ApiResponse<ProcessResponse> localVarResp = apiProcessWithHttpInfo(processRequest, xRequestID);
     return localVarResp.getData();
   }
 
@@ -136,6 +145,7 @@ public class ProcessApi {
    * Process list of documents images and return extracted data
    *
    * @param processRequest (required)
+   * @param xRequestID (optional)
    * @return ApiResponse&lt;ProcessResponse&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -147,9 +157,9 @@ public class ProcessApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(ProcessRequest processRequest)
-      throws ApiException {
-    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, null);
+  public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(
+      ProcessRequest processRequest, String xRequestID) throws ApiException {
+    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, xRequestID, null);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -158,6 +168,7 @@ public class ProcessApi {
    * Process list of documents images and return extracted data (asynchronously)
    *
    * @param processRequest (required)
+   * @param xRequestID (optional)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -170,10 +181,12 @@ public class ProcessApi {
    * </table>
    */
   public okhttp3.Call apiProcessAsync(
-      ProcessRequest processRequest, final ApiCallback<ProcessResponse> _callback)
+      ProcessRequest processRequest,
+      String xRequestID,
+      final ApiCallback<ProcessResponse> _callback)
       throws ApiException {
 
-    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, _callback);
+    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, xRequestID, _callback);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;

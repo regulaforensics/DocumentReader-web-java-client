@@ -48,6 +48,7 @@ public class DefaultApi {
   /**
    * Build call for ping
    *
+   * @param xRequestID (optional)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
@@ -57,7 +58,7 @@ public class DefaultApi {
    * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call pingCall(final ApiCallback _callback) throws ApiException {
+  public okhttp3.Call pingCall(String xRequestID, final ApiCallback _callback) throws ApiException {
     Object localVarPostBody = null;
 
     // create path and map variables
@@ -66,6 +67,10 @@ public class DefaultApi {
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    if (xRequestID != null) {
+      localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
+    }
+
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
     final String[] localVarAccepts = {"application/json"};
@@ -95,15 +100,17 @@ public class DefaultApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call pingValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+  private okhttp3.Call pingValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+      throws ApiException {
 
-    okhttp3.Call localVarCall = pingCall(_callback);
+    okhttp3.Call localVarCall = pingCall(xRequestID, _callback);
     return localVarCall;
   }
 
   /**
    * Server health check
    *
+   * @param xRequestID (optional)
    * @return DeviceInfo
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -113,14 +120,15 @@ public class DefaultApi {
    * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
    * </table>
    */
-  public DeviceInfo ping() throws ApiException {
-    ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo();
+  public DeviceInfo ping(String xRequestID) throws ApiException {
+    ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo(xRequestID);
     return localVarResp.getData();
   }
 
   /**
    * Server health check
    *
+   * @param xRequestID (optional)
    * @return ApiResponse&lt;DeviceInfo&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -130,8 +138,8 @@ public class DefaultApi {
    * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<DeviceInfo> pingWithHttpInfo() throws ApiException {
-    okhttp3.Call localVarCall = pingValidateBeforeCall(null);
+  public ApiResponse<DeviceInfo> pingWithHttpInfo(String xRequestID) throws ApiException {
+    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, null);
     Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -139,6 +147,7 @@ public class DefaultApi {
   /**
    * Server health check (asynchronously)
    *
+   * @param xRequestID (optional)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -148,9 +157,10 @@ public class DefaultApi {
    * <tr><td> 200 </td><td> Device info </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call pingAsync(final ApiCallback<DeviceInfo> _callback) throws ApiException {
+  public okhttp3.Call pingAsync(String xRequestID, final ApiCallback<DeviceInfo> _callback)
+      throws ApiException {
 
-    okhttp3.Call localVarCall = pingValidateBeforeCall(_callback);
+    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, _callback);
     Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
