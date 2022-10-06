@@ -62,8 +62,14 @@ public class DocumentReaderApi {
    *     response body
    */
   public DeviceInfo ping() throws ApiException {
-    return defaultApi.ping();
+    return defaultApi.ping("");
   }
+
+  public DeviceInfo ping(String xRequestID) throws ApiException {
+    return defaultApi.ping(xRequestID);
+  }
+
+
 
   /**
    * Reads list of documents and return extracted data
@@ -75,7 +81,13 @@ public class DocumentReaderApi {
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
     processRequest.getSystemInfo().withLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest);
+    ProcessResponse response = processApi.apiProcess(processRequest, "");
+    return new RecognitionResponse(response);
+  }
+
+  public RecognitionResponse process(ProcessRequest processRequest, String xRequestID) {
+    processRequest.getSystemInfo().withLicense(this.license);
+    ProcessResponse response = processApi.apiProcess(processRequest, xRequestID);
     return new RecognitionResponse(response);
   }
 
