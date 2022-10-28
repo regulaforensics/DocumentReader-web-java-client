@@ -69,8 +69,6 @@ public class DocumentReaderApi {
     return defaultApi.ping(xRequestID);
   }
 
-
-
   /**
    * Reads list of documents and return extracted data
    *
