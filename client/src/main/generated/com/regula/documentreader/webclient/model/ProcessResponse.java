@@ -54,6 +54,11 @@ public class ProcessResponse {
   @SerializedName(SERIALIZED_NAME_MORE_PAGES_AVAILABLE)
   private Integer morePagesAvailable;
 
+  public static final String SERIALIZED_NAME_ELAPSED_TIME = "elapsedTime";
+
+  @SerializedName(SERIALIZED_NAME_ELAPSED_TIME)
+  private Integer elapsedTime;
+
   public ProcessResponse withChipPage(Integer chipPage) {
     this.chipPage = chipPage;
     return this;
@@ -192,6 +197,25 @@ public class ProcessResponse {
     this.morePagesAvailable = morePagesAvailable;
   }
 
+  public ProcessResponse withElapsedTime(Integer elapsedTime) {
+    this.elapsedTime = elapsedTime;
+    return this;
+  }
+
+  /**
+   * Time the document processing has taken, ms.
+   *
+   * @return elapsedTime
+   */
+  @javax.annotation.Nullable
+  public Integer getElapsedTime() {
+    return elapsedTime;
+  }
+
+  public void setElapsedTime(Integer elapsedTime) {
+    this.elapsedTime = elapsedTime;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -207,7 +231,8 @@ public class ProcessResponse {
         && Objects.equals(this.transactionInfo, processResponse.transactionInfo)
         && Objects.equals(this.log, processResponse.log)
         && Objects.equals(this.passBackObject, processResponse.passBackObject)
-        && Objects.equals(this.morePagesAvailable, processResponse.morePagesAvailable);
+        && Objects.equals(this.morePagesAvailable, processResponse.morePagesAvailable)
+        && Objects.equals(this.elapsedTime, processResponse.elapsedTime);
   }
 
   @Override
@@ -219,7 +244,8 @@ public class ProcessResponse {
         transactionInfo,
         log,
         passBackObject,
-        morePagesAvailable);
+        morePagesAvailable,
+        elapsedTime);
   }
 
   @Override
@@ -233,6 +259,7 @@ public class ProcessResponse {
     sb.append("    log: ").append(toIndentedString(log)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
     sb.append("    morePagesAvailable: ").append(toIndentedString(morePagesAvailable)).append("\n");
+    sb.append("    elapsedTime: ").append(toIndentedString(elapsedTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
