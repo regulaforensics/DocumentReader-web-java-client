@@ -66,7 +66,7 @@ public class LCID {
   public static final int ARABIC_TUNISIA = 7169;
 
   /** Arabic (U.A.E.) */
-  public static final int ARABIC_UAE = 4337;
+  public static final int ARABIC_UAE = 14337;
 
   /** Arabic (Yemen) */
   public static final int ARABIC_YEMEN = 9217;
