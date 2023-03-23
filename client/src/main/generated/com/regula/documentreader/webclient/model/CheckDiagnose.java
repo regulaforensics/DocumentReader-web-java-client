@@ -192,11 +192,45 @@ public class CheckDiagnose {
 
   public static final int WRONG_LINE_POSITION = 204;
 
-  public static final int LAST_DIAGNOSE_VALUE = 210;
-
   public static final int TEXT_POSITION = 220;
 
   public static final int INVALID_FONT = 221;
 
   public static final int INVALID_BACKGROUND = 222;
+
+  public static final int FIELD_POS_CORRECTOR_GLARES_IN_PHOTO_AREA = 81;
+
+  public static final int HOLOGRAM_FRAMES_IS_ABSENT = 103;
+
+  public static final int HOLOGRAM_HOLO_FIELD_IS_ABSENT = 104;
+
+  public static final int DOCUMENT_IS_CANCELLING = 122;
+
+  public static final int MOBILE_IMAGES_UNSUITABLE_LIGHT_CONDITIONS = 160;
+
+  public static final int MOBILE_IMAGES_WHITE_UV_NO_DIFFERENCE = 161;
+
+  public static final int FINGERPRINTS_COMPARISON_MISMATCH = 170;
+
+  public static final int HOLO_PHOTO_FACE_NOT_DETECTED = 180;
+
+  public static final int HOLO_PHOTO_FACE_COMPARISON_FAILED = 181;
+
+  public static final int HOLO_PHOTO_GLARE_IN_CENTER_ABSENT = 182;
+
+  public static final int HOLO_PHOTO_HOLO_ELEMENT_SHAPE_ERROR = 183;
+
+  public static final int HOLO_PHOTO_ALGORITHMS_STEPS_ERROR = 184;
+
+  public static final int HOLO_PHOTO_HOLO_AREAS_NOT_LOADED = 185;
+
+  public static final int HOLO_PHOTO_FINISHED_BY_TIMEOUT = 186;
+
+  public static final int HOLO_PHOTO_DOCUMENT_OUTSIDE_FRAME = 187;
+
+  public static final int LIVENESS_DEPTH_CHECK_FAILED = 190;
+
+  public static final int LAS_INK_INVALID_LINES_FREQUENCY = 230;
+
+  public static final int LAST_DIAGNOSE_VALUE = 240;
 }
