@@ -1,15 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
-import com.regula.documentreader.webclient.model.AuthenticityResult;
-import com.regula.documentreader.webclient.model.ImageQualityCheckList;
-import com.regula.documentreader.webclient.model.ImageQualityResult;
-import com.regula.documentreader.webclient.model.ImagesResult;
-import com.regula.documentreader.webclient.model.ProcessResponse;
-import com.regula.documentreader.webclient.model.Result;
-import com.regula.documentreader.webclient.model.ResultItem;
-import com.regula.documentreader.webclient.model.Status;
-import com.regula.documentreader.webclient.model.StatusResult;
-import com.regula.documentreader.webclient.model.TextResult;
+import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +68,19 @@ public class RecognitionResponse {
     ImageQualityResult result = getResult(Result.IMAGE_QUALITY, page_idx);
     if (result != null) {
       return result.getImageQualityCheckList();
+    }
+    return null;
+  }
+
+  public OneCandidate documentType() {
+    int defaultPageIdx = 1;
+    return documentType(defaultPageIdx);
+  }
+
+  public OneCandidate documentType(int pageIdx) {
+    ChosenDocumentTypeResult result = getResult(Result.DOCUMENT_TYPE, pageIdx);
+    if (result != null) {
+      return result.getOneCandidate();
     }
     return null;
   }
