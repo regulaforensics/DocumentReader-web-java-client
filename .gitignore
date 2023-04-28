@@ -5,3 +5,4 @@ gradle.properties
 document-image.jpg
 portrait.jpg
 /example/src/main/resources/regula.license
+/Dockerfile
