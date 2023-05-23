@@ -17,34 +17,40 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Describes single row recognition results in multi-line text field of a document */
-public class StringRecognitionResult {
-  public static final String SERIALIZED_NAME_STRING_RESULT = "StringResult";
+/** Params for the RFID chip data reprocessing */
+public class ProcessParamsRfid {
+  public static final String SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE = "paSensitiveCodesDisable";
 
-  @SerializedName(SERIALIZED_NAME_STRING_RESULT)
-  private List<SymbolRecognitionResult> stringResult = new ArrayList<SymbolRecognitionResult>();
+  @SerializedName(SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE)
+  private List<ParsingNotificationCodes> paSensitiveCodesDisable = null;
 
-  public StringRecognitionResult withStringResult(List<SymbolRecognitionResult> stringResult) {
-    this.stringResult = stringResult;
+  public ProcessParamsRfid withPaSensitiveCodesDisable(
+      List<ParsingNotificationCodes> paSensitiveCodesDisable) {
+    this.paSensitiveCodesDisable = paSensitiveCodesDisable;
     return this;
   }
 
-  public StringRecognitionResult addStringResultItem(SymbolRecognitionResult stringResultItem) {
-    this.stringResult.add(stringResultItem);
+  public ProcessParamsRfid addPaSensitiveCodesDisableItem(
+      ParsingNotificationCodes paSensitiveCodesDisableItem) {
+    if (this.paSensitiveCodesDisable == null) {
+      this.paSensitiveCodesDisable = new ArrayList<ParsingNotificationCodes>();
+    }
+    this.paSensitiveCodesDisable.add(paSensitiveCodesDisableItem);
     return this;
   }
 
   /**
-   * Array of recognition results for individual characters of a string
+   * A list of notification codes that should be ignored during passive authentication (PA)
    *
-   * @return stringResult
+   * @return paSensitiveCodesDisable
    */
-  public List<SymbolRecognitionResult> getStringResult() {
-    return stringResult;
+  @javax.annotation.Nullable
+  public List<ParsingNotificationCodes> getPaSensitiveCodesDisable() {
+    return paSensitiveCodesDisable;
   }
 
-  public void setStringResult(List<SymbolRecognitionResult> stringResult) {
-    this.stringResult = stringResult;
+  public void setPaSensitiveCodesDisable(List<ParsingNotificationCodes> paSensitiveCodesDisable) {
+    this.paSensitiveCodesDisable = paSensitiveCodesDisable;
   }
 
   @Override
@@ -55,20 +61,22 @@ public class StringRecognitionResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StringRecognitionResult stringRecognitionResult = (StringRecognitionResult) o;
-    return Objects.equals(this.stringResult, stringRecognitionResult.stringResult);
+    ProcessParamsRfid processParamsRfid = (ProcessParamsRfid) o;
+    return Objects.equals(this.paSensitiveCodesDisable, processParamsRfid.paSensitiveCodesDisable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(stringResult);
+    return Objects.hash(paSensitiveCodesDisable);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StringRecognitionResult {\n");
-    sb.append("    stringResult: ").append(toIndentedString(stringResult)).append("\n");
+    sb.append("class ProcessParamsRfid {\n");
+    sb.append("    paSensitiveCodesDisable: ")
+        .append(toIndentedString(paSensitiveCodesDisable))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
