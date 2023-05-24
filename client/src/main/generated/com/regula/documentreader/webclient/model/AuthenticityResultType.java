@@ -32,9 +32,9 @@ public class AuthenticityResultType {
 
   public static final int PHOTO_EMBED_TYPE = 512;
 
-  public static final int HOLOGRAMS = 1024;
+  public static final int OVI = 1024;
 
-  public static final int OVI = 4096;
+  public static final int HOLOGRAMS = 4096;
 
   public static final int PHOTO_AREA = 8192;
 
