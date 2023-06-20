@@ -28,8 +28,6 @@ import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_N
 public class Main {
     public static final String API_BASE_PATH = "API_BASE_PATH";
     public static final String TEST_LICENSE = "TEST_LICENSE";
-
-
     public static void main(String[] args) throws IOException, ApiException {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
@@ -65,6 +63,7 @@ public class Main {
         );
 
         var api = new DocumentReaderApi(apiBaseUrl);
+
         if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
         if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
@@ -73,6 +72,10 @@ public class Main {
         System.out.format("Web API version %s%n", info.getVersion());
 
         RecognitionResponse response = api.process(request);
+
+        var requestJson = request.json();
+        var responseJson = response.json();
+
         // to send raw request(ex encrypted one) with overriding processing params here use next api
         // RecognitionResponse response = api.process(request, requestParams);
 
