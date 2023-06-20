@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.Arrays;
 import java.util.Objects;
 
 /** ImagesFieldValue */
@@ -26,12 +25,12 @@ public class ImagesFieldValue {
   public static final String SERIALIZED_NAME_VALUE = "value";
 
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private byte[] value;
+  private String value;
 
   public static final String SERIALIZED_NAME_ORIGINAL_VALUE = "originalValue";
 
   @SerializedName(SERIALIZED_NAME_ORIGINAL_VALUE)
-  private byte[] originalValue;
+  private String originalValue;
 
   public static final String SERIALIZED_NAME_ORIGINAL_PAGE_INDEX = "originalPageIndex";
 
@@ -81,7 +80,7 @@ public class ImagesFieldValue {
     this.source = source;
   }
 
-  public ImagesFieldValue withValue(byte[] value) {
+  public ImagesFieldValue withValue(String value) {
     this.value = value;
     return this;
   }
@@ -91,15 +90,15 @@ public class ImagesFieldValue {
    *
    * @return value
    */
-  public byte[] getValue() {
+  public String getValue() {
     return value;
   }
 
-  public void setValue(byte[] value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
-  public ImagesFieldValue withOriginalValue(byte[] originalValue) {
+  public ImagesFieldValue withOriginalValue(String originalValue) {
     this.originalValue = originalValue;
     return this;
   }
@@ -110,11 +109,11 @@ public class ImagesFieldValue {
    * @return originalValue
    */
   @javax.annotation.Nullable
-  public byte[] getOriginalValue() {
+  public String getOriginalValue() {
     return originalValue;
   }
 
-  public void setOriginalValue(byte[] originalValue) {
+  public void setOriginalValue(String originalValue) {
     this.originalValue = originalValue;
   }
 
@@ -239,8 +238,8 @@ public class ImagesFieldValue {
     }
     ImagesFieldValue imagesFieldValue = (ImagesFieldValue) o;
     return Objects.equals(this.source, imagesFieldValue.source)
-        && Arrays.equals(this.value, imagesFieldValue.value)
-        && Arrays.equals(this.originalValue, imagesFieldValue.originalValue)
+        && Objects.equals(this.value, imagesFieldValue.value)
+        && Objects.equals(this.originalValue, imagesFieldValue.originalValue)
         && Objects.equals(this.originalPageIndex, imagesFieldValue.originalPageIndex)
         && Objects.equals(this.pageIndex, imagesFieldValue.pageIndex)
         && Objects.equals(this.lightIndex, imagesFieldValue.lightIndex)
@@ -253,8 +252,8 @@ public class ImagesFieldValue {
   public int hashCode() {
     return Objects.hash(
         source,
-        Arrays.hashCode(value),
-        Arrays.hashCode(originalValue),
+        value,
+        originalValue,
         originalPageIndex,
         pageIndex,
         lightIndex,
