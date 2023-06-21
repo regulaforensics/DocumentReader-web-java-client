@@ -1,20 +1,30 @@
 package com.regula.documentreader.webclient.model.ext;
 
+import com.google.gson.Gson;
 import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
 
 public class RecognitionResponse {
   private final ProcessResponse originalResponse;
+  private final Gson gson;
 
   public RecognitionResponse(ProcessResponse originalResponse) {
+    this.gson = new Gson();
     this.originalResponse = originalResponse;
   }
 
   public ProcessResponse getOriginalResponse() {
     return originalResponse;
+  }
+
+  public String json() {
+    return this.gson.toJson(this.originalResponse);
   }
 
   @Nullable

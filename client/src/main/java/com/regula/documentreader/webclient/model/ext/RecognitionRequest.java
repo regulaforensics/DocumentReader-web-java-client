@@ -1,5 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
+import com.google.gson.Gson;
 import com.regula.documentreader.webclient.model.ContainerList;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
@@ -33,5 +34,10 @@ public class RecognitionRequest extends ProcessRequest {
     withProcessParam(params);
     withContainerList(containerList);
     withSystemInfo(new ProcessSystemInfo());
+  }
+
+  public String json() {
+    Gson gson = new Gson();
+    return gson.toJson(this);
   }
 }

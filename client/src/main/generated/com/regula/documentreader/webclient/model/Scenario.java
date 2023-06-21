@@ -30,6 +30,8 @@ public class Scenario {
 
   public static final String MRZ_AND_LOCATE = "MrzAndLocate";
 
+  public static final String BARCODE_AND_LOCATE = "BarcodeAndLocate";
+
   public static final String MRZ_OR_OCR = "MrzOrOcr";
 
   public static final String MRZ_OR_BARCODE_OR_OCR = "MrzOrBarcodeOrOcr";

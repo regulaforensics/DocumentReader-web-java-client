@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.Arrays;
 import java.util.Objects;
 
 /** DocumentImage */
@@ -21,9 +20,9 @@ public class DocumentImage {
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
   @SerializedName(SERIALIZED_NAME_IMAGE)
-  private byte[] image;
+  private String image;
 
-  public DocumentImage withImage(byte[] image) {
+  public DocumentImage withImage(String image) {
     this.image = image;
     return this;
   }
@@ -33,11 +32,11 @@ public class DocumentImage {
    *
    * @return image
    */
-  public byte[] getImage() {
+  public String getImage() {
     return image;
   }
 
-  public void setImage(byte[] image) {
+  public void setImage(String image) {
     this.image = image;
   }
 
@@ -50,12 +49,12 @@ public class DocumentImage {
       return false;
     }
     DocumentImage documentImage = (DocumentImage) o;
-    return Arrays.equals(this.image, documentImage.image);
+    return Objects.equals(this.image, documentImage.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(Arrays.hashCode(image));
+    return Objects.hash(image);
   }
 
   @Override
