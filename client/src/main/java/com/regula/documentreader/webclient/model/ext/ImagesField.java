@@ -2,7 +2,7 @@ package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.ImagesFieldValue;
 import com.regula.documentreader.webclient.model.Source;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import com.regula.documentreader.webclient.Base64;
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -19,7 +19,7 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
         else {
           result = value.getValue();
         }
-        return Base64.decode(result);
+        return result != null ?  Base64.decode(result) : null;
 
       }
     }
