@@ -2,9 +2,7 @@ package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.model.ImageData;
-
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
-
+import com.regula.documentreader.webclient.Base64;
 public class ProcessRequestImage
     extends com.regula.documentreader.webclient.model.ProcessRequestImage {
 
