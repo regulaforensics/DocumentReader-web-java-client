@@ -3,11 +3,13 @@ package com.regula.documentreader.webclient.model.ext;
 import com.google.gson.Gson;
 import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
-
+import com.regula.documentreader.webclient.Base64;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 import javax.annotation.Nullable;
 
 public class RecognitionResponse {
@@ -43,6 +45,33 @@ public class RecognitionResponse {
       return result.getText();
     }
     return null;
+  }
+
+  @Nullable
+  public String GetLog() {
+    String logBase64 = this.originalResponse.getLog();
+    if (logBase64 == null){
+      return null;
+    }
+
+    byte[] buffer = Base64.decode(logBase64);
+    Inflater inflater = new Inflater();
+    inflater.setInput(buffer);
+    byte[] decompressedBuffer = new byte[1024];
+    StringBuilder logText = new StringBuilder();
+
+    try {
+      while (!inflater.finished()) {
+        int count = inflater.inflate(decompressedBuffer);
+        logText.append(new String(decompressedBuffer, 0, count, StandardCharsets.UTF_8));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      inflater.end();
+    }
+
+    return logText.toString();
   }
 
   @Nullable
