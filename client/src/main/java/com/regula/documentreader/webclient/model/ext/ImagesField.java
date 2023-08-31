@@ -1,8 +1,8 @@
 package com.regula.documentreader.webclient.model.ext;
 
+import com.regula.documentreader.webclient.Base64;
 import com.regula.documentreader.webclient.model.ImagesFieldValue;
 import com.regula.documentreader.webclient.model.Source;
-import com.regula.documentreader.webclient.Base64;
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -15,12 +15,10 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
       if (value.getSource().equals(source)) {
         if (original) {
           result = value.getOriginalValue();
-        }
-        else {
+        } else {
           result = value.getValue();
         }
-        return result != null ?  Base64.decode(result) : null;
-
+        return result != null ? Base64.decode(result) : null;
       }
     }
     return null;
@@ -46,6 +44,6 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
       if (bestValue.getSource() == Source.VISUAL && value.getSource() == Source.RFID)
         bestValue = value;
     }
-    return  Base64.decode(bestValue.getValue());
+    return Base64.decode(bestValue.getValue());
   }
 }

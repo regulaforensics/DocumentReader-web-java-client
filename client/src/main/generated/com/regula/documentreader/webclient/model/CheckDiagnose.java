@@ -172,6 +172,8 @@ public class CheckDiagnose {
 
   public static final int NOT_ALL_BARCODES_READ = 143;
 
+  public static final int GLARES_IN_BARCODE_AREA = 144;
+
   public static final int PORTRAIT_COMPARISON_PORTRAITS_DIFFER = 150;
 
   public static final int PORTRAIT_COMPARISON_NO_SERVICE_REPLY = 151;
@@ -231,6 +233,8 @@ public class CheckDiagnose {
   public static final int LASINK_INVALID_LINES_FREQUENCY = 230;
 
   public static final int DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED = 240;
+
+  public static final int DOC_LIVENESS_INVALID_BARCODE_BACKGROUND = 241;
 
   public static final int LAST_DIAGNOSE_VALUE = 250;
 }

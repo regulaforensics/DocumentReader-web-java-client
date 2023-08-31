@@ -21,6 +21,26 @@ import java.util.Objects;
 
 /** ProcessParams */
 public class ProcessParams {
+  public static final String SERIALIZED_NAME_ONE_SHOT_IDENTIFICATION = "oneShotIdentification";
+
+  @SerializedName(SERIALIZED_NAME_ONE_SHOT_IDENTIFICATION)
+  private Boolean oneShotIdentification;
+
+  public static final String SERIALIZED_NAME_USE_FACE_API = "useFaceApi";
+
+  @SerializedName(SERIALIZED_NAME_USE_FACE_API)
+  private Boolean useFaceApi;
+
+  public static final String SERIALIZED_NAME_FACE_API = "faceApi";
+
+  @SerializedName(SERIALIZED_NAME_FACE_API)
+  private FaceApi faceApi;
+
+  public static final String SERIALIZED_NAME_DO_DETECT_CAN = "doDetectCan";
+
+  @SerializedName(SERIALIZED_NAME_DO_DETECT_CAN)
+  private Bool doDetectCan = null;
+
   public static final String SERIALIZED_NAME_IMAGE_OUTPUT_MAX_HEIGHT = "imageOutputMaxHeight";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_OUTPUT_MAX_HEIGHT)
@@ -249,6 +269,84 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_RFID)
   private ProcessParamsRfid rfid;
+
+  public ProcessParams withOneShotIdentification(Boolean oneShotIdentification) {
+    this.oneShotIdentification = oneShotIdentification;
+    return this;
+  }
+
+  /**
+   * This parameter allows processing an image that contains a person and a document and compare the
+   * portrait photo from the document with the person&#39;s face
+   *
+   * @return oneShotIdentification
+   */
+  @javax.annotation.Nullable
+  public Boolean getOneShotIdentification() {
+    return oneShotIdentification;
+  }
+
+  public void setOneShotIdentification(Boolean oneShotIdentification) {
+    this.oneShotIdentification = oneShotIdentification;
+  }
+
+  public ProcessParams withUseFaceApi(Boolean useFaceApi) {
+    this.useFaceApi = useFaceApi;
+    return this;
+  }
+
+  /**
+   * This parameter allows comparing faces on Regula Face Web Service
+   *
+   * @return useFaceApi
+   */
+  @javax.annotation.Nullable
+  public Boolean getUseFaceApi() {
+    return useFaceApi;
+  }
+
+  public void setUseFaceApi(Boolean useFaceApi) {
+    this.useFaceApi = useFaceApi;
+  }
+
+  public ProcessParams withFaceApi(FaceApi faceApi) {
+    this.faceApi = faceApi;
+    return this;
+  }
+
+  /**
+   * Get faceApi
+   *
+   * @return faceApi
+   */
+  @javax.annotation.Nullable
+  public FaceApi getFaceApi() {
+    return faceApi;
+  }
+
+  public void setFaceApi(FaceApi faceApi) {
+    this.faceApi = faceApi;
+  }
+
+  public ProcessParams withDoDetectCan(Bool doDetectCan) {
+    this.doDetectCan = doDetectCan;
+    return this;
+  }
+
+  /**
+   * This parameter allows enabling the CAN (Card Access Number) detection and recognition when
+   * using scenarios with document location and MRZ reading, such as the MrzAndLocate scenario.
+   *
+   * @return doDetectCan
+   */
+  @javax.annotation.Nullable
+  public Bool getDoDetectCan() {
+    return doDetectCan;
+  }
+
+  public void setDoDetectCan(Bool doDetectCan) {
+    this.doDetectCan = doDetectCan;
+  }
 
   public ProcessParams withImageOutputMaxHeight(Integer imageOutputMaxHeight) {
     this.imageOutputMaxHeight = imageOutputMaxHeight;
@@ -1221,7 +1319,11 @@ public class ProcessParams {
       return false;
     }
     ProcessParams processParams = (ProcessParams) o;
-    return Objects.equals(this.imageOutputMaxHeight, processParams.imageOutputMaxHeight)
+    return Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
+        && Objects.equals(this.useFaceApi, processParams.useFaceApi)
+        && Objects.equals(this.faceApi, processParams.faceApi)
+        && Objects.equals(this.doDetectCan, processParams.doDetectCan)
+        && Objects.equals(this.imageOutputMaxHeight, processParams.imageOutputMaxHeight)
         && Objects.equals(this.imageOutputMaxWidth, processParams.imageOutputMaxWidth)
         && Objects.equals(this.scenario, processParams.scenario)
         && Objects.equals(this.resultTypeOutput, processParams.resultTypeOutput)
@@ -1272,6 +1374,10 @@ public class ProcessParams {
   @Override
   public int hashCode() {
     return Objects.hash(
+        oneShotIdentification,
+        useFaceApi,
+        faceApi,
+        doDetectCan,
         imageOutputMaxHeight,
         imageOutputMaxWidth,
         scenario,
@@ -1323,6 +1429,12 @@ public class ProcessParams {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessParams {\n");
+    sb.append("    oneShotIdentification: ")
+        .append(toIndentedString(oneShotIdentification))
+        .append("\n");
+    sb.append("    useFaceApi: ").append(toIndentedString(useFaceApi)).append("\n");
+    sb.append("    faceApi: ").append(toIndentedString(faceApi)).append("\n");
+    sb.append("    doDetectCan: ").append(toIndentedString(doDetectCan)).append("\n");
     sb.append("    imageOutputMaxHeight: ")
         .append(toIndentedString(imageOutputMaxHeight))
         .append("\n");

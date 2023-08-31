@@ -14,15 +14,21 @@ package com.regula.documentreader.webclient.model;
 
 public class MRZFormat {
 
+  /** 1x30 */
   public static final String IDL = "1x30";
 
+  /** 3x30 */
   public static final String ID1 = "3x30";
 
+  /** 2x36 */
   public static final String ID2 = "2x36";
 
+  /** 2x44 */
   public static final String ID3 = "2x44";
 
+  /** 1x6 */
   public static final String CAN = "1x6";
 
+  /** 2x30 */
   public static final String ID1_2_30 = "2x30";
 }

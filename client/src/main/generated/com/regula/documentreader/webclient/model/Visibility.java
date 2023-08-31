@@ -14,13 +14,18 @@ package com.regula.documentreader.webclient.model;
 
 public class Visibility {
 
+  /** Invisible */
   public static final int INVISIBLE = 0;
 
+  /** Visible */
   public static final int VISIBLE = 1;
 
+  /** Colored */
   public static final int COLORED = 2;
 
+  /** Grayscale */
   public static final int GRAYSCALE = 4;
 
+  /** Visible vs IR match */
   public static final int WHITE_IR_MATCHING = 8;
 }

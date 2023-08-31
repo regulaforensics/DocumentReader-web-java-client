@@ -17,15 +17,13 @@ public class TextFieldType {
   /** Document class code */
   public static final int DOCUMENT_CLASS_CODE = 0;
 
-  /**
-   * Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)
-   */
+  /** Issuing state code */
   public static final int ISSUING_STATE_CODE = 1;
 
   /** Document number */
   public static final int DOCUMENT_NUMBER = 2;
 
-  /** Document expiration date */
+  /** Date of expiry */
   public static final int DATE_OF_EXPIRY = 3;
 
   /** Date of issue */
@@ -43,10 +41,10 @@ public class TextFieldType {
   /** Surname */
   public static final int SURNAME = 8;
 
-  /** Given name (names) */
-  public static final int GIVEN_NAME = 9;
+  /** Given name(s) */
+  public static final int GIVEN_NAMES = 9;
 
-  /** Mother&#x60;s name */
+  /** Mother&#39;s name */
   public static final int MOTHERS_NAME = 10;
 
   /** Nationality */
@@ -70,37 +68,37 @@ public class TextFieldType {
   /** Address */
   public static final int ADDRESS = 17;
 
-  /** Donation stamp */
+  /** Donor */
   public static final int DONOR = 18;
 
   /** Social security number */
   public static final int SOCIAL_SECURITY_NUMBER = 19;
 
-  /** Driving license class */
+  /** DL class */
   public static final int DL_CLASS = 20;
 
-  /** Driving license permission code */
+  /** DL endorsement code */
   public static final int DL_ENDORSED = 21;
 
-  /** Driving license restriction code */
+  /** DL restriction code */
   public static final int DL_RESTRICTION_CODE = 22;
 
-  /** Date when the owner of the document turns 21 years old */
+  /** Date of 21st birthday */
   public static final int DL_UNDER_21_DATE = 23;
 
-  /** Document issuing authority */
+  /** Issuing authority */
   public static final int AUTHORITY = 24;
 
-  /** Full name */
+  /** Surname and given names */
   public static final int SURNAME_AND_GIVEN_NAMES = 25;
 
-  /** Nationality letter code according to standard ISO 3166-1 (ICAO doc 9303) */
+  /** Nationality code */
   public static final int NATIONALITY_CODE = 26;
 
-  /** Passport number (used in visas) */
+  /** Passport number */
   public static final int PASSPORT_NUMBER = 27;
 
-  /** Invitation number (used in visas) */
+  /** Invitation number */
   public static final int INVITATION_NUMBER = 28;
 
   /** Visa ID */
@@ -118,13 +116,13 @@ public class TextFieldType {
   /** Optional data */
   public static final int OPTIONAL_DATA = 36;
 
-  /** Full name of the document class */
+  /** Document class name */
   public static final int DOCUMENT_CLASS_NAME = 37;
 
-  /** Full name of issuing state */
+  /** Issuing state name */
   public static final int ISSUING_STATE_NAME = 38;
 
-  /** Place of document issue */
+  /** Place of issue */
   public static final int PLACE_OF_ISSUE = 39;
 
   /** Document number checksum */
@@ -133,7 +131,7 @@ public class TextFieldType {
   /** Date of birth checksum */
   public static final int DATE_OF_BIRTH_CHECKSUM = 41;
 
-  /** Date of document expiration checksum */
+  /** Date of expiry checksum */
   public static final int DATE_OF_EXPIRY_CHECKSUM = 42;
 
   /** Personal number checksum */
@@ -142,22 +140,22 @@ public class TextFieldType {
   /** Final checksum */
   public static final int FINAL_CHECKSUM = 44;
 
-  /** Passport number checksum (used in visas) */
+  /** Passport number checksum */
   public static final int PASSPORT_NUMBER_CHECKSUM = 45;
 
-  /** Invitation number checksum (used in visas) */
+  /** Invitation number checksum */
   public static final int INVITATION_NUMBER_CHECKSUM = 46;
 
-  /** Visa identification number checksum */
+  /** Visa ID checksum */
   public static final int VISA_ID_CHECKSUM = 47;
 
-  /** Full name checksum */
-  public static final int SURNAME_AND_GIVEN_NAME_CHECKSUM = 48;
+  /** Surname and given names checksum */
+  public static final int SURNAME_AND_GIVEN_NAMES_CHECKSUM = 48;
 
-  /** Visa expiration date checksum */
+  /** Visa valid until checksum */
   public static final int VISA_VALID_UNTIL_CHECKSUM = 49;
 
-  /** Other information */
+  /** Other */
   public static final int OTHER = 50;
 
   /** MRZ strings */
@@ -169,16 +167,16 @@ public class TextFieldType {
   /** Name prefix */
   public static final int NAME_PREFIX = 53;
 
-  /** Checksum for the date of issue of the document */
+  /** Date of issue checksum */
   public static final int DATE_OF_ISSUE_CHECKSUM = 54;
 
-  /** Check digit for or the date of issue of the document */
+  /** Date of issue check digit */
   public static final int DATE_OF_ISSUE_CHECK_DIGIT = 55;
 
   /** Document series */
   public static final int DOCUMENT_SERIES = 56;
 
-  /** Vehicle registration certificate number */
+  /** Registration number */
   public static final int REG_CERT_REG_NUMBER = 57;
 
   /** Vehicle model */
@@ -193,25 +191,25 @@ public class TextFieldType {
   /** Vehicle type */
   public static final int REG_CERT_CAR_TYPE = 61;
 
-  /** Vehicle GVWR */
+  /** Max permissible weight */
   public static final int REG_CERT_MAX_WEIGHT = 62;
 
-  /** Vehicle unladen weight */
+  /** Unladen mass */
   public static final int REG_CERT_WEIGHT = 63;
 
-  /** Address (region) */
+  /** Address: area */
   public static final int ADDRESS_AREA = 64;
 
-  /** Address (state) */
+  /** Address: state */
   public static final int ADDRESS_STATE = 65;
 
-  /** Address (building number) */
+  /** Address: building */
   public static final int ADDRESS_BUILDING = 66;
 
-  /** Address (house number) */
+  /** Address: house */
   public static final int ADDRESS_HOUSE = 67;
 
-  /** Address (flat number) */
+  /** Address: flat */
   public static final int ADDRESS_FLAT = 68;
 
   /** Place of registration */
@@ -220,67 +218,67 @@ public class TextFieldType {
   /** Date of registration */
   public static final int DATE_OF_REGISTRATION = 70;
 
-  /** Start date of residence */
+  /** Resident from */
   public static final int RESIDENT_FROM = 71;
 
-  /** End date of residence */
+  /** Resident until */
   public static final int RESIDENT_UNTIL = 72;
 
   /** Issuing authority code */
   public static final int AUTHORITY_CODE = 73;
 
-  /** Place of birth address (region) */
+  /** Place of birth: area */
   public static final int PLACE_OF_BIRTH_AREA = 74;
 
-  /** Place of birth address (state code) */
+  /** Place of birth: state code */
   public static final int PLACE_OF_BIRTH_STATE_CODE = 75;
 
-  /** Address (street) */
+  /** Address: street */
   public static final int ADDRESS_STREET = 76;
 
-  /** Address (city) */
+  /** Address: city */
   public static final int ADDRESS_CITY = 77;
 
-  /** Address (tax code) */
+  /** Address: jurisdiction code */
   public static final int ADDRESS_JURISDICTION_CODE = 78;
 
-  /** Address (postal code) */
+  /** Address: postal code */
   public static final int ADDRESS_POSTAL_CODE = 79;
 
-  /** Check digit for document number */
+  /** Document number check digit */
   public static final int DOCUMENT_NUMBER_CHECK_DIGIT = 80;
 
-  /** Check digit for date of birth */
+  /** Date of birth check digit */
   public static final int DATE_OF_BIRTH_CHECK_DIGIT = 81;
 
-  /** Check digit for date of expiry */
+  /** Date of expiry check digit */
   public static final int DATE_OF_EXPIRY_CHECK_DIGIT = 82;
 
-  /** Check digit for personal number */
+  /** Personal number check digit */
   public static final int PERSONAL_NUMBER_CHECK_DIGIT = 83;
 
-  /** Final check digit for all MRZ */
+  /** Final check digit */
   public static final int FINAL_CHECK_DIGIT = 84;
 
-  /** Check digit for passport number (used in visas) */
+  /** Passport number check digit */
   public static final int PASSPORT_NUMBER_CHECK_DIGIT = 85;
 
-  /** Check digit for invitation number (used in visas) */
+  /** Invitation number check digit */
   public static final int INVITATION_NUMBER_CHECK_DIGIT = 86;
 
-  /** Check digit for visa identification number */
+  /** Visa ID check digit */
   public static final int VISA_ID_CHECK_DIGIT = 87;
 
-  /** Check digit for full name */
+  /** Surname and given names check digit */
   public static final int SURNAME_AND_GIVEN_NAMES_CHECK_DIGIT = 88;
 
-  /** Check digit for visa expiration date */
+  /** Visa valid until check digit */
   public static final int VISA_VALID_UNTIL_CHECK_DIGIT = 89;
 
-  /** Permit type */
+  /** Permit class */
   public static final int PERMIT_DL_CLASS = 90;
 
-  /** Permit expiration date */
+  /** Permit expiry date */
   public static final int PERMIT_DATE_OF_EXPIRY = 91;
 
   /** Permit identifier */
@@ -289,13 +287,13 @@ public class TextFieldType {
   /** Permit issue date */
   public static final int PERMIT_DATE_OF_ISSUE = 93;
 
-  /** Driving restriction code */
+  /** Permit restriction code */
   public static final int PERMIT_RESTRICTION_CODE = 94;
 
-  /** Driving permit code */
+  /** Permit endorsement code */
   public static final int PERMIT_ENDORSED = 95;
 
-  /** A string that is used to validate a document against a database */
+  /** Issue timestamp */
   public static final int ISSUE_TIMESTAMP = 96;
 
   /** Number of duplicates */
@@ -304,31 +302,31 @@ public class TextFieldType {
   /** Medical indicator codes */
   public static final int MEDICAL_INDICATOR_CODES = 98;
 
-  /** Non resident stamp */
+  /** Non-resident indicator */
   public static final int NON_RESIDENT_INDICATOR = 99;
 
   /** Visa type */
   public static final int VISA_TYPE = 100;
 
-  /** Visa valid-from date */
+  /** Visa valid from */
   public static final int VISA_VALID_FROM = 101;
 
-  /** Visa valid-until date */
+  /** Visa valid until */
   public static final int VISA_VALID_UNTIL = 102;
 
-  /** Duration of stay on visa */
+  /** Duration of stay */
   public static final int DURATION_OF_STAY = 103;
 
   /** Number of entries */
   public static final int NUMBER_OF_ENTRIES = 104;
 
-  /** Day in date */
+  /** Day */
   public static final int DAY = 105;
 
-  /** Month in date */
+  /** Month */
   public static final int MONTH = 106;
 
-  /** Year in date */
+  /** Year */
   public static final int YEAR = 107;
 
   /** Unique customer identifier */
@@ -337,37 +335,37 @@ public class TextFieldType {
   /** Commercial vehicle code */
   public static final int COMMERCIAL_VEHICLE_CODES = 109;
 
-  /** Also known as (date of birth) */
+  /** AKA: date of birth */
   public static final int AKA_DATE_OF_BIRTH = 110;
 
-  /** Also known as (social security number) */
+  /** AKA: social insurance number */
   public static final int AKA_SOCIAL_SECURITY_NUMBER = 111;
 
-  /** Also known as (last name) */
+  /** AKA: surname */
   public static final int AKA_SURNAME = 112;
 
-  /** Also known as (first name) */
+  /** AKA: given name(s) */
   public static final int AKA_GIVEN_NAMES = 113;
 
-  /** Also known as (name suffix) */
+  /** AKA: name suffix */
   public static final int AKA_NAME_SUFFIX = 114;
 
-  /** Also known as (name prefix) */
+  /** AKA: name prefix */
   public static final int AKA_NAME_PREFIX = 115;
 
-  /** Postal address (street) */
+  /** Mailing address: street */
   public static final int MAILING_ADDRESS_STREET = 116;
 
-  /** Postal address (city) */
+  /** Mailing address: city */
   public static final int MAILING_ADDRESS_CITY = 117;
 
-  /** Postal address (tax code) */
+  /** Mailing address: jurisdiction code */
   public static final int MAILING_ADDRESS_JURISDICTION_CODE = 118;
 
-  /** Postal address (zip) */
+  /** Mailing address: postal code */
   public static final int MAILING_ADDRESS_POSTAL_CODE = 119;
 
-  /** Driver license validation number */
+  /** Number for validation */
   public static final int AUDIT_INFORMATION = 120;
 
   /** Inventory number */
@@ -376,61 +374,58 @@ public class TextFieldType {
   /** Race ethnicity */
   public static final int RACE_ETHNICITY = 122;
 
-  /** Vehicle legal class */
+  /** Jurisdiction vehicle class */
   public static final int JURISDICTION_VEHICLE_CLASS = 123;
 
-  /** Legal permission code */
+  /** Jurisdiction endorsement code */
   public static final int JURISDICTION_ENDORSEMENT_CODE = 124;
 
-  /** Legal restriction code */
+  /** Jurisdiction restriction code */
   public static final int JURISDICTION_RESTRICTION_CODE = 125;
 
-  /** Surname and (or) name at birth */
+  /** Family name */
   public static final int FAMILY_NAME = 126;
 
-  /** Name (russian transcription) */
+  /** Given name(s) (national) */
   public static final int GIVEN_NAMES_RUS = 127;
 
-  /** Visa identification number (russian transcription) */
+  /** Visa ID (national) */
   public static final int VISA_ID_RUS = 128;
 
-  /** Father&#x60;s name */
+  /** Father&#39;s name */
   public static final int FATHERS_NAME = 129;
 
-  /** Father&#x60;s name (russian transcription) */
+  /** Father&#39;s name (national) */
   public static final int FATHERS_NAME_RUS = 130;
 
-  /** Full name (russian transcription) */
-  public static final int SURNAME_AND_GIVEN_NAME_RUS = 131;
+  /** Surname and given names (national) */
+  public static final int SURNAME_AND_GIVEN_NAMES_RUS = 131;
 
-  /** Place of birth (russian transcription) */
+  /** Place of birth (national) */
   public static final int PLACE_OF_BIRTH_RUS = 132;
 
-  /** Issuing authority (russian transcription) */
+  /** Issuing authority (national) */
   public static final int AUTHORITY_RUS = 133;
 
-  /**
-   * Digital code of the state of issue of the document in accordance with ISO 3166-1 (ICAO Doc
-   * 9303)
-   */
+  /** Issuing state code (numeric) */
   public static final int ISSUING_STATE_CODE_NUMERIC = 134;
 
-  /** Digital code of nationality in accordance with ISO 3166-1 (ICAO Doc 9303) */
+  /** Nationality code (numeric) */
   public static final int NATIONALITY_CODE_NUMERIC = 135;
 
-  /** Vehicle engine power */
+  /** Engine power */
   public static final int ENGINE_POWER = 136;
 
-  /** Vehicle engine volume */
+  /** Engine volume */
   public static final int ENGINE_VOLUME = 137;
 
-  /** Vehicle chassis number */
+  /** Chassis number */
   public static final int CHASSIS_NUMBER = 138;
 
-  /** Vehicle engine number */
+  /** Engine number */
   public static final int ENGINE_NUMBER = 139;
 
-  /** Vehicle engine model */
+  /** Engine model */
   public static final int ENGINE_MODEL = 140;
 
   /** Vehicle category */
@@ -442,10 +437,10 @@ public class TextFieldType {
   /** Control number */
   public static final int CONTROL_NUMBER = 143;
 
-  /** Parent names */
+  /** Parents&#39; given names */
   public static final int PARENTS_GIVEN_NAMES = 144;
 
-  /** Second last name */
+  /** Second surname */
   public static final int SECOND_SURNAME = 145;
 
   /** Middle name */
@@ -454,40 +449,40 @@ public class TextFieldType {
   /** Vehicle identification number */
   public static final int REG_CERT_VIN = 147;
 
-  /** Check digit for vehicle identification number */
+  /** VIN check digit */
   public static final int REG_CERT_VIN_CHECK_DIGIT = 148;
 
-  /** Checksum for vehicle identification number */
+  /** VIN checksum */
   public static final int REG_CERT_VIN_CHECKSUM = 149;
 
-  /** Check digit of the first line of the MRZ */
+  /** Line 1 check digit */
   public static final int LINE_1_CHECK_DIGIT = 150;
 
-  /** Check digit of the second line of the MRZ */
+  /** Line 2 check digit */
   public static final int LINE_2_CHECK_DIGIT = 151;
 
-  /** Check digit of the third line of the MRZ */
+  /** Line 3 check digit */
   public static final int LINE_3_CHECK_DIGIT = 152;
 
-  /** Checksum of the first line of the MRZ */
+  /** Line 1 checksum */
   public static final int LINE_1_CHECKSUM = 153;
 
-  /** Checksum of the second line of the MRZ */
+  /** Line 2 checksum */
   public static final int LINE_2_CHECKSUM = 154;
 
-  /** Checksum of the third line of the MRZ */
+  /** Line 3 checksum */
   public static final int LINE_3_CHECKSUM = 155;
 
-  /** Check digit of the vehicle registration number */
+  /** Registration number check digit */
   public static final int REG_CERT_REG_NUMBER_CHECK_DIGIT = 156;
 
-  /** Checksum of the vehicle registration number */
+  /** Registration number checksum */
   public static final int REG_CERT_REG_NUMBER_CHECKSUM = 157;
 
-  /** Vehicle code in accordance with ITS (Intelligent Transport System) */
+  /** Vehicle ITS code */
   public static final int REG_CERT_VEHICLE_ITS_CODE = 158;
 
-  /** Card number for access to the RFID chip */
+  /** Card access number */
   public static final int CARD_ACCESS_NUMBER = 159;
 
   /** Marital status */
@@ -499,10 +494,10 @@ public class TextFieldType {
   /** Special notes */
   public static final int SPECIAL_NOTES = 162;
 
-  /** Spouse&#x60;s last name */
+  /** Spouse&#39;s surname */
   public static final int SURNAME_OF_SPOUSE = 163;
 
-  /** Document status tracking number */
+  /** Tracking number */
   public static final int TRACKING_NUMBER = 164;
 
   /** Booklet number */
@@ -511,8 +506,8 @@ public class TextFieldType {
   /** Children */
   public static final int CHILDREN = 166;
 
-  /** Copy number */
-  public static final int COPY_NUMBER = 167;
+  /** Copy */
+  public static final int COPY = 167;
 
   /** Serial number */
   public static final int SERIAL_NUMBER = 168;
@@ -520,46 +515,46 @@ public class TextFieldType {
   /** Dossier number */
   public static final int DOSSIER_NUMBER = 169;
 
-  /** Also known as (full name) */
+  /** AKA: surname and given names */
   public static final int AKA_SURNAME_AND_GIVEN_NAMES = 170;
 
   /** Territorial validity */
   public static final int TERRITORIAL_VALIDITY = 171;
 
-  /** MRZ strings with correct checksums (calculated) */
+  /** MRZ strings with correct checksums */
   public static final int MRZ_STRINGS_WITH_CORRECT_CHECK_SUMS = 172;
 
-  /** Restriction code for commercial driving license */
+  /** CDL restriction code */
   public static final int DL_CDL_RESTRICTION_CODE = 173;
 
-  /** Date the document holder turns 18 years old */
+  /** Date of 18th birthday */
   public static final int DL_UNDER_18_DATE = 174;
 
-  /** Record creation date */
+  /** DL record created */
   public static final int DL_RECORD_CREATED = 175;
 
-  /** Duplicate creation date */
+  /** DL date of duplicate issue */
   public static final int DL_DUPLICATE_DATE = 176;
 
-  /** Driving license type */
+  /** Card type */
   public static final int DL_ISSUE_TYPE = 177;
 
-  /** Military card number */
+  /** Military ID number */
   public static final int MILITARY_BOOK_NUMBER = 178;
 
   /** Destination */
   public static final int DESTINATION = 179;
 
-  /** Blood type */
+  /** Blood group */
   public static final int BLOOD_GROUP = 180;
 
   /** Sequence number */
   public static final int SEQUENCE_NUMBER = 181;
 
-  /** Vehicle body type */
+  /** Body type */
   public static final int REG_CERT_BODY_TYPE = 182;
 
-  /** Make of vehicle */
+  /** Vehicle make */
   public static final int REG_CERT_CAR_MARK = 183;
 
   /** Transaction number */
@@ -568,19 +563,19 @@ public class TextFieldType {
   /** Age */
   public static final int AGE = 185;
 
-  /** Registration number (document on the record-keeping system) */
+  /** Folio number */
   public static final int FOLIO_NUMBER = 186;
 
-  /** Voter personal number */
+  /** Voter key */
   public static final int VOTER_KEY = 187;
 
-  /** Address (municipality) */
+  /** Address: municipality */
   public static final int ADDRESS_MUNICIPALITY = 188;
 
-  /** Address (locality) */
+  /** Address: location */
   public static final int ADDRESS_LOCATION = 189;
 
-  /** Domain/sector */
+  /** Section */
   public static final int SECTION = 190;
 
   /** OCR number */
@@ -610,7 +605,7 @@ public class TextFieldType {
   /** Voter */
   public static final int VOTER = 199;
 
-  /** Type/number of previous document */
+  /** Type of the previous document */
   public static final int PREVIOUS_TYPE = 200;
 
   /** Field from MRZ */
@@ -619,61 +614,61 @@ public class TextFieldType {
   /** Current date */
   public static final int CURRENT_DATE = 221;
 
-  /** Status expiration date */
+  /** Status date of expiry */
   public static final int STATUS_DATE_OF_EXPIRY = 251;
 
-  /** bank note number */
-  public static final int BANK_NOTE_NUMBER = 252;
+  /** Banknote number */
+  public static final int BANKNOTE_NUMBER = 252;
 
-  /** Code of customer service center */
+  /** CSC code */
   public static final int CSC_CODE = 253;
 
   /** Pseudonym */
   public static final int ARTISTIC_NAME = 254;
 
-  /** Academic rank */
+  /** Academic title */
   public static final int ACADEMIC_TITLE = 255;
 
-  /** Address (country) */
+  /** Address country */
   public static final int ADDRESS_COUNTRY = 256;
 
-  /** Address (zip) */
+  /** Address ZIP code */
   public static final int ADDRESS_ZIP_CODE = 257;
 
-  /** Information on a permit for permanent residence 1 (field for eID) */
+  /** eID residence permit 1 */
   public static final int E_ID_RESIDENCE_PERMIT_1 = 258;
 
-  /** Information on a permit for permanent residence 2 (field for eID) */
+  /** eID residence permit 2 */
   public static final int E_ID_RESIDENCE_PERMIT_2 = 259;
 
-  /** Place of birth address: street (field for eID) */
+  /** eID place of birth: street */
   public static final int E_ID_PLACE_OF_BIRTH_STREET = 260;
 
-  /** Place of birth address: city (field for eID) */
+  /** eID place of birth: city */
   public static final int E_ID_PLACE_OF_BIRTH_CITY = 261;
 
-  /** Place of birth address: state (field for eID) */
+  /** eID place of birth: state */
   public static final int E_ID_PLACE_OF_BIRTH_STATE = 262;
 
-  /** Place of birth address: country (field for eID) */
+  /** eID place of birth: country */
   public static final int E_ID_PLACE_OF_BIRTH_COUNTRY = 263;
 
-  /** Place of birth address: zip (field for eID) */
+  /** eID place of birth: postal code */
   public static final int E_ID_PLACE_OF_BIRTH_ZIP_CODE = 264;
 
-  /** Commercial driving license class */
+  /** CDL class */
   public static final int CDL_CLASS = 265;
 
-  /** Date when the holder of the document is 19 years old */
+  /** Date of 19th birthday */
   public static final int DL_UNDER_19_DATE = 266;
 
-  /** Weight (pounds) */
+  /** Weight (pound) */
   public static final int WEIGHT_POUNDS = 267;
 
-  /** Document expiration indicator */
+  /** Indicator of document limited duration */
   public static final int LIMITED_DURATION_DOCUMENT_INDICATOR = 268;
 
-  /** Driving license permit */
+  /** Endorsement expiration date */
   public static final int ENDORSEMENT_EXPIRATION_DATE = 269;
 
   /** Revision date */
@@ -682,13 +677,13 @@ public class TextFieldType {
   /** Compliance type */
   public static final int COMPLIANCE_TYPE = 271;
 
-  /** Abbreviated last name */
+  /** Family name truncation */
   public static final int FAMILY_NAME_TRUNCATION = 272;
 
-  /** Abbreviated first name */
+  /** First name truncation */
   public static final int FIRST_NAME_TRUNCATION = 273;
 
-  /** Abbreviated middle name */
+  /** Middle name truncation */
   public static final int MIDDLE_NAME_TRUNCATION = 274;
 
   /** Exam date */
@@ -700,16 +695,16 @@ public class TextFieldType {
   /** Department */
   public static final int DEPARTMENT = 277;
 
-  /** Salary level */
+  /** Pay grade */
   public static final int PAY_GRADE = 278;
 
-  /** Rank/status/title */
+  /** Rank */
   public static final int RANK = 279;
 
-  /** Number confirming the right to receive benefits */
+  /** Benefits number */
   public static final int BENEFITS_NUMBER = 280;
 
-  /** Type of armed forces in which sponsor serves */
+  /** Sponsor service */
   public static final int SPONSOR_SERVICE = 281;
 
   /** Sponsor status */
@@ -718,100 +713,100 @@ public class TextFieldType {
   /** Sponsor */
   public static final int SPONSOR = 283;
 
-  /** Degree of kindred */
+  /** Relationship */
   public static final int RELATIONSHIP = 284;
 
-  /** US Citizenship and Immigration Services Alien Registration Number */
+  /** USCIS */
   public static final int USCIS = 285;
 
   /** Category */
   public static final int CATEGORY = 286;
 
-  /** Remainder term */
+  /** Conditions */
   public static final int CONDITIONS = 287;
 
-  /** Conditions */
+  /** Identifier */
   public static final int IDENTIFIER = 288;
 
-  /** Identifier */
+  /** Configuration */
   public static final int CONFIGURATION = 289;
 
-  /** Configuration */
+  /** Discretionary data */
   public static final int DISCRETIONARY_DATA = 290;
 
-  /** Optional data */
+  /** Line 1 optional data */
   public static final int LINE_1_OPTIONAL_DATA = 291;
 
-  /** Optional data from MRZ first line */
+  /** Line 2 optional data */
   public static final int LINE_2_OPTIONAL_DATA = 292;
 
-  /** Optional data from MRZ second line */
+  /** Line 3 optional data */
   public static final int LINE_3_OPTIONAL_DATA = 293;
 
-  /** Optional data from MRZ third line */
+  /** EQV code */
   public static final int EQV_CODE = 294;
 
-  /** EQV-code */
+  /** ALT code */
   public static final int ALT_CODE = 295;
 
-  /** ALT-code */
+  /** Binary code */
   public static final int BINARY_CODE = 296;
 
-  /** Binary code */
+  /** Pseudo code */
   public static final int PSEUDO_CODE = 297;
 
-  /** Pseudo code */
+  /** Fee */
   public static final int FEE = 298;
 
-  /** Fee */
+  /** Stamp number */
   public static final int STAMP_NUMBER = 299;
 
-  /** Stamp number */
+  /** SBH security options */
   public static final int SBH_SECURITY_OPTIONS = 300;
 
-  /** Biometric data protection settings */
+  /** SBH integrity options */
   public static final int SBH_INTEGRITY_OPTIONS = 301;
 
-  /** Biometric data integrity parameters */
+  /** Date of creation */
   public static final int DATE_OF_CREATION = 302;
 
-  /** Biometric data creation date */
+  /** Validity period */
   public static final int VALIDITY_PERIOD = 303;
 
-  /** Biometric data validity period */
+  /** Patron header version */
   public static final int PATRON_HEADER_VERSION = 304;
 
-  /** Biometric data header format version */
+  /** BDB type */
   public static final int BDB_TYPE = 305;
 
-  /** Biometric data record type */
+  /** Biometric type */
   public static final int BIOMETRIC_TYPE = 306;
 
-  /** Biometric data type */
+  /** Biometric subtype */
   public static final int BIOMETRIC_SUBTYPE = 307;
 
-  /** Biometric data subtype */
+  /** Biometric product ID */
   public static final int BIOMETRIC_PRODUCT_ID = 308;
 
-  /** Biometric data id */
+  /** Biometric format owner */
   public static final int BIOMETRIC_FORMAT_OWNER = 309;
 
-  /** Biometric data format */
+  /** Biometric format type */
   public static final int BIOMETRIC_FORMAT_TYPE = 310;
 
-  /** Phone number */
+  /** Phone */
   public static final int PHONE = 311;
 
   /** Profession */
   public static final int PROFESSION = 312;
 
-  /** Job position */
+  /** Position */
   public static final int TITLE = 313;
 
-  /** Common personal data */
+  /** Personal data summary */
   public static final int PERSONAL_SUMMARY = 314;
 
-  /** Other valid identifier */
+  /** Other valid ID */
   public static final int OTHER_VALID_ID = 315;
 
   /** Custody info */
@@ -820,49 +815,49 @@ public class TextFieldType {
   /** Other name */
   public static final int OTHER_NAME = 317;
 
-  /** Additional data */
+  /** Observations */
   public static final int OBSERVATIONS = 318;
 
-  /** Tax information */
+  /** Tax */
   public static final int TAX = 319;
 
-  /** Document personalization date */
+  /** Personalization date */
   public static final int DATE_OF_PERSONALIZATION = 320;
 
-  /** Personalization serial number */
+  /** Personalization SN */
   public static final int PERSONALIZATION_SN = 321;
 
   /** Other person name */
   public static final int OTHER_PERSON_NAME = 322;
 
-  /** Date of creation of a record of persons for notification in case of unforeseen situations */
+  /** Notify person: date of record */
   public static final int PERSON_TO_NOTIFY_DATE_OF_RECORD = 323;
 
-  /** Person name for contingency notification */
+  /** Notify person: name */
   public static final int PERSON_TO_NOTIFY_NAME = 324;
 
-  /** Person phone for contingency notification */
+  /** Notify person: phone */
   public static final int PERSON_TO_NOTIFY_PHONE = 325;
 
-  /** Person address for contingency notification */
+  /** Notify person: address */
   public static final int PERSON_TO_NOTIFY_ADDRESS = 326;
 
-  /** Text details of the organization issuing the DS certificate */
+  /** DS certificate issuer */
   public static final int DS_CERTIFICATE_ISSUER = 327;
 
-  /** Text details of the organization issuing the document */
+  /** DS certificate subject */
   public static final int DS_CERTIFICATE_SUBJECT = 328;
 
-  /** DS-certificate start date */
+  /** DS certificate valid from */
   public static final int DS_CERTIFICATE_VALID_FROM = 329;
 
-  /** DS-certificate expiration date */
+  /** DS certificate valid to */
   public static final int DS_CERTIFICATE_VALID_TO = 330;
 
-  /** Vehicle category/restriction/conditions from data group DG1 of the eDL application */
+  /** Vehicle data from the DG1 data group */
   public static final int VRC_DATA_OBJECT_ENTRY = 331;
 
-  /** Type confirmation number */
+  /** Type of approval number */
   public static final int TYPE_APPROVAL_NUMBER = 332;
 
   /** Administrative number */
@@ -874,10 +869,10 @@ public class TextFieldType {
   /** Data discriminator */
   public static final int DATA_DISCRIMINATOR = 335;
 
-  /** ISO issuer identifier */
+  /** ID number of ISO issuer */
   public static final int ISO_ISSUER_ID_NUMBER = 336;
 
-  /** The Garda National Immigration Bureau registration number */
+  /** GNIB number */
   public static final int GNIB_NUMBER = 340;
 
   /** Department number */
@@ -889,55 +884,52 @@ public class TextFieldType {
   /** Allergies */
   public static final int ALLERGIES = 343;
 
-  /** Sp-code */
+  /** Special code */
   public static final int SP_CODE = 344;
 
-  /** Court restriction code */
+  /** Court code */
   public static final int COURT_CODE = 345;
 
-  /** County code */
+  /** County */
   public static final int CTY = 346;
 
-  /** Sponsor social security number */
+  /** Sponsor SSN */
   public static final int SPONSOR_SSN = 347;
 
-  /** Military identification number */
+  /** DoD number */
   public static final int DOD_NUMBER = 348;
 
-  /** Novice driver until ... (date) */
+  /** Expiry date of Motorcycle Novice status */
   public static final int MC_NOVICE_DATE = 349;
 
-  /**
-   * Registration number in the computer system of the Norwegian Directorate of Immigration (the
-   * UDI)
-   */
+  /** DUF number */
   public static final int DUF_NUMBER = 350;
 
-  /** Philippines Traffic Police Unit Code */
+  /** AGY */
   public static final int AGY = 351;
 
-  /** PNR-code (book number) */
+  /** PNR code */
   public static final int PNR_CODE = 352;
 
-  /** Departure airport code */
+  /** Code of the airport of departure */
   public static final int FROM_AIRPORT_CODE = 353;
 
-  /** Arrival airport code */
+  /** Code of the airport of arrival */
   public static final int TO_AIRPORT_CODE = 354;
 
   /** Flight number */
   public static final int FLIGHT_NUMBER = 355;
 
-  /** Departure date */
+  /** Date of flight */
   public static final int DATE_OF_FLIGHT = 356;
 
   /** Seat number */
   public static final int SEAT_NUMBER = 357;
 
-  /** Boarding pass issue date */
+  /** Date of boarding pass issue */
   public static final int DATE_OF_ISSUE_BOARDING_PASS = 358;
 
-  /** Hidden weapons license, valid until... (date) */
+  /** CCW until */
   public static final int CCW_UNTIL = 359;
 
   /** Reference number checksum */
@@ -952,211 +944,211 @@ public class TextFieldType {
   /** Religion */
   public static final int RELIGION = 363;
 
-  /** Number of months before the due date expiration of a document */
+  /** Months to expire */
   public static final int REMAINDER_TERM = 364;
 
   /** Electronic ticket indicator */
   public static final int ELECTRONIC_TICKET_INDICATOR = 365;
 
-  /** Free baggage allowance */
+  /** Compartment code */
   public static final int COMPARTMENT_CODE = 366;
 
-  /** Frequent flyer number */
+  /** Check-in sequence number */
   public static final int CHECK_IN_SEQUENCE_NUMBER = 367;
 
-  /** Airline frequent flyer indicator */
+  /** Airline designator of boarding pass issuer */
   public static final int AIRLINE_DESIGNATOR_OF_BOARDING_PASS_ISSUER = 368;
 
-  /** Ticket number */
+  /** Airline numeric code */
   public static final int AIRLINE_NUMERIC_CODE = 369;
 
-  /** Airline numeric code */
+  /** Ticket number */
   public static final int TICKET_NUMBER = 370;
 
-  /** Boarding pass issuer code */
+  /** Frequent flyer airline designator */
   public static final int FREQUENT_FLYER_AIRLINE_DESIGNATOR = 371;
 
-  /** Check-in sequence number */
+  /** Frequent flyer number */
   public static final int FREQUENT_FLYER_NUMBER = 372;
 
-  /** Compartment code */
+  /** Free baggage allowance */
   public static final int FREE_BAGGAGE_ALLOWANCE = 373;
 
   /** PDF417 codec */
-  public static final int PDF_417_CODEC = 374;
+  public static final int PDF417_CODEC = 374;
 
-  /** identity card checksum */
+  /** Identity card number checksum */
   public static final int IDENTITY_CARD_NUMBER_CHECKSUM = 375;
 
-  /** identity card check digit */
+  /** Identity card number check digit */
   public static final int IDENTITY_CARD_NUMBER_CHECK_DIGIT = 376;
 
   /** Veteran */
   public static final int VETERAN = 377;
 
-  /** DL class code A1 valid from */
+  /** DL category A1 valid from */
   public static final int DL_CLASS_CODE_A1_FROM = 378;
 
-  /** DL class code A1 valid to */
+  /** DL category A1 valid to */
   public static final int DL_CLASS_CODE_A1_TO = 379;
 
-  /** DL class code A1 notes */
+  /** DL category A1 codes */
   public static final int DL_CLASS_CODE_A1_NOTES = 380;
 
-  /** DL class code A valid from */
+  /** DL category A valid from */
   public static final int DL_CLASS_CODE_A_FROM = 381;
 
-  /** DL class code A valid to */
+  /** DL category A valid to */
   public static final int DL_CLASS_CODE_A_TO = 382;
 
-  /** DL class code A notes */
+  /** DL category A codes */
   public static final int DL_CLASS_CODE_A_NOTES = 383;
 
-  /** DL class code B valid from */
+  /** DL category B valid from */
   public static final int DL_CLASS_CODE_B_FROM = 384;
 
-  /** DL class code B valid to */
+  /** DL category B valid to */
   public static final int DL_CLASS_CODE_B_TO = 385;
 
-  /** DL class code B notes */
+  /** DL category B codes */
   public static final int DL_CLASS_CODE_B_NOTES = 386;
 
-  /** DL class code C1 valid from */
+  /** DL category C1 valid from */
   public static final int DL_CLASS_CODE_C1_FROM = 387;
 
-  /** DL class code C1 valid to */
+  /** DL category C1 valid to */
   public static final int DL_CLASS_CODE_C1_TO = 388;
 
-  /** DL class code C1 notes */
+  /** DL category C1 codes */
   public static final int DL_CLASS_CODE_C1_NOTES = 389;
 
-  /** DL class code C valid from */
+  /** DL category C valid from */
   public static final int DL_CLASS_CODE_C_FROM = 390;
 
-  /** DL class code C valid to */
+  /** DL category C valid to */
   public static final int DL_CLASS_CODE_C_TO = 391;
 
-  /** DL class code C notes */
+  /** DL category C codes */
   public static final int DL_CLASS_CODE_C_NOTES = 392;
 
-  /** DL class code D1 valid from */
+  /** DL category D1 valid from */
   public static final int DL_CLASS_CODE_D1_FROM = 393;
 
-  /** DL class code D1 valid to */
+  /** DL category D1 valid to */
   public static final int DL_CLASS_CODE_D1_TO = 394;
 
-  /** DL class code D1 notes */
+  /** DL category D1 codes */
   public static final int DL_CLASS_CODE_D1_NOTES = 395;
 
-  /** DL class code D valid from */
+  /** DL category D valid from */
   public static final int DL_CLASS_CODE_D_FROM = 396;
 
-  /** DL class code D valid to */
+  /** DL category D valid to */
   public static final int DL_CLASS_CODE_D_TO = 397;
 
-  /** DL class code D notes */
+  /** DL category D codes */
   public static final int DL_CLASS_CODE_D_NOTES = 398;
 
-  /** DL class code BE valid from */
+  /** DL category BE valid from */
   public static final int DL_CLASS_CODE_BE_FROM = 399;
 
-  /** DL class code BE valid to */
+  /** DL category BE valid to */
   public static final int DL_CLASS_CODE_BE_TO = 400;
 
-  /** DL class code BE notes */
+  /** DL category BE codes */
   public static final int DL_CLASS_CODE_BE_NOTES = 401;
 
-  /** DL class code C1E valid from */
+  /** DL category C1E valid from */
   public static final int DL_CLASS_CODE_C1E_FROM = 402;
 
-  /** DL class code C1E valid to */
+  /** DL category C1E valid to */
   public static final int DL_CLASS_CODE_C1E_TO = 403;
 
-  /** DL class code C1E notes */
+  /** DL category C1E codes */
   public static final int DL_CLASS_CODE_C1E_NOTES = 404;
 
-  /** DL class code CE valid from */
+  /** DL category CE valid from */
   public static final int DL_CLASS_CODE_CE_FROM = 405;
 
-  /** DL class code CE valid to */
+  /** DL category CE valid to */
   public static final int DL_CLASS_CODE_CE_TO = 406;
 
-  /** DL class code CE notes */
+  /** DL category CE codes */
   public static final int DL_CLASS_CODE_CE_NOTES = 407;
 
-  /** DL class code D1E valid from */
+  /** DL category D1E valid from */
   public static final int DL_CLASS_CODE_D1E_FROM = 408;
 
-  /** DL class code D1E valid to */
+  /** DL category D1E valid to */
   public static final int DL_CLASS_CODE_D1E_TO = 409;
 
-  /** DL class code D1E notes */
+  /** DL category D1E codes */
   public static final int DL_CLASS_CODE_D1E_NOTES = 410;
 
-  /** DL class code DE valid from */
+  /** DL category DE valid from */
   public static final int DL_CLASS_CODE_DE_FROM = 411;
 
-  /** DL class code DE valid to */
+  /** DL category DE valid to */
   public static final int DL_CLASS_CODE_DE_TO = 412;
 
-  /** DL class code DE notes */
+  /** DL category DE codes */
   public static final int DL_CLASS_CODE_DE_NOTES = 413;
 
-  /** DL class code M valid from */
+  /** DL category M valid from */
   public static final int DL_CLASS_CODE_M_FROM = 414;
 
-  /** DL class code M valid to */
+  /** DL category M valid to */
   public static final int DL_CLASS_CODE_M_TO = 415;
 
-  /** DL class code M notes */
+  /** DL category M codes */
   public static final int DL_CLASS_CODE_M_NOTES = 416;
 
-  /** DL class code L valid from */
+  /** DL category L valid from */
   public static final int DL_CLASS_CODE_L_FROM = 417;
 
-  /** DL class code L valid to */
+  /** DL category L valid to */
   public static final int DL_CLASS_CODE_L_TO = 418;
 
-  /** DL class code L notes */
+  /** DL category L codes */
   public static final int DL_CLASS_CODE_L_NOTES = 419;
 
-  /** DL class code T valid from */
+  /** DL category T valid from */
   public static final int DL_CLASS_CODE_T_FROM = 420;
 
-  /** DL class code T valid to */
+  /** DL category T valid to */
   public static final int DL_CLASS_CODE_T_TO = 421;
 
-  /** DL class code T notes */
+  /** DL category T codes */
   public static final int DL_CLASS_CODE_T_NOTES = 422;
 
-  /** DL class code AM valid from */
+  /** DL category AM valid from */
   public static final int DL_CLASS_CODE_AM_FROM = 423;
 
-  /** DL class code AM valid to */
+  /** DL category AM valid to */
   public static final int DL_CLASS_CODE_AM_TO = 424;
 
-  /** DL class code AM notes */
+  /** DL category AM codes */
   public static final int DL_CLASS_CODE_AM_NOTES = 425;
 
-  /** DL class code A2 valid from */
+  /** DL category A2 valid from */
   public static final int DL_CLASS_CODE_A2_FROM = 426;
 
-  /** DL class code A2 valid to */
+  /** DL category A2 valid to */
   public static final int DL_CLASS_CODE_A2_TO = 427;
 
-  /** DL class code A2 notes */
+  /** DL category A2 codes */
   public static final int DL_CLASS_CODE_A2_NOTES = 428;
 
-  /** DL class code B1 valid from */
+  /** DL category B1 valid from */
   public static final int DL_CLASS_CODE_B1_FROM = 429;
 
-  /** DL class code B1 valid to */
+  /** DL category B1 valid to */
   public static final int DL_CLASS_CODE_B1_TO = 430;
 
-  /** DL class code B1 notes */
+  /** DL category B1 codes */
   public static final int DL_CLASS_CODE_B1_NOTES = 431;
 
-  /** Last name at birth */
+  /** Surname at birth */
   public static final int SURNAME_AT_BIRTH = 432;
 
   /** Civil status */
@@ -1174,49 +1166,49 @@ public class TextFieldType {
   /** Fuel type */
   public static final int FUEL_TYPE = 437;
 
-  /** Vehicle emission class */
+  /** Vehicle environmental type */
   public static final int EC_ENVIRONMENTAL_TYPE = 438;
 
-  /** Engine power-to-weight ratio */
+  /** Power-to-weight ratio */
   public static final int POWER_WEIGHT_RATIO = 439;
 
-  /** Trailer with brakes maximum weight */
+  /** Max mass of trailer (braked) */
   public static final int MAX_MASS_OF_TRAILER_BRAKED = 440;
 
-  /** Trailer without brakes maximum weight */
+  /** Max mass of trailer (unbraked) */
   public static final int MAX_MASS_OF_TRAILER_UNBRAKED = 441;
 
   /** Transmission type */
   public static final int TRANSMISSION_TYPE = 442;
 
-  /** Trailer equipment */
+  /** Trailer hitch */
   public static final int TRAILER_HITCH = 443;
 
-  /** Accompanying person */
+  /** Accompanied by */
   public static final int ACCOMPANIED_BY = 444;
 
   /** Police district */
   public static final int POLICE_DISTRICT = 445;
 
-  /** Date of document first issue */
+  /** First issue date */
   public static final int FIRST_ISSUE_DATE = 446;
 
-  /** Maximum payload */
+  /** Payload capacity */
   public static final int PAYLOAD_CAPACITY = 447;
 
   /** Number of axles */
   public static final int NUMBER_OF_AXLES = 448;
 
-  /** Axle weight limit */
+  /** Permissible axle load */
   public static final int PERMISSIBLE_AXLE_LOAD = 449;
 
   /** Precinct */
   public static final int PRECINCT = 450;
 
-  /** Inviter */
+  /** Invited by */
   public static final int INVITED_BY = 451;
 
-  /** Purpose of arrival */
+  /** Purpose of entry */
   public static final int PURPOSE_OF_ENTRY = 452;
 
   /** Skin color */
@@ -1225,16 +1217,16 @@ public class TextFieldType {
   /** Complexion */
   public static final int COMPLEXION = 454;
 
-  /** Departure airport */
+  /** Airport of departure */
   public static final int AIRPORT_FROM = 455;
 
-  /** Arrival airport */
+  /** Airport of arrival */
   public static final int AIRPORT_TO = 456;
 
   /** Airline name */
   public static final int AIRLINE_NAME = 457;
 
-  /** Airline bonus program for frequent flyers */
+  /** Airline loyalty program for frequent flyers */
   public static final int AIRLINE_NAME_FREQUENT_FLYER = 458;
 
   /** License number */
@@ -1246,7 +1238,7 @@ public class TextFieldType {
   /** Other than tanks */
   public static final int EXCEPT_IN_TANKS = 461;
 
-  /** Passenger with fast track priority (express formal procedures at the airport) */
+  /** Fast Track service */
   public static final int FAST_TRACK = 462;
 
   /** Owner */
@@ -1255,88 +1247,88 @@ public class TextFieldType {
   /** MRZ strings from ICAO RFID */
   public static final int MRZ_STRINGS_ICAO_RFID = 464;
 
-  /** Number of card issues with this number */
+  /** Number of card issuances */
   public static final int NUMBER_OF_CARD_ISSUANCE = 465;
 
-  /** Card issues count checksum */
+  /** Number of card issuances checksum */
   public static final int NUMBER_OF_CARD_ISSUANCE_CHECKSUM = 466;
 
-  /** Card issues count check digit */
+  /** Number of card issuances check digit */
   public static final int NUMBER_OF_CARD_ISSUANCE_CHECK_DIGIT = 467;
 
-  /** Birth century */
+  /** Century of birth */
   public static final int CENTURY_DATE_OF_BIRTH = 468;
 
-  /** DL class code A3 valid from */
+  /** DL category A3 valid from */
   public static final int DL_CLASS_CODE_A3_FROM = 469;
 
-  /** DL class code A3 valid to */
+  /** DL category A3 valid to */
   public static final int DL_CLASS_CODE_A3_TO = 470;
 
-  /** DL class code A3 notes */
+  /** DL category A3 codes */
   public static final int DL_CLASS_CODE_A3_NOTES = 471;
 
-  /** DL class code C2 valid from */
+  /** DL category C2 valid from */
   public static final int DL_CLASS_CODE_C2_FROM = 472;
 
-  /** DL class code C2 valid to */
+  /** DL category C2 valid to */
   public static final int DL_CLASS_CODE_C2_TO = 473;
 
-  /** DL class code C2 notes */
+  /** DL category C2 codes */
   public static final int DL_CLASS_CODE_C2_NOTES = 474;
 
-  /** DL class code B2 valid from */
+  /** DL category B2 valid from */
   public static final int DL_CLASS_CODE_B2_FROM = 475;
 
-  /** DL class code B2 valid to */
+  /** DL category B2 valid to */
   public static final int DL_CLASS_CODE_B2_TO = 476;
 
-  /** DL class code B2 notes */
+  /** DL category B2 codes */
   public static final int DL_CLASS_CODE_B2_NOTES = 477;
 
-  /** DL class code D2 valid from */
+  /** DL category D2 valid from */
   public static final int DL_CLASS_CODE_D2_FROM = 478;
 
-  /** DL class code D2 valid to */
+  /** DL category D2 valid to */
   public static final int DL_CLASS_CODE_D2_TO = 479;
 
-  /** DL class code D2 notes */
+  /** DL category D2 codes */
   public static final int DL_CLASS_CODE_D2_NOTES = 480;
 
-  /** DL class code B2E valid from */
+  /** DL category B2E valid from */
   public static final int DL_CLASS_CODE_B2E_FROM = 481;
 
-  /** DL class code B2E valid to */
+  /** DL category B2E valid to */
   public static final int DL_CLASS_CODE_B2E_TO = 482;
 
-  /** DL class code B2E notes */
+  /** DL category B2E codes */
   public static final int DL_CLASS_CODE_B2E_NOTES = 483;
 
-  /** DL class code G valid from */
+  /** DL category G valid from */
   public static final int DL_CLASS_CODE_G_FROM = 484;
 
-  /** DL class code G valid to */
+  /** DL category G valid to */
   public static final int DL_CLASS_CODE_G_TO = 485;
 
-  /** DL class code G notes */
+  /** DL category G codes */
   public static final int DL_CLASS_CODE_G_NOTES = 486;
 
-  /** DL class code J valid from */
+  /** DL category J valid from */
   public static final int DL_CLASS_CODE_J_FROM = 487;
 
-  /** DL class code J valid to */
+  /** DL category J valid to */
   public static final int DL_CLASS_CODE_J_TO = 488;
 
-  /** DL class code J notes */
+  /** DL category J codes */
   public static final int DL_CLASS_CODE_J_NOTES = 489;
 
-  /** DL class code LC valid from */
+  /** DL category LC valid from */
   public static final int DL_CLASS_CODE_LC_FROM = 490;
 
-  /** DL class code LC valid to */
+  /** DL category LC valid to */
   public static final int DL_CLASS_CODE_LC_TO = 491;
 
-  /** DL class code LC notes */
+  /** DL category LC codes */
   public static final int DL_CLASS_CODE_LC_NOTES = 492;
 
   /** Bank card number */
@@ -1351,52 +1343,52 @@ public class TextFieldType {
   /** Health insurance number */
   public static final int HEALTH_NUMBER = 496;
 
-  /** Grandfather&#x60;s name */
+  /** Grandfather&#39;s name */
   public static final int GRANDFATHER_NAME = 497;
 
-  /** Recruit indicator */
+  /** Selectee indicator */
   public static final int SELECTEE_INDICATOR = 498;
 
-  /** Mother&#x60;s last name */
+  /** Mother&#39;s surname */
   public static final int MOTHER_SURNAME = 499;
 
-  /** Mother&#x60;s first name */
+  /** Mother&#39;s name */
   public static final int MOTHER_GIVEN_NAME = 500;
 
-  /** Father&#x60;s last name */
+  /** Father&#39;s surname */
   public static final int FATHER_SURNAME = 501;
 
-  /** Father&#x60;s first name */
+  /** Father&#39;s name */
   public static final int FATHER_GIVEN_NAME = 502;
 
-  /** Mother&#x60;s date of birth */
+  /** Mother&#39;s date of birth */
   public static final int MOTHER_DATE_OF_BIRTH = 503;
 
-  /** Father&#x60;s date of birth */
+  /** Father&#39;s date of birth */
   public static final int FATHER_DATE_OF_BIRTH = 504;
 
-  /** Mother&#x60;s personal number */
+  /** Mother&#39;s personal number */
   public static final int MOTHER_PERSONAL_NUMBER = 505;
 
-  /** Father&#x60;s personal number */
+  /** Father&#39;s personal number */
   public static final int FATHER_PERSONAL_NUMBER = 506;
 
-  /** Mother&#x60;s place of birth */
+  /** Mother&#39;s place of birth */
   public static final int MOTHER_PLACE_OF_BIRTH = 507;
 
-  /** Father&#x60;s place of birth */
+  /** Father&#39;s place of birth */
   public static final int FATHER_PLACE_OF_BIRTH = 508;
 
-  /** Mother&#x60;s country of birth */
+  /** Mother&#39;s country of birth */
   public static final int MOTHER_COUNTRY_OF_BIRTH = 509;
 
-  /** Father&#x60;s country of birth */
+  /** Father&#39;s country of birth */
   public static final int FATHER_COUNTRY_OF_BIRTH = 510;
 
-  /** Date of document first renewal */
+  /** Date of first renewal */
   public static final int DATE_FIRST_RENEWAL = 511;
 
-  /** Date of document second renewal */
+  /** Date of second renewal */
   public static final int DATE_SECOND_RENEWAL = 512;
 
   /** Place of examination */
@@ -1432,184 +1424,184 @@ public class TextFieldType {
   /** Years since issue */
   public static final int YEARS_SINCE_ISSUE = 523;
 
-  /** DL class code BTP valid from */
+  /** DL category BTP valid from */
   public static final int DL_CLASS_CODE_BTP_FROM = 524;
 
-  /** DL class code BTP notes */
+  /** DL category BTP codes */
   public static final int DL_CLASS_CODE_BTP_NOTES = 525;
 
-  /** DL class code BTP valid to */
+  /** DL category BTP valid to */
   public static final int DL_CLASS_CODE_BTP_TO = 526;
 
-  /** DL class code C3 valid from */
+  /** DL category C3 valid from */
   public static final int DL_CLASS_CODE_C3_FROM = 527;
 
-  /** DL class code C3 notes */
+  /** DL category C3 codes */
   public static final int DL_CLASS_CODE_C3_NOTES = 528;
 
-  /** DL class code C3 valid to */
+  /** DL category C3 valid to */
   public static final int DL_CLASS_CODE_C3_TO = 529;
 
-  /** DL class code E valid from */
+  /** DL category E valid from */
   public static final int DL_CLASS_CODE_E_FROM = 530;
 
-  /** DL class code E notes */
+  /** DL category E codes */
   public static final int DL_CLASS_CODE_E_NOTES = 531;
 
-  /** DL class code E valid to */
+  /** DL category E valid to */
   public static final int DL_CLASS_CODE_E_TO = 532;
 
-  /** DL class code F valid from */
+  /** DL category F valid from */
   public static final int DL_CLASS_CODE_F_FROM = 533;
 
-  /** DL class code F notes */
+  /** DL category F codes */
   public static final int DL_CLASS_CODE_F_NOTES = 534;
 
-  /** DL class code F valid to */
+  /** DL category F valid to */
   public static final int DL_CLASS_CODE_F_TO = 535;
 
-  /** DL class code FA valid from */
+  /** DL category FA valid from */
   public static final int DL_CLASS_CODE_FA_FROM = 536;
 
-  /** DL class code FA notes */
+  /** DL category FA codes */
   public static final int DL_CLASS_CODE_FA_NOTES = 537;
 
-  /** DL class code FA valid to */
+  /** DL category FA valid to */
   public static final int DL_CLASS_CODE_FA_TO = 538;
 
-  /** DL class code FA1 valid from */
+  /** DL category FA1 valid from */
   public static final int DL_CLASS_CODE_FA1_FROM = 539;
 
-  /** DL class code FA1 notes */
+  /** DL category FA1 codes */
   public static final int DL_CLASS_CODE_FA1_NOTES = 540;
 
-  /** DL class code FA1 valid to */
+  /** DL category FA1 valid to */
   public static final int DL_CLASS_CODE_FA1_TO = 541;
 
-  /** DL class code FB valid from */
+  /** DL category FB valid from */
   public static final int DL_CLASS_CODE_FB_FROM = 542;
 
-  /** DL class code FB notes */
+  /** DL category FB codes */
   public static final int DL_CLASS_CODE_FB_NOTES = 543;
 
-  /** DL class code FB valid to */
+  /** DL category FB valid to */
   public static final int DL_CLASS_CODE_FB_TO = 544;
 
-  /** DL class code G1 valid from */
+  /** DL category G1 valid from */
   public static final int DL_CLASS_CODE_G1_FROM = 545;
 
-  /** DL class code G1 notes */
+  /** DL category G1 codes */
   public static final int DL_CLASS_CODE_G1_NOTES = 546;
 
-  /** DL class code G1 valid to */
+  /** DL category G1 valid to */
   public static final int DL_CLASS_CODE_G1_TO = 547;
 
-  /** DL class code H valid from */
+  /** DL category H valid from */
   public static final int DL_CLASS_CODE_H_FROM = 548;
 
-  /** DL class code H notes */
+  /** DL category H codes */
   public static final int DL_CLASS_CODE_H_NOTES = 549;
 
-  /** DL class code H valid to */
+  /** DL category H valid to */
   public static final int DL_CLASS_CODE_H_TO = 550;
 
-  /** DL class code I valid from */
+  /** DL category I valid from */
   public static final int DL_CLASS_CODE_I_FROM = 551;
 
-  /** DL class code I notes */
+  /** DL category I codes */
   public static final int DL_CLASS_CODE_I_NOTES = 552;
 
-  /** DL class code I valid to */
+  /** DL category I valid to */
   public static final int DL_CLASS_CODE_I_TO = 553;
 
-  /** DL class code K valid from */
+  /** DL category K valid from */
   public static final int DL_CLASS_CODE_K_FROM = 554;
 
-  /** DL class code K notes */
+  /** DL category K codes */
   public static final int DL_CLASS_CODE_K_NOTES = 555;
 
-  /** DL class code K valid to */
+  /** DL category K valid to */
   public static final int DL_CLASS_CODE_K_TO = 556;
 
-  /** DL class code LK valid from */
+  /** DL category LK valid from */
   public static final int DL_CLASS_CODE_LK_FROM = 557;
 
-  /** DL class code LK notes */
+  /** DL category LK codes */
   public static final int DL_CLASS_CODE_LK_NOTES = 558;
 
-  /** DL class code LK valid to */
+  /** DL category LK valid to */
   public static final int DL_CLASS_CODE_LK_TO = 559;
 
-  /** DL class code N valid from */
+  /** DL category N valid from */
   public static final int DL_CLASS_CODE_N_FROM = 560;
 
-  /** DL class code N notes */
+  /** DL category N codes */
   public static final int DL_CLASS_CODE_N_NOTES = 561;
 
-  /** DL class code N valid to */
+  /** DL category N valid to */
   public static final int DL_CLASS_CODE_N_TO = 562;
 
-  /** DL class code S valid from */
+  /** DL category S valid from */
   public static final int DL_CLASS_CODE_S_FROM = 563;
 
-  /** DL class code S notes */
+  /** DL category S codes */
   public static final int DL_CLASS_CODE_S_NOTES = 564;
 
-  /** DL class code S valid to */
+  /** DL category S valid to */
   public static final int DL_CLASS_CODE_S_TO = 565;
 
-  /** DL class code TB valid from */
+  /** DL category TB valid from */
   public static final int DL_CLASS_CODE_TB_FROM = 566;
 
-  /** DL class code TB notes */
+  /** DL category TB codes */
   public static final int DL_CLASS_CODE_TB_NOTES = 567;
 
-  /** DL class code TB valid to */
+  /** DL category TB valid to */
   public static final int DL_CLASS_CODE_TB_TO = 568;
 
-  /** DL class code TM valid from */
+  /** DL category TM valid from */
   public static final int DL_CLASS_CODE_TM_FROM = 569;
 
-  /** DL class code TM notes */
+  /** DL category TM codes */
   public static final int DL_CLASS_CODE_TM_NOTES = 570;
 
-  /** DL class code TM valid to */
+  /** DL category TM valid to */
   public static final int DL_CLASS_CODE_TM_TO = 571;
 
-  /** DL class code TR valid from */
+  /** DL category TR valid from */
   public static final int DL_CLASS_CODE_TR_FROM = 572;
 
-  /** DL class code TR notes */
+  /** DL category TR codes */
   public static final int DL_CLASS_CODE_TR_NOTES = 573;
 
-  /** DL class code TR valid to */
+  /** DL category TR valid to */
   public static final int DL_CLASS_CODE_TR_TO = 574;
 
-  /** DL class code TV valid from */
+  /** DL category TV valid from */
   public static final int DL_CLASS_CODE_TV_FROM = 575;
 
-  /** DL class code TV notes */
+  /** DL category TV codes */
   public static final int DL_CLASS_CODE_TV_NOTES = 576;
 
-  /** DL class code TV valid to */
+  /** DL category TV valid to */
   public static final int DL_CLASS_CODE_TV_TO = 577;
 
-  /** DL class code V valid from */
+  /** DL category V valid from */
   public static final int DL_CLASS_CODE_V_FROM = 578;
 
-  /** DL class code V notes */
+  /** DL category V codes */
   public static final int DL_CLASS_CODE_V_NOTES = 579;
 
-  /** DL class code V valid to */
+  /** DL category V valid to */
   public static final int DL_CLASS_CODE_V_TO = 580;
 
-  /** DL class code W valid from */
+  /** DL category W valid from */
   public static final int DL_CLASS_CODE_W_FROM = 581;
 
-  /** DL class code W notes */
+  /** DL category W codes */
   public static final int DL_CLASS_CODE_W_NOTES = 582;
 
-  /** DL class code W valid to */
+  /** DL category W valid to */
   public static final int DL_CLASS_CODE_W_TO = 583;
 
   /** URL */
@@ -1651,7 +1643,7 @@ public class TextFieldType {
   /** Date of insurance expiry */
   public static final int DATE_OF_INSURANCE_EXPIRY = 596;
 
-  /** Mortgage */
+  /** Mortgage by */
   public static final int MORTGAGE_BY = 597;
 
   /** Old document number */
@@ -1663,133 +1655,133 @@ public class TextFieldType {
   /** Old place of issue */
   public static final int OLD_PLACE_OF_ISSUE = 600;
 
-  /** DL class code LR valid from */
+  /** DL category LR valid from */
   public static final int DL_CLASS_CODE_LR_FROM = 601;
 
-  /** DL class code LR valid to */
+  /** DL category LR valid to */
   public static final int DL_CLASS_CODE_LR_TO = 602;
 
-  /** DL class code LR notes */
+  /** DL category LR codes */
   public static final int DL_CLASS_CODE_LR_NOTES = 603;
 
-  /** DL class code MR valid from */
+  /** DL category MR valid from */
   public static final int DL_CLASS_CODE_MR_FROM = 604;
 
-  /** DL class code MR valid to */
+  /** DL category MR valid to */
   public static final int DL_CLASS_CODE_MR_TO = 605;
 
-  /** DL class code MR notes */
+  /** DL category MR codes */
   public static final int DL_CLASS_CODE_MR_NOTES = 606;
 
-  /** DL class code HR valid from */
+  /** DL category HR valid from */
   public static final int DL_CLASS_CODE_HR_FROM = 607;
 
-  /** DL class code HR valid to */
+  /** DL category HR valid to */
   public static final int DL_CLASS_CODE_HR_TO = 608;
 
-  /** DL class code HR notes */
+  /** DL category HR codes */
   public static final int DL_CLASS_CODE_HR_NOTES = 609;
 
-  /** DL class code HC valid from */
+  /** DL category HC valid from */
   public static final int DL_CLASS_CODE_HC_FROM = 610;
 
-  /** DL class code HC valid to */
+  /** DL category HC valid to */
   public static final int DL_CLASS_CODE_HC_TO = 611;
 
-  /** DL class code HC notes */
+  /** DL category HC codes */
   public static final int DL_CLASS_CODE_HC_NOTES = 612;
 
-  /** DL class code MC valid from */
+  /** DL category MC valid from */
   public static final int DL_CLASS_CODE_MC_FROM = 613;
 
-  /** DL class code MC valid to */
+  /** DL category MC valid to */
   public static final int DL_CLASS_CODE_MC_TO = 614;
 
-  /** DL class code MC notes */
+  /** DL category MC codes */
   public static final int DL_CLASS_CODE_MC_NOTES = 615;
 
-  /** DL class code RE valid from */
+  /** DL category RE valid from */
   public static final int DL_CLASS_CODE_RE_FROM = 616;
 
-  /** DL class code RE valid to */
+  /** DL category RE valid to */
   public static final int DL_CLASS_CODE_RE_TO = 617;
 
-  /** DL class code RE notes */
+  /** DL category RE codes */
   public static final int DL_CLASS_CODE_RE_NOTES = 618;
 
-  /** DL class code R valid from */
+  /** DL category R valid from */
   public static final int DL_CLASS_CODE_R_FROM = 619;
 
-  /** DL class code R valid to */
+  /** DL category R valid to */
   public static final int DL_CLASS_CODE_R_TO = 620;
 
-  /** DL class code R notes */
+  /** DL category R codes */
   public static final int DL_CLASS_CODE_R_NOTES = 621;
 
-  /** DL class code CA valid from */
+  /** DL category CA valid from */
   public static final int DL_CLASS_CODE_CA_FROM = 622;
 
-  /** DL class code CA valid to */
+  /** DL category CA valid to */
   public static final int DL_CLASS_CODE_CA_TO = 623;
 
-  /** DL class code CA notes */
+  /** DL category CA codes */
   public static final int DL_CLASS_CODE_CA_NOTES = 624;
 
-  /** Citizenship Status */
+  /** Citizenship status */
   public static final int CITIZENSHIP_STATUS = 625;
 
-  /** Military Service From */
+  /** Military service from */
   public static final int MILITARY_SERVICE_FROM = 626;
 
-  /** Military Service To */
+  /** Military service to */
   public static final int MILITARY_SERVICE_TO = 627;
 
-  /** DL class code NT valid from */
+  /** DL category NT valid from */
   public static final int DL_CLASS_CODE_NT_FROM = 628;
 
-  /** DL class code NT valid to */
+  /** DL category NT valid to */
   public static final int DL_CLASS_CODE_NT_TO = 629;
 
-  /** DL class code NT notes */
+  /** DL category NT codes */
   public static final int DL_CLASS_CODE_NT_NOTES = 630;
 
-  /** DL class code TN valid from */
+  /** DL category TN valid from */
   public static final int DL_CLASS_CODE_TN_FROM = 631;
 
-  /** DL class code TN valid to */
+  /** DL category TN valid to */
   public static final int DL_CLASS_CODE_TN_TO = 632;
 
-  /** DL class code TN notes */
+  /** DL category TN codes */
   public static final int DL_CLASS_CODE_TN_NOTES = 633;
 
-  /** DL class code D3 valid from */
+  /** DL category D3 valid from */
   public static final int DL_CLASS_CODE_D3_FROM = 634;
 
-  /** DL class code D3 valid to */
+  /** DL category D3 valid to */
   public static final int DL_CLASS_CODE_D3_TO = 635;
 
-  /** DL class code D3 notes */
+  /** DL category D3 codes */
   public static final int DL_CLASS_CODE_D3_NOTES = 636;
 
-  /** Alt Date of expire */
-  public static final int ALT_DATE_OF_EXPIRE = 637;
+  /** Alternative date of expiry */
+  public static final int ALT_DATE_OF_EXPIRY = 637;
 
-  /** DL class code CD valid from */
+  /** DL category CD valid from */
   public static final int DL_CLASS_CODE_CD_FROM = 638;
 
-  /** DL class code CD valid to */
+  /** DL category CD valid to */
   public static final int DL_CLASS_CODE_CD_TO = 639;
 
-  /** DL class code CD notes */
+  /** DL category CD codes */
   public static final int DL_CLASS_CODE_CD_NOTES = 640;
 
   /** Issuer identification number */
   public static final int ISSUER_IDENTIFICATION_NUMBER = 641;
 
-  /** Start date of payment period */
+  /** Payment period from */
   public static final int PAYMENT_PERIOD_FROM = 642;
 
-  /** End date of payment period */
+  /** Payment period to */
   public static final int PAYMENT_PERIOD_TO = 643;
 
   /** Vaccination certificate identifier */
@@ -1813,49 +1805,49 @@ public class TextFieldType {
   /** Last name */
   public static final int LAST_NAME = 650;
 
-  /** DL class code RM valid from */
+  /** DL category RM valid from */
   public static final int DL_CLASS_CODE_RM_FROM = 651;
 
-  /** DL class code RM notes */
+  /** DL category RM codes */
   public static final int DL_CLASS_CODE_RM_NOTES = 652;
 
-  /** DL class code RM valid to */
+  /** DL category RM valid to */
   public static final int DL_CLASS_CODE_RM_TO = 653;
 
-  /** DL class code PW valid from */
+  /** DL category PW valid from */
   public static final int DL_CLASS_CODE_PW_FROM = 654;
 
-  /** DL class code PW notes */
+  /** DL category PW codes */
   public static final int DL_CLASS_CODE_PW_NOTES = 655;
 
-  /** DL class code PW valid to */
+  /** DL category PW valid to */
   public static final int DL_CLASS_CODE_PW_TO = 656;
 
-  /** DL class code EB valid from */
+  /** DL category EB valid from */
   public static final int DL_CLASS_CODE_EB_FROM = 657;
 
-  /** DL class code EB notes */
+  /** DL category EB codes */
   public static final int DL_CLASS_CODE_EB_NOTES = 658;
 
-  /** DL class code EB valid to */
+  /** DL category EB valid to */
   public static final int DL_CLASS_CODE_EB_TO = 659;
 
-  /** DL class code EC valid from */
+  /** DL category EC valid from */
   public static final int DL_CLASS_CODE_EC_FROM = 660;
 
-  /** DL class code EC notes */
+  /** DL category EC codes */
   public static final int DL_CLASS_CODE_EC_NOTES = 661;
 
-  /** DL class code EC valid to */
+  /** DL category EC valid to */
   public static final int DL_CLASS_CODE_EC_TO = 662;
 
-  /** DL class code EC1 valid from */
+  /** DL category EC1 valid from */
   public static final int DL_CLASS_CODE_EC1_FROM = 663;
 
-  /** DL class code EC1 notes */
+  /** DL category EC1 codes */
   public static final int DL_CLASS_CODE_EC1_NOTES = 664;
 
-  /** DL class code EC1 valid to */
+  /** DL category EC1 valid to */
   public static final int DL_CLASS_CODE_EC1_TO = 665;
 
   /** Place of birth city */
@@ -1867,6 +1859,39 @@ public class TextFieldType {
   /** Year of expiry */
   public static final int YEAR_OF_EXPIRY = 668;
 
-  /** Grandfather mame maternal */
+  /** Grandfather&#39;s name (maternal) */
   public static final int GRANDFATHER_NAME_MATERNAL = 669;
+
+  /** First surname */
+  public static final int FIRST_SURNAME = 670;
+
+  /** Month of birth */
+  public static final int MONTH_OF_BIRTH = 671;
+
+  /** Floor number */
+  public static final int ADDRESS_FLOOR_NUMBER = 672;
+
+  /** Entrance number */
+  public static final int ADDRESS_ENTRANCE = 673;
+
+  /** Block number */
+  public static final int ADDRESS_BLOCK_NUMBER = 674;
+
+  /** Street number */
+  public static final int ADDRESS_STREET_NUMBER = 675;
+
+  /** Street type */
+  public static final int ADDRESS_STREET_TYPE = 676;
+
+  /** City sector */
+  public static final int ADDRESS_CITY_SECTOR = 677;
+
+  /** County type */
+  public static final int ADDRESS_COUNTY_TYPE = 678;
+
+  /** City type */
+  public static final int ADDRESS_CITY_TYPE = 679;
+
+  /** Building type */
+  public static final int ADDRESS_BUILDING_TYPE = 680;
 }

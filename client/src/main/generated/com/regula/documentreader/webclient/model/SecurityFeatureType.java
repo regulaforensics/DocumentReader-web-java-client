@@ -14,91 +14,138 @@ package com.regula.documentreader.webclient.model;
 
 public class SecurityFeatureType {
 
+  /** Blank element */
   public static final int BLANK = 0;
 
+  /** Personalization element */
   public static final int FILL = 1;
 
+  /** Photo */
   public static final int PHOTO = 2;
 
+  /** MRZ */
   public static final int MRZ = 3;
 
+  /** False luminescence */
   public static final int FALSE_LUMINESCENCE = 4;
 
+  /** Hologram (static) */
   public static final int HOLO_SIMPLE = 5;
 
+  /** Hologram (static verify) */
   public static final int HOLO_VERIFY_STATIC = 6;
 
+  /** Hologram (static verify multiple) */
   public static final int HOLO_VERIFY_MULTI_STATIC = 7;
 
+  /** Hologram (dynamic verify) */
   public static final int HOLO_VERIFY_DYNAMIC = 8;
 
+  /** Pattern (non-interrupted) */
   public static final int PATTERN_NOT_INTERRUPTED = 9;
 
+  /** Pattern (non-shifted) */
   public static final int PATTERN_NOT_SHIFTED = 10;
 
+  /** Pattern (same colors) */
   public static final int PATTERN_SAME_COLORS = 11;
 
+  /** Pattern (IR invisible) */
   public static final int PATTERN_IR_INVISIBLE = 12;
 
+  /** Photo size */
   public static final int PHOTO_SIZE_CHECK = 13;
 
+  /** Main vs ghost portrait comparison */
   public static final int PORTRAIT_COMPARISON_VS_GHOST = 14;
 
+  /** Main vs RFID portrait comparison */
   public static final int PORTRAIT_COMPARISON_VS_RFID = 15;
 
+  /** Main vs other page portrait comparison */
   public static final int PORTRAIT_COMPARISON_VS_VISUAL = 16;
 
+  /** Barcode */
   public static final int BARCODE = 17;
 
+  /** Pattern (different line thickness) */
   public static final int PATTERN_DIFFERENT_LINES_THICKNESS = 18;
 
+  /** Main vs live camera portrait comparison */
   public static final int PORTRAIT_COMPARISON_VS_CAMERA = 19;
 
+  /** RFID vs live camera portrait comparison */
   public static final int PORTRAIT_COMPARISON_RFID_VS_CAMERA = 20;
 
+  /** Ghost photo */
   public static final int GHOST_PHOTO = 21;
 
+  /** Clear ghost photo */
   public static final int CLEAR_GHOST_PHOTO = 22;
 
+  /** Invisible object */
   public static final int INVISIBLE_OBJECT = 23;
 
+  /** Low contrast object */
   public static final int LOW_CONTRAST_OBJECT = 24;
 
+  /** Photo color check */
   public static final int PHOTO_COLOR = 25;
 
+  /** Photo squareness */
   public static final int PHOTO_SHAPE = 26;
 
+  /** Photo corners shape */
   public static final int PHOTO_CORNERS = 27;
 
+  /** OCR */
   public static final int OCR = 28;
 
+  /** External vs main portrait comparison */
   public static final int PORTRAIT_COMPARISON_EXT_VS_VISUAL = 29;
 
+  /** External vs RFID portrait comparison */
   public static final int PORTRAIT_COMPARISON_EXT_VS_RFID = 30;
 
+  /** External vs live camera portrait comparison */
   public static final int PORTRAIT_COMPARISON_EXT_VS_CAMERA = 31;
 
+  /** Portrait Depth */
   public static final int LIVENESS_DEPTH = 32;
 
+  /** Micro text */
   public static final int MICRO_TEXT = 33;
 
+  /** Fluorescent Object */
   public static final int FLUORESCENT_OBJECT = 34;
 
+  /** Facial landmarks check */
   public static final int LANDMARK_CHECK = 35;
 
+  /** Facial image presence */
   public static final int FACE_PRESENCE = 36;
 
+  /** Facial image absence */
   public static final int FACE_ABSENCE = 38;
 
+  /** Liveness screen capture */
   public static final int LIVENESS_SCREEN_CAPTURE = 39;
 
+  /** Liveness electronic device */
   public static final int LIVENESS_ELECTRONIC_DEVICE = 40;
 
+  /** Liveness OVI */
   public static final int LIVENESS_OVI = 41;
 
+  /** Barcode size check */
   public static final int BARCODE_SIZE_CHECK = 42;
 
+  /** LASINK */
   public static final int LASINK = 43;
 
+  /** Liveness MLI */
   public static final int LIVENESS_MLI = 44;
+
+  /** Liveness barcode background */
+  public static final int LIVENESS_BARCODE_BACKGROUND = 45;
 }

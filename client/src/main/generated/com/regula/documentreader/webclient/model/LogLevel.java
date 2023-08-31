@@ -14,13 +14,18 @@ package com.regula.documentreader.webclient.model;
 
 public class LogLevel {
 
+  /** Fatal error */
   public static final String FATAL_ERROR = "FatalError";
 
+  /** Error */
   public static final String ERROR = "Error";
 
+  /** Warning */
   public static final String WARNING = "Warning";
 
+  /** Info */
   public static final String INFO = "Info";
 
+  /** Debug */
   public static final String DEBUG = "Debug";
 }
