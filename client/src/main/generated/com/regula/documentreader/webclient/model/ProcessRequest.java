@@ -36,6 +36,16 @@ public class ProcessRequest {
   @SerializedName(SERIALIZED_NAME_LIST)
   private List<ProcessRequestImage> list = null;
 
+  public static final String SERIALIZED_NAME_LIVE_PORTRAIT = "livePortrait";
+
+  @SerializedName(SERIALIZED_NAME_LIVE_PORTRAIT)
+  private String livePortrait;
+
+  public static final String SERIALIZED_NAME_EXT_PORTRAIT = "extPortrait";
+
+  @SerializedName(SERIALIZED_NAME_EXT_PORTRAIT)
+  private String extPortrait;
+
   public static final String SERIALIZED_NAME_CONTAINER_LIST = "ContainerList";
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_LIST)
@@ -113,6 +123,44 @@ public class ProcessRequest {
 
   public void setList(List<ProcessRequestImage> list) {
     this.list = list;
+  }
+
+  public ProcessRequest withLivePortrait(String livePortrait) {
+    this.livePortrait = livePortrait;
+    return this;
+  }
+
+  /**
+   * Live portrait photo
+   *
+   * @return livePortrait
+   */
+  @javax.annotation.Nullable
+  public String getLivePortrait() {
+    return livePortrait;
+  }
+
+  public void setLivePortrait(String livePortrait) {
+    this.livePortrait = livePortrait;
+  }
+
+  public ProcessRequest withExtPortrait(String extPortrait) {
+    this.extPortrait = extPortrait;
+    return this;
+  }
+
+  /**
+   * Portrait photo from an external source
+   *
+   * @return extPortrait
+   */
+  @javax.annotation.Nullable
+  public String getExtPortrait() {
+    return extPortrait;
+  }
+
+  public void setExtPortrait(String extPortrait) {
+    this.extPortrait = extPortrait;
   }
 
   public ProcessRequest withContainerList(ContainerList containerList) {
@@ -193,6 +241,8 @@ public class ProcessRequest {
     return Objects.equals(this.tag, processRequest.tag)
         && Objects.equals(this.processParam, processRequest.processParam)
         && Objects.equals(this.list, processRequest.list)
+        && Objects.equals(this.livePortrait, processRequest.livePortrait)
+        && Objects.equals(this.extPortrait, processRequest.extPortrait)
         && Objects.equals(this.containerList, processRequest.containerList)
         && Objects.equals(this.systemInfo, processRequest.systemInfo)
         && Objects.equals(this.passBackObject, processRequest.passBackObject);
@@ -200,7 +250,15 @@ public class ProcessRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tag, processParam, list, containerList, systemInfo, passBackObject);
+    return Objects.hash(
+        tag,
+        processParam,
+        list,
+        livePortrait,
+        extPortrait,
+        containerList,
+        systemInfo,
+        passBackObject);
   }
 
   @Override
@@ -210,6 +268,8 @@ public class ProcessRequest {
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    livePortrait: ").append(toIndentedString(livePortrait)).append("\n");
+    sb.append("    extPortrait: ").append(toIndentedString(extPortrait)).append("\n");
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");

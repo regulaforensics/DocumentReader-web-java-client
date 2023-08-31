@@ -1,11 +1,9 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.google.gson.Gson;
+import com.regula.documentreader.webclient.Base64;
 import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
-import com.regula.documentreader.webclient.Base64;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +48,7 @@ public class RecognitionResponse {
   @Nullable
   public String GetLog() {
     String logBase64 = this.originalResponse.getLog();
-    if (logBase64 == null){
+    if (logBase64 == null) {
       return null;
     }
 

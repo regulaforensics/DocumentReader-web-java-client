@@ -21,6 +21,40 @@ public class Result {
    */
   public static final int DOCUMENT_IMAGE = 1;
 
+  /** Contains MRZ OCR results */
+  public static final int MRZ_TEXT = 3;
+
+  /** Contains raw information about barcodes on the input image */
+  public static final int BARCODES = 5;
+
+  /** Contains cropped graphic fields from Visual zone */
+  public static final int VISUAL_GRAPHICS = 6;
+
+  /** Contains list of document type candidates with their probabilities and descriptions */
+  public static final int DOCUMENT_TYPE_CANDIDATES = 8;
+
+  /** Contains description of determined document type, if any */
+  public static final int DOCUMENT_TYPE = 9;
+
+  /**
+   * Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone
+   * OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of
+   * the document (this is an old format, better use TEXT type)
+   */
+  public static final int LEXICAL_ANALYSIS = 15;
+
+  /** Contains Visual zone OCR results */
+  public static final int VISUAL_TEXT = 17;
+
+  /** Contains barcode parsing result with text fields */
+  public static final int BARCODE_TEXT = 18;
+
+  /** Contains barcode parsing result with graphic fields */
+  public static final int BARCODE_GRAPHICS = 19;
+
+  /** Contains result of document authenticity checks */
+  public static final int AUTHENTICITY = 20;
+
   /** Contains image quality check results */
   public static final int IMAGE_QUALITY = 30;
 
@@ -36,52 +70,27 @@ public class Result {
   /** Contains images from all document sources (mrz, rfid, visual, barcode) */
   public static final int IMAGES = 37;
 
-  /** Contains MRZ OCR results */
-  public static final int MRZ_TEXT = 3;
-
-  /** Contains Visual zone OCR results */
-  public static final int VISUAL_TEXT = 17;
-
-  /** Contains barcode parsing result with text fields */
-  public static final int BARCODE_TEXT = 18;
-
-  /** Contains RFID parsing result with text fields */
-  public static final int RFID_TEXT = 102;
-
-  /**
-   * Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone
-   * OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of
-   * the document (this is an old format, better use TEXT type)
-   */
-  public static final int LEXICAL_ANALYSIS = 15;
-
-  /** Contains cropped graphic fields from Visual zone */
-  public static final int VISUAL_GRAPHICS = 6;
-
-  /** Contains barcode parsing result with graphic fields */
-  public static final int BARCODE_GRAPHICS = 19;
-
-  /** Contains RFID parsing result with graphic fields */
-  public static final int RFID_GRAPHICS = 103;
-
-  /** Contains list of document type candidates with their probabilities and descriptions */
-  public static final int DOCUMENT_TYPE_CANDIDATES = 8;
-
-  /** Contains description of determined document type, if any */
-  public static final int DOCUMENT_TYPE = 9;
-
-  /** Contains result of document authenticity checks */
-  public static final int AUTHENTICITY = 20;
-
-  /** Contains information about document position on the input image, its center, angle, etc */
-  public static final int DOCUMENT_POSITION = 85;
-
-  /** Contains raw information about barcodes on the input image */
-  public static final int BARCODES = 5;
+  /** Contains encrypted ResultContainerList */
+  public static final int ENCRYPTED_RCL = 49;
 
   /** Contains license */
   public static final int LICENSE = 50;
 
-  /** Contains encrypted ResultContainerList */
-  public static final int ENCRYPTED_RCL = 49;
+  /** Contains information about document position on the input image, its center, angle, etc */
+  public static final int DOCUMENT_POSITION = 85;
+
+  /** Contains RFID raw data */
+  public static final int RFID_RAW_DATA = 101;
+
+  /** Contains RFID text results */
+  public static final int RFID_TEXT = 102;
+
+  /** Contains RFID graphic results */
+  public static final int RFID_GRAPHICS = 103;
+
+  /** Contains RFID binary data */
+  public static final int RFID_BINARY_DATA = 104;
+
+  /** Contains RFID original graphics data */
+  public static final int RFID_ORIGINAL_GRAPHICS = 105;
 }
