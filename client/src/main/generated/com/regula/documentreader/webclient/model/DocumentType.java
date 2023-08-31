@@ -14,459 +14,693 @@ package com.regula.documentreader.webclient.model;
 
 public class DocumentType {
 
+  /** Not defined */
   public static final int NOT_DEFINED = 0;
 
+  /** Passport */
   public static final int PASSPORT = 11;
 
+  /** Identity card */
   public static final int IDENTITY_CARD = 12;
 
+  /** Diplomatic passport */
   public static final int DIPLOMATIC_PASSPORT = 13;
 
+  /** Service passport */
   public static final int SERVICE_PASSPORT = 14;
 
+  /** Seamans identity document */
   public static final int SEAMANS_IDENTITY_DOCUMENT = 15;
 
+  /** Identity card for residence */
   public static final int IDENTITY_CARD_FOR_RESIDENCE = 16;
 
+  /** Travel document */
   public static final int TRAVEL_DOCUMENT = 17;
 
+  /** National identity card */
   public static final int NATIONAL_IDENTITY_CARD = 20;
 
+  /** Social identity card */
   public static final int SOCIAL_IDENTITY_CARD = 21;
 
+  /** Alien&#39;s identity card */
   public static final int ALIENS_IDENTITY_CARD = 22;
 
+  /** Privileged identity card */
   public static final int PRIVILEGED_IDENTITY_CARD = 23;
 
+  /** Residence permit identity card */
   public static final int RESIDENCE_PERMIT_IDENTITY_CARD = 24;
 
+  /** Origin card */
   public static final int ORIGIN_CARD = 25;
 
+  /** Emergency passport */
   public static final int EMERGENCY_PASSPORT = 26;
 
+  /** Alien&#39;s passport */
   public static final int ALIENS_PASSPORT = 27;
 
+  /** Alternative identity card */
   public static final int ALTERNATIVE_IDENTITY_CARD = 28;
 
+  /** Visa ID2 */
   public static final int VISA_ID2 = 29;
 
+  /** Visa ID3 */
   public static final int VISA_ID3 = 30;
 
+  /** Authorization card */
   public static final int AUTHORIZATION_CARD = 32;
 
+  /** Beginner permit */
   public static final int BEGINNER_PERMIT = 33;
 
+  /** Border crossing card */
   public static final int BORDER_CROSSING_CARD = 34;
 
+  /** Chauffeur license */
   public static final int CHAUFFEUR_LICENSE = 35;
 
+  /** Chauffeur license under 18 */
   public static final int CHAUFFEUR_LICENSE_UNDER_18 = 36;
 
+  /** Chauffeur license under 21 */
   public static final int CHAUFFEUR_LICENSE_UNDER_21 = 37;
 
+  /** Commercial driving license */
   public static final int COMMERCIAL_DRIVING_LICENSE = 38;
 
+  /** Commercial driving license instructional permit */
   public static final int COMMERCIAL_DRIVING_LICENSE_INSTRUCTIONAL_PERMIT = 39;
 
+  /** Commercial driving license under 18 */
   public static final int COMMERCIAL_DRIVING_LICENSE_UNDER_18 = 40;
 
+  /** Commercial driving license under 21 */
   public static final int COMMERCIAL_DRIVING_LICENSE_UNDER_21 = 41;
 
+  /** Commercial instruction permit */
   public static final int COMMERCIAL_INSTRUCTION_PERMIT = 42;
 
+  /** Commercial new permit */
   public static final int COMMERCIAL_NEW_PERMIT = 43;
 
+  /** Concealed carry license */
   public static final int CONCEALED_CARRY_LICENSE = 44;
 
+  /** Concealed firearm permit */
   public static final int CONCEALED_FIREARM_PERMIT = 45;
 
+  /** Conditional driving license */
   public static final int CONDITIONAL_DRIVING_LICENSE = 46;
 
+  /** Department of veterans affairs identity card */
   public static final int DEPARTMENT_OF_VETERANS_AFFAIRS_IDENTITY_CARD = 47;
 
+  /** Diplomatic driving license */
   public static final int DIPLOMATIC_DRIVING_LICENSE = 48;
 
+  /** Driving license */
   public static final int DRIVING_LICENSE = 49;
 
+  /** Driving license instructional permit */
   public static final int DRIVING_LICENSE_INSTRUCTIONAL_PERMIT = 50;
 
+  /** Driving license instructional permit under 18 */
   public static final int DRIVING_LICENSE_INSTRUCTIONAL_PERMIT_UNDER_18 = 51;
 
+  /** Driving license instructional permit under 21 */
   public static final int DRIVING_LICENSE_INSTRUCTIONAL_PERMIT_UNDER_21 = 52;
 
+  /** Driving license learners permit */
   public static final int DRIVING_LICENSE_LEARNERS_PERMIT = 53;
 
+  /** Driving license learners permit under 18 */
   public static final int DRIVING_LICENSE_LEARNERS_PERMIT_UNDER_18 = 54;
 
+  /** Driving license learners permit under 21 */
   public static final int DRIVING_LICENSE_LEARNERS_PERMIT_UNDER_21 = 55;
 
+  /** Driving license novice */
   public static final int DRIVING_LICENSE_NOVICE = 56;
 
+  /** Driving license novice under 18 */
   public static final int DRIVING_LICENSE_NOVICE_UNDER_18 = 57;
 
+  /** Driving license novice under 21 */
   public static final int DRIVING_LICENSE_NOVICE_UNDER_21 = 58;
 
+  /** Driving license registered offender */
   public static final int DRIVING_LICENSE_REGISTERED_OFFENDER = 59;
 
+  /** Driving license restricted under 18 */
   public static final int DRIVING_LICENSE_RESTRICTED_UNDER_18 = 60;
 
+  /** Driving license restricted under 21 */
   public static final int DRIVING_LICENSE_RESTRICTED_UNDER_21 = 61;
 
+  /** Driving license temporary visitor */
   public static final int DRIVING_LICENSE_TEMPORARY_VISITOR = 62;
 
+  /** Driving license temporary visitor under 18 */
   public static final int DRIVING_LICENSE_TEMPORARY_VISITOR_UNDER_18 = 63;
 
+  /** Driving license temporary visitor under 21 */
   public static final int DRIVING_LICENSE_TEMPORARY_VISITOR_UNDER_21 = 64;
 
+  /** Driving license under 18 */
   public static final int DRIVING_LICENSE_UNDER_18 = 65;
 
+  /** Driving license under 21 */
   public static final int DRIVING_LICENSE_UNDER_21 = 66;
 
+  /** Employment driving permit */
   public static final int EMPLOYMENT_DRIVING_PERMIT = 67;
 
+  /** Enhanced chauffeur license */
   public static final int ENHANCED_CHAUFFEUR_LICENSE = 68;
 
+  /** Enhanced chauffeur license under 18 */
   public static final int ENHANCED_CHAUFFEUR_LICENSE_UNDER_18 = 69;
 
+  /** Enhanced chauffeur license under 21 */
   public static final int ENHANCED_CHAUFFEUR_LICENSE_UNDER_21 = 70;
 
+  /** Enhanced commercial driving license */
   public static final int ENHANCED_COMMERCIAL_DRIVING_LICENSE = 71;
 
+  /** Enhanced driving license */
   public static final int ENHANCED_DRIVING_LICENSE = 72;
 
+  /** Enhanced driving license under 18 */
   public static final int ENHANCED_DRIVING_LICENSE_UNDER_18 = 73;
 
+  /** Enhanced driving license under 21 */
   public static final int ENHANCED_DRIVING_LICENSE_UNDER_21 = 74;
 
+  /** Enhanced identity card */
   public static final int ENHANCED_IDENTITY_CARD = 75;
 
+  /** Enhanced identity card under 18 */
   public static final int ENHANCED_IDENTITY_CARD_UNDER_18 = 76;
 
+  /** Enhanced identity card under 21 */
   public static final int ENHANCED_IDENTITY_CARD_UNDER_21 = 77;
 
+  /** Enhanced operators license */
   public static final int ENHANCED_OPERATORS_LICENSE = 78;
 
+  /** Firearms permit */
   public static final int FIREARMS_PERMIT = 79;
 
+  /** Full provisional license */
   public static final int FULL_PROVISIONAL_LICENSE = 80;
 
+  /** Full provisional license under 18 */
   public static final int FULL_PROVISIONAL_LICENSE_UNDER_18 = 81;
 
+  /** Full provisional license under 21 */
   public static final int FULL_PROVISIONAL_LICENSE_UNDER_21 = 82;
 
+  /** Geneva conventions identity card */
   public static final int GENEVA_CONVENTIONS_IDENTITY_CARD = 83;
 
+  /** Graduated driving license under 18 */
   public static final int GRADUATED_DRIVING_LICENSE_UNDER_18 = 84;
 
+  /** Graduated driving license under 21 */
   public static final int GRADUATED_DRIVING_LICENSE_UNDER_21 = 85;
 
+  /** Graduated instruction permit under 18 */
   public static final int GRADUATED_INSTRUCTION_PERMIT_UNDER_18 = 86;
 
+  /** Graduated instruction permit under 21 */
   public static final int GRADUATED_INSTRUCTION_PERMIT_UNDER_21 = 87;
 
+  /** Graduated license under 18 */
   public static final int GRADUATED_LICENSE_UNDER_18 = 88;
 
+  /** Graduated license under 21 */
   public static final int GRADUATED_LICENSE_UNDER_21 = 89;
 
+  /** Handgun carry permit */
   public static final int HANDGUN_CARRY_PERMIT = 90;
 
+  /** Identity and privilege card */
   public static final int IDENTITY_AND_PRIVILEGE_CARD = 91;
 
+  /** Identity card mobility impaired */
   public static final int IDENTITY_CARD_MOBILITY_IMPAIRED = 92;
 
+  /** Identity card registered offender */
   public static final int IDENTITY_CARD_REGISTERED_OFFENDER = 93;
 
+  /** Identity card temporary visitor */
   public static final int IDENTITY_CARD_TEMPORARY_VISITOR = 94;
 
+  /** Identity card temporary visitor under 18 */
   public static final int IDENTITY_CARD_TEMPORARY_VISITOR_UNDER_18 = 95;
 
+  /** Identity card temporary visitor under 21 */
   public static final int IDENTITY_CARD_TEMPORARY_VISITOR_UNDER_21 = 96;
 
+  /** Identity card under 18 */
   public static final int IDENTITY_CARD_UNDER_18 = 97;
 
+  /** Identity card under 21 */
   public static final int IDENTITY_CARD_UNDER_21 = 98;
 
+  /** Other */
   public static final int OTHER = 99;
 
+  /** Ignition interlock permit */
   public static final int IGNITION_INTERLOCK_PERMIT = 100;
 
+  /** Immigrant visa */
   public static final int IMMIGRANT_VISA = 101;
 
+  /** Instruction permit */
   public static final int INSTRUCTION_PERMIT = 102;
 
+  /** Instruction permit under 18 */
   public static final int INSTRUCTION_PERMIT_UNDER_18 = 103;
 
+  /** Instruction permit under 21 */
   public static final int INSTRUCTION_PERMIT_UNDER_21 = 104;
 
+  /** Interim driving license */
   public static final int INTERIM_DRIVING_LICENSE = 105;
 
+  /** Interim identity card */
   public static final int INTERIM_IDENTITY_CARD = 106;
 
+  /** Intermediate driving license */
   public static final int INTERMEDIATE_DRIVING_LICENSE = 107;
 
+  /** Intermediate driving license under 18 */
   public static final int INTERMEDIATE_DRIVING_LICENSE_UNDER_18 = 108;
 
+  /** Intermediate driving license under 21 */
   public static final int INTERMEDIATE_DRIVING_LICENSE_UNDER_21 = 109;
 
+  /** Junior driving license */
   public static final int JUNIOR_DRIVING_LICENSE = 110;
 
+  /** Learner instructional permit */
   public static final int LEARNER_INSTRUCTIONAL_PERMIT = 111;
 
+  /** Learner license */
   public static final int LEARNER_LICENSE = 112;
 
+  /** Learner license under 18 */
   public static final int LEARNER_LICENSE_UNDER_18 = 113;
 
+  /** Learner license under 21 */
   public static final int LEARNER_LICENSE_UNDER_21 = 114;
 
+  /** Learner permit */
   public static final int LEARNER_PERMIT = 115;
 
+  /** Learner permit under 18 */
   public static final int LEARNER_PERMIT_UNDER_18 = 116;
 
+  /** Learner permit under 21 */
   public static final int LEARNER_PERMIT_UNDER_21 = 117;
 
+  /** Limited license */
   public static final int LIMITED_LICENSE = 118;
 
+  /** Limited permit */
   public static final int LIMITED_PERMIT = 119;
 
+  /** Limited term driving license */
   public static final int LIMITED_TERM_DRIVING_LICENSE = 120;
 
+  /** Limited term identity card */
   public static final int LIMITED_TERM_IDENTITY_CARD = 121;
 
+  /** Liquor identity card */
   public static final int LIQUOR_IDENTITY_CARD = 122;
 
+  /** New permit */
   public static final int NEW_PERMIT = 123;
 
+  /** New permit under 18 */
   public static final int NEW_PERMIT_UNDER_18 = 124;
 
+  /** New permit under 21 */
   public static final int NEW_PERMIT_UNDER_21 = 125;
 
+  /** Non-US citizen driving license */
   public static final int NON_US_CITIZEN_DRIVING_LICENSE = 126;
 
+  /** Occupational driving license */
   public static final int OCCUPATIONAL_DRIVING_LICENSE = 127;
 
+  /** Oneida tribe of indians identity card */
   public static final int ONEIDA_TRIBE_OF_INDIANS_IDENTITY_CARD = 128;
 
+  /** Operator license */
   public static final int OPERATOR_LICENSE = 129;
 
+  /** Operator license under 18 */
   public static final int OPERATOR_LICENSE_UNDER_18 = 130;
 
+  /** Operator license under 21 */
   public static final int OPERATOR_LICENSE_UNDER_21 = 131;
 
+  /** Permanent driving license */
   public static final int PERMANENT_DRIVING_LICENSE = 132;
 
+  /** Permit to re-enter */
   public static final int PERMIT_TO_REENTER = 133;
 
+  /** Probationary auto license */
   public static final int PROBATIONARY_AUTO_LICENSE = 134;
 
+  /** Probationary driving license under 18 */
   public static final int PROBATIONARY_DRIVING_LICENSE_UNDER_18 = 135;
 
+  /** Probationary driving license under 21 */
   public static final int PROBATIONARY_DRIVING_LICENSE_UNDER_21 = 136;
 
+  /** Probationary vehicle sales person license */
   public static final int PROBATIONARY_VEHICLE_SALES_PERSON_LICENSE = 137;
 
+  /** Provisional driving license */
   public static final int PROVISIONAL_DRIVING_LICENSE = 138;
 
+  /** Provisional driving license under 18 */
   public static final int PROVISIONAL_DRIVING_LICENSE_UNDER_18 = 139;
 
+  /** Provisional driving license under 21 */
   public static final int PROVISIONAL_DRIVING_LICENSE_UNDER_21 = 140;
 
+  /** Provisional license */
   public static final int PROVISIONAL_LICENSE = 141;
 
+  /** Provisional license under 18 */
   public static final int PROVISIONAL_LICENSE_UNDER_18 = 142;
 
+  /** Provisional license under 21 */
   public static final int PROVISIONAL_LICENSE_UNDER_21 = 143;
 
+  /** Public passenger chauffeur license */
   public static final int PUBLIC_PASSENGER_CHAUFFEUR_LICENSE = 144;
 
+  /** Racing and gaming comission card */
   public static final int RACING_AND_GAMING_COMISSION_CARD = 145;
 
+  /** Refugee travel document */
   public static final int REFUGEE_TRAVEL_DOCUMENT = 146;
 
+  /** Renewal permit */
   public static final int RENEWAL_PERMIT = 147;
 
+  /** Restricted commercial driver license */
   public static final int RESTRICTED_COMMERCIAL_DRIVER_LICENSE = 148;
 
+  /** Restricted driver license */
   public static final int RESTRICTED_DRIVER_LICENSE = 149;
 
+  /** Restricted permit */
   public static final int RESTRICTED_PERMIT = 150;
 
+  /** Seasonal permit */
   public static final int SEASONAL_PERMIT = 151;
 
+  /** Seasonal resident identity card */
   public static final int SEASONAL_RESIDENT_IDENTITY_CARD = 152;
 
+  /** Seasonal citizen identity card */
   public static final int SEASONAL_CITIZEN_IDENTITY_CARD = 153;
 
+  /** Sex offender */
   public static final int SEX_OFFENDER = 154;
 
+  /** Social security card */
   public static final int SOCIAL_SECURITY_CARD = 155;
 
+  /** Temporary driving license */
   public static final int TEMPORARY_DRIVING_LICENSE = 156;
 
+  /** Temporary driving license under 18 */
   public static final int TEMPORARY_DRIVING_LICENSE_UNDER_18 = 157;
 
+  /** Temporary driving license under 21 */
   public static final int TEMPORARY_DRIVING_LICENSE_UNDER_21 = 158;
 
+  /** Temporary identity card */
   public static final int TEMPORARY_IDENTITY_CARD = 159;
 
+  /** Temporary instruction permit identity card */
   public static final int TEMPORARY_INSTRUCTION_PERMIT_IDENTITY_CARD = 160;
 
+  /** Temporary instruction permit identity card under 18 */
   public static final int TEMPORARY_INSTRUCTION_PERMIT_IDENTITY_CARD_UNDER_18 = 161;
 
+  /** Temporary instruction permit identity card under 21 */
   public static final int TEMPORARY_INSTRUCTION_PERMIT_IDENTITY_CARD_UNDER_21 = 162;
 
+  /** Temporary visitor driving license */
   public static final int TEMPORARY_VISITOR_DRIVING_LICENSE = 163;
 
+  /** Temporary visitor driving license under 18 */
   public static final int TEMPORARY_VISITOR_DRIVING_LICENSE_UNDER_18 = 164;
 
+  /** Temporary visitor driving license under 21 */
   public static final int TEMPORARY_VISITOR_DRIVING_LICENSE_UNDER_21 = 165;
 
+  /** Uniformed services identity card */
   public static final int UNIFORMED_SERVICES_IDENTITY_CARD = 166;
 
+  /** Vehicle sales person license */
   public static final int VEHICLE_SALES_PERSON_LICENSE = 167;
 
+  /** Worker identification credential */
   public static final int WORKER_IDENTIFICATION_CREDENTIAL = 168;
 
+  /** Commercial driving license novice */
   public static final int COMMERCIAL_DRIVING_LICENSE_NOVICE = 169;
 
+  /** Commercial driving license novice under 18 */
   public static final int COMMERCIAL_DRIVING_LICENSE_NOVICE_UNDER_18 = 170;
 
+  /** Commercial driving license novice under 21 */
   public static final int COMMERCIAL_DRIVING_LICENSE_NOVICE_UNDER_21 = 171;
 
+  /** Passport card */
   public static final int PASSPORT_CARD = 172;
 
+  /** Passport resident card */
   public static final int PASSPORT_RESIDENT_CARD = 173;
 
+  /** Personal identification verification */
   public static final int PERSONAL_IDENTIFICATION_VERIFICATION = 174;
 
+  /** Temporary operator license */
   public static final int TEMPORARY_OPERATOR_LICENSE = 175;
 
+  /** Driving license under 19 */
   public static final int DRIVING_LICENSE_UNDER_19 = 176;
 
+  /** Identity card under 19 */
   public static final int IDENTITY_CARD_UNDER_19 = 177;
 
+  /** Visa */
   public static final int VISA = 178;
 
+  /** Temporary passport */
   public static final int TEMPORARY_PASSPORT = 179;
 
+  /** Voting card */
   public static final int VOTING_CARD = 180;
 
+  /** Health card */
   public static final int HEALTH_CARD = 181;
 
+  /** Certificate of citizenship */
   public static final int CERTIFICATE_OF_CITIZENSHIP = 182;
 
+  /** Address card */
   public static final int ADDRESS_CARD = 183;
 
+  /** Airport immigration card */
   public static final int AIRPORT_IMMIGRATION_CARD = 184;
 
+  /** Alien registration card */
   public static final int ALIEN_REGISTRATION_CARD = 185;
 
+  /** APEH card */
   public static final int APEH_CARD = 186;
 
+  /** Coupon to driving license */
   public static final int COUPON_TO_DRIVING_LICENSE = 187;
 
+  /** Crew member certificate */
   public static final int CREW_MEMBER_CERTIFICATE = 188;
 
+  /** Document for return */
   public static final int DOCUMENT_FOR_RETURN = 189;
 
+  /** E-card */
   public static final int E_CARD = 190;
 
+  /** Employment card */
   public static final int EMPLOYMENT_CARD = 191;
 
+  /** HKSAR immigration form */
   public static final int HKSAR_IMMIGRATION_FORM = 192;
 
+  /** Immigrant card */
   public static final int IMMIGRANT_CARD = 193;
 
+  /** Labour card */
   public static final int LABOUR_CARD = 194;
 
+  /** Laissez passer */
   public static final int LAISSEZ_PASSER = 195;
 
+  /** Lawyer identity certificate */
   public static final int LAWYER_IDENTITY_CERTIFICATE = 196;
 
+  /** License card */
   public static final int LICENSE_CARD = 197;
 
+  /** Passport stateless */
   public static final int PASSPORT_STATELESS = 198;
 
+  /** Passport child */
   public static final int PASSPORT_CHILD = 199;
 
+  /** Passport consular */
   public static final int PASSPORT_CONSULAR = 200;
 
+  /** Passport diplomatic service */
   public static final int PASSPORT_DIPLOMATIC_SERVICE = 201;
 
+  /** Passport official */
   public static final int PASSPORT_OFFICIAL = 202;
 
+  /** Passport provisional */
   public static final int PASSPORT_PROVISIONAL = 203;
 
+  /** Passport special */
   public static final int PASSPORT_SPECIAL = 204;
 
+  /** Permission to the local border traffic */
   public static final int PERMISSION_TO_THE_LOCAL_BORDER_TRAFFIC = 205;
 
+  /** Registration certificate */
   public static final int REGISTRATION_CERTIFICATE = 206;
 
+  /** Sedesol card */
   public static final int SEDESOL_CARD = 207;
 
+  /** Social card */
   public static final int SOCIAL_CARD = 208;
 
+  /** TB card */
   public static final int TB_CARD = 209;
 
+  /** Vehicle passport */
   public static final int VEHICLE_PASSPORT = 210;
 
+  /** W document */
   public static final int W_DOCUMENT = 211;
 
+  /** Diplomatic identity card */
   public static final int DIPLOMATIC_IDENTITY_CARD = 212;
 
+  /** Consular identity card */
   public static final int CONSULAR_IDENTITY_CARD = 213;
 
+  /** Income tax card */
   public static final int INCOME_TAX_CARD = 214;
 
+  /** Residence permit */
   public static final int RESIDENCE_PERMIT = 215;
 
+  /** Document of identity */
   public static final int DOCUMENT_OF_IDENTITY = 216;
 
+  /** Border crossing permit */
   public static final int BORDER_CROSSING_PERMIT = 217;
 
+  /** Passport limited validity */
   public static final int PASSPORT_LIMITED_VALIDITY = 218;
 
+  /** Sim card */
   public static final int SIM_CARD = 219;
 
+  /** Tax card */
   public static final int TAX_CARD = 220;
 
+  /** Company card */
   public static final int COMPANY_CARD = 221;
 
+  /** Domestic passport */
   public static final int DOMESTIC_PASSPORT = 222;
 
+  /** Identity certificate */
   public static final int IDENTITY_CERTIFICATE = 223;
 
+  /** Resident id card */
   public static final int RESIDENT_ID_CARD = 224;
 
+  /** Armed forces identity card */
   public static final int ARMED_FORCES_IDENTITY_CARD = 225;
 
+  /** Professional card */
   public static final int PROFESSIONAL_CARD = 226;
 
+  /** Registration stamp */
   public static final int REGISTRATION_STAMP = 227;
 
+  /** Driver card */
   public static final int DRIVER_CARD = 228;
 
+  /** Driver training certificate */
   public static final int DRIVER_TRAINING_CERTIFICATE = 229;
 
+  /** Qualification driving license */
   public static final int QUALIFICATION_DRIVING_LICENSE = 230;
 
+  /** Membership card */
   public static final int MEMBERSHIP_CARD = 231;
 
+  /** Public vehicle driver authority card */
   public static final int PUBLIC_VEHICLE_DRIVER_AUTHORITY_CARD = 232;
 
+  /** Marine license */
   public static final int MARINE_LICENSE = 233;
 
+  /** Temporary learner license */
   public static final int TEMPORARY_LEARNER_LICENSE = 234;
 
+  /** Temporary commercial driving license */
   public static final int TEMPORARY_COMMERCIAL_DRIVING_LICENSE = 235;
 
+  /** Interim instructional permit */
   public static final int INTERIM_INSTRUCTIONAL_PERMIT = 236;
 
+  /** Certificate of competency */
   public static final int CERTIFICATE_OF_COMPETENCY = 237;
 
+  /** Certificate of proficiency */
   public static final int CERTIFICATE_OF_PROFICIENCY = 238;
 
+  /** Trade license */
   public static final int TRADE_LICENSE = 239;
 
+  /** Passport page */
   public static final int PASSPORT_PAGE = 240;
+
+  /** Invoice */
+  public static final int INVOICE = 241;
+
+  /** Passenger locator form */
+  public static final int PASSENGER_LOCATOR_FORM = 242;
 }

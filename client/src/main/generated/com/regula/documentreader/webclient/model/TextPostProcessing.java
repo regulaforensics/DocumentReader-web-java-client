@@ -14,11 +14,15 @@ package com.regula.documentreader.webclient.model;
 
 public class TextPostProcessing {
 
+  /** Do not change */
   public static final int NO_CHANGE = 0;
 
+  /** Uppercase */
   public static final int UPPERCASE = 1;
 
+  /** Lowercase */
   public static final int LOWERCASE = 2;
 
+  /** Capital */
   public static final int CAPITAL = 3;
 }

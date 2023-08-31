@@ -14,13 +14,18 @@ package com.regula.documentreader.webclient.model;
 
 public class Source {
 
+  /** Machine readable zone (MRZ) */
   public static final String MRZ = "MRZ";
 
+  /** Visual zone */
   public static final String VISUAL = "VISUAL";
 
+  /** Barcode */
   public static final String BARCODE = "BARCODE";
 
+  /** RFID */
   public static final String RFID = "RFID";
 
+  /** Magnetic */
   public static final String MAGNETIC = "MAGNETIC";
 }
