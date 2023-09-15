@@ -32,6 +32,7 @@ src/main/generated/com/regula/documentreader/webclient/model/DetailsOptical.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsRFID.java
 src/main/generated/com/regula/documentreader/webclient/model/DeviceInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfo.java
+src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfoFieldsList.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedField.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentImage.java
 src/main/generated/com/regula/documentreader/webclient/model/DocumentImageResult.java

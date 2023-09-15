@@ -13,66 +13,31 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /** Raw data from BarCodes */
 public class DocBarCodeInfo extends ResultItem {
-  public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
+  public static final String SERIALIZED_NAME_DOC_BAR_CODE_INFO = "DocBarCodeInfo";
 
-  @SerializedName(SERIALIZED_NAME_N_FIELDS)
-  private Integer nFields;
+  @SerializedName(SERIALIZED_NAME_DOC_BAR_CODE_INFO)
+  private DocBarCodeInfoFieldsList docBarCodeInfo;
 
-  public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
-
-  @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
-  private List<PArrayField> pArrayFields = null;
-
-  public DocBarCodeInfo withNFields(Integer nFields) {
-    this.nFields = nFields;
+  public DocBarCodeInfo withDocBarCodeInfo(DocBarCodeInfoFieldsList docBarCodeInfo) {
+    this.docBarCodeInfo = docBarCodeInfo;
     return this;
   }
 
   /**
-   * Count of array fields
+   * Get docBarCodeInfo
    *
-   * @return nFields
+   * @return docBarCodeInfo
    */
-  @javax.annotation.Nullable
-  public Integer getnFields() {
-    return nFields;
+  public DocBarCodeInfoFieldsList getDocBarCodeInfo() {
+    return docBarCodeInfo;
   }
 
-  public void setnFields(Integer nFields) {
-    this.nFields = nFields;
-  }
-
-  public DocBarCodeInfo withPArrayFields(List<PArrayField> pArrayFields) {
-    this.pArrayFields = pArrayFields;
-    return this;
-  }
-
-  public DocBarCodeInfo addPArrayFieldsItem(PArrayField pArrayFieldsItem) {
-    if (this.pArrayFields == null) {
-      this.pArrayFields = new ArrayList<PArrayField>();
-    }
-    this.pArrayFields.add(pArrayFieldsItem);
-    return this;
-  }
-
-  /**
-   * Data from barcode
-   *
-   * @return pArrayFields
-   */
-  @javax.annotation.Nullable
-  public List<PArrayField> getpArrayFields() {
-    return pArrayFields;
-  }
-
-  public void setpArrayFields(List<PArrayField> pArrayFields) {
-    this.pArrayFields = pArrayFields;
+  public void setDocBarCodeInfo(DocBarCodeInfoFieldsList docBarCodeInfo) {
+    this.docBarCodeInfo = docBarCodeInfo;
   }
 
   @Override
@@ -84,14 +49,12 @@ public class DocBarCodeInfo extends ResultItem {
       return false;
     }
     DocBarCodeInfo docBarCodeInfo = (DocBarCodeInfo) o;
-    return Objects.equals(this.nFields, docBarCodeInfo.nFields)
-        && Objects.equals(this.pArrayFields, docBarCodeInfo.pArrayFields)
-        && super.equals(o);
+    return Objects.equals(this.docBarCodeInfo, docBarCodeInfo.docBarCodeInfo) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nFields, pArrayFields, super.hashCode());
+    return Objects.hash(docBarCodeInfo, super.hashCode());
   }
 
   @Override
@@ -99,8 +62,7 @@ public class DocBarCodeInfo extends ResultItem {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocBarCodeInfo {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    nFields: ").append(toIndentedString(nFields)).append("\n");
-    sb.append("    pArrayFields: ").append(toIndentedString(pArrayFields)).append("\n");
+    sb.append("    docBarCodeInfo: ").append(toIndentedString(docBarCodeInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }
