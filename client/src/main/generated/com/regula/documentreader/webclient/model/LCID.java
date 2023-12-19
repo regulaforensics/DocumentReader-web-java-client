@@ -89,6 +89,9 @@ public class LCID {
   /** Bulgarian */
   public static final int BULGARIAN = 1026;
 
+  /** Burmese */
+  public static final int BURMESE = 1109;
+
   /** Catalan */
   public static final int CATALAN = 1027;
 
@@ -254,6 +257,9 @@ public class LCID {
   /** Kazakh */
   public static final int KAZAKH = 1087;
 
+  /** Khmer */
+  public static final int KHMER = 1107;
+
   /** Konkani */
   public static final int KONKANI = 1111;
 
@@ -274,6 +280,9 @@ public class LCID {
 
   /** Malay (Brunei Darussalam) */
   public static final int MALAY_BRUNEI_DARUSSALAM = 2110;
+
+  /** Maltese */
+  public static final int MALTESE = 1082;
 
   /** Marathi */
   public static final int MARATHI = 1102;
