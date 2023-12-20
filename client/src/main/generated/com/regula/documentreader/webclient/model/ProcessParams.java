@@ -21,6 +21,16 @@ import java.util.Objects;
 
 /** ProcessParams */
 public class ProcessParams {
+  public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_LIVENESS)
+  private Boolean checkLiveness = false;
+
+  public static final String SERIALIZED_NAME_LCID_IGNORE_FILTER = "lcidIgnoreFilter";
+
+  @SerializedName(SERIALIZED_NAME_LCID_IGNORE_FILTER)
+  private List<Integer> lcidIgnoreFilter = null;
+
   public static final String SERIALIZED_NAME_ONE_SHOT_IDENTIFICATION = "oneShotIdentification";
 
   @SerializedName(SERIALIZED_NAME_ONE_SHOT_IDENTIFICATION)
@@ -269,6 +279,53 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_RFID)
   private ProcessParamsRfid rfid;
+
+  public ProcessParams withCheckLiveness(Boolean checkLiveness) {
+    this.checkLiveness = checkLiveness;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable document liveness check.
+   *
+   * @return checkLiveness
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckLiveness() {
+    return checkLiveness;
+  }
+
+  public void setCheckLiveness(Boolean checkLiveness) {
+    this.checkLiveness = checkLiveness;
+  }
+
+  public ProcessParams withLcidIgnoreFilter(List<Integer> lcidIgnoreFilter) {
+    this.lcidIgnoreFilter = lcidIgnoreFilter;
+    return this;
+  }
+
+  public ProcessParams addLcidIgnoreFilterItem(Integer lcidIgnoreFilterItem) {
+    if (this.lcidIgnoreFilter == null) {
+      this.lcidIgnoreFilter = new ArrayList<Integer>();
+    }
+    this.lcidIgnoreFilter.add(lcidIgnoreFilterItem);
+    return this;
+  }
+
+  /**
+   * The list of LCID types to ignore during the recognition. If empty, values with all LCID types
+   * will be extracted. Narrowing down the list can reduce processing time. Empty by default.
+   *
+   * @return lcidIgnoreFilter
+   */
+  @javax.annotation.Nullable
+  public List<Integer> getLcidIgnoreFilter() {
+    return lcidIgnoreFilter;
+  }
+
+  public void setLcidIgnoreFilter(List<Integer> lcidIgnoreFilter) {
+    this.lcidIgnoreFilter = lcidIgnoreFilter;
+  }
 
   public ProcessParams withOneShotIdentification(Boolean oneShotIdentification) {
     this.oneShotIdentification = oneShotIdentification;
@@ -1313,7 +1370,9 @@ public class ProcessParams {
       return false;
     }
     ProcessParams processParams = (ProcessParams) o;
-    return Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
+    return Objects.equals(this.checkLiveness, processParams.checkLiveness)
+        && Objects.equals(this.lcidIgnoreFilter, processParams.lcidIgnoreFilter)
+        && Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
         && Objects.equals(this.useFaceApi, processParams.useFaceApi)
         && Objects.equals(this.faceApi, processParams.faceApi)
         && Objects.equals(this.doDetectCan, processParams.doDetectCan)
@@ -1368,6 +1427,8 @@ public class ProcessParams {
   @Override
   public int hashCode() {
     return Objects.hash(
+        checkLiveness,
+        lcidIgnoreFilter,
         oneShotIdentification,
         useFaceApi,
         faceApi,
@@ -1423,6 +1484,8 @@ public class ProcessParams {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessParams {\n");
+    sb.append("    checkLiveness: ").append(toIndentedString(checkLiveness)).append("\n");
+    sb.append("    lcidIgnoreFilter: ").append(toIndentedString(lcidIgnoreFilter)).append("\n");
     sb.append("    oneShotIdentification: ")
         .append(toIndentedString(oneShotIdentification))
         .append("\n");

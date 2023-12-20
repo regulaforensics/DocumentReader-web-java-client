@@ -37,4 +37,6 @@ public class ImageQualityCheckType {
 
   /** Signals if the portrait is present */
   public static final int Portrait = 7;
+
+  public static final int Brightness = 8;
 }

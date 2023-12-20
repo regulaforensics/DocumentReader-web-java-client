@@ -17,6 +17,11 @@ import java.util.Objects;
 
 /** ImageQA */
 public class ImageQA {
+  public static final String SERIALIZED_NAME_BRIGHTNESS_THRESHOLD = "brightnessThreshold";
+
+  @SerializedName(SERIALIZED_NAME_BRIGHTNESS_THRESHOLD)
+  private Double brightnessThreshold;
+
   public static final String SERIALIZED_NAME_DPI_THRESHOLD = "dpiThreshold";
 
   @SerializedName(SERIALIZED_NAME_DPI_THRESHOLD)
@@ -51,6 +56,25 @@ public class ImageQA {
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_POSITION_INDENT)
   private Integer documentPositionIndent;
+
+  public ImageQA withBrightnessThreshold(Double brightnessThreshold) {
+    this.brightnessThreshold = brightnessThreshold;
+    return this;
+  }
+
+  /**
+   * Set the threshold for an actual document brightness below which the check fails
+   *
+   * @return brightnessThreshold
+   */
+  @javax.annotation.Nullable
+  public Double getBrightnessThreshold() {
+    return brightnessThreshold;
+  }
+
+  public void setBrightnessThreshold(Double brightnessThreshold) {
+    this.brightnessThreshold = brightnessThreshold;
+  }
 
   public ImageQA withDpiThreshold(Integer dpiThreshold) {
     this.dpiThreshold = dpiThreshold;
@@ -197,7 +221,8 @@ public class ImageQA {
       return false;
     }
     ImageQA imageQA = (ImageQA) o;
-    return Objects.equals(this.dpiThreshold, imageQA.dpiThreshold)
+    return Objects.equals(this.brightnessThreshold, imageQA.brightnessThreshold)
+        && Objects.equals(this.dpiThreshold, imageQA.dpiThreshold)
         && Objects.equals(this.angleThreshold, imageQA.angleThreshold)
         && Objects.equals(this.focusCheck, imageQA.focusCheck)
         && Objects.equals(this.glaresCheck, imageQA.glaresCheck)
@@ -209,6 +234,7 @@ public class ImageQA {
   @Override
   public int hashCode() {
     return Objects.hash(
+        brightnessThreshold,
         dpiThreshold,
         angleThreshold,
         focusCheck,
@@ -222,6 +248,9 @@ public class ImageQA {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ImageQA {\n");
+    sb.append("    brightnessThreshold: ")
+        .append(toIndentedString(brightnessThreshold))
+        .append("\n");
     sb.append("    dpiThreshold: ").append(toIndentedString(dpiThreshold)).append("\n");
     sb.append("    angleThreshold: ").append(toIndentedString(angleThreshold)).append("\n");
     sb.append("    focusCheck: ").append(toIndentedString(focusCheck)).append("\n");
