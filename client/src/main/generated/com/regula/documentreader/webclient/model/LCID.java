@@ -445,4 +445,13 @@ public class LCID {
 
   /** CTC Traditional */
   public static final int CTC_TRADITIONAL = 50002;
+
+  /** Bengali (Bangladesh) */
+  public static final int BengaliBangladesh = 2117;
+
+  /** BengaliIndia */
+  public static final int BengaliIndia = 1093;
+
+  /** Assamese */
+  public static final int Assamese = 1101;
 }
