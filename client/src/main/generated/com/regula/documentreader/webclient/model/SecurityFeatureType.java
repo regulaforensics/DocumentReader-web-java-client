@@ -148,4 +148,22 @@ public class SecurityFeatureType {
 
   /** Liveness barcode background */
   public static final int LIVENESS_BARCODE_BACKGROUND = 45;
+
+  /** Visual zone portrait image vs. image from barcode */
+  public static final int PORTRAIT_COMPARISON_VS_BARCODE = 46;
+
+  /** Image from barcode vs. image from RFID */
+  public static final int PORTRAIT_COMPARISON_RFID_VS_BARCODE = 47;
+
+  /** Image from barcode vs. external source image */
+  public static final int PORTRAIT_COMPARISON_EXT_VS_BARCODE = 48;
+
+  /** Image from barcode vs. photo from camera */
+  public static final int PORTRAIT_COMPARISON_BARCODE_VS_CAMERA = 49;
+
+  /** Digital signature сheck */
+  public static final int CHECK_DIGITAL_SIGNATURE = 50;
+
+  /** Contact сhip check */
+  public static final int CONTACT_CHIP_CLASSIFICATION = 51;
 }

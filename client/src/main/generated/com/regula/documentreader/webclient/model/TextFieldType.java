@@ -1894,4 +1894,7 @@ public class TextFieldType {
 
   /** Building type */
   public static final int ADDRESS_BUILDING_TYPE = 680;
+
+  /** Date of Retirement */
+  public static final int DATE_OF_RETIREMENT = 681;
 }
