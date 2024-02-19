@@ -60,6 +60,8 @@ public class CheckDiagnose {
 
   public static final int TOO_MUCH_SHIFT = 28;
 
+  public static final int CONTACT_CHIP_TYPE_MISMATCH = 29;
+
   public static final int FIBERS_NOT_FOUND = 30;
 
   public static final int TOO_MANY_OBJECTS = 31;

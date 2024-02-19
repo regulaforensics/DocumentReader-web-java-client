@@ -51,6 +51,9 @@ public class GraphicFieldType {
   /** Stamp */
   public static final int STAMP = 211;
 
+  /** Contact chip */
+  public static final int CONTACT_CHIP = 213;
+
   /** Undefined image type */
   public static final int OTHER = 250;
 
