@@ -95,20 +95,8 @@ public class LCID {
   /** Catalan */
   public static final int CATALAN = 1027;
 
-  /** Chinese (HongKong S.A.R.) */
-  public static final int CHINESE_HONGKONG_SAR = 3076;
-
-  /** Chinese (Macao S.A.R.) */
-  public static final int CHINESE_MACAO_SAR = 5124;
-
   /** Chinese */
   public static final int CHINESE = 2052;
-
-  /** Chinese (Singapore) */
-  public static final int CHINESE_SINGAPORE = 4100;
-
-  /** Chinese (Taiwan) */
-  public static final int CHINESE_TAIWAN = 1028;
 
   /** Croatian */
   public static final int CROATIAN = 1050;
@@ -118,9 +106,6 @@ public class LCID {
 
   /** Danish */
   public static final int DANISH = 1030;
-
-  /** Divehi */
-  public static final int DIVEHI = 1125;
 
   /** Dutch (Belgium) */
   public static final int DUTCH_BELGIUM = 2067;
@@ -326,6 +311,9 @@ public class LCID {
   /** Serbian (Latin) */
   public static final int SERBIAN_LATIN = 2074;
 
+  /** Sinhala */
+  public static final int SINHALA = 1115;
+
   /** Slovak */
   public static final int SLOVAK = 1051;
 
@@ -401,9 +389,6 @@ public class LCID {
   /** Swedish (Finland) */
   public static final int SWEDISH_FINLAND = 2077;
 
-  /** Syriac */
-  public static final int SYRIAC = 1114;
-
   /** Tamil */
   public static final int TAMIL = 1097;
 
@@ -454,4 +439,58 @@ public class LCID {
 
   /** Assamese */
   public static final int Assamese = 1101;
+
+  /** Oriya */
+  public static final int ORIYA = 1096;
+
+  /** Malayalam */
+  public static final int MALAYALAM = 1100;
+
+  /** Lao */
+  public static final int LAO = 1108;
+
+  /** Sindhi (India) */
+  public static final int SINDHI_INDIA = 1113;
+
+  /** Amharic */
+  public static final int AMHARIC = 1118;
+
+  /** Kashmiri */
+  public static final int KASHMIRI = 1120;
+
+  /** Nepali */
+  public static final int NEPALI = 1121;
+
+  /** Pashto */
+  public static final int PASHTO = 1123;
+
+  /** Sindhi */
+  public static final int SINDHI = 2137;
+
+  /** Arabic (World) */
+  public static final int ARABIC = 4096;
+
+  /** Bank Card Number */
+  public static final int BANK_CARD_NUMBER = 10000;
+
+  /** Bank Card Expiry Date */
+  public static final int BANK_CARD_EXPIRY_DATE = 10001;
+
+  /** Bank Card Name */
+  public static final int BANK_CARD_NAME = 10002;
+
+  /** Bank Card */
+  public static final int BANK_CARD = 10003;
+
+  /** Bank Card CVV2 */
+  public static final int BANK_CARD_CVV2 = 10004;
+
+  /** Abkhazian (Cyrillic) */
+  public static final int ABKHAZIAN = 10011;
+
+  /** Karakalpak (Latin) */
+  public static final int KARAKALPAK = 10012;
+
+  /** Urdu Detection */
+  public static final int URDU_DETECTION = 10560;
 }

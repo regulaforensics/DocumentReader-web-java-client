@@ -26,11 +26,6 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_LCID_FILTER)
   private List<Integer> lcidFilter = null;
 
-  public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
-
-  @SerializedName(SERIALIZED_NAME_CHECK_LIVENESS)
-  private Boolean checkLiveness = false;
-
   public static final String SERIALIZED_NAME_LCID_IGNORE_FILTER = "lcidIgnoreFilter";
 
   @SerializedName(SERIALIZED_NAME_LCID_IGNORE_FILTER)
@@ -285,6 +280,16 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_RFID)
   private ProcessParamsRfid rfid;
 
+  public static final String SERIALIZED_NAME_CHECK_AUTH = "checkAuth";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_AUTH)
+  private Boolean checkAuth;
+
+  public static final String SERIALIZED_NAME_AUTH_PARAMS = "authParams";
+
+  @SerializedName(SERIALIZED_NAME_AUTH_PARAMS)
+  private AuthParams authParams;
+
   public ProcessParams withLcidFilter(List<Integer> lcidFilter) {
     this.lcidFilter = lcidFilter;
     return this;
@@ -311,25 +316,6 @@ public class ProcessParams {
 
   public void setLcidFilter(List<Integer> lcidFilter) {
     this.lcidFilter = lcidFilter;
-  }
-
-  public ProcessParams withCheckLiveness(Boolean checkLiveness) {
-    this.checkLiveness = checkLiveness;
-    return this;
-  }
-
-  /**
-   * This parameter is used to enable document liveness check.
-   *
-   * @return checkLiveness
-   */
-  @javax.annotation.Nullable
-  public Boolean getCheckLiveness() {
-    return checkLiveness;
-  }
-
-  public void setCheckLiveness(Boolean checkLiveness) {
-    this.checkLiveness = checkLiveness;
   }
 
   public ProcessParams withLcidIgnoreFilter(List<Integer> lcidIgnoreFilter) {
@@ -1394,6 +1380,44 @@ public class ProcessParams {
     this.rfid = rfid;
   }
 
+  public ProcessParams withCheckAuth(Boolean checkAuth) {
+    this.checkAuth = checkAuth;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable authenticity checks
+   *
+   * @return checkAuth
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckAuth() {
+    return checkAuth;
+  }
+
+  public void setCheckAuth(Boolean checkAuth) {
+    this.checkAuth = checkAuth;
+  }
+
+  public ProcessParams withAuthParams(AuthParams authParams) {
+    this.authParams = authParams;
+    return this;
+  }
+
+  /**
+   * Get authParams
+   *
+   * @return authParams
+   */
+  @javax.annotation.Nullable
+  public AuthParams getAuthParams() {
+    return authParams;
+  }
+
+  public void setAuthParams(AuthParams authParams) {
+    this.authParams = authParams;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1404,7 +1428,6 @@ public class ProcessParams {
     }
     ProcessParams processParams = (ProcessParams) o;
     return Objects.equals(this.lcidFilter, processParams.lcidFilter)
-        && Objects.equals(this.checkLiveness, processParams.checkLiveness)
         && Objects.equals(this.lcidIgnoreFilter, processParams.lcidIgnoreFilter)
         && Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
         && Objects.equals(this.useFaceApi, processParams.useFaceApi)
@@ -1455,14 +1478,15 @@ public class ProcessParams {
         && Objects.equals(this.deviceTypeHex, processParams.deviceTypeHex)
         && Objects.equals(this.ignoreDeviceIdFromImage, processParams.ignoreDeviceIdFromImage)
         && Objects.equals(this.documentIdList, processParams.documentIdList)
-        && Objects.equals(this.rfid, processParams.rfid);
+        && Objects.equals(this.rfid, processParams.rfid)
+        && Objects.equals(this.checkAuth, processParams.checkAuth)
+        && Objects.equals(this.authParams, processParams.authParams);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
         lcidFilter,
-        checkLiveness,
         lcidIgnoreFilter,
         oneShotIdentification,
         useFaceApi,
@@ -1512,7 +1536,9 @@ public class ProcessParams {
         deviceTypeHex,
         ignoreDeviceIdFromImage,
         documentIdList,
-        rfid);
+        rfid,
+        checkAuth,
+        authParams);
   }
 
   @Override
@@ -1520,7 +1546,6 @@ public class ProcessParams {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessParams {\n");
     sb.append("    lcidFilter: ").append(toIndentedString(lcidFilter)).append("\n");
-    sb.append("    checkLiveness: ").append(toIndentedString(checkLiveness)).append("\n");
     sb.append("    lcidIgnoreFilter: ").append(toIndentedString(lcidIgnoreFilter)).append("\n");
     sb.append("    oneShotIdentification: ")
         .append(toIndentedString(oneShotIdentification))
@@ -1597,6 +1622,8 @@ public class ProcessParams {
         .append("\n");
     sb.append("    documentIdList: ").append(toIndentedString(documentIdList)).append("\n");
     sb.append("    rfid: ").append(toIndentedString(rfid)).append("\n");
+    sb.append("    checkAuth: ").append(toIndentedString(checkAuth)).append("\n");
+    sb.append("    authParams: ").append(toIndentedString(authParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
