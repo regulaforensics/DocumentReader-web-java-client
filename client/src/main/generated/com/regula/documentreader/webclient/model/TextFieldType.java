@@ -1897,4 +1897,7 @@ public class TextFieldType {
 
   /** Date of Retirement */
   public static final int DATE_OF_RETIREMENT = 681;
+
+  /** Document Status */
+  public static final int DOCUMENT_STATUS = 682;
 }
