@@ -13,6 +13,8 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /** OutData */
@@ -22,13 +24,18 @@ public class OutData {
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
 
+  public static final String SERIALIZED_NAME_IMAGES = "images";
+
+  @SerializedName(SERIALIZED_NAME_IMAGES)
+  private List<TransactionImagesFieldValue> images = null;
+
   public OutData withUrl(String url) {
     this.url = url;
     return this;
   }
 
   /**
-   * Image url
+   * Response url
    *
    * @return url
    */
@@ -41,6 +48,33 @@ public class OutData {
     this.url = url;
   }
 
+  public OutData withImages(List<TransactionImagesFieldValue> images) {
+    this.images = images;
+    return this;
+  }
+
+  public OutData addImagesItem(TransactionImagesFieldValue imagesItem) {
+    if (this.images == null) {
+      this.images = new ArrayList<TransactionImagesFieldValue>();
+    }
+    this.images.add(imagesItem);
+    return this;
+  }
+
+  /**
+   * Get images
+   *
+   * @return images
+   */
+  @javax.annotation.Nullable
+  public List<TransactionImagesFieldValue> getImages() {
+    return images;
+  }
+
+  public void setImages(List<TransactionImagesFieldValue> images) {
+    this.images = images;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -50,12 +84,12 @@ public class OutData {
       return false;
     }
     OutData outData = (OutData) o;
-    return Objects.equals(this.url, outData.url);
+    return Objects.equals(this.url, outData.url) && Objects.equals(this.images, outData.images);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url);
+    return Objects.hash(url, images);
   }
 
   @Override
@@ -63,6 +97,7 @@ public class OutData {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutData {\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");
     return sb.toString();
   }
