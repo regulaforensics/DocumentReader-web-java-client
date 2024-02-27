@@ -326,7 +326,6 @@ public class TransactionApi {
    * Build call for apiV2TransactionTransactionIdProcessPost
    *
    * @param transactionId Transaction id (required)
-   * @param X_CLIENT_KEY (required)
    * @param transactionProcessRequest (required)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
@@ -341,7 +340,6 @@ public class TransactionApi {
    */
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostCall(
       Integer transactionId,
-      String X_CLIENT_KEY,
       TransactionProcessRequest transactionProcessRequest,
       final ApiCallback _callback)
       throws ApiException {
@@ -357,10 +355,6 @@ public class TransactionApi {
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    if (X_CLIENT_KEY != null) {
-      localVarHeaderParams.put("X-CLIENT-KEY", localVarApiClient.parameterToString(X_CLIENT_KEY));
-    }
-
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
     final String[] localVarAccepts = {"application/json"};
@@ -391,7 +385,6 @@ public class TransactionApi {
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
       Integer transactionId,
-      String X_CLIENT_KEY,
       TransactionProcessRequest transactionProcessRequest,
       final ApiCallback _callback)
       throws ApiException {
@@ -402,12 +395,6 @@ public class TransactionApi {
           "Missing the required parameter 'transactionId' when calling apiV2TransactionTransactionIdProcessPost(Async)");
     }
 
-    // verify the required parameter 'X_CLIENT_KEY' is set
-    if (X_CLIENT_KEY == null) {
-      throw new ApiException(
-          "Missing the required parameter 'X_CLIENT_KEY' when calling apiV2TransactionTransactionIdProcessPost(Async)");
-    }
-
     // verify the required parameter 'transactionProcessRequest' is set
     if (transactionProcessRequest == null) {
       throw new ApiException(
@@ -416,7 +403,7 @@ public class TransactionApi {
 
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostCall(
-            transactionId, X_CLIENT_KEY, transactionProcessRequest, _callback);
+            transactionId, transactionProcessRequest, _callback);
     return localVarCall;
   }
 
@@ -424,7 +411,6 @@ public class TransactionApi {
    * Preprocess
    *
    * @param transactionId Transaction id (required)
-   * @param X_CLIENT_KEY (required)
    * @param transactionProcessRequest (required)
    * @return InlineResponse200
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
@@ -438,13 +424,11 @@ public class TransactionApi {
    * </table>
    */
   public InlineResponse200 apiV2TransactionTransactionIdProcessPost(
-      Integer transactionId,
-      String X_CLIENT_KEY,
-      TransactionProcessRequest transactionProcessRequest)
+      Integer transactionId, TransactionProcessRequest transactionProcessRequest)
       throws ApiException {
     ApiResponse<InlineResponse200> localVarResp =
         apiV2TransactionTransactionIdProcessPostWithHttpInfo(
-            transactionId, X_CLIENT_KEY, transactionProcessRequest);
+            transactionId, transactionProcessRequest);
     return localVarResp.getData();
   }
 
@@ -452,7 +436,6 @@ public class TransactionApi {
    * Preprocess
    *
    * @param transactionId Transaction id (required)
-   * @param X_CLIENT_KEY (required)
    * @param transactionProcessRequest (required)
    * @return ApiResponse&lt;InlineResponse200&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
@@ -466,13 +449,11 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<InlineResponse200> apiV2TransactionTransactionIdProcessPostWithHttpInfo(
-      Integer transactionId,
-      String X_CLIENT_KEY,
-      TransactionProcessRequest transactionProcessRequest)
+      Integer transactionId, TransactionProcessRequest transactionProcessRequest)
       throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
-            transactionId, X_CLIENT_KEY, transactionProcessRequest, null);
+            transactionId, transactionProcessRequest, null);
     Type localVarReturnType = new TypeToken<InlineResponse200>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -481,7 +462,6 @@ public class TransactionApi {
    * Preprocess (asynchronously)
    *
    * @param transactionId Transaction id (required)
-   * @param X_CLIENT_KEY (required)
    * @param transactionProcessRequest (required)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
@@ -496,14 +476,13 @@ public class TransactionApi {
    */
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostAsync(
       Integer transactionId,
-      String X_CLIENT_KEY,
       TransactionProcessRequest transactionProcessRequest,
       final ApiCallback<InlineResponse200> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
-            transactionId, X_CLIENT_KEY, transactionProcessRequest, _callback);
+            transactionId, transactionProcessRequest, _callback);
     Type localVarReturnType = new TypeToken<InlineResponse200>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;

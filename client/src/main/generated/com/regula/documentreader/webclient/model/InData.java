@@ -19,11 +19,6 @@ import java.util.Objects;
 
 /** InData */
 public class InData {
-  public static final String SERIALIZED_NAME_RFID_SESSION = "rfidSession";
-
-  @SerializedName(SERIALIZED_NAME_RFID_SESSION)
-  private InDataRfidSession rfidSession;
-
   public static final String SERIALIZED_NAME_VIDEO = "video";
 
   @SerializedName(SERIALIZED_NAME_VIDEO)
@@ -32,26 +27,7 @@ public class InData {
   public static final String SERIALIZED_NAME_IMAGES = "images";
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
-  private List<ImageTransactionData> images = null;
-
-  public InData withRfidSession(InDataRfidSession rfidSession) {
-    this.rfidSession = rfidSession;
-    return this;
-  }
-
-  /**
-   * Get rfidSession
-   *
-   * @return rfidSession
-   */
-  @javax.annotation.Nullable
-  public InDataRfidSession getRfidSession() {
-    return rfidSession;
-  }
-
-  public void setRfidSession(InDataRfidSession rfidSession) {
-    this.rfidSession = rfidSession;
-  }
+  private List<TransactionImagesFieldValue> images = null;
 
   public InData withVideo(InDataVideo video) {
     this.video = video;
@@ -72,14 +48,14 @@ public class InData {
     this.video = video;
   }
 
-  public InData withImages(List<ImageTransactionData> images) {
+  public InData withImages(List<TransactionImagesFieldValue> images) {
     this.images = images;
     return this;
   }
 
-  public InData addImagesItem(ImageTransactionData imagesItem) {
+  public InData addImagesItem(TransactionImagesFieldValue imagesItem) {
     if (this.images == null) {
-      this.images = new ArrayList<ImageTransactionData>();
+      this.images = new ArrayList<TransactionImagesFieldValue>();
     }
     this.images.add(imagesItem);
     return this;
@@ -91,11 +67,11 @@ public class InData {
    * @return images
    */
   @javax.annotation.Nullable
-  public List<ImageTransactionData> getImages() {
+  public List<TransactionImagesFieldValue> getImages() {
     return images;
   }
 
-  public void setImages(List<ImageTransactionData> images) {
+  public void setImages(List<TransactionImagesFieldValue> images) {
     this.images = images;
   }
 
@@ -108,21 +84,18 @@ public class InData {
       return false;
     }
     InData inData = (InData) o;
-    return Objects.equals(this.rfidSession, inData.rfidSession)
-        && Objects.equals(this.video, inData.video)
-        && Objects.equals(this.images, inData.images);
+    return Objects.equals(this.video, inData.video) && Objects.equals(this.images, inData.images);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rfidSession, video, images);
+    return Objects.hash(video, images);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InData {\n");
-    sb.append("    rfidSession: ").append(toIndentedString(rfidSession)).append("\n");
     sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("    images: ").append(toIndentedString(images)).append("\n");
     sb.append("}");

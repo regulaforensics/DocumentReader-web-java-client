@@ -38,5 +38,6 @@ public class ImageQualityCheckType {
   /** Signals if the portrait is present */
   public static final int Portrait = 7;
 
-  public static final int Brightness = 8;
+  /** Signals if the document image is bright enough */
+  public static final int Brightness = 9;
 }
