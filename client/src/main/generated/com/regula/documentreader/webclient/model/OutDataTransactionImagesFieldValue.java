@@ -15,53 +15,53 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** Common fields for all result objects */
-public class ResultItem {
-  public static final String SERIALIZED_NAME_BUF_LENGTH = "buf_length";
+/** OutDataTransactionImagesFieldValue */
+public class OutDataTransactionImagesFieldValue {
+  public static final String SERIALIZED_NAME_FIELD_TYPE = "fieldType";
 
-  @SerializedName(SERIALIZED_NAME_BUF_LENGTH)
-  private Integer bufLength;
+  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_LIGHT = "light";
 
   @SerializedName(SERIALIZED_NAME_LIGHT)
   private Integer light;
 
-  public static final String SERIALIZED_NAME_LIST_IDX = "list_idx";
+  public static final String SERIALIZED_NAME_LIST_IDX = "listIdx";
 
   @SerializedName(SERIALIZED_NAME_LIST_IDX)
   private Integer listIdx;
 
-  public static final String SERIALIZED_NAME_PAGE_IDX = "page_idx";
+  public static final String SERIALIZED_NAME_PAGE_IDX = "pageIdx";
 
   @SerializedName(SERIALIZED_NAME_PAGE_IDX)
   private Integer pageIdx;
 
-  public static final String SERIALIZED_NAME_RESULT_TYPE = "result_type";
+  public static final String SERIALIZED_NAME_URL = "url";
 
-  @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
-  protected Integer resultType = 0;
+  @SerializedName(SERIALIZED_NAME_URL)
+  private String url;
 
-  public ResultItem withBufLength(Integer bufLength) {
-    this.bufLength = bufLength;
+  public OutDataTransactionImagesFieldValue withFieldType(Integer fieldType) {
+    this.fieldType = fieldType;
     return this;
   }
 
   /**
-   * Get bufLength
+   * Get fieldType
    *
-   * @return bufLength
+   * @return fieldType
    */
   @javax.annotation.Nullable
-  public Integer getBufLength() {
-    return bufLength;
+  public Integer getFieldType() {
+    return fieldType;
   }
 
-  public void setBufLength(Integer bufLength) {
-    this.bufLength = bufLength;
+  public void setFieldType(Integer fieldType) {
+    this.fieldType = fieldType;
   }
 
-  public ResultItem withLight(Integer light) {
+  public OutDataTransactionImagesFieldValue withLight(Integer light) {
     this.light = light;
     return this;
   }
@@ -80,7 +80,7 @@ public class ResultItem {
     this.light = light;
   }
 
-  public ResultItem withListIdx(Integer listIdx) {
+  public OutDataTransactionImagesFieldValue withListIdx(Integer listIdx) {
     this.listIdx = listIdx;
     return this;
   }
@@ -99,13 +99,13 @@ public class ResultItem {
     this.listIdx = listIdx;
   }
 
-  public ResultItem withPageIdx(Integer pageIdx) {
+  public OutDataTransactionImagesFieldValue withPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
     return this;
   }
 
   /**
-   * Get pageIdx
+   * Page index of the image from input list
    *
    * @return pageIdx
    */
@@ -118,22 +118,23 @@ public class ResultItem {
     this.pageIdx = pageIdx;
   }
 
-  public ResultItem withResultType(Integer resultType) {
-    this.resultType = resultType;
+  public OutDataTransactionImagesFieldValue withUrl(String url) {
+    this.url = url;
     return this;
   }
 
   /**
-   * Same as Result type, but used for safe parsing of not-described values. See Result type.
+   * Image url
    *
-   * @return resultType
+   * @return url
    */
-  public Integer getResultType() {
-    return resultType;
+  @javax.annotation.Nullable
+  public String getUrl() {
+    return url;
   }
 
-  public void setResultType(Integer resultType) {
-    this.resultType = resultType;
+  public void setUrl(String url) {
+    this.url = url;
   }
 
   @Override
@@ -144,28 +145,29 @@ public class ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResultItem resultItem = (ResultItem) o;
-    return Objects.equals(this.bufLength, resultItem.bufLength)
-        && Objects.equals(this.light, resultItem.light)
-        && Objects.equals(this.listIdx, resultItem.listIdx)
-        && Objects.equals(this.pageIdx, resultItem.pageIdx)
-        && Objects.equals(this.resultType, resultItem.resultType);
+    OutDataTransactionImagesFieldValue outDataTransactionImagesFieldValue =
+        (OutDataTransactionImagesFieldValue) o;
+    return Objects.equals(this.fieldType, outDataTransactionImagesFieldValue.fieldType)
+        && Objects.equals(this.light, outDataTransactionImagesFieldValue.light)
+        && Objects.equals(this.listIdx, outDataTransactionImagesFieldValue.listIdx)
+        && Objects.equals(this.pageIdx, outDataTransactionImagesFieldValue.pageIdx)
+        && Objects.equals(this.url, outDataTransactionImagesFieldValue.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bufLength, light, listIdx, pageIdx, resultType);
+    return Objects.hash(fieldType, light, listIdx, pageIdx, url);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResultItem {\n");
-    sb.append("    bufLength: ").append(toIndentedString(bufLength)).append("\n");
+    sb.append("class OutDataTransactionImagesFieldValue {\n");
+    sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
     sb.append("    light: ").append(toIndentedString(light)).append("\n");
     sb.append("    listIdx: ").append(toIndentedString(listIdx)).append("\n");
     sb.append("    pageIdx: ").append(toIndentedString(pageIdx)).append("\n");
-    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }
