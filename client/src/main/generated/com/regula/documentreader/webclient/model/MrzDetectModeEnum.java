@@ -12,20 +12,11 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Visibility {
+public class MrzDetectModeEnum {
 
-  /** Invisible */
-  public static final int INVISIBLE = 0;
+  public static final int eMDM_Default = 0;
 
-  /** Visible */
-  public static final int VISIBLE = 1;
+  public static final int eMDM_ResizeBinarizeWindow = 1;
 
-  /** Colored */
-  public static final int COLORED = 2;
-
-  /** Grayscale */
-  public static final int GRAYSCALE = 4;
-
-  /** Visible vs IR match */
-  public static final int WHITE_IR_MATCHING = 8;
+  public static final int eMDM_BlurBeforeBinarization = 2;
 }
