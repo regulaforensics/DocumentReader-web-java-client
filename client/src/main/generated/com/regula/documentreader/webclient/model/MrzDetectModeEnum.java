@@ -10,20 +10,13 @@
  * Do not edit the class manually.
  */
 
-package com.regula.documentreader.webclient.auth;
+package com.regula.documentreader.webclient.model;
 
-import com.regula.documentreader.webclient.Pair;
-import java.util.List;
-import java.util.Map;
+public class MrzDetectModeEnum {
 
-public interface Authentication {
-  /**
-   * Apply authentication settings to header and query params.
-   *
-   * @param queryParams List of query parameters
-   * @param headerParams Map of header parameters
-   * @param cookieParams Map of cookie parameters
-   */
-  void applyToParams(
-      List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams);
+  public static final int eMDM_Default = 0;
+
+  public static final int eMDM_ResizeBinarizeWindow = 1;
+
+  public static final int eMDM_BlurBeforeBinarization = 2;
 }

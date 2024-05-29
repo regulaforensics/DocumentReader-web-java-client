@@ -64,6 +64,7 @@ src/main/generated/com/regula/documentreader/webclient/model/ImagesField.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/ImagesResult.java
 src/main/generated/com/regula/documentreader/webclient/model/InData.java
+src/main/generated/com/regula/documentreader/webclient/model/InDataTransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/InDataVideo.java
 src/main/generated/com/regula/documentreader/webclient/model/InlineResponse200.java
 src/main/generated/com/regula/documentreader/webclient/model/InlineResponse2001.java
@@ -71,10 +72,12 @@ src/main/generated/com/regula/documentreader/webclient/model/LexicalAnalysisResu
 src/main/generated/com/regula/documentreader/webclient/model/LicenseResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.java
 src/main/generated/com/regula/documentreader/webclient/model/LivenessParams.java
+src/main/generated/com/regula/documentreader/webclient/model/MrzDetectModeEnum.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
 src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
 src/main/generated/com/regula/documentreader/webclient/model/OutData.java
+src/main/generated/com/regula/documentreader/webclient/model/OutDataTransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingNotificationCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/PerDocumentConfig.java
@@ -106,8 +109,8 @@ src/main/generated/com/regula/documentreader/webclient/model/TextField.java
 src/main/generated/com/regula/documentreader/webclient/model/TextFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/TextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionImage.java
-src/main/generated/com/regula/documentreader/webclient/model/TransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessGetResponse.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessRequest.java
+src/main/generated/com/regula/documentreader/webclient/model/TransactionScenarioRequest.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java
