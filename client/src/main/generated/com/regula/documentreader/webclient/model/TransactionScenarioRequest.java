@@ -15,53 +15,30 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** ImagesAvailableSource */
-public class ImagesAvailableSource {
-  public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
+/** TransactionScenarioRequest */
+public class TransactionScenarioRequest {
+  public static final String SERIALIZED_NAME_SCENARIO = "scenario";
 
-  @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
-  private Integer containerType = 0;
+  @SerializedName(SERIALIZED_NAME_SCENARIO)
+  private String scenario;
 
-  public static final String SERIALIZED_NAME_SOURCE = "source";
-
-  @SerializedName(SERIALIZED_NAME_SOURCE)
-  private String source;
-
-  public ImagesAvailableSource withContainerType(Integer containerType) {
-    this.containerType = containerType;
+  public TransactionScenarioRequest withScenario(String scenario) {
+    this.scenario = scenario;
     return this;
   }
 
   /**
-   * Same as Result type, but used for safe parsing of not-described values. See Result type.
+   * Get scenario
    *
-   * @return containerType
+   * @return scenario
    */
   @javax.annotation.Nullable
-  public Integer getContainerType() {
-    return containerType;
+  public String getScenario() {
+    return scenario;
   }
 
-  public void setContainerType(Integer containerType) {
-    this.containerType = containerType;
-  }
-
-  public ImagesAvailableSource withSource(String source) {
-    this.source = source;
-    return this;
-  }
-
-  /**
-   * Get source
-   *
-   * @return source
-   */
-  public String getSource() {
-    return source;
-  }
-
-  public void setSource(String source) {
-    this.source = source;
+  public void setScenario(String scenario) {
+    this.scenario = scenario;
   }
 
   @Override
@@ -72,22 +49,20 @@ public class ImagesAvailableSource {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ImagesAvailableSource imagesAvailableSource = (ImagesAvailableSource) o;
-    return Objects.equals(this.containerType, imagesAvailableSource.containerType)
-        && Objects.equals(this.source, imagesAvailableSource.source);
+    TransactionScenarioRequest transactionScenarioRequest = (TransactionScenarioRequest) o;
+    return Objects.equals(this.scenario, transactionScenarioRequest.scenario);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(containerType, source);
+    return Objects.hash(scenario);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ImagesAvailableSource {\n");
-    sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("class TransactionScenarioRequest {\n");
+    sb.append("    scenario: ").append(toIndentedString(scenario)).append("\n");
     sb.append("}");
     return sb.toString();
   }

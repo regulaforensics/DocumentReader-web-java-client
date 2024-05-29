@@ -15,42 +15,29 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** ProcessRequestImage */
-public class ProcessRequestImage {
-  public static final String SERIALIZED_NAME_IMAGE_DATA = "ImageData";
-
-  @SerializedName(SERIALIZED_NAME_IMAGE_DATA)
-  private ImageData imageData;
-
+/** InDataTransactionImagesFieldValue */
+public class InDataTransactionImagesFieldValue {
   public static final String SERIALIZED_NAME_LIGHT = "light";
 
   @SerializedName(SERIALIZED_NAME_LIGHT)
   private Integer light;
 
-  public static final String SERIALIZED_NAME_PAGE_IDX = "page_idx";
+  public static final String SERIALIZED_NAME_LIST_IDX = "listIdx";
+
+  @SerializedName(SERIALIZED_NAME_LIST_IDX)
+  private Integer listIdx;
+
+  public static final String SERIALIZED_NAME_PAGE_IDX = "pageIdx";
 
   @SerializedName(SERIALIZED_NAME_PAGE_IDX)
   private Integer pageIdx;
 
-  public ProcessRequestImage withImageData(ImageData imageData) {
-    this.imageData = imageData;
-    return this;
-  }
+  public static final String SERIALIZED_NAME_URL = "url";
 
-  /**
-   * Get imageData
-   *
-   * @return imageData
-   */
-  public ImageData getImageData() {
-    return imageData;
-  }
+  @SerializedName(SERIALIZED_NAME_URL)
+  private String url;
 
-  public void setImageData(ImageData imageData) {
-    this.imageData = imageData;
-  }
-
-  public ProcessRequestImage withLight(Integer light) {
+  public InDataTransactionImagesFieldValue withLight(Integer light) {
     this.light = light;
     return this;
   }
@@ -69,13 +56,32 @@ public class ProcessRequestImage {
     this.light = light;
   }
 
-  public ProcessRequestImage withPageIdx(Integer pageIdx) {
+  public InDataTransactionImagesFieldValue withListIdx(Integer listIdx) {
+    this.listIdx = listIdx;
+    return this;
+  }
+
+  /**
+   * Get listIdx
+   *
+   * @return listIdx
+   */
+  @javax.annotation.Nullable
+  public Integer getListIdx() {
+    return listIdx;
+  }
+
+  public void setListIdx(Integer listIdx) {
+    this.listIdx = listIdx;
+  }
+
+  public InDataTransactionImagesFieldValue withPageIdx(Integer pageIdx) {
     this.pageIdx = pageIdx;
     return this;
   }
 
   /**
-   * page/image number
+   * Page index of the image from input list
    *
    * @return pageIdx
    */
@@ -88,6 +94,25 @@ public class ProcessRequestImage {
     this.pageIdx = pageIdx;
   }
 
+  public InDataTransactionImagesFieldValue withUrl(String url) {
+    this.url = url;
+    return this;
+  }
+
+  /**
+   * Image url
+   *
+   * @return url
+   */
+  @javax.annotation.Nullable
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -96,24 +121,27 @@ public class ProcessRequestImage {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProcessRequestImage processRequestImage = (ProcessRequestImage) o;
-    return Objects.equals(this.imageData, processRequestImage.imageData)
-        && Objects.equals(this.light, processRequestImage.light)
-        && Objects.equals(this.pageIdx, processRequestImage.pageIdx);
+    InDataTransactionImagesFieldValue inDataTransactionImagesFieldValue =
+        (InDataTransactionImagesFieldValue) o;
+    return Objects.equals(this.light, inDataTransactionImagesFieldValue.light)
+        && Objects.equals(this.listIdx, inDataTransactionImagesFieldValue.listIdx)
+        && Objects.equals(this.pageIdx, inDataTransactionImagesFieldValue.pageIdx)
+        && Objects.equals(this.url, inDataTransactionImagesFieldValue.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(imageData, light, pageIdx);
+    return Objects.hash(light, listIdx, pageIdx, url);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProcessRequestImage {\n");
-    sb.append("    imageData: ").append(toIndentedString(imageData)).append("\n");
+    sb.append("class InDataTransactionImagesFieldValue {\n");
     sb.append("    light: ").append(toIndentedString(light)).append("\n");
+    sb.append("    listIdx: ").append(toIndentedString(listIdx)).append("\n");
     sb.append("    pageIdx: ").append(toIndentedString(pageIdx)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }
