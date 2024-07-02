@@ -29,6 +29,8 @@ if (project.hasProperty("upload")) {
     val fullVersion: String = project.property("version") as String
     val uploadArtifactsToMavenPath = project.property("uploadArtifactsToMavenPath") as String
 
+    println("applying from: " + uploadArtifactsToMavenPath)
+
     project.extra["groupId"] = "documentreader"
     project.extra["artifactId"] = "webclient"
     project.extra["fullVersion"] = fullVersion
