@@ -1,6 +1,7 @@
 plugins {
     java
     id("com.github.sherter.google-java-format") version "0.9"
+    id("maven-publish")
 }
 
 java {
@@ -24,16 +25,44 @@ dependencies {
     implementation("com.google.code.findbugs:jsr305:3.0.2")
 }
 
+tasks.withType<Jar> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 /* ----------- Publishing config ------------------- */
-if (project.hasProperty("upload")) {
-    val fullVersion: String = project.property("version") as String
-    val uploadArtifactsToMavenPath = project.property("uploadArtifactsToMavenPath") as String
+// supressed for local development
+// if you need to publish from local machine, create `gradle.properties` file in a project root and add 3 vairables:
+// - version
+// - regulaforensicsMavenUser
+// - regulaforensicsMavenPassword
+if (project.hasProperty("regulaforensicsMavenUser")) {
 
-    println("applying from: " + uploadArtifactsToMavenPath)
+    val regulaforensicsMavenPassword: String by project
+    val regulaforensicsMavenUser: String by project
 
-    project.extra["groupId"] = "documentreader"
-    project.extra["artifactId"] = "webclient"
-    project.extra["fullVersion"] = fullVersion
+    publishing {
+        publications {
+            create<MavenPublication>("client") {
+                artifactId = "webclient"
+                from(components["java"])
+            }
+        }
+        repositories {
+            maven {
 
-    apply(from = uploadArtifactsToMavenPath)
+                val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient")
+                val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient/Beta")
+                val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/RegulaDocumentReaderWebClient")
+
+                name = "regulaforensics"
+                url = if (version.toString().contains("beta")) betaRepoUrl
+                        else if(version.toString().contains("nightly")) nightlyRepoUrl
+                        else releasesRepoUrl
+                credentials {
+                    username = regulaforensicsMavenUser
+                    password = regulaforensicsMavenPassword
+                }
+            }
+        }
+    }
 }
