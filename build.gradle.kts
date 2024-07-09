@@ -8,12 +8,13 @@ allprojects {
     group = "com.regula.documentreader"
 
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
 }
 
 idea {
     project {
-        languageLevel = IdeaLanguageLevel(JavaVersion.VERSION_1_7)
+        languageLevel = IdeaLanguageLevel(JavaVersion.VERSION_11)
     }
 }
