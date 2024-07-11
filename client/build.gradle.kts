@@ -5,8 +5,8 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
     withSourcesJar()
 }
 
@@ -15,14 +15,18 @@ sourceSets.main {
 }
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:3.14.7")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:3.14.7")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("io.gsonfire:gson-fire:1.8.4")
-    implementation("org.threeten:threetenbp:1.4.3")
+    implementation("org.threeten:threetenbp:1.6.9")
     implementation("io.swagger:swagger-annotations:1.5.24")
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
+}
+
+tasks.withType<Jar> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 /* ----------- Publishing config ------------------- */
@@ -48,9 +52,12 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
 
                 val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient")
                 val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient/Beta")
+                val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/RegulaDocumentReaderWebClient")
 
                 name = "regulaforensics"
-                url = if (version.toString().contains("beta")) betaRepoUrl else releasesRepoUrl
+                url = if (version.toString().contains("beta")) betaRepoUrl
+                        else if(version.toString().contains("nightly")) nightlyRepoUrl
+                        else releasesRepoUrl
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
