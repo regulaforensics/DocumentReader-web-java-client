@@ -52,11 +52,13 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
 
                 val releasesRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient")
                 val betaRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient/Beta")
+                val rcRepoUrl = uri("sftp://maven.regulaforensics.com:22/RegulaDocumentReaderWebClient/RC")
                 val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/RegulaDocumentReaderWebClient")
 
                 name = "regulaforensics"
                 url = if (version.toString().contains("beta")) betaRepoUrl
                         else if(version.toString().contains("nightly")) nightlyRepoUrl
+                        else if(version.toString().contains("rc")) rcRepoUrl
                         else releasesRepoUrl
                 credentials {
                     username = regulaforensicsMavenUser
