@@ -19,9 +19,9 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.ApiResponse;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
-import com.regula.documentreader.webclient.model.GetTransactionsByTagResponse;
 import com.regula.documentreader.webclient.model.InlineResponse200;
 import com.regula.documentreader.webclient.model.InlineResponse2001;
+import com.regula.documentreader.webclient.model.ListTransactionsByTagResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessGetResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessRequest;
 import java.io.File;
@@ -256,7 +256,7 @@ public class TransactionApi {
    * Get transactions by tag
    *
    * @param tagId Tag id (required)
-   * @return List&lt;GetTransactionsByTagResponse&gt;
+   * @return ListTransactionsByTagResponse
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
@@ -267,9 +267,9 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public List<GetTransactionsByTagResponse> apiV2TagTagIdTransactionsGet(Integer tagId)
+  public ListTransactionsByTagResponse apiV2TagTagIdTransactionsGet(Integer tagId)
       throws ApiException {
-    ApiResponse<List<GetTransactionsByTagResponse>> localVarResp =
+    ApiResponse<ListTransactionsByTagResponse> localVarResp =
         apiV2TagTagIdTransactionsGetWithHttpInfo(tagId);
     return localVarResp.getData();
   }
@@ -278,7 +278,7 @@ public class TransactionApi {
    * Get transactions by tag
    *
    * @param tagId Tag id (required)
-   * @return ApiResponse&lt;List&lt;GetTransactionsByTagResponse&gt;&gt;
+   * @return ApiResponse&lt;ListTransactionsByTagResponse&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
@@ -289,10 +289,10 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<List<GetTransactionsByTagResponse>> apiV2TagTagIdTransactionsGetWithHttpInfo(
+  public ApiResponse<ListTransactionsByTagResponse> apiV2TagTagIdTransactionsGetWithHttpInfo(
       Integer tagId) throws ApiException {
     okhttp3.Call localVarCall = apiV2TagTagIdTransactionsGetValidateBeforeCall(tagId, null);
-    Type localVarReturnType = new TypeToken<List<GetTransactionsByTagResponse>>() {}.getType();
+    Type localVarReturnType = new TypeToken<ListTransactionsByTagResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
 
@@ -312,11 +312,11 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TagTagIdTransactionsGetAsync(
-      Integer tagId, final ApiCallback<List<GetTransactionsByTagResponse>> _callback)
+      Integer tagId, final ApiCallback<ListTransactionsByTagResponse> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = apiV2TagTagIdTransactionsGetValidateBeforeCall(tagId, _callback);
-    Type localVarReturnType = new TypeToken<List<GetTransactionsByTagResponse>>() {}.getType();
+    Type localVarReturnType = new TypeToken<ListTransactionsByTagResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
   }
