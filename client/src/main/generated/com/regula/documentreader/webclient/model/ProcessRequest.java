@@ -34,7 +34,7 @@ public class ProcessRequest {
   public static final String SERIALIZED_NAME_TAG = "tag";
 
   @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
+  private Integer tag;
 
   public static final String SERIALIZED_NAME_TENANT = "tenant";
 
@@ -116,7 +116,7 @@ public class ProcessRequest {
     this.list = list;
   }
 
-  public ProcessRequest withTag(String tag) {
+  public ProcessRequest withTag(Integer tag) {
     this.tag = tag;
     return this;
   }
@@ -127,11 +127,11 @@ public class ProcessRequest {
    * @return tag
    */
   @javax.annotation.Nullable
-  public String getTag() {
+  public Integer getTag() {
     return tag;
   }
 
-  public void setTag(String tag) {
+  public void setTag(Integer tag) {
     this.tag = tag;
   }
 

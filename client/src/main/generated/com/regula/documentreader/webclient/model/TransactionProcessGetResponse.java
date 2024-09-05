@@ -25,7 +25,7 @@ public class TransactionProcessGetResponse {
   public static final String SERIALIZED_NAME_TAG = "tag";
 
   @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
+  private Integer tag;
 
   public static final String SERIALIZED_NAME_OUT_DATA = "outData";
 
@@ -56,7 +56,7 @@ public class TransactionProcessGetResponse {
     this.transactionId = transactionId;
   }
 
-  public TransactionProcessGetResponse withTag(String tag) {
+  public TransactionProcessGetResponse withTag(Integer tag) {
     this.tag = tag;
     return this;
   }
@@ -67,11 +67,11 @@ public class TransactionProcessGetResponse {
    * @return tag
    */
   @javax.annotation.Nullable
-  public String getTag() {
+  public Integer getTag() {
     return tag;
   }
 
-  public void setTag(String tag) {
+  public void setTag(Integer tag) {
     this.tag = tag;
   }
 

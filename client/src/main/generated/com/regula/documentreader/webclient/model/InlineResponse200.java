@@ -31,7 +31,7 @@ public class InlineResponse200 {
   public static final String SERIALIZED_NAME_TAG = "tag";
 
   @SerializedName(SERIALIZED_NAME_TAG)
-  private String tag;
+  private Integer tag;
 
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
 
@@ -76,7 +76,7 @@ public class InlineResponse200 {
     this.inData = inData;
   }
 
-  public InlineResponse200 withTag(String tag) {
+  public InlineResponse200 withTag(Integer tag) {
     this.tag = tag;
     return this;
   }
@@ -87,11 +87,11 @@ public class InlineResponse200 {
    * @return tag
    */
   @javax.annotation.Nullable
-  public String getTag() {
+  public Integer getTag() {
     return tag;
   }
 
-  public void setTag(String tag) {
+  public void setTag(Integer tag) {
     this.tag = tag;
   }
 
