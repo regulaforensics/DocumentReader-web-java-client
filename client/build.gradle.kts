@@ -60,7 +60,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
                         else if(version.toString().contains("nightly")) nightlyRepoUrl
                         else if(version.toString().contains("rc")) rcRepoUrl
                         else releasesRepoUrl
-                version = version.toString().trim('-')[0]
+                version = version.toString().split('-')[0]
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
