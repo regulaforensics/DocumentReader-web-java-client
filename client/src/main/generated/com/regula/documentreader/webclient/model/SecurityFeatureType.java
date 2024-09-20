@@ -161,9 +161,9 @@ public class SecurityFeatureType {
   /** Image from barcode vs. photo from camera */
   public static final int PORTRAIT_COMPARISON_BARCODE_VS_CAMERA = 49;
 
-  /** Digital signature сheck */
+  /** Digital signature check */
   public static final int CHECK_DIGITAL_SIGNATURE = 50;
 
-  /** Contact сhip check */
+  /** Contact chip check */
   public static final int CONTACT_CHIP_CLASSIFICATION = 51;
 }
