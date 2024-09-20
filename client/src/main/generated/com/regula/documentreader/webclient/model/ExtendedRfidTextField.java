@@ -121,7 +121,7 @@ public class ExtendedRfidTextField {
 
   /**
    * Text field data in UTF8 format. Results of reading different lines of a multiline field are
-   * separated by “^”
+   * separated by \"&#94;\"
    *
    * @return bufText
    */
