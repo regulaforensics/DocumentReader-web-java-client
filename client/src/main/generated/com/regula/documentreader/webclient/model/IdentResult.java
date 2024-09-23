@@ -42,11 +42,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_ETALON_IMAGE)
   private ImageData etalonImage;
 
-  public static final String SERIALIZED_NAME_PERCENT_VALUE = "PercentValue";
-
-  @SerializedName(SERIALIZED_NAME_PERCENT_VALUE)
-  private Integer percentValue;
-
   public static final String SERIALIZED_NAME_AREA_LIST = "AreaList";
 
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
@@ -147,25 +142,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
     this.etalonImage = etalonImage;
   }
 
-  public IdentResult withPercentValue(Integer percentValue) {
-    this.percentValue = percentValue;
-    return this;
-  }
-
-  /**
-   * Probability percent for IMAGE_PATTERN check or element&#39;s visibility for IR_VISIBILITY
-   *
-   * @return percentValue
-   */
-  @javax.annotation.Nullable
-  public Integer getPercentValue() {
-    return percentValue;
-  }
-
-  public void setPercentValue(Integer percentValue) {
-    this.percentValue = percentValue;
-  }
-
   public IdentResult withAreaList(AreaContainer areaList) {
     this.areaList = areaList;
     return this;
@@ -199,7 +175,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.area, identResult.area)
         && Objects.equals(this.image, identResult.image)
         && Objects.equals(this.etalonImage, identResult.etalonImage)
-        && Objects.equals(this.percentValue, identResult.percentValue)
         && Objects.equals(this.areaList, identResult.areaList)
         && super.equals(o);
   }
@@ -207,14 +182,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   @Override
   public int hashCode() {
     return Objects.hash(
-        elementType,
-        lightIndex,
-        area,
-        image,
-        etalonImage,
-        percentValue,
-        areaList,
-        super.hashCode());
+        elementType, lightIndex, area, image, etalonImage, areaList, super.hashCode());
   }
 
   @Override
@@ -227,7 +195,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
     sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    etalonImage: ").append(toIndentedString(etalonImage)).append("\n");
-    sb.append("    percentValue: ").append(toIndentedString(percentValue)).append("\n");
     sb.append("    areaList: ").append(toIndentedString(areaList)).append("\n");
     sb.append("}");
     return sb.toString();
