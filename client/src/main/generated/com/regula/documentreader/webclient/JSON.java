@@ -91,8 +91,11 @@ public class JSON {
 
   static {
     childOfAuthenticityResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfAuthenticityResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfAuthenticityResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfAuthenticityResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfAuthenticityResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfAuthenticityResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfAuthenticityResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfAuthenticityResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfAuthenticityResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -121,8 +124,11 @@ public class JSON {
 
   static {
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfChosenDocumentTypeResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfChosenDocumentTypeResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -152,8 +158,11 @@ public class JSON {
 
   static {
     childOfDocBarCodeInfoByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfDocBarCodeInfoByDiscriminatorValue.put("101", RawDataResult.class);
     childOfDocBarCodeInfoByDiscriminatorValue.put("102", TextDataResult.class);
     childOfDocBarCodeInfoByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfDocBarCodeInfoByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfDocBarCodeInfoByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfDocBarCodeInfoByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfDocBarCodeInfoByDiscriminatorValue.put("17", TextDataResult.class);
     childOfDocBarCodeInfoByDiscriminatorValue.put("18", TextDataResult.class);
@@ -181,8 +190,11 @@ public class JSON {
 
   static {
     childOfDocumentImageResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfDocumentImageResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfDocumentImageResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfDocumentImageResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfDocumentImageResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfDocumentImageResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfDocumentImageResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfDocumentImageResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfDocumentImageResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -211,8 +223,11 @@ public class JSON {
 
   static {
     childOfDocumentPositionResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfDocumentPositionResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfDocumentPositionResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfDocumentPositionResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfDocumentPositionResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfDocumentPositionResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfDocumentPositionResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfDocumentPositionResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfDocumentPositionResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -241,8 +256,12 @@ public class JSON {
 
   static {
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfDocumentTypesCandidatesResultByDiscriminatorValue.put(
+        "105", OriginalGraphicsResult.class);
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfDocumentTypesCandidatesResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -274,8 +293,11 @@ public class JSON {
 
   static {
     childOfEncryptedRCLResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfEncryptedRCLResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfEncryptedRCLResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfEncryptedRCLResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfEncryptedRCLResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfEncryptedRCLResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfEncryptedRCLResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfEncryptedRCLResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfEncryptedRCLResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -333,8 +355,11 @@ public class JSON {
 
   static {
     childOfGraphicsResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfGraphicsResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfGraphicsResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfGraphicsResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfGraphicsResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfGraphicsResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfGraphicsResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -391,8 +416,11 @@ public class JSON {
 
   static {
     childOfImageQualityResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfImageQualityResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfImageQualityResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfImageQualityResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfImageQualityResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfImageQualityResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfImageQualityResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfImageQualityResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfImageQualityResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -421,8 +449,11 @@ public class JSON {
 
   static {
     childOfImagesResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfImagesResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfImagesResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfImagesResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfImagesResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfImagesResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfImagesResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfImagesResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfImagesResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -450,8 +481,11 @@ public class JSON {
 
   static {
     childOfLexicalAnalysisResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfLexicalAnalysisResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfLexicalAnalysisResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfLexicalAnalysisResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfLexicalAnalysisResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfLexicalAnalysisResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfLexicalAnalysisResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -480,8 +514,11 @@ public class JSON {
 
   static {
     childOfLicenseResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfLicenseResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfLicenseResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfLicenseResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfLicenseResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfLicenseResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfLicenseResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfLicenseResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfLicenseResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -568,8 +605,11 @@ public class JSON {
 
   static {
     childOfResultItemByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfResultItemByDiscriminatorValue.put("101", RawDataResult.class);
     childOfResultItemByDiscriminatorValue.put("102", TextDataResult.class);
     childOfResultItemByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfResultItemByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfResultItemByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfResultItemByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfResultItemByDiscriminatorValue.put("17", TextDataResult.class);
     childOfResultItemByDiscriminatorValue.put("18", TextDataResult.class);
@@ -645,8 +685,11 @@ public class JSON {
 
   static {
     childOfStatusResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfStatusResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfStatusResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfStatusResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfStatusResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfStatusResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfStatusResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfStatusResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfStatusResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -674,8 +717,11 @@ public class JSON {
 
   static {
     childOfTextDataResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfTextDataResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfTextDataResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfTextDataResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfTextDataResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfTextDataResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfTextDataResultByDiscriminatorValue.put("18", TextDataResult.class);
@@ -703,8 +749,11 @@ public class JSON {
 
   static {
     childOfTextResultByDiscriminatorValue.put("1", DocumentImageResult.class);
+    childOfTextResultByDiscriminatorValue.put("101", RawDataResult.class);
     childOfTextResultByDiscriminatorValue.put("102", TextDataResult.class);
     childOfTextResultByDiscriminatorValue.put("103", GraphicsResult.class);
+    childOfTextResultByDiscriminatorValue.put("104", BinaryDataResult.class);
+    childOfTextResultByDiscriminatorValue.put("105", OriginalGraphicsResult.class);
     childOfTextResultByDiscriminatorValue.put("15", LexicalAnalysisResult.class);
     childOfTextResultByDiscriminatorValue.put("17", TextDataResult.class);
     childOfTextResultByDiscriminatorValue.put("18", TextDataResult.class);

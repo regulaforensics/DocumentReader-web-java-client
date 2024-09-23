@@ -26,6 +26,7 @@ src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckRe
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResult.java
 src/main/generated/com/regula/documentreader/webclient/model/BcPDF417INFO.java
 src/main/generated/com/regula/documentreader/webclient/model/BcROIDETECT.java
+src/main/generated/com/regula/documentreader/webclient/model/BinaryDataResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentType.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentTypeResult.java
 src/main/generated/com/regula/documentreader/webclient/model/CrossSourceValueComparison.java
@@ -71,11 +72,13 @@ src/main/generated/com/regula/documentreader/webclient/model/InlineResponse200.j
 src/main/generated/com/regula/documentreader/webclient/model/InlineResponse2001.java
 src/main/generated/com/regula/documentreader/webclient/model/LexicalAnalysisResult.java
 src/main/generated/com/regula/documentreader/webclient/model/LicenseResult.java
+src/main/generated/com/regula/documentreader/webclient/model/ListTransactionsByTagResponse.java
 src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.java
 src/main/generated/com/regula/documentreader/webclient/model/LivenessParams.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzDetectModeEnum.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
+src/main/generated/com/regula/documentreader/webclient/model/OriginalGraphicsResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
 src/main/generated/com/regula/documentreader/webclient/model/OutData.java
 src/main/generated/com/regula/documentreader/webclient/model/OutDataTransactionImagesFieldValue.java
@@ -92,6 +95,7 @@ src/main/generated/com/regula/documentreader/webclient/model/ProcessRequest.java
 src/main/generated/com/regula/documentreader/webclient/model/ProcessRequestImage.java
 src/main/generated/com/regula/documentreader/webclient/model/ProcessResponse.java
 src/main/generated/com/regula/documentreader/webclient/model/ProcessSystemInfo.java
+src/main/generated/com/regula/documentreader/webclient/model/RawDataResult.java
 src/main/generated/com/regula/documentreader/webclient/model/RawImageContainerList.java
 src/main/generated/com/regula/documentreader/webclient/model/RectangleCoordinates.java
 src/main/generated/com/regula/documentreader/webclient/model/ResultItem.java
@@ -103,6 +107,8 @@ src/main/generated/com/regula/documentreader/webclient/model/StatusResult.java
 src/main/generated/com/regula/documentreader/webclient/model/StringRecognitionResult.java
 src/main/generated/com/regula/documentreader/webclient/model/SymbolCandidate.java
 src/main/generated/com/regula/documentreader/webclient/model/SymbolRecognitionResult.java
+src/main/generated/com/regula/documentreader/webclient/model/TBinaryData.java
+src/main/generated/com/regula/documentreader/webclient/model/TOriginalRFIDGraphics.java
 src/main/generated/com/regula/documentreader/webclient/model/Text.java
 src/main/generated/com/regula/documentreader/webclient/model/TextAvailableSource.java
 src/main/generated/com/regula/documentreader/webclient/model/TextDataResult.java
