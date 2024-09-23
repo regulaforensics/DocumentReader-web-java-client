@@ -13,28 +13,57 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/** Video */
-public class InDataVideo {
+/** ListTransactionsByTagResponse */
+public class ListTransactionsByTagResponse {
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+
+  @SerializedName(SERIALIZED_NAME_ITEMS)
+  private List<GetTransactionsByTagResponse> items = null;
+
   public static final String SERIALIZED_NAME_METADATA = "metadata";
 
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, Object> metadata = null;
 
-  public static final String SERIALIZED_NAME_URL = "url";
+  public ListTransactionsByTagResponse withItems(List<GetTransactionsByTagResponse> items) {
+    this.items = items;
+    return this;
+  }
 
-  @SerializedName(SERIALIZED_NAME_URL)
-  private String url;
+  public ListTransactionsByTagResponse addItemsItem(GetTransactionsByTagResponse itemsItem) {
+    if (this.items == null) {
+      this.items = new ArrayList<GetTransactionsByTagResponse>();
+    }
+    this.items.add(itemsItem);
+    return this;
+  }
 
-  public InDataVideo withMetadata(Map<String, Object> metadata) {
+  /**
+   * Get items
+   *
+   * @return items
+   */
+  @javax.annotation.Nullable
+  public List<GetTransactionsByTagResponse> getItems() {
+    return items;
+  }
+
+  public void setItems(List<GetTransactionsByTagResponse> items) {
+    this.items = items;
+  }
+
+  public ListTransactionsByTagResponse withMetadata(Map<String, Object> metadata) {
     this.metadata = metadata;
     return this;
   }
 
-  public InDataVideo putMetadataItem(String key, Object metadataItem) {
+  public ListTransactionsByTagResponse putMetadataItem(String key, Object metadataItem) {
     if (this.metadata == null) {
       this.metadata = new HashMap<String, Object>();
     }
@@ -43,7 +72,7 @@ public class InDataVideo {
   }
 
   /**
-   * A free-form object containing video&#39;s extended attributes.
+   * Get metadata
    *
    * @return metadata
    */
@@ -56,25 +85,6 @@ public class InDataVideo {
     this.metadata = metadata;
   }
 
-  public InDataVideo withUrl(String url) {
-    this.url = url;
-    return this;
-  }
-
-  /**
-   * Video url
-   *
-   * @return url
-   */
-  @javax.annotation.Nullable
-  public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,22 +93,22 @@ public class InDataVideo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InDataVideo inDataVideo = (InDataVideo) o;
-    return Objects.equals(this.metadata, inDataVideo.metadata)
-        && Objects.equals(this.url, inDataVideo.url);
+    ListTransactionsByTagResponse listTransactionsByTagResponse = (ListTransactionsByTagResponse) o;
+    return Objects.equals(this.items, listTransactionsByTagResponse.items)
+        && Objects.equals(this.metadata, listTransactionsByTagResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metadata, url);
+    return Objects.hash(items, metadata);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InDataVideo {\n");
+    sb.append("class ListTransactionsByTagResponse {\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }

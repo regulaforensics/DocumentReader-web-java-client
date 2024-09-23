@@ -5,8 +5,8 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
     withSourcesJar()
 }
 
@@ -60,6 +60,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
                         else if(version.toString().contains("nightly")) nightlyRepoUrl
                         else if(version.toString().contains("rc")) rcRepoUrl
                         else releasesRepoUrl
+                version = version.toString().split('-')[0]
                 credentials {
                     username = regulaforensicsMavenUser
                     password = regulaforensicsMavenPassword
