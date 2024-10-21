@@ -214,6 +214,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE)
   private Boolean forceReadMrzBeforeLocate;
 
+  public static final String SERIALIZED_NAME_FORCE_BARCODE_CHECKS = "forceBarcodeChecks";
+
+  @SerializedName(SERIALIZED_NAME_FORCE_BARCODE_CHECKS)
+  private Boolean forceBarcodeChecks;
+
   public static final String SERIALIZED_NAME_PARSE_BARCODES = "parseBarcodes";
 
   @SerializedName(SERIALIZED_NAME_PARSE_BARCODES)
@@ -1111,6 +1116,26 @@ public class ProcessParams {
     this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
   }
 
+  public ProcessParams withForceBarcodeChecks(Boolean forceBarcodeChecks) {
+    this.forceBarcodeChecks = forceBarcodeChecks;
+    return this;
+  }
+
+  /**
+   * Allows you to bypass the minimum conditions that should be met to perform the barcode format
+   * check
+   *
+   * @return forceBarcodeChecks
+   */
+  @javax.annotation.Nullable
+  public Boolean getForceBarcodeChecks() {
+    return forceBarcodeChecks;
+  }
+
+  public void setForceBarcodeChecks(Boolean forceBarcodeChecks) {
+    this.forceBarcodeChecks = forceBarcodeChecks;
+  }
+
   public ProcessParams withParseBarcodes(Boolean parseBarcodes) {
     this.parseBarcodes = parseBarcodes;
     return this;
@@ -1489,6 +1514,7 @@ public class ProcessParams {
         && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
         && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter)
         && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate)
+        && Objects.equals(this.forceBarcodeChecks, processParams.forceBarcodeChecks)
         && Objects.equals(this.parseBarcodes, processParams.parseBarcodes)
         && Objects.equals(this.convertCase, processParams.convertCase)
         && Objects.equals(this.splitNames, processParams.splitNames)
@@ -1548,6 +1574,7 @@ public class ProcessParams {
         returnUncroppedImage,
         mrzFormatsFilter,
         forceReadMrzBeforeLocate,
+        forceBarcodeChecks,
         parseBarcodes,
         convertCase,
         splitNames,
@@ -1628,6 +1655,7 @@ public class ProcessParams {
     sb.append("    forceReadMrzBeforeLocate: ")
         .append(toIndentedString(forceReadMrzBeforeLocate))
         .append("\n");
+    sb.append("    forceBarcodeChecks: ").append(toIndentedString(forceBarcodeChecks)).append("\n");
     sb.append("    parseBarcodes: ").append(toIndentedString(parseBarcodes)).append("\n");
     sb.append("    convertCase: ").append(toIndentedString(convertCase)).append("\n");
     sb.append("    splitNames: ").append(toIndentedString(splitNames)).append("\n");
