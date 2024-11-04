@@ -41,10 +41,10 @@ public class AuthenticityResultType {
   /** Owner&#39;s photo embedding check (is photo printed or sticked) */
   public static final int PHOTO_EMBED_TYPE = 512;
 
-  /** OVI check */
+  /** OVI check. Deprecated, use Document liveness check instead */
   public static final int OVI = 1024;
 
-  /** Hologram presence check */
+  /** Hologram presence check. Deprecated */
   public static final int HOLOGRAMS = 4096;
 
   /** Owner&#39;s photo area advanced check (photo shape, size, position, etc.) */
