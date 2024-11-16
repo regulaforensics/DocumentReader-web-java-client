@@ -15,7 +15,7 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** DocumentImageResult */
+/** Contains document image. */
 public class DocumentImageResult extends ResultItem {
   public static final String SERIALIZED_NAME_RAW_IMAGE_CONTAINER = "RawImageContainer";
 

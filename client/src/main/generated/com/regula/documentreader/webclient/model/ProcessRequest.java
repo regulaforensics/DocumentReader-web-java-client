@@ -71,6 +71,11 @@ public class ProcessRequest {
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   private Map<String, Object> passBackObject = null;
 
+  public static final String SERIALIZED_NAME_IMAGE_URLS = "ImageUrls";
+
+  @SerializedName(SERIALIZED_NAME_IMAGE_URLS)
+  private List<String> imageUrls = null;
+
   public ProcessRequest withProcessParam(ProcessParams processParam) {
     this.processParam = processParam;
     return this;
@@ -277,6 +282,33 @@ public class ProcessRequest {
     this.passBackObject = passBackObject;
   }
 
+  public ProcessRequest withImageUrls(List<String> imageUrls) {
+    this.imageUrls = imageUrls;
+    return this;
+  }
+
+  public ProcessRequest addImageUrlsItem(String imageUrlsItem) {
+    if (this.imageUrls == null) {
+      this.imageUrls = new ArrayList<String>();
+    }
+    this.imageUrls.add(imageUrlsItem);
+    return this;
+  }
+
+  /**
+   * URLs to the document images for processing.
+   *
+   * @return imageUrls
+   */
+  @javax.annotation.Nullable
+  public List<String> getImageUrls() {
+    return imageUrls;
+  }
+
+  public void setImageUrls(List<String> imageUrls) {
+    this.imageUrls = imageUrls;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -295,7 +327,8 @@ public class ProcessRequest {
         && Objects.equals(this.extPortrait, processRequest.extPortrait)
         && Objects.equals(this.containerList, processRequest.containerList)
         && Objects.equals(this.systemInfo, processRequest.systemInfo)
-        && Objects.equals(this.passBackObject, processRequest.passBackObject);
+        && Objects.equals(this.passBackObject, processRequest.passBackObject)
+        && Objects.equals(this.imageUrls, processRequest.imageUrls);
   }
 
   @Override
@@ -310,7 +343,8 @@ public class ProcessRequest {
         extPortrait,
         containerList,
         systemInfo,
-        passBackObject);
+        passBackObject,
+        imageUrls);
   }
 
   @Override
@@ -327,6 +361,7 @@ public class ProcessRequest {
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
+    sb.append("    imageUrls: ").append(toIndentedString(imageUrls)).append("\n");
     sb.append("}");
     return sb.toString();
   }

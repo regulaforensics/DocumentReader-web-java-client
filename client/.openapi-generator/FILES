@@ -11,7 +11,7 @@ src/main/generated/com/regula/documentreader/webclient/ProgressResponseBody.java
 src/main/generated/com/regula/documentreader/webclient/ServerConfiguration.java
 src/main/generated/com/regula/documentreader/webclient/ServerVariable.java
 src/main/generated/com/regula/documentreader/webclient/StringUtil.java
-src/main/generated/com/regula/documentreader/webclient/api/DefaultApi.java
+src/main/generated/com/regula/documentreader/webclient/api/HealthcheckApi.java
 src/main/generated/com/regula/documentreader/webclient/api/ProcessApi.java
 src/main/generated/com/regula/documentreader/webclient/api/TransactionApi.java
 src/main/generated/com/regula/documentreader/webclient/auth/ApiKeyAuth.java
@@ -52,6 +52,8 @@ src/main/generated/com/regula/documentreader/webclient/model/GetTransactionsByTa
 src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldsList.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicsResult.java
+src/main/generated/com/regula/documentreader/webclient/model/Healthcheck.java
+src/main/generated/com/regula/documentreader/webclient/model/HealthcheckDocumentsDatabase.java
 src/main/generated/com/regula/documentreader/webclient/model/IdentResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ImageData.java
 src/main/generated/com/regula/documentreader/webclient/model/ImageQA.java

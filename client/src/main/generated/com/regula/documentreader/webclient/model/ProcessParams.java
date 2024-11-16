@@ -163,6 +163,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_IMAGE_QA)
   private ImageQA imageQa;
 
+  public static final String SERIALIZED_NAME_STRICT_IMAGE_QUALITY = "strictImageQuality";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_IMAGE_QUALITY)
+  private Boolean strictImageQuality;
+
   public static final String SERIALIZED_NAME_RESPECT_IMAGE_QUALITY = "respectImageQuality";
 
   @SerializedName(SERIALIZED_NAME_RESPECT_IMAGE_QUALITY)
@@ -294,6 +299,12 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_GENERATE_NUMERIC_CODES)
   private Boolean generateNumericCodes;
+
+  public static final String SERIALIZED_NAME_STRICT_BARCODE_DIGITAL_SIGNATURE_CHECK =
+      "strictBarcodeDigitalSignatureCheck";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_BARCODE_DIGITAL_SIGNATURE_CHECK)
+  private Boolean strictBarcodeDigitalSignatureCheck;
 
   public ProcessParams withLcidFilter(List<Integer> lcidFilter) {
     this.lcidFilter = lcidFilter;
@@ -903,14 +914,34 @@ public class ProcessParams {
     this.imageQa = imageQa;
   }
 
+  public ProcessParams withStrictImageQuality(Boolean strictImageQuality) {
+    this.strictImageQuality = strictImageQuality;
+    return this;
+  }
+
+  /**
+   * When enabled, the image quality check status affects the document optical and overall status.
+   * Disabled by default.
+   *
+   * @return strictImageQuality
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictImageQuality() {
+    return strictImageQuality;
+  }
+
+  public void setStrictImageQuality(Boolean strictImageQuality) {
+    this.strictImageQuality = strictImageQuality;
+  }
+
   public ProcessParams withRespectImageQuality(Boolean respectImageQuality) {
     this.respectImageQuality = respectImageQuality;
     return this;
   }
 
   /**
-   * When enabled, image quality checks status affects document optical and overall status. Disabled
-   * by default.
+   * Deprecated. Please use strictImageQuality instead. When enabled, image quality checks status
+   * affects document optical and overall status. Disabled by default.
    *
    * @return respectImageQuality
    */
@@ -1441,6 +1472,27 @@ public class ProcessParams {
     this.generateNumericCodes = generateNumericCodes;
   }
 
+  public ProcessParams withStrictBarcodeDigitalSignatureCheck(
+      Boolean strictBarcodeDigitalSignatureCheck) {
+    this.strictBarcodeDigitalSignatureCheck = strictBarcodeDigitalSignatureCheck;
+    return this;
+  }
+
+  /**
+   * This parameter if enabled will require all necessary certificates to verify digital signature
+   * in barcode data to be present in order for the Barcode format check to succeed.
+   *
+   * @return strictBarcodeDigitalSignatureCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictBarcodeDigitalSignatureCheck() {
+    return strictBarcodeDigitalSignatureCheck;
+  }
+
+  public void setStrictBarcodeDigitalSignatureCheck(Boolean strictBarcodeDigitalSignatureCheck) {
+    this.strictBarcodeDigitalSignatureCheck = strictBarcodeDigitalSignatureCheck;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1479,6 +1531,7 @@ public class ProcessParams {
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
         && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
         && Objects.equals(this.imageQa, processParams.imageQa)
+        && Objects.equals(this.strictImageQuality, processParams.strictImageQuality)
         && Objects.equals(this.respectImageQuality, processParams.respectImageQuality)
         && Objects.equals(this.forceDocFormat, processParams.forceDocFormat)
         && Objects.equals(this.noGraphics, processParams.noGraphics)
@@ -1504,7 +1557,10 @@ public class ProcessParams {
         && Objects.equals(this.checkAuth, processParams.checkAuth)
         && Objects.equals(this.authParams, processParams.authParams)
         && Objects.equals(this.mrzDetectMode, processParams.mrzDetectMode)
-        && Objects.equals(this.generateNumericCodes, processParams.generateNumericCodes);
+        && Objects.equals(this.generateNumericCodes, processParams.generateNumericCodes)
+        && Objects.equals(
+            this.strictBarcodeDigitalSignatureCheck,
+            processParams.strictBarcodeDigitalSignatureCheck);
   }
 
   @Override
@@ -1538,6 +1594,7 @@ public class ProcessParams {
         checkRequiredTextFields,
         returnCroppedBarcode,
         imageQa,
+        strictImageQuality,
         respectImageQuality,
         forceDocFormat,
         noGraphics,
@@ -1563,7 +1620,8 @@ public class ProcessParams {
         checkAuth,
         authParams,
         mrzDetectMode,
-        generateNumericCodes);
+        generateNumericCodes,
+        strictBarcodeDigitalSignatureCheck);
   }
 
   @Override
@@ -1612,6 +1670,7 @@ public class ProcessParams {
         .append(toIndentedString(returnCroppedBarcode))
         .append("\n");
     sb.append("    imageQa: ").append(toIndentedString(imageQa)).append("\n");
+    sb.append("    strictImageQuality: ").append(toIndentedString(strictImageQuality)).append("\n");
     sb.append("    respectImageQuality: ")
         .append(toIndentedString(respectImageQuality))
         .append("\n");
@@ -1651,6 +1710,9 @@ public class ProcessParams {
     sb.append("    mrzDetectMode: ").append(toIndentedString(mrzDetectMode)).append("\n");
     sb.append("    generateNumericCodes: ")
         .append(toIndentedString(generateNumericCodes))
+        .append("\n");
+    sb.append("    strictBarcodeDigitalSignatureCheck: ")
+        .append(toIndentedString(strictBarcodeDigitalSignatureCheck))
         .append("\n");
     sb.append("}");
     return sb.toString();
