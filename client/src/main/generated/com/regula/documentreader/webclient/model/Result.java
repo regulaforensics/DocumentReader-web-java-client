@@ -102,4 +102,7 @@ public class Result {
 
   /** Contains RFID original graphics data */
   public static final int RFID_ORIGINAL_GRAPHICS = 105;
+
+  /** Digital Travel Credential data */
+  public static final int DTC_VC = 109;
 }

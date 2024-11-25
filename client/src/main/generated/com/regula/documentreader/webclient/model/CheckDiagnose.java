@@ -112,6 +112,8 @@ public class CheckDiagnose {
 
   public static final int FIELD_POS_CORRECTOR_FACE_ABSENCE_CHECK_ERROR = 85;
 
+  public static final int FIELD_POS_CORRECTOR_INCORRECT_HEAD_POSITION = 86;
+
   public static final int OVI_IR_INVISIBLE = 90;
 
   public static final int OVI_INSUFFICIENT_AREA = 91;
@@ -180,6 +182,8 @@ public class CheckDiagnose {
 
   public static final int GLARES_IN_BARCODE_AREA = 144;
 
+  public static final int NO_CERTIFICATE_FOR_DIGITAL_SIGNATURE_CHECK = 145;
+
   public static final int PORTRAIT_COMPARISON_PORTRAITS_DIFFER = 150;
 
   public static final int PORTRAIT_COMPARISON_NO_SERVICE_REPLY = 151;
@@ -237,6 +241,8 @@ public class CheckDiagnose {
   public static final int OCR_QUALITY_INVALID_BACKGROUND = 222;
 
   public static final int LASINK_INVALID_LINES_FREQUENCY = 230;
+
+  public static final int DOC_LIVENESS_BLACK_AND_WHITE_COPY_DETECTED = 239;
 
   public static final int DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED = 240;
 
