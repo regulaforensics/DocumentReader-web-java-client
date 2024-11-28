@@ -2,12 +2,25 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.IdentResult;
+
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 public class IdentChecks extends AuthenticityResult<IdentResult> {
 
   public IdentChecks(AuthenticityCheckResult authenticityCheckResult) {
     super(authenticityCheckResult);
+  }
+
+  @Override
+  public AuthenticityCheckResult payload() {
+    return super.payload();
+  }
+
+  @Override
+  public List<IdentResult> items() {
+    return super.items();
   }
 
   @Nullable
