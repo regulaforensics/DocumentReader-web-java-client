@@ -6,6 +6,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.regula.documentreader.webclient.model.AuthenticityCheckResultItem;
 import java.util.Objects;
 
+import javax.annotation.Nullable;
+
 @JsonAdapter(RawAuthenticityCheckResultItemAdapter.class)
 public class RawAuthenticityCheckResultItem extends AuthenticityCheckResultItem {
   private JsonObject raw;
@@ -74,5 +76,72 @@ public class RawAuthenticityCheckResultItem extends AuthenticityCheckResultItem 
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
+  }
+
+  @Override
+  public RawAuthenticityCheckResultItem withType(Integer type) {
+    AuthenticityCheckResultItem item = super.withType(type);
+    return (RawAuthenticityCheckResultItem) item;
+  }
+
+  @Override
+  public Integer getType() {
+    return super.getType();
+  }
+
+  @Override
+  public void setType(Integer type) {
+    super.setType(type);
+  }
+
+  @Override
+  public RawAuthenticityCheckResultItem withElementResult(Integer elementResult) {
+    AuthenticityCheckResultItem item =  super.withElementResult(elementResult);
+    return (RawAuthenticityCheckResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getElementResult() {
+    return super.getElementResult();
+  }
+
+  @Override
+  public void setElementResult(Integer elementResult) {
+    super.setElementResult(elementResult);
+  }
+
+  @Override
+  public RawAuthenticityCheckResultItem withElementDiagnose(Integer elementDiagnose) {
+    AuthenticityCheckResultItem item =  super.withElementDiagnose(elementDiagnose);
+    return (RawAuthenticityCheckResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getElementDiagnose() {
+    return super.getElementDiagnose();
+  }
+
+  @Override
+  public void setElementDiagnose(Integer elementDiagnose) {
+    super.setElementDiagnose(elementDiagnose);
+  }
+
+  @Override
+  public RawAuthenticityCheckResultItem withPercentValue(Integer percentValue) {
+    AuthenticityCheckResultItem item =  super.withPercentValue(percentValue);
+    return (RawAuthenticityCheckResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getPercentValue() {
+    return super.getPercentValue();
+  }
+
+  @Override
+  public void setPercentValue(Integer percentValue) {
+    super.setPercentValue(percentValue);
   }
 }

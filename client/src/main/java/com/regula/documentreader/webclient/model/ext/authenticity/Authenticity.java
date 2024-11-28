@@ -1,10 +1,50 @@
 package com.regula.documentreader.webclient.model.ext.authenticity;
 
+import com.regula.documentreader.webclient.model.AuthenticityCheckList;
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.AuthenticityResultType;
+
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 public class Authenticity extends com.regula.documentreader.webclient.model.AuthenticityCheckList {
+
+  @Override
+  public AuthenticityCheckList withCount(Integer count) {
+    return super.withCount(count);
+  }
+
+  @Nullable
+  @Override
+  public Integer getCount() {
+    return super.getCount();
+  }
+
+  @Override
+  public void setCount(Integer count) {
+    super.setCount(count);
+  }
+
+  @Override
+  public AuthenticityCheckList withList(List<AuthenticityCheckResult> list) {
+    return super.withList(list);
+  }
+
+  @Override
+  public AuthenticityCheckList addListItem(AuthenticityCheckResult listItem) {
+    return super.addListItem(listItem);
+  }
+
+  @Override
+  public List<AuthenticityCheckResult> getList() {
+    return super.getList();
+  }
+
+  @Override
+  public void setList(List<AuthenticityCheckResult> list) {
+    super.setList(list);
+  }
 
   @Nullable
   public SecurityFeatureChecks uvLuminescenceChecks() {
