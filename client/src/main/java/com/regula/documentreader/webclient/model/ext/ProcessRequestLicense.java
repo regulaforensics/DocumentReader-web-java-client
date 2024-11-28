@@ -13,4 +13,19 @@ public class ProcessRequestLicense extends LicenseResult {
     setBufLength(license.length);
     setResultType(Result.LICENSE);
   }
+
+  @Override
+  public LicenseResult withLicense(byte[] license) {
+    return super.withLicense(license);
+  }
+
+  @Override
+  public byte[] getLicense() {
+    return super.getLicense();
+  }
+
+  @Override
+  public void setLicense(byte[] license) {
+    super.setLicense(license);
+  }
 }
