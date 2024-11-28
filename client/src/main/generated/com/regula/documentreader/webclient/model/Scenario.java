@@ -70,4 +70,7 @@ public class Scenario {
 
   /** Scenario for obtaining an original image without any processing */
   public static final String CAPTURE = "Capture";
+
+  /** Processing scenario for Digital Travel Credentials (DTC-VC) data processing */
+  public static final String DTC = "DTC";
 }

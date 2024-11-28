@@ -27,6 +27,21 @@ public class TransactionInfo {
   @SerializedName(SERIALIZED_NAME_DATE_TIME)
   private String dateTime;
 
+  public static final String SERIALIZED_NAME_DOCUMENTS_DATABASE = "DocumentsDatabase";
+
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS_DATABASE)
+  private DocumentsDatabase documentsDatabase;
+
+  public static final String SERIALIZED_NAME_SYSTEM_INFO = "SystemInfo";
+
+  @SerializedName(SERIALIZED_NAME_SYSTEM_INFO)
+  private String systemInfo;
+
+  public static final String SERIALIZED_NAME_TAG = "Tag";
+
+  @SerializedName(SERIALIZED_NAME_TAG)
+  private String tag;
+
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
 
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -37,13 +52,18 @@ public class TransactionInfo {
   @SerializedName(SERIALIZED_NAME_USER_NAME)
   private String userName;
 
+  public static final String SERIALIZED_NAME_VERSION = "Version";
+
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
+
   public TransactionInfo withComputerName(String computerName) {
     this.computerName = computerName;
     return this;
   }
 
   /**
-   * Get computerName
+   * Computer name
    *
    * @return computerName
    */
@@ -62,7 +82,7 @@ public class TransactionInfo {
   }
 
   /**
-   * Get dateTime
+   * Date and time
    *
    * @return dateTime
    */
@@ -75,13 +95,70 @@ public class TransactionInfo {
     this.dateTime = dateTime;
   }
 
+  public TransactionInfo withDocumentsDatabase(DocumentsDatabase documentsDatabase) {
+    this.documentsDatabase = documentsDatabase;
+    return this;
+  }
+
+  /**
+   * Get documentsDatabase
+   *
+   * @return documentsDatabase
+   */
+  @javax.annotation.Nullable
+  public DocumentsDatabase getDocumentsDatabase() {
+    return documentsDatabase;
+  }
+
+  public void setDocumentsDatabase(DocumentsDatabase documentsDatabase) {
+    this.documentsDatabase = documentsDatabase;
+  }
+
+  public TransactionInfo withSystemInfo(String systemInfo) {
+    this.systemInfo = systemInfo;
+    return this;
+  }
+
+  /**
+   * System information
+   *
+   * @return systemInfo
+   */
+  @javax.annotation.Nullable
+  public String getSystemInfo() {
+    return systemInfo;
+  }
+
+  public void setSystemInfo(String systemInfo) {
+    this.systemInfo = systemInfo;
+  }
+
+  public TransactionInfo withTag(String tag) {
+    this.tag = tag;
+    return this;
+  }
+
+  /**
+   * Transaction tag
+   *
+   * @return tag
+   */
+  @javax.annotation.Nullable
+  public String getTag() {
+    return tag;
+  }
+
+  public void setTag(String tag) {
+    this.tag = tag;
+  }
+
   public TransactionInfo withTransactionID(String transactionID) {
     this.transactionID = transactionID;
     return this;
   }
 
   /**
-   * Get transactionID
+   * Transaction identifier
    *
    * @return transactionID
    */
@@ -100,7 +177,7 @@ public class TransactionInfo {
   }
 
   /**
-   * Get userName
+   * User name
    *
    * @return userName
    */
@@ -111,6 +188,25 @@ public class TransactionInfo {
 
   public void setUserName(String userName) {
     this.userName = userName;
+  }
+
+  public TransactionInfo withVersion(String version) {
+    this.version = version;
+    return this;
+  }
+
+  /**
+   * SDK version
+   *
+   * @return version
+   */
+  @javax.annotation.Nullable
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
   }
 
   @Override
@@ -124,13 +220,25 @@ public class TransactionInfo {
     TransactionInfo transactionInfo = (TransactionInfo) o;
     return Objects.equals(this.computerName, transactionInfo.computerName)
         && Objects.equals(this.dateTime, transactionInfo.dateTime)
+        && Objects.equals(this.documentsDatabase, transactionInfo.documentsDatabase)
+        && Objects.equals(this.systemInfo, transactionInfo.systemInfo)
+        && Objects.equals(this.tag, transactionInfo.tag)
         && Objects.equals(this.transactionID, transactionInfo.transactionID)
-        && Objects.equals(this.userName, transactionInfo.userName);
+        && Objects.equals(this.userName, transactionInfo.userName)
+        && Objects.equals(this.version, transactionInfo.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(computerName, dateTime, transactionID, userName);
+    return Objects.hash(
+        computerName,
+        dateTime,
+        documentsDatabase,
+        systemInfo,
+        tag,
+        transactionID,
+        userName,
+        version);
   }
 
   @Override
@@ -139,8 +247,12 @@ public class TransactionInfo {
     sb.append("class TransactionInfo {\n");
     sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
+    sb.append("    documentsDatabase: ").append(toIndentedString(documentsDatabase)).append("\n");
+    sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
+    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    transactionID: ").append(toIndentedString(transactionID)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }
