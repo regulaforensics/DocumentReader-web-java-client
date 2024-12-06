@@ -3,7 +3,6 @@ package com.regula.documentreader.webclient.model.ext;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Base64;
 import com.regula.documentreader.webclient.model.ImageData;
-
 import javax.annotation.Nullable;
 
 public class ProcessRequestImage
@@ -32,7 +31,8 @@ public class ProcessRequestImage
 
   @Override
   public ProcessRequestImage withImageData(ImageData imageData) {
-    com.regula.documentreader.webclient.model.ProcessRequestImage image = super.withImageData(imageData);
+    com.regula.documentreader.webclient.model.ProcessRequestImage image =
+        super.withImageData(imageData);
     return (ProcessRequestImage) image;
   }
 
@@ -65,7 +65,8 @@ public class ProcessRequestImage
 
   @Override
   public ProcessRequestImage withPageIdx(Integer pageIdx) {
-    com.regula.documentreader.webclient.model.ProcessRequestImage image = super.withPageIdx(pageIdx);
+    com.regula.documentreader.webclient.model.ProcessRequestImage image =
+        super.withPageIdx(pageIdx);
     return (ProcessRequestImage) image;
   }
 

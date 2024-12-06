@@ -4,9 +4,7 @@ import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.CrossSourceValueComparison;
 import com.regula.documentreader.webclient.model.SourceValidity;
 import com.regula.documentreader.webclient.model.TextFieldValue;
-
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 public class TextField extends com.regula.documentreader.webclient.model.TextField {
@@ -78,7 +76,8 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
 
   @Override
   public TextField withValidityStatus(Integer validityStatus) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withValidityStatus(validityStatus);
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.withValidityStatus(validityStatus);
     return (TextField) textField;
   }
 
@@ -93,7 +92,8 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
   }
 
   @Override
-  public com.regula.documentreader.webclient.model.TextField withComparisonStatus(Integer comparisonStatus) {
+  public com.regula.documentreader.webclient.model.TextField withComparisonStatus(
+      Integer comparisonStatus) {
     return super.withComparisonStatus(comparisonStatus);
   }
 
@@ -131,7 +131,8 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
 
   @Override
   public TextField addValueListItem(TextFieldValue valueListItem) {
-    com.regula.documentreader.webclient.model.TextField textField = super.addValueListItem(valueListItem);
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.addValueListItem(valueListItem);
     return (TextField) textField;
   }
 
@@ -147,13 +148,15 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
 
   @Override
   public TextField withValidityList(List<SourceValidity> validityList) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withValidityList(validityList);
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.withValidityList(validityList);
     return (TextField) textField;
   }
 
   @Override
   public TextField addValidityListItem(SourceValidity validityListItem) {
-    com.regula.documentreader.webclient.model.TextField textField = super.addValidityListItem(validityListItem);
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.addValidityListItem(validityListItem);
     return (TextField) textField;
   }
 
@@ -169,13 +172,16 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
 
   @Override
   public TextField withComparisonList(List<CrossSourceValueComparison> comparisonList) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withComparisonList(comparisonList);
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.withComparisonList(comparisonList);
     return (TextField) textField;
   }
 
   @Override
-  public com.regula.documentreader.webclient.model.TextField addComparisonListItem(CrossSourceValueComparison comparisonListItem) {
-    com.regula.documentreader.webclient.model.TextField textField = super.addComparisonListItem(comparisonListItem);
+  public com.regula.documentreader.webclient.model.TextField addComparisonListItem(
+      CrossSourceValueComparison comparisonListItem) {
+    com.regula.documentreader.webclient.model.TextField textField =
+        super.addComparisonListItem(comparisonListItem);
     return textField;
   }
 
