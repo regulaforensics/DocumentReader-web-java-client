@@ -56,6 +56,11 @@ public class TransactionProcessRequest {
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   private Map<String, Object> passBackObject = null;
 
+  public static final String SERIALIZED_NAME_DTC = "dtc";
+
+  @SerializedName(SERIALIZED_NAME_DTC)
+  private String dtc;
+
   public TransactionProcessRequest withProcessParam(ProcessParams processParam) {
     this.processParam = processParam;
     return this;
@@ -205,6 +210,25 @@ public class TransactionProcessRequest {
     this.passBackObject = passBackObject;
   }
 
+  public TransactionProcessRequest withDtc(String dtc) {
+    this.dtc = dtc;
+    return this;
+  }
+
+  /**
+   * Digital Travel Credential (DTC-VC) data in base64 format for processing
+   *
+   * @return dtc
+   */
+  @javax.annotation.Nullable
+  public String getDtc() {
+    return dtc;
+  }
+
+  public void setDtc(String dtc) {
+    this.dtc = dtc;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -220,13 +244,21 @@ public class TransactionProcessRequest {
         && Objects.equals(this.extPortrait, transactionProcessRequest.extPortrait)
         && Objects.equals(this.containerList, transactionProcessRequest.containerList)
         && Objects.equals(this.systemInfo, transactionProcessRequest.systemInfo)
-        && Objects.equals(this.passBackObject, transactionProcessRequest.passBackObject);
+        && Objects.equals(this.passBackObject, transactionProcessRequest.passBackObject)
+        && Objects.equals(this.dtc, transactionProcessRequest.dtc);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        processParam, list, livePortrait, extPortrait, containerList, systemInfo, passBackObject);
+        processParam,
+        list,
+        livePortrait,
+        extPortrait,
+        containerList,
+        systemInfo,
+        passBackObject,
+        dtc);
   }
 
   @Override
@@ -240,6 +272,7 @@ public class TransactionProcessRequest {
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
+    sb.append("    dtc: ").append(toIndentedString(dtc)).append("\n");
     sb.append("}");
     return sb.toString();
   }

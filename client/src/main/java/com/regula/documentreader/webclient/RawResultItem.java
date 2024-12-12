@@ -6,6 +6,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.regula.documentreader.webclient.model.ResultItem;
 import java.util.Objects;
 
+import javax.annotation.Nullable;
+
 @JsonAdapter(RawResultItemAdapter.class)
 public class RawResultItem extends ResultItem {
   private JsonObject raw;
@@ -81,5 +83,89 @@ public class RawResultItem extends ResultItem {
       return "null";
     }
     return o.toString().replace("\n", "\n    ");
+  }
+
+  @Override
+  public RawResultItem withBufLength(Integer bufLength) {
+    ResultItem item = super.withBufLength(bufLength);
+    return (RawResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getBufLength() {
+    return super.getBufLength();
+  }
+
+  @Override
+  public void setBufLength(Integer bufLength) {
+    super.setBufLength(bufLength);
+  }
+
+  @Override
+  public RawResultItem withLight(Integer light) {
+    ResultItem item = super.withLight(light);
+    return (RawResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getLight() {
+    return super.getLight();
+  }
+
+  @Override
+  public void setLight(Integer light) {
+    super.setLight(light);
+  }
+
+  @Override
+  public RawResultItem withListIdx(Integer listIdx) {
+    ResultItem item = super.withListIdx(listIdx);
+    return (RawResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getListIdx() {
+    return super.getListIdx();
+  }
+
+  @Override
+  public void setListIdx(Integer listIdx) {
+    super.setListIdx(listIdx);
+  }
+
+  @Override
+  public RawResultItem withPageIdx(Integer pageIdx) {
+    ResultItem item = super.withPageIdx(pageIdx);
+    return (RawResultItem) item;
+  }
+
+  @Nullable
+  @Override
+  public Integer getPageIdx() {
+    return super.getPageIdx();
+  }
+
+  @Override
+  public void setPageIdx(Integer pageIdx) {
+    super.setPageIdx(pageIdx);
+  }
+
+  @Override
+  public RawResultItem withResultType(Integer resultType) {
+    ResultItem item = super.withResultType(resultType);
+    return (RawResultItem) item;
+  }
+
+  @Override
+  public Integer getResultType() {
+    return super.getResultType();
+  }
+
+  @Override
+  public void setResultType(Integer resultType) {
+    super.setResultType(resultType);
   }
 }

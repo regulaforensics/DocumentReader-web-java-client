@@ -21,6 +21,11 @@ import java.util.Objects;
 
 /** ProcessParams */
 public class ProcessParams {
+  public static final String SERIALIZED_NAME_GENERATE_D_T_C_V_C = "generateDTCVC";
+
+  @SerializedName(SERIALIZED_NAME_GENERATE_D_T_C_V_C)
+  private Boolean generateDTCVC;
+
   public static final String SERIALIZED_NAME_LCID_FILTER = "lcidFilter";
 
   @SerializedName(SERIALIZED_NAME_LCID_FILTER)
@@ -163,6 +168,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_IMAGE_QA)
   private ImageQA imageQa;
 
+  public static final String SERIALIZED_NAME_STRICT_IMAGE_QUALITY = "strictImageQuality";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_IMAGE_QUALITY)
+  private Boolean strictImageQuality;
+
   public static final String SERIALIZED_NAME_RESPECT_IMAGE_QUALITY = "respectImageQuality";
 
   @SerializedName(SERIALIZED_NAME_RESPECT_IMAGE_QUALITY)
@@ -294,6 +304,36 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_GENERATE_NUMERIC_CODES)
   private Boolean generateNumericCodes;
+
+  public static final String SERIALIZED_NAME_STRICT_BARCODE_DIGITAL_SIGNATURE_CHECK =
+      "strictBarcodeDigitalSignatureCheck";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_BARCODE_DIGITAL_SIGNATURE_CHECK)
+  private Boolean strictBarcodeDigitalSignatureCheck;
+
+  public static final String SERIALIZED_NAME_SELECT_LONGEST_NAMES = "selectLongestNames";
+
+  @SerializedName(SERIALIZED_NAME_SELECT_LONGEST_NAMES)
+  private Boolean selectLongestNames;
+
+  public ProcessParams withGenerateDTCVC(Boolean generateDTCVC) {
+    this.generateDTCVC = generateDTCVC;
+    return this;
+  }
+
+  /**
+   * This parameter is used to generate separate DTC-VC data container from RFID session data.
+   *
+   * @return generateDTCVC
+   */
+  @javax.annotation.Nullable
+  public Boolean getGenerateDTCVC() {
+    return generateDTCVC;
+  }
+
+  public void setGenerateDTCVC(Boolean generateDTCVC) {
+    this.generateDTCVC = generateDTCVC;
+  }
 
   public ProcessParams withLcidFilter(List<Integer> lcidFilter) {
     this.lcidFilter = lcidFilter;
@@ -903,14 +943,34 @@ public class ProcessParams {
     this.imageQa = imageQa;
   }
 
+  public ProcessParams withStrictImageQuality(Boolean strictImageQuality) {
+    this.strictImageQuality = strictImageQuality;
+    return this;
+  }
+
+  /**
+   * When enabled, the image quality check status affects the document optical and overall status.
+   * Disabled by default.
+   *
+   * @return strictImageQuality
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictImageQuality() {
+    return strictImageQuality;
+  }
+
+  public void setStrictImageQuality(Boolean strictImageQuality) {
+    this.strictImageQuality = strictImageQuality;
+  }
+
   public ProcessParams withRespectImageQuality(Boolean respectImageQuality) {
     this.respectImageQuality = respectImageQuality;
     return this;
   }
 
   /**
-   * When enabled, image quality checks status affects document optical and overall status. Disabled
-   * by default.
+   * Deprecated. Please use strictImageQuality instead. When enabled, image quality checks status
+   * affects document optical and overall status. Disabled by default.
    *
    * @return respectImageQuality
    */
@@ -1441,6 +1501,48 @@ public class ProcessParams {
     this.generateNumericCodes = generateNumericCodes;
   }
 
+  public ProcessParams withStrictBarcodeDigitalSignatureCheck(
+      Boolean strictBarcodeDigitalSignatureCheck) {
+    this.strictBarcodeDigitalSignatureCheck = strictBarcodeDigitalSignatureCheck;
+    return this;
+  }
+
+  /**
+   * This parameter if enabled will require all necessary certificates to verify digital signature
+   * in barcode data to be present in order for the Barcode format check to succeed.
+   *
+   * @return strictBarcodeDigitalSignatureCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictBarcodeDigitalSignatureCheck() {
+    return strictBarcodeDigitalSignatureCheck;
+  }
+
+  public void setStrictBarcodeDigitalSignatureCheck(Boolean strictBarcodeDigitalSignatureCheck) {
+    this.strictBarcodeDigitalSignatureCheck = strictBarcodeDigitalSignatureCheck;
+  }
+
+  public ProcessParams withSelectLongestNames(Boolean selectLongestNames) {
+    this.selectLongestNames = selectLongestNames;
+    return this;
+  }
+
+  /**
+   * Select the longest value from the different value sources and write it to the value field if
+   * comparison is done successfully. The parameter applies this logic to the personal names, such
+   * as given name, surname, surname and given name, middle name and etc.
+   *
+   * @return selectLongestNames
+   */
+  @javax.annotation.Nullable
+  public Boolean getSelectLongestNames() {
+    return selectLongestNames;
+  }
+
+  public void setSelectLongestNames(Boolean selectLongestNames) {
+    this.selectLongestNames = selectLongestNames;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1450,7 +1552,8 @@ public class ProcessParams {
       return false;
     }
     ProcessParams processParams = (ProcessParams) o;
-    return Objects.equals(this.lcidFilter, processParams.lcidFilter)
+    return Objects.equals(this.generateDTCVC, processParams.generateDTCVC)
+        && Objects.equals(this.lcidFilter, processParams.lcidFilter)
         && Objects.equals(this.lcidIgnoreFilter, processParams.lcidIgnoreFilter)
         && Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
         && Objects.equals(this.useFaceApi, processParams.useFaceApi)
@@ -1479,6 +1582,7 @@ public class ProcessParams {
         && Objects.equals(this.checkRequiredTextFields, processParams.checkRequiredTextFields)
         && Objects.equals(this.returnCroppedBarcode, processParams.returnCroppedBarcode)
         && Objects.equals(this.imageQa, processParams.imageQa)
+        && Objects.equals(this.strictImageQuality, processParams.strictImageQuality)
         && Objects.equals(this.respectImageQuality, processParams.respectImageQuality)
         && Objects.equals(this.forceDocFormat, processParams.forceDocFormat)
         && Objects.equals(this.noGraphics, processParams.noGraphics)
@@ -1504,12 +1608,17 @@ public class ProcessParams {
         && Objects.equals(this.checkAuth, processParams.checkAuth)
         && Objects.equals(this.authParams, processParams.authParams)
         && Objects.equals(this.mrzDetectMode, processParams.mrzDetectMode)
-        && Objects.equals(this.generateNumericCodes, processParams.generateNumericCodes);
+        && Objects.equals(this.generateNumericCodes, processParams.generateNumericCodes)
+        && Objects.equals(
+            this.strictBarcodeDigitalSignatureCheck,
+            processParams.strictBarcodeDigitalSignatureCheck)
+        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
+        generateDTCVC,
         lcidFilter,
         lcidIgnoreFilter,
         oneShotIdentification,
@@ -1538,6 +1647,7 @@ public class ProcessParams {
         checkRequiredTextFields,
         returnCroppedBarcode,
         imageQa,
+        strictImageQuality,
         respectImageQuality,
         forceDocFormat,
         noGraphics,
@@ -1563,13 +1673,16 @@ public class ProcessParams {
         checkAuth,
         authParams,
         mrzDetectMode,
-        generateNumericCodes);
+        generateNumericCodes,
+        strictBarcodeDigitalSignatureCheck,
+        selectLongestNames);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessParams {\n");
+    sb.append("    generateDTCVC: ").append(toIndentedString(generateDTCVC)).append("\n");
     sb.append("    lcidFilter: ").append(toIndentedString(lcidFilter)).append("\n");
     sb.append("    lcidIgnoreFilter: ").append(toIndentedString(lcidIgnoreFilter)).append("\n");
     sb.append("    oneShotIdentification: ")
@@ -1612,6 +1725,7 @@ public class ProcessParams {
         .append(toIndentedString(returnCroppedBarcode))
         .append("\n");
     sb.append("    imageQa: ").append(toIndentedString(imageQa)).append("\n");
+    sb.append("    strictImageQuality: ").append(toIndentedString(strictImageQuality)).append("\n");
     sb.append("    respectImageQuality: ")
         .append(toIndentedString(respectImageQuality))
         .append("\n");
@@ -1652,6 +1766,10 @@ public class ProcessParams {
     sb.append("    generateNumericCodes: ")
         .append(toIndentedString(generateNumericCodes))
         .append("\n");
+    sb.append("    strictBarcodeDigitalSignatureCheck: ")
+        .append(toIndentedString(strictBarcodeDigitalSignatureCheck))
+        .append("\n");
+    sb.append("    selectLongestNames: ").append(toIndentedString(selectLongestNames)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -14,13 +14,14 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
+import java.util.UUID;
 
 /** TransactionProcessGetResponse */
 public class TransactionProcessGetResponse {
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
 
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
-  private Integer transactionId;
+  private UUID transactionId;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
 
@@ -37,7 +38,7 @@ public class TransactionProcessGetResponse {
   @SerializedName(SERIALIZED_NAME_IN_DATA)
   private InData inData;
 
-  public TransactionProcessGetResponse withTransactionId(Integer transactionId) {
+  public TransactionProcessGetResponse withTransactionId(UUID transactionId) {
     this.transactionId = transactionId;
     return this;
   }
@@ -48,11 +49,11 @@ public class TransactionProcessGetResponse {
    * @return transactionId
    */
   @javax.annotation.Nullable
-  public Integer getTransactionId() {
+  public UUID getTransactionId() {
     return transactionId;
   }
 
-  public void setTransactionId(Integer transactionId) {
+  public void setTransactionId(UUID transactionId) {
     this.transactionId = transactionId;
   }
 

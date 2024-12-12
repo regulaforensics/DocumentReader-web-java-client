@@ -14,6 +14,7 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
+import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
 
 /** GetTransactionsByTagResponse */
@@ -21,7 +22,7 @@ public class GetTransactionsByTagResponse {
   public static final String SERIALIZED_NAME_ID = "id";
 
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private UUID id;
 
   public static final String SERIALIZED_NAME_STATE = "state";
 
@@ -33,7 +34,7 @@ public class GetTransactionsByTagResponse {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   private OffsetDateTime updatedAt;
 
-  public GetTransactionsByTagResponse withId(Integer id) {
+  public GetTransactionsByTagResponse withId(UUID id) {
     this.id = id;
     return this;
   }
@@ -44,11 +45,11 @@ public class GetTransactionsByTagResponse {
    * @return id
    */
   @javax.annotation.Nullable
-  public Integer getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
