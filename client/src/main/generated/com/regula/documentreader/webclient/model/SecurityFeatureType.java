@@ -166,4 +166,10 @@ public class SecurityFeatureType {
 
   /** Contact chip check */
   public static final int CONTACT_CHIP_CLASSIFICATION = 51;
+
+  /** Head position check */
+  public static final int HEAD_POSITION_CHECK = 52;
+
+  /** Black and white copy check */
+  public static final int LIVENESS_BLACK_AND_WHITE_COPY_CHECK = 53;
 }

@@ -22,6 +22,11 @@ public class DocumentImage {
   @SerializedName(SERIALIZED_NAME_IMAGE)
   private String image;
 
+  public static final String SERIALIZED_NAME_FORMAT = "format";
+
+  @SerializedName(SERIALIZED_NAME_FORMAT)
+  private String format;
+
   public DocumentImage withImage(String image) {
     this.image = image;
     return this;
@@ -40,6 +45,25 @@ public class DocumentImage {
     this.image = image;
   }
 
+  public DocumentImage withFormat(String format) {
+    this.format = format;
+    return this;
+  }
+
+  /**
+   * Image format
+   *
+   * @return format
+   */
+  @javax.annotation.Nullable
+  public String getFormat() {
+    return format;
+  }
+
+  public void setFormat(String format) {
+    this.format = format;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -49,12 +73,13 @@ public class DocumentImage {
       return false;
     }
     DocumentImage documentImage = (DocumentImage) o;
-    return Objects.equals(this.image, documentImage.image);
+    return Objects.equals(this.image, documentImage.image)
+        && Objects.equals(this.format, documentImage.format);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image);
+    return Objects.hash(image, format);
   }
 
   @Override
@@ -62,6 +87,7 @@ public class DocumentImage {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentImage {\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("}");
     return sb.toString();
   }

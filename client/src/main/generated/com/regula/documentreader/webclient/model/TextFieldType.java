@@ -872,6 +872,15 @@ public class TextFieldType {
   /** ID number of ISO issuer */
   public static final int ISO_ISSUER_ID_NUMBER = 336;
 
+  /** DTC version */
+  public static final int DTC_VERSION = 337;
+
+  /** DTC ID */
+  public static final int DTC_ID = 338;
+
+  /** DTC date of expiry */
+  public static final int DTC_DATE_OF_EXPIRY = 339;
+
   /** GNIB number */
   public static final int GNIB_NUMBER = 340;
 
@@ -1927,4 +1936,7 @@ public class TextFieldType {
 
   /** Date of First Positive Test Result */
   public static final int FT_DATE_OF_FIRST_POSITIVE_TEST_RESULT = 691;
+
+  /** EF.CardAccess */
+  public static final int EF_CARD_ACCESS = 692;
 }

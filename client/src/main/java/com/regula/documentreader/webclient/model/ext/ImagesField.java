@@ -8,6 +8,60 @@ import javax.annotation.Nullable;
 
 public class ImagesField extends com.regula.documentreader.webclient.model.ImagesField {
 
+  @Override
+  public ImagesField withFieldName(String fieldName) {
+    com.regula.documentreader.webclient.model.ImagesField field = super.withFieldName(fieldName);
+    return (ImagesField) field;
+  }
+
+  @Override
+  public String getFieldName() {
+    return super.getFieldName();
+  }
+
+  @Override
+  public void setFieldName(String fieldName) {
+    super.setFieldName(fieldName);
+  }
+
+  @Override
+  public ImagesField withFieldType(Integer fieldType) {
+    com.regula.documentreader.webclient.model.ImagesField field = super.withFieldType(fieldType);
+    return (ImagesField) field;
+  }
+
+  @Override
+  public Integer getFieldType() {
+    return super.getFieldType();
+  }
+
+  @Override
+  public void setFieldType(Integer fieldType) {
+    super.setFieldType(fieldType);
+  }
+
+  @Override
+  public ImagesField withValueList(List<ImagesFieldValue> valueList) {
+    com.regula.documentreader.webclient.model.ImagesField field = super.withValueList(valueList);
+    return (ImagesField) field;
+  }
+
+  @Override
+  public ImagesField addValueListItem(ImagesFieldValue valueListItem) {
+    com.regula.documentreader.webclient.model.ImagesField field = super.addValueListItem(valueListItem);
+    return (ImagesField) field;
+  }
+
+  @Override
+  public List<ImagesFieldValue> getValueList() {
+    return super.getValueList();
+  }
+
+  @Override
+  public void setValueList(List<ImagesFieldValue> valueList) {
+    super.setValueList(valueList);
+  }
+
   @Nullable
   public byte[] getValue(String source, boolean original) {
     String result;

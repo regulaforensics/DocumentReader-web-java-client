@@ -15,29 +15,29 @@ package com.regula.documentreader.webclient.model;
 import com.google.gson.annotations.SerializedName;
 import java.util.Objects;
 
-/** Contains document image. */
-public class DocumentImageResult extends ResultItem {
-  public static final String SERIALIZED_NAME_RAW_IMAGE_CONTAINER = "RawImageContainer";
+/** ByteArrayResult */
+public class ByteArrayResult extends ResultItem {
+  public static final String SERIALIZED_NAME_BYTE_ARRAY = "ByteArray";
 
-  @SerializedName(SERIALIZED_NAME_RAW_IMAGE_CONTAINER)
-  private ImageData rawImageContainer;
+  @SerializedName(SERIALIZED_NAME_BYTE_ARRAY)
+  private String byteArray;
 
-  public DocumentImageResult withRawImageContainer(ImageData rawImageContainer) {
-    this.rawImageContainer = rawImageContainer;
+  public ByteArrayResult withByteArray(String byteArray) {
+    this.byteArray = byteArray;
     return this;
   }
 
   /**
-   * Get rawImageContainer
+   * Byte array in base64
    *
-   * @return rawImageContainer
+   * @return byteArray
    */
-  public ImageData getRawImageContainer() {
-    return rawImageContainer;
+  public String getByteArray() {
+    return byteArray;
   }
 
-  public void setRawImageContainer(ImageData rawImageContainer) {
-    this.rawImageContainer = rawImageContainer;
+  public void setByteArray(String byteArray) {
+    this.byteArray = byteArray;
   }
 
   @Override
@@ -48,22 +48,21 @@ public class DocumentImageResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentImageResult documentImageResult = (DocumentImageResult) o;
-    return Objects.equals(this.rawImageContainer, documentImageResult.rawImageContainer)
-        && super.equals(o);
+    ByteArrayResult byteArrayResult = (ByteArrayResult) o;
+    return Objects.equals(this.byteArray, byteArrayResult.byteArray) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rawImageContainer, super.hashCode());
+    return Objects.hash(byteArray, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentImageResult {\n");
+    sb.append("class ByteArrayResult {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    rawImageContainer: ").append(toIndentedString(rawImageContainer)).append("\n");
+    sb.append("    byteArray: ").append(toIndentedString(byteArray)).append("\n");
     sb.append("}");
     return sb.toString();
   }
