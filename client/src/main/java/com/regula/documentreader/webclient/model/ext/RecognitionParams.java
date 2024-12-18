@@ -7,11 +7,9 @@ import com.regula.documentreader.webclient.model.MrzDetectModeEnum;
 import com.regula.documentreader.webclient.model.PerDocumentConfig;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessParamsRfid;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
 import javax.annotation.Nullable;
 
 public class RecognitionParams extends ProcessParams {
