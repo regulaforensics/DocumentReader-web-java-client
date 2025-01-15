@@ -8,7 +8,6 @@ import com.regula.documentreader.webclient.model.ProcessSystemInfo;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
 import javax.annotation.Nullable;
 
 public class RecognitionRequest extends ProcessRequest {
@@ -55,12 +54,14 @@ public class RecognitionRequest extends ProcessRequest {
   }
 
   @Override
-  public ProcessRequest withList(List<com.regula.documentreader.webclient.model.ProcessRequestImage> list) {
+  public ProcessRequest withList(
+      List<com.regula.documentreader.webclient.model.ProcessRequestImage> list) {
     return super.withList(list);
   }
 
   @Override
-  public ProcessRequest addListItem(com.regula.documentreader.webclient.model.ProcessRequestImage listItem) {
+  public ProcessRequest addListItem(
+      com.regula.documentreader.webclient.model.ProcessRequestImage listItem) {
     return super.addListItem(listItem);
   }
 
