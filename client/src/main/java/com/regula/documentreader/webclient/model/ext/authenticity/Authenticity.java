@@ -3,9 +3,7 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 import com.regula.documentreader.webclient.model.AuthenticityCheckList;
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.AuthenticityResultType;
-
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 public class Authenticity extends com.regula.documentreader.webclient.model.AuthenticityCheckList {
