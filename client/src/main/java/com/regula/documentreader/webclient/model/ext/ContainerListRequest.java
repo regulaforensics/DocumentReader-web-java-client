@@ -3,7 +3,6 @@ package com.regula.documentreader.webclient.model.ext;
 import com.regula.documentreader.webclient.model.ContainerList;
 import com.regula.documentreader.webclient.model.ResultItem;
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 public class ContainerListRequest extends ContainerList {

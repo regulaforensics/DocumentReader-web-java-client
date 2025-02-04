@@ -16,7 +16,4 @@ src/test/**
 src/main/AndroidManifest.xml
 
 # classes, modified after generation
-**/ContainerList.java
-**/DocVisualExtendedInfo.java
-**/*AllOf.java
-**/AuthenticityCheckResult.java
+
