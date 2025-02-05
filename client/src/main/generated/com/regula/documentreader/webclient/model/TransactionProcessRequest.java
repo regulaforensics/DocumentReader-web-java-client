@@ -47,7 +47,7 @@ public class TransactionProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nullable
-  private List<ProcessRequestImage> _list = new ArrayList<>();
+  private List<ProcessRequestImage> list = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LIVE_PORTRAIT = "livePortrait";
 
@@ -107,32 +107,31 @@ public class TransactionProcessRequest {
     this.processParam = processParam;
   }
 
-  public TransactionProcessRequest _list(
-      @javax.annotation.Nullable List<ProcessRequestImage> _list) {
-    this._list = _list;
+  public TransactionProcessRequest list(@javax.annotation.Nullable List<ProcessRequestImage> list) {
+    this.list = list;
     return this;
   }
 
-  public TransactionProcessRequest addListItem(ProcessRequestImage _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public TransactionProcessRequest addListItem(ProcessRequestImage listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nullable
   public List<ProcessRequestImage> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nullable List<ProcessRequestImage> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nullable List<ProcessRequestImage> list) {
+    this.list = list;
   }
 
   public TransactionProcessRequest livePortrait(@javax.annotation.Nullable String livePortrait) {
@@ -271,7 +270,7 @@ public class TransactionProcessRequest {
     }
     TransactionProcessRequest transactionProcessRequest = (TransactionProcessRequest) o;
     return Objects.equals(this.processParam, transactionProcessRequest.processParam)
-        && Objects.equals(this._list, transactionProcessRequest._list)
+        && Objects.equals(this.list, transactionProcessRequest.list)
         && Objects.equals(this.livePortrait, transactionProcessRequest.livePortrait)
         && Objects.equals(this.extPortrait, transactionProcessRequest.extPortrait)
         && Objects.equals(this.containerList, transactionProcessRequest.containerList)
@@ -284,7 +283,7 @@ public class TransactionProcessRequest {
   public int hashCode() {
     return Objects.hash(
         processParam,
-        _list,
+        list,
         livePortrait,
         extPortrait,
         containerList,
@@ -298,7 +297,7 @@ public class TransactionProcessRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransactionProcessRequest {\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    livePortrait: ").append(toIndentedString(livePortrait)).append("\n");
     sb.append("    extPortrait: ").append(toIndentedString(extPortrait)).append("\n");
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
@@ -380,8 +379,8 @@ public class TransactionProcessRequest {
     // validate the required field `processParam`
     ProcessParams.validateJsonElement(jsonObj.get("processParam"));
     if (jsonObj.get("List") != null && !jsonObj.get("List").isJsonNull()) {
-      JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
-      if (jsonArray_list != null) {
+      JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
+      if (jsonArraylist != null) {
         // ensure the json data is an array
         if (!jsonObj.get("List").isJsonArray()) {
           throw new IllegalArgumentException(
@@ -391,8 +390,8 @@ public class TransactionProcessRequest {
         }
 
         // validate the optional field `List` (array)
-        for (int i = 0; i < jsonArray_list.size(); i++) {
-          ProcessRequestImage.validateJsonElement(jsonArray_list.get(i));
+        for (int i = 0; i < jsonArraylist.size(); i++) {
+          ProcessRequestImage.validateJsonElement(jsonArraylist.get(i));
         }
         ;
       }

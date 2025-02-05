@@ -58,7 +58,7 @@ public class AuthenticityCheckResult {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<AuthenticityCheckResultListInner> _list = new ArrayList<>();
+  private List<AuthenticityCheckResultListInner> list = new ArrayList<>();
 
   public AuthenticityCheckResult() {}
 
@@ -119,32 +119,32 @@ public class AuthenticityCheckResult {
     this.count = count;
   }
 
-  public AuthenticityCheckResult _list(
-      @javax.annotation.Nonnull List<AuthenticityCheckResultListInner> _list) {
-    this._list = _list;
+  public AuthenticityCheckResult list(
+      @javax.annotation.Nonnull List<AuthenticityCheckResultListInner> list) {
+    this.list = list;
     return this;
   }
 
-  public AuthenticityCheckResult addListItem(AuthenticityCheckResultListInner _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public AuthenticityCheckResult addListItem(AuthenticityCheckResultListInner listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<AuthenticityCheckResultListInner> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResultListInner> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResultListInner> list) {
+    this.list = list;
   }
 
   @Override
@@ -159,12 +159,12 @@ public class AuthenticityCheckResult {
     return Objects.equals(this.type, authenticityCheckResult.type)
         && Objects.equals(this.result, authenticityCheckResult.result)
         && Objects.equals(this.count, authenticityCheckResult.count)
-        && Objects.equals(this._list, authenticityCheckResult._list);
+        && Objects.equals(this.list, authenticityCheckResult.list);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, result, count, _list);
+    return Objects.hash(type, result, count, list);
   }
 
   @Override
@@ -174,7 +174,7 @@ public class AuthenticityCheckResult {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -257,10 +257,10 @@ public class AuthenticityCheckResult {
               jsonObj.get("List").toString()));
     }
 
-    JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
+    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
-    for (int i = 0; i < jsonArray_list.size(); i++) {
-      AuthenticityCheckResultListInner.validateJsonElement(jsonArray_list.get(i));
+    for (int i = 0; i < jsonArraylist.size(); i++) {
+      AuthenticityCheckResultListInner.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

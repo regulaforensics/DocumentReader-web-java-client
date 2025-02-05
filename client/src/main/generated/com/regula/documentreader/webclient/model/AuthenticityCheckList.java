@@ -46,7 +46,7 @@ public class AuthenticityCheckList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<AuthenticityCheckResult> _list = new ArrayList<>();
+  private List<AuthenticityCheckResult> list = new ArrayList<>();
 
   public AuthenticityCheckList() {}
 
@@ -69,32 +69,31 @@ public class AuthenticityCheckList {
     this.count = count;
   }
 
-  public AuthenticityCheckList _list(
-      @javax.annotation.Nonnull List<AuthenticityCheckResult> _list) {
-    this._list = _list;
+  public AuthenticityCheckList list(@javax.annotation.Nonnull List<AuthenticityCheckResult> list) {
+    this.list = list;
     return this;
   }
 
-  public AuthenticityCheckList addListItem(AuthenticityCheckResult _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public AuthenticityCheckList addListItem(AuthenticityCheckResult listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
    * Authenticity Check
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<AuthenticityCheckResult> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResult> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResult> list) {
+    this.list = list;
   }
 
   @Override
@@ -107,12 +106,12 @@ public class AuthenticityCheckList {
     }
     AuthenticityCheckList authenticityCheckList = (AuthenticityCheckList) o;
     return Objects.equals(this.count, authenticityCheckList.count)
-        && Objects.equals(this._list, authenticityCheckList._list);
+        && Objects.equals(this.list, authenticityCheckList.list);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, _list);
+    return Objects.hash(count, list);
   }
 
   @Override
@@ -120,7 +119,7 @@ public class AuthenticityCheckList {
     StringBuilder sb = new StringBuilder();
     sb.append("class AuthenticityCheckList {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -196,10 +195,10 @@ public class AuthenticityCheckList {
               jsonObj.get("List").toString()));
     }
 
-    JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
+    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
-    for (int i = 0; i < jsonArray_list.size(); i++) {
-      AuthenticityCheckResult.validateJsonElement(jsonArray_list.get(i));
+    for (int i = 0; i < jsonArraylist.size(); i++) {
+      AuthenticityCheckResult.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

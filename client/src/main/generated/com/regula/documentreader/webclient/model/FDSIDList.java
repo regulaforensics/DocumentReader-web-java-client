@@ -52,7 +52,7 @@ public class FDSIDList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<Integer> _list = new ArrayList<>();
+  private List<Integer> list = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
 
@@ -148,31 +148,31 @@ public class FDSIDList {
     this.count = count;
   }
 
-  public FDSIDList _list(@javax.annotation.Nonnull List<Integer> _list) {
-    this._list = _list;
+  public FDSIDList list(@javax.annotation.Nonnull List<Integer> list) {
+    this.list = list;
     return this;
   }
 
-  public FDSIDList addListItem(Integer _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public FDSIDList addListItem(Integer listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
    * Document identifiers in &#39;Information Reference Systems&#39;
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<Integer> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<Integer> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<Integer> list) {
+    this.list = list;
   }
 
   public FDSIDList dType(@javax.annotation.Nonnull DocumentType dType) {
@@ -357,7 +357,7 @@ public class FDSIDList {
     FDSIDList fdSIDList = (FDSIDList) o;
     return Objects.equals(this.icAOCode, fdSIDList.icAOCode)
         && Objects.equals(this.count, fdSIDList.count)
-        && Objects.equals(this._list, fdSIDList._list)
+        && Objects.equals(this.list, fdSIDList.list)
         && Objects.equals(this.dType, fdSIDList.dType)
         && Objects.equals(this.dFormat, fdSIDList.dFormat)
         && Objects.equals(this.dMRZ, fdSIDList.dMRZ)
@@ -374,7 +374,7 @@ public class FDSIDList {
     return Objects.hash(
         icAOCode,
         count,
-        _list,
+        list,
         dType,
         dFormat,
         dMRZ,
@@ -392,7 +392,7 @@ public class FDSIDList {
     sb.append("class FDSIDList {\n");
     sb.append("    icAOCode: ").append(toIndentedString(icAOCode)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    dType: ").append(toIndentedString(dType)).append("\n");
     sb.append("    dFormat: ").append(toIndentedString(dFormat)).append("\n");
     sb.append("    dMRZ: ").append(toIndentedString(dMRZ)).append("\n");

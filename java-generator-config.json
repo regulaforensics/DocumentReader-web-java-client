@@ -1,6 +1,5 @@
 {
   "artifactId": "webclient",
-  "artifactVersion": "5.1.0",
   "groupId": "com.regula.documentreader",
   "library": "okhttp-gson",
   "useRuntimeException": true,

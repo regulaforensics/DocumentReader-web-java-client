@@ -53,7 +53,7 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nullable
-  private List<ProcessRequestImage> _list = new ArrayList<>();
+  private List<ProcessRequestImage> list = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TAG = "tag";
 
@@ -164,31 +164,31 @@ public class ProcessRequest {
     this.processParam = processParam;
   }
 
-  public ProcessRequest _list(@javax.annotation.Nullable List<ProcessRequestImage> _list) {
-    this._list = _list;
+  public ProcessRequest list(@javax.annotation.Nullable List<ProcessRequestImage> list) {
+    this.list = list;
     return this;
   }
 
-  public ProcessRequest addListItem(ProcessRequestImage _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public ProcessRequest addListItem(ProcessRequestImage listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nullable
   public List<ProcessRequestImage> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nullable List<ProcessRequestImage> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nullable List<ProcessRequestImage> list) {
+    this.list = list;
   }
 
   public ProcessRequest tag(@javax.annotation.Nullable String tag) {
@@ -410,7 +410,7 @@ public class ProcessRequest {
     ProcessRequest processRequest = (ProcessRequest) o;
     return Objects.equals(this.lcidFilter, processRequest.lcidFilter)
         && Objects.equals(this.processParam, processRequest.processParam)
-        && Objects.equals(this._list, processRequest._list)
+        && Objects.equals(this.list, processRequest.list)
         && Objects.equals(this.tag, processRequest.tag)
         && Objects.equals(this.tenant, processRequest.tenant)
         && Objects.equals(this.env, processRequest.env)
@@ -428,7 +428,7 @@ public class ProcessRequest {
     return Objects.hash(
         lcidFilter,
         processParam,
-        _list,
+        list,
         tag,
         tenant,
         env,
@@ -447,7 +447,7 @@ public class ProcessRequest {
     sb.append("class ProcessRequest {\n");
     sb.append("    lcidFilter: ").append(toIndentedString(lcidFilter)).append("\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
     sb.append("    env: ").append(toIndentedString(env)).append("\n");
@@ -547,8 +547,8 @@ public class ProcessRequest {
     // validate the required field `processParam`
     ProcessParams.validateJsonElement(jsonObj.get("processParam"));
     if (jsonObj.get("List") != null && !jsonObj.get("List").isJsonNull()) {
-      JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
-      if (jsonArray_list != null) {
+      JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
+      if (jsonArraylist != null) {
         // ensure the json data is an array
         if (!jsonObj.get("List").isJsonArray()) {
           throw new IllegalArgumentException(
@@ -558,8 +558,8 @@ public class ProcessRequest {
         }
 
         // validate the optional field `List` (array)
-        for (int i = 0; i < jsonArray_list.size(); i++) {
-          ProcessRequestImage.validateJsonElement(jsonArray_list.get(i));
+        for (int i = 0; i < jsonArraylist.size(); i++) {
+          ProcessRequestImage.validateJsonElement(jsonArraylist.get(i));
         }
         ;
       }

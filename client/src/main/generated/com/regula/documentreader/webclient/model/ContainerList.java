@@ -46,7 +46,7 @@ public class ContainerList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<ContainerListListInner> _list = new ArrayList<>();
+  private List<ContainerListListInner> list = new ArrayList<>();
 
   public ContainerList() {}
 
@@ -69,31 +69,31 @@ public class ContainerList {
     this.count = count;
   }
 
-  public ContainerList _list(@javax.annotation.Nonnull List<ContainerListListInner> _list) {
-    this._list = _list;
+  public ContainerList list(@javax.annotation.Nonnull List<ContainerListListInner> list) {
+    this.list = list;
     return this;
   }
 
-  public ContainerList addListItem(ContainerListListInner _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public ContainerList addListItem(ContainerListListInner listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<ContainerListListInner> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<ContainerListListInner> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<ContainerListListInner> list) {
+    this.list = list;
   }
 
   @Override
@@ -106,12 +106,12 @@ public class ContainerList {
     }
     ContainerList containerList = (ContainerList) o;
     return Objects.equals(this.count, containerList.count)
-        && Objects.equals(this._list, containerList._list);
+        && Objects.equals(this.list, containerList.list);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, _list);
+    return Objects.hash(count, list);
   }
 
   @Override
@@ -119,7 +119,7 @@ public class ContainerList {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContainerList {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -195,10 +195,10 @@ public class ContainerList {
               jsonObj.get("List").toString()));
     }
 
-    JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
+    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
-    for (int i = 0; i < jsonArray_list.size(); i++) {
-      ContainerListListInner.validateJsonElement(jsonArray_list.get(i));
+    for (int i = 0; i < jsonArraylist.size(); i++) {
+      ContainerListListInner.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

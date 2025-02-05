@@ -47,7 +47,7 @@ public class ImageQualityCheckList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<ImageQualityCheck> _list = new ArrayList<>();
+  private List<ImageQualityCheck> list = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
@@ -76,31 +76,31 @@ public class ImageQualityCheckList {
     this.result = result;
   }
 
-  public ImageQualityCheckList _list(@javax.annotation.Nonnull List<ImageQualityCheck> _list) {
-    this._list = _list;
+  public ImageQualityCheckList list(@javax.annotation.Nonnull List<ImageQualityCheck> list) {
+    this.list = list;
     return this;
   }
 
-  public ImageQualityCheckList addListItem(ImageQualityCheck _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public ImageQualityCheckList addListItem(ImageQualityCheck listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<ImageQualityCheck> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<ImageQualityCheck> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<ImageQualityCheck> list) {
+    this.list = list;
   }
 
   public ImageQualityCheckList count(@javax.annotation.Nonnull BigDecimal count) {
@@ -132,13 +132,13 @@ public class ImageQualityCheckList {
     }
     ImageQualityCheckList imageQualityCheckList = (ImageQualityCheckList) o;
     return Objects.equals(this.result, imageQualityCheckList.result)
-        && Objects.equals(this._list, imageQualityCheckList._list)
+        && Objects.equals(this.list, imageQualityCheckList.list)
         && Objects.equals(this.count, imageQualityCheckList.count);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, _list, count);
+    return Objects.hash(result, list, count);
   }
 
   @Override
@@ -146,7 +146,7 @@ public class ImageQualityCheckList {
     StringBuilder sb = new StringBuilder();
     sb.append("class ImageQualityCheckList {\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -227,10 +227,10 @@ public class ImageQualityCheckList {
               jsonObj.get("List").toString()));
     }
 
-    JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
+    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
-    for (int i = 0; i < jsonArray_list.size(); i++) {
-      ImageQualityCheck.validateJsonElement(jsonArray_list.get(i));
+    for (int i = 0; i < jsonArraylist.size(); i++) {
+      ImageQualityCheck.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

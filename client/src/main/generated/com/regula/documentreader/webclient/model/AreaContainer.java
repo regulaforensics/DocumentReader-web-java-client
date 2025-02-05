@@ -46,7 +46,7 @@ public class AreaContainer {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<RectangleCoordinates> _list = new ArrayList<>();
+  private List<RectangleCoordinates> list = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_POINTS = "Points";
 
@@ -75,31 +75,31 @@ public class AreaContainer {
     this.count = count;
   }
 
-  public AreaContainer _list(@javax.annotation.Nonnull List<RectangleCoordinates> _list) {
-    this._list = _list;
+  public AreaContainer list(@javax.annotation.Nonnull List<RectangleCoordinates> list) {
+    this.list = list;
     return this;
   }
 
-  public AreaContainer addListItem(RectangleCoordinates _listItem) {
-    if (this._list == null) {
-      this._list = new ArrayList<>();
+  public AreaContainer addListItem(RectangleCoordinates listItem) {
+    if (this.list == null) {
+      this.list = new ArrayList<>();
     }
-    this._list.add(_listItem);
+    this.list.add(listItem);
     return this;
   }
 
   /**
-   * Get _list
+   * Get list
    *
-   * @return _list
+   * @return list
    */
   @javax.annotation.Nonnull
   public List<RectangleCoordinates> getList() {
-    return _list;
+    return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<RectangleCoordinates> _list) {
-    this._list = _list;
+  public void setList(@javax.annotation.Nonnull List<RectangleCoordinates> list) {
+    this.list = list;
   }
 
   public AreaContainer points(@javax.annotation.Nonnull List<PointsContainer> points) {
@@ -139,13 +139,13 @@ public class AreaContainer {
     }
     AreaContainer areaContainer = (AreaContainer) o;
     return Objects.equals(this.count, areaContainer.count)
-        && Objects.equals(this._list, areaContainer._list)
+        && Objects.equals(this.list, areaContainer.list)
         && Objects.equals(this.points, areaContainer.points);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, _list, points);
+    return Objects.hash(count, list, points);
   }
 
   @Override
@@ -153,7 +153,7 @@ public class AreaContainer {
     StringBuilder sb = new StringBuilder();
     sb.append("class AreaContainer {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
+    sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    points: ").append(toIndentedString(points)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -232,10 +232,10 @@ public class AreaContainer {
               jsonObj.get("List").toString()));
     }
 
-    JsonArray jsonArray_list = jsonObj.getAsJsonArray("List");
+    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
-    for (int i = 0; i < jsonArray_list.size(); i++) {
-      RectangleCoordinates.validateJsonElement(jsonArray_list.get(i));
+    for (int i = 0; i < jsonArraylist.size(); i++) {
+      RectangleCoordinates.validateJsonElement(jsonArraylist.get(i));
     }
     ;
     // ensure the json data is an array
