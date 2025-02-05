@@ -12,131 +12,182 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Light {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Image light index */
+@JsonAdapter(Light.Adapter.class)
+public enum Light {
 
   /** Lighting schemes are off */
-  public static final Long OFF = 0l;
+  OFF(0l),
 
   /** OVI scheme */
-  public static final Long OVI = 1l;
+  OVI(1l),
 
   /** Upper/lower lighters of white light scheme */
-  public static final Long WHITE_TOP = 2l;
+  WHITE_TOP(2l),
 
   /** Side lighters of white light scheme */
-  public static final Long WHITE_SIDE = 4l;
+  WHITE_SIDE(4l),
 
   /** General white light without separate control of side and upper/lower lighters scheme */
-  public static final Long WHITE_FRONT = 8388608l;
+  WHITE_FRONT(8388608l),
 
   /** Upper/lower and side lighters of white light scheme */
-  public static final Long WHITE = 6l;
+  WHITE(6l),
 
   /** Upper/lower lighters of IR light scheme */
-  public static final Long IR_TOP = 8l;
+  IR_TOP(8l),
 
   /** Side lighters of IR light scheme */
-  public static final Long IR_SIDE = 16l;
+  IR_SIDE(16l),
 
   /** General IR light without separate control of side and upper/lower lighters scheme */
-  public static final Long IR_FRONT = 16777216l;
+  IR_FRONT(16777216l),
 
   /** Upper/lower and side lighters of IR light scheme */
-  public static final Long IR = 24l;
+  IR(24l),
 
   /** general white image converted to grayscale */
-  public static final Long WHITE_GRAY = 33554432l;
+  WHITE_GRAY(33554432l),
 
   /** General UV light scheme */
-  public static final Long UV = 128l;
+  UV(128l),
 
   /** OVD light for hologram visualization */
-  public static final Long OVD = 67108864l;
+  OVD(67108864l),
 
   /** Video detection light for internal use only */
-  public static final Long VIDEODETECTION = 134217728l;
+  VIDEODETECTION(134217728l),
 
   /** Light IR 870 oblique */
-  public static final Long IR_870_OBL = 268435456l;
+  IR_870_OBL(268435456l),
 
   /** IR luminescence */
-  public static final Long IR_LUMINESCENCE = 256l;
+  IR_LUMINESCENCE(256l),
 
   /** Left lighter of white coaxial light scheme */
-  public static final Long AXIAL_WHITE_LEFT = 1024l;
+  AXIAL_WHITE_LEFT(1024l),
 
   /** Right lighter of white coaxial light scheme */
-  public static final Long AXIAL_WHITE_RIGHT = 2048l;
+  AXIAL_WHITE_RIGHT(2048l),
 
   /** Coaxial white light without separate control of left and right lighters scheme */
-  public static final Long AXIAL_WHITE_FRONT = 512l;
+  AXIAL_WHITE_FRONT(512l),
 
   /** IR720 */
-  public static final Long IR_720 = 4096l;
+  IR_720(4096l),
 
   /** IR940 */
-  public static final Long IR_940 = 8192l;
+  IR_940(8192l),
 
   /** Right and left lighters of white coaxial light scheme */
-  public static final Long AXIAL_WHITE_FULL = 3072l;
+  AXIAL_WHITE_FULL(3072l),
 
   /** For internal use */
-  public static final Long RAW_DATA = 2147483648l;
+  RAW_DATA(2147483648l),
 
   /** For internal use */
-  public static final Long RAW_DATA_GRBG = 2415919104l;
+  RAW_DATA_GRBG(2415919104l),
 
   /** For internal use */
-  public static final Long RAW_DATA_GBGR = 2684354560l;
+  RAW_DATA_GBGR(2684354560l),
 
   /** For internal use */
-  public static final Long RAW_DATA_RGGB = 2952790016l;
+  RAW_DATA_RGGB(2952790016l),
 
   /** For internal use */
-  public static final Long RAW_DATA_BGGR = 3221225472l;
+  RAW_DATA_BGGR(3221225472l),
 
   /** Transmitted */
-  public static final Long TRANSMITTED = 32l;
+  TRANSMITTED(32l),
 
   /** Transmitted IR */
-  public static final Long TRANSMITTED_IR = 64l;
+  TRANSMITTED_IR(64l),
 
   /** Transmitted AntiStokes */
-  public static final Long ANTI_STOKES = 65536l;
+  ANTI_STOKES(65536l),
 
   /** Transmitted IR940 */
-  public static final Long TRANSMITTED_IR940 = 16384l;
+  TRANSMITTED_IR940(16384l),
 
   /** OVD right */
-  public static final Long OVD_RIGHT = 262144l;
+  OVD_RIGHT(262144l),
 
   /** OVD left */
-  public static final Long OVD_LEFT = 131072l;
+  OVD_LEFT(131072l),
 
   /** IR 700 */
-  public static final Long IR_700 = 32768l;
+  IR_700(32768l),
 
   /** Front IR870 (mod. 8803) */
-  public static final Long IR_870 = 16777216l;
+  IR_870(16777216l),
 
   /** OVD light (hologram visualization) (mod. 8850) */
-  public static final Long HOLO = 67108864l;
+  HOLO(67108864l),
 
   /** For internal use */
-  public static final Long IR_BOTTOM = 64l;
+  IR_BOTTOM(64l),
 
   /** For internal use */
-  public static final Long WHITE_BOTTOM = 32l;
+  WHITE_BOTTOM(32l),
 
   /** UVС 254 (mod. 88X0) */
-  public static final Long UVC = 524288l;
+  UVC(524288l),
 
   /** UVB 313 (mod. 88X0) */
-  public static final Long UVB = 1048576l;
+  UVB(1048576l),
 
   /** White oblique light */
-  public static final Long WHITE_OBL = 2097152l;
+  WHITE_OBL(2097152l),
 
   /** For internal use */
-  public static final Long WHITE_SPECIAL = 4194304l;
+  WHITE_SPECIAL(4194304l);
+
+  private Long value;
+
+  Light(Long value) {
+    this.value = value;
+  }
+
+  public Long getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static Light fromValue(Long value) {
+    for (Light b : Light.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<Light> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final Light enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public Light read(final JsonReader jsonReader) throws IOException {
+      Long value = jsonReader.nextLong();
+      return Light.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Long value = jsonElement.getAsLong();
+    Light.fromValue(value);
+  }
 }

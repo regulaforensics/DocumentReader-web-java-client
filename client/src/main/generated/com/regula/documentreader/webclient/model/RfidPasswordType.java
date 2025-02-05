@@ -12,26 +12,81 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidPasswordType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants specifying the rate of data exchange between the reader
+ * and the RFID-chip
+ */
+@JsonAdapter(RfidPasswordType.Adapter.class)
+public enum RfidPasswordType {
 
   /** Unknown type */
-  public static final int UNKNOWN = 0;
+  UNKNOWN(0),
 
   /** MRZ */
-  public static final int MRZ = 1;
+  MRZ(1),
 
   /** CAN */
-  public static final int CAN = 2;
+  CAN(2),
 
   /** PIN */
-  public static final int PIN = 3;
+  PIN(3),
 
   /** PUK */
-  public static final int PUK = 4;
+  PUK(4),
 
   /** eSign-PIN */
-  public static final int PIN_E_SIGN = 5;
+  PIN_E_SIGN(5),
 
   /** Scanning Area Identifier (for eDL application) */
-  public static final int SAI = 6;
+  SAI(6);
+
+  private Integer value;
+
+  RfidPasswordType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidPasswordType fromValue(Integer value) {
+    for (RfidPasswordType b : RfidPasswordType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidPasswordType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidPasswordType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidPasswordType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidPasswordType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidPasswordType.fromValue(value);
+  }
 }

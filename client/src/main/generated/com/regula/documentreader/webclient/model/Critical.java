@@ -12,11 +12,62 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Critical {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Enumeration contains identifiers determining the criticality of the security element */
+@JsonAdapter(Critical.Adapter.class)
+public enum Critical {
 
   /** Security element may be absent in a valid document */
-  public static final int NOT_CRITICAL = 0;
+  NOT_CRITICAL(0),
 
   /** Security element must be present in a valid document */
-  public static final int CRITICAL = 1;
+  CRITICAL(1);
+
+  private Integer value;
+
+  Critical(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static Critical fromValue(Integer value) {
+    for (Critical b : Critical.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<Critical> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final Critical enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public Critical read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return Critical.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    Critical.fromValue(value);
+  }
 }

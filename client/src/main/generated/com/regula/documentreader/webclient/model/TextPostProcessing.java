@@ -12,17 +12,69 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class TextPostProcessing {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Gets or Sets TextPostProcessing */
+@JsonAdapter(TextPostProcessing.Adapter.class)
+public enum TextPostProcessing {
 
   /** Do not change */
-  public static final int NO_CHANGE = 0;
+  NO_CHANGE(0),
 
   /** Uppercase */
-  public static final int UPPERCASE = 1;
+  UPPERCASE(1),
 
   /** Lowercase */
-  public static final int LOWERCASE = 2;
+  LOWERCASE(2),
 
   /** Capital */
-  public static final int CAPITAL = 3;
+  CAPITAL(3);
+
+  private Integer value;
+
+  TextPostProcessing(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static TextPostProcessing fromValue(Integer value) {
+    for (TextPostProcessing b : TextPostProcessing.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<TextPostProcessing> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final TextPostProcessing enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public TextPostProcessing read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return TextPostProcessing.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    TextPostProcessing.fromValue(value);
+  }
 }

@@ -12,17 +12,69 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class DocumentTypeRecognitionResult {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Gets or Sets DocumentTypeRecognitionResult */
+@JsonAdapter(DocumentTypeRecognitionResult.Adapter.class)
+public enum DocumentTypeRecognitionResult {
 
   /** Document type determined. The first element in candidates array is recognition result */
-  public static final int OK = 0;
+  OK(0),
 
   /** Document type was not determined. Ongoing processing is not possible */
-  public static final int UNKNOWN = 15;
+  UNKNOWN(15),
 
   /**
    * To determine document type user should provide more images with different light sources (UV,
    * for example)
    */
-  public static final int NEED_MORE_IMAGES = 29;
+  NEED_MORE_IMAGES(29);
+
+  private Integer value;
+
+  DocumentTypeRecognitionResult(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static DocumentTypeRecognitionResult fromValue(Integer value) {
+    for (DocumentTypeRecognitionResult b : DocumentTypeRecognitionResult.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<DocumentTypeRecognitionResult> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final DocumentTypeRecognitionResult enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public DocumentTypeRecognitionResult read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return DocumentTypeRecognitionResult.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    DocumentTypeRecognitionResult.fromValue(value);
+  }
 }

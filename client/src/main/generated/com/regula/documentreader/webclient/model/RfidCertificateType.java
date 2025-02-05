@@ -12,29 +12,84 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidCertificateType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants that define the type of certificate used in the procedure
+ * of document security object digital signature verification
+ */
+@JsonAdapter(RfidCertificateType.Adapter.class)
+public enum RfidCertificateType {
 
   /** Type is not defined */
-  public static final int UNDEFINED = 0;
+  UNDEFINED(0),
 
   /** CSCA */
-  public static final int CSCA = 1;
+  CSCA(1),
 
   /** CSCA-link */
-  public static final int CSCA_LINK = 2;
+  CSCA_LINK(2),
 
   /** DS */
-  public static final int DS = 3;
+  DS(3),
 
   /** Master List signer */
-  public static final int MLS = 4;
+  MLS(4),
 
   /** Deviaton List signer */
-  public static final int DEV_LS = 5;
+  DEV_LS(5),
 
   /** Defect List signer */
-  public static final int DEF_LS = 6;
+  DEF_LS(6),
 
   /** Black List signer */
-  public static final int BLS = 7;
+  BLS(7);
+
+  private Integer value;
+
+  RfidCertificateType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidCertificateType fromValue(Integer value) {
+    for (RfidCertificateType b : RfidCertificateType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidCertificateType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidCertificateType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidCertificateType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidCertificateType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidCertificateType.fromValue(value);
+  }
 }

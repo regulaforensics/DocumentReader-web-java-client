@@ -12,20 +12,72 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class BarCodeModuleType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Gets or Sets BarCodeModuleType */
+@JsonAdapter(BarCodeModuleType.Adapter.class)
+public enum BarCodeModuleType {
 
   /** Module contains text data */
-  public static final int TEXT = 0;
+  TEXT(0),
 
   /** Module contains byte data */
-  public static final int BYTE = 1;
+  BYTE(1),
 
   /** Module contains numeric data */
-  public static final int NUM = 2;
+  NUM(2),
 
   /** Shifts in byte compaction mode (for PDF417) */
-  public static final int SHIFT = 3;
+  SHIFT(3),
 
   /** Module contains any data */
-  public static final int ALL = 4;
+  ALL(4);
+
+  private Integer value;
+
+  BarCodeModuleType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static BarCodeModuleType fromValue(Integer value) {
+    for (BarCodeModuleType b : BarCodeModuleType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<BarCodeModuleType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final BarCodeModuleType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public BarCodeModuleType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return BarCodeModuleType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    BarCodeModuleType.fromValue(value);
+  }
 }

@@ -12,20 +12,72 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Visibility {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Enumeration contains visibility status of the security element */
+@JsonAdapter(Visibility.Adapter.class)
+public enum Visibility {
 
   /** Invisible */
-  public static final int INVISIBLE = 0;
+  INVISIBLE(0),
 
   /** Visible */
-  public static final int VISIBLE = 1;
+  VISIBLE(1),
 
   /** Colored */
-  public static final int COLORED = 2;
+  COLORED(2),
 
   /** Grayscale */
-  public static final int GRAYSCALE = 4;
+  GRAYSCALE(4),
 
   /** Visible vs IR match */
-  public static final int WHITE_IR_MATCHING = 8;
+  WHITE_IR_MATCHING(8);
+
+  private Integer value;
+
+  Visibility(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static Visibility fromValue(Integer value) {
+    for (Visibility b : Visibility.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<Visibility> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final Visibility enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public Visibility read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return Visibility.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    Visibility.fromValue(value);
+  }
 }

@@ -12,20 +12,75 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidBaudRate {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants specifying the rate of data exchange between the reader
+ * and the RFID-chip
+ */
+@JsonAdapter(RfidBaudRate.Adapter.class)
+public enum RfidBaudRate {
 
   /** Unknown */
-  public static final int UNKNOWN = 0;
+  UNKNOWN(0),
 
   /** 106 bits/s */
-  public static final int RFBR_106 = 1;
+  RFBR_106(1),
 
   /** 212 bits/s */
-  public static final int RFBR_212 = 2;
+  RFBR_212(2),
 
   /** 424 bits/s */
-  public static final int RFBR_424 = 4;
+  RFBR_424(4),
 
   /** 848 bits/s */
-  public static final int RFBR_848 = 8;
+  RFBR_848(8);
+
+  private Integer value;
+
+  RfidBaudRate(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidBaudRate fromValue(Integer value) {
+    for (RfidBaudRate b : RfidBaudRate.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidBaudRate> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidBaudRate enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidBaudRate read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidBaudRate.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidBaudRate.fromValue(value);
+  }
 }

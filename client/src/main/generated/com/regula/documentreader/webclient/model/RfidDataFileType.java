@@ -12,189 +12,243 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidDataFileType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-  public static final int UNSPECIFIED = 0;
+/**
+ * Enumeration contains a set of constants that define the file type (or logical belonging of the
+ * data object) within the context of the communication session with electronic document
+ */
+@JsonAdapter(RfidDataFileType.Adapter.class)
+public enum RfidDataFileType {
+  UNSPECIFIED(0),
 
-  public static final int PASSPORT_DG1 = 1;
+  PASSPORT_DG1(1),
 
-  public static final int PASSPORT_DG2 = 2;
+  PASSPORT_DG2(2),
 
-  public static final int PASSPORT_DG3 = 3;
+  PASSPORT_DG3(3),
 
-  public static final int PASSPORT_DG4 = 4;
+  PASSPORT_DG4(4),
 
-  public static final int PASSPORT_DG5 = 5;
+  PASSPORT_DG5(5),
 
-  public static final int PASSPORT_DG6 = 6;
+  PASSPORT_DG6(6),
 
-  public static final int PASSPORT_DG7 = 7;
+  PASSPORT_DG7(7),
 
-  public static final int PASSPORT_DG8 = 8;
+  PASSPORT_DG8(8),
 
-  public static final int PASSPORT_DG9 = 9;
+  PASSPORT_DG9(9),
 
-  public static final int PASSPORT_DG10 = 10;
+  PASSPORT_DG10(10),
 
-  public static final int PASSPORT_DG11 = 11;
+  PASSPORT_DG11(11),
 
-  public static final int PASSPORT_DG12 = 12;
+  PASSPORT_DG12(12),
 
-  public static final int PASSPORT_DG13 = 13;
+  PASSPORT_DG13(13),
 
-  public static final int PASSPORT_DG14 = 14;
+  PASSPORT_DG14(14),
 
-  public static final int PASSPORT_DG15 = 15;
+  PASSPORT_DG15(15),
 
-  public static final int PASSPORT_DG16 = 16;
+  PASSPORT_DG16(16),
 
-  public static final int PASSPORT_DG17 = 17;
+  PASSPORT_DG17(17),
 
-  public static final int PASSPORT_DG18 = 18;
+  PASSPORT_DG18(18),
 
-  public static final int PASSPORT_DG19 = 19;
+  PASSPORT_DG19(19),
 
-  public static final int PASSPORT_DG20 = 20;
+  PASSPORT_DG20(20),
 
-  public static final int PASSPORT_SOD = 21;
+  PASSPORT_SOD(21),
 
-  public static final int PASSPORT_CVCA = 22;
+  PASSPORT_CVCA(22),
 
-  public static final int PASSPORT_COM = 23;
+  PASSPORT_COM(23),
 
-  public static final int DTC_DG17 = 57;
+  DTC_DG17(57),
 
-  public static final int DTC_DG18 = 58;
+  DTC_DG18(58),
 
-  public static final int DTC_DG22 = 62;
+  DTC_DG22(62),
 
-  public static final int DTC_DG23 = 63;
+  DTC_DG23(63),
 
-  public static final int DTC_DG24 = 64;
+  DTC_DG24(64),
 
-  public static final int ID_DG1 = 101;
+  ID_DG1(101),
 
-  public static final int ID_DG2 = 102;
+  ID_DG2(102),
 
-  public static final int ID_DG3 = 103;
+  ID_DG3(103),
 
-  public static final int ID_DG4 = 104;
+  ID_DG4(104),
 
-  public static final int ID_DG5 = 105;
+  ID_DG5(105),
 
-  public static final int ID_DG6 = 106;
+  ID_DG6(106),
 
-  public static final int ID_DG7 = 107;
+  ID_DG7(107),
 
-  public static final int ID_DG8 = 108;
+  ID_DG8(108),
 
-  public static final int ID_DG9 = 109;
+  ID_DG9(109),
 
-  public static final int ID_DG10 = 110;
+  ID_DG10(110),
 
-  public static final int ID_DG11 = 111;
+  ID_DG11(111),
 
-  public static final int ID_DG12 = 112;
+  ID_DG12(112),
 
-  public static final int ID_DG13 = 113;
+  ID_DG13(113),
 
-  public static final int ID_DG14 = 114;
+  ID_DG14(114),
 
-  public static final int ID_DG15 = 115;
+  ID_DG15(115),
 
-  public static final int ID_DG16 = 116;
+  ID_DG16(116),
 
-  public static final int ID_DG17 = 117;
+  ID_DG17(117),
 
-  public static final int ID_DG18 = 118;
+  ID_DG18(118),
 
-  public static final int ID_DG19 = 119;
+  ID_DG19(119),
 
-  public static final int ID_DG20 = 120;
+  ID_DG20(120),
 
-  public static final int ID_DG21 = 121;
+  ID_DG21(121),
 
-  public static final int DL_COM = 150;
+  DL_COM(150),
 
-  public static final int DL_DG1 = 151;
+  DL_DG1(151),
 
-  public static final int DL_DG2 = 152;
+  DL_DG2(152),
 
-  public static final int DL_DG3 = 153;
+  DL_DG3(153),
 
-  public static final int DL_DG4 = 154;
+  DL_DG4(154),
 
-  public static final int DL_DG5 = 155;
+  DL_DG5(155),
 
-  public static final int DL_DG6 = 156;
+  DL_DG6(156),
 
-  public static final int DL_DG7 = 157;
+  DL_DG7(157),
 
-  public static final int DL_DG8 = 158;
+  DL_DG8(158),
 
-  public static final int DL_DG9 = 159;
+  DL_DG9(159),
 
-  public static final int DL_DG10 = 160;
+  DL_DG10(160),
 
-  public static final int DL_DG11 = 161;
+  DL_DG11(161),
 
-  public static final int DL_DG12 = 162;
+  DL_DG12(162),
 
-  public static final int DL_DG13 = 163;
+  DL_DG13(163),
 
-  public static final int DL_DG14 = 164;
+  DL_DG14(164),
 
-  public static final int DL_SOD = 165;
+  DL_SOD(165),
 
-  public static final int DL_CE = 166;
+  DL_CE(166),
 
-  public static final int DL_CVCA = 167;
+  DL_CVCA(167),
 
-  public static final int PACE_CARD_ACCESS = 200;
+  PACE_CARD_ACCESS(200),
 
-  public static final int PACE_CARD_SECURITY = 201;
+  PACE_CARD_SECURITY(201),
 
-  public static final int PACE_CHIP_SECURITY = 202;
+  PACE_CHIP_SECURITY(202),
 
-  public static final int MIFARE_DATA = 300;
+  MIFARE_DATA(300),
 
-  public static final int MIFARE_VALIDITY = 301;
+  MIFARE_VALIDITY(301),
 
-  public static final int AUTHENTICITY_V2 = 302;
+  AUTHENTICITY_V2(302),
 
-  public static final int ATR = 400;
+  ATR(400),
 
-  public static final int _E_SIGN_PK = 500;
+  _E_SIGN_PK(500),
 
-  public static final int _E_SIGN_SIGNED_DATA = 501;
+  _E_SIGN_SIGNED_DATA(501),
 
-  public static final int CERTIFICATE = 600;
+  CERTIFICATE(600),
 
-  public static final int MASTER_LIST = 601;
+  MASTER_LIST(601),
 
-  public static final int DEFECT_LIST = 602;
+  DEFECT_LIST(602),
 
-  public static final int BLACK_LIST = 603;
+  BLACK_LIST(603),
 
-  public static final int APP_DIRECTORY = 700;
+  APP_DIRECTORY(700),
 
-  public static final int SESSION = 701;
+  SESSION(701),
 
-  public static final int LOG_DATA = 702;
+  LOG_DATA(702),
 
-  public static final int CHIP_PROPERTIES = 703;
+  CHIP_PROPERTIES(703),
 
-  public static final int POST_CA_RESPONSE = 710;
+  POST_CA_RESPONSE(710),
 
-  public static final int POST_CA_PUBLIC_KEY = 711;
+  POST_CA_PUBLIC_KEY(711),
 
-  public static final int POST_CA_INFO = 712;
+  POST_CA_INFO(712),
 
-  public static final int POST_CA_D_PARAMS = 713;
+  POST_CA_D_PARAMS(713),
 
-  public static final int POST_CA_CHECK_PK = 714;
+  POST_CA_CHECK_PK(714),
 
-  public static final int POST_CA_CHECK_SK = 715;
+  POST_CA_CHECK_SK(715),
 
-  public static final int USER_DEFINED = 1000;
+  USER_DEFINED(1000);
+
+  private Integer value;
+
+  RfidDataFileType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidDataFileType fromValue(Integer value) {
+    for (RfidDataFileType b : RfidDataFileType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidDataFileType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidDataFileType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidDataFileType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidDataFileType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidDataFileType.fromValue(value);
+  }
 }

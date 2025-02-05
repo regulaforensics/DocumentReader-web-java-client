@@ -12,9 +12,66 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class ApiV2TransactionTransactionIdResultsGetWithImagesParameter {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-  public static final Boolean TRUE = "true";
+/** Gets or Sets _api_v2_transaction__transactionId__results_get_withImages_parameter */
+@JsonAdapter(ApiV2TransactionTransactionIdResultsGetWithImagesParameter.Adapter.class)
+public enum ApiV2TransactionTransactionIdResultsGetWithImagesParameter {
+  TRUE("true"),
 
-  public static final Boolean FALSE = "false";
+  FALSE("false");
+
+  private Boolean value;
+
+  ApiV2TransactionTransactionIdResultsGetWithImagesParameter(Boolean value) {
+    this.value = value;
+  }
+
+  public Boolean getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static ApiV2TransactionTransactionIdResultsGetWithImagesParameter fromValue(
+      Boolean value) {
+    for (ApiV2TransactionTransactionIdResultsGetWithImagesParameter b :
+        ApiV2TransactionTransactionIdResultsGetWithImagesParameter.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter
+      extends TypeAdapter<ApiV2TransactionTransactionIdResultsGetWithImagesParameter> {
+    @Override
+    public void write(
+        final JsonWriter jsonWriter,
+        final ApiV2TransactionTransactionIdResultsGetWithImagesParameter enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public ApiV2TransactionTransactionIdResultsGetWithImagesParameter read(
+        final JsonReader jsonReader) throws IOException {
+      Boolean value = jsonReader.nextBoolean();
+      return ApiV2TransactionTransactionIdResultsGetWithImagesParameter.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Boolean value = jsonElement.getAsBoolean();
+    ApiV2TransactionTransactionIdResultsGetWithImagesParameter.fromValue(value);
+  }
 }

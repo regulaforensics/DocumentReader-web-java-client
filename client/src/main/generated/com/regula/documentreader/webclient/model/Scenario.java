@@ -12,65 +12,116 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Scenario {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Document processing scenario */
+@JsonAdapter(Scenario.Adapter.class)
+public enum Scenario {
 
   /** Processing scenario for obtaining MRZ data */
-  public static final String MRZ = "Mrz";
+  MRZ("Mrz"),
 
   /** Processing scenario for obtaining barcode data */
-  public static final String BARCODE = "Barcode";
+  BARCODE("Barcode"),
 
   /** Processing scenario for detecting document boundaries */
-  public static final String LOCATE = "Locate";
+  LOCATE("Locate"),
 
   /** Processing scenario for obtaining visual zone OCR results */
-  public static final String OCR = "Ocr";
+  OCR("Ocr"),
 
   /** Processing scenario for document type recognition */
-  public static final String DOCTYPE = "DocType";
+  DOCTYPE("DocType"),
 
   /** Processing scenario for obtaining MRZ and/or barcode data */
-  public static final String MRZ_OR_BARCODE = "MrzOrBarcode";
+  MRZ_OR_BARCODE("MrzOrBarcode"),
 
   /** Processing scenario for detecting document boundaries and/or obtaining MRZ data */
-  public static final String MRZ_OR_LOCATE = "MrzOrLocate";
+  MRZ_OR_LOCATE("MrzOrLocate"),
 
   /** Processing scenario for detecting document boundaries and obtaining MRZ data */
-  public static final String MRZ_AND_LOCATE = "MrzAndLocate";
+  MRZ_AND_LOCATE("MrzAndLocate"),
 
   /** Processing scenario for detecting the document boundaries and obtaining barcode data */
-  public static final String BARCODE_AND_LOCATE = "BarcodeAndLocate";
+  BARCODE_AND_LOCATE("BarcodeAndLocate"),
 
   /** Processing scenario for obtaining MRZ data or visual zone OCR results */
-  public static final String MRZ_OR_OCR = "MrzOrOcr";
+  MRZ_OR_OCR("MrzOrOcr"),
 
   /** Processing scenario for obtaining MRZ or barcode or visual zone OCR results */
-  public static final String MRZ_OR_BARCODE_OR_OCR = "MrzOrBarcodeOrOcr";
+  MRZ_OR_BARCODE_OR_OCR("MrzOrBarcodeOrOcr"),
 
   /**
    * Processing scenario for detecting document boundaries and obtaining MRZ data or visual zone OCR
    * results
    */
-  public static final String LOCATE_VISUAL_AND_MRZ_OR_OCR = "LocateVisual_And_MrzOrOcr";
+  LOCATE_VISUAL_AND_MRZ_OR_OCR("LocateVisual_And_MrzOrOcr"),
 
   /** Processing scenario for obtaining all document data */
-  public static final String FULL_PROCESS = "FullProcess";
+  FULL_PROCESS("FullProcess"),
 
   /** Processing scenario for obtaining all document data and document authentication */
-  public static final String FULL_AUTH = "FullAuth";
+  FULL_AUTH("FullAuth"),
 
   /** Processing scenario for obtaining data from registration stamps */
-  public static final String RUS_STAMP = "RusStamp";
+  RUS_STAMP("RusStamp"),
 
   /** Processing scenario for obtaining OCR results of any image */
-  public static final String OCR_FREE = "OcrFree";
+  OCR_FREE("OcrFree"),
 
   /** Processing scenario for obtaining bank card data */
-  public static final String CREDIT_CARD = "CreditCard";
+  CREDIT_CARD("CreditCard"),
 
   /** Scenario for obtaining an original image without any processing */
-  public static final String CAPTURE = "Capture";
+  CAPTURE("Capture"),
 
   /** Processing scenario for Digital Travel Credentials (DTC-VC) data processing */
-  public static final String DTC = "DTC";
+  DTC("DTC");
+
+  private String value;
+
+  Scenario(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static Scenario fromValue(String value) {
+    for (Scenario b : Scenario.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<Scenario> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final Scenario enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public Scenario read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return Scenario.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    Scenario.fromValue(value);
+  }
 }

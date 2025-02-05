@@ -12,23 +12,77 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidAChip {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants specifying the type of the RFIDchip from MIFARE® family
+ * (for chips of type A)
+ */
+@JsonAdapter(RfidAChip.Adapter.class)
+public enum RfidAChip {
 
   /** Unknown */
-  public static final int UNKNOWN = 0;
+  UNKNOWN(0),
 
   /** MIFARE® 1K */
-  public static final int MIFARE_1K = 1;
+  MIFARE_1K(1),
 
   /** MIFARE® 4K */
-  public static final int MIFARE_4K = 2;
+  MIFARE_4K(2),
 
   /** MIFARE® Ultralight */
-  public static final int MIFARE_ULTRALIGHT = 3;
+  MIFARE_ULTRALIGHT(3),
 
   /** MIFARE® DESFire */
-  public static final int MIFARE_DES_FIRE = 4;
+  MIFARE_DES_FIRE(4),
 
   /** MIFARE® ProX or SmartMX xD(T) */
-  public static final int MIFARE_PROX = 5;
+  MIFARE_PROX(5);
+
+  private Integer value;
+
+  RfidAChip(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidAChip fromValue(Integer value) {
+    for (RfidAChip b : RfidAChip.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidAChip> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidAChip enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidAChip read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidAChip.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidAChip.fromValue(value);
+  }
 }

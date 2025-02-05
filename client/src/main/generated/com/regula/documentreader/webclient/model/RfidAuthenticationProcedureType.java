@@ -12,17 +12,73 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidAuthenticationProcedureType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants that define the type of performed procedure of document
+ * authentication within the current session
+ */
+@JsonAdapter(RfidAuthenticationProcedureType.Adapter.class)
+public enum RfidAuthenticationProcedureType {
 
   /** Not defined */
-  public static final int UNDEFINED = 0;
+  UNDEFINED(0),
 
   /** Standard authentication procedure */
-  public static final int STANDARD = 1;
+  STANDARD(1),
 
   /** Advanced authentication procedure */
-  public static final int ADVANCED = 2;
+  ADVANCED(2),
 
   /** General authentication procedure */
-  public static final int GENERAL = 3;
+  GENERAL(3);
+
+  private Integer value;
+
+  RfidAuthenticationProcedureType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidAuthenticationProcedureType fromValue(Integer value) {
+    for (RfidAuthenticationProcedureType b : RfidAuthenticationProcedureType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidAuthenticationProcedureType> {
+    @Override
+    public void write(
+        final JsonWriter jsonWriter, final RfidAuthenticationProcedureType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidAuthenticationProcedureType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidAuthenticationProcedureType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidAuthenticationProcedureType.fromValue(value);
+  }
 }

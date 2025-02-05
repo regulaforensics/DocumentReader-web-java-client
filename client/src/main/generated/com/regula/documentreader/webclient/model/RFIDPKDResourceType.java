@@ -12,29 +12,81 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RFIDPKDResourceType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Enumeration contains a set of constants that define the type of certificate */
+@JsonAdapter(RFIDPKDResourceType.Adapter.class)
+public enum RFIDPKDResourceType {
 
   /** Certificate file contents (.pem, .cer, .crt, .der) */
-  public static final int CERTIFICATE_PA = 0;
+  CERTIFICATE_PA(0),
 
   /** Certificate file contents (.cvcert) and private key file contents (.pkcs8) */
-  public static final int CERTIFICATE_TA = 1;
+  CERTIFICATE_TA(1),
 
   /** LDIF file contents (.ldif) */
-  public static final int LDIF = 2;
+  LDIF(2),
 
   /** CRL file contents (.crl) */
-  public static final int CRL = 3;
+  CRL(3),
 
   /** Master List (.ml, .mls) */
-  public static final int ML = 4;
+  ML(4),
 
   /** Defect List (.dl, .dls, .dfl) */
-  public static final int DEFL = 5;
+  DEFL(5),
 
   /** Deviance List (.dl, .dls, .dvl) */
-  public static final int DEVL = 6;
+  DEVL(6),
 
   /** Black List (.bl, .bls) */
-  public static final int BL = 7;
+  BL(7);
+
+  private Integer value;
+
+  RFIDPKDResourceType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RFIDPKDResourceType fromValue(Integer value) {
+    for (RFIDPKDResourceType b : RFIDPKDResourceType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RFIDPKDResourceType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RFIDPKDResourceType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RFIDPKDResourceType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RFIDPKDResourceType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RFIDPKDResourceType.fromValue(value);
+  }
 }

@@ -12,70 +12,122 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class BarcodeType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Enumeration contains the types of barcodes that can be processed */
+@JsonAdapter(BarcodeType.Adapter.class)
+public enum BarcodeType {
 
   /** Unknown type */
-  public static final int UNKNOWN = 0;
+  UNKNOWN(0),
 
   /** One-dimensional bar-code, ISO 15417 (ANSI/AIM BC4-1999 Code 128) */
-  public static final int CODE128 = 1;
+  CODE128(1),
 
   /** One-dimensional bar-code, ISO 16388 (ANSI/AIM BC1-1995 Code 39) */
-  public static final int CODE39 = 2;
+  CODE39(2),
 
   /** One-dimensional bar-code, EAN8, ISO 15418 */
-  public static final int EAN8 = 3;
+  EAN8(3),
 
   /**
    * One-dimensional bar-code, Interleaved 2 of 5, ISO 16390 (ANSI/AIM BC2-1995 Interleaved 2 of 5)
    */
-  public static final int ITF = 4;
+  ITF(4),
 
   /** Two-dimensional bar-code, ISO 15438 (AIM USS PDF417) */
-  public static final int PDF417 = 5;
+  PDF417(5),
 
   /** One-dimensional bar-code, Standard 2 of 5 (Industrial) */
-  public static final int STF = 6;
+  STF(6),
 
   /** One-dimensional bar-code, Matrix 2 of 5 */
-  public static final int MTF = 7;
+  MTF(7),
 
   /** One-dimensional bar-code, IATA 2 of 5 (Airline) */
-  public static final int IATA = 8;
+  IATA(8),
 
   /** One-dimensional bar-code, (ANSI/AIM BC3-1995, USS - Codabar) */
-  public static final int CODABAR = 9;
+  CODABAR(9),
 
   /** One-dimensional bar-code, UPC-A */
-  public static final int UPCA = 10;
+  UPCA(10),
 
   /** One-dimensional bar-code, (ANSI/AIM BC5-1995, USS - Code 93) */
-  public static final int CODE93 = 11;
+  CODE93(11),
 
   /** One-dimensional bar-code, UPC-E */
-  public static final int UPCE = 12;
+  UPCE(12),
 
   /** One-dimensional bar-code, EAN13, ISO 15418 */
-  public static final int EAN13 = 13;
+  EAN13(13),
 
   /** Two-dimensional QRCODE bar-code */
-  public static final int QRCODE = 14;
+  QRCODE(14),
 
   /** Two-dimensional AZTEC bar-code */
-  public static final int AZTEC = 15;
+  AZTEC(15),
 
   /** Two-dimensional DATAMATRIX bar-code */
-  public static final int DATAMATRIX = 16;
+  DATAMATRIX(16),
 
   /** Type for internal use, representing all 1D bar-codes */
-  public static final int ALL_1D = 17;
+  ALL_1D(17),
 
   /** One-dimensional bar-code CODE11 */
-  public static final int CODE11 = 18;
+  CODE11(18),
 
   /** JAB code */
-  public static final int JABCODE = 19;
+  JABCODE(19),
 
   /** For internal use */
-  public static final int END = 20;
+  END(20);
+
+  private Integer value;
+
+  BarcodeType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static BarcodeType fromValue(Integer value) {
+    for (BarcodeType b : BarcodeType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<BarcodeType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final BarcodeType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public BarcodeType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return BarcodeType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    BarcodeType.fromValue(value);
+  }
 }

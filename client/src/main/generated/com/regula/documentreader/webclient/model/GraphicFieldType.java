@@ -12,90 +12,142 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class GraphicFieldType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Gets or Sets GraphicFieldType */
+@JsonAdapter(GraphicFieldType.Adapter.class)
+public enum GraphicFieldType {
 
   /** Document holder photo */
-  public static final int PORTRAIT = 201;
+  PORTRAIT(201),
 
   /** Fingerprint of document holder */
-  public static final int FINGERPRINT = 202;
+  FINGERPRINT(202),
 
   /** Image of the iris of document holder */
-  public static final int EYE = 203;
+  EYE(203),
 
   /** Signature of document holder */
-  public static final int SIGNATURE = 204;
+  SIGNATURE(204),
 
   /** Barcode image */
-  public static final int BAR_CODE = 205;
+  BAR_CODE(205),
 
   /** Image of document confirming owner citizenship */
-  public static final int PROOF_OF_CITIZENSHIP = 206;
+  PROOF_OF_CITIZENSHIP(206),
 
   /**
    * Cropped and rotated with perspective compensation (front side) of a document. Single input
    * image can contain multiple document side/pages, which will be returned as separated results.
    * Most coordinates in other types defined on that image.
    */
-  public static final int DOCUMENT_FRONT = 207;
+  DOCUMENT_FRONT(207),
 
   /** Image of the rear side of the document */
-  public static final int DOCUMENT_REAR = 208;
+  DOCUMENT_REAR(208),
 
   /** Area with dynamic color change */
-  public static final int COLOR_DYNAMIC = 209;
+  COLOR_DYNAMIC(209),
 
   /** Additional Portrait */
-  public static final int GHOST_PORTRAIT = 210;
+  GHOST_PORTRAIT(210),
 
   /** Stamp */
-  public static final int STAMP = 211;
+  STAMP(211),
 
   /** Portrait of child */
-  public static final int PORTRAIT_OF_CHILD = 212;
+  PORTRAIT_OF_CHILD(212),
 
   /** Contact chip */
-  public static final int CONTACT_CHIP = 213;
+  CONTACT_CHIP(213),
 
   /** Undefined image type */
-  public static final int OTHER = 250;
+  OTHER(250),
 
   /** Fingerprint (thumb, left hand) */
-  public static final int FINGER_LEFT_THUMB = 300;
+  FINGER_LEFT_THUMB(300),
 
   /** Fingerprint (index, left hand) */
-  public static final int FINGER_LEFT_INDEX = 301;
+  FINGER_LEFT_INDEX(301),
 
   /** Fingerprint (middle, left hand) */
-  public static final int FINGER_LEFT_MIDDLE = 302;
+  FINGER_LEFT_MIDDLE(302),
 
   /** Fingerprint (ring, left hand) */
-  public static final int FINGER_LEFT_RING = 303;
+  FINGER_LEFT_RING(303),
 
   /** Fingerprint (little, left hand) */
-  public static final int FINGER_LEFT_LITTLE = 304;
+  FINGER_LEFT_LITTLE(304),
 
   /** Fingerprint (thumb, right hand) */
-  public static final int FINGER_RIGHT_THUMB = 305;
+  FINGER_RIGHT_THUMB(305),
 
   /** Fingerprint (index, right hand) */
-  public static final int FINGER_RIGHT_INDEX = 306;
+  FINGER_RIGHT_INDEX(306),
 
   /** Fingerprint (middle, right hand) */
-  public static final int FINGER_RIGHT_MIDDLE = 307;
+  FINGER_RIGHT_MIDDLE(307),
 
   /** Fingerprint (ring, right hand) */
-  public static final int FINGER_RIGHT_RING = 308;
+  FINGER_RIGHT_RING(308),
 
   /** Fingerprint (little, right hand) */
-  public static final int FINGER_RIGHT_LITTLE = 309;
+  FINGER_RIGHT_LITTLE(309),
 
   /** Fingerprint (four without thumb on right hand) */
-  public static final int FINGER_RIGHT_FOUR_FINGERS = 313;
+  FINGER_RIGHT_FOUR_FINGERS(313),
 
   /** Fingerprint (four without thumb on left hand */
-  public static final int FINGER_LEFT_FOUR_FINGERS = 314;
+  FINGER_LEFT_FOUR_FINGERS(314),
 
   /** Fingerprint (two thumbs) */
-  public static final int FINGER_TWO_THUMBS = 315;
+  FINGER_TWO_THUMBS(315);
+
+  private Integer value;
+
+  GraphicFieldType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static GraphicFieldType fromValue(Integer value) {
+    for (GraphicFieldType b : GraphicFieldType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<GraphicFieldType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final GraphicFieldType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public GraphicFieldType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return GraphicFieldType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    GraphicFieldType.fromValue(value);
+  }
 }

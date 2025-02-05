@@ -12,170 +12,226 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidDataGroupTypeTag {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration representing RFID Data Group Types. Constants with prefix correspond to the
+ * informational data groups of ePassport application, with prefix EID_ – those of eID application,
+ * with prefix EDL_ – eDL application
+ */
+@JsonAdapter(RfidDataGroupTypeTag.Adapter.class)
+public enum RfidDataGroupTypeTag {
 
   /** Common Data Group Type */
-  public static final int COM = 96;
+  COM(96),
 
   /** Data Group 1 */
-  public static final int DG1 = 97;
+  DG1(97),
 
   /** Data Group 2 */
-  public static final int DG2 = 117;
+  DG2(117),
 
   /** Data Group 3 */
-  public static final int DG3 = 99;
+  DG3(99),
 
   /** Data Group 4 */
-  public static final int DG4 = 118;
+  DG4(118),
 
   /** Data Group 5 */
-  public static final int DG5 = 101;
+  DG5(101),
 
   /** Data Group 6 */
-  public static final int DG6 = 102;
+  DG6(102),
 
   /** Data Group 7 */
-  public static final int DG7 = 103;
+  DG7(103),
 
   /** Data Group 8 */
-  public static final int DG8 = 104;
+  DG8(104),
 
   /** Data Group 9 */
-  public static final int DG9 = 105;
+  DG9(105),
 
   /** Data Group 10 */
-  public static final int DG10 = 106;
+  DG10(106),
 
   /** Data Group 11 */
-  public static final int DG11 = 107;
+  DG11(107),
 
   /** Data Group 12 */
-  public static final int DG12 = 108;
+  DG12(108),
 
   /** Data Group 13 */
-  public static final int DG13 = 109;
+  DG13(109),
 
   /** Data Group 14 */
-  public static final int DG14 = 110;
+  DG14(110),
 
   /** Data Group 15 */
-  public static final int DG15 = 111;
+  DG15(111),
 
   /** Data Group 16 */
-  public static final int DG16 = 112;
+  DG16(112),
 
   /** Start of Data */
-  public static final int SOD = 119;
+  SOD(119),
 
   /** Extended Interoperable Data, Data Group 1 */
-  public static final int EID_DG1 = 97;
+  EID_DG1(97),
 
   /** Extended Interoperable Data, Data Group 2 */
-  public static final int EID_DG2 = 98;
+  EID_DG2(98),
 
   /** Extended Interoperable Data, Data Group 3 */
-  public static final int EID_DG3 = 99;
+  EID_DG3(99),
 
   /** Extended Interoperable Data, Data Group 4 */
-  public static final int EID_DG4 = 100;
+  EID_DG4(100),
 
   /** Extended Interoperable Data, Data Group 5 */
-  public static final int EID_DG5 = 101;
+  EID_DG5(101),
 
   /** Extended Interoperable Data, Data Group 6 */
-  public static final int EID_DG6 = 102;
+  EID_DG6(102),
 
   /** Extended Interoperable Data, Data Group 7 */
-  public static final int EID_DG7 = 103;
+  EID_DG7(103),
 
   /** Extended Interoperable Data, Data Group 8 */
-  public static final int EID_DG8 = 104;
+  EID_DG8(104),
 
   /** Extended Interoperable Data, Data Group 9 */
-  public static final int EID_DG9 = 105;
+  EID_DG9(105),
 
   /** Extended Interoperable Data, Data Group 10 */
-  public static final int EID_DG10 = 106;
+  EID_DG10(106),
 
   /** Extended Interoperable Data, Data Group 11 */
-  public static final int EID_DG11 = 107;
+  EID_DG11(107),
 
   /** Extended Interoperable Data, Data Group 12 */
-  public static final int EID_DG12 = 108;
+  EID_DG12(108),
 
   /** Extended Interoperable Data, Data Group 13 */
-  public static final int EID_DG13 = 109;
+  EID_DG13(109),
 
   /** Extended Interoperable Data, Data Group 14 */
-  public static final int EID_DG14 = 110;
+  EID_DG14(110),
 
   /** Extended Interoperable Data, Data Group 15 */
-  public static final int EID_DG15 = 111;
+  EID_DG15(111),
 
   /** Extended Interoperable Data, Data Group 16 */
-  public static final int EID_DG16 = 112;
+  EID_DG16(112),
 
   /** Extended Interoperable Data, Data Group 17 */
-  public static final int EID_DG17 = 113;
+  EID_DG17(113),
 
   /** Extended Interoperable Data, Data Group 18 */
-  public static final int EID_DG18 = 114;
+  EID_DG18(114),
 
   /** Extended Interoperable Data, Data Group 19 */
-  public static final int EID_DG19 = 115;
+  EID_DG19(115),
 
   /** Extended Interoperable Data, Data Group 20 */
-  public static final int EID_DG20 = 116;
+  EID_DG20(116),
 
   /** Extended Interoperable Data, Data Group 21 */
-  public static final int EID_DG21 = 117;
+  EID_DG21(117),
 
   /** Extended Length Data, Common Data Group Type */
-  public static final int EDL_COM = 96;
+  EDL_COM(96),
 
   /** Extended Length Data, Start of Data */
-  public static final int EDL_SOD = 119;
+  EDL_SOD(119),
 
   /** Extended Length Data, Certificate Holder Authorization */
-  public static final int EDL_CE = 119;
+  EDL_CE(119),
 
   /** Extended Length Data, Data Group 1 */
-  public static final int EDL_DG1 = 97;
+  EDL_DG1(97),
 
   /** Extended Length Data, Data Group 2 */
-  public static final int EDL_DG2 = 107;
+  EDL_DG2(107),
 
   /** Extended Length Data, Data Group 3 */
-  public static final int EDL_DG3 = 108;
+  EDL_DG3(108),
 
   /** Extended Length Data, Data Group 4 */
-  public static final int EDL_DG4 = 101;
+  EDL_DG4(101),
 
   /** Extended Length Data, Data Group 5 */
-  public static final int EDL_DG5 = 103;
+  EDL_DG5(103),
 
   /** Extended Length Data, Data Group 6 */
-  public static final int EDL_DG6 = 117;
+  EDL_DG6(117),
 
   /** Extended Length Data, Data Group 7 */
-  public static final int EDL_DG7 = 99;
+  EDL_DG7(99),
 
   /** Extended Length Data, Data Group 8 */
-  public static final int EDL_DG8 = 118;
+  EDL_DG8(118),
 
   /** Extended Length Data, Data Group 9 */
-  public static final int EDL_DG9 = 112;
+  EDL_DG9(112),
 
   /** Extended Length Data, Data Group 11 */
-  public static final int EDL_DG11 = 109;
+  EDL_DG11(109),
 
   /** Extended Length Data, Data Group 12 */
-  public static final int EDL_DG12 = 113;
+  EDL_DG12(113),
 
   /** Extended Length Data, Data Group 13 */
-  public static final int EDL_DG14 = 111;
+  EDL_DG14(111),
 
   /** Extended Length Data, Data Group 14 */
-  public static final int NUMBER_1103 = 110;
+  NUMBER_1103(110);
+
+  private Integer value;
+
+  RfidDataGroupTypeTag(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidDataGroupTypeTag fromValue(Integer value) {
+    for (RfidDataGroupTypeTag b : RfidDataGroupTypeTag.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidDataGroupTypeTag> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidDataGroupTypeTag enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidDataGroupTypeTag read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidDataGroupTypeTag.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidDataGroupTypeTag.fromValue(value);
+  }
 }

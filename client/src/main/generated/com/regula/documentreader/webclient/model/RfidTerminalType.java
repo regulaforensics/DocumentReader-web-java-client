@@ -12,20 +12,75 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class RfidTerminalType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration contains a set of constants that define the type of terminal within the context of
+ * the communication session with electronic document
+ */
+@JsonAdapter(RfidTerminalType.Adapter.class)
+public enum RfidTerminalType {
 
   /** Not defined */
-  public static final int UNDEFINED = 0;
+  UNDEFINED(0),
 
   /** Inspection system */
-  public static final int INSPECTION_SYSTEM = 1;
+  INSPECTION_SYSTEM(1),
 
   /** Authentication terminal */
-  public static final int AUTHENTICATION_TERMINAL = 2;
+  AUTHENTICATION_TERMINAL(2),
 
   /** Signature terminal */
-  public static final int SIGNATURE_TERMINAL = 3;
+  SIGNATURE_TERMINAL(3),
 
   /** Unauthenticated terminal */
-  public static final int UNAUTHENTICATED_TERMINAL = 4;
+  UNAUTHENTICATED_TERMINAL(4);
+
+  private Integer value;
+
+  RfidTerminalType(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static RfidTerminalType fromValue(Integer value) {
+    for (RfidTerminalType b : RfidTerminalType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<RfidTerminalType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final RfidTerminalType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public RfidTerminalType read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return RfidTerminalType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    RfidTerminalType.fromValue(value);
+  }
 }

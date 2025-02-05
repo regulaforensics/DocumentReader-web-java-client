@@ -12,23 +12,74 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class Source {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Document data sources */
+@JsonAdapter(Source.Adapter.class)
+public enum Source {
 
   /** Machine readable zone (MRZ) */
-  public static final String MRZ = "MRZ";
+  MRZ("MRZ"),
 
   /** Visual zone */
-  public static final String VISUAL = "VISUAL";
+  VISUAL("VISUAL"),
 
   /** Barcode */
-  public static final String BARCODE = "BARCODE";
+  BARCODE("BARCODE"),
 
   /** RFID */
-  public static final String RFID = "RFID";
+  RFID("RFID"),
 
   /** Magnetic */
-  public static final String MAGNETIC = "MAGNETIC";
+  MAGNETIC("MAGNETIC"),
 
   /** External */
-  public static final String EXTERNAL = "EXTERNAL";
+  EXTERNAL("EXTERNAL");
+
+  private String value;
+
+  Source(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static Source fromValue(String value) {
+    for (Source b : Source.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<Source> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final Source enumeration) throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public Source read(final JsonReader jsonReader) throws IOException {
+      String value = jsonReader.nextString();
+      return Source.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    Source.fromValue(value);
+  }
 }

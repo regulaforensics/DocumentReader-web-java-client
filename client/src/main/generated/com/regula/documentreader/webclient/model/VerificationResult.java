@@ -12,20 +12,72 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class VerificationResult {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/** Gets or Sets VerificationResult */
+@JsonAdapter(VerificationResult.Adapter.class)
+public enum VerificationResult {
 
   /** Comparison result unknown */
-  public static final int DISABLED = 0;
+  DISABLED(0),
 
   /** Verification passed */
-  public static final int VERIFIED = 1;
+  VERIFIED(1),
 
   /** Verification failed */
-  public static final int NOT_VERIFIED = 2;
+  NOT_VERIFIED(2),
 
   /** Positive comparison result */
-  public static final int COMPARE_MATCH = 3;
+  COMPARE_MATCH(3),
 
   /** Negative comparison result */
-  public static final int COMPARE_NOT_MATCH = 4;
+  COMPARE_NOT_MATCH(4);
+
+  private Integer value;
+
+  VerificationResult(Integer value) {
+    this.value = value;
+  }
+
+  public Integer getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static VerificationResult fromValue(Integer value) {
+    for (VerificationResult b : VerificationResult.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<VerificationResult> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final VerificationResult enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public VerificationResult read(final JsonReader jsonReader) throws IOException {
+      Integer value = jsonReader.nextInt();
+      return VerificationResult.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Integer value = jsonElement.getAsInt();
+    VerificationResult.fromValue(value);
+  }
 }

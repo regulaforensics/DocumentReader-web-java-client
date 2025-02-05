@@ -12,86 +12,141 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class AuthenticityResultType {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * Enumeration describes available authenticity checks:
+ * https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/.
+ */
+@JsonAdapter(AuthenticityResultType.Adapter.class)
+public enum AuthenticityResultType {
 
   /** No authenticity control procedure */
-  public static final Long NONE = 0l;
+  NONE(0l),
 
   /** Document luminescence check in UV light */
-  public static final Long UV_LUMINESCENCE = 1l;
+  UV_LUMINESCENCE(1l),
 
   /** B900 ink MRZ contrast check in IR light */
-  public static final Long IR_B900 = 2l;
+  IR_B900(2l),
 
   /** Image patterns presence/absence check (position, shape, color) */
-  public static final Long IMAGE_PATTERN = 4l;
+  IMAGE_PATTERN(4l),
 
   /** Confirm laminate integrity check in axial light */
-  public static final Long AXIAL_PROTECTION = 8l;
+  AXIAL_PROTECTION(8l),
 
   /** Protection fibers presence check (color, density) in UV light */
-  public static final Long UV_FIBERS = 16l;
+  UV_FIBERS(16l),
 
   /** Document elements visibility check in IR light */
-  public static final Long IR_VISIBILITY = 32l;
+  IR_VISIBILITY(32l),
 
   /** OCR for the text field in UV light comparison with other text sources check */
-  public static final Long OCR_SECURITY_TEXT = 64l;
+  OCR_SECURITY_TEXT(64l),
 
   /** Invisible Personal Information (IPI) visualization */
-  public static final Long IPI = 128l;
+  IPI(128l),
 
   /** Document photo check in IR light */
-  public static final Long IR_PHOTO = 256l;
+  IR_PHOTO(256l),
 
   /** Owner&#39;s photo embedding check (is photo printed or sticked) */
-  public static final Long PHOTO_EMBED_TYPE = 512l;
+  PHOTO_EMBED_TYPE(512l),
 
   /** OVI check. Deprecated, use Document liveness check instead */
-  public static final Long OVI = 1024l;
+  OVI(1024l),
 
   /** IR luminescence check */
-  public static final Long IR_LUMINESCENCE = 2048l;
+  IR_LUMINESCENCE(2048l),
 
   /** Hologram presence check. Deprecated */
-  public static final Long HOLOGRAMS = 4096l;
+  HOLOGRAMS(4096l),
 
   /** Owner&#39;s photo area advanced check (photo shape, size, position, etc.) */
-  public static final Long PHOTO_AREA = 8192l;
+  PHOTO_AREA(8192l),
 
   /** UV background check */
-  public static final Long UV_BACKGROUND = 16384l;
+  UV_BACKGROUND(16384l),
 
   /** Portrait comparison check (document printed vs chip vs live) */
-  public static final Long PORTRAIT_COMPARISON = 32768l;
+  PORTRAIT_COMPARISON(32768l),
 
   /** Barcode format check (code metadata, data format, contents format, etc.) */
-  public static final Long BARCODE_FORMAT_CHECK = 65536l;
+  BARCODE_FORMAT_CHECK(65536l),
 
   /** Kinegram check */
-  public static final Long KINEGRAM = 131072l;
+  KINEGRAM(131072l),
 
   /** LetterScreen check */
-  public static final Long LETTER_SCREEN = 262144l;
+  LETTER_SCREEN(262144l),
 
   /** Hologram detection and validation check */
-  public static final Long HOLOGRAM_DETECTION = 524288l;
+  HOLOGRAM_DETECTION(524288l),
 
   /** Fingerprint comparison check */
-  public static final Long FINGERPRINT_COMPARISON = 1048576l;
+  FINGERPRINT_COMPARISON(1048576l),
 
   /** Document liveness check */
-  public static final Long LIVENESS = 2097152l;
+  LIVENESS(2097152l),
 
   /** Extended OCR Check */
-  public static final Long EXTENDED_OCR_CHECK = 4194304l;
+  EXTENDED_OCR_CHECK(4194304l),
 
   /** Extended MRZ check */
-  public static final Long EXTENDED_MRZ_CHECK = 8388608l;
+  EXTENDED_MRZ_CHECK(8388608l),
 
   /** Encrypted IPI */
-  public static final Long ENCRYPTED_IPI = 16777216l;
+  ENCRYPTED_IPI(16777216l),
 
   /** Flag for status-only authenticity */
-  public static final Long STATUS_ONLY = 2147483648l;
+  STATUS_ONLY(2147483648l);
+
+  private Long value;
+
+  AuthenticityResultType(Long value) {
+    this.value = value;
+  }
+
+  public Long getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static AuthenticityResultType fromValue(Long value) {
+    for (AuthenticityResultType b : AuthenticityResultType.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<AuthenticityResultType> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final AuthenticityResultType enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public AuthenticityResultType read(final JsonReader jsonReader) throws IOException {
+      Long value = jsonReader.nextLong();
+      return AuthenticityResultType.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Long value = jsonElement.getAsLong();
+    AuthenticityResultType.fromValue(value);
+  }
 }

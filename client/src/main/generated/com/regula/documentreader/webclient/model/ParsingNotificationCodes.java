@@ -12,671 +12,726 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class ParsingNotificationCodes {
+import com.google.gson.JsonElement;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+/**
+ * The enumeration contains possible values of notification codes returned during the RFID chip
+ * processing.
+ */
+@JsonAdapter(ParsingNotificationCodes.Adapter.class)
+public enum ParsingNotificationCodes {
 
   /** ASN certificate: Incorrect version */
-  public static final Long ntfLDS_ASN_Certificate_IncorrectVersion = 2415919105l;
+  ntfLDS_ASN_Certificate_IncorrectVersion(2415919105l),
 
   /** ASN certificate: Non-matching signature algorithm */
-  public static final Long ntfLDS_ASN_Certificate_NonMatchingSignatureAlgorithm = 2415919106l;
+  ntfLDS_ASN_Certificate_NonMatchingSignatureAlgorithm(2415919106l),
 
   /** ASN certificate: Incorrect time coding */
-  public static final Long ntfLDS_ASN_Certificate_IncorrectTimeCoding = 2415919107l;
+  ntfLDS_ASN_Certificate_IncorrectTimeCoding(2415919107l),
 
   /** ASN certificate: Incorrect use of generalized time */
-  public static final Long ntfLDS_ASN_Certificate_IncorrectUseOfGeneralizedTime = 2415919108l;
+  ntfLDS_ASN_Certificate_IncorrectUseOfGeneralizedTime(2415919108l),
 
   /** ASN certificate: Empty issuer */
-  public static final Long ntfLDS_ASN_Certificate_EmptyIssuer = 2415919109l;
+  ntfLDS_ASN_Certificate_EmptyIssuer(2415919109l),
 
   /** ASN certificate: Empty subject */
-  public static final Long ntfLDS_ASN_Certificate_EmptySubject = 2415919110l;
+  ntfLDS_ASN_Certificate_EmptySubject(2415919110l),
 
   /** ASN certificate: Unsupported critical extension */
-  public static final Long ntfLDS_ASN_Certificate_UnsupportedCriticalExtension = 2415919112l;
+  ntfLDS_ASN_Certificate_UnsupportedCriticalExtension(2415919112l),
 
   /** ASN certificate: Forced default CSCA role */
-  public static final Long ntfLDS_ASN_Certificate_ForcedDefaultCSCARole = 2415919118l;
+  ntfLDS_ASN_Certificate_ForcedDefaultCSCARole(2415919118l),
 
   /** ASN certificate: Forced Default DS role */
-  public static final Long ntfLDS_ASN_Certificate_ForcedDefaultDSRole = 2415919119l;
+  ntfLDS_ASN_Certificate_ForcedDefaultDSRole(2415919119l),
 
   /** ASN certificate: Incorrect issuer subject DS */
-  public static final Long ntfLDS_ASN_Certificate_IncorrectIssuerSubjectDS = 2415919120l;
+  ntfLDS_ASN_Certificate_IncorrectIssuerSubjectDS(2415919120l),
 
   /** ASN certificate: Duplicating extensions */
-  public static final Long ntfLDS_ASN_Certificate_DuplicatingExtensions = 2415919127l;
+  ntfLDS_ASN_Certificate_DuplicatingExtensions(2415919127l),
 
   /** ICAO certificate: Version missed */
-  public static final Long ntfLDS_ICAO_Certificate_Version_Missed = 2415919616l;
+  ntfLDS_ICAO_Certificate_Version_Missed(2415919616l),
 
   /** ICAO certificate: Version incorrect */
-  public static final Long ntfLDS_ICAO_Certificate_Version_Incorrect = 2415919617l;
+  ntfLDS_ICAO_Certificate_Version_Incorrect(2415919617l),
 
   /** ICAO certificate: Issuer country missed */
-  public static final Long ntfLDS_ICAO_Certificate_Issuer_Country_Missed = 2415919618l;
+  ntfLDS_ICAO_Certificate_Issuer_Country_Missed(2415919618l),
 
   /** ICAO certificate: Issuer common name missed */
-  public static final Long ntfLDS_ICAO_Certificate_Issuer_CommonName_Missed = 2415919619l;
+  ntfLDS_ICAO_Certificate_Issuer_CommonName_Missed(2415919619l),
 
   /** ICAO certificate: Issuer country non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Issuer_CountryNonCompliant = 2415919620l;
+  ntfLDS_ICAO_Certificate_Issuer_CountryNonCompliant(2415919620l),
 
   /** ICAO certificate: Subject country missed */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_Country_Missed = 2415919621l;
+  ntfLDS_ICAO_Certificate_Subject_Country_Missed(2415919621l),
 
   /** ICAO certificate: Subject common name missed */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_CommonName_Missed = 2415919622l;
+  ntfLDS_ICAO_Certificate_Subject_CommonName_Missed(2415919622l),
 
   /** ICAO certificate: Subject country non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_CountryNonCompliant = 2415919623l;
+  ntfLDS_ICAO_Certificate_Subject_CountryNonCompliant(2415919623l),
 
   /** ICAO certificate: Using non-compliant data */
-  public static final Long ntfLDS_ICAO_Certificate_UsingNonCompliantData = 2415919624l;
+  ntfLDS_ICAO_Certificate_UsingNonCompliantData(2415919624l),
 
   /** ICAO certificate: Unsupported signature algorithm */
-  public static final Long ntfLDS_ICAO_Certificate_UnsupportedSignatureAlgorithm = 2415919625l;
+  ntfLDS_ICAO_Certificate_UnsupportedSignatureAlgorithm(2415919625l),
 
   /** ICAO certificate: Unsupported public key algorithm */
-  public static final Long ntfLDS_ICAO_Certificate_UnsupportedPublicKeyAlgorithm = 2415919626l;
+  ntfLDS_ICAO_Certificate_UnsupportedPublicKeyAlgorithm(2415919626l),
 
   /** ICAO certificate: Missed extensions */
-  public static final Long ntfLDS_ICAO_Certificate_MissedExtensions = 2415919627l;
+  ntfLDS_ICAO_Certificate_MissedExtensions(2415919627l),
 
   /** ICAO certificate: Validity */
-  public static final Long ntfLDS_ICAO_Certificate_Validity = 2415919628l;
+  ntfLDS_ICAO_Certificate_Validity(2415919628l),
 
   /** ICAO certificate extension: Using non-compliant data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_UsingNonCompliantData = 2415919629l;
+  ntfLDS_ICAO_Certificate_Ext_UsingNonCompliantData(2415919629l),
 
   /** ICAO certificate extension: Key usage missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_KeyUsage_Missed = 2415919630l;
+  ntfLDS_ICAO_Certificate_Ext_KeyUsage_Missed(2415919630l),
 
   /** ICAO certificate extension: Key usage not critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_KeyUsage_NotCritical = 2415919631l;
+  ntfLDS_ICAO_Certificate_Ext_KeyUsage_NotCritical(2415919631l),
 
   /** ICAO certificate extension: Key usage incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_KeyUsage_IncorrectData = 2415919632l;
+  ntfLDS_ICAO_Certificate_Ext_KeyUsage_IncorrectData(2415919632l),
 
   /** ICAO certificate extension: Basic constraints missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_Missed = 2415919633l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_Missed(2415919633l),
 
   /** ICAO certificate extension: Basic constraints incorrect usage 1 */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectUsage1 = 2415919634l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectUsage1(2415919634l),
 
   /** ICAO certificate extension: Basic constraints incorrect usage 2 */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectUsage2 = 2415919635l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectUsage2(2415919635l),
 
   /** ICAO certificate extension: Basic constraints not critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_NotCritical = 2415919636l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_NotCritical(2415919636l),
 
   /** ICAO certificate extension: Basic constraints incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectData = 2415919637l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_IncorrectData(2415919637l),
 
   /** ICAO certificate extension: Basic constraints path LenC missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_PathLenC_Missed = 2415919638l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_PathLenC_Missed(2415919638l),
 
   /** ICAO certificate extension: Basic constraints path LenC incorrect */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_BasicC_PathLenC_Incorrect = 2415919639l;
+  ntfLDS_ICAO_Certificate_Ext_BasicC_PathLenC_Incorrect(2415919639l),
 
   /** ICAO certificate extension: Ext key usage not critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_NotCritical = 2415919640l;
+  ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_NotCritical(2415919640l),
 
   /** ICAO certificate extension: Ext key usage incorrect usage */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_IncorrectUsage = 2415919641l;
+  ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_IncorrectUsage(2415919641l),
 
   /** ICAO certificate extension: Ext key usage incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_IncorrectData = 2415919642l;
+  ntfLDS_ICAO_Certificate_Ext_ExtKeyUsage_IncorrectData(2415919642l),
 
   /** ICAO certificate extension Auth key: ID missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_AuthKeyID_Missed = 2415919643l;
+  ntfLDS_ICAO_Certificate_Ext_AuthKeyID_Missed(2415919643l),
 
   /** ICAO certificate extension Auth key: Incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_AuthKeyID_IncorrectData = 2415919644l;
+  ntfLDS_ICAO_Certificate_Ext_AuthKeyID_IncorrectData(2415919644l),
 
   /** ICAO certificate extension Auth key: Key ID missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_AuthKeyID_KeyID_Missed = 2415919645l;
+  ntfLDS_ICAO_Certificate_Ext_AuthKeyID_KeyID_Missed(2415919645l),
 
   /** ICAO certificate extension: Subject key ID missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectKeyID_Missed = 2415919646l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectKeyID_Missed(2415919646l),
 
   /** ICAO certificate extension: Subject key ID incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectKeyID_IncorrectData = 2415919647l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectKeyID_IncorrectData(2415919647l),
 
   /** ICAO certificate extension: Private key UP missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_Missed = 2415919648l;
+  ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_Missed(2415919648l),
 
   /** ICAO certificate extension: Private key UP incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_IncorrectData = 2415919649l;
+  ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_IncorrectData(2415919649l),
 
   /** ICAO certificate extension: Private key UP empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_Empty = 2415919650l;
+  ntfLDS_ICAO_Certificate_Ext_PrivateKeyUP_Empty(2415919650l),
 
   /** ICAO certificate extension: Subject alt name missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Missed = 2415919651l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Missed(2415919651l),
 
   /** ICAO certificate extension: Subject alt name incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_IncorrectData = 2415919652l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_IncorrectData(2415919652l),
 
   /** ICAO certificate extension: Subject alt name empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Empty = 2415919653l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Empty(2415919653l),
 
   /** ICAO certificate extension: Subject alt name non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_NonCompliant = 2415919654l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_NonCompliant(2415919654l),
 
   /** ICAO certificate extension: Subject alt name critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Critical = 2415919656l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_Critical(2415919656l),
 
   /** ICAO certificate extension: Subject alt name DN empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_Empty = 2415919657l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_Empty(2415919657l),
 
   /** ICAO certificate extension: Subject alt name DN incorrect */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_Incorrect = 2415919658l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_Incorrect(2415919658l),
 
   /** ICAO certificate extension: Subject alt name DN non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_NonCompliant = 2415919659l;
+  ntfLDS_ICAO_Certificate_Ext_SubjectAltName_DN_NonCompliant(2415919659l),
 
   /** ICAO certificate extension: Issuer alt name missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Missed = 2415919660l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Missed(2415919660l),
 
   /** ICAO certificate extension: Issuer alt name incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_IncorrectData = 2415919661l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_IncorrectData(2415919661l),
 
   /** ICAO certificate extension: Issuer alt name empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Empty = 2415919662l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Empty(2415919662l),
 
   /** ICAO certificate extension: Issuer alt name non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_NonCompliant = 2415919663l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_NonCompliant(2415919663l),
 
   /** ICAO certificate extension: Issuer alt name critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Critical = 2415919665l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_Critical(2415919665l),
 
   /** ICAO certificate extension: Issuer alt name DN empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_Empty = 2415919666l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_Empty(2415919666l),
 
   /** ICAO certificate extension: Issuer alt name DN incorrect */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_Incorrect = 2415919667l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_Incorrect(2415919667l),
 
   /** ICAO certificate extension: Issuer alt name DN non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_NonCompliant = 2415919668l;
+  ntfLDS_ICAO_Certificate_Ext_IssuerAltName_DN_NonCompliant(2415919668l),
 
   /** ICAO certificate extension Doc type list: Missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_Missed = 2415919669l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_Missed(2415919669l),
 
   /** ICAO certificate extension Doc type list: Incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_IncorrectData = 2415919670l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_IncorrectData(2415919670l),
 
   /** ICAO certificate extension Doc type list: Version */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_Version = 2415919671l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_Version(2415919671l),
 
   /** ICAO certificate extension Doc type list: Doc types */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_DocTypes = 2415919672l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_DocTypes(2415919672l),
 
   /** ICAO certificate extension Doc type list: Doc types empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_DocTypes_Empty = 2415919673l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_DocTypes_Empty(2415919673l),
 
   /** ICAO certificate extension: Dert policies incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CertPolicies_IncorrectData = 2415919674l;
+  ntfLDS_ICAO_Certificate_Ext_CertPolicies_IncorrectData(2415919674l),
 
   /** ICAO certificate extension: Cert policies empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CertPolicies_Empty = 2415919675l;
+  ntfLDS_ICAO_Certificate_Ext_CertPolicies_Empty(2415919675l),
 
   /** ICAO certificate extension: Cert policies policy ID missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CertPolicies_PolicyID_Missed = 2415919676l;
+  ntfLDS_ICAO_Certificate_Ext_CertPolicies_PolicyID_Missed(2415919676l),
 
   /** ICAO certificate extension: CRL dist point missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_Missed = 2415919677l;
+  ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_Missed(2415919677l),
 
   /** ICAO certificate extension: CRL dist point incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_IncorrectData = 2415919678l;
+  ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_IncorrectData(2415919678l),
 
   /** ICAO certificate extension: CRL dist point empty */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_Empty = 2415919679l;
+  ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_Empty(2415919679l),
 
   /** ICAO certificate extension: CRL dist point point missed */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_PointMissed = 2415919680l;
+  ntfLDS_ICAO_Certificate_Ext_CRLDistPoint_PointMissed(2415919680l),
 
   /** ICAO certificate: SN non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_SN_NonCompliant = 2415919681l;
+  ntfLDS_ICAO_Certificate_SN_NonCompliant(2415919681l),
 
   /** ICAO certificate: Issuer SN non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Issuer_SN_NonCompliant = 2415919682l;
+  ntfLDS_ICAO_Certificate_Issuer_SN_NonCompliant(2415919682l),
 
   /** ICAO certificate: Subject SN non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_SN_NonCompliant = 2415919683l;
+  ntfLDS_ICAO_Certificate_Subject_SN_NonCompliant(2415919683l),
 
   /** ICAO certificate: Issuer attribute non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Issuer_AttributeNonCompliant = 2415919684l;
+  ntfLDS_ICAO_Certificate_Issuer_AttributeNonCompliant(2415919684l),
 
   /** ICAO certificate: Subject attribute non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_AttributeNonCompliant = 2415919685l;
+  ntfLDS_ICAO_Certificate_Subject_AttributeNonCompliant(2415919685l),
 
   /** ICAO certificate: Issuer subject country non-matching */
-  public static final Long ntfLDS_ICAO_Certificate_IssuerSubject_Country_NonMatching = 2415919686l;
+  ntfLDS_ICAO_Certificate_IssuerSubject_Country_NonMatching(2415919686l),
 
   /** ICAO certificate extension: CSCA alt names non-matching */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_CSCA_AltNames_NonMatching = 2415919687l;
+  ntfLDS_ICAO_Certificate_Ext_CSCA_AltNames_NonMatching(2415919687l),
 
   /** ICAO certificate extension: Name change incorrect data */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_NameChange_IncorrectData = 2415919688l;
+  ntfLDS_ICAO_Certificate_Ext_NameChange_IncorrectData(2415919688l),
 
   /** ICAO certificate extension: Name change non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_NameChange_NonCompliant = 2415919689l;
+  ntfLDS_ICAO_Certificate_Ext_NameChange_NonCompliant(2415919689l),
 
   /** ICAO certificate extension: Name change critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_NameChange_Critical = 2415919690l;
+  ntfLDS_ICAO_Certificate_Ext_NameChange_Critical(2415919690l),
 
   /** ICAO certificate extension Doc type list: non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_NonCompliant = 2415919691l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_NonCompliant(2415919691l),
 
   /** ICAO certificate extension Doc type list: Critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_DocTypeList_Critical = 2415919692l;
+  ntfLDS_ICAO_Certificate_Ext_DocTypeList_Critical(2415919692l),
 
   /** ICAO certificate extension: Optional critical */
-  public static final Long ntfLDS_ICAO_Certificate_Ext_Optional_Critical = 2415919693l;
+  ntfLDS_ICAO_Certificate_Ext_Optional_Critical(2415919693l),
 
   /** ICAO certificate: Subject non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_NonCompliant = 2415919694l;
+  ntfLDS_ICAO_Certificate_Subject_NonCompliant(2415919694l),
 
   /** ICAO certificate: Subject common name non-compliant */
-  public static final Long ntfLDS_ICAO_Certificate_Subject_CommonNameNonCompliant = 2415919695l;
+  ntfLDS_ICAO_Certificate_Subject_CommonNameNonCompliant(2415919695l),
 
   /** ICAO COM: LDS version incorrect */
-  public static final Long ntfLDS_ICAO_COM_LDS_Version_Incorrect = 2415919136l;
+  ntfLDS_ICAO_COM_LDS_Version_Incorrect(2415919136l),
 
   /** ICAO COM: LDS version missing */
-  public static final Long ntfLDS_ICAO_COM_LDS_Version_Missing = 2415919137l;
+  ntfLDS_ICAO_COM_LDS_Version_Missing(2415919137l),
 
   /** ICAO COM: Unicode version incorrect */
-  public static final Long ntfLDS_ICAO_COM_Unicode_Version_Incorrect = 2415919138l;
+  ntfLDS_ICAO_COM_Unicode_Version_Incorrect(2415919138l),
 
   /** ICAO COM: Unicode version missing */
-  public static final Long ntfLDS_ICAO_COM_Unicode_Version_Missing = 2415919139l;
+  ntfLDS_ICAO_COM_Unicode_Version_Missing(2415919139l),
 
   /** ICAO COM: DGPM incorrect */
-  public static final Long ntfLDS_ICAO_COM_DGPM_Incorrect = 2415919140l;
+  ntfLDS_ICAO_COM_DGPM_Incorrect(2415919140l),
 
   /** ICAO COM: DGPM missing */
-  public static final Long ntfLDS_ICAO_COM_DGPM_Missing = 2415919141l;
+  ntfLDS_ICAO_COM_DGPM_Missing(2415919141l),
 
   /** ICAO COM: DGPM unexpected */
-  public static final Long ntfLDS_ICAO_COM_DGPM_Unexpected = 2415919142l;
+  ntfLDS_ICAO_COM_DGPM_Unexpected(2415919142l),
 
   /** ICAO application: LDS version unsupported */
-  public static final Long ntfLDS_ICAO_Application_LDSVersion_Unsupported = 2415919152l;
+  ntfLDS_ICAO_Application_LDSVersion_Unsupported(2415919152l),
 
   /** ICAO application: Unicode version unsupported */
-  public static final Long ntfLDS_ICAO_Application_UnicodeVersion_Unsupported = 2415919153l;
+  ntfLDS_ICAO_Application_UnicodeVersion_Unsupported(2415919153l),
 
   /** ICAO application: LDS version inconsistent */
-  public static final Long ntfLDS_ICAO_Application_LDSVersion_Inconsistent = 2415919154l;
+  ntfLDS_ICAO_Application_LDSVersion_Inconsistent(2415919154l),
 
   /** ICAO application: Unicode version inconsistent */
-  public static final Long ntfLDS_ICAO_Application_UnicodeVersion_Inconsistent = 2415919155l;
+  ntfLDS_ICAO_Application_UnicodeVersion_Inconsistent(2415919155l),
 
   /** ASN signed data: OID incorrect */
-  public static final Long ntfLDS_ASN_SignedData_OID_Incorrect = 2415919360l;
+  ntfLDS_ASN_SignedData_OID_Incorrect(2415919360l),
 
   /** ASN signed data: Version incorrect */
-  public static final Long ntfLDS_ASN_SignedData_Version_Incorrect = 2415919520l;
+  ntfLDS_ASN_SignedData_Version_Incorrect(2415919520l),
 
   /** ASN signed data: Content OID incorrect */
-  public static final Long ntfLDS_ASN_SignedData_ContentOID_Incorrect = 2415919521l;
+  ntfLDS_ASN_SignedData_ContentOID_Incorrect(2415919521l),
 
   /** ICAO signed data: Version incorrect */
-  public static final Long ntfLDS_ICAO_SignedData_Version_Incorrect = 2415919361l;
+  ntfLDS_ICAO_SignedData_Version_Incorrect(2415919361l),
 
   /** ICAO signed data: Digest algorithms empty */
-  public static final Long ntfLDS_ICAO_SignedData_DigestAlgorithms_Empty = 2415919362l;
+  ntfLDS_ICAO_SignedData_DigestAlgorithms_Empty(2415919362l),
 
   /** ICAO signed data: Digest algorithms unsupported */
-  public static final Long ntfLDS_ICAO_SignedData_DigestAlgorithms_Unsupported = 2415919363l;
+  ntfLDS_ICAO_SignedData_DigestAlgorithms_Unsupported(2415919363l),
 
   /** ICAO signed data: Signer infos multiple entries */
-  public static final Long ntfLDS_ICAO_SignedData_SignerInfos_MultipleEntries = 2415919369l;
+  ntfLDS_ICAO_SignedData_SignerInfos_MultipleEntries(2415919369l),
 
   /** ICAO signed data: Certificates missed */
-  public static final Long ntfLDS_ICAO_SignedData_Certificates_Missed = 2415919536l;
+  ntfLDS_ICAO_SignedData_Certificates_Missed(2415919536l),
 
   /** ICAO signed data: Certificates empty */
-  public static final Long ntfLDS_ICAO_SignedData_Certificates_Empty = 2415919537l;
+  ntfLDS_ICAO_SignedData_Certificates_Empty(2415919537l),
 
   /** ICAO signed data: CRLs incorrect usage */
-  public static final Long ntfLDS_ICAO_SignedData_CRLs_IncorrectUsage = 2415919538l;
+  ntfLDS_ICAO_SignedData_CRLs_IncorrectUsage(2415919538l),
 
   /** ICAO LDS object: Incorrect content OID */
-  public static final Long ntfLDS_ICAO_LDSObject_IncorrectContentOID = 2415919364l;
+  ntfLDS_ICAO_LDSObject_IncorrectContentOID(2415919364l),
 
   /** ICAO LDS object: DG number incorrect */
-  public static final Long ntfLDS_ICAO_LDSObject_DGNumber_Incorrect = 2415919365l;
+  ntfLDS_ICAO_LDSObject_DGNumber_Incorrect(2415919365l),
 
   /** ICAO LDS object: DG hash missing */
-  public static final Long ntfLDS_ICAO_LDSObject_DGHash_Missing = 2415919366l;
+  ntfLDS_ICAO_LDSObject_DGHash_Missing(2415919366l),
 
   /** ICAO LDS object: DG hash extra */
-  public static final Long ntfLDS_ICAO_LDSObject_DGHash_Extra = 2415919367l;
+  ntfLDS_ICAO_LDSObject_DGHash_Extra(2415919367l),
 
   /** ICAO LDS object: Version incorrect */
-  public static final Long ntfLDS_ICAO_LDSObject_Version_Incorrect = 2415919368l;
+  ntfLDS_ICAO_LDSObject_Version_Incorrect(2415919368l),
 
   /** ICAO master list: Version incorrect */
-  public static final Long ntfLDS_ICAO_MasterList_Version_Incorrect = 2415919552l;
+  ntfLDS_ICAO_MasterList_Version_Incorrect(2415919552l),
 
   /** ICAO Deviation list: Version incorrect */
-  public static final Long ntfLDS_ICAO_DeviationList_Version_Incorrect = 2415919560l;
+  ntfLDS_ICAO_DeviationList_Version_Incorrect(2415919560l),
 
   /** BSI: Defect list version incorrect */
-  public static final Long ntfLDS_BSI_DefectList_Version_Incorrect = 2415919568l;
+  ntfLDS_BSI_DefectList_Version_Incorrect(2415919568l),
 
   /** BSI: Black list version incorrect */
-  public static final Long ntfLDS_BSI_BlackList_Version_Incorrect = 2415919576l;
+  ntfLDS_BSI_BlackList_Version_Incorrect(2415919576l),
 
   /** ASN signer info: Version incorrect */
-  public static final Long ntfLDS_ASN_SignerInfo_Version_Incorrect = 2415919370l;
+  ntfLDS_ASN_SignerInfo_Version_Incorrect(2415919370l),
 
   /** ASN signer info: SID incorrect choice */
-  public static final Long ntfLDS_ASN_SignerInfo_SID_IncorrectChoice = 2415919371l;
+  ntfLDS_ASN_SignerInfo_SID_IncorrectChoice(2415919371l),
 
   /** ASN signer info: SID digest algorithm not listed */
-  public static final Long ntfLDS_ASN_SignerInfo_SID_DigestAlgorithmNotListed = 2415919372l;
+  ntfLDS_ASN_SignerInfo_SID_DigestAlgorithmNotListed(2415919372l),
 
   /** ASN signer info: Message digest attr missing */
-  public static final Long ntfLDS_ASN_SignerInfo_MessageDigestAttr_Missing = 2415919373l;
+  ntfLDS_ASN_SignerInfo_MessageDigestAttr_Missing(2415919373l),
 
   /** ASN signer info: Message digest attr data */
-  public static final Long ntfLDS_ASN_SignerInfo_MessageDigestAttr_Data = 2415919374l;
+  ntfLDS_ASN_SignerInfo_MessageDigestAttr_Data(2415919374l),
 
   /** ASN signer info: Message digest attr value */
-  public static final Long ntfLDS_ASN_SignerInfo_MessageDigestAttr_Value = 2415919375l;
+  ntfLDS_ASN_SignerInfo_MessageDigestAttr_Value(2415919375l),
 
   /** ASN signer info: Content type attr missing */
-  public static final Long ntfLDS_ASN_SignerInfo_ContentTypeAttr_Missing = 2415919376l;
+  ntfLDS_ASN_SignerInfo_ContentTypeAttr_Missing(2415919376l),
 
   /** ASN signer info: Content type attr data */
-  public static final Long ntfLDS_ASN_SignerInfo_ContentTypeAttr_Data = 2415919377l;
+  ntfLDS_ASN_SignerInfo_ContentTypeAttr_Data(2415919377l),
 
   /** ASN signer info: Content type attr value */
-  public static final Long ntfLDS_ASN_SignerInfo_ContentTypeAttr_Value = 2415919378l;
+  ntfLDS_ASN_SignerInfo_ContentTypeAttr_Value(2415919378l),
 
   /** ASN signer info: Signing time attr missing */
-  public static final Long ntfLDS_ASN_SignerInfo_SigningTimeAttr_Missing = 2415919387l;
+  ntfLDS_ASN_SignerInfo_SigningTimeAttr_Missing(2415919387l),
 
   /** ASN signer info: Signing time attr data */
-  public static final Long ntfLDS_ASN_SignerInfo_SigningTimeAttr_Data = 2415919388l;
+  ntfLDS_ASN_SignerInfo_SigningTimeAttr_Data(2415919388l),
 
   /** ASN signer info: Signing time attr value */
-  public static final Long ntfLDS_ASN_SignerInfo_SigningTimeAttr_Value = 2415919389l;
+  ntfLDS_ASN_SignerInfo_SigningTimeAttr_Value(2415919389l),
 
   /** ASN signer info: List content description attr missing */
-  public static final Long ntfLDS_ASN_SignerInfo_ListContentDescriptionAttr_Missing = 2415919390l;
+  ntfLDS_ASN_SignerInfo_ListContentDescriptionAttr_Missing(2415919390l),
 
   /** ASN signer info: List content description attr data */
-  public static final Long ntfLDS_ASN_SignerInfo_ListContentDescriptionAttr_Data = 2415919391l;
+  ntfLDS_ASN_SignerInfo_ListContentDescriptionAttr_Data(2415919391l),
 
   /** Auth signer info: Certificate validity */
-  public static final Long ntfLDS_Auth_SignerInfo_Certificate_Validity = 2415919381l;
+  ntfLDS_Auth_SignerInfo_Certificate_Validity(2415919381l),
 
   /** Auth signer info: Certificate root is not trusted */
-  public static final Long ntfLDS_Auth_SignerInfo_Certificate_RootIsNotTrusted = 2415919382l;
+  ntfLDS_Auth_SignerInfo_Certificate_RootIsNotTrusted(2415919382l),
 
   /** Auth signer info: Certificate cannot find CSCA */
-  public static final Long ntfLDS_Auth_SignerInfo_Certificate_CantFindCSCA = 2415919383l;
+  ntfLDS_Auth_SignerInfo_Certificate_CantFindCSCA(2415919383l),
 
   /** Auth signer info: Certificate revoked */
-  public static final Long ntfLDS_Auth_SignerInfo_Certificate_Revoked = 2415919384l;
+  ntfLDS_Auth_SignerInfo_Certificate_Revoked(2415919384l),
 
   /** Auth signer info: Certificate signature invalid */
-  public static final Long ntfLDS_Auth_SignerInfo_Certificate_SignatureInvalid = 2415919385l;
+  ntfLDS_Auth_SignerInfo_Certificate_SignatureInvalid(2415919385l),
 
   /** Notification: Unsupported image format */
-  public static final Long ntfLDS_UnsupportedImageFormat = 2415919386l;
+  ntfLDS_UnsupportedImageFormat(2415919386l),
 
   /** MRZ: Document type unknown */
-  public static final Long ntfLDS_MRZ_DocumentType_Unknown = 139272l;
+  ntfLDS_MRZ_DocumentType_Unknown(139272l),
 
   /** MRZ: Issuing state syntax error */
-  public static final Long ntfLDS_MRZ_IssuingState_SyntaxError = 139273l;
+  ntfLDS_MRZ_IssuingState_SyntaxError(139273l),
 
   /** MRZ: Name is void */
-  public static final Long ntfLDS_MRZ_Name_IsVoid = 139274l;
+  ntfLDS_MRZ_Name_IsVoid(139274l),
 
   /** MRZ: Number incorrect checksum */
-  public static final Long ntfLDS_MRZ_Number_IncorrectChecksum = 139277l;
+  ntfLDS_MRZ_Number_IncorrectChecksum(139277l),
 
   /** MRZ: Nationality syntax error */
-  public static final Long ntfLDS_MRZ_Nationality_SyntaxError = 139278l;
+  ntfLDS_MRZ_Nationality_SyntaxError(139278l),
 
   /** MRZ: DOB syntax error */
-  public static final Long ntfLDS_MRZ_DOB_SyntaxError = 139279l;
+  ntfLDS_MRZ_DOB_SyntaxError(139279l),
 
   /** MRZ: DOB error */
-  public static final Long ntfLDS_MRZ_DOB_Error = 139280l;
+  ntfLDS_MRZ_DOB_Error(139280l),
 
   /** MRZ: DOB incorrect checksum */
-  public static final Long ntfLDS_MRZ_DOB_IncorrectChecksum = 139281l;
+  ntfLDS_MRZ_DOB_IncorrectChecksum(139281l),
 
   /** MRZ: Sex incorrect */
-  public static final Long ntfLDS_MRZ_Sex_Incorrect = 139282l;
+  ntfLDS_MRZ_Sex_Incorrect(139282l),
 
   /** MRZ: DOE syntax error */
-  public static final Long ntfLDS_MRZ_DOE_SyntaxError = 139283l;
+  ntfLDS_MRZ_DOE_SyntaxError(139283l),
 
   /** MRZ: DOE error */
-  public static final Long ntfLDS_MRZ_DOE_Error = 139284l;
+  ntfLDS_MRZ_DOE_Error(139284l),
 
   /** MRZ: DOE incorrect checksum */
-  public static final Long ntfLDS_MRZ_DOE_IncorrectChecksum = 139285l;
+  ntfLDS_MRZ_DOE_IncorrectChecksum(139285l),
 
   /** MRZ: Optional data incorrect checksum */
-  public static final Long ntfLDS_MRZ_OptionalData_IncorrectChecksum = 139286l;
+  ntfLDS_MRZ_OptionalData_IncorrectChecksum(139286l),
 
   /** MRZ: Incorrect checksum */
-  public static final Long ntfLDS_MRZ_IncorrectChecksum = 139287l;
+  ntfLDS_MRZ_IncorrectChecksum(139287l),
 
   /** MRZ: Incorrect */
-  public static final Long ntfLDS_MRZ_Incorrect = 139288l;
+  ntfLDS_MRZ_Incorrect(139288l),
 
   /** Biometrics: Format owner missing */
-  public static final Long ntfLDS_Biometrics_FormatOwner_Missing = 2415984640l;
+  ntfLDS_Biometrics_FormatOwner_Missing(2415984640l),
 
   /** Biometrics: Format owner incorrect */
-  public static final Long ntfLDS_Biometrics_FormatOwner_Incorrect = 2416050176l;
+  ntfLDS_Biometrics_FormatOwner_Incorrect(2416050176l),
 
   /** Biometrics: Format type missing */
-  public static final Long ntfLDS_Biometrics_FormatType_Missing = 2416115712l;
+  ntfLDS_Biometrics_FormatType_Missing(2416115712l),
 
   /** Biometrics: Format type incorrect */
-  public static final Long ntfLDS_Biometrics_FormatType_Incorrect = 2416181248l;
+  ntfLDS_Biometrics_FormatType_Incorrect(2416181248l),
 
   /** Biometrics: Type incorrect */
-  public static final Long ntfLDS_Biometrics_Type_Incorrect = 2416246784l;
+  ntfLDS_Biometrics_Type_Incorrect(2416246784l),
 
   /** Biometrics: Subtype missing */
-  public static final Long ntfLDS_Biometrics_SubType_Missing = 2416312320l;
+  ntfLDS_Biometrics_SubType_Missing(2416312320l),
 
   /** Biometrics: Subtype incorrect */
-  public static final Long ntfLDS_Biometrics_SubType_Incorrect = 2416377856l;
+  ntfLDS_Biometrics_SubType_Incorrect(2416377856l),
 
   /** Biometrics: BDB image missing */
-  public static final Long ntfLDS_Biometrics_BDB_Image_Missing = 2416443392l;
+  ntfLDS_Biometrics_BDB_Image_Missing(2416443392l),
 
   /** Biometrics: BDB format ID incorrect */
-  public static final Long ntfLDS_Biometrics_BDB_FormatID_Incorrect = 2416508928l;
+  ntfLDS_Biometrics_BDB_FormatID_Incorrect(2416508928l),
 
   /** Biometrics: BDB version incorrect */
-  public static final Long ntfLDS_Biometrics_BDB_Version_Incorrect = 2416574464l;
+  ntfLDS_Biometrics_BDB_Version_Incorrect(2416574464l),
 
   /** Biometrics: BDB data length incorrect */
-  public static final Long ntfLDS_Biometrics_BDB_DataLength_Incorrect = 2416640000l;
+  ntfLDS_Biometrics_BDB_DataLength_Incorrect(2416640000l),
 
   /** Biometrics: BDB Data Gender */
-  public static final Long ntfLDS_Biometrics_BDB_Data_Gender = 2416967680l;
+  ntfLDS_Biometrics_BDB_Data_Gender(2416967680l),
 
   /** Biometrics: BDB Data Eye Color */
-  public static final Long ntfLDS_Biometrics_BDB_Data_EyeColor = 2417033216l;
+  ntfLDS_Biometrics_BDB_Data_EyeColor(2417033216l),
 
   /** Biometrics: BDB Data Hair Color */
-  public static final Long ntfLDS_Biometrics_BDB_Data_HairColor = 2417098752l;
+  ntfLDS_Biometrics_BDB_Data_HairColor(2417098752l),
 
   /** Biometrics: BDB Data Pose Angle Yaw */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngle_Yaw = 2417164288l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngle_Yaw(2417164288l),
 
   /** Biometrics: BDB Data Pose Angle Pitch */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngle_Pitch = 2417229824l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngle_Pitch(2417229824l),
 
   /** Biometrics: BDB Data Pose Angle Roll */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngle_Roll = 2417295360l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngle_Roll(2417295360l),
 
   /** Biometrics: BDB Data Pose Angle U Yaw */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngleU_Yaw = 2417360896l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngleU_Yaw(2417360896l),
 
   /** Biometrics: BDB Data Pose Angle U Pitch */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngleU_Pitch = 2417426432l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngleU_Pitch(2417426432l),
 
   /** Biometrics: BDB Data Pose Angle U Roll */
-  public static final Long ntfLDS_Biometrics_BDB_Data_PoseAngleU_Roll = 2417491968l;
+  ntfLDS_Biometrics_BDB_Data_PoseAngleU_Roll(2417491968l),
 
   /** Biometrics: BDB Data Face Image Type */
-  public static final Long ntfLDS_Biometrics_BDB_Data_FaceImageType = 2417557504l;
+  ntfLDS_Biometrics_BDB_Data_FaceImageType(2417557504l),
 
   /** Biometrics: BDB Data Image Data Type */
-  public static final Long ntfLDS_Biometrics_BDB_Data_ImageDataType = 2417623040l;
+  ntfLDS_Biometrics_BDB_Data_ImageDataType(2417623040l),
 
   /** SI: PACE Info Unsupported Std Parameters */
-  public static final Long ntfLDS_SI_PACE_Info_UnsupportedStdParameters = 2432696320l;
+  ntfLDS_SI_PACE_Info_UnsupportedStdParameters(2432696320l),
 
   /** SI: PACE Info Deprecated Version */
-  public static final Long ntfLDS_SI_PACE_Info_DeprecatedVersion = 2432696321l;
+  ntfLDS_SI_PACE_Info_DeprecatedVersion(2432696321l),
 
   /** SI: PACE Domain Params Using Std Ref */
-  public static final Long ntfLDS_SI_PACE_DomainParams_UsingStdRef = 2432696322l;
+  ntfLDS_SI_PACE_DomainParams_UsingStdRef(2432696322l),
 
   /** SI: PACE Domain Params Unsupported Algorithm */
-  public static final Long ntfLDS_SI_PACE_DomainParams_UnsupportedAlgorithm = 2432696323l;
+  ntfLDS_SI_PACE_DomainParams_UnsupportedAlgorithm(2432696323l),
 
   /** SI: CA Info Incorrect Version */
-  public static final Long ntfLDS_SI_CA_Info_IncorrectVersion = 2432696324l;
+  ntfLDS_SI_CA_Info_IncorrectVersion(2432696324l),
 
   /** SI: CA PublicKey Unsupported Algorithm */
-  public static final Long ntfLDS_SI_CA_PublicKey_UnsupportedAlgorithm = 2432696325l;
+  ntfLDS_SI_CA_PublicKey_UnsupportedAlgorithm(2432696325l),
 
   /** SI: CA Domain Params Unsupported Algorithm */
-  public static final Long ntfLDS_SI_CA_DomainParams_UnsupportedAlgorithm = 2432696326l;
+  ntfLDS_SI_CA_DomainParams_UnsupportedAlgorithm(2432696326l),
 
   /** SI: TA Info Incorrect Version */
-  public static final Long ntfLDS_SI_TA_Info_IncorrectVersion = 2432696327l;
+  ntfLDS_SI_TA_Info_IncorrectVersion(2432696327l),
 
   /** SI: TA Info File ID For Version 2 */
-  public static final Long ntfLDS_SI_TA_Info_FileIDForVersion2 = 2432696328l;
+  ntfLDS_SI_TA_Info_FileIDForVersion2(2432696328l),
 
   /** SI: eID Security Unsupported Digest Algorithm */
-  public static final Long ntfLDS_SI_eIDSecurity_UnsupportedDigestAlgorithm = 2432696329l;
+  ntfLDS_SI_eIDSecurity_UnsupportedDigestAlgorithm(2432696329l),
 
   /** SI: RI info incorrect version */
-  public static final Long ntfLDS_SI_RI_Info_IncorrectVersion = 2432696330l;
+  ntfLDS_SI_RI_Info_IncorrectVersion(2432696330l),
 
   /** SI: RI domain params unsupported algorithm */
-  public static final Long ntfLDS_SI_RI_DomainParams_UnsupportedAlgorithm = 2432696331l;
+  ntfLDS_SI_RI_DomainParams_UnsupportedAlgorithm(2432696331l),
 
   /** SI: AA info incorrect version */
-  public static final Long ntfLDS_SI_AA_Info_IncorrectVersion = 2432696332l;
+  ntfLDS_SI_AA_Info_IncorrectVersion(2432696332l),
 
   /** SI: AA info unsupported algorithm */
-  public static final Long ntfLDS_SI_AA_Info_UnsupportedAlgorithm = 2432696333l;
+  ntfLDS_SI_AA_Info_UnsupportedAlgorithm(2432696333l),
 
   /** SI: AA info inconsistent algorithm reference */
-  public static final Long ntfLDS_SI_AA_Info_InconsistentAlgorithmReference = 2432696334l;
+  ntfLDS_SI_AA_Info_InconsistentAlgorithmReference(2432696334l),
 
   /** SI: PACE Info Not Available */
-  public static final Long ntfLDS_SI_Storage_PACE_Info_NotAvailable = 2432696576l;
+  ntfLDS_SI_Storage_PACE_Info_NotAvailable(2432696576l),
 
   /** SI: PACE Info No Std Parameters */
-  public static final Long ntfLDS_SI_Storage_PACE_Info_NoStdParameters = 2432696577l;
+  ntfLDS_SI_Storage_PACE_Info_NoStdParameters(2432696577l),
 
   /** SI: PACE Info No Matching Domain Params */
-  public static final Long ntfLDS_SI_Storage_PACE_Info_NoMatchingDomainParams = 2432696578l;
+  ntfLDS_SI_Storage_PACE_Info_NoMatchingDomainParams(2432696578l),
 
   /** SI: CA Info Not Available */
-  public static final Long ntfLDS_SI_Storage_CA_Info_NotAvailable = 2432696579l;
+  ntfLDS_SI_Storage_CA_Info_NotAvailable(2432696579l),
 
   /** SI: CA Domain Params No Required Option */
-  public static final Long ntfLDS_SI_Storage_CA_DomainParams_NoRequiredOption = 2432696580l;
+  ntfLDS_SI_Storage_CA_DomainParams_NoRequiredOption(2432696580l),
 
   /** SI: CA Domain Params Not Available */
-  public static final Long ntfLDS_SI_Storage_CA_DomainParams_NotAvailable = 2432696581l;
+  ntfLDS_SI_Storage_CA_DomainParams_NotAvailable(2432696581l),
 
   /** SI: CA Anonymous Infos */
-  public static final Long ntfLDS_SI_Storage_CA_AnonymousInfos = 2432696582l;
+  ntfLDS_SI_Storage_CA_AnonymousInfos(2432696582l),
 
   /** SI: CA Info No Matching Domain Params */
-  public static final Long ntfLDS_SI_Storage_CA_Info_NoMatchingDomainParams = 2432696583l;
+  ntfLDS_SI_Storage_CA_Info_NoMatchingDomainParams(2432696583l),
 
   /** SI: CA Info No Matching Public Key */
-  public static final Long ntfLDS_SI_Storage_CA_Info_NoMatchingPublicKey = 2432696584l;
+  ntfLDS_SI_Storage_CA_Info_NoMatchingPublicKey(2432696584l),
 
   /** SI: CA Incorrect Infos Quantity */
-  public static final Long ntfLDS_SI_Storage_CA_IncorrectInfosQuantity = 2432696585l;
+  ntfLDS_SI_Storage_CA_IncorrectInfosQuantity(2432696585l),
 
   /** SI: TA Info Not Available */
-  public static final Long ntfLDS_SI_Storage_TA_Info_NotAvailable = 2432696586l;
+  ntfLDS_SI_Storage_TA_Info_NotAvailable(2432696586l),
 
   /** SI: Card Info Locator Multiple Entries */
-  public static final Long ntfLDS_SI_Storage_CardInfoLocator_MultipleEntries = 2432696587l;
+  ntfLDS_SI_Storage_CardInfoLocator_MultipleEntries(2432696587l),
 
   /** SI: eID Security Info Multiple Entries */
-  public static final Long ntfLDS_SI_Storage_eIDSecurityInfo_MultipleEntries = 2432696588l;
+  ntfLDS_SI_Storage_eIDSecurityInfo_MultipleEntries(2432696588l),
 
   /** SI: Privileged TI Multiple Entries */
-  public static final Long ntfLDS_SI_Storage_PrivilegedTI_MultipleEntries = 2432696589l;
+  ntfLDS_SI_Storage_PrivilegedTI_MultipleEntries(2432696589l),
 
   /** SI: Privileged TI Incorrect Usage */
-  public static final Long ntfLDS_SI_Storage_PrivilegedTI_IncorrectUsage = 2432696590l;
+  ntfLDS_SI_Storage_PrivilegedTI_IncorrectUsage(2432696590l),
 
   /** SI: RI domain params multiple entries */
-  public static final Long ntfLDS_SI_Storage_RI_DomainParams_MultipleEntries = 2432696591l;
+  ntfLDS_SI_Storage_RI_DomainParams_MultipleEntries(2432696591l),
 
   /** SI: Storage PACE Info Non Consistant */
-  public static final Long ntfLDS_SI_Storage_PACEInfos_NonConsistant = 2432696592l;
+  ntfLDS_SI_Storage_PACEInfos_NonConsistant(2432696592l),
 
   /** CV Certificate: Profile incorrect version */
-  public static final Long ntfLDS_CVCertificate_Profile_IncorrectVersion = 2432696833l;
+  ntfLDS_CVCertificate_Profile_IncorrectVersion(2432696833l),
 
   /** CV Certificate: Validity */
-  public static final Long ntfLDS_CVCertificate_Validity = 2432696834l;
+  ntfLDS_CVCertificate_Validity(2432696834l),
 
   /** CV Certificate: Non CVCA domain parameters */
-  public static final Long ntfLDS_CVCertificate_NonCVCADomainParameters = 2432696835l;
+  ntfLDS_CVCertificate_NonCVCADomainParameters(2432696835l),
 
   /** CV Certificate: Private key incorrect version */
-  public static final Long ntfLDS_CV_Certificate_PrivateKey_IncorrectVersion = 2432696836l;
+  ntfLDS_CV_Certificate_PrivateKey_IncorrectVersion(2432696836l),
 
   /** TA: PACE static binding used */
-  public static final Long ntfLDS_TA_PACEStaticBindingUsed = 2432697088l;
+  ntfLDS_TA_PACEStaticBindingUsed(2432697088l),
 
   /** Auth ML signer info: Certificate validity */
-  public static final Long ntfLDS_Auth_MLSignerInfo_Certificate_Validity = 2449473813l;
+  ntfLDS_Auth_MLSignerInfo_Certificate_Validity(2449473813l),
 
   /** Auth ML signer info: Certificate root is not trusted */
-  public static final Long ntfLDS_Auth_MLSignerInfo_Certificate_RootIsNotTrusted = 2449473814l;
+  ntfLDS_Auth_MLSignerInfo_Certificate_RootIsNotTrusted(2449473814l),
 
   /** Auth ML signer info: Certificate cannot find CSCA */
-  public static final Long ntfLDS_Auth_MLSignerInfo_Certificate_CantFindCSCA = 2449473815l;
+  ntfLDS_Auth_MLSignerInfo_Certificate_CantFindCSCA(2449473815l),
 
   /** Auth ML signer info: Certificate revoked */
-  public static final Long ntfLDS_Auth_MLSignerInfo_Certificate_Revoked = 2449473816l;
+  ntfLDS_Auth_MLSignerInfo_Certificate_Revoked(2449473816l),
 
   /** Auth ML signer info: Certificate signature invalid */
-  public static final Long ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid = 2449473817l;
+  ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid(2449473817l),
 
   /** Country Codes from certificate chain don&#39;t match */
-  public static final Long ntfLDS_ICAO_Certificate_Chain_Country_NonMatching = 2415919696l;
+  ntfLDS_ICAO_Certificate_Chain_Country_NonMatching(2415919696l),
 
   /** Country Codes from certificate and visual MRZ don&#39;t match */
-  public static final Long ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching = 2415919697l;
+  ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching(2415919697l),
 
   /** Incorrect MRZ, country code doesn&#39;t match codes from Visual MRZ */
-  public static final Long ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching = 139289l;
+  ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching(139289l),
 
   /** Country Codes from certificate and DG1 MRZ don&#39;t match */
-  public static final Long ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching = 2415919698l;
+  ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching(2415919698l);
+
+  private Long value;
+
+  ParsingNotificationCodes(Long value) {
+    this.value = value;
+  }
+
+  public Long getValue() {
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  public static ParsingNotificationCodes fromValue(Long value) {
+    for (ParsingNotificationCodes b : ParsingNotificationCodes.values()) {
+      if (b.value.equals(value)) {
+        return b;
+      }
+    }
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
+  }
+
+  public static class Adapter extends TypeAdapter<ParsingNotificationCodes> {
+    @Override
+    public void write(final JsonWriter jsonWriter, final ParsingNotificationCodes enumeration)
+        throws IOException {
+      jsonWriter.value(enumeration.getValue());
+    }
+
+    @Override
+    public ParsingNotificationCodes read(final JsonReader jsonReader) throws IOException {
+      Long value = jsonReader.nextLong();
+      return ParsingNotificationCodes.fromValue(value);
+    }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    Long value = jsonElement.getAsLong();
+    ParsingNotificationCodes.fromValue(value);
+  }
 }
