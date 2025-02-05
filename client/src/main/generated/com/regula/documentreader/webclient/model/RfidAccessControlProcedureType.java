@@ -12,84 +12,29 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains a set of constants that define the type of authentication or secure data
- * access procedure
- */
-@JsonAdapter(RfidAccessControlProcedureType.Adapter.class)
-public enum RfidAccessControlProcedureType {
+public class RfidAccessControlProcedureType {
 
   /** Type is not defined */
-  UNDEFINED(0),
+  public static final int UNDEFINED = 0;
 
   /** BAC/BAP */
-  BAC(1),
+  public static final int BAC = 1;
 
   /** PACE */
-  PACE(2),
+  public static final int PACE = 2;
 
   /** CA */
-  CA(3),
+  public static final int CA = 3;
 
   /** TA */
-  TA(4),
+  public static final int TA = 4;
 
   /** AA */
-  AA(5),
+  public static final int AA = 5;
 
   /** RI */
-  RI(6),
+  public static final int RI = 6;
 
   /** Card info */
-  CARD_INFO(10);
-
-  private Integer value;
-
-  RfidAccessControlProcedureType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidAccessControlProcedureType fromValue(Integer value) {
-    for (RfidAccessControlProcedureType b : RfidAccessControlProcedureType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidAccessControlProcedureType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidAccessControlProcedureType enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidAccessControlProcedureType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidAccessControlProcedureType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidAccessControlProcedureType.fromValue(value);
-  }
+  public static final int CARD_INFO = 10;
 }

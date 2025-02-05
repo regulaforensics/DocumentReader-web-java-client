@@ -12,68 +12,14 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains a set of constants specifying the type of the RFID-chip by the physical
- * parameters of connection between antennas of the chip and the reader
- */
-@JsonAdapter(RfidType.Adapter.class)
-public enum RfidType {
+public class RfidType {
 
   /** Unknown */
-  UNKNOWN(0),
+  public static final int UNKNOWN = 0;
 
   /** Type A */
-  A(1),
+  public static final int A = 1;
 
   /** Type B */
-  B(2);
-
-  private Integer value;
-
-  RfidType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidType fromValue(Integer value) {
-    for (RfidType b : RfidType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidType enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidType.fromValue(value);
-  }
+  public static final int B = 2;
 }

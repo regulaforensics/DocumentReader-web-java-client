@@ -12,62 +12,11 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
+public class MrzDetectModeEnum {
 
-/** Make better MRZ detection on complex noisy backgrounds, like BW photocopy of some documents. */
-@JsonAdapter(MrzDetectModeEnum.Adapter.class)
-public enum MrzDetectModeEnum {
-  eMDM_Default(0),
+  public static final int eMDM_Default = 0;
 
-  eMDM_ResizeBinarizeWindow(1),
+  public static final int eMDM_ResizeBinarizeWindow = 1;
 
-  eMDM_BlurBeforeBinarization(2);
-
-  private Integer value;
-
-  MrzDetectModeEnum(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static MrzDetectModeEnum fromValue(Integer value) {
-    for (MrzDetectModeEnum b : MrzDetectModeEnum.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<MrzDetectModeEnum> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final MrzDetectModeEnum enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public MrzDetectModeEnum read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return MrzDetectModeEnum.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    MrzDetectModeEnum.fromValue(value);
-  }
+  public static final int eMDM_BlurBeforeBinarization = 2;
 }

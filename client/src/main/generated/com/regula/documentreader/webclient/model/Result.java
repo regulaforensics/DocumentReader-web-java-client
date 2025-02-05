@@ -12,166 +12,115 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Gets or Sets Result */
-@JsonAdapter(Result.Adapter.class)
-public enum Result {
+public class Result {
 
   /**
    * Contains cropped and rotated with perspective compensation image of document. Single input
    * image can contain multiple document side/pages, which will be returned as separated results.
    * Most of coordinates in other types defined on that image
    */
-  DOCUMENT_IMAGE(1),
+  public static final int DOCUMENT_IMAGE = 1;
 
   /** Contains MRZ OCR results */
-  MRZ_TEXT(3),
+  public static final int MRZ_TEXT = 3;
 
   /** Contains raw information about barcodes on the input image */
-  BARCODES(5),
+  public static final int BARCODES = 5;
 
   /** Contains cropped graphic fields from Visual zone */
-  VISUAL_GRAPHICS(6),
+  public static final int VISUAL_GRAPHICS = 6;
 
   /** Contains list of document type candidates with their probabilities and descriptions */
-  DOCUMENT_TYPE_CANDIDATES(8),
+  public static final int DOCUMENT_TYPE_CANDIDATES = 8;
 
   /** Contains description of determined document type, if any */
-  DOCUMENT_TYPE(9),
+  public static final int DOCUMENT_TYPE = 9;
 
   /**
    * Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone
    * OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of
    * the document (this is an old format, better use TEXT type)
    */
-  LEXICAL_ANALYSIS(15),
+  public static final int LEXICAL_ANALYSIS = 15;
 
   /** Contains raw uncropped images */
-  RAW_UNCROPPED_IMAGE(16),
+  public static final int RAW_UNCROPPED_IMAGE = 16;
 
   /** Contains Visual zone OCR results */
-  VISUAL_TEXT(17),
+  public static final int VISUAL_TEXT = 17;
 
   /** Contains barcode parsing result with text fields */
-  BARCODE_TEXT(18),
+  public static final int BARCODE_TEXT = 18;
 
   /** Contains barcode parsing result with graphic fields */
-  BARCODE_GRAPHICS(19),
+  public static final int BARCODE_GRAPHICS = 19;
 
   /** Contains result of document authenticity checks */
-  AUTHENTICITY(20),
+  public static final int AUTHENTICITY = 20;
 
   /** Contains result of DocVisualExtendedInfoContainer */
-  MAGNETIC_STRIPE_TEXT_DATA(26),
+  public static final int MAGNETIC_STRIPE_TEXT_DATA = 26;
 
   /** Contains image quality check results */
-  IMAGE_QUALITY(30),
+  public static final int IMAGE_QUALITY = 30;
 
   /** Contains result of DocGraphicsInfoContainer */
-  LIVE_PORTRAIT(32),
+  public static final int LIVE_PORTRAIT = 32;
 
   /** Contains check statuses with details, grouped by source */
-  STATUS(33),
+  public static final int STATUS = 33;
 
   /** Contains result of portraits comparison */
-  PORTRAIT_COMPARISON(34),
+  public static final int PORTRAIT_COMPARISON = 34;
 
   /** Contains result of DocGraphicsInfoContainer */
-  EXT_PORTRAIT(35),
+  public static final int EXT_PORTRAIT = 35;
 
   /**
    * Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity
    * and cross-source compare checks
    */
-  TEXT(36),
+  public static final int TEXT = 36;
 
   /** Contains images from all document sources (mrz, rfid, visual, barcode) */
-  IMAGES(37),
+  public static final int IMAGES = 37;
 
   /** Contains result of DocGraphicsInfoContainer */
-  FINGERPRINTS(38),
+  public static final int FINGERPRINTS = 38;
 
   /** Contains result of fingerprints comparison */
-  FINGERPRINT_COMPARISON(39),
+  public static final int FINGERPRINT_COMPARISON = 39;
 
   /** Contains encrypted ResultContainerList */
-  ENCRYPTED_RCL(49),
+  public static final int ENCRYPTED_RCL = 49;
 
   /** Contains license */
-  LICENSE(50),
+  public static final int LICENSE = 50;
 
   /** Contains result of DocumentPosition */
-  MRZ_POSITION(61),
+  public static final int MRZ_POSITION = 61;
 
   /** Contains result of DocumentPosition */
-  BARCODE_POSITION(62),
+  public static final int BARCODE_POSITION = 62;
 
   /** Contains information about document position on the input image, its center, angle, etc */
-  DOCUMENT_POSITION(85),
+  public static final int DOCUMENT_POSITION = 85;
 
   /** Contains RFID raw data */
-  RFID_RAW_DATA(101),
+  public static final int RFID_RAW_DATA = 101;
 
   /** Contains RFID text results */
-  RFID_TEXT(102),
+  public static final int RFID_TEXT = 102;
 
   /** Contains RFID graphic results */
-  RFID_GRAPHICS(103),
+  public static final int RFID_GRAPHICS = 103;
 
   /** Contains RFID binary data */
-  RFID_BINARY_DATA(104),
+  public static final int RFID_BINARY_DATA = 104;
 
   /** Contains RFID original graphics data */
-  RFID_ORIGINAL_GRAPHICS(105),
+  public static final int RFID_ORIGINAL_GRAPHICS = 105;
 
   /** Digital Travel Credential data */
-  DTC_VC(109);
-
-  private Integer value;
-
-  Result(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static Result fromValue(Integer value) {
-    for (Result b : Result.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<Result> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final Result enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public Result read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return Result.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    Result.fromValue(value);
-  }
+  public static final int DTC_VC = 109;
 }

@@ -12,71 +12,20 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Gets or Sets LogLevel */
-@JsonAdapter(LogLevel.Adapter.class)
-public enum LogLevel {
+public class LogLevel {
 
   /** Fatal error */
-  FATAL_ERROR("FatalError"),
+  public static final String FATAL_ERROR = "FatalError";
 
   /** Error */
-  ERROR("Error"),
+  public static final String ERROR = "Error";
 
   /** Warning */
-  WARNING("Warning"),
+  public static final String WARNING = "Warning";
 
   /** Info */
-  INFO("Info"),
+  public static final String INFO = "Info";
 
   /** Debug */
-  DEBUG("Debug");
-
-  private String value;
-
-  LogLevel(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static LogLevel fromValue(String value) {
-    for (LogLevel b : LogLevel.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<LogLevel> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final LogLevel enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public LogLevel read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return LogLevel.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    LogLevel.fromValue(value);
-  }
+  public static final String DEBUG = "Debug";
 }

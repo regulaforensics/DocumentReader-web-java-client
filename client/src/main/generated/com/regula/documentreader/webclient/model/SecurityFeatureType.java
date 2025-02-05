@@ -12,219 +12,164 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains identifiers determining type of features for a document authenticity checks:
- * https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/
- */
-@JsonAdapter(SecurityFeatureType.Adapter.class)
-public enum SecurityFeatureType {
+public class SecurityFeatureType {
 
   /** Blank element */
-  BLANK(0),
+  public static final int BLANK = 0;
 
   /** Personalization element */
-  FILL(1),
+  public static final int FILL = 1;
 
   /** Photo */
-  PHOTO(2),
+  public static final int PHOTO = 2;
 
   /** MRZ */
-  MRZ(3),
+  public static final int MRZ = 3;
 
   /** False luminescence */
-  FALSE_LUMINESCENCE(4),
+  public static final int FALSE_LUMINESCENCE = 4;
 
   /** Hologram (static) */
-  HOLO_SIMPLE(5),
+  public static final int HOLO_SIMPLE = 5;
 
   /** Hologram (static verify) */
-  HOLO_VERIFY_STATIC(6),
+  public static final int HOLO_VERIFY_STATIC = 6;
 
   /** Hologram (static verify multiple) */
-  HOLO_VERIFY_MULTI_STATIC(7),
+  public static final int HOLO_VERIFY_MULTI_STATIC = 7;
 
   /** Hologram (dynamic verify) */
-  HOLO_VERIFY_DYNAMIC(8),
+  public static final int HOLO_VERIFY_DYNAMIC = 8;
 
   /** Pattern (non-interrupted) */
-  PATTERN_NOT_INTERRUPTED(9),
+  public static final int PATTERN_NOT_INTERRUPTED = 9;
 
   /** Pattern (non-shifted) */
-  PATTERN_NOT_SHIFTED(10),
+  public static final int PATTERN_NOT_SHIFTED = 10;
 
   /** Pattern (same colors) */
-  PATTERN_SAME_COLORS(11),
+  public static final int PATTERN_SAME_COLORS = 11;
 
   /** Pattern (IR invisible) */
-  PATTERN_IR_INVISIBLE(12),
+  public static final int PATTERN_IR_INVISIBLE = 12;
 
   /** Photo size */
-  PHOTO_SIZE_CHECK(13),
+  public static final int PHOTO_SIZE_CHECK = 13;
 
   /** Main vs ghost portrait comparison */
-  PORTRAIT_COMPARISON_VS_GHOST(14),
+  public static final int PORTRAIT_COMPARISON_VS_GHOST = 14;
 
   /** Main vs RFID portrait comparison */
-  PORTRAIT_COMPARISON_VS_RFID(15),
+  public static final int PORTRAIT_COMPARISON_VS_RFID = 15;
 
   /** Main vs other page portrait comparison */
-  PORTRAIT_COMPARISON_VS_VISUAL(16),
+  public static final int PORTRAIT_COMPARISON_VS_VISUAL = 16;
 
   /** Barcode */
-  BARCODE(17),
+  public static final int BARCODE = 17;
 
   /** Pattern (different line thickness) */
-  PATTERN_DIFFERENT_LINES_THICKNESS(18),
+  public static final int PATTERN_DIFFERENT_LINES_THICKNESS = 18;
 
   /** Main vs live camera portrait comparison */
-  PORTRAIT_COMPARISON_VS_CAMERA(19),
+  public static final int PORTRAIT_COMPARISON_VS_CAMERA = 19;
 
   /** RFID vs live camera portrait comparison */
-  PORTRAIT_COMPARISON_RFID_VS_CAMERA(20),
+  public static final int PORTRAIT_COMPARISON_RFID_VS_CAMERA = 20;
 
   /** Ghost photo */
-  GHOST_PHOTO(21),
+  public static final int GHOST_PHOTO = 21;
 
   /** Clear ghost photo */
-  CLEAR_GHOST_PHOTO(22),
+  public static final int CLEAR_GHOST_PHOTO = 22;
 
   /** Invisible object */
-  INVISIBLE_OBJECT(23),
+  public static final int INVISIBLE_OBJECT = 23;
 
   /** Low contrast object */
-  LOW_CONTRAST_OBJECT(24),
+  public static final int LOW_CONTRAST_OBJECT = 24;
 
   /** Photo color check */
-  PHOTO_COLOR(25),
+  public static final int PHOTO_COLOR = 25;
 
   /** Photo squareness */
-  PHOTO_SHAPE(26),
+  public static final int PHOTO_SHAPE = 26;
 
   /** Photo corners shape */
-  PHOTO_CORNERS(27),
+  public static final int PHOTO_CORNERS = 27;
 
   /** OCR */
-  OCR(28),
+  public static final int OCR = 28;
 
   /** External vs main portrait comparison */
-  PORTRAIT_COMPARISON_EXT_VS_VISUAL(29),
+  public static final int PORTRAIT_COMPARISON_EXT_VS_VISUAL = 29;
 
   /** External vs RFID portrait comparison */
-  PORTRAIT_COMPARISON_EXT_VS_RFID(30),
+  public static final int PORTRAIT_COMPARISON_EXT_VS_RFID = 30;
 
   /** External vs live camera portrait comparison */
-  PORTRAIT_COMPARISON_EXT_VS_CAMERA(31),
+  public static final int PORTRAIT_COMPARISON_EXT_VS_CAMERA = 31;
 
   /** Portrait Depth */
-  LIVENESS_DEPTH(32),
+  public static final int LIVENESS_DEPTH = 32;
 
   /** Micro text */
-  MICRO_TEXT(33),
+  public static final int MICRO_TEXT = 33;
 
   /** Fluorescent Object */
-  FLUORESCENT_OBJECT(34),
+  public static final int FLUORESCENT_OBJECT = 34;
 
   /** Facial landmarks check */
-  LANDMARK_CHECK(35),
+  public static final int LANDMARK_CHECK = 35;
 
   /** Facial image presence */
-  FACE_PRESENCE(36),
+  public static final int FACE_PRESENCE = 36;
 
   /** Facial image absence */
-  FACE_ABSENCE(38),
+  public static final int FACE_ABSENCE = 38;
 
   /** Liveness screen capture. Deprecated. LIVENESS_ELECTRONIC_DEVICE is used instead. */
-  LIVENESS_SCREEN_CAPTURE(39),
+  public static final int LIVENESS_SCREEN_CAPTURE = 39;
 
   /** Liveness electronic device */
-  LIVENESS_ELECTRONIC_DEVICE(40),
+  public static final int LIVENESS_ELECTRONIC_DEVICE = 40;
 
   /** Liveness OVI */
-  LIVENESS_OVI(41),
+  public static final int LIVENESS_OVI = 41;
 
   /** Barcode size check */
-  BARCODE_SIZE_CHECK(42),
+  public static final int BARCODE_SIZE_CHECK = 42;
 
   /** LASINK */
-  LASINK(43),
+  public static final int LASINK = 43;
 
   /** Liveness MLI */
-  LIVENESS_MLI(44),
+  public static final int LIVENESS_MLI = 44;
 
   /** Liveness barcode background */
-  LIVENESS_BARCODE_BACKGROUND(45),
+  public static final int LIVENESS_BARCODE_BACKGROUND = 45;
 
   /** Visual zone portrait image vs. image from barcode */
-  PORTRAIT_COMPARISON_VS_BARCODE(46),
+  public static final int PORTRAIT_COMPARISON_VS_BARCODE = 46;
 
   /** Image from barcode vs. image from RFID */
-  PORTRAIT_COMPARISON_RFID_VS_BARCODE(47),
+  public static final int PORTRAIT_COMPARISON_RFID_VS_BARCODE = 47;
 
   /** Image from barcode vs. external source image */
-  PORTRAIT_COMPARISON_EXT_VS_BARCODE(48),
+  public static final int PORTRAIT_COMPARISON_EXT_VS_BARCODE = 48;
 
   /** Image from barcode vs. photo from camera */
-  PORTRAIT_COMPARISON_BARCODE_VS_CAMERA(49),
+  public static final int PORTRAIT_COMPARISON_BARCODE_VS_CAMERA = 49;
 
   /** Digital signature check */
-  CHECK_DIGITAL_SIGNATURE(50),
+  public static final int CHECK_DIGITAL_SIGNATURE = 50;
 
   /** Contact chip check */
-  CONTACT_CHIP_CLASSIFICATION(51),
+  public static final int CONTACT_CHIP_CLASSIFICATION = 51;
 
   /** Head position check */
-  HEAD_POSITION_CHECK(52),
+  public static final int HEAD_POSITION_CHECK = 52;
 
   /** Black and white copy check */
-  LIVENESS_BLACK_AND_WHITE_COPY_CHECK(53);
-
-  private Integer value;
-
-  SecurityFeatureType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static SecurityFeatureType fromValue(Integer value) {
-    for (SecurityFeatureType b : SecurityFeatureType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<SecurityFeatureType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final SecurityFeatureType enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public SecurityFeatureType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return SecurityFeatureType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    SecurityFeatureType.fromValue(value);
-  }
+  public static final int LIVENESS_BLACK_AND_WHITE_COPY_CHECK = 53;
 }

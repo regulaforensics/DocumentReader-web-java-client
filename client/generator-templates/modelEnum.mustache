@@ -1,0 +1,13 @@
+{{! check updates here https://github.com/OpenAPITools/openapi-generator/blob/master/modules/openapi-generator/src/main/resources/Java/ }}
+{{! main purpose - generate static constants instead of enums }}
+
+public class {{classname}} {
+{{#allowableValues}}{{#enumVars}}
+    {{#enumDescription}}
+        /**
+        * {{enumDescription}}
+        */
+    {{/enumDescription}}
+    public static final   {{#isInteger}}int{{/isInteger}} {{^isInteger}}{{{dataType}}}{{/isInteger}}  {{{name}}} = {{{value}}};
+{{/enumVars}}{{/allowableValues}}
+}

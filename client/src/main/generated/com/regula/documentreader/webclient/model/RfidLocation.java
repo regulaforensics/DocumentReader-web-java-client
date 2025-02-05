@@ -12,69 +12,14 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Determines the presence and location of an RFID chip in a document. 0 - no rfid chip; 1 - chip is
- * located in the document data page; 2 - chip is located in the back page or inlay of the document
- */
-@JsonAdapter(RfidLocation.Adapter.class)
-public enum RfidLocation {
+public class RfidLocation {
 
   /** There is no RFID chip in the document */
-  NONE(0),
+  public static final int NONE = 0;
 
   /** The RFID chip is located in the document data page */
-  MAIN_PAGE(1),
+  public static final int MAIN_PAGE = 1;
 
   /** The RFID chip is located in the back page or inlay of the document */
-  BACK_PAGE(2);
-
-  private Integer value;
-
-  RfidLocation(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidLocation fromValue(Integer value) {
-    for (RfidLocation b : RfidLocation.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidLocation> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidLocation enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidLocation read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidLocation.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidLocation.fromValue(value);
-  }
+  public static final int BACK_PAGE = 2;
 }

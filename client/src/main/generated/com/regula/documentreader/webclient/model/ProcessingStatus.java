@@ -12,66 +12,14 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Gets or Sets ProcessingStatus */
-@JsonAdapter(ProcessingStatus.Adapter.class)
-public enum ProcessingStatus {
+public class ProcessingStatus {
 
   /** Processing was not finished */
-  NOT_FINISHED(0),
+  public static final int NOT_FINISHED = 0;
 
   /** Processing finished */
-  FINISHED(1),
+  public static final int FINISHED = 1;
 
   /** Processing finished by timeout */
-  TIMEOUT(2);
-
-  private Integer value;
-
-  ProcessingStatus(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static ProcessingStatus fromValue(Integer value) {
-    for (ProcessingStatus b : ProcessingStatus.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<ProcessingStatus> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final ProcessingStatus enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public ProcessingStatus read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return ProcessingStatus.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    ProcessingStatus.fromValue(value);
-  }
+  public static final int TIMEOUT = 2;
 }

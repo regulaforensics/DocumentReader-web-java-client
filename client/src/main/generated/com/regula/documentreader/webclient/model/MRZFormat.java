@@ -12,74 +12,23 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Gets or Sets MRZFormat */
-@JsonAdapter(MRZFormat.Adapter.class)
-public enum MRZFormat {
+public class MRZFormat {
 
   /** 1x30 */
-  IDL("1x30"),
+  public static final String IDL = "1x30";
 
   /** 3x30 */
-  ID1("3x30"),
+  public static final String ID1 = "3x30";
 
   /** 2x36 */
-  ID2("2x36"),
+  public static final String ID2 = "2x36";
 
   /** 2x44 */
-  ID3("2x44"),
+  public static final String ID3 = "2x44";
 
   /** 1x6 */
-  CAN("1x6"),
+  public static final String CAN = "1x6";
 
   /** 2x30 */
-  ID1_2_30("2x30");
-
-  private String value;
-
-  MRZFormat(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static MRZFormat fromValue(String value) {
-    for (MRZFormat b : MRZFormat.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<MRZFormat> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final MRZFormat enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public MRZFormat read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return MRZFormat.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    MRZFormat.fromValue(value);
-  }
+  public static final String ID1_2_30 = "2x30";
 }

@@ -12,87 +12,32 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains a set of constants that define the source of certificate used in the
- * procedure of document security object digital signature verification
- */
-@JsonAdapter(RfidCertificateOrigin.Adapter.class)
-public enum RfidCertificateOrigin {
+public class RfidCertificateOrigin {
 
   /** The source is not defined */
-  UNDEFINED(0),
+  public static final int UNDEFINED = 0;
 
   /** Local PKD */
-  PKD(1),
+  public static final int PKD = 1;
 
   /** Document security object */
-  SECURITY_OBJECT(2),
+  public static final int SECURITY_OBJECT = 2;
 
   /** User-defined */
-  USER_DEFINED(3),
+  public static final int USER_DEFINED = 3;
 
   /** Contents of the Master List */
-  MASTER_LIST_PKD(4),
+  public static final int MASTER_LIST_PKD = 4;
 
   /** Security object of the Master List */
-  MASTER_LIST_SO(5),
+  public static final int MASTER_LIST_SO = 5;
 
   /** Security object of the Defect List */
-  DEFECT_LIST_SO(6),
+  public static final int DEFECT_LIST_SO = 6;
 
   /** Security object of the Deviation List */
-  DEVIATION_LIST_SO(7),
+  public static final int DEVIATION_LIST_SO = 7;
 
   /** Security object of the Black List */
-  BLACK_LIST_SO(8);
-
-  private Integer value;
-
-  RfidCertificateOrigin(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidCertificateOrigin fromValue(Integer value) {
-    for (RfidCertificateOrigin b : RfidCertificateOrigin.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidCertificateOrigin> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidCertificateOrigin enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidCertificateOrigin read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidCertificateOrigin.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidCertificateOrigin.fromValue(value);
-  }
+  public static final int BLACK_LIST_SO = 8;
 }

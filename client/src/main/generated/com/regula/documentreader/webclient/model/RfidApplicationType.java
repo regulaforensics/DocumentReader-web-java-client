@@ -12,90 +12,35 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains a set of constants that define the type of application within the context of
- * the communication session with electronic document
- */
-@JsonAdapter(RfidApplicationType.Adapter.class)
-public enum RfidApplicationType {
+public class RfidApplicationType {
 
   /** Not defined */
-  UNSPECIFIED(0),
+  public static final int UNSPECIFIED = 0;
 
   /** ePassport application */
-  E_PASSPORT(1),
+  public static final int E_PASSPORT = 1;
 
   /** eID application */
-  E_ID(2),
+  public static final int E_ID = 2;
 
   /** eSign application */
-  E_SIGN(3),
+  public static final int E_SIGN = 3;
 
   /** eDL application */
-  E_DL(4),
+  public static final int E_DL = 4;
 
   /** TravelRecords application */
-  LDS2_TravelRecords(5),
+  public static final int LDS2_TravelRecords = 5;
 
   /** VisaRecords application */
-  LDS2_VisaRecords(6),
+  public static final int LDS2_VisaRecords = 6;
 
   /** AddBiometrics application */
-  LDS2_AddBiometrics(7),
+  public static final int LDS2_AddBiometrics = 7;
 
   /** Digital Travel Credentials */
-  eDTC_PC(8),
+  public static final int eDTC_PC = 8;
 
   /** Master File */
-  ROOT_FILES(0);
-
-  private Integer value;
-
-  RfidApplicationType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidApplicationType fromValue(Integer value) {
-    for (RfidApplicationType b : RfidApplicationType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidApplicationType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidApplicationType enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidApplicationType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidApplicationType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidApplicationType.fromValue(value);
-  }
+  public static final int ROOT_FILES = 0;
 }

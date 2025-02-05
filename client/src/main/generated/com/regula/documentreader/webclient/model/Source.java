@@ -12,74 +12,23 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Document data sources */
-@JsonAdapter(Source.Adapter.class)
-public enum Source {
+public class Source {
 
   /** Machine readable zone (MRZ) */
-  MRZ("MRZ"),
+  public static final String MRZ = "MRZ";
 
   /** Visual zone */
-  VISUAL("VISUAL"),
+  public static final String VISUAL = "VISUAL";
 
   /** Barcode */
-  BARCODE("BARCODE"),
+  public static final String BARCODE = "BARCODE";
 
   /** RFID */
-  RFID("RFID"),
+  public static final String RFID = "RFID";
 
   /** Magnetic */
-  MAGNETIC("MAGNETIC"),
+  public static final String MAGNETIC = "MAGNETIC";
 
   /** External */
-  EXTERNAL("EXTERNAL");
-
-  private String value;
-
-  Source(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static Source fromValue(String value) {
-    for (Source b : Source.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<Source> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final Source enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public Source read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return Source.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    Source.fromValue(value);
-  }
+  public static final String EXTERNAL = "EXTERNAL";
 }

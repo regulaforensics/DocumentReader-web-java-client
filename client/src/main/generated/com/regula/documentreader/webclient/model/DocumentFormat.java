@@ -12,102 +12,50 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Defining the geometric format of documents in accordance with ISO / IEC 7810 */
-@JsonAdapter(DocumentFormat.Adapter.class)
-public enum DocumentFormat {
+public class DocumentFormat {
 
   /** Unknown document format */
-  UNKNOWN(-1),
+  public static final int UNKNOWN = -1;
 
   /** ID1 document format */
-  ID1(0),
+  public static final int ID1 = 0;
 
   /** ID2 document format */
-  ID2(1),
+  public static final int ID2 = 1;
 
   /** ID3 document format */
-  ID3(2),
+  public static final int ID3 = 2;
 
   /** Undefined document format */
-  NON(3),
+  public static final int NON = 3;
 
   /** A4 document format */
-  A4(4),
+  public static final int A4 = 4;
 
   /** ID3 double document format */
-  ID3_X2(5),
+  public static final int ID3_X2 = 5;
 
   /** ID1 format document rotated 90 ° */
-  ID1_90(10),
+  public static final int ID1_90 = 10;
 
   /** ID1 format document rotated 180 ° */
-  ID1_180(11),
+  public static final int ID1_180 = 11;
 
   /** ID1 format document rotated 270 ° */
-  ID1_270(12),
+  public static final int ID1_270 = 12;
 
   /** ID2 format document rotated 90 ° */
-  ID2_180(13),
+  public static final int ID2_180 = 13;
 
   /** ID3 format document rotated 180 ° */
-  ID3_180(14),
+  public static final int ID3_180 = 14;
 
   /** Arbitrary format */
-  CUSTOM(1000),
+  public static final int CUSTOM = 1000;
 
   /**
    * Flexible format. Standard formats can be resized during cropping, depending on various factors:
    * light, background...
    */
-  FLEXIBLE(1002);
-
-  private Integer value;
-
-  DocumentFormat(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static DocumentFormat fromValue(Integer value) {
-    for (DocumentFormat b : DocumentFormat.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<DocumentFormat> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final DocumentFormat enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public DocumentFormat read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return DocumentFormat.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    DocumentFormat.fromValue(value);
-  }
+  public static final int FLEXIBLE = 1002;
 }

@@ -12,75 +12,20 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/**
- * Enumeration contains a set of constants specifying the rate of data exchange between the reader
- * and the RFID-chip
- */
-@JsonAdapter(RfidBaudRate.Adapter.class)
-public enum RfidBaudRate {
+public class RfidBaudRate {
 
   /** Unknown */
-  UNKNOWN(0),
+  public static final int UNKNOWN = 0;
 
   /** 106 bits/s */
-  RFBR_106(1),
+  public static final int RFBR_106 = 1;
 
   /** 212 bits/s */
-  RFBR_212(2),
+  public static final int RFBR_212 = 2;
 
   /** 424 bits/s */
-  RFBR_424(4),
+  public static final int RFBR_424 = 4;
 
   /** 848 bits/s */
-  RFBR_848(8);
-
-  private Integer value;
-
-  RfidBaudRate(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static RfidBaudRate fromValue(Integer value) {
-    for (RfidBaudRate b : RfidBaudRate.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<RfidBaudRate> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final RfidBaudRate enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public RfidBaudRate read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return RfidBaudRate.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    RfidBaudRate.fromValue(value);
-  }
+  public static final int RFBR_848 = 8;
 }

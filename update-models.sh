@@ -9,6 +9,7 @@ openapitools/openapi-generator-cli:v7.11.0 generate \
 -g java \
 -i /definitions/index.yml \
 -o /client/client --inline-schema-options RESOLVE_INLINE_ENUMS=true \
+-t /client/client/generator-templates \
 -c /client/java-generator-config.json || exit 1
 
 ./gradlew -p ./ goJF || exit 0

@@ -12,81 +12,29 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Image quality check type */
-@JsonAdapter(ImageQualityCheckType.Adapter.class)
-public enum ImageQualityCheckType {
+public class ImageQualityCheckType {
 
   /** Signals glare presence on the image */
-  ImageGlares(0),
+  public static final int ImageGlares = 0;
 
   /** Signals whether image is in focus */
-  ImageFocus(1),
+  public static final int ImageFocus = 1;
 
   /** Signals if image resolution is below threshold */
-  ImageResolution(2),
+  public static final int ImageResolution = 2;
 
   /** Signals if image is colorless */
-  ImageColorness(3),
+  public static final int ImageColorness = 3;
 
   /** Signals if document in the image has prespective distortion above threshold */
-  Perspective(4),
+  public static final int Perspective = 4;
 
   /** Signals if document is not fully present in the image */
-  Bounds(5),
+  public static final int Bounds = 5;
 
   /** Signals if the portrait is present */
-  Portrait(7),
+  public static final int Portrait = 7;
 
   /** Signals if the document image is bright enough */
-  Brightness(9);
-
-  private Integer value;
-
-  ImageQualityCheckType(Integer value) {
-    this.value = value;
-  }
-
-  public Integer getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static ImageQualityCheckType fromValue(Integer value) {
-    for (ImageQualityCheckType b : ImageQualityCheckType.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<ImageQualityCheckType> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final ImageQualityCheckType enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public ImageQualityCheckType read(final JsonReader jsonReader) throws IOException {
-      Integer value = jsonReader.nextInt();
-      return ImageQualityCheckType.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Integer value = jsonElement.getAsInt();
-    ImageQualityCheckType.fromValue(value);
-  }
+  public static final int Brightness = 9;
 }

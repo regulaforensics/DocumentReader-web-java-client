@@ -12,81 +12,29 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonElement;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-/** Input image quality checks for the document processing */
-@JsonAdapter(InputImageQualityChecks.Adapter.class)
-public enum InputImageQualityChecks {
+public class InputImageQualityChecks {
 
   /** Signals glare presence on the image */
-  Glares("glaresCheck"),
+  public static final String Glares = "glaresCheck";
 
   /** Signals whether image is in focus */
-  Focus("focusCheck"),
+  public static final String Focus = "focusCheck";
 
   /** Signals if image resolution is below threshold */
-  Resolution("dpiThreshold"),
+  public static final String Resolution = "dpiThreshold";
 
   /** Signals if image is colorless */
-  Colorness("colornessCheck"),
+  public static final String Colorness = "colornessCheck";
 
   /** Signals if document in the image has prespective distortion above threshold */
-  Perspective("perspectiveCheck"),
+  public static final String Perspective = "perspectiveCheck";
 
   /** Signals if document is not fully present in the image */
-  Bounds("documentPosition"),
+  public static final String Bounds = "documentPosition";
 
   /** Signals if the portrait is present */
-  Portrait("portraitCheck"),
+  public static final String Portrait = "portraitCheck";
 
   /** Signals if the document image is bright enough */
-  Brightness("brightnessCheck");
-
-  private String value;
-
-  InputImageQualityChecks(String value) {
-    this.value = value;
-  }
-
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public String toString() {
-    return String.valueOf(value);
-  }
-
-  public static InputImageQualityChecks fromValue(String value) {
-    for (InputImageQualityChecks b : InputImageQualityChecks.values()) {
-      if (b.value.equals(value)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + value + "'");
-  }
-
-  public static class Adapter extends TypeAdapter<InputImageQualityChecks> {
-    @Override
-    public void write(final JsonWriter jsonWriter, final InputImageQualityChecks enumeration)
-        throws IOException {
-      jsonWriter.value(enumeration.getValue());
-    }
-
-    @Override
-    public InputImageQualityChecks read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return InputImageQualityChecks.fromValue(value);
-    }
-  }
-
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    String value = jsonElement.getAsString();
-    InputImageQualityChecks.fromValue(value);
-  }
+  public static final String Brightness = "brightnessCheck";
 }
