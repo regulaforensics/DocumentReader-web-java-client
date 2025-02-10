@@ -3,11 +3,16 @@ package com.regula.documentreader.webclient.example;
 
 import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_NUMBER;
 
+import com.google.gson.reflect.TypeToken;
+import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
+import com.regula.documentreader.webclient.Pair;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
+import com.regula.documentreader.webclient.api.ProcessApi;
 import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
 import com.regula.documentreader.webclient.model.Light;
+import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
 import com.regula.documentreader.webclient.model.Source;
@@ -18,8 +23,11 @@ import com.regula.documentreader.webclient.model.ext.RecognitionRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -61,6 +69,25 @@ public class Main {
         );
 
 
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("CustomHeader", "CustomValue");
+        ProcessApi processApi = new ProcessApi();
+        ApiClient client = processApi.getApiClient();
+        okhttp3.Call apiCall = processApi.getApiClient()
+                .buildCall(
+                        "/api/process",
+                        "POST",
+                        new ArrayList<Pair>(),
+                        new ArrayList<Pair>(),
+                        request,
+                        headers,
+                        new HashMap<String, String>(),
+                        new HashMap<String, Object>(),
+                        new String[] {},
+                        null);
+        Type respType = new TypeToken<ProcessResponse>() {}.getType();
+
+
         String finalApiBaseUrl = apiBaseUrl;
 
         new Thread(() -> {
@@ -76,7 +103,8 @@ public class Main {
                     "-----------------------------------------------------------------" + "\n"
                             + "Web API version: " + info.getVersion() + "\n"
                             + "-----------------------------------------------------------------");
-            RecognitionResponse response = api.process(request);
+            RecognitionResponse response = //api.process(request);
+                    new RecognitionResponse((ProcessResponse) client.execute(apiCall, respType).getData());
             var requestJson = request.json();
             var responseJson = response.json();
 
