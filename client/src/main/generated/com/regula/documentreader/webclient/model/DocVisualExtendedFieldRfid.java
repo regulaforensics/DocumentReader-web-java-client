@@ -26,13 +26,11 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * Structure and serves for storing information from one text data field. Variant with field logical
@@ -52,7 +50,7 @@ public class DocVisualExtendedFieldRfid {
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_D_G_TAG)
   @javax.annotation.Nullable
-  private Object rfIDOriginDGTag = null;
+  private Integer rfIDOriginDGTag;
 
   public static final String SERIALIZED_NAME_RF_I_D_ORIGIN_TAG_ENTRY = "RFID_OriginTagEntry";
 
@@ -64,13 +62,13 @@ public class DocVisualExtendedFieldRfid {
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_ORIGIN_ENTRY_VIEW)
   @javax.annotation.Nullable
-  private Object rfIDOriginEntryView = null;
+  private Integer rfIDOriginEntryView;
 
   public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  @javax.annotation.Nullable
-  private Object fieldType = null;
+  @javax.annotation.Nonnull
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
@@ -112,31 +110,19 @@ public class DocVisualExtendedFieldRfid {
 
   @SerializedName(SERIALIZED_NAME_FIELD_MASK)
   @javax.annotation.Nullable
-  private Object fieldMask = null;
+  private String fieldMask;
 
   public static final String SERIALIZED_NAME_VALIDITY = "Validity";
 
   @SerializedName(SERIALIZED_NAME_VALIDITY)
   @javax.annotation.Nullable
-  private Object validity = null;
+  private Integer validity;
 
   public static final String SERIALIZED_NAME_IN_COMPARISON = "InComparison";
 
   @SerializedName(SERIALIZED_NAME_IN_COMPARISON)
   @javax.annotation.Nullable
-  private Object inComparison = null;
-
-  public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED2)
-  @javax.annotation.Nullable
-  private Object reserved2 = null;
-
-  public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED3)
-  @javax.annotation.Nullable
-  private Object reserved3 = null;
+  private Integer inComparison;
 
   public DocVisualExtendedFieldRfid() {}
 
@@ -161,7 +147,7 @@ public class DocVisualExtendedFieldRfid {
   }
 
   public DocVisualExtendedFieldRfid rfIDOriginDGTag(
-      @javax.annotation.Nullable Object rfIDOriginDGTag) {
+      @javax.annotation.Nullable Integer rfIDOriginDGTag) {
     this.rfIDOriginDGTag = rfIDOriginDGTag;
     return this;
   }
@@ -172,11 +158,11 @@ public class DocVisualExtendedFieldRfid {
    * @return rfIDOriginDGTag
    */
   @javax.annotation.Nullable
-  public Object getRfIDOriginDGTag() {
+  public Integer getRfIDOriginDGTag() {
     return rfIDOriginDGTag;
   }
 
-  public void setRfIDOriginDGTag(@javax.annotation.Nullable Object rfIDOriginDGTag) {
+  public void setRfIDOriginDGTag(@javax.annotation.Nullable Integer rfIDOriginDGTag) {
     this.rfIDOriginDGTag = rfIDOriginDGTag;
   }
 
@@ -201,7 +187,7 @@ public class DocVisualExtendedFieldRfid {
   }
 
   public DocVisualExtendedFieldRfid rfIDOriginEntryView(
-      @javax.annotation.Nullable Object rfIDOriginEntryView) {
+      @javax.annotation.Nullable Integer rfIDOriginEntryView) {
     this.rfIDOriginEntryView = rfIDOriginEntryView;
     return this;
   }
@@ -212,15 +198,15 @@ public class DocVisualExtendedFieldRfid {
    * @return rfIDOriginEntryView
    */
   @javax.annotation.Nullable
-  public Object getRfIDOriginEntryView() {
+  public Integer getRfIDOriginEntryView() {
     return rfIDOriginEntryView;
   }
 
-  public void setRfIDOriginEntryView(@javax.annotation.Nullable Object rfIDOriginEntryView) {
+  public void setRfIDOriginEntryView(@javax.annotation.Nullable Integer rfIDOriginEntryView) {
     this.rfIDOriginEntryView = rfIDOriginEntryView;
   }
 
-  public DocVisualExtendedFieldRfid fieldType(@javax.annotation.Nullable Object fieldType) {
+  public DocVisualExtendedFieldRfid fieldType(@javax.annotation.Nonnull Integer fieldType) {
     this.fieldType = fieldType;
     return this;
   }
@@ -230,12 +216,12 @@ public class DocVisualExtendedFieldRfid {
    *
    * @return fieldType
    */
-  @javax.annotation.Nullable
-  public Object getFieldType() {
+  @javax.annotation.Nonnull
+  public Integer getFieldType() {
     return fieldType;
   }
 
-  public void setFieldType(@javax.annotation.Nullable Object fieldType) {
+  public void setFieldType(@javax.annotation.Nonnull Integer fieldType) {
     this.fieldType = fieldType;
   }
 
@@ -367,7 +353,7 @@ public class DocVisualExtendedFieldRfid {
     this.bufText = bufText;
   }
 
-  public DocVisualExtendedFieldRfid fieldMask(@javax.annotation.Nullable Object fieldMask) {
+  public DocVisualExtendedFieldRfid fieldMask(@javax.annotation.Nullable String fieldMask) {
     this.fieldMask = fieldMask;
     return this;
   }
@@ -378,15 +364,15 @@ public class DocVisualExtendedFieldRfid {
    * @return fieldMask
    */
   @javax.annotation.Nullable
-  public Object getFieldMask() {
+  public String getFieldMask() {
     return fieldMask;
   }
 
-  public void setFieldMask(@javax.annotation.Nullable Object fieldMask) {
+  public void setFieldMask(@javax.annotation.Nullable String fieldMask) {
     this.fieldMask = fieldMask;
   }
 
-  public DocVisualExtendedFieldRfid validity(@javax.annotation.Nullable Object validity) {
+  public DocVisualExtendedFieldRfid validity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
     return this;
   }
@@ -397,15 +383,15 @@ public class DocVisualExtendedFieldRfid {
    * @return validity
    */
   @javax.annotation.Nullable
-  public Object getValidity() {
+  public Integer getValidity() {
     return validity;
   }
 
-  public void setValidity(@javax.annotation.Nullable Object validity) {
+  public void setValidity(@javax.annotation.Nullable Integer validity) {
     this.validity = validity;
   }
 
-  public DocVisualExtendedFieldRfid inComparison(@javax.annotation.Nullable Object inComparison) {
+  public DocVisualExtendedFieldRfid inComparison(@javax.annotation.Nullable Integer inComparison) {
     this.inComparison = inComparison;
     return this;
   }
@@ -416,50 +402,12 @@ public class DocVisualExtendedFieldRfid {
    * @return inComparison
    */
   @javax.annotation.Nullable
-  public Object getInComparison() {
+  public Integer getInComparison() {
     return inComparison;
   }
 
-  public void setInComparison(@javax.annotation.Nullable Object inComparison) {
+  public void setInComparison(@javax.annotation.Nullable Integer inComparison) {
     this.inComparison = inComparison;
-  }
-
-  public DocVisualExtendedFieldRfid reserved2(@javax.annotation.Nullable Object reserved2) {
-    this.reserved2 = reserved2;
-    return this;
-  }
-
-  /**
-   * Get reserved2
-   *
-   * @return reserved2
-   */
-  @javax.annotation.Nullable
-  public Object getReserved2() {
-    return reserved2;
-  }
-
-  public void setReserved2(@javax.annotation.Nullable Object reserved2) {
-    this.reserved2 = reserved2;
-  }
-
-  public DocVisualExtendedFieldRfid reserved3(@javax.annotation.Nullable Object reserved3) {
-    this.reserved3 = reserved3;
-    return this;
-  }
-
-  /**
-   * Get reserved3
-   *
-   * @return reserved3
-   */
-  @javax.annotation.Nullable
-  public Object getReserved3() {
-    return reserved3;
-  }
-
-  public void setReserved3(@javax.annotation.Nullable Object reserved3) {
-    this.reserved3 = reserved3;
   }
 
   @Override
@@ -484,18 +432,7 @@ public class DocVisualExtendedFieldRfid {
         && Objects.equals(this.bufText, docVisualExtendedFieldRfid.bufText)
         && Objects.equals(this.fieldMask, docVisualExtendedFieldRfid.fieldMask)
         && Objects.equals(this.validity, docVisualExtendedFieldRfid.validity)
-        && Objects.equals(this.inComparison, docVisualExtendedFieldRfid.inComparison)
-        && Objects.equals(this.reserved2, docVisualExtendedFieldRfid.reserved2)
-        && Objects.equals(this.reserved3, docVisualExtendedFieldRfid.reserved3);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b
-        || (a != null
-            && b != null
-            && a.isPresent()
-            && b.isPresent()
-            && Objects.deepEquals(a.get(), b.get()));
+        && Objects.equals(this.inComparison, docVisualExtendedFieldRfid.inComparison);
   }
 
   @Override
@@ -514,16 +451,7 @@ public class DocVisualExtendedFieldRfid {
         bufText,
         fieldMask,
         validity,
-        inComparison,
-        reserved2,
-        reserved3);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+        inComparison);
   }
 
   @Override
@@ -546,8 +474,6 @@ public class DocVisualExtendedFieldRfid {
     sb.append("    fieldMask: ").append(toIndentedString(fieldMask)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    inComparison: ").append(toIndentedString(inComparison)).append("\n");
-    sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
-    sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -582,8 +508,6 @@ public class DocVisualExtendedFieldRfid {
     openapiFields.add("FieldMask");
     openapiFields.add("Validity");
     openapiFields.add("InComparison");
-    openapiFields.add("Reserved2");
-    openapiFields.add("Reserved3");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -665,6 +589,13 @@ public class DocVisualExtendedFieldRfid {
           String.format(
               "Expected the field `Buf_Text` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Buf_Text").toString()));
+    }
+    if ((jsonObj.get("FieldMask") != null && !jsonObj.get("FieldMask").isJsonNull())
+        && !jsonObj.get("FieldMask").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `FieldMask` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("FieldMask").toString()));
     }
   }
 

@@ -26,13 +26,11 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 /** Describes a single character recognition results in the text field line */
 @javax.annotation.Generated(
@@ -56,12 +54,6 @@ public class SymbolRecognitionResult {
   @SerializedName(SERIALIZED_NAME_LIST_OF_CANDIDATES)
   @javax.annotation.Nonnull
   private List<SymbolCandidate> listOfCandidates = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED)
-  @javax.annotation.Nullable
-  private Object reserved = null;
 
   public SymbolRecognitionResult() {}
 
@@ -135,25 +127,6 @@ public class SymbolRecognitionResult {
     this.listOfCandidates = listOfCandidates;
   }
 
-  public SymbolRecognitionResult reserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
-    return this;
-  }
-
-  /**
-   * Get reserved
-   *
-   * @return reserved
-   */
-  @javax.annotation.Nullable
-  public Object getReserved() {
-    return reserved;
-  }
-
-  public void setReserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -165,29 +138,12 @@ public class SymbolRecognitionResult {
     SymbolRecognitionResult symbolRecognitionResult = (SymbolRecognitionResult) o;
     return Objects.equals(this.symbolRect, symbolRecognitionResult.symbolRect)
         && Objects.equals(this.candidatesCount, symbolRecognitionResult.candidatesCount)
-        && Objects.equals(this.listOfCandidates, symbolRecognitionResult.listOfCandidates)
-        && Objects.equals(this.reserved, symbolRecognitionResult.reserved);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b
-        || (a != null
-            && b != null
-            && a.isPresent()
-            && b.isPresent()
-            && Objects.deepEquals(a.get(), b.get()));
+        && Objects.equals(this.listOfCandidates, symbolRecognitionResult.listOfCandidates);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolRect, candidatesCount, listOfCandidates, reserved);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+    return Objects.hash(symbolRect, candidatesCount, listOfCandidates);
   }
 
   @Override
@@ -197,7 +153,6 @@ public class SymbolRecognitionResult {
     sb.append("    symbolRect: ").append(toIndentedString(symbolRect)).append("\n");
     sb.append("    candidatesCount: ").append(toIndentedString(candidatesCount)).append("\n");
     sb.append("    listOfCandidates: ").append(toIndentedString(listOfCandidates)).append("\n");
-    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -221,7 +176,6 @@ public class SymbolRecognitionResult {
     openapiFields.add("SymbolRect");
     openapiFields.add("CandidatesCount");
     openapiFields.add("ListOfCandidates");
-    openapiFields.add("Reserved");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

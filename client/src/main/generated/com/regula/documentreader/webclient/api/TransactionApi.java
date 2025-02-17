@@ -19,7 +19,6 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.ApiResponse;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
-import com.regula.documentreader.webclient.model.ApiV2TransactionTransactionIdResultsGetWithImagesParameter;
 import com.regula.documentreader.webclient.model.ListTransactionsByTagResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessGetResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessRequest;
@@ -902,10 +901,7 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdResultsGetCall(
-      UUID transactionId,
-      ApiV2TransactionTransactionIdResultsGetWithImagesParameter withImages,
-      final ApiCallback _callback)
-      throws ApiException {
+      UUID transactionId, Boolean withImages, final ApiCallback _callback) throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -968,10 +964,7 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdResultsGetValidateBeforeCall(
-      UUID transactionId,
-      ApiV2TransactionTransactionIdResultsGetWithImagesParameter withImages,
-      final ApiCallback _callback)
-      throws ApiException {
+      UUID transactionId, Boolean withImages, final ApiCallback _callback) throws ApiException {
     // verify the required parameter 'transactionId' is set
     if (transactionId == null) {
       throw new ApiException(
@@ -999,8 +992,7 @@ public class TransactionApi {
    * </table>
    */
   public TransactionProcessResponse apiV2TransactionTransactionIdResultsGet(
-      UUID transactionId, ApiV2TransactionTransactionIdResultsGetWithImagesParameter withImages)
-      throws ApiException {
+      UUID transactionId, Boolean withImages) throws ApiException {
     ApiResponse<TransactionProcessResponse> localVarResp =
         apiV2TransactionTransactionIdResultsGetWithHttpInfo(transactionId, withImages);
     return localVarResp.getData();
@@ -1024,8 +1016,7 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<TransactionProcessResponse>
-      apiV2TransactionTransactionIdResultsGetWithHttpInfo(
-          UUID transactionId, ApiV2TransactionTransactionIdResultsGetWithImagesParameter withImages)
+      apiV2TransactionTransactionIdResultsGetWithHttpInfo(UUID transactionId, Boolean withImages)
           throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdResultsGetValidateBeforeCall(transactionId, withImages, null);
@@ -1052,7 +1043,7 @@ public class TransactionApi {
    */
   public okhttp3.Call apiV2TransactionTransactionIdResultsGetAsync(
       UUID transactionId,
-      ApiV2TransactionTransactionIdResultsGetWithImagesParameter withImages,
+      Boolean withImages,
       final ApiCallback<TransactionProcessResponse> _callback)
       throws ApiException {
 

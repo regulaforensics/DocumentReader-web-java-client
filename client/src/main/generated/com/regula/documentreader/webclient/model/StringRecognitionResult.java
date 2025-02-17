@@ -26,13 +26,11 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 /** Describes single row recognition results in multi-line text field of a document */
 @javax.annotation.Generated(
@@ -44,12 +42,6 @@ public class StringRecognitionResult {
   @SerializedName(SERIALIZED_NAME_SYMBOLS_COUNT)
   @javax.annotation.Nonnull
   private BigDecimal symbolsCount;
-
-  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED)
-  @javax.annotation.Nullable
-  private Object reserved = null;
 
   public static final String SERIALIZED_NAME_STRING_RESULT = "StringResult";
 
@@ -88,25 +80,6 @@ public class StringRecognitionResult {
 
   public void setSymbolsCount(@javax.annotation.Nonnull BigDecimal symbolsCount) {
     this.symbolsCount = symbolsCount;
-  }
-
-  public StringRecognitionResult reserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
-    return this;
-  }
-
-  /**
-   * Get reserved
-   *
-   * @return reserved
-   */
-  @javax.annotation.Nullable
-  public Object getReserved() {
-    return reserved;
-  }
-
-  public void setReserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
   }
 
   public StringRecognitionResult stringResult(
@@ -187,31 +160,14 @@ public class StringRecognitionResult {
     }
     StringRecognitionResult stringRecognitionResult = (StringRecognitionResult) o;
     return Objects.equals(this.symbolsCount, stringRecognitionResult.symbolsCount)
-        && Objects.equals(this.reserved, stringRecognitionResult.reserved)
         && Objects.equals(this.stringResult, stringRecognitionResult.stringResult)
         && Objects.equals(this.bufLength, stringRecognitionResult.bufLength)
         && Objects.equals(this.bufText, stringRecognitionResult.bufText);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b
-        || (a != null
-            && b != null
-            && a.isPresent()
-            && b.isPresent()
-            && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(symbolsCount, reserved, stringResult, bufLength, bufText);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+    return Objects.hash(symbolsCount, stringResult, bufLength, bufText);
   }
 
   @Override
@@ -219,7 +175,6 @@ public class StringRecognitionResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class StringRecognitionResult {\n");
     sb.append("    symbolsCount: ").append(toIndentedString(symbolsCount)).append("\n");
-    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("    stringResult: ").append(toIndentedString(stringResult)).append("\n");
     sb.append("    bufLength: ").append(toIndentedString(bufLength)).append("\n");
     sb.append("    bufText: ").append(toIndentedString(bufText)).append("\n");
@@ -244,7 +199,6 @@ public class StringRecognitionResult {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("SymbolsCount");
-    openapiFields.add("Reserved");
     openapiFields.add("StringResult");
     openapiFields.add("Buf_Length");
     openapiFields.add("Buf_Text");

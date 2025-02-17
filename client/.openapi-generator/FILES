@@ -20,7 +20,6 @@ src/main/generated/com/regula/documentreader/webclient/auth/Authentication.java
 src/main/generated/com/regula/documentreader/webclient/auth/HttpBasicAuth.java
 src/main/generated/com/regula/documentreader/webclient/auth/HttpBearerAuth.java
 src/main/generated/com/regula/documentreader/webclient/model/AbstractOpenApiSchema.java
-src/main/generated/com/regula/documentreader/webclient/model/ApiV2TransactionTransactionIdResultsGetWithImagesParameter.java
 src/main/generated/com/regula/documentreader/webclient/model/AreaArray.java
 src/main/generated/com/regula/documentreader/webclient/model/AreaContainer.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthParams.java

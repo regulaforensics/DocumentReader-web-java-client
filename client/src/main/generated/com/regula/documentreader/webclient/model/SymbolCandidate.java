@@ -23,12 +23,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 /** Describes an individual character recognition candidate */
 @javax.annotation.Generated(
@@ -46,12 +44,6 @@ public class SymbolCandidate {
   @SerializedName(SERIALIZED_NAME_SYMBOL_PROBABILITY)
   @javax.annotation.Nonnull
   private Integer symbolProbability;
-
-  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED)
-  @javax.annotation.Nullable
-  private Object reserved = null;
 
   public SymbolCandidate() {}
 
@@ -93,25 +85,6 @@ public class SymbolCandidate {
     this.symbolProbability = symbolProbability;
   }
 
-  public SymbolCandidate reserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
-    return this;
-  }
-
-  /**
-   * Get reserved
-   *
-   * @return reserved
-   */
-  @javax.annotation.Nullable
-  public Object getReserved() {
-    return reserved;
-  }
-
-  public void setReserved(@javax.annotation.Nullable Object reserved) {
-    this.reserved = reserved;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -122,29 +95,12 @@ public class SymbolCandidate {
     }
     SymbolCandidate symbolCandidate = (SymbolCandidate) o;
     return Objects.equals(this.symbolCode, symbolCandidate.symbolCode)
-        && Objects.equals(this.symbolProbability, symbolCandidate.symbolProbability)
-        && Objects.equals(this.reserved, symbolCandidate.reserved);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b
-        || (a != null
-            && b != null
-            && a.isPresent()
-            && b.isPresent()
-            && Objects.deepEquals(a.get(), b.get()));
+        && Objects.equals(this.symbolProbability, symbolCandidate.symbolProbability);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolCode, symbolProbability, reserved);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+    return Objects.hash(symbolCode, symbolProbability);
   }
 
   @Override
@@ -153,7 +109,6 @@ public class SymbolCandidate {
     sb.append("class SymbolCandidate {\n");
     sb.append("    symbolCode: ").append(toIndentedString(symbolCode)).append("\n");
     sb.append("    symbolProbability: ").append(toIndentedString(symbolProbability)).append("\n");
-    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -176,7 +131,6 @@ public class SymbolCandidate {
     openapiFields = new HashSet<String>();
     openapiFields.add("SymbolCode");
     openapiFields.add("SymbolProbability");
-    openapiFields.add("Reserved");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

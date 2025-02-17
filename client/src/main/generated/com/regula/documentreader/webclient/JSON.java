@@ -21,6 +21,7 @@ import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gsonfire.GsonFireBuilder;
+import io.gsonfire.TypeSelector;
 import java.io.IOException;
 import java.io.StringReader;
 import java.lang.reflect.Type;
@@ -31,6 +32,7 @@ import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import okio.ByteString;
 
@@ -52,7 +54,229 @@ public class JSON {
 
   @SuppressWarnings("unchecked")
   public static GsonBuilder createGson() {
-    GsonFireBuilder fireBuilder = new GsonFireBuilder();
+    GsonFireBuilder fireBuilder =
+        new GsonFireBuilder()
+            .registerTypeSelector(
+                com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner.class,
+                new TypeSelector<
+                    com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner>() {
+                  @Override
+                  public Class<
+                          ? extends
+                              com.regula.documentreader.webclient.model
+                                  .AuthenticityCheckResultListInner>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "1", com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "1024", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "1048576", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "128", com.regula.documentreader.webclient.model.PhotoIdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "131072", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "16", com.regula.documentreader.webclient.model.FiberResult.class);
+                    classByDiscriminatorValue.put(
+                        "16384", com.regula.documentreader.webclient.model.FiberResult.class);
+                    classByDiscriminatorValue.put(
+                        "2", com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "2048", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "256", com.regula.documentreader.webclient.model.PhotoIdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "262144", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "32", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "32768", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "4", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "4096",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "512",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "524288", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "64",
+                        com.regula.documentreader.webclient.model.OCRSecurityTextResult.class);
+                    classByDiscriminatorValue.put(
+                        "65536",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "8", com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "8192",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "8388608",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "FiberResult", com.regula.documentreader.webclient.model.FiberResult.class);
+                    classByDiscriminatorValue.put(
+                        "IdentResult", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "OCRSecurityTextResult",
+                        com.regula.documentreader.webclient.model.OCRSecurityTextResult.class);
+                    classByDiscriminatorValue.put(
+                        "PhotoIdentResult",
+                        com.regula.documentreader.webclient.model.PhotoIdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "SecurityFeatureResult",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
+                        "AuthenticityCheckResult_List_inner",
+                        com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner
+                            .class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue, getDiscriminatorValue(readElement, "Type"));
+                  }
+                })
+            .registerTypeSelector(
+                com.regula.documentreader.webclient.model.ContainerListListInner.class,
+                new TypeSelector<
+                    com.regula.documentreader.webclient.model.ContainerListListInner>() {
+                  @Override
+                  public Class<
+                          ? extends
+                              com.regula.documentreader.webclient.model.ContainerListListInner>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "1", com.regula.documentreader.webclient.model.DocumentImageResult.class);
+                    classByDiscriminatorValue.put(
+                        "102", com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "103", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "104",
+                        com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
+                        "109", com.regula.documentreader.webclient.model.ByteArrayResult.class);
+                    classByDiscriminatorValue.put(
+                        "15",
+                        com.regula.documentreader.webclient.model.LexicalAnalysisResult.class);
+                    classByDiscriminatorValue.put(
+                        "16", com.regula.documentreader.webclient.model.DocumentImageResult.class);
+                    classByDiscriminatorValue.put(
+                        "17", com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "18", com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "19", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "20", com.regula.documentreader.webclient.model.AuthenticityResult.class);
+                    classByDiscriminatorValue.put(
+                        "26", com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "3", com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "30", com.regula.documentreader.webclient.model.ImageQualityResult.class);
+                    classByDiscriminatorValue.put(
+                        "32", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "33", com.regula.documentreader.webclient.model.StatusResult.class);
+                    classByDiscriminatorValue.put(
+                        "34", com.regula.documentreader.webclient.model.AuthenticityResult.class);
+                    classByDiscriminatorValue.put(
+                        "35", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "36", com.regula.documentreader.webclient.model.TextResult.class);
+                    classByDiscriminatorValue.put(
+                        "37", com.regula.documentreader.webclient.model.ImagesResult.class);
+                    classByDiscriminatorValue.put(
+                        "38", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "39", com.regula.documentreader.webclient.model.AuthenticityResult.class);
+                    classByDiscriminatorValue.put(
+                        "49", com.regula.documentreader.webclient.model.EncryptedRCLResult.class);
+                    classByDiscriminatorValue.put(
+                        "5", com.regula.documentreader.webclient.model.DocBarCodeInfo.class);
+                    classByDiscriminatorValue.put(
+                        "50", com.regula.documentreader.webclient.model.LicenseResult.class);
+                    classByDiscriminatorValue.put(
+                        "6", com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "61",
+                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "62",
+                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "8",
+                        com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
+                            .class);
+                    classByDiscriminatorValue.put(
+                        "85",
+                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "9",
+                        com.regula.documentreader.webclient.model.ChosenDocumentTypeResult.class);
+                    classByDiscriminatorValue.put(
+                        "AuthenticityResult",
+                        com.regula.documentreader.webclient.model.AuthenticityResult.class);
+                    classByDiscriminatorValue.put(
+                        "ByteArrayResult",
+                        com.regula.documentreader.webclient.model.ByteArrayResult.class);
+                    classByDiscriminatorValue.put(
+                        "ChosenDocumentTypeResult",
+                        com.regula.documentreader.webclient.model.ChosenDocumentTypeResult.class);
+                    classByDiscriminatorValue.put(
+                        "DocBarCodeInfo",
+                        com.regula.documentreader.webclient.model.DocBarCodeInfo.class);
+                    classByDiscriminatorValue.put(
+                        "DocumentBinaryInfoResult",
+                        com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
+                        "DocumentImageResult",
+                        com.regula.documentreader.webclient.model.DocumentImageResult.class);
+                    classByDiscriminatorValue.put(
+                        "DocumentPositionResult",
+                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "DocumentTypesCandidatesResult",
+                        com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
+                            .class);
+                    classByDiscriminatorValue.put(
+                        "EncryptedRCLResult",
+                        com.regula.documentreader.webclient.model.EncryptedRCLResult.class);
+                    classByDiscriminatorValue.put(
+                        "GraphicsResult",
+                        com.regula.documentreader.webclient.model.GraphicsResult.class);
+                    classByDiscriminatorValue.put(
+                        "ImageQualityResult",
+                        com.regula.documentreader.webclient.model.ImageQualityResult.class);
+                    classByDiscriminatorValue.put(
+                        "ImagesResult",
+                        com.regula.documentreader.webclient.model.ImagesResult.class);
+                    classByDiscriminatorValue.put(
+                        "LexicalAnalysisResult",
+                        com.regula.documentreader.webclient.model.LexicalAnalysisResult.class);
+                    classByDiscriminatorValue.put(
+                        "LicenseResult",
+                        com.regula.documentreader.webclient.model.LicenseResult.class);
+                    classByDiscriminatorValue.put(
+                        "StatusResult",
+                        com.regula.documentreader.webclient.model.StatusResult.class);
+                    classByDiscriminatorValue.put(
+                        "TextDataResult",
+                        com.regula.documentreader.webclient.model.TextDataResult.class);
+                    classByDiscriminatorValue.put(
+                        "TextResult", com.regula.documentreader.webclient.model.TextResult.class);
+                    classByDiscriminatorValue.put(
+                        "ContainerList_List_inner",
+                        com.regula.documentreader.webclient.model.ContainerListListInner.class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue,
+                        getDiscriminatorValue(readElement, "result_type"));
+                  }
+                });
     GsonBuilder builder = fireBuilder.createGsonBuilder();
     return builder;
   }
