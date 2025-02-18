@@ -399,6 +399,12 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean selectLongestNames;
 
+  public static final String SERIALIZED_NAME_DO_BARCODES = "doBarcodes";
+
+  @SerializedName(SERIALIZED_NAME_DO_BARCODES)
+  @javax.annotation.Nullable
+  private List<ProcessParamsDoBarcodesInner> doBarcodes = new ArrayList<>();
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1681,6 +1687,35 @@ public class ProcessParams {
     this.selectLongestNames = selectLongestNames;
   }
 
+  public ProcessParams doBarcodes(
+      @javax.annotation.Nullable List<ProcessParamsDoBarcodesInner> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+    return this;
+  }
+
+  public ProcessParams addDoBarcodesItem(ProcessParamsDoBarcodesInner doBarcodesItem) {
+    if (this.doBarcodes == null) {
+      this.doBarcodes = new ArrayList<>();
+    }
+    this.doBarcodes.add(doBarcodesItem);
+    return this;
+  }
+
+  /**
+   * Set the types of barcodes to process.
+   *
+   * @return doBarcodes
+   */
+  @javax.annotation.Nullable
+  public List<ProcessParamsDoBarcodesInner> getDoBarcodes() {
+    return doBarcodes;
+  }
+
+  public void setDoBarcodes(
+      @javax.annotation.Nullable List<ProcessParamsDoBarcodesInner> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1751,7 +1786,8 @@ public class ProcessParams {
         && Objects.equals(
             this.strictBarcodeDigitalSignatureCheck,
             processParams.strictBarcodeDigitalSignatureCheck)
-        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames);
+        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames)
+        && Objects.equals(this.doBarcodes, processParams.doBarcodes);
   }
 
   @Override
@@ -1815,7 +1851,8 @@ public class ProcessParams {
         mrzDetectMode,
         generateNumericCodes,
         strictBarcodeDigitalSignatureCheck,
-        selectLongestNames);
+        selectLongestNames,
+        doBarcodes);
   }
 
   @Override
@@ -1911,6 +1948,7 @@ public class ProcessParams {
         .append(toIndentedString(strictBarcodeDigitalSignatureCheck))
         .append("\n");
     sb.append("    selectLongestNames: ").append(toIndentedString(selectLongestNames)).append("\n");
+    sb.append("    doBarcodes: ").append(toIndentedString(doBarcodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1990,6 +2028,7 @@ public class ProcessParams {
     openapiFields.add("generateNumericCodes");
     openapiFields.add("strictBarcodeDigitalSignatureCheck");
     openapiFields.add("selectLongestNames");
+    openapiFields.add("doBarcodes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -2166,6 +2205,15 @@ public class ProcessParams {
     // validate the optional field `mrzDetectMode`
     if (jsonObj.get("mrzDetectMode") != null && !jsonObj.get("mrzDetectMode").isJsonNull()) {
       MrzDetectModeEnum.validateJsonElement(jsonObj.get("mrzDetectMode"));
+    }
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("doBarcodes") != null
+        && !jsonObj.get("doBarcodes").isJsonNull()
+        && !jsonObj.get("doBarcodes").isJsonArray()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `doBarcodes` to be an array in the JSON string but got `%s`",
+              jsonObj.get("doBarcodes").toString()));
     }
   }
 
