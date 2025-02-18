@@ -57,6 +57,16 @@ public class FaceApi {
   @SerializedName(SERIALIZED_NAME_PROXY_TYPE)
   private Integer proxyType;
 
+  public static final String SERIALIZED_NAME_CHILD_AGE_THRESHOLD = "childAgeThreshold";
+
+  @SerializedName(SERIALIZED_NAME_CHILD_AGE_THRESHOLD)
+  private Integer childAgeThreshold;
+
+  public static final String SERIALIZED_NAME_CHILD_DOC_VALIDITY_YEARS = "childDocValidityYears";
+
+  @SerializedName(SERIALIZED_NAME_CHILD_DOC_VALIDITY_YEARS)
+  private Integer childDocValidityYears;
+
   public FaceApi withUrl(String url) {
     this.url = url;
     return this;
@@ -216,6 +226,44 @@ public class FaceApi {
     this.proxyType = proxyType;
   }
 
+  public FaceApi withChildAgeThreshold(Integer childAgeThreshold) {
+    this.childAgeThreshold = childAgeThreshold;
+    return this;
+  }
+
+  /**
+   * Minimum age of a child, at which portrait comparison result will be effective. Default: 13.
+   *
+   * @return childAgeThreshold
+   */
+  @javax.annotation.Nullable
+  public Integer getChildAgeThreshold() {
+    return childAgeThreshold;
+  }
+
+  public void setChildAgeThreshold(Integer childAgeThreshold) {
+    this.childAgeThreshold = childAgeThreshold;
+  }
+
+  public FaceApi withChildDocValidityYears(Integer childDocValidityYears) {
+    this.childDocValidityYears = childDocValidityYears;
+    return this;
+  }
+
+  /**
+   * Estimated duration of validity for a child&#39;s passport, years. Default: 5.
+   *
+   * @return childDocValidityYears
+   */
+  @javax.annotation.Nullable
+  public Integer getChildDocValidityYears() {
+    return childDocValidityYears;
+  }
+
+  public void setChildDocValidityYears(Integer childDocValidityYears) {
+    this.childDocValidityYears = childDocValidityYears;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -232,13 +280,24 @@ public class FaceApi {
         && Objects.equals(this.serviceTimeout, faceApi.serviceTimeout)
         && Objects.equals(this.proxy, faceApi.proxy)
         && Objects.equals(this.proxyUserpwd, faceApi.proxyUserpwd)
-        && Objects.equals(this.proxyType, faceApi.proxyType);
+        && Objects.equals(this.proxyType, faceApi.proxyType)
+        && Objects.equals(this.childAgeThreshold, faceApi.childAgeThreshold)
+        && Objects.equals(this.childDocValidityYears, faceApi.childDocValidityYears);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        url, mode, search, threshold, serviceTimeout, proxy, proxyUserpwd, proxyType);
+        url,
+        mode,
+        search,
+        threshold,
+        serviceTimeout,
+        proxy,
+        proxyUserpwd,
+        proxyType,
+        childAgeThreshold,
+        childDocValidityYears);
   }
 
   @Override
@@ -253,6 +312,10 @@ public class FaceApi {
     sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
     sb.append("    proxyUserpwd: ").append(toIndentedString(proxyUserpwd)).append("\n");
     sb.append("    proxyType: ").append(toIndentedString(proxyType)).append("\n");
+    sb.append("    childAgeThreshold: ").append(toIndentedString(childAgeThreshold)).append("\n");
+    sb.append("    childDocValidityYears: ")
+        .append(toIndentedString(childDocValidityYears))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
