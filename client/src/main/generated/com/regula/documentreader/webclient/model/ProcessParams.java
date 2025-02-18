@@ -316,6 +316,11 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_SELECT_LONGEST_NAMES)
   private Boolean selectLongestNames;
 
+  public static final String SERIALIZED_NAME_DO_BARCODES = "doBarcodes";
+
+  @SerializedName(SERIALIZED_NAME_DO_BARCODES)
+  private List<InputBarcodeType> doBarcodes = null;
+
   public ProcessParams withGenerateDTCVC(Boolean generateDTCVC) {
     this.generateDTCVC = generateDTCVC;
     return this;
@@ -1543,6 +1548,33 @@ public class ProcessParams {
     this.selectLongestNames = selectLongestNames;
   }
 
+  public ProcessParams withDoBarcodes(List<InputBarcodeType> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+    return this;
+  }
+
+  public ProcessParams addDoBarcodesItem(InputBarcodeType doBarcodesItem) {
+    if (this.doBarcodes == null) {
+      this.doBarcodes = new ArrayList<InputBarcodeType>();
+    }
+    this.doBarcodes.add(doBarcodesItem);
+    return this;
+  }
+
+  /**
+   * Set the types of barcodes to process.
+   *
+   * @return doBarcodes
+   */
+  @javax.annotation.Nullable
+  public List<InputBarcodeType> getDoBarcodes() {
+    return doBarcodes;
+  }
+
+  public void setDoBarcodes(List<InputBarcodeType> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1612,7 +1644,8 @@ public class ProcessParams {
         && Objects.equals(
             this.strictBarcodeDigitalSignatureCheck,
             processParams.strictBarcodeDigitalSignatureCheck)
-        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames);
+        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames)
+        && Objects.equals(this.doBarcodes, processParams.doBarcodes);
   }
 
   @Override
@@ -1675,7 +1708,8 @@ public class ProcessParams {
         mrzDetectMode,
         generateNumericCodes,
         strictBarcodeDigitalSignatureCheck,
-        selectLongestNames);
+        selectLongestNames,
+        doBarcodes);
   }
 
   @Override
@@ -1770,6 +1804,7 @@ public class ProcessParams {
         .append(toIndentedString(strictBarcodeDigitalSignatureCheck))
         .append("\n");
     sb.append("    selectLongestNames: ").append(toIndentedString(selectLongestNames)).append("\n");
+    sb.append("    doBarcodes: ").append(toIndentedString(doBarcodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

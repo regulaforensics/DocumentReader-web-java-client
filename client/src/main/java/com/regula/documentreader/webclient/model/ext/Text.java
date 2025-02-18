@@ -2,7 +2,6 @@ package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.LCID;
 import com.regula.documentreader.webclient.model.TextAvailableSource;
-
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
@@ -119,7 +118,8 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
 
   @Override
   public Text withComparisonStatus(Integer comparisonStatus) {
-    com.regula.documentreader.webclient.model.Text text = super.withComparisonStatus(comparisonStatus);
+    com.regula.documentreader.webclient.model.Text text =
+        super.withComparisonStatus(comparisonStatus);
     return (Text) text;
   }
 
@@ -157,13 +157,15 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
 
   @Override
   public Text withAvailableSourceList(List<TextAvailableSource> availableSourceList) {
-    com.regula.documentreader.webclient.model.Text text = super.withAvailableSourceList(availableSourceList);
+    com.regula.documentreader.webclient.model.Text text =
+        super.withAvailableSourceList(availableSourceList);
     return (Text) text;
   }
 
   @Override
   public Text addAvailableSourceListItem(TextAvailableSource availableSourceListItem) {
-    com.regula.documentreader.webclient.model.Text text = super.addAvailableSourceListItem(availableSourceListItem);
+    com.regula.documentreader.webclient.model.Text text =
+        super.addAvailableSourceListItem(availableSourceListItem);
     return (Text) text;
   }
 
