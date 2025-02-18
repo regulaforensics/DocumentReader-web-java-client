@@ -1,6 +1,7 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.Base64;
+import com.regula.documentreader.webclient.model.GraphicFieldType;
 import com.regula.documentreader.webclient.model.ImagesFieldValue;
 import com.regula.documentreader.webclient.model.Source;
 import java.util.List;
@@ -8,42 +9,19 @@ import javax.annotation.Nullable;
 
 public class ImagesField extends com.regula.documentreader.webclient.model.ImagesField {
 
-  @Override
   public ImagesField withFieldName(String fieldName) {
-    com.regula.documentreader.webclient.model.ImagesField field = super.withFieldName(fieldName);
-    return (ImagesField) field;
+    this.setFieldName(fieldName);
+    return this;
   }
 
-  @Override
-  public String getFieldName() {
-    return super.getFieldName();
+  public ImagesField withFieldType(GraphicFieldType fieldType) {
+    this.setFieldType(fieldType);
+    return this;
   }
 
-  @Override
-  public void setFieldName(String fieldName) {
-    super.setFieldName(fieldName);
-  }
-
-  @Override
-  public ImagesField withFieldType(Integer fieldType) {
-    com.regula.documentreader.webclient.model.ImagesField field = super.withFieldType(fieldType);
-    return (ImagesField) field;
-  }
-
-  @Override
-  public Integer getFieldType() {
-    return super.getFieldType();
-  }
-
-  @Override
-  public void setFieldType(Integer fieldType) {
-    super.setFieldType(fieldType);
-  }
-
-  @Override
   public ImagesField withValueList(List<ImagesFieldValue> valueList) {
-    com.regula.documentreader.webclient.model.ImagesField field = super.withValueList(valueList);
-    return (ImagesField) field;
+    this.setValueList(valueList);
+    return this;
   }
 
   @Override
@@ -64,7 +42,7 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
   }
 
   @Nullable
-  public byte[] getValue(String source, boolean original) {
+  public byte[] getValue(Source source, boolean original) {
     String result;
     for (ImagesFieldValue value : getValueList()) {
       if (value.getSource().equals(source)) {
@@ -80,7 +58,7 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
   }
 
   @Nullable
-  public byte[] getValue(String source) {
+  public byte[] getValue(Source source) {
     return getValue(source, false);
   }
 

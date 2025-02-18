@@ -8,19 +8,21 @@ import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
-import com.regula.documentreader.webclient.model.DeviceInfo;
+import com.regula.documentreader.webclient.model.Healthcheck;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import okio.ByteString;
 
 public class DocumentReaderApi {
 
-  private final DefaultApi defaultApi;
+  private final HealthcheckApi defaultApi;
   private final ProcessApi processApi;
 
   private String license;
@@ -30,7 +32,7 @@ public class DocumentReaderApi {
   }
 
   public DocumentReaderApi(ApiClient apiClient) {
-    this.defaultApi = new DefaultApi(apiClient);
+    this.defaultApi = new HealthcheckApi(apiClient);
     this.processApi = new ProcessApi(apiClient);
   }
 
@@ -61,12 +63,12 @@ public class DocumentReaderApi {
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    */
-  public DeviceInfo ping() throws ApiException {
-    return defaultApi.ping("");
+  public Healthcheck ping() throws ApiException {
+    return defaultApi.healthz("");
   }
 
-  public DeviceInfo ping(String xRequestID) throws ApiException {
-    return defaultApi.ping(xRequestID);
+  public Healthcheck ping(String xRequestID) throws ApiException {
+    return defaultApi.healthz(xRequestID);
   }
 
   /**
@@ -78,13 +80,13 @@ public class DocumentReaderApi {
    *     response body
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
-    processRequest.getSystemInfo().withLicense(this.license);
+    processRequest.getSystemInfo().setLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest, "");
     return new RecognitionResponse(response);
   }
 
   public RecognitionResponse process(ProcessRequest processRequest, String xRequestID) {
-    processRequest.getSystemInfo().withLicense(this.license);
+    processRequest.getSystemInfo().setLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest, xRequestID);
     return new RecognitionResponse(response);
   }
@@ -109,7 +111,8 @@ public class DocumentReaderApi {
     return processApi
         .getApiClient()
         .buildCall(
-            "/api/process",
+            "/api",
+            "/process",
             "POST",
             new ArrayList<Pair>(),
             new ArrayList<Pair>(),

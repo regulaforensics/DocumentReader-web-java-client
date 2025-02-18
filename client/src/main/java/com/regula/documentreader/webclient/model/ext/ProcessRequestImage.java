@@ -3,7 +3,7 @@ package com.regula.documentreader.webclient.model.ext;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Base64;
 import com.regula.documentreader.webclient.model.ImageData;
-import javax.annotation.Nullable;
+import com.regula.documentreader.webclient.model.Light;
 
 public class ProcessRequestImage
     extends com.regula.documentreader.webclient.model.ProcessRequestImage {
@@ -16,68 +16,31 @@ public class ProcessRequestImage
     }
 
     String base64Image = Base64.encode(image);
-    this.setImageData(new ImageData().withImage(base64Image));
+    this.setImageData(new ImageData().image(base64Image));
   }
 
-  public ProcessRequestImage(byte[] image, Integer light) {
+  public ProcessRequestImage(byte[] image, Light light) {
     this(image);
     this.setLight(light);
   }
 
-  public ProcessRequestImage(byte[] image, Integer light, Integer pageIdx) {
+  public ProcessRequestImage(byte[] image, Light light, Integer pageIdx) {
     this(image, light);
     this.setPageIdx(pageIdx);
   }
 
-  @Override
   public ProcessRequestImage withImageData(ImageData imageData) {
-    com.regula.documentreader.webclient.model.ProcessRequestImage image =
-        super.withImageData(imageData);
-    return (ProcessRequestImage) image;
+    this.setImageData(imageData);
+    return this;
   }
 
-  @Override
-  public ImageData getImageData() {
-    return super.getImageData();
+  public ProcessRequestImage withLight(Light light) {
+    this.setLight(light);
+    return this;
   }
 
-  @Override
-  public void setImageData(ImageData imageData) {
-    super.setImageData(imageData);
-  }
-
-  @Override
-  public ProcessRequestImage withLight(Integer light) {
-    com.regula.documentreader.webclient.model.ProcessRequestImage image = super.withLight(light);
-    return (ProcessRequestImage) image;
-  }
-
-  @Nullable
-  @Override
-  public Integer getLight() {
-    return super.getLight();
-  }
-
-  @Override
-  public void setLight(Integer light) {
-    super.setLight(light);
-  }
-
-  @Override
   public ProcessRequestImage withPageIdx(Integer pageIdx) {
-    com.regula.documentreader.webclient.model.ProcessRequestImage image =
-        super.withPageIdx(pageIdx);
-    return (ProcessRequestImage) image;
-  }
-
-  @Nullable
-  @Override
-  public Integer getPageIdx() {
-    return super.getPageIdx();
-  }
-
-  @Override
-  public void setPageIdx(Integer pageIdx) {
-    super.setPageIdx(pageIdx);
+    this.setPageIdx(pageIdx);
+    return this;
   }
 }

@@ -40,7 +40,7 @@ public class RecognitionResponse {
   public Text text() {
     TextResult result = resultByType(Result.TEXT);
     if (result != null) {
-      return result.getText();
+      return (Text) result.getText();
     }
     return null;
   }
@@ -76,7 +76,7 @@ public class RecognitionResponse {
   public Images images() {
     ImagesResult result = resultByType(Result.IMAGES);
     if (result != null) {
-      return result.getImages();
+      return (Images) result.getImages();
     }
     return null;
   }
@@ -90,7 +90,7 @@ public class RecognitionResponse {
   public Authenticity authenticity(int page_idx) {
     AuthenticityResult result = getResult(Result.AUTHENTICITY, page_idx);
     if (result != null) {
-      return result.getAuthenticityCheckList();
+      return (Authenticity) result.getAuthenticityCheckList();
     }
     return null;
   }
@@ -122,29 +122,81 @@ public class RecognitionResponse {
     return null;
   }
 
-  public <R> R resultByType(int type) {
-    for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType() == type) {
-        return (R) item;
+  public <R> R resultByType(Result type) {
+    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
+      switch (type){
+        case STATUS:
+          return (R) item.getStatusResult();
+        case TEXT:
+          return (R) item.getTextResult();
+        case IMAGES:
+          return (R)item.getImagesResult();
+        case DOCUMENT_TYPE:
+          return (R) item.getChosenDocumentTypeResult();
+        case AUTHENTICITY:
+          return (R) item.getAuthenticityResult();
+        case IMAGE_QUALITY:
+          return (R) item.getImageQualityResult();
+        default:
+          return null; //TODO ?
       }
     }
     return null;
   }
 
-  public <R> R getResult(int type, int page_idx) {
-    for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType() == type && item.getPageIdx() == page_idx) {
-        return (R) item;
+  public <R> R getResult(Result type, int page_idx) {
+    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
+      switch (type) {
+        case STATUS:
+          if (item.getStatusResult().getPageIdx() == page_idx)
+            return (R) item.getStatusResult();
+          break;
+        case TEXT:
+          if (item.getTextResult().getPageIdx() == page_idx)
+            return (R) item.getTextResult();
+          break;
+        case IMAGES:
+          if (item.getImagesResult().getPageIdx() == page_idx)
+            return (R) item.getImagesResult();
+          break;
+        case DOCUMENT_TYPE:
+          if (item.getChosenDocumentTypeResult().getPageIdx() == page_idx)
+            return (R) item.getChosenDocumentTypeResult();
+          break;
+        case AUTHENTICITY:
+          if (item.getAuthenticityResult().getPageIdx() == page_idx)
+            return (R) item.getAuthenticityResult();
+          break;
+        case IMAGE_QUALITY:
+          if (item.getImageQualityResult().getPageIdx() == page_idx)
+            return (R) item.getImageQualityResult();
+          break;
+        default:
+          return null; //TODO ?
       }
     }
     return null;
   }
 
-  public <R> List<R> resultsByType(int type) {
+  public <R> List<R> resultsByType(Result type) {
     List<R> results = new ArrayList<>();
-    for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType() == type) {
-        results.add((R) item);
+    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
+      switch (type) {
+        case STATUS:
+          results.add((R) item.getStatusResult());
+          break;
+        case TEXT:
+          results.add((R) item.getTextResult());
+        case IMAGES:
+          results.add((R) item.getImagesResult());
+        case DOCUMENT_TYPE:
+          results.add((R) item.getChosenDocumentTypeResult());
+        case AUTHENTICITY:
+          results.add((R) item.getAuthenticityResult());
+        case IMAGE_QUALITY:
+          results.add((R) item.getImageQualityResult());
+        default:
+          break;
       }
     }
     return results;
