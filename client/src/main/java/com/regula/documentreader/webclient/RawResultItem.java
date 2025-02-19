@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.JsonAdapter;
 import com.regula.documentreader.webclient.model.ResultItem;
 import java.util.Objects;
-
 import javax.annotation.Nullable;
 
 @JsonAdapter(RawResultItemAdapter.class)

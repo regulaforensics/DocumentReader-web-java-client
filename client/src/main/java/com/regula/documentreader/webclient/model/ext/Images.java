@@ -1,7 +1,6 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.ImagesAvailableSource;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -10,13 +9,15 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
 
   @Override
   public Images withAvailableSourceList(List<ImagesAvailableSource> availableSourceList) {
-    com.regula.documentreader.webclient.model.Images images = super.withAvailableSourceList(availableSourceList);
+    com.regula.documentreader.webclient.model.Images images =
+        super.withAvailableSourceList(availableSourceList);
     return (Images) images;
   }
 
   @Override
   public Images addAvailableSourceListItem(ImagesAvailableSource availableSourceListItem) {
-    com.regula.documentreader.webclient.model.Images images = super.addAvailableSourceListItem(availableSourceListItem);
+    com.regula.documentreader.webclient.model.Images images =
+        super.addAvailableSourceListItem(availableSourceListItem);
     return (Images) images;
   }
 
