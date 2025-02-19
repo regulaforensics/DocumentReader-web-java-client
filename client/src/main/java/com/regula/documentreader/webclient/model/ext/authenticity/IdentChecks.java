@@ -2,9 +2,7 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.IdentResult;
-
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 public class IdentChecks extends AuthenticityResult<IdentResult> {

@@ -2,7 +2,6 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.PhotoIdentResult;
-
 import java.util.List;
 
 public class ImageIdentChecks extends AuthenticityResult<PhotoIdentResult> {
