@@ -42,6 +42,7 @@ public class ProcessRequestImage {
    *
    * @return imageData
    */
+  @javax.annotation.Nullable
   public ImageData getImageData() {
     return imageData;
   }
