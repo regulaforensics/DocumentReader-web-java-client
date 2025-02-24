@@ -7,5 +7,6 @@
   "invokerPackage": "com.regula.documentreader.webclient",
   "modelPackage": "com.regula.documentreader.webclient.model",
   "apiPackage": "com.regula.documentreader.webclient.api",
-  "sourceFolder": "src/main/generated"
+  "sourceFolder": "src/main/generated",
+  "containerDefaultToNull": true
 }

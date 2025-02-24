@@ -56,7 +56,7 @@ public class ChosenDocumentType {
 
   @SerializedName(SERIALIZED_NAME_ROTATED180)
   @javax.annotation.Nonnull
-  private Boolean rotated180;
+  private Integer rotated180;
 
   public static final String SERIALIZED_NAME_RF_I_D_PRESENCE = "RFID_Presence";
 
@@ -100,6 +100,12 @@ public class ChosenDocumentType {
   @SerializedName(SERIALIZED_NAME_OV_I_EXP)
   @javax.annotation.Nonnull
   private BigDecimal ovIExp;
+
+  public static final String SERIALIZED_NAME_ROTATION_ANGLE = "RotationAngle";
+
+  @SerializedName(SERIALIZED_NAME_ROTATION_ANGLE)
+  @javax.annotation.Nullable
+  private Integer rotationAngle;
 
   public ChosenDocumentType() {}
 
@@ -161,7 +167,7 @@ public class ChosenDocumentType {
     this.P = P;
   }
 
-  public ChosenDocumentType rotated180(@javax.annotation.Nonnull Boolean rotated180) {
+  public ChosenDocumentType rotated180(@javax.annotation.Nonnull Integer rotated180) {
     this.rotated180 = rotated180;
     return this;
   }
@@ -172,11 +178,11 @@ public class ChosenDocumentType {
    * @return rotated180
    */
   @javax.annotation.Nonnull
-  public Boolean getRotated180() {
+  public Integer getRotated180() {
     return rotated180;
   }
 
-  public void setRotated180(@javax.annotation.Nonnull Boolean rotated180) {
+  public void setRotated180(@javax.annotation.Nonnull Integer rotated180) {
     this.rotated180 = rotated180;
   }
 
@@ -320,6 +326,25 @@ public class ChosenDocumentType {
     this.ovIExp = ovIExp;
   }
 
+  public ChosenDocumentType rotationAngle(@javax.annotation.Nullable Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
+    return this;
+  }
+
+  /**
+   * Get rotationAngle
+   *
+   * @return rotationAngle
+   */
+  @javax.annotation.Nullable
+  public Integer getRotationAngle() {
+    return rotationAngle;
+  }
+
+  public void setRotationAngle(@javax.annotation.Nullable Integer rotationAngle) {
+    this.rotationAngle = rotationAngle;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -340,7 +365,8 @@ public class ChosenDocumentType {
         && Objects.equals(this.uvExp, chosenDocumentType.uvExp)
         && Objects.equals(
             this.authenticityNecessaryLights, chosenDocumentType.authenticityNecessaryLights)
-        && Objects.equals(this.ovIExp, chosenDocumentType.ovIExp);
+        && Objects.equals(this.ovIExp, chosenDocumentType.ovIExp)
+        && Objects.equals(this.rotationAngle, chosenDocumentType.rotationAngle);
   }
 
   @Override
@@ -356,7 +382,8 @@ public class ChosenDocumentType {
         checkAuthenticity,
         uvExp,
         authenticityNecessaryLights,
-        ovIExp);
+        ovIExp,
+        rotationAngle);
   }
 
   @Override
@@ -376,6 +403,7 @@ public class ChosenDocumentType {
         .append(toIndentedString(authenticityNecessaryLights))
         .append("\n");
     sb.append("    ovIExp: ").append(toIndentedString(ovIExp)).append("\n");
+    sb.append("    rotationAngle: ").append(toIndentedString(rotationAngle)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -407,6 +435,7 @@ public class ChosenDocumentType {
     openapiFields.add("UVExp");
     openapiFields.add("AuthenticityNecessaryLights");
     openapiFields.add("OVIExp");
+    openapiFields.add("RotationAngle");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

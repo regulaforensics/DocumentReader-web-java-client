@@ -58,7 +58,7 @@ public class PArrayField {
 
   @SerializedName(SERIALIZED_NAME_BC_DATA_MODULE)
   @javax.annotation.Nonnull
-  private List<DataModule> bcDataModule = new ArrayList<>();
+  private List<DataModule> bcDataModule;
 
   public static final String SERIALIZED_NAME_BC_P_D_F417_I_N_F_O = "bcPDF417INFO";
 

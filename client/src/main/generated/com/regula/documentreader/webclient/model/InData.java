@@ -46,7 +46,7 @@ public class InData {
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
   @javax.annotation.Nullable
-  private List<InDataTransactionImagesFieldValue> images = new ArrayList<>();
+  private List<InDataTransactionImagesFieldValue> images;
 
   public InData() {}
 

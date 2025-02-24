@@ -75,7 +75,13 @@ public class VerifiedFieldMap {
 
   @SerializedName(SERIALIZED_NAME_MATRIX)
   @javax.annotation.Nonnull
-  private List<VerificationResult> matrix = new ArrayList<>();
+  private List<VerificationResult> matrix;
+
+  public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
+  @javax.annotation.Nullable
+  private Integer fieldType;
 
   public VerifiedFieldMap() {}
 
@@ -231,6 +237,25 @@ public class VerifiedFieldMap {
     this.matrix = matrix;
   }
 
+  public VerifiedFieldMap fieldType(@javax.annotation.Nullable Integer fieldType) {
+    this.fieldType = fieldType;
+    return this;
+  }
+
+  /**
+   * Get fieldType
+   *
+   * @return fieldType
+   */
+  @javax.annotation.Nullable
+  public Integer getFieldType() {
+    return fieldType;
+  }
+
+  public void setFieldType(@javax.annotation.Nullable Integer fieldType) {
+    this.fieldType = fieldType;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -246,12 +271,14 @@ public class VerifiedFieldMap {
         && Objects.equals(this.fieldVisual, verifiedFieldMap.fieldVisual)
         && Objects.equals(this.fieldBarcode, verifiedFieldMap.fieldBarcode)
         && Objects.equals(this.fieldRFID, verifiedFieldMap.fieldRFID)
-        && Objects.equals(this.matrix, verifiedFieldMap.matrix);
+        && Objects.equals(this.matrix, verifiedFieldMap.matrix)
+        && Objects.equals(this.fieldType, verifiedFieldMap.fieldType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wFieldType, wLCID, fieldMRZ, fieldVisual, fieldBarcode, fieldRFID, matrix);
+    return Objects.hash(
+        wFieldType, wLCID, fieldMRZ, fieldVisual, fieldBarcode, fieldRFID, matrix, fieldType);
   }
 
   @Override
@@ -265,6 +292,7 @@ public class VerifiedFieldMap {
     sb.append("    fieldBarcode: ").append(toIndentedString(fieldBarcode)).append("\n");
     sb.append("    fieldRFID: ").append(toIndentedString(fieldRFID)).append("\n");
     sb.append("    matrix: ").append(toIndentedString(matrix)).append("\n");
+    sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -292,6 +320,7 @@ public class VerifiedFieldMap {
     openapiFields.add("Field_Barcode");
     openapiFields.add("Field_RFID");
     openapiFields.add("Matrix");
+    openapiFields.add("FieldType");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -52,7 +52,7 @@ public class FDSIDList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<Integer> list = new ArrayList<>();
+  private List<Integer> list;
 
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
 

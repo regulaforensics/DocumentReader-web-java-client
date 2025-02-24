@@ -47,7 +47,7 @@ public class DocVisualExtendedInfo {
 
   @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
   @javax.annotation.Nonnull
-  private List<DocVisualExtendedInfoPArrayFieldsInner> pArrayFields = new ArrayList<>();
+  private List<DocVisualExtendedInfoPArrayFieldsInner> pArrayFields;
 
   public DocVisualExtendedInfo() {}
 

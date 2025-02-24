@@ -53,7 +53,25 @@ public class SymbolRecognitionResult {
 
   @SerializedName(SERIALIZED_NAME_LIST_OF_CANDIDATES)
   @javax.annotation.Nonnull
-  private List<SymbolCandidate> listOfCandidates = new ArrayList<>();
+  private List<SymbolCandidate> listOfCandidates;
+
+  public static final String SERIALIZED_NAME_BASE_LINE_BOTTOM = "BaseLineBottom";
+
+  @SerializedName(SERIALIZED_NAME_BASE_LINE_BOTTOM)
+  @javax.annotation.Nullable
+  private Integer baseLineBottom;
+
+  public static final String SERIALIZED_NAME_BASE_LINE_TOP = "BaseLineTop";
+
+  @SerializedName(SERIALIZED_NAME_BASE_LINE_TOP)
+  @javax.annotation.Nullable
+  private Integer baseLineTop;
+
+  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
+
+  @SerializedName(SERIALIZED_NAME_RESERVED)
+  @javax.annotation.Nullable
+  private Integer reserved;
 
   public SymbolRecognitionResult() {}
 
@@ -127,6 +145,63 @@ public class SymbolRecognitionResult {
     this.listOfCandidates = listOfCandidates;
   }
 
+  public SymbolRecognitionResult baseLineBottom(@javax.annotation.Nullable Integer baseLineBottom) {
+    this.baseLineBottom = baseLineBottom;
+    return this;
+  }
+
+  /**
+   * Get baseLineBottom
+   *
+   * @return baseLineBottom
+   */
+  @javax.annotation.Nullable
+  public Integer getBaseLineBottom() {
+    return baseLineBottom;
+  }
+
+  public void setBaseLineBottom(@javax.annotation.Nullable Integer baseLineBottom) {
+    this.baseLineBottom = baseLineBottom;
+  }
+
+  public SymbolRecognitionResult baseLineTop(@javax.annotation.Nullable Integer baseLineTop) {
+    this.baseLineTop = baseLineTop;
+    return this;
+  }
+
+  /**
+   * Get baseLineTop
+   *
+   * @return baseLineTop
+   */
+  @javax.annotation.Nullable
+  public Integer getBaseLineTop() {
+    return baseLineTop;
+  }
+
+  public void setBaseLineTop(@javax.annotation.Nullable Integer baseLineTop) {
+    this.baseLineTop = baseLineTop;
+  }
+
+  public SymbolRecognitionResult reserved(@javax.annotation.Nullable Integer reserved) {
+    this.reserved = reserved;
+    return this;
+  }
+
+  /**
+   * Get reserved
+   *
+   * @return reserved
+   */
+  @javax.annotation.Nullable
+  public Integer getReserved() {
+    return reserved;
+  }
+
+  public void setReserved(@javax.annotation.Nullable Integer reserved) {
+    this.reserved = reserved;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -138,12 +213,16 @@ public class SymbolRecognitionResult {
     SymbolRecognitionResult symbolRecognitionResult = (SymbolRecognitionResult) o;
     return Objects.equals(this.symbolRect, symbolRecognitionResult.symbolRect)
         && Objects.equals(this.candidatesCount, symbolRecognitionResult.candidatesCount)
-        && Objects.equals(this.listOfCandidates, symbolRecognitionResult.listOfCandidates);
+        && Objects.equals(this.listOfCandidates, symbolRecognitionResult.listOfCandidates)
+        && Objects.equals(this.baseLineBottom, symbolRecognitionResult.baseLineBottom)
+        && Objects.equals(this.baseLineTop, symbolRecognitionResult.baseLineTop)
+        && Objects.equals(this.reserved, symbolRecognitionResult.reserved);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolRect, candidatesCount, listOfCandidates);
+    return Objects.hash(
+        symbolRect, candidatesCount, listOfCandidates, baseLineBottom, baseLineTop, reserved);
   }
 
   @Override
@@ -153,6 +232,9 @@ public class SymbolRecognitionResult {
     sb.append("    symbolRect: ").append(toIndentedString(symbolRect)).append("\n");
     sb.append("    candidatesCount: ").append(toIndentedString(candidatesCount)).append("\n");
     sb.append("    listOfCandidates: ").append(toIndentedString(listOfCandidates)).append("\n");
+    sb.append("    baseLineBottom: ").append(toIndentedString(baseLineBottom)).append("\n");
+    sb.append("    baseLineTop: ").append(toIndentedString(baseLineTop)).append("\n");
+    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -176,6 +258,9 @@ public class SymbolRecognitionResult {
     openapiFields.add("SymbolRect");
     openapiFields.add("CandidatesCount");
     openapiFields.add("ListOfCandidates");
+    openapiFields.add("BaseLineBottom");
+    openapiFields.add("BaseLineTop");
+    openapiFields.add("Reserved");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

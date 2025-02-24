@@ -46,7 +46,7 @@ public class ContainerList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<ContainerListListInner> list = new ArrayList<>();
+  private List<ContainerListListInner> list;
 
   public ContainerList() {}
 

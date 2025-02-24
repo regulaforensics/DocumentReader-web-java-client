@@ -5,7 +5,6 @@ import com.regula.documentreader.webclient.model.ContainerList;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessSystemInfo;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -45,7 +44,8 @@ public class RecognitionRequest extends ProcessRequest {
   }
 
   public ProcessRequest withList(List<ProcessRequestImage> list) {
-      List<com.regula.documentreader.webclient.model.ProcessRequestImage> convertedList = new ArrayList<>(list);
+    List<com.regula.documentreader.webclient.model.ProcessRequestImage> convertedList =
+        new ArrayList<>(list);
     this.setList(convertedList);
     return this;
   }

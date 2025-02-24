@@ -47,13 +47,13 @@ public class AreaArray {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<RectangleCoordinates> list = new ArrayList<>();
+  private List<RectangleCoordinates> list;
 
   public static final String SERIALIZED_NAME_POINTS = "Points";
 
   @SerializedName(SERIALIZED_NAME_POINTS)
   @javax.annotation.Nonnull
-  private List<PointArray> points = new ArrayList<>();
+  private List<PointArray> points;
 
   public AreaArray() {}
 

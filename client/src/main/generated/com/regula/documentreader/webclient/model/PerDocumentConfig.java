@@ -39,7 +39,7 @@ public class PerDocumentConfig {
 
   @SerializedName(SERIALIZED_NAME_DOC_I_D)
   @javax.annotation.Nullable
-  private List<Integer> docID = new ArrayList<>();
+  private List<Integer> docID;
 
   public static final String SERIALIZED_NAME_EXCLUDE_AUTH_CHECKS = "excludeAuthChecks";
 

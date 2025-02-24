@@ -47,7 +47,7 @@ public class ImageQualityCheckList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<ImageQualityCheck> list = new ArrayList<>();
+  private List<ImageQualityCheck> list;
 
   public static final String SERIALIZED_NAME_COUNT = "Count";
 

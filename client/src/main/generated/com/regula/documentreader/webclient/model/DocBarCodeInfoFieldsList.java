@@ -46,7 +46,7 @@ public class DocBarCodeInfoFieldsList {
 
   @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
   @javax.annotation.Nonnull
-  private List<PArrayField> pArrayFields = new ArrayList<>();
+  private List<PArrayField> pArrayFields;
 
   public DocBarCodeInfoFieldsList() {}
 

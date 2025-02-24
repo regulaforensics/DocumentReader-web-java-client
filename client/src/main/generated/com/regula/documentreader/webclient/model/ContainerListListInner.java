@@ -75,6 +75,14 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           gson.getDelegateAdapter(this, TypeToken.get(DocumentBinaryInfoResult.class));
       final TypeAdapter<ByteArrayResult> adapterByteArrayResult =
           gson.getDelegateAdapter(this, TypeToken.get(ByteArrayResult.class));
+      final TypeAdapter<FaceDetectionResult> adapterFaceDetectionResult =
+          gson.getDelegateAdapter(this, TypeToken.get(FaceDetectionResult.class));
+      final TypeAdapter<MRZDetectorResult> adapterMRZDetectorResult =
+          gson.getDelegateAdapter(this, TypeToken.get(MRZDetectorResult.class));
+      final TypeAdapter<MRZPositionResult> adapterMRZPositionResult =
+          gson.getDelegateAdapter(this, TypeToken.get(MRZPositionResult.class));
+      final TypeAdapter<MRZTestQualityResult> adapterMRZTestQualityResult =
+          gson.getDelegateAdapter(this, TypeToken.get(MRZTestQualityResult.class));
 
       return (TypeAdapter<T>)
           new TypeAdapter<ContainerListListInner>() {
@@ -213,8 +221,40 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                 elementAdapter.write(out, element);
                 return;
               }
+              // check if the actual instance is of the type `FaceDetectionResult`
+              if (value.getActualInstance() instanceof FaceDetectionResult) {
+                JsonElement element =
+                    adapterFaceDetectionResult.toJsonTree(
+                        (FaceDetectionResult) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
+              // check if the actual instance is of the type `MRZDetectorResult`
+              if (value.getActualInstance() instanceof MRZDetectorResult) {
+                JsonElement element =
+                    adapterMRZDetectorResult.toJsonTree(
+                        (MRZDetectorResult) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
+              // check if the actual instance is of the type `MRZPositionResult`
+              if (value.getActualInstance() instanceof MRZPositionResult) {
+                JsonElement element =
+                    adapterMRZPositionResult.toJsonTree(
+                        (MRZPositionResult) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
+              // check if the actual instance is of the type `MRZTestQualityResult`
+              if (value.getActualInstance() instanceof MRZTestQualityResult) {
+                JsonElement element =
+                    adapterMRZTestQualityResult.toJsonTree(
+                        (MRZTestQualityResult) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
               throw new IOException(
-                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult, TextDataResult, TextResult");
+                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult");
             }
 
             @Override
@@ -479,6 +519,64 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                         "Deserialization for ByteArrayResult failed with `%s`.", e.getMessage()));
                 log.log(Level.FINER, "Input data does not match schema 'ByteArrayResult'", e);
               }
+              // deserialize FaceDetectionResult
+              try {
+                // validate the JSON object to see if any exception is thrown
+                FaceDetectionResult.validateJsonElement(jsonElement);
+                actualAdapter = adapterFaceDetectionResult;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'FaceDetectionResult'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for FaceDetectionResult failed with `%s`.",
+                        e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'FaceDetectionResult'", e);
+              }
+              // deserialize MRZDetectorResult
+              try {
+                // validate the JSON object to see if any exception is thrown
+                MRZDetectorResult.validateJsonElement(jsonElement);
+                actualAdapter = adapterMRZDetectorResult;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'MRZDetectorResult'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for MRZDetectorResult failed with `%s`.", e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'MRZDetectorResult'", e);
+              }
+              // deserialize MRZPositionResult
+              try {
+                // validate the JSON object to see if any exception is thrown
+                MRZPositionResult.validateJsonElement(jsonElement);
+                actualAdapter = adapterMRZPositionResult;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'MRZPositionResult'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for MRZPositionResult failed with `%s`.", e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'MRZPositionResult'", e);
+              }
+              // deserialize MRZTestQualityResult
+              try {
+                // validate the JSON object to see if any exception is thrown
+                MRZTestQualityResult.validateJsonElement(jsonElement);
+                actualAdapter = adapterMRZTestQualityResult;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'MRZTestQualityResult'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for MRZTestQualityResult failed with `%s`.",
+                        e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'MRZTestQualityResult'", e);
+              }
 
               if (match == 1) {
                 ContainerListListInner ret = new ContainerListListInner();
@@ -525,6 +623,10 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     schemas.put("EncryptedRCLResult", EncryptedRCLResult.class);
     schemas.put("DocumentBinaryInfoResult", DocumentBinaryInfoResult.class);
     schemas.put("ByteArrayResult", ByteArrayResult.class);
+    schemas.put("FaceDetectionResult", FaceDetectionResult.class);
+    schemas.put("MRZDetectorResult", MRZDetectorResult.class);
+    schemas.put("MRZPositionResult", MRZPositionResult.class);
+    schemas.put("MRZTestQualityResult", MRZTestQualityResult.class);
   }
 
   @Override
@@ -536,8 +638,9 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
    * Set the instance that matches the oneOf child schema, check the instance parameter is valid
    * against the oneOf child schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult,
    * DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult,
-   * DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult, ImageQualityResult,
-   * ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult, TextDataResult, TextResult
+   * DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult,
+   * ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult,
+   * MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult
    *
    * <p>It could be an instance of the 'oneOf' schemas.
    */
@@ -628,22 +731,43 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
       return;
     }
 
+    if (instance instanceof FaceDetectionResult) {
+      super.setActualInstance(instance);
+      return;
+    }
+
+    if (instance instanceof MRZDetectorResult) {
+      super.setActualInstance(instance);
+      return;
+    }
+
+    if (instance instanceof MRZPositionResult) {
+      super.setActualInstance(instance);
+      return;
+    }
+
+    if (instance instanceof MRZTestQualityResult) {
+      super.setActualInstance(instance);
+      return;
+    }
+
     throw new RuntimeException(
-        "Invalid instance type. Must be AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult, TextDataResult, TextResult");
+        "Invalid instance type. Must be AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult");
   }
 
   /**
    * Get the actual instance, which can be the following: AuthenticityResult, ByteArrayResult,
    * ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
-   * DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult,
-   * ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult,
-   * TextDataResult, TextResult
+   * DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult,
+   * GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult,
+   * MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult,
+   * TextResult
    *
    * @return The actual instance (AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult,
    *     DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult,
-   *     DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult, ImageQualityResult,
-   *     ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult, TextDataResult,
-   *     TextResult)
+   *     DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult,
+   *     ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult,
+   *     MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult)
    */
   @SuppressWarnings("unchecked")
   @Override
@@ -840,6 +964,50 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
   }
 
   /**
+   * Get the actual instance of `FaceDetectionResult`. If the actual instance is not
+   * `FaceDetectionResult`, the ClassCastException will be thrown.
+   *
+   * @return The actual instance of `FaceDetectionResult`
+   * @throws ClassCastException if the instance is not `FaceDetectionResult`
+   */
+  public FaceDetectionResult getFaceDetectionResult() throws ClassCastException {
+    return (FaceDetectionResult) super.getActualInstance();
+  }
+
+  /**
+   * Get the actual instance of `MRZDetectorResult`. If the actual instance is not
+   * `MRZDetectorResult`, the ClassCastException will be thrown.
+   *
+   * @return The actual instance of `MRZDetectorResult`
+   * @throws ClassCastException if the instance is not `MRZDetectorResult`
+   */
+  public MRZDetectorResult getMRZDetectorResult() throws ClassCastException {
+    return (MRZDetectorResult) super.getActualInstance();
+  }
+
+  /**
+   * Get the actual instance of `MRZPositionResult`. If the actual instance is not
+   * `MRZPositionResult`, the ClassCastException will be thrown.
+   *
+   * @return The actual instance of `MRZPositionResult`
+   * @throws ClassCastException if the instance is not `MRZPositionResult`
+   */
+  public MRZPositionResult getMRZPositionResult() throws ClassCastException {
+    return (MRZPositionResult) super.getActualInstance();
+  }
+
+  /**
+   * Get the actual instance of `MRZTestQualityResult`. If the actual instance is not
+   * `MRZTestQualityResult`, the ClassCastException will be thrown.
+   *
+   * @return The actual instance of `MRZTestQualityResult`
+   * @throws ClassCastException if the instance is not `MRZTestQualityResult`
+   */
+  public MRZTestQualityResult getMRZTestQualityResult() throws ClassCastException {
+    return (MRZTestQualityResult) super.getActualInstance();
+  }
+
+  /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
@@ -1012,10 +1180,48 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           String.format("Deserialization for ByteArrayResult failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
+    // validate the json string with FaceDetectionResult
+    try {
+      FaceDetectionResult.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format(
+              "Deserialization for FaceDetectionResult failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
+    // validate the json string with MRZDetectorResult
+    try {
+      MRZDetectorResult.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format("Deserialization for MRZDetectorResult failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
+    // validate the json string with MRZPositionResult
+    try {
+      MRZPositionResult.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format("Deserialization for MRZPositionResult failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
+    // validate the json string with MRZTestQualityResult
+    try {
+      MRZTestQualityResult.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format(
+              "Deserialization for MRZTestQualityResult failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
     if (validCount != 1) {
       throw new IOException(
           String.format(
-              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
               validCount, errorMessages, jsonElement.toString()));
     }
   }

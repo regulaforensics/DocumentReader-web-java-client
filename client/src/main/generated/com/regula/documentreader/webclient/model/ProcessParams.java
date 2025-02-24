@@ -47,7 +47,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_LCID_FILTER)
   @javax.annotation.Nullable
-  private List<LCID> lcidFilter = new ArrayList<>();
+  private List<LCID> lcidFilter;
 
   public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
 
@@ -59,7 +59,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_LCID_IGNORE_FILTER)
   @javax.annotation.Nullable
-  private List<LCID> lcidIgnoreFilter = new ArrayList<>();
+  private List<LCID> lcidIgnoreFilter;
 
   public static final String SERIALIZED_NAME_ONE_SHOT_IDENTIFICATION = "oneShotIdentification";
 
@@ -107,7 +107,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE_OUTPUT)
   @javax.annotation.Nullable
-  private List<Result> resultTypeOutput = new ArrayList<>();
+  private List<Result> resultTypeOutput;
 
   public static final String SERIALIZED_NAME_DOUBLE_PAGE_SPREAD = "doublePageSpread";
 
@@ -127,7 +127,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPES_FILTER)
   @javax.annotation.Nullable
-  private List<TextFieldType> fieldTypesFilter = new ArrayList<>();
+  private List<TextFieldType> fieldTypesFilter;
 
   public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
 
@@ -157,13 +157,13 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_CUSTOM_PARAMS)
   @javax.annotation.Nullable
-  private Map<String, Object> customParams = new HashMap<>();
+  private Map<String, Object> customParams;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
 
   @SerializedName(SERIALIZED_NAME_CONFIG)
   @javax.annotation.Nullable
-  private List<PerDocumentConfig> config = new ArrayList<>();
+  private List<PerDocumentConfig> config;
 
   public static final String SERIALIZED_NAME_LOG = "log";
 
@@ -280,7 +280,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_MRZ_FORMATS_FILTER)
   @javax.annotation.Nullable
-  private List<MRZFormat> mrzFormatsFilter = new ArrayList<>();
+  private List<MRZFormat> mrzFormatsFilter;
 
   public static final String SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE =
       "forceReadMrzBeforeLocate";
@@ -317,7 +317,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_GROUP_FILTER)
   @javax.annotation.Nullable
-  private List<DocumentType> documentGroupFilter = new ArrayList<>();
+  private List<DocumentType> documentGroupFilter;
 
   public static final String SERIALIZED_NAME_PROCESS_AUTH = "processAuth";
 
@@ -354,7 +354,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_ID_LIST)
   @javax.annotation.Nullable
-  private List<Integer> documentIdList = new ArrayList<>();
+  private List<Integer> documentIdList;
 
   public static final String SERIALIZED_NAME_RFID = "rfid";
 
@@ -403,7 +403,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_DO_BARCODES)
   @javax.annotation.Nullable
-  private List<ProcessParamsDoBarcodesInner> doBarcodes = new ArrayList<>();
+  private List<ProcessParamsDoBarcodesInner> doBarcodes;
 
   public ProcessParams() {}
 

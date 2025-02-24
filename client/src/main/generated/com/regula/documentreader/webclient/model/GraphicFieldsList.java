@@ -41,7 +41,7 @@ public class GraphicFieldsList {
 
   @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
   @javax.annotation.Nonnull
-  private List<GraphicFieldsListPArrayFieldsInner> pArrayFields = new ArrayList<>();
+  private List<GraphicFieldsListPArrayFieldsInner> pArrayFields;
 
   public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
 

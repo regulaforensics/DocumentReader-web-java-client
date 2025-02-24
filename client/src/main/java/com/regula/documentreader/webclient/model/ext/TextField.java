@@ -56,6 +56,7 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
     this.setValidityList(validityList);
     return this;
   }
+
   public TextField withComparisonList(List<CrossSourceValueComparison> comparisonList) {
     this.setComparisonList(comparisonList);
     return this;

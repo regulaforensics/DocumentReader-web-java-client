@@ -46,7 +46,7 @@ public class OutData {
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
   @javax.annotation.Nullable
-  private List<OutDataTransactionImagesFieldValue> images = new ArrayList<>();
+  private List<OutDataTransactionImagesFieldValue> images;
 
   public OutData() {}
 

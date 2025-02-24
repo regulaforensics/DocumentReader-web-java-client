@@ -47,7 +47,7 @@ public class StringRecognitionResult {
 
   @SerializedName(SERIALIZED_NAME_STRING_RESULT)
   @javax.annotation.Nonnull
-  private List<SymbolRecognitionResult> stringResult = new ArrayList<>();
+  private List<SymbolRecognitionResult> stringResult;
 
   public static final String SERIALIZED_NAME_BUF_LENGTH = "Buf_Length";
 
@@ -60,6 +60,12 @@ public class StringRecognitionResult {
   @SerializedName(SERIALIZED_NAME_BUF_TEXT)
   @javax.annotation.Nullable
   private String bufText;
+
+  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
+
+  @SerializedName(SERIALIZED_NAME_RESERVED)
+  @javax.annotation.Nullable
+  private Integer reserved;
 
   public StringRecognitionResult() {}
 
@@ -150,6 +156,25 @@ public class StringRecognitionResult {
     this.bufText = bufText;
   }
 
+  public StringRecognitionResult reserved(@javax.annotation.Nullable Integer reserved) {
+    this.reserved = reserved;
+    return this;
+  }
+
+  /**
+   * Get reserved
+   *
+   * @return reserved
+   */
+  @javax.annotation.Nullable
+  public Integer getReserved() {
+    return reserved;
+  }
+
+  public void setReserved(@javax.annotation.Nullable Integer reserved) {
+    this.reserved = reserved;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -162,12 +187,13 @@ public class StringRecognitionResult {
     return Objects.equals(this.symbolsCount, stringRecognitionResult.symbolsCount)
         && Objects.equals(this.stringResult, stringRecognitionResult.stringResult)
         && Objects.equals(this.bufLength, stringRecognitionResult.bufLength)
-        && Objects.equals(this.bufText, stringRecognitionResult.bufText);
+        && Objects.equals(this.bufText, stringRecognitionResult.bufText)
+        && Objects.equals(this.reserved, stringRecognitionResult.reserved);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolsCount, stringResult, bufLength, bufText);
+    return Objects.hash(symbolsCount, stringResult, bufLength, bufText, reserved);
   }
 
   @Override
@@ -178,6 +204,7 @@ public class StringRecognitionResult {
     sb.append("    stringResult: ").append(toIndentedString(stringResult)).append("\n");
     sb.append("    bufLength: ").append(toIndentedString(bufLength)).append("\n");
     sb.append("    bufText: ").append(toIndentedString(bufText)).append("\n");
+    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -202,6 +229,7 @@ public class StringRecognitionResult {
     openapiFields.add("StringResult");
     openapiFields.add("Buf_Length");
     openapiFields.add("Buf_Text");
+    openapiFields.add("Reserved");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

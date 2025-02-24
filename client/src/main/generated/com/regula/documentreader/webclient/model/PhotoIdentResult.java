@@ -93,7 +93,7 @@ public class PhotoIdentResult {
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPES_LIST)
   @javax.annotation.Nullable
-  private List<Integer> fieldTypesList = new ArrayList<>();
+  private List<Integer> fieldTypesList;
 
   public static final String SERIALIZED_NAME_STEP = "Step";
 

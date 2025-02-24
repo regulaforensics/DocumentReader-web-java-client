@@ -87,13 +87,13 @@ public class RfidCertificateEx {
 
   @SerializedName(SERIALIZED_NAME_EXTENSIONS)
   @javax.annotation.Nonnull
-  private List<RfidPkiExtension> extensions = new ArrayList<>();
+  private List<RfidPkiExtension> extensions;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "Notifications";
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications = new ArrayList<>();
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_ORIGIN = "Origin";
 

@@ -74,7 +74,7 @@ public class TransactionProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   @javax.annotation.Nullable
-  private Map<String, Object> passBackObject = new HashMap<>();
+  private Map<String, Object> passBackObject;
 
   public static final String SERIALIZED_NAME_MORE_PAGES_AVAILABLE = "morePagesAvailable";
 
@@ -92,7 +92,7 @@ public class TransactionProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_METADATA)
   @javax.annotation.Nullable
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, Object> metadata;
 
   public TransactionProcessResponse() {}
 

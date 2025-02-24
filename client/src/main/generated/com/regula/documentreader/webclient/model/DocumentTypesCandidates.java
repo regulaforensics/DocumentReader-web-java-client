@@ -46,7 +46,7 @@ public class DocumentTypesCandidates {
 
   @SerializedName(SERIALIZED_NAME_CANDIDATES)
   @javax.annotation.Nullable
-  private List<OneCandidate> candidates = new ArrayList<>();
+  private List<OneCandidate> candidates;
 
   public DocumentTypesCandidates() {}
 

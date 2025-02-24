@@ -40,6 +40,12 @@ public class ProcessResponse {
   @javax.annotation.Nonnull
   private RfidLocation chipPage;
 
+  public static final String SERIALIZED_NAME_CORE_LIB_RESULT_CODE = "CoreLibResultCode";
+
+  @SerializedName(SERIALIZED_NAME_CORE_LIB_RESULT_CODE)
+  @javax.annotation.Nullable
+  private Integer coreLibResultCode;
+
   public static final String SERIALIZED_NAME_PROCESSING_FINISHED = "ProcessingFinished";
 
   @SerializedName(SERIALIZED_NAME_PROCESSING_FINISHED)
@@ -68,7 +74,7 @@ public class ProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   @javax.annotation.Nullable
-  private Map<String, Object> passBackObject = new HashMap<>();
+  private Map<String, Object> passBackObject;
 
   public static final String SERIALIZED_NAME_MORE_PAGES_AVAILABLE = "morePagesAvailable";
 
@@ -86,7 +92,7 @@ public class ProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_METADATA)
   @javax.annotation.Nullable
-  private Map<String, Object> metadata = new HashMap<>();
+  private Map<String, Object> metadata;
 
   public ProcessResponse() {}
 
@@ -107,6 +113,25 @@ public class ProcessResponse {
 
   public void setChipPage(@javax.annotation.Nonnull RfidLocation chipPage) {
     this.chipPage = chipPage;
+  }
+
+  public ProcessResponse coreLibResultCode(@javax.annotation.Nullable Integer coreLibResultCode) {
+    this.coreLibResultCode = coreLibResultCode;
+    return this;
+  }
+
+  /**
+   * Get coreLibResultCode
+   *
+   * @return coreLibResultCode
+   */
+  @javax.annotation.Nullable
+  public Integer getCoreLibResultCode() {
+    return coreLibResultCode;
+  }
+
+  public void setCoreLibResultCode(@javax.annotation.Nullable Integer coreLibResultCode) {
+    this.coreLibResultCode = coreLibResultCode;
   }
 
   public ProcessResponse processingFinished(
@@ -290,6 +315,7 @@ public class ProcessResponse {
     }
     ProcessResponse processResponse = (ProcessResponse) o;
     return Objects.equals(this.chipPage, processResponse.chipPage)
+        && Objects.equals(this.coreLibResultCode, processResponse.coreLibResultCode)
         && Objects.equals(this.processingFinished, processResponse.processingFinished)
         && Objects.equals(this.containerList, processResponse.containerList)
         && Objects.equals(this.transactionInfo, processResponse.transactionInfo)
@@ -304,6 +330,7 @@ public class ProcessResponse {
   public int hashCode() {
     return Objects.hash(
         chipPage,
+        coreLibResultCode,
         processingFinished,
         containerList,
         transactionInfo,
@@ -319,6 +346,7 @@ public class ProcessResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessResponse {\n");
     sb.append("    chipPage: ").append(toIndentedString(chipPage)).append("\n");
+    sb.append("    coreLibResultCode: ").append(toIndentedString(coreLibResultCode)).append("\n");
     sb.append("    processingFinished: ").append(toIndentedString(processingFinished)).append("\n");
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
     sb.append("    transactionInfo: ").append(toIndentedString(transactionInfo)).append("\n");
@@ -348,6 +376,7 @@ public class ProcessResponse {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("ChipPage");
+    openapiFields.add("CoreLibResultCode");
     openapiFields.add("ProcessingFinished");
     openapiFields.add("ContainerList");
     openapiFields.add("TransactionInfo");

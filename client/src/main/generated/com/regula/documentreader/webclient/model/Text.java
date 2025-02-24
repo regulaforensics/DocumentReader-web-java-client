@@ -64,13 +64,13 @@ public class Text {
 
   @SerializedName(SERIALIZED_NAME_FIELD_LIST)
   @javax.annotation.Nonnull
-  private List<TextField> fieldList = new ArrayList<>();
+  private List<TextField> fieldList;
 
   public static final String SERIALIZED_NAME_AVAILABLE_SOURCE_LIST = "availableSourceList";
 
   @SerializedName(SERIALIZED_NAME_AVAILABLE_SOURCE_LIST)
   @javax.annotation.Nonnull
-  private List<TextAvailableSource> availableSourceList = new ArrayList<>();
+  private List<TextAvailableSource> availableSourceList;
 
   public Text() {}
 

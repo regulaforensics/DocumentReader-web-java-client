@@ -94,6 +94,36 @@ public class DocumentPosition {
   @javax.annotation.Nonnull
   private Integer dpi;
 
+  public static final String SERIALIZED_NAME_INVERSE = "Inverse";
+
+  @SerializedName(SERIALIZED_NAME_INVERSE)
+  @javax.annotation.Nullable
+  private Integer inverse;
+
+  public static final String SERIALIZED_NAME_OBJ_AREA = "ObjArea";
+
+  @SerializedName(SERIALIZED_NAME_OBJ_AREA)
+  @javax.annotation.Nullable
+  private Integer objArea;
+
+  public static final String SERIALIZED_NAME_OBJ_INT_ANGLE_DEV = "ObjIntAngleDev";
+
+  @SerializedName(SERIALIZED_NAME_OBJ_INT_ANGLE_DEV)
+  @javax.annotation.Nullable
+  private Integer objIntAngleDev;
+
+  public static final String SERIALIZED_NAME_PERSPECTIVE_TR = "PerspectiveTr";
+
+  @SerializedName(SERIALIZED_NAME_PERSPECTIVE_TR)
+  @javax.annotation.Nullable
+  private Integer perspectiveTr;
+
+  public static final String SERIALIZED_NAME_RESULT_STATUS = "ResultStatus";
+
+  @SerializedName(SERIALIZED_NAME_RESULT_STATUS)
+  @javax.annotation.Nullable
+  private Integer resultStatus;
+
   public DocumentPosition() {}
 
   public DocumentPosition docFormat(@javax.annotation.Nonnull DocumentFormat docFormat) {
@@ -286,6 +316,101 @@ public class DocumentPosition {
     this.dpi = dpi;
   }
 
+  public DocumentPosition inverse(@javax.annotation.Nullable Integer inverse) {
+    this.inverse = inverse;
+    return this;
+  }
+
+  /**
+   * Get inverse
+   *
+   * @return inverse
+   */
+  @javax.annotation.Nullable
+  public Integer getInverse() {
+    return inverse;
+  }
+
+  public void setInverse(@javax.annotation.Nullable Integer inverse) {
+    this.inverse = inverse;
+  }
+
+  public DocumentPosition objArea(@javax.annotation.Nullable Integer objArea) {
+    this.objArea = objArea;
+    return this;
+  }
+
+  /**
+   * Get objArea
+   *
+   * @return objArea
+   */
+  @javax.annotation.Nullable
+  public Integer getObjArea() {
+    return objArea;
+  }
+
+  public void setObjArea(@javax.annotation.Nullable Integer objArea) {
+    this.objArea = objArea;
+  }
+
+  public DocumentPosition objIntAngleDev(@javax.annotation.Nullable Integer objIntAngleDev) {
+    this.objIntAngleDev = objIntAngleDev;
+    return this;
+  }
+
+  /**
+   * Get objIntAngleDev
+   *
+   * @return objIntAngleDev
+   */
+  @javax.annotation.Nullable
+  public Integer getObjIntAngleDev() {
+    return objIntAngleDev;
+  }
+
+  public void setObjIntAngleDev(@javax.annotation.Nullable Integer objIntAngleDev) {
+    this.objIntAngleDev = objIntAngleDev;
+  }
+
+  public DocumentPosition perspectiveTr(@javax.annotation.Nullable Integer perspectiveTr) {
+    this.perspectiveTr = perspectiveTr;
+    return this;
+  }
+
+  /**
+   * Get perspectiveTr
+   *
+   * @return perspectiveTr
+   */
+  @javax.annotation.Nullable
+  public Integer getPerspectiveTr() {
+    return perspectiveTr;
+  }
+
+  public void setPerspectiveTr(@javax.annotation.Nullable Integer perspectiveTr) {
+    this.perspectiveTr = perspectiveTr;
+  }
+
+  public DocumentPosition resultStatus(@javax.annotation.Nullable Integer resultStatus) {
+    this.resultStatus = resultStatus;
+    return this;
+  }
+
+  /**
+   * Get resultStatus
+   *
+   * @return resultStatus
+   */
+  @javax.annotation.Nullable
+  public Integer getResultStatus() {
+    return resultStatus;
+  }
+
+  public void setResultStatus(@javax.annotation.Nullable Integer resultStatus) {
+    this.resultStatus = resultStatus;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -304,13 +429,32 @@ public class DocumentPosition {
         && Objects.equals(this.leftTop, documentPosition.leftTop)
         && Objects.equals(this.rightBottom, documentPosition.rightBottom)
         && Objects.equals(this.rightTop, documentPosition.rightTop)
-        && Objects.equals(this.dpi, documentPosition.dpi);
+        && Objects.equals(this.dpi, documentPosition.dpi)
+        && Objects.equals(this.inverse, documentPosition.inverse)
+        && Objects.equals(this.objArea, documentPosition.objArea)
+        && Objects.equals(this.objIntAngleDev, documentPosition.objIntAngleDev)
+        && Objects.equals(this.perspectiveTr, documentPosition.perspectiveTr)
+        && Objects.equals(this.resultStatus, documentPosition.resultStatus);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        docFormat, angle, width, height, center, leftBottom, leftTop, rightBottom, rightTop, dpi);
+        docFormat,
+        angle,
+        width,
+        height,
+        center,
+        leftBottom,
+        leftTop,
+        rightBottom,
+        rightTop,
+        dpi,
+        inverse,
+        objArea,
+        objIntAngleDev,
+        perspectiveTr,
+        resultStatus);
   }
 
   @Override
@@ -327,6 +471,11 @@ public class DocumentPosition {
     sb.append("    rightBottom: ").append(toIndentedString(rightBottom)).append("\n");
     sb.append("    rightTop: ").append(toIndentedString(rightTop)).append("\n");
     sb.append("    dpi: ").append(toIndentedString(dpi)).append("\n");
+    sb.append("    inverse: ").append(toIndentedString(inverse)).append("\n");
+    sb.append("    objArea: ").append(toIndentedString(objArea)).append("\n");
+    sb.append("    objIntAngleDev: ").append(toIndentedString(objIntAngleDev)).append("\n");
+    sb.append("    perspectiveTr: ").append(toIndentedString(perspectiveTr)).append("\n");
+    sb.append("    resultStatus: ").append(toIndentedString(resultStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -357,6 +506,11 @@ public class DocumentPosition {
     openapiFields.add("RightBottom");
     openapiFields.add("RightTop");
     openapiFields.add("Dpi");
+    openapiFields.add("Inverse");
+    openapiFields.add("ObjArea");
+    openapiFields.add("ObjIntAngleDev");
+    openapiFields.add("PerspectiveTr");
+    openapiFields.add("ResultStatus");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

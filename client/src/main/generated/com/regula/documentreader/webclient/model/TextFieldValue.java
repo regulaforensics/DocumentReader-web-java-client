@@ -64,7 +64,7 @@ public class TextFieldValue {
 
   @SerializedName(SERIALIZED_NAME_ORIGINAL_SYMBOLS)
   @javax.annotation.Nullable
-  private List<OriginalSymbol> originalSymbols = new ArrayList<>();
+  private List<OriginalSymbol> originalSymbols;
 
   public static final String SERIALIZED_NAME_PAGE_INDEX = "pageIndex";
 
@@ -89,6 +89,12 @@ public class TextFieldValue {
   @SerializedName(SERIALIZED_NAME_RFID_ORIGIN)
   @javax.annotation.Nullable
   private RfidOrigin rfidOrigin;
+
+  public static final String SERIALIZED_NAME_CONTAINER_TYPE = "containerType";
+
+  @SerializedName(SERIALIZED_NAME_CONTAINER_TYPE)
+  @javax.annotation.Nullable
+  private Integer containerType = 0;
 
   public TextFieldValue() {}
 
@@ -273,6 +279,25 @@ public class TextFieldValue {
     this.rfidOrigin = rfidOrigin;
   }
 
+  public TextFieldValue containerType(@javax.annotation.Nullable Integer containerType) {
+    this.containerType = containerType;
+    return this;
+  }
+
+  /**
+   * Same as Result type, but used for safe parsing of not-described values. See Result type.
+   *
+   * @return containerType
+   */
+  @javax.annotation.Nullable
+  public Integer getContainerType() {
+    return containerType;
+  }
+
+  public void setContainerType(@javax.annotation.Nullable Integer containerType) {
+    this.containerType = containerType;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -290,7 +315,8 @@ public class TextFieldValue {
         && Objects.equals(this.pageIndex, textFieldValue.pageIndex)
         && Objects.equals(this.probability, textFieldValue.probability)
         && Objects.equals(this.fieldRect, textFieldValue.fieldRect)
-        && Objects.equals(this.rfidOrigin, textFieldValue.rfidOrigin);
+        && Objects.equals(this.rfidOrigin, textFieldValue.rfidOrigin)
+        && Objects.equals(this.containerType, textFieldValue.containerType);
   }
 
   @Override
@@ -304,7 +330,8 @@ public class TextFieldValue {
         pageIndex,
         probability,
         fieldRect,
-        rfidOrigin);
+        rfidOrigin,
+        containerType);
   }
 
   @Override
@@ -320,6 +347,7 @@ public class TextFieldValue {
     sb.append("    probability: ").append(toIndentedString(probability)).append("\n");
     sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
     sb.append("    rfidOrigin: ").append(toIndentedString(rfidOrigin)).append("\n");
+    sb.append("    containerType: ").append(toIndentedString(containerType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -349,6 +377,7 @@ public class TextFieldValue {
     openapiFields.add("probability");
     openapiFields.add("fieldRect");
     openapiFields.add("rfidOrigin");
+    openapiFields.add("containerType");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

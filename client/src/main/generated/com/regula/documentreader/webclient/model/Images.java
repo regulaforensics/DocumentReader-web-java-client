@@ -39,30 +39,30 @@ public class Images {
   public static final String SERIALIZED_NAME_FIELD_COUNT = "fieldCount";
 
   @SerializedName(SERIALIZED_NAME_FIELD_COUNT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer fieldCount;
 
   public static final String SERIALIZED_NAME_AVAILABLE_SOURCE_COUNT = "availableSourceCount";
 
   @SerializedName(SERIALIZED_NAME_AVAILABLE_SOURCE_COUNT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer availableSourceCount;
 
   public static final String SERIALIZED_NAME_AVAILABLE_SOURCE_LIST = "availableSourceList";
 
   @SerializedName(SERIALIZED_NAME_AVAILABLE_SOURCE_LIST)
   @javax.annotation.Nonnull
-  private List<ImagesAvailableSource> availableSourceList = new ArrayList<>();
+  private List<ImagesAvailableSource> availableSourceList;
 
   public static final String SERIALIZED_NAME_FIELD_LIST = "fieldList";
 
   @SerializedName(SERIALIZED_NAME_FIELD_LIST)
   @javax.annotation.Nonnull
-  private List<ImagesField> fieldList = new ArrayList<>();
+  private List<ImagesField> fieldList;
 
   public Images() {}
 
-  public Images fieldCount(@javax.annotation.Nonnull Integer fieldCount) {
+  public Images fieldCount(@javax.annotation.Nullable Integer fieldCount) {
     this.fieldCount = fieldCount;
     return this;
   }
@@ -72,16 +72,16 @@ public class Images {
    *
    * @return fieldCount
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getFieldCount() {
     return fieldCount;
   }
 
-  public void setFieldCount(@javax.annotation.Nonnull Integer fieldCount) {
+  public void setFieldCount(@javax.annotation.Nullable Integer fieldCount) {
     this.fieldCount = fieldCount;
   }
 
-  public Images availableSourceCount(@javax.annotation.Nonnull Integer availableSourceCount) {
+  public Images availableSourceCount(@javax.annotation.Nullable Integer availableSourceCount) {
     this.availableSourceCount = availableSourceCount;
     return this;
   }
@@ -91,12 +91,12 @@ public class Images {
    *
    * @return availableSourceCount
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getAvailableSourceCount() {
     return availableSourceCount;
   }
 
-  public void setAvailableSourceCount(@javax.annotation.Nonnull Integer availableSourceCount) {
+  public void setAvailableSourceCount(@javax.annotation.Nullable Integer availableSourceCount) {
     this.availableSourceCount = availableSourceCount;
   }
 
@@ -215,8 +215,6 @@ public class Images {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("fieldCount");
-    openapiRequiredFields.add("availableSourceCount");
     openapiRequiredFields.add("availableSourceList");
     openapiRequiredFields.add("fieldList");
   }

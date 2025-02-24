@@ -75,7 +75,7 @@ public class RfidSignerInfoEx {
 
   @SerializedName(SERIALIZED_NAME_SIGNED_ATTRIBUTES)
   @javax.annotation.Nonnull
-  private List<RfidAttributeData> signedAttributes = new ArrayList<>();
+  private List<RfidAttributeData> signedAttributes;
 
   public static final String SERIALIZED_NAME_SIGNATURE_ALGORITHM = "SignatureAlgorithm";
 
@@ -99,7 +99,7 @@ public class RfidSignerInfoEx {
 
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_CHAIN)
   @javax.annotation.Nonnull
-  private List<RfidCertificateEx> certificateChain = new ArrayList<>();
+  private List<RfidCertificateEx> certificateChain;
 
   public static final String SERIALIZED_NAME_DATA_TO_HASH = "DataToHash";
 

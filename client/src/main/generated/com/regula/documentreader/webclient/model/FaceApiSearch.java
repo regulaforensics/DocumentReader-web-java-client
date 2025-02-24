@@ -57,7 +57,7 @@ public class FaceApiSearch {
 
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   @javax.annotation.Nullable
-  private List<Integer> groupIds = new ArrayList<>();
+  private List<Integer> groupIds;
 
   public FaceApiSearch() {}
 

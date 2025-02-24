@@ -41,26 +41,26 @@ public class BinaryData {
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_AUTHENTICATION_INFO)
   @javax.annotation.Nullable
-  private Map<String, Object> rfIDAuthenticationInfo = new HashMap<>();
+  private Map<String, Object> rfIDAuthenticationInfo;
 
   public static final String SERIALIZED_NAME_RF_I_D_M_I_F_A_R_E_DATA_VALIDITY =
       "RFID_MIFARE_Data_Validity";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_M_I_F_A_R_E_DATA_VALIDITY)
   @javax.annotation.Nullable
-  private Map<String, Object> rfIDMIFAREDataValidity = new HashMap<>();
+  private Map<String, Object> rfIDMIFAREDataValidity;
 
   public static final String SERIALIZED_NAME_RF_I_D_M_I_F_A_R_E_DATA = "RFID_MIFARE_Data";
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_M_I_F_A_R_E_DATA)
   @javax.annotation.Nullable
-  private Map<String, Object> rfIDMIFAREData = new HashMap<>();
+  private Map<String, Object> rfIDMIFAREData;
 
   public static final String SERIALIZED_NAME_R_F_I_D_E_F_C_O_M = "RFID_EF_COM";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_E_F_C_O_M)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_EF_COM = new HashMap<>();
+  private Map<String, Object> RFID_EF_COM;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G1 = "RFID_DG1";
 
@@ -72,337 +72,337 @@ public class BinaryData {
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G2)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG2 = new HashMap<>();
+  private Map<String, Object> RFID_DG2;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G3 = "RFID_DG3";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G3)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG3 = new HashMap<>();
+  private Map<String, Object> RFID_DG3;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G4 = "RFID_DG4";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G4)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG4 = new HashMap<>();
+  private Map<String, Object> RFID_DG4;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G5 = "RFID_DG5";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G5)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG5 = new HashMap<>();
+  private Map<String, Object> RFID_DG5;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G6 = "RFID_DG6";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G6)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG6 = new HashMap<>();
+  private Map<String, Object> RFID_DG6;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G7 = "RFID_DG7";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G7)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG7 = new HashMap<>();
+  private Map<String, Object> RFID_DG7;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G8 = "RFID_DG8";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G8)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG8 = new HashMap<>();
+  private Map<String, Object> RFID_DG8;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G9 = "RFID_DG9";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G9)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG9 = new HashMap<>();
+  private Map<String, Object> RFID_DG9;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G10 = "RFID_DG10";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G10)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG10 = new HashMap<>();
+  private Map<String, Object> RFID_DG10;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G11 = "RFID_DG11";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G11)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG11 = new HashMap<>();
+  private Map<String, Object> RFID_DG11;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G12 = "RFID_DG12";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G12)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG12 = new HashMap<>();
+  private Map<String, Object> RFID_DG12;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G13 = "RFID_DG13";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G13)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG13 = new HashMap<>();
+  private Map<String, Object> RFID_DG13;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G14 = "RFID_DG14";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G14)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG14 = new HashMap<>();
+  private Map<String, Object> RFID_DG14;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G15 = "RFID_DG15";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G15)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG15 = new HashMap<>();
+  private Map<String, Object> RFID_DG15;
 
   public static final String SERIALIZED_NAME_R_F_I_D_D_G16 = "RFID_DG16";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_D_G16)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_DG16 = new HashMap<>();
+  private Map<String, Object> RFID_DG16;
 
   public static final String SERIALIZED_NAME_R_F_I_D_E_F_S_O_D = "RFID_EF_SOD";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_E_F_S_O_D)
   @javax.annotation.Nullable
-  private Map<String, Object> RFID_EF_SOD = new HashMap<>();
+  private Map<String, Object> RFID_EF_SOD;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G1 = "eID_DG1";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G1)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG1 = new HashMap<>();
+  private Map<String, Object> eIDDG1;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G2 = "eID_DG2";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G2)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG2 = new HashMap<>();
+  private Map<String, Object> eIDDG2;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G3 = "eID_DG3";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G3)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG3 = new HashMap<>();
+  private Map<String, Object> eIDDG3;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G4 = "eID_DG4";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G4)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG4 = new HashMap<>();
+  private Map<String, Object> eIDDG4;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G5 = "eID_DG5";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G5)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG5 = new HashMap<>();
+  private Map<String, Object> eIDDG5;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G6 = "eID_DG6";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G6)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG6 = new HashMap<>();
+  private Map<String, Object> eIDDG6;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G7 = "eID_DG7";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G7)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG7 = new HashMap<>();
+  private Map<String, Object> eIDDG7;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G8 = "eID_DG8";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G8)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG8 = new HashMap<>();
+  private Map<String, Object> eIDDG8;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G9 = "eID_DG9";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G9)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG9 = new HashMap<>();
+  private Map<String, Object> eIDDG9;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G10 = "eID_DG10";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G10)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG10 = new HashMap<>();
+  private Map<String, Object> eIDDG10;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G11 = "eID_DG11";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G11)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG11 = new HashMap<>();
+  private Map<String, Object> eIDDG11;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G12 = "eID_DG12";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G12)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG12 = new HashMap<>();
+  private Map<String, Object> eIDDG12;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G13 = "eID_DG13";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G13)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG13 = new HashMap<>();
+  private Map<String, Object> eIDDG13;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G14 = "eID_DG14";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G14)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG14 = new HashMap<>();
+  private Map<String, Object> eIDDG14;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G15 = "eID_DG15";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G15)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG15 = new HashMap<>();
+  private Map<String, Object> eIDDG15;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G16 = "eID_DG16";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G16)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG16 = new HashMap<>();
+  private Map<String, Object> eIDDG16;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G17 = "eID_DG17";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G17)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG17 = new HashMap<>();
+  private Map<String, Object> eIDDG17;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G18 = "eID_DG18";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G18)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG18 = new HashMap<>();
+  private Map<String, Object> eIDDG18;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G19 = "eID_DG19";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G19)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG19 = new HashMap<>();
+  private Map<String, Object> eIDDG19;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G20 = "eID_DG20";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G20)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG20 = new HashMap<>();
+  private Map<String, Object> eIDDG20;
 
   public static final String SERIALIZED_NAME_E_I_D_D_G21 = "eID_DG21";
 
   @SerializedName(SERIALIZED_NAME_E_I_D_D_G21)
   @javax.annotation.Nullable
-  private Map<String, Object> eIDDG21 = new HashMap<>();
+  private Map<String, Object> eIDDG21;
 
   public static final String SERIALIZED_NAME_E_D_L_C_O_M = "eDL_COM";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_C_O_M)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLCOM = new HashMap<>();
+  private Map<String, Object> eDLCOM;
 
   public static final String SERIALIZED_NAME_E_D_L_S_O_D = "eDL_SOD";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_S_O_D)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLSOD = new HashMap<>();
+  private Map<String, Object> eDLSOD;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G1 = "eDL_DG1";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G1)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG1 = new HashMap<>();
+  private Map<String, Object> eDLDG1;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G2 = "eDL_DG2";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G2)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG2 = new HashMap<>();
+  private Map<String, Object> eDLDG2;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G3 = "eDL_DG3";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G3)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG3 = new HashMap<>();
+  private Map<String, Object> eDLDG3;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G4 = "eDL_DG4";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G4)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG4 = new HashMap<>();
+  private Map<String, Object> eDLDG4;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G5 = "eDL_DG5";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G5)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG5 = new HashMap<>();
+  private Map<String, Object> eDLDG5;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G6 = "eDL_DG6";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G6)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG6 = new HashMap<>();
+  private Map<String, Object> eDLDG6;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G7 = "eDL_DG7";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G7)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG7 = new HashMap<>();
+  private Map<String, Object> eDLDG7;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G8 = "eDL_DG8";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G8)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG8 = new HashMap<>();
+  private Map<String, Object> eDLDG8;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G9 = "eDL_DG9";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G9)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG9 = new HashMap<>();
+  private Map<String, Object> eDLDG9;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G10 = "eDL_DG10";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G10)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG10 = new HashMap<>();
+  private Map<String, Object> eDLDG10;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G11 = "eDL_DG11";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G11)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG11 = new HashMap<>();
+  private Map<String, Object> eDLDG11;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G12 = "eDL_DG12";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G12)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG12 = new HashMap<>();
+  private Map<String, Object> eDLDG12;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G13 = "eDL_DG13";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G13)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG13 = new HashMap<>();
+  private Map<String, Object> eDLDG13;
 
   public static final String SERIALIZED_NAME_E_D_L_D_G14 = "eDL_DG14";
 
   @SerializedName(SERIALIZED_NAME_E_D_L_D_G14)
   @javax.annotation.Nullable
-  private Map<String, Object> eDLDG14 = new HashMap<>();
+  private Map<String, Object> eDLDG14;
 
   public static final String SERIALIZED_NAME_VISIBLE_DIGITAL_SEAL = "Visible_Digital_Seal";
 
   @SerializedName(SERIALIZED_NAME_VISIBLE_DIGITAL_SEAL)
   @javax.annotation.Nullable
-  private Map<String, Object> visibleDigitalSeal = new HashMap<>();
+  private Map<String, Object> visibleDigitalSeal;
 
   public static final String SERIALIZED_NAME_VISIBLE_DIGITAL_SEAL_N_C = "Visible_Digital_Seal_NC";
 
   @SerializedName(SERIALIZED_NAME_VISIBLE_DIGITAL_SEAL_N_C)
   @javax.annotation.Nullable
-  private Map<String, Object> visibleDigitalSealNC = new HashMap<>();
+  private Map<String, Object> visibleDigitalSealNC;
 
   public static final String SERIALIZED_NAME_DIGITAL_SIGNATURE = "Digital_Signature";
 
   @SerializedName(SERIALIZED_NAME_DIGITAL_SIGNATURE)
   @javax.annotation.Nullable
-  private Map<String, Object> digitalSignature = new HashMap<>();
+  private Map<String, Object> digitalSignature;
 
   public static final String SERIALIZED_NAME_RF_I_D_SESSION_DATA = "RFID_Session_Data";
 
@@ -421,7 +421,7 @@ public class BinaryData {
 
   @SerializedName(SERIALIZED_NAME_RF_I_D_E_PASSP_DIRECTORY)
   @javax.annotation.Nullable
-  private List<RfidDataFileType> rfIDEPasspDirectory = new ArrayList<>();
+  private List<RfidDataFileType> rfIDEPasspDirectory;
 
   public BinaryData() {}
 

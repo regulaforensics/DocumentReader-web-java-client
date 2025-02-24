@@ -52,7 +52,7 @@ public class RfidDistinguishedName {
 
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
   @javax.annotation.Nonnull
-  private List<RfidAttributeName> attributes = new ArrayList<>();
+  private List<RfidAttributeName> attributes;
 
   public RfidDistinguishedName() {}
 

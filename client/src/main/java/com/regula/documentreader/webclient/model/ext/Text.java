@@ -4,7 +4,6 @@ import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.LCID;
 import com.regula.documentreader.webclient.model.TextAvailableSource;
 import com.regula.documentreader.webclient.model.TextFieldType;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -53,8 +52,7 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
   @Nullable
   public TextField getField(String fieldName, LCID lcid) {
     for (com.regula.documentreader.webclient.model.TextField field : getFieldList()) {
-      if (Objects.equals(field.getFieldName(), fieldName)
-              && field.getLcid() == lcid) {
+      if (Objects.equals(field.getFieldName(), fieldName) && field.getLcid() == lcid) {
         return (TextField) field;
       }
     }
@@ -105,7 +103,8 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
   }
 
   public Text withFieldList(List<TextField> fieldList) {
-    List<com.regula.documentreader.webclient.model.TextField> convertedList = new ArrayList<>(fieldList);
+    List<com.regula.documentreader.webclient.model.TextField> convertedList =
+        new ArrayList<>(fieldList);
     this.setFieldList(convertedList);
     return this;
   }
@@ -114,5 +113,4 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
     this.setAvailableSourceList(availableSourceList);
     return this;
   }
-
 }

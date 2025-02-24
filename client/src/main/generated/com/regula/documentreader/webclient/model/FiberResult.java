@@ -88,31 +88,31 @@ public class FiberResult {
 
   @SerializedName(SERIALIZED_NAME_RECT_ARRAY)
   @javax.annotation.Nonnull
-  private List<RectangleCoordinates> rectArray = new ArrayList<>();
+  private List<RectangleCoordinates> rectArray;
 
   public static final String SERIALIZED_NAME_WIDTH = "Width";
 
   @SerializedName(SERIALIZED_NAME_WIDTH)
   @javax.annotation.Nonnull
-  private List<Integer> width = new ArrayList<>();
+  private List<Integer> width;
 
   public static final String SERIALIZED_NAME_LENGTH = "Length";
 
   @SerializedName(SERIALIZED_NAME_LENGTH)
   @javax.annotation.Nonnull
-  private List<Integer> length = new ArrayList<>();
+  private List<Integer> length;
 
   public static final String SERIALIZED_NAME_AREA = "Area";
 
   @SerializedName(SERIALIZED_NAME_AREA)
   @javax.annotation.Nonnull
-  private List<Integer> area = new ArrayList<>();
+  private List<Integer> area;
 
   public static final String SERIALIZED_NAME_COLOR_VALUES = "ColorValues";
 
   @SerializedName(SERIALIZED_NAME_COLOR_VALUES)
   @javax.annotation.Nonnull
-  private List<Integer> colorValues = new ArrayList<>();
+  private List<Integer> colorValues;
 
   public FiberResult() {}
 

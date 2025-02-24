@@ -81,6 +81,12 @@ public class DetailsOptical {
   @javax.annotation.Nonnull
   private CheckResult text;
 
+  public static final String SERIALIZED_NAME_VDS = "vds";
+
+  @SerializedName(SERIALIZED_NAME_VDS)
+  @javax.annotation.Nullable
+  private Integer vds;
+
   public DetailsOptical() {}
 
   public DetailsOptical overallStatus(@javax.annotation.Nonnull CheckResult overallStatus) {
@@ -235,6 +241,25 @@ public class DetailsOptical {
     this.text = text;
   }
 
+  public DetailsOptical vds(@javax.annotation.Nullable Integer vds) {
+    this.vds = vds;
+    return this;
+  }
+
+  /**
+   * Get vds
+   *
+   * @return vds
+   */
+  @javax.annotation.Nullable
+  public Integer getVds() {
+    return vds;
+  }
+
+  public void setVds(@javax.annotation.Nullable Integer vds) {
+    this.vds = vds;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -251,12 +276,14 @@ public class DetailsOptical {
         && Objects.equals(this.mrz, detailsOptical.mrz)
         && Objects.equals(this.pagesCount, detailsOptical.pagesCount)
         && Objects.equals(this.security, detailsOptical.security)
-        && Objects.equals(this.text, detailsOptical.text);
+        && Objects.equals(this.text, detailsOptical.text)
+        && Objects.equals(this.vds, detailsOptical.vds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(overallStatus, docType, expiry, imageQA, mrz, pagesCount, security, text);
+    return Objects.hash(
+        overallStatus, docType, expiry, imageQA, mrz, pagesCount, security, text, vds);
   }
 
   @Override
@@ -271,6 +298,7 @@ public class DetailsOptical {
     sb.append("    pagesCount: ").append(toIndentedString(pagesCount)).append("\n");
     sb.append("    security: ").append(toIndentedString(security)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    vds: ").append(toIndentedString(vds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -299,6 +327,7 @@ public class DetailsOptical {
     openapiFields.add("pagesCount");
     openapiFields.add("security");
     openapiFields.add("text");
+    openapiFields.add("vds");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

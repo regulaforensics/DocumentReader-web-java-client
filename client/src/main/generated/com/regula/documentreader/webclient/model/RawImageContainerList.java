@@ -46,7 +46,7 @@ public class RawImageContainerList {
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
   @javax.annotation.Nonnull
-  private List<ImageData> images = new ArrayList<>();
+  private List<ImageData> images;
 
   public RawImageContainerList() {}
 

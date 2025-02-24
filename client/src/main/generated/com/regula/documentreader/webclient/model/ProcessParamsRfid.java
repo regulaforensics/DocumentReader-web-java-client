@@ -39,7 +39,7 @@ public class ProcessParamsRfid {
 
   @SerializedName(SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE)
   @javax.annotation.Nullable
-  private List<ParsingNotificationCodes> paSensitiveCodesDisable = new ArrayList<>();
+  private List<ParsingNotificationCodes> paSensitiveCodesDisable;
 
   public ProcessParamsRfid() {}
 

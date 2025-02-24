@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -70,13 +71,19 @@ public class Healthcheck {
 
   @SerializedName(SERIALIZED_NAME_SCENARIOS)
   @javax.annotation.Nonnull
-  private List<String> scenarios = new ArrayList<>();
+  private List<String> scenarios;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
 
   @SerializedName(SERIALIZED_NAME_VERSION)
   @javax.annotation.Nonnull
   private String version;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
+  private Map<String, Object> metadata;
 
   public static final String SERIALIZED_NAME_DOCUMENTS_DATABASE = "documentsDatabase";
 
@@ -227,6 +234,33 @@ public class Healthcheck {
     this.version = version;
   }
 
+  public Healthcheck metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public Healthcheck putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
+   * Get metadata
+   *
+   * @return metadata
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
   public Healthcheck documentsDatabase(
       @javax.annotation.Nullable HealthcheckDocumentsDatabase documentsDatabase) {
     this.documentsDatabase = documentsDatabase;
@@ -264,6 +298,7 @@ public class Healthcheck {
         && Objects.equals(this.licenseValidUntil, healthcheck.licenseValidUntil)
         && Objects.equals(this.scenarios, healthcheck.scenarios)
         && Objects.equals(this.version, healthcheck.version)
+        && Objects.equals(this.metadata, healthcheck.metadata)
         && Objects.equals(this.documentsDatabase, healthcheck.documentsDatabase);
   }
 
@@ -277,6 +312,7 @@ public class Healthcheck {
         licenseValidUntil,
         scenarios,
         version,
+        metadata,
         documentsDatabase);
   }
 
@@ -291,6 +327,7 @@ public class Healthcheck {
     sb.append("    licenseValidUntil: ").append(toIndentedString(licenseValidUntil)).append("\n");
     sb.append("    scenarios: ").append(toIndentedString(scenarios)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    documentsDatabase: ").append(toIndentedString(documentsDatabase)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -319,6 +356,7 @@ public class Healthcheck {
     openapiFields.add("licenseValidUntil");
     openapiFields.add("scenarios");
     openapiFields.add("version");
+    openapiFields.add("metadata");
     openapiFields.add("documentsDatabase");
 
     // a set of required properties/fields (JSON key names)

@@ -203,11 +203,12 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "6", com.regula.documentreader.webclient.model.GraphicsResult.class);
                     classByDiscriminatorValue.put(
-                        "61",
-                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                        "61", com.regula.documentreader.webclient.model.MRZPositionResult.class);
                     classByDiscriminatorValue.put(
                         "62",
                         com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "7", com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
                     classByDiscriminatorValue.put(
                         "8",
                         com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
@@ -216,8 +217,12 @@ public class JSON {
                         "85",
                         com.regula.documentreader.webclient.model.DocumentPositionResult.class);
                     classByDiscriminatorValue.put(
+                        "87", com.regula.documentreader.webclient.model.MRZDetectorResult.class);
+                    classByDiscriminatorValue.put(
                         "9",
                         com.regula.documentreader.webclient.model.ChosenDocumentTypeResult.class);
+                    classByDiscriminatorValue.put(
+                        "97", com.regula.documentreader.webclient.model.FaceDetectionResult.class);
                     classByDiscriminatorValue.put(
                         "AuthenticityResult",
                         com.regula.documentreader.webclient.model.AuthenticityResult.class);
@@ -247,6 +252,9 @@ public class JSON {
                         "EncryptedRCLResult",
                         com.regula.documentreader.webclient.model.EncryptedRCLResult.class);
                     classByDiscriminatorValue.put(
+                        "FaceDetectionResult",
+                        com.regula.documentreader.webclient.model.FaceDetectionResult.class);
+                    classByDiscriminatorValue.put(
                         "GraphicsResult",
                         com.regula.documentreader.webclient.model.GraphicsResult.class);
                     classByDiscriminatorValue.put(
@@ -261,6 +269,15 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "LicenseResult",
                         com.regula.documentreader.webclient.model.LicenseResult.class);
+                    classByDiscriminatorValue.put(
+                        "MRZDetectorResult",
+                        com.regula.documentreader.webclient.model.MRZDetectorResult.class);
+                    classByDiscriminatorValue.put(
+                        "MRZPositionResult",
+                        com.regula.documentreader.webclient.model.MRZPositionResult.class);
+                    classByDiscriminatorValue.put(
+                        "MRZTestQualityResult",
+                        com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
                     classByDiscriminatorValue.put(
                         "StatusResult",
                         com.regula.documentreader.webclient.model.StatusResult.class);
@@ -406,13 +423,24 @@ public class JSON {
         new com.regula.documentreader.webclient.model.EncryptedRCLResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.ErrorPosition.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.FDSIDList.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.FaceApi.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.FaceApiSearch.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.FaceDetection.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.FaceDetectionResult
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.FaceItem.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.FiberResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.FieldItem.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GetTransactionsByTagResponse
             .CustomTypeAdapterFactory());
@@ -478,6 +506,19 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.LivenessParams.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MRZDetectorResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MRZPositionResult.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MRZRowsItem.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MRZTestQuality.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MRZTestQualityResult
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MrzPosition.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.OCRSecurityTextResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -520,6 +561,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RectangleCoordinates
             .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.ResultMRZDetector.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RfidAccessControlInfo
             .CustomTypeAdapterFactory());
@@ -568,10 +611,17 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.StatusResult.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.StringItem.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.StringRecognitionResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.Symbol.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.SymbolCandidate.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.SymbolEstimationItem
+            .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.SymbolRecognitionResult
             .CustomTypeAdapterFactory());

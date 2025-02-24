@@ -68,13 +68,13 @@ public class RfidSessionData {
 
   @SerializedName(SERIALIZED_NAME_APPLICATIONS)
   @javax.annotation.Nonnull
-  private List<RfidApplication> applications = new ArrayList<>();
+  private List<RfidApplication> applications;
 
   public static final String SERIALIZED_NAME_ACCESS_CONTROLS = "AccessControls";
 
   @SerializedName(SERIALIZED_NAME_ACCESS_CONTROLS)
   @javax.annotation.Nonnull
-  private List<RfidAccessControlInfo> accessControls = new ArrayList<>();
+  private List<RfidAccessControlInfo> accessControls;
 
   public static final String SERIALIZED_NAME_CARD_PROPERTIES = "CardProperties";
 
@@ -98,7 +98,7 @@ public class RfidSessionData {
 
   @SerializedName(SERIALIZED_NAME_ROOT_FILES)
   @javax.annotation.Nonnull
-  private List<Object> rootFiles = new ArrayList<>();
+  private List<Object> rootFiles;
 
   public static final String SERIALIZED_NAME_TOTAL_BYTES_SENT = "TotalBytesSent";
 
@@ -134,7 +134,7 @@ public class RfidSessionData {
 
   @SerializedName(SERIALIZED_NAME_SECURITY_OBJECTS)
   @javax.annotation.Nonnull
-  private List<RfidSecurityObject> securityObjects = new ArrayList<>();
+  private List<RfidSecurityObject> securityObjects;
 
   public RfidSessionData() {}
 

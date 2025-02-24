@@ -17,12 +17,11 @@ import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
 import com.regula.documentreader.webclient.model.TextFieldType;
 import com.regula.documentreader.webclient.model.TextPostProcessing;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-@Deprecated //this class will no longer be supported / updated
+@Deprecated // this class will no longer be supported / updated
 public class RecognitionParams extends ProcessParams {
 
   public RecognitionParams withResultTypeOutput(Result... resultTypes) {
@@ -85,7 +84,8 @@ public class RecognitionParams extends ProcessParams {
     return this;
   }
 
-  public RecognitionParams withGenerateDoublePageSpreadImage(Boolean generateDoublePageSpreadImage) {
+  public RecognitionParams withGenerateDoublePageSpreadImage(
+      Boolean generateDoublePageSpreadImage) {
     this.setGenerateDoublePageSpreadImage(generateDoublePageSpreadImage);
     return this;
   }

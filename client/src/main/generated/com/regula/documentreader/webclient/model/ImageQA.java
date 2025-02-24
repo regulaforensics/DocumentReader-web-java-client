@@ -87,7 +87,7 @@ public class ImageQA {
 
   @SerializedName(SERIALIZED_NAME_EXPECTED_PASS)
   @javax.annotation.Nullable
-  private List<InputImageQualityChecks> expectedPass = new ArrayList<>();
+  private List<InputImageQualityChecks> expectedPass;
 
   public ImageQA() {}
 

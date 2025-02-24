@@ -58,7 +58,7 @@ public class AuthenticityCheckResult {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<AuthenticityCheckResultListInner> list = new ArrayList<>();
+  private List<AuthenticityCheckResultListInner> list;
 
   public AuthenticityCheckResult() {}
 

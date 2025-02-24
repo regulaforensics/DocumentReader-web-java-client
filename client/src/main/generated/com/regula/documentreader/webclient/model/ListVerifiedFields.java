@@ -47,7 +47,13 @@ public class ListVerifiedFields {
 
   @SerializedName(SERIALIZED_NAME_P_FIELD_MAPS)
   @javax.annotation.Nonnull
-  private List<VerifiedFieldMap> pFieldMaps = new ArrayList<>();
+  private List<VerifiedFieldMap> pFieldMaps;
+
+  public static final String SERIALIZED_NAME_P_DATE_FORMAT = "pDateFormat";
+
+  @SerializedName(SERIALIZED_NAME_P_DATE_FORMAT)
+  @javax.annotation.Nullable
+  private String pDateFormat;
 
   public ListVerifiedFields() {}
 
@@ -98,6 +104,25 @@ public class ListVerifiedFields {
     this.pFieldMaps = pFieldMaps;
   }
 
+  public ListVerifiedFields pDateFormat(@javax.annotation.Nullable String pDateFormat) {
+    this.pDateFormat = pDateFormat;
+    return this;
+  }
+
+  /**
+   * Get pDateFormat
+   *
+   * @return pDateFormat
+   */
+  @javax.annotation.Nullable
+  public String getpDateFormat() {
+    return pDateFormat;
+  }
+
+  public void setpDateFormat(@javax.annotation.Nullable String pDateFormat) {
+    this.pDateFormat = pDateFormat;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -108,12 +133,13 @@ public class ListVerifiedFields {
     }
     ListVerifiedFields listVerifiedFields = (ListVerifiedFields) o;
     return Objects.equals(this.count, listVerifiedFields.count)
-        && Objects.equals(this.pFieldMaps, listVerifiedFields.pFieldMaps);
+        && Objects.equals(this.pFieldMaps, listVerifiedFields.pFieldMaps)
+        && Objects.equals(this.pDateFormat, listVerifiedFields.pDateFormat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, pFieldMaps);
+    return Objects.hash(count, pFieldMaps, pDateFormat);
   }
 
   @Override
@@ -122,6 +148,7 @@ public class ListVerifiedFields {
     sb.append("class ListVerifiedFields {\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    pFieldMaps: ").append(toIndentedString(pFieldMaps)).append("\n");
+    sb.append("    pDateFormat: ").append(toIndentedString(pDateFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,6 +171,7 @@ public class ListVerifiedFields {
     openapiFields = new HashSet<String>();
     openapiFields.add("Count");
     openapiFields.add("pFieldMaps");
+    openapiFields.add("pDateFormat");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -203,6 +231,13 @@ public class ListVerifiedFields {
       VerifiedFieldMap.validateJsonElement(jsonArraypFieldMaps.get(i));
     }
     ;
+    if ((jsonObj.get("pDateFormat") != null && !jsonObj.get("pDateFormat").isJsonNull())
+        && !jsonObj.get("pDateFormat").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `pDateFormat` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("pDateFormat").toString()));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

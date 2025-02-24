@@ -124,13 +124,13 @@ public class RecognitionResponse {
 
   public <R> R resultByType(Result type) {
     for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
-      switch (type){
+      switch (type) {
         case STATUS:
           return (R) item.getStatusResult();
         case TEXT:
           return (R) item.getTextResult();
         case IMAGES:
-          return (R)item.getImagesResult();
+          return (R) item.getImagesResult();
         case DOCUMENT_TYPE:
           return (R) item.getChosenDocumentTypeResult();
         case AUTHENTICITY:
@@ -138,7 +138,7 @@ public class RecognitionResponse {
         case IMAGE_QUALITY:
           return (R) item.getImageQualityResult();
         default:
-          return null; //TODO ?
+          return null; // TODO ?
       }
     }
     return null;
@@ -148,16 +148,13 @@ public class RecognitionResponse {
     for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
       switch (type) {
         case STATUS:
-          if (item.getStatusResult().getPageIdx() == page_idx)
-            return (R) item.getStatusResult();
+          if (item.getStatusResult().getPageIdx() == page_idx) return (R) item.getStatusResult();
           break;
         case TEXT:
-          if (item.getTextResult().getPageIdx() == page_idx)
-            return (R) item.getTextResult();
+          if (item.getTextResult().getPageIdx() == page_idx) return (R) item.getTextResult();
           break;
         case IMAGES:
-          if (item.getImagesResult().getPageIdx() == page_idx)
-            return (R) item.getImagesResult();
+          if (item.getImagesResult().getPageIdx() == page_idx) return (R) item.getImagesResult();
           break;
         case DOCUMENT_TYPE:
           if (item.getChosenDocumentTypeResult().getPageIdx() == page_idx)
@@ -172,7 +169,7 @@ public class RecognitionResponse {
             return (R) item.getImageQualityResult();
           break;
         default:
-          return null; //TODO ?
+          return null; // TODO ?
       }
     }
     return null;

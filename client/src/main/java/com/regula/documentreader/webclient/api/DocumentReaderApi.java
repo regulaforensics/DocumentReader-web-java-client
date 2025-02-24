@@ -13,11 +13,9 @@ import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import okio.ByteString;
 
 public class DocumentReaderApi {

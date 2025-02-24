@@ -57,7 +57,7 @@ public class TextField {
   public static final String SERIALIZED_NAME_LCID_NAME = "lcidName";
 
   @SerializedName(SERIALIZED_NAME_LCID_NAME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String lcidName;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
@@ -88,19 +88,19 @@ public class TextField {
 
   @SerializedName(SERIALIZED_NAME_VALUE_LIST)
   @javax.annotation.Nonnull
-  private List<TextFieldValue> valueList = new ArrayList<>();
+  private List<TextFieldValue> valueList;
 
   public static final String SERIALIZED_NAME_VALIDITY_LIST = "validityList";
 
   @SerializedName(SERIALIZED_NAME_VALIDITY_LIST)
   @javax.annotation.Nonnull
-  private List<SourceValidity> validityList = new ArrayList<>();
+  private List<SourceValidity> validityList;
 
   public static final String SERIALIZED_NAME_COMPARISON_LIST = "comparisonList";
 
   @SerializedName(SERIALIZED_NAME_COMPARISON_LIST)
   @javax.annotation.Nonnull
-  private List<CrossSourceValueComparison> comparisonList = new ArrayList<>();
+  private List<CrossSourceValueComparison> comparisonList;
 
   public TextField() {}
 
@@ -162,7 +162,7 @@ public class TextField {
     this.lcid = lcid;
   }
 
-  public TextField lcidName(@javax.annotation.Nonnull String lcidName) {
+  public TextField lcidName(@javax.annotation.Nullable String lcidName) {
     this.lcidName = lcidName;
     return this;
   }
@@ -172,12 +172,12 @@ public class TextField {
    *
    * @return lcidName
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getLcidName() {
     return lcidName;
   }
 
-  public void setLcidName(@javax.annotation.Nonnull String lcidName) {
+  public void setLcidName(@javax.annotation.Nullable String lcidName) {
     this.lcidName = lcidName;
   }
 
@@ -432,7 +432,6 @@ public class TextField {
     openapiRequiredFields.add("fieldType");
     openapiRequiredFields.add("fieldName");
     openapiRequiredFields.add("lcid");
-    openapiRequiredFields.add("lcidName");
     openapiRequiredFields.add("status");
     openapiRequiredFields.add("validityStatus");
     openapiRequiredFields.add("comparisonStatus");
@@ -490,7 +489,8 @@ public class TextField {
     }
     // validate the required field `lcid`
     LCID.validateJsonElement(jsonObj.get("lcid"));
-    if (!jsonObj.get("lcidName").isJsonPrimitive()) {
+    if ((jsonObj.get("lcidName") != null && !jsonObj.get("lcidName").isJsonNull())
+        && !jsonObj.get("lcidName").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `lcidName` to be a primitive type in the JSON string but got `%s`",

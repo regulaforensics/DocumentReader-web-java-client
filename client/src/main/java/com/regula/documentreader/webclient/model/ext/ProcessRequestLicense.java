@@ -18,5 +18,4 @@ public class ProcessRequestLicense extends LicenseResult {
     this.setLicense(license);
     return this;
   }
-
 }

@@ -74,7 +74,7 @@ public class DocVisualExtendedFieldRect {
 
   @SerializedName(SERIALIZED_NAME_STRINGS_RESULT)
   @javax.annotation.Nonnull
-  private List<StringRecognitionResult> stringsResult = new ArrayList<>();
+  private List<StringRecognitionResult> stringsResult;
 
   public static final String SERIALIZED_NAME_BUF_LENGTH = "Buf_Length";
 
@@ -105,6 +105,24 @@ public class DocVisualExtendedFieldRect {
   @SerializedName(SERIALIZED_NAME_IN_COMPARISON)
   @javax.annotation.Nullable
   private Integer inComparison;
+
+  public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
+
+  @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
+  @javax.annotation.Nullable
+  private Integer wLCID;
+
+  public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
+
+  @SerializedName(SERIALIZED_NAME_RESERVED2)
+  @javax.annotation.Nullable
+  private Integer reserved2;
+
+  public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
+
+  @SerializedName(SERIALIZED_NAME_RESERVED3)
+  @javax.annotation.Nullable
+  private Integer reserved3;
 
   public DocVisualExtendedFieldRect() {}
 
@@ -332,6 +350,63 @@ public class DocVisualExtendedFieldRect {
     this.inComparison = inComparison;
   }
 
+  public DocVisualExtendedFieldRect wLCID(@javax.annotation.Nullable Integer wLCID) {
+    this.wLCID = wLCID;
+    return this;
+  }
+
+  /**
+   * Get wLCID
+   *
+   * @return wLCID
+   */
+  @javax.annotation.Nullable
+  public Integer getwLCID() {
+    return wLCID;
+  }
+
+  public void setwLCID(@javax.annotation.Nullable Integer wLCID) {
+    this.wLCID = wLCID;
+  }
+
+  public DocVisualExtendedFieldRect reserved2(@javax.annotation.Nullable Integer reserved2) {
+    this.reserved2 = reserved2;
+    return this;
+  }
+
+  /**
+   * Get reserved2
+   *
+   * @return reserved2
+   */
+  @javax.annotation.Nullable
+  public Integer getReserved2() {
+    return reserved2;
+  }
+
+  public void setReserved2(@javax.annotation.Nullable Integer reserved2) {
+    this.reserved2 = reserved2;
+  }
+
+  public DocVisualExtendedFieldRect reserved3(@javax.annotation.Nullable Integer reserved3) {
+    this.reserved3 = reserved3;
+    return this;
+  }
+
+  /**
+   * Get reserved3
+   *
+   * @return reserved3
+   */
+  @javax.annotation.Nullable
+  public Integer getReserved3() {
+    return reserved3;
+  }
+
+  public void setReserved3(@javax.annotation.Nullable Integer reserved3) {
+    this.reserved3 = reserved3;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -351,7 +426,10 @@ public class DocVisualExtendedFieldRect {
         && Objects.equals(this.bufText, docVisualExtendedFieldRect.bufText)
         && Objects.equals(this.fieldMask, docVisualExtendedFieldRect.fieldMask)
         && Objects.equals(this.validity, docVisualExtendedFieldRect.validity)
-        && Objects.equals(this.inComparison, docVisualExtendedFieldRect.inComparison);
+        && Objects.equals(this.inComparison, docVisualExtendedFieldRect.inComparison)
+        && Objects.equals(this.wLCID, docVisualExtendedFieldRect.wLCID)
+        && Objects.equals(this.reserved2, docVisualExtendedFieldRect.reserved2)
+        && Objects.equals(this.reserved3, docVisualExtendedFieldRect.reserved3);
   }
 
   @Override
@@ -367,7 +445,10 @@ public class DocVisualExtendedFieldRect {
         bufText,
         fieldMask,
         validity,
-        inComparison);
+        inComparison,
+        wLCID,
+        reserved2,
+        reserved3);
   }
 
   @Override
@@ -385,6 +466,9 @@ public class DocVisualExtendedFieldRect {
     sb.append("    fieldMask: ").append(toIndentedString(fieldMask)).append("\n");
     sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
     sb.append("    inComparison: ").append(toIndentedString(inComparison)).append("\n");
+    sb.append("    wLCID: ").append(toIndentedString(wLCID)).append("\n");
+    sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
+    sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -416,6 +500,9 @@ public class DocVisualExtendedFieldRect {
     openapiFields.add("FieldMask");
     openapiFields.add("Validity");
     openapiFields.add("InComparison");
+    openapiFields.add("wLCID");
+    openapiFields.add("Reserved2");
+    openapiFields.add("Reserved3");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

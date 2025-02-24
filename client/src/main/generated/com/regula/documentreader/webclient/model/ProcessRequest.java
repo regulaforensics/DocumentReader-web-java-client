@@ -41,7 +41,7 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_LCID_FILTER)
   @javax.annotation.Nullable
-  private List<LCID> lcidFilter = new ArrayList<>();
+  private List<LCID> lcidFilter;
 
   public static final String SERIALIZED_NAME_PROCESS_PARAM = "processParam";
 
@@ -53,7 +53,7 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nullable
-  private List<ProcessRequestImage> list = new ArrayList<>();
+  private List<ProcessRequestImage> list;
 
   public static final String SERIALIZED_NAME_TAG = "tag";
 
@@ -101,7 +101,7 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_PASS_BACK_OBJECT)
   @javax.annotation.Nullable
-  private Map<String, Object> passBackObject = new HashMap<>();
+  private Map<String, Object> passBackObject;
 
   public static final String SERIALIZED_NAME_DTC = "dtc";
 
@@ -113,7 +113,7 @@ public class ProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_IMAGE_URLS)
   @javax.annotation.Nullable
-  private List<String> imageUrls = new ArrayList<>();
+  private List<String> imageUrls;
 
   public ProcessRequest() {}
 

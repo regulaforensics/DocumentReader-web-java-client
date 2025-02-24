@@ -81,6 +81,18 @@ public class FaceApi {
   @javax.annotation.Nullable
   private Integer proxyType;
 
+  public static final String SERIALIZED_NAME_CHILD_AGE_THRESHOLD = "childAgeThreshold";
+
+  @SerializedName(SERIALIZED_NAME_CHILD_AGE_THRESHOLD)
+  @javax.annotation.Nullable
+  private Integer childAgeThreshold;
+
+  public static final String SERIALIZED_NAME_CHILD_DOC_VALIDITY_YEARS = "childDocValidityYears";
+
+  @SerializedName(SERIALIZED_NAME_CHILD_DOC_VALIDITY_YEARS)
+  @javax.annotation.Nullable
+  private Integer childDocValidityYears;
+
   public FaceApi() {}
 
   public FaceApi url(@javax.annotation.Nullable String url) {
@@ -242,6 +254,44 @@ public class FaceApi {
     this.proxyType = proxyType;
   }
 
+  public FaceApi childAgeThreshold(@javax.annotation.Nullable Integer childAgeThreshold) {
+    this.childAgeThreshold = childAgeThreshold;
+    return this;
+  }
+
+  /**
+   * Minimum age of a child, at which portrait comparison result will be effective. Default: 13.
+   *
+   * @return childAgeThreshold
+   */
+  @javax.annotation.Nullable
+  public Integer getChildAgeThreshold() {
+    return childAgeThreshold;
+  }
+
+  public void setChildAgeThreshold(@javax.annotation.Nullable Integer childAgeThreshold) {
+    this.childAgeThreshold = childAgeThreshold;
+  }
+
+  public FaceApi childDocValidityYears(@javax.annotation.Nullable Integer childDocValidityYears) {
+    this.childDocValidityYears = childDocValidityYears;
+    return this;
+  }
+
+  /**
+   * Estimated duration of validity for a child&#39;s passport, years. Default: 5.
+   *
+   * @return childDocValidityYears
+   */
+  @javax.annotation.Nullable
+  public Integer getChildDocValidityYears() {
+    return childDocValidityYears;
+  }
+
+  public void setChildDocValidityYears(@javax.annotation.Nullable Integer childDocValidityYears) {
+    this.childDocValidityYears = childDocValidityYears;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -258,13 +308,24 @@ public class FaceApi {
         && Objects.equals(this.serviceTimeout, faceApi.serviceTimeout)
         && Objects.equals(this.proxy, faceApi.proxy)
         && Objects.equals(this.proxyUserpwd, faceApi.proxyUserpwd)
-        && Objects.equals(this.proxyType, faceApi.proxyType);
+        && Objects.equals(this.proxyType, faceApi.proxyType)
+        && Objects.equals(this.childAgeThreshold, faceApi.childAgeThreshold)
+        && Objects.equals(this.childDocValidityYears, faceApi.childDocValidityYears);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        url, mode, search, threshold, serviceTimeout, proxy, proxyUserpwd, proxyType);
+        url,
+        mode,
+        search,
+        threshold,
+        serviceTimeout,
+        proxy,
+        proxyUserpwd,
+        proxyType,
+        childAgeThreshold,
+        childDocValidityYears);
   }
 
   @Override
@@ -279,6 +340,10 @@ public class FaceApi {
     sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
     sb.append("    proxyUserpwd: ").append(toIndentedString(proxyUserpwd)).append("\n");
     sb.append("    proxyType: ").append(toIndentedString(proxyType)).append("\n");
+    sb.append("    childAgeThreshold: ").append(toIndentedString(childAgeThreshold)).append("\n");
+    sb.append("    childDocValidityYears: ")
+        .append(toIndentedString(childDocValidityYears))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -307,6 +372,8 @@ public class FaceApi {
     openapiFields.add("proxy");
     openapiFields.add("proxy_userpwd");
     openapiFields.add("proxy_type");
+    openapiFields.add("childAgeThreshold");
+    openapiFields.add("childDocValidityYears");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

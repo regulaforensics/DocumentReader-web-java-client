@@ -61,13 +61,13 @@ public class RfidAccessControlInfo {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications = new ArrayList<>();
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_ACCESS_CONTROL_OPTIONS = "AccessControlOptions";
 
   @SerializedName(SERIALIZED_NAME_ACCESS_CONTROL_OPTIONS)
   @javax.annotation.Nullable
-  private List<Object> accessControlOptions = new ArrayList<>();
+  private List<Object> accessControlOptions;
 
   public RfidAccessControlInfo() {}
 

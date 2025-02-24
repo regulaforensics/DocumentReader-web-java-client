@@ -79,7 +79,7 @@ public class RfidApplication {
 
   @SerializedName(SERIALIZED_NAME_FILES)
   @javax.annotation.Nonnull
-  private List<RfidDataFile> files = new ArrayList<>();
+  private List<RfidDataFile> files;
 
   public RfidApplication() {}
 

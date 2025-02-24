@@ -62,13 +62,13 @@ public class RfidSecurityObject {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications = new ArrayList<>();
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_SIGNER_INFOS = "SignerInfos";
 
   @SerializedName(SERIALIZED_NAME_SIGNER_INFOS)
   @javax.annotation.Nonnull
-  private List<RfidSignerInfoEx> signerInfos = new ArrayList<>();
+  private List<RfidSignerInfoEx> signerInfos;
 
   public RfidSecurityObject() {}
 

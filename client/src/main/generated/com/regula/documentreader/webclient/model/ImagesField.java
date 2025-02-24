@@ -53,12 +53,12 @@ public class ImagesField {
 
   @SerializedName(SERIALIZED_NAME_VALUE_LIST)
   @javax.annotation.Nonnull
-  private List<ImagesFieldValue> valueList = new ArrayList<>();
+  private List<ImagesFieldValue> valueList;
 
   public static final String SERIALIZED_NAME_VALUE_COUNT = "valueCount";
 
   @SerializedName(SERIALIZED_NAME_VALUE_COUNT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal valueCount;
 
   public ImagesField() {}
@@ -128,7 +128,7 @@ public class ImagesField {
     this.valueList = valueList;
   }
 
-  public ImagesField valueCount(@javax.annotation.Nonnull BigDecimal valueCount) {
+  public ImagesField valueCount(@javax.annotation.Nullable BigDecimal valueCount) {
     this.valueCount = valueCount;
     return this;
   }
@@ -138,12 +138,12 @@ public class ImagesField {
    *
    * @return valueCount
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getValueCount() {
     return valueCount;
   }
 
-  public void setValueCount(@javax.annotation.Nonnull BigDecimal valueCount) {
+  public void setValueCount(@javax.annotation.Nullable BigDecimal valueCount) {
     this.valueCount = valueCount;
   }
 
@@ -205,7 +205,6 @@ public class ImagesField {
     openapiRequiredFields.add("fieldName");
     openapiRequiredFields.add("fieldType");
     openapiRequiredFields.add("valueList");
-    openapiRequiredFields.add("valueCount");
   }
 
   /**

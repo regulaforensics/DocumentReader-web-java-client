@@ -46,7 +46,7 @@ public class PointsContainer {
 
   @SerializedName(SERIALIZED_NAME_POINTS_LIST)
   @javax.annotation.Nonnull
-  private List<Point> pointsList = new ArrayList<>();
+  private List<Point> pointsList;
 
   public PointsContainer() {}
 

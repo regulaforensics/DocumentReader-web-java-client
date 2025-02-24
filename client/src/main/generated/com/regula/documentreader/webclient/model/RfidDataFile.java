@@ -80,25 +80,25 @@ public class RfidDataFile {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications = new ArrayList<>();
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_TEXT = "DocFields_Text";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_TEXT)
   @javax.annotation.Nonnull
-  private List<TextFieldType> docFieldsText = new ArrayList<>();
+  private List<TextFieldType> docFieldsText;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_GRAPHICS = "DocFields_Graphics";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_GRAPHICS)
   @javax.annotation.Nonnull
-  private List<GraphicFieldType> docFieldsGraphics = new ArrayList<>();
+  private List<GraphicFieldType> docFieldsGraphics;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_ORIGINALS = "DocFields_Originals";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_ORIGINALS)
   @javax.annotation.Nonnull
-  private List<GraphicFieldType> docFieldsOriginals = new ArrayList<>();
+  private List<GraphicFieldType> docFieldsOriginals;
 
   public RfidDataFile() {}
 

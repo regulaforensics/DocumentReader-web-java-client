@@ -2,10 +2,8 @@ package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.GraphicFieldType;
 import com.regula.documentreader.webclient.model.ImagesAvailableSource;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Nullable;
 
 public class Images extends com.regula.documentreader.webclient.model.Images {
@@ -34,13 +32,12 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
 
   public Images withFieldList(List<ImagesField> fieldList) {
     List<com.regula.documentreader.webclient.model.ImagesField> fields = new ArrayList<>();
-    for (ImagesField field : fieldList){
+    for (ImagesField field : fieldList) {
       fields.add(field);
     }
     super.setFieldList(fields);
     return this;
   }
-
 
   @Nullable
   public ImagesField getField(GraphicFieldType fieldType) {

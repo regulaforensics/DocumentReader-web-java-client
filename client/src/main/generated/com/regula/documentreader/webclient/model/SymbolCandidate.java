@@ -45,6 +45,18 @@ public class SymbolCandidate {
   @javax.annotation.Nonnull
   private Integer symbolProbability;
 
+  public static final String SERIALIZED_NAME_PROPERTY_CLASS = "Class";
+
+  @SerializedName(SERIALIZED_NAME_PROPERTY_CLASS)
+  @javax.annotation.Nullable
+  private Integer propertyClass;
+
+  public static final String SERIALIZED_NAME_SUB_CLASS = "SubClass";
+
+  @SerializedName(SERIALIZED_NAME_SUB_CLASS)
+  @javax.annotation.Nullable
+  private Integer subClass;
+
   public SymbolCandidate() {}
 
   public SymbolCandidate symbolCode(@javax.annotation.Nonnull Integer symbolCode) {
@@ -85,6 +97,44 @@ public class SymbolCandidate {
     this.symbolProbability = symbolProbability;
   }
 
+  public SymbolCandidate propertyClass(@javax.annotation.Nullable Integer propertyClass) {
+    this.propertyClass = propertyClass;
+    return this;
+  }
+
+  /**
+   * Get propertyClass
+   *
+   * @return propertyClass
+   */
+  @javax.annotation.Nullable
+  public Integer getPropertyClass() {
+    return propertyClass;
+  }
+
+  public void setPropertyClass(@javax.annotation.Nullable Integer propertyClass) {
+    this.propertyClass = propertyClass;
+  }
+
+  public SymbolCandidate subClass(@javax.annotation.Nullable Integer subClass) {
+    this.subClass = subClass;
+    return this;
+  }
+
+  /**
+   * Get subClass
+   *
+   * @return subClass
+   */
+  @javax.annotation.Nullable
+  public Integer getSubClass() {
+    return subClass;
+  }
+
+  public void setSubClass(@javax.annotation.Nullable Integer subClass) {
+    this.subClass = subClass;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -95,12 +145,14 @@ public class SymbolCandidate {
     }
     SymbolCandidate symbolCandidate = (SymbolCandidate) o;
     return Objects.equals(this.symbolCode, symbolCandidate.symbolCode)
-        && Objects.equals(this.symbolProbability, symbolCandidate.symbolProbability);
+        && Objects.equals(this.symbolProbability, symbolCandidate.symbolProbability)
+        && Objects.equals(this.propertyClass, symbolCandidate.propertyClass)
+        && Objects.equals(this.subClass, symbolCandidate.subClass);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolCode, symbolProbability);
+    return Objects.hash(symbolCode, symbolProbability, propertyClass, subClass);
   }
 
   @Override
@@ -109,6 +161,8 @@ public class SymbolCandidate {
     sb.append("class SymbolCandidate {\n");
     sb.append("    symbolCode: ").append(toIndentedString(symbolCode)).append("\n");
     sb.append("    symbolProbability: ").append(toIndentedString(symbolProbability)).append("\n");
+    sb.append("    propertyClass: ").append(toIndentedString(propertyClass)).append("\n");
+    sb.append("    subClass: ").append(toIndentedString(subClass)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -131,6 +185,8 @@ public class SymbolCandidate {
     openapiFields = new HashSet<String>();
     openapiFields.add("SymbolCode");
     openapiFields.add("SymbolProbability");
+    openapiFields.add("Class");
+    openapiFields.add("SubClass");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
