@@ -8,8 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.annotation.Nullable;
+import org.springframework.beans.BeanUtils;
 
 public class Text extends com.regula.documentreader.webclient.model.Text {
+
+  public Text(com.regula.documentreader.webclient.model.Text textContainer) {
+    BeanUtils.copyProperties(textContainer, this);
+  }
 
   @Nullable
   public TextField getField(TextFieldType fieldType) {

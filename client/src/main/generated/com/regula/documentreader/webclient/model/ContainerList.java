@@ -46,7 +46,7 @@ public class ContainerList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<ContainerListListInner> list;
+  private List<ContainerItem> list;
 
   public ContainerList() {}
 
@@ -69,12 +69,12 @@ public class ContainerList {
     this.count = count;
   }
 
-  public ContainerList list(@javax.annotation.Nonnull List<ContainerListListInner> list) {
+  public ContainerList list(@javax.annotation.Nonnull List<ContainerItem> list) {
     this.list = list;
     return this;
   }
 
-  public ContainerList addListItem(ContainerListListInner listItem) {
+  public ContainerList addListItem(ContainerItem listItem) {
     if (this.list == null) {
       this.list = new ArrayList<>();
     }
@@ -88,11 +88,11 @@ public class ContainerList {
    * @return list
    */
   @javax.annotation.Nonnull
-  public List<ContainerListListInner> getList() {
+  public List<ContainerItem> getList() {
     return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<ContainerListListInner> list) {
+  public void setList(@javax.annotation.Nonnull List<ContainerItem> list) {
     this.list = list;
   }
 
@@ -198,7 +198,7 @@ public class ContainerList {
     JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
     for (int i = 0; i < jsonArraylist.size(); i++) {
-      ContainerListListInner.validateJsonElement(jsonArraylist.get(i));
+      ContainerItem.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

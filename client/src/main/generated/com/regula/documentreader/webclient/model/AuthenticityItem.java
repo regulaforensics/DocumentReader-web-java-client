@@ -14,6 +14,7 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
@@ -30,17 +31,15 @@ import java.util.logging.Logger;
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.11.0")
-public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
-  private static final Logger log =
-      Logger.getLogger(AuthenticityCheckResultListInner.class.getName());
+public class AuthenticityItem extends AbstractOpenApiSchema {
+  private static final Logger log = Logger.getLogger(AuthenticityItem.class.getName());
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!AuthenticityCheckResultListInner.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'AuthenticityCheckResultListInner' and its
-                     // subtypes
+      if (!AuthenticityItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'AuthenticityItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
       final TypeAdapter<SecurityFeatureResult> adapterSecurityFeatureResult =
@@ -55,10 +54,9 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
           gson.getDelegateAdapter(this, TypeToken.get(PhotoIdentResult.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<AuthenticityCheckResultListInner>() {
+          new TypeAdapter<AuthenticityItem>() {
             @Override
-            public void write(JsonWriter out, AuthenticityCheckResultListInner value)
-                throws IOException {
+            public void write(JsonWriter out, AuthenticityItem value) throws IOException {
               if (value == null || value.getActualInstance() == null) {
                 elementAdapter.write(out, null);
                 return;
@@ -107,9 +105,137 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
             }
 
             @Override
-            public AuthenticityCheckResultListInner read(JsonReader in) throws IOException {
+            public AuthenticityItem read(JsonReader in) throws IOException {
               Object deserialized = null;
               JsonElement jsonElement = elementAdapter.read(in);
+
+              JsonObject jsonObject = jsonElement.getAsJsonObject();
+
+              // use discriminator value for faster oneOf lookup
+              AuthenticityItem newAuthenticityItem = new AuthenticityItem();
+              if (jsonObject.get("Type") == null) {
+                log.log(
+                    Level.WARNING,
+                    "Failed to lookup discriminator value for AuthenticityItem as `Type` was not found in the payload or the payload is empty.");
+              } else {
+                // look up the discriminator value in the field `Type`
+                switch (jsonObject.get("Type").getAsString()) {
+                  case "1":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "1024":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "1048576":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "128":
+                    deserialized = adapterPhotoIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "131072":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "16":
+                    deserialized = adapterFiberResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "16384":
+                    deserialized = adapterFiberResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "2":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "2048":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "256":
+                    deserialized = adapterPhotoIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "262144":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "32":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "32768":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "4":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "4096":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "512":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "524288":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "64":
+                    deserialized = adapterOCRSecurityTextResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "65536":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "8":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "8192":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "8388608":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "FiberResult":
+                    deserialized = adapterFiberResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "IdentResult":
+                    deserialized = adapterIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "OCRSecurityTextResult":
+                    deserialized = adapterOCRSecurityTextResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "PhotoIdentResult":
+                    deserialized = adapterPhotoIdentResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  case "SecurityFeatureResult":
+                    deserialized = adapterSecurityFeatureResult.fromJsonTree(jsonObject);
+                    newAuthenticityItem.setActualInstance(deserialized);
+                    return newAuthenticityItem;
+                  default:
+                    log.log(
+                        Level.WARNING,
+                        String.format(
+                            "Failed to lookup discriminator value `%s` for AuthenticityItem. Possible values: 1 1024 1048576 128 131072 16 16384 2 2048 256 262144 32 32768 4 4096 512 524288 64 65536 8 8192 8388608 FiberResult IdentResult OCRSecurityTextResult PhotoIdentResult SecurityFeatureResult",
+                            jsonObject.get("Type").getAsString()));
+                }
+              }
 
               int match = 0;
               ArrayList<String> errorMessages = new ArrayList<>();
@@ -189,14 +315,14 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
               }
 
               if (match == 1) {
-                AuthenticityCheckResultListInner ret = new AuthenticityCheckResultListInner();
+                AuthenticityItem ret = new AuthenticityItem();
                 ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                 return ret;
               }
 
               throw new IOException(
                   String.format(
-                      "Failed deserialization for AuthenticityCheckResultListInner: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+                      "Failed deserialization for AuthenticityItem: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
                       match, errorMessages, jsonElement.toString()));
             }
           }.nullSafe();
@@ -206,11 +332,11 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
   // store a list of schema names defined in oneOf
   public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
-  public AuthenticityCheckResultListInner() {
+  public AuthenticityItem() {
     super("oneOf", Boolean.FALSE);
   }
 
-  public AuthenticityCheckResultListInner(Object o) {
+  public AuthenticityItem(Object o) {
     super("oneOf", Boolean.FALSE);
     setActualInstance(o);
   }
@@ -225,7 +351,7 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
 
   @Override
   public Map<String, Class<?>> getSchemas() {
-    return AuthenticityCheckResultListInner.schemas;
+    return AuthenticityItem.schemas;
   }
 
   /**
@@ -338,8 +464,7 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to
-   *     AuthenticityCheckResultListInner
+   * @throws IOException if the JSON Element is invalid with respect to AuthenticityItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     // validate oneOf schemas one by one
@@ -395,25 +520,24 @@ public class AuthenticityCheckResultListInner extends AbstractOpenApiSchema {
     if (validCount != 1) {
       throw new IOException(
           String.format(
-              "The JSON string is invalid for AuthenticityCheckResultListInner with oneOf schemas: FiberResult, IdentResult, OCRSecurityTextResult, PhotoIdentResult, SecurityFeatureResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+              "The JSON string is invalid for AuthenticityItem with oneOf schemas: FiberResult, IdentResult, OCRSecurityTextResult, PhotoIdentResult, SecurityFeatureResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
               validCount, errorMessages, jsonElement.toString()));
     }
   }
 
   /**
-   * Create an instance of AuthenticityCheckResultListInner given an JSON string
+   * Create an instance of AuthenticityItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of AuthenticityCheckResultListInner
-   * @throws IOException if the JSON string is invalid with respect to
-   *     AuthenticityCheckResultListInner
+   * @return An instance of AuthenticityItem
+   * @throws IOException if the JSON string is invalid with respect to AuthenticityItem
    */
-  public static AuthenticityCheckResultListInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AuthenticityCheckResultListInner.class);
+  public static AuthenticityItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AuthenticityItem.class);
   }
 
   /**
-   * Convert an instance of AuthenticityCheckResultListInner to an JSON string
+   * Convert an instance of AuthenticityItem to an JSON string
    *
    * @return JSON string
    */

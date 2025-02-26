@@ -1,6 +1,7 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.regula.documentreader.webclient.Base64;
 import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.authenticity.Authenticity;
@@ -40,7 +41,7 @@ public class RecognitionResponse {
   public Text text() {
     TextResult result = resultByType(Result.TEXT);
     if (result != null) {
-      return (Text) result.getText();
+      return new Text(result.getText());
     }
     return null;
   }
@@ -122,54 +123,39 @@ public class RecognitionResponse {
     return null;
   }
 
+  private boolean isMatchingType(Object currentInstance, String type, Integer pageIdx) {
+    Gson gson = new Gson();
+    String json = gson.toJson(currentInstance);
+    JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
+
+    boolean isTypeAvailable = jsonObject.has("result_type");
+    boolean isIdxAvailable = pageIdx != null && jsonObject.has("page_idx");
+    String typeValue = isTypeAvailable ? jsonObject.get("result_type").getAsString() : null;
+    int idxValue = isIdxAvailable ? jsonObject.get("page_idx").getAsInt() : -1;
+
+    boolean isMatchingType = isTypeAvailable && typeValue.equals(type);
+    boolean isMatchingIdx = pageIdx == null || (isIdxAvailable && idxValue == pageIdx);
+
+    return isMatchingType && isMatchingIdx;
+  }
+
   public <R> R resultByType(Result type) {
-    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
-      switch (type) {
-        case STATUS:
-          return (R) item.getStatusResult();
-        case TEXT:
-          return (R) item.getTextResult();
-        case IMAGES:
-          return (R) item.getImagesResult();
-        case DOCUMENT_TYPE:
-          return (R) item.getChosenDocumentTypeResult();
-        case AUTHENTICITY:
-          return (R) item.getAuthenticityResult();
-        case IMAGE_QUALITY:
-          return (R) item.getImageQualityResult();
-        default:
-          return null; // TODO ?
+    for (ContainerItem item : originalResponse.getContainerList().getList()) {
+      Object currentInstance = item.getActualInstance();
+
+      if (isMatchingType(currentInstance, type.toString(), null)) {
+        return (R) currentInstance;
       }
     }
     return null;
   }
 
   public <R> R getResult(Result type, int page_idx) {
-    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
-      switch (type) {
-        case STATUS:
-          if (item.getStatusResult().getPageIdx() == page_idx) return (R) item.getStatusResult();
-          break;
-        case TEXT:
-          if (item.getTextResult().getPageIdx() == page_idx) return (R) item.getTextResult();
-          break;
-        case IMAGES:
-          if (item.getImagesResult().getPageIdx() == page_idx) return (R) item.getImagesResult();
-          break;
-        case DOCUMENT_TYPE:
-          if (item.getChosenDocumentTypeResult().getPageIdx() == page_idx)
-            return (R) item.getChosenDocumentTypeResult();
-          break;
-        case AUTHENTICITY:
-          if (item.getAuthenticityResult().getPageIdx() == page_idx)
-            return (R) item.getAuthenticityResult();
-          break;
-        case IMAGE_QUALITY:
-          if (item.getImageQualityResult().getPageIdx() == page_idx)
-            return (R) item.getImageQualityResult();
-          break;
-        default:
-          return null; // TODO ?
+    for (ContainerItem item : originalResponse.getContainerList().getList()) {
+      Object currentInstance = item.getActualInstance();
+
+      if (isMatchingType(currentInstance, type.toString(), page_idx)) {
+        return (R) currentInstance;
       }
     }
     return null;
@@ -177,23 +163,12 @@ public class RecognitionResponse {
 
   public <R> List<R> resultsByType(Result type) {
     List<R> results = new ArrayList<>();
-    for (ContainerListListInner item : originalResponse.getContainerList().getList()) {
-      switch (type) {
-        case STATUS:
-          results.add((R) item.getStatusResult());
-          break;
-        case TEXT:
-          results.add((R) item.getTextResult());
-        case IMAGES:
-          results.add((R) item.getImagesResult());
-        case DOCUMENT_TYPE:
-          results.add((R) item.getChosenDocumentTypeResult());
-        case AUTHENTICITY:
-          results.add((R) item.getAuthenticityResult());
-        case IMAGE_QUALITY:
-          results.add((R) item.getImageQualityResult());
-        default:
-          break;
+
+    for (ContainerItem item : originalResponse.getContainerList().getList()) {
+      Object currentInstance = item.getActualInstance();
+
+      if (isMatchingType(currentInstance, type.toString(), null)) {
+        results.add((R) currentInstance);
       }
     }
     return results;

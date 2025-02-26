@@ -58,7 +58,7 @@ public class AuthenticityCheckResult {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<AuthenticityCheckResultListInner> list;
+  private List<AuthenticityItem> list;
 
   public AuthenticityCheckResult() {}
 
@@ -119,13 +119,12 @@ public class AuthenticityCheckResult {
     this.count = count;
   }
 
-  public AuthenticityCheckResult list(
-      @javax.annotation.Nonnull List<AuthenticityCheckResultListInner> list) {
+  public AuthenticityCheckResult list(@javax.annotation.Nonnull List<AuthenticityItem> list) {
     this.list = list;
     return this;
   }
 
-  public AuthenticityCheckResult addListItem(AuthenticityCheckResultListInner listItem) {
+  public AuthenticityCheckResult addListItem(AuthenticityItem listItem) {
     if (this.list == null) {
       this.list = new ArrayList<>();
     }
@@ -139,11 +138,11 @@ public class AuthenticityCheckResult {
    * @return list
    */
   @javax.annotation.Nonnull
-  public List<AuthenticityCheckResultListInner> getList() {
+  public List<AuthenticityItem> getList() {
     return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResultListInner> list) {
+  public void setList(@javax.annotation.Nonnull List<AuthenticityItem> list) {
     this.list = list;
   }
 
@@ -260,7 +259,7 @@ public class AuthenticityCheckResult {
     JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
     for (int i = 0; i < jsonArraylist.size(); i++) {
-      AuthenticityCheckResultListInner.validateJsonElement(jsonArraylist.get(i));
+      AuthenticityItem.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

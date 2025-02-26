@@ -57,14 +57,10 @@ public class JSON {
     GsonFireBuilder fireBuilder =
         new GsonFireBuilder()
             .registerTypeSelector(
-                com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner.class,
-                new TypeSelector<
-                    com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner>() {
+                com.regula.documentreader.webclient.model.AuthenticityItem.class,
+                new TypeSelector<com.regula.documentreader.webclient.model.AuthenticityItem>() {
                   @Override
-                  public Class<
-                          ? extends
-                              com.regula.documentreader.webclient.model
-                                  .AuthenticityCheckResultListInner>
+                  public Class<? extends com.regula.documentreader.webclient.model.AuthenticityItem>
                       getClassForElement(JsonElement readElement) {
                     Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
                     classByDiscriminatorValue.put(
@@ -131,21 +127,17 @@ public class JSON {
                         "SecurityFeatureResult",
                         com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
-                        "AuthenticityCheckResult_List_inner",
-                        com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner
-                            .class);
+                        "AuthenticityItem",
+                        com.regula.documentreader.webclient.model.AuthenticityItem.class);
                     return getClassByDiscriminator(
                         classByDiscriminatorValue, getDiscriminatorValue(readElement, "Type"));
                   }
                 })
             .registerTypeSelector(
-                com.regula.documentreader.webclient.model.ContainerListListInner.class,
-                new TypeSelector<
-                    com.regula.documentreader.webclient.model.ContainerListListInner>() {
+                com.regula.documentreader.webclient.model.ContainerItem.class,
+                new TypeSelector<com.regula.documentreader.webclient.model.ContainerItem>() {
                   @Override
-                  public Class<
-                          ? extends
-                              com.regula.documentreader.webclient.model.ContainerListListInner>
+                  public Class<? extends com.regula.documentreader.webclient.model.ContainerItem>
                       getClassForElement(JsonElement readElement) {
                     Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
                     classByDiscriminatorValue.put(
@@ -287,8 +279,8 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "TextResult", com.regula.documentreader.webclient.model.TextResult.class);
                     classByDiscriminatorValue.put(
-                        "ContainerList_List_inner",
-                        com.regula.documentreader.webclient.model.ContainerListListInner.class);
+                        "ContainerItem",
+                        com.regula.documentreader.webclient.model.ContainerItem.class);
                     return getClassByDiscriminator(
                         classByDiscriminatorValue,
                         getDiscriminatorValue(readElement, "result_type"));
@@ -345,8 +337,7 @@ public class JSON {
         new com.regula.documentreader.webclient.model.AuthenticityCheckResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner
-            .CustomTypeAdapterFactory());
+        new com.regula.documentreader.webclient.model.AuthenticityItem.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.AuthenticityResult
             .CustomTypeAdapterFactory());
@@ -365,10 +356,9 @@ public class JSON {
         new com.regula.documentreader.webclient.model.ChosenDocumentTypeResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.ContainerList.CustomTypeAdapterFactory());
+        new com.regula.documentreader.webclient.model.ContainerItem.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.ContainerListListInner
-            .CustomTypeAdapterFactory());
+        new com.regula.documentreader.webclient.model.ContainerList.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.CrossSourceValueComparison
             .CustomTypeAdapterFactory());

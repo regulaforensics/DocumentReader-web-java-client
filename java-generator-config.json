@@ -8,5 +8,6 @@
   "modelPackage": "com.regula.documentreader.webclient.model",
   "apiPackage": "com.regula.documentreader.webclient.api",
   "sourceFolder": "src/main/generated",
-  "containerDefaultToNull": true
+  "containerDefaultToNull": true,
+  "useOneOfDiscriminatorLookup": true
 }

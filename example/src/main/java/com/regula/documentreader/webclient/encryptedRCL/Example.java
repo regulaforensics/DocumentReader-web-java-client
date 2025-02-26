@@ -8,7 +8,7 @@ import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.example.Main;
 import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.ContainerList;
-import com.regula.documentreader.webclient.model.ContainerListListInner;
+import com.regula.documentreader.webclient.model.ContainerItem;
 import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
 import com.regula.documentreader.webclient.model.MeasureSystem;
 import com.regula.documentreader.webclient.model.ProcessParams;
@@ -51,8 +51,8 @@ public class Example {
 
         var containerList = new ContainerList();
         containerList.setList(new ArrayList<>(Arrays.asList(
-                new ContainerListListInner(encryptedRCL),
-                new ContainerListListInner(license)
+                new ContainerItem(encryptedRCL),
+                new ContainerItem(license)
         )));
 
         ProcessParams requestParams = new RecognitionParams()

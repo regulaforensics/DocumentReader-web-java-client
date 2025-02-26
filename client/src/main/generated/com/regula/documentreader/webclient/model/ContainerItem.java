@@ -14,6 +14,7 @@ package com.regula.documentreader.webclient.model;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
@@ -30,15 +31,15 @@ import java.util.logging.Logger;
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.11.0")
-public class ContainerListListInner extends AbstractOpenApiSchema {
-  private static final Logger log = Logger.getLogger(ContainerListListInner.class.getName());
+public class ContainerItem extends AbstractOpenApiSchema {
+  private static final Logger log = Logger.getLogger(ContainerItem.class.getName());
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!ContainerListListInner.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'ContainerListListInner' and its subtypes
+      if (!ContainerItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'ContainerItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
       final TypeAdapter<StatusResult> adapterStatusResult =
@@ -85,9 +86,9 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           gson.getDelegateAdapter(this, TypeToken.get(MRZTestQualityResult.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<ContainerListListInner>() {
+          new TypeAdapter<ContainerItem>() {
             @Override
-            public void write(JsonWriter out, ContainerListListInner value) throws IOException {
+            public void write(JsonWriter out, ContainerItem value) throws IOException {
               if (value == null || value.getActualInstance() == null) {
                 elementAdapter.write(out, null);
                 return;
@@ -258,9 +259,249 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
             }
 
             @Override
-            public ContainerListListInner read(JsonReader in) throws IOException {
+            public ContainerItem read(JsonReader in) throws IOException {
               Object deserialized = null;
               JsonElement jsonElement = elementAdapter.read(in);
+
+              JsonObject jsonObject = jsonElement.getAsJsonObject();
+
+              // use discriminator value for faster oneOf lookup
+              ContainerItem newContainerItem = new ContainerItem();
+              if (jsonObject.get("result_type") == null) {
+                log.log(
+                    Level.WARNING,
+                    "Failed to lookup discriminator value for ContainerItem as `result_type` was not found in the payload or the payload is empty.");
+              } else {
+                // look up the discriminator value in the field `result_type`
+                switch (jsonObject.get("result_type").getAsString()) {
+                  case "1":
+                    deserialized = adapterDocumentImageResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "102":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "103":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "104":
+                    deserialized = adapterDocumentBinaryInfoResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "109":
+                    deserialized = adapterByteArrayResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "15":
+                    deserialized = adapterLexicalAnalysisResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "16":
+                    deserialized = adapterDocumentImageResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "17":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "18":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "19":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "20":
+                    deserialized = adapterAuthenticityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "26":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "3":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "30":
+                    deserialized = adapterImageQualityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "32":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "33":
+                    deserialized = adapterStatusResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "34":
+                    deserialized = adapterAuthenticityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "35":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "36":
+                    deserialized = adapterTextResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "37":
+                    deserialized = adapterImagesResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "38":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "39":
+                    deserialized = adapterAuthenticityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "49":
+                    deserialized = adapterEncryptedRCLResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "5":
+                    deserialized = adapterDocBarCodeInfo.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "50":
+                    deserialized = adapterLicenseResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "6":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "61":
+                    deserialized = adapterMRZPositionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "62":
+                    deserialized = adapterDocumentPositionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "7":
+                    deserialized = adapterMRZTestQualityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "8":
+                    deserialized = adapterDocumentTypesCandidatesResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "85":
+                    deserialized = adapterDocumentPositionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "87":
+                    deserialized = adapterMRZDetectorResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "9":
+                    deserialized = adapterChosenDocumentTypeResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "97":
+                    deserialized = adapterFaceDetectionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "AuthenticityResult":
+                    deserialized = adapterAuthenticityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "ByteArrayResult":
+                    deserialized = adapterByteArrayResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "ChosenDocumentTypeResult":
+                    deserialized = adapterChosenDocumentTypeResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "DocBarCodeInfo":
+                    deserialized = adapterDocBarCodeInfo.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "DocumentBinaryInfoResult":
+                    deserialized = adapterDocumentBinaryInfoResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "DocumentImageResult":
+                    deserialized = adapterDocumentImageResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "DocumentPositionResult":
+                    deserialized = adapterDocumentPositionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "DocumentTypesCandidatesResult":
+                    deserialized = adapterDocumentTypesCandidatesResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "EncryptedRCLResult":
+                    deserialized = adapterEncryptedRCLResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "FaceDetectionResult":
+                    deserialized = adapterFaceDetectionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "GraphicsResult":
+                    deserialized = adapterGraphicsResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "ImageQualityResult":
+                    deserialized = adapterImageQualityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "ImagesResult":
+                    deserialized = adapterImagesResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "LexicalAnalysisResult":
+                    deserialized = adapterLexicalAnalysisResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "LicenseResult":
+                    deserialized = adapterLicenseResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "MRZDetectorResult":
+                    deserialized = adapterMRZDetectorResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "MRZPositionResult":
+                    deserialized = adapterMRZPositionResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "MRZTestQualityResult":
+                    deserialized = adapterMRZTestQualityResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "StatusResult":
+                    deserialized = adapterStatusResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "TextDataResult":
+                    deserialized = adapterTextDataResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  case "TextResult":
+                    deserialized = adapterTextResult.fromJsonTree(jsonObject);
+                    newContainerItem.setActualInstance(deserialized);
+                    return newContainerItem;
+                  default:
+                    log.log(
+                        Level.WARNING,
+                        String.format(
+                            "Failed to lookup discriminator value `%s` for ContainerItem. Possible values: 1 102 103 104 109 15 16 17 18 19 20 26 3 30 32 33 34 35 36 37 38 39 49 5 50 6 61 62 7 8 85 87 9 97 AuthenticityResult ByteArrayResult ChosenDocumentTypeResult DocBarCodeInfo DocumentBinaryInfoResult DocumentImageResult DocumentPositionResult DocumentTypesCandidatesResult EncryptedRCLResult FaceDetectionResult GraphicsResult ImageQualityResult ImagesResult LexicalAnalysisResult LicenseResult MRZDetectorResult MRZPositionResult MRZTestQualityResult StatusResult TextDataResult TextResult",
+                            jsonObject.get("result_type").getAsString()));
+                }
+              }
 
               int match = 0;
               ArrayList<String> errorMessages = new ArrayList<>();
@@ -579,14 +820,14 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
               }
 
               if (match == 1) {
-                ContainerListListInner ret = new ContainerListListInner();
+                ContainerItem ret = new ContainerItem();
                 ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                 return ret;
               }
 
               throw new IOException(
                   String.format(
-                      "Failed deserialization for ContainerListListInner: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+                      "Failed deserialization for ContainerItem: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
                       match, errorMessages, jsonElement.toString()));
             }
           }.nullSafe();
@@ -596,11 +837,11 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
   // store a list of schema names defined in oneOf
   public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
-  public ContainerListListInner() {
+  public ContainerItem() {
     super("oneOf", Boolean.FALSE);
   }
 
-  public ContainerListListInner(Object o) {
+  public ContainerItem(Object o) {
     super("oneOf", Boolean.FALSE);
     setActualInstance(o);
   }
@@ -631,7 +872,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
 
   @Override
   public Map<String, Class<?>> getSchemas() {
-    return ContainerListListInner.schemas;
+    return ContainerItem.schemas;
   }
 
   /**
@@ -1011,7 +1252,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContainerListListInner
+   * @throws IOException if the JSON Element is invalid with respect to ContainerItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     // validate oneOf schemas one by one
@@ -1221,24 +1462,24 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     if (validCount != 1) {
       throw new IOException(
           String.format(
-              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+              "The JSON string is invalid for ContainerItem with oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
               validCount, errorMessages, jsonElement.toString()));
     }
   }
 
   /**
-   * Create an instance of ContainerListListInner given an JSON string
+   * Create an instance of ContainerItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ContainerListListInner
-   * @throws IOException if the JSON string is invalid with respect to ContainerListListInner
+   * @return An instance of ContainerItem
+   * @throws IOException if the JSON string is invalid with respect to ContainerItem
    */
-  public static ContainerListListInner fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ContainerListListInner.class);
+  public static ContainerItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ContainerItem.class);
   }
 
   /**
-   * Convert an instance of ContainerListListInner to an JSON string
+   * Convert an instance of ContainerItem to an JSON string
    *
    * @return JSON string
    */
