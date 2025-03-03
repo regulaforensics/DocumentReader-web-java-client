@@ -21,10 +21,10 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
     TextField result = null;
     for (com.regula.documentreader.webclient.model.TextField field : getFieldList()) {
       if (field.getFieldType() == fieldType && field.getLcid() == LCID.LATIN) {
-        return (TextField) field;
+        return new TextField(field);
       }
       if (result == null && field.getFieldType() == fieldType) {
-        result = (TextField) field;
+        result = new TextField(field);
       }
     }
     return result;
@@ -34,7 +34,7 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
   public TextField getField(TextFieldType fieldType, LCID lcid) {
     for (com.regula.documentreader.webclient.model.TextField field : getFieldList()) {
       if (field.getFieldType() == fieldType && field.getLcid() == lcid) {
-        return (TextField) field;
+        return new TextField(field);
       }
     }
     return null;
@@ -45,10 +45,10 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
     TextField result = null;
     for (com.regula.documentreader.webclient.model.TextField field : getFieldList()) {
       if (Objects.equals(field.getFieldName(), fieldName) && field.getLcid() == LCID.LATIN) {
-        return (TextField) field;
+        return new TextField(field);
       }
       if (result == null && Objects.equals(field.getFieldName(), fieldName)) {
-        result = (TextField) field;
+        result = new TextField(field);
       }
     }
     return result;
@@ -58,7 +58,7 @@ public class Text extends com.regula.documentreader.webclient.model.Text {
   public TextField getField(String fieldName, LCID lcid) {
     for (com.regula.documentreader.webclient.model.TextField field : getFieldList()) {
       if (Objects.equals(field.getFieldName(), fieldName) && field.getLcid() == lcid) {
-        return (TextField) field;
+        return new TextField(field);
       }
     }
     return null;

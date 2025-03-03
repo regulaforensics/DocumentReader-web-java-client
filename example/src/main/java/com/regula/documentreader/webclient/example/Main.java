@@ -6,10 +6,12 @@ import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_N
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.model.CheckResult;
+import com.regula.documentreader.webclient.model.GraphicFieldType;
 import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
 import com.regula.documentreader.webclient.model.Light;
 import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
+//import com.regula.documentreader.webclient.model.SecurityFeatureType;
 import com.regula.documentreader.webclient.model.Source;
 import com.regula.documentreader.webclient.model.TextField;
 import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
@@ -132,15 +134,23 @@ public class Main {
                 System.out.format("---------------------------------------------------------------");
             }
 
-//                var documentImage = response.images().getField(DOCUMENT_FRONT).getValue();
-//                var portraitField = response.images().getField(PORTRAIT);
-//                var portraitFromVisual = portraitField.getValue(Source.VISUAL);
-//                saveFile("document-image.jpg", documentImage);
-//                saveFile("portrait.jpg", portraitFromVisual);
+            var documentImage = response.images().getField(GraphicFieldType.DOCUMENT_FRONT).getValue();
+            var portraitField = response.images().getField(GraphicFieldType.PORTRAIT);
+            var portraitFromVisual = portraitField.getValue(Source.VISUAL);
+
+            try {
+                saveFile("document-image.jpg", documentImage);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                saveFile("portrait.jpg", portraitFromVisual);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
             // how to get low lvl individual results
             LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-
         }).start();
 
 

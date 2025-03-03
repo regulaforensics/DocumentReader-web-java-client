@@ -77,7 +77,7 @@ public class RecognitionResponse {
   public Images images() {
     ImagesResult result = resultByType(Result.IMAGES);
     if (result != null) {
-      return (Images) result.getImages();
+      return new Images(result.getImages());
     }
     return null;
   }
@@ -91,7 +91,7 @@ public class RecognitionResponse {
   public Authenticity authenticity(int page_idx) {
     AuthenticityResult result = getResult(Result.AUTHENTICITY, page_idx);
     if (result != null) {
-      return (Authenticity) result.getAuthenticityCheckList();
+      return new Authenticity(result.getAuthenticityCheckList());
     }
     return null;
   }

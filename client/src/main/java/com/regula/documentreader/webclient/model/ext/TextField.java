@@ -9,8 +9,13 @@ import com.regula.documentreader.webclient.model.TextFieldType;
 import com.regula.documentreader.webclient.model.TextFieldValue;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.springframework.beans.BeanUtils;
 
 public class TextField extends com.regula.documentreader.webclient.model.TextField {
+
+  public TextField(com.regula.documentreader.webclient.model.TextField field) {
+    BeanUtils.copyProperties(field, this);
+  }
 
   public TextField withFieldType(TextFieldType fieldType) {
     this.setFieldType(fieldType);

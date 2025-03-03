@@ -5,8 +5,13 @@ import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.AuthenticityResultType;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.springframework.beans.BeanUtils;
 
 public class Authenticity extends com.regula.documentreader.webclient.model.AuthenticityCheckList {
+
+  public Authenticity(com.regula.documentreader.webclient.model.AuthenticityCheckList list) {
+    BeanUtils.copyProperties(list, this);
+  }
 
   public AuthenticityCheckList withCount(Integer count) {
     this.setCount(count);
