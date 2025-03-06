@@ -1,6 +1,6 @@
 package com.regula.documentreader.webclient.model.ext.authenticity;
 
-import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
+import com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult;
 import java.util.List;
 
 public abstract class AuthenticityResult<T> {

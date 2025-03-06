@@ -1,16 +1,16 @@
 package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckList;
-import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.AuthenticityResultType;
+import com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult;
 import java.util.List;
 import javax.annotation.Nullable;
 
 public class Authenticity extends com.regula.documentreader.webclient.model.AuthenticityCheckList {
 
-  @Override
   public AuthenticityCheckList withCount(Integer count) {
-    return super.withCount(count);
+    this.setCount(count);
+    return this;
   }
 
   @Nullable
@@ -24,9 +24,9 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     super.setCount(count);
   }
 
-  @Override
   public AuthenticityCheckList withList(List<AuthenticityCheckResult> list) {
-    return super.withList(list);
+    this.setList(list);
+    return this;
   }
 
   @Override
@@ -120,7 +120,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
   }
 
   @Nullable
-  private AuthenticityCheckResult resultByType(int type) {
+  private AuthenticityCheckResult resultByType(AuthenticityResultType type) {
     for (AuthenticityCheckResult checkResult : this.getList()) {
       if (checkResult.getType() == type) {
         return checkResult;
@@ -129,7 +129,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private FiberChecks fiberOrNull(int type) {
+  private FiberChecks fiberOrNull(AuthenticityResultType type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
       return new FiberChecks(result);
@@ -137,7 +137,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private IdentChecks identOrNull(int type) {
+  private IdentChecks identOrNull(AuthenticityResultType type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
       return new IdentChecks(result);
@@ -145,7 +145,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private ImageIdentChecks imageIdentOrNull(int type) {
+  private ImageIdentChecks imageIdentOrNull(AuthenticityResultType type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
       return new ImageIdentChecks(result);
@@ -153,7 +153,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private OCRSecurityTextChecks ocrSecurityTextOrNull(int type) {
+  private OCRSecurityTextChecks ocrSecurityTextOrNull(AuthenticityResultType type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
       return new OCRSecurityTextChecks(result);
@@ -161,7 +161,7 @@ public class Authenticity extends com.regula.documentreader.webclient.model.Auth
     return null;
   }
 
-  private SecurityFeatureChecks securityFeatureOrNull(int type) {
+  private SecurityFeatureChecks securityFeatureOrNull(AuthenticityResultType type) {
     AuthenticityCheckResult result = this.resultByType(type);
     if (result != null) {
       return new SecurityFeatureChecks(result);

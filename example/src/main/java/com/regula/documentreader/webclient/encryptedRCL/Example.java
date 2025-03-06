@@ -1,19 +1,15 @@
 package com.regula.documentreader.webclient.encryptedRCL;
 
-import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.example.Main;
-import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.*;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Base64;
 
 import static com.regula.documentreader.webclient.model.GraphicFieldType.DOCUMENT_FRONT;
 import static com.regula.documentreader.webclient.model.GraphicFieldType.PORTRAIT;

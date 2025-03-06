@@ -2,201 +2,68 @@ package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.CheckResult;
 import com.regula.documentreader.webclient.model.CrossSourceValueComparison;
+import com.regula.documentreader.webclient.model.LCID;
+import com.regula.documentreader.webclient.model.Source;
 import com.regula.documentreader.webclient.model.SourceValidity;
+import com.regula.documentreader.webclient.model.TextFieldType;
 import com.regula.documentreader.webclient.model.TextFieldValue;
 import java.util.List;
 import javax.annotation.Nullable;
 
 public class TextField extends com.regula.documentreader.webclient.model.TextField {
 
-  @Override
-  public TextField withFieldType(Integer fieldType) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withFieldType(fieldType);
-    return (TextField) textField;
+  public TextField withFieldType(TextFieldType fieldType) {
+    this.setFieldType(fieldType);
+    return this;
   }
 
-  @Override
-  public Integer getFieldType() {
-    return super.getFieldType();
-  }
-
-  @Override
-  public void setFieldType(Integer fieldType) {
-    super.setFieldType(fieldType);
-  }
-
-  @Override
   public TextField withFieldName(String fieldName) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withFieldName(fieldName);
-    return (TextField) textField;
+    this.setFieldName(fieldName);
+    return this;
   }
 
-  @Override
-  public String getFieldName() {
-    return super.getFieldName();
+  public TextField withLcid(LCID lcid) {
+    this.setLcid(lcid);
+    return this;
   }
 
-  @Override
-  public void setFieldName(String fieldName) {
-    super.setFieldName(fieldName);
+  public TextField withStatus(CheckResult status) {
+    this.setStatus(status);
+    return this;
   }
 
-  @Override
-  public TextField withLcid(Integer lcid) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withLcid(lcid);
-    return (TextField) textField;
+  public TextField withValidityStatus(CheckResult validityStatus) {
+    this.setValidityStatus(validityStatus);
+    return this;
   }
 
-  @Nullable
-  @Override
-  public Integer getLcid() {
-    return super.getLcid();
+  public TextField withComparisonStatus(CheckResult comparisonStatus) {
+    this.setComparisonStatus(comparisonStatus);
+    return this;
   }
 
-  @Override
-  public void setLcid(Integer lcid) {
-    super.setLcid(lcid);
-  }
-
-  @Override
-  public TextField withStatus(Integer status) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withStatus(status);
-    return (TextField) textField;
-  }
-
-  @Override
-  public Integer getStatus() {
-    return super.getStatus();
-  }
-
-  @Override
-  public void setStatus(Integer status) {
-    super.setStatus(status);
-  }
-
-  @Override
-  public TextField withValidityStatus(Integer validityStatus) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.withValidityStatus(validityStatus);
-    return (TextField) textField;
-  }
-
-  @Override
-  public Integer getValidityStatus() {
-    return super.getValidityStatus();
-  }
-
-  @Override
-  public void setValidityStatus(Integer validityStatus) {
-    super.setValidityStatus(validityStatus);
-  }
-
-  @Override
-  public com.regula.documentreader.webclient.model.TextField withComparisonStatus(
-      Integer comparisonStatus) {
-    return super.withComparisonStatus(comparisonStatus);
-  }
-
-  @Override
-  public Integer getComparisonStatus() {
-    return super.getComparisonStatus();
-  }
-
-  @Override
-  public void setComparisonStatus(Integer comparisonStatus) {
-    super.setComparisonStatus(comparisonStatus);
-  }
-
-  @Override
   public TextField withValue(String value) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withValue(value);
-    return (TextField) textField;
+    this.setValue(value);
+    return this;
   }
 
-  @Override
-  public String getValue() {
-    return super.getValue();
-  }
-
-  @Override
-  public void setValue(String value) {
-    super.setValue(value);
-  }
-
-  @Override
   public TextField withValueList(List<TextFieldValue> valueList) {
-    com.regula.documentreader.webclient.model.TextField textField = super.withValueList(valueList);
-    return (TextField) textField;
+    this.setValueList(valueList);
+    return this;
   }
 
-  @Override
-  public TextField addValueListItem(TextFieldValue valueListItem) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.addValueListItem(valueListItem);
-    return (TextField) textField;
-  }
-
-  @Override
-  public List<TextFieldValue> getValueList() {
-    return super.getValueList();
-  }
-
-  @Override
-  public void setValueList(List<TextFieldValue> valueList) {
-    super.setValueList(valueList);
-  }
-
-  @Override
   public TextField withValidityList(List<SourceValidity> validityList) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.withValidityList(validityList);
-    return (TextField) textField;
+    this.setValidityList(validityList);
+    return this;
   }
 
-  @Override
-  public TextField addValidityListItem(SourceValidity validityListItem) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.addValidityListItem(validityListItem);
-    return (TextField) textField;
-  }
-
-  @Override
-  public List<SourceValidity> getValidityList() {
-    return super.getValidityList();
-  }
-
-  @Override
-  public void setValidityList(List<SourceValidity> validityList) {
-    super.setValidityList(validityList);
-  }
-
-  @Override
   public TextField withComparisonList(List<CrossSourceValueComparison> comparisonList) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.withComparisonList(comparisonList);
-    return (TextField) textField;
-  }
-
-  @Override
-  public com.regula.documentreader.webclient.model.TextField addComparisonListItem(
-      CrossSourceValueComparison comparisonListItem) {
-    com.regula.documentreader.webclient.model.TextField textField =
-        super.addComparisonListItem(comparisonListItem);
-    return textField;
-  }
-
-  @Override
-  public List<CrossSourceValueComparison> getComparisonList() {
-    return super.getComparisonList();
-  }
-
-  @Override
-  public void setComparisonList(List<CrossSourceValueComparison> comparisonList) {
-    super.setComparisonList(comparisonList);
+    this.setComparisonList(comparisonList);
+    return this;
   }
 
   @Nullable
-  public String getValue(String source, boolean original) {
+  public String getValue(Source source, boolean original) {
     for (TextFieldValue value : getValueList()) {
       if (value.getSource().equals(source)) {
         if (original) {
@@ -210,11 +77,11 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
   }
 
   @Nullable
-  public String getValue(String source) {
+  public String getValue(Source source) {
     return getValue(source, false);
   }
 
-  public int sourceValidity(String source) {
+  public CheckResult sourceValidity(Source source) {
     for (SourceValidity sourceValidity : this.getValidityList()) {
       if (sourceValidity.getSource().equals(source)) {
         return sourceValidity.getStatus();
@@ -223,7 +90,7 @@ public class TextField extends com.regula.documentreader.webclient.model.TextFie
     return CheckResult.WAS_NOT_DONE;
   }
 
-  public int crossSourceComparison(String one, String other) {
+  public CheckResult crossSourceComparison(Source one, Source other) {
     for (CrossSourceValueComparison comparison : this.getComparisonList()) {
       boolean a =
           comparison.getSourceLeft().equals(one) && comparison.getSourceRight().equals(other);

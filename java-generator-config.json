@@ -1,6 +1,5 @@
 {
   "artifactId": "webclient",
-  "artifactVersion": "5.1.0",
   "groupId": "com.regula.documentreader",
   "library": "okhttp-gson",
   "useRuntimeException": true,
@@ -9,11 +8,22 @@
   "modelPackage": "com.regula.documentreader.webclient.model",
   "apiPackage": "com.regula.documentreader.webclient.api",
   "sourceFolder": "src/main/generated",
+  "containerDefaultToNull": true,
+  "legacyDiscriminatorBehavior": false,
   "typeMappings" : {
     "TextField" : "com.regula.documentreader.webclient.model.ext.TextField",
     "ImagesField" : "com.regula.documentreader.webclient.model.ext.ImagesField",
     "Text": "com.regula.documentreader.webclient.model.ext.Text",
     "Images" : "com.regula.documentreader.webclient.model.ext.Images",
     "AuthenticityCheckList" : "com.regula.documentreader.webclient.model.ext.authenticity.Authenticity"
+  },
+  "schemaMappings": {
+    "ContainerList": "com.regula.documentreader.webclient.model.changed.ContainerList",
+    "AuthenticityCheckResult": "com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult",
+    "DocVisualExtendedInfo": "com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo",
+    "GraphicFieldsList": "com.regula.documentreader.webclient.model.changed.GraphicFieldsList"
+  },
+  "nameMappings": {
+    "List": "list"
   }
 }
