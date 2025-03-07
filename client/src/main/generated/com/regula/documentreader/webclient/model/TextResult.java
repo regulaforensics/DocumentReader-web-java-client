@@ -37,12 +37,11 @@ public class TextResult extends ResultItem {
 
   @SerializedName(SERIALIZED_NAME_TEXT)
   @javax.annotation.Nonnull
-  private com.regula.documentreader.webclient.model.ext.Text text;
+  private Text text;
 
   public TextResult() {}
 
-  public TextResult text(
-      @javax.annotation.Nonnull com.regula.documentreader.webclient.model.ext.Text text) {
+  public TextResult text(@javax.annotation.Nonnull Text text) {
     this.text = text;
     return this;
   }
@@ -53,12 +52,11 @@ public class TextResult extends ResultItem {
    * @return text
    */
   @javax.annotation.Nonnull
-  public com.regula.documentreader.webclient.model.ext.Text getText() {
+  public Text getText() {
     return text;
   }
 
-  public void setText(
-      @javax.annotation.Nonnull com.regula.documentreader.webclient.model.ext.Text text) {
+  public void setText(@javax.annotation.Nonnull Text text) {
     this.text = text;
   }
 

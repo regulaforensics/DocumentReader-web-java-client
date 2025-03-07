@@ -58,7 +58,7 @@ public class TrfFtBytes {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String data;
 
   public TrfFtBytes() {}
@@ -121,7 +121,7 @@ public class TrfFtBytes {
     this.length = length;
   }
 
-  public TrfFtBytes data(@javax.annotation.Nonnull String data) {
+  public TrfFtBytes data(@javax.annotation.Nullable String data) {
     this.data = data;
     return this;
   }
@@ -131,12 +131,12 @@ public class TrfFtBytes {
    *
    * @return data
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull String data) {
+  public void setData(@javax.annotation.Nullable String data) {
     this.data = data;
   }
 
@@ -241,7 +241,8 @@ public class TrfFtBytes {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the required field `Type`
     TrfFtBytesType.validateJsonElement(jsonObj.get("Type"));
-    if (!jsonObj.get("Data").isJsonPrimitive()) {
+    if ((jsonObj.get("Data") != null && !jsonObj.get("Data").isJsonNull())
+        && !jsonObj.get("Data").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",

@@ -28,105 +28,32 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Structure is used to store information about the numeric field (4 bytes) that is a part of one of
- * the informational data groups.
- */
+/** FileImage */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class TrfFtString {
-  public static final String SERIALIZED_NAME_TYPE = "Type";
-
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private Integer type;
-
-  public static final String SERIALIZED_NAME_STATUS = "Status";
-
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
-  private Integer status;
-
-  public static final String SERIALIZED_NAME_FORMAT = "Format";
-
-  @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
-  private String format;
-
+public class FileImage {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nonnull
   private String data;
 
-  public TrfFtString() {}
+  public static final String SERIALIZED_NAME_LENGTH = "Length";
 
-  public TrfFtString type(@javax.annotation.Nullable Integer type) {
-    this.type = type;
-    return this;
-  }
+  @SerializedName(SERIALIZED_NAME_LENGTH)
+  @javax.annotation.Nonnull
+  private Integer length;
 
-  /**
-   * Get type
-   *
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public Integer getType() {
-    return type;
-  }
+  public FileImage() {}
 
-  public void setType(@javax.annotation.Nullable Integer type) {
-    this.type = type;
-  }
-
-  public TrfFtString status(@javax.annotation.Nullable Integer status) {
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Result of logical analysis of compliance of the contents of the field with the requirements of
-   * the specification
-   *
-   * @return status
-   */
-  @javax.annotation.Nullable
-  public Integer getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nullable Integer status) {
-    this.status = status;
-  }
-
-  public TrfFtString format(@javax.annotation.Nullable String format) {
-    this.format = format;
-    return this;
-  }
-
-  /**
-   * Mask of format of text information (for example, «YYMMDD» for date of birth)
-   *
-   * @return format
-   */
-  @javax.annotation.Nullable
-  public String getFormat() {
-    return format;
-  }
-
-  public void setFormat(@javax.annotation.Nullable String format) {
-    this.format = format;
-  }
-
-  public TrfFtString data(@javax.annotation.Nonnull String data) {
+  public FileImage data(@javax.annotation.Nonnull String data) {
     this.data = data;
     return this;
   }
 
   /**
-   * Numeric value.
+   * Get data
    *
    * @return data
    */
@@ -139,6 +66,25 @@ public class TrfFtString {
     this.data = data;
   }
 
+  public FileImage length(@javax.annotation.Nonnull Integer length) {
+    this.length = length;
+    return this;
+  }
+
+  /**
+   * Get length
+   *
+   * @return length
+   */
+  @javax.annotation.Nonnull
+  public Integer getLength() {
+    return length;
+  }
+
+  public void setLength(@javax.annotation.Nonnull Integer length) {
+    this.length = length;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -147,26 +93,22 @@ public class TrfFtString {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TrfFtString trfFtString = (TrfFtString) o;
-    return Objects.equals(this.type, trfFtString.type)
-        && Objects.equals(this.status, trfFtString.status)
-        && Objects.equals(this.format, trfFtString.format)
-        && Objects.equals(this.data, trfFtString.data);
+    FileImage fileImage = (FileImage) o;
+    return Objects.equals(this.data, fileImage.data)
+        && Objects.equals(this.length, fileImage.length);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, format, data);
+    return Objects.hash(data, length);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TrfFtString {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("class FileImage {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -187,46 +129,45 @@ public class TrfFtString {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("Status");
-    openapiFields.add("Format");
     openapiFields.add("Data");
+    openapiFields.add("Length");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("Data");
+    openapiRequiredFields.add("Length");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to TrfFtString
+   * @throws IOException if the JSON Element is invalid with respect to FileImage
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!TrfFtString.openapiRequiredFields
+      if (!FileImage.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in TrfFtString is not found in the empty JSON string",
-                TrfFtString.openapiRequiredFields.toString()));
+                "The required field(s) %s in FileImage is not found in the empty JSON string",
+                FileImage.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!TrfFtString.openapiFields.contains(entry.getKey())) {
+      if (!FileImage.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `TrfFtString` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `FileImage` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : TrfFtString.openapiRequiredFields) {
+    for (String requiredField : FileImage.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -235,13 +176,6 @@ public class TrfFtString {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if ((jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull())
-        && !jsonObj.get("Format").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `Format` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("Format").toString()));
-    }
     if (!jsonObj.get("Data").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
@@ -254,23 +188,23 @@ public class TrfFtString {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!TrfFtString.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'TrfFtString' and its subtypes
+      if (!FileImage.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'FileImage' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<TrfFtString> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(TrfFtString.class));
+      final TypeAdapter<FileImage> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(FileImage.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<TrfFtString>() {
+          new TypeAdapter<FileImage>() {
             @Override
-            public void write(JsonWriter out, TrfFtString value) throws IOException {
+            public void write(JsonWriter out, FileImage value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public TrfFtString read(JsonReader in) throws IOException {
+            public FileImage read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -280,18 +214,18 @@ public class TrfFtString {
   }
 
   /**
-   * Create an instance of TrfFtString given an JSON string
+   * Create an instance of FileImage given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of TrfFtString
-   * @throws IOException if the JSON string is invalid with respect to TrfFtString
+   * @return An instance of FileImage
+   * @throws IOException if the JSON string is invalid with respect to FileImage
    */
-  public static TrfFtString fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TrfFtString.class);
+  public static FileImage fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, FileImage.class);
   }
 
   /**
-   * Convert an instance of TrfFtString to an JSON string
+   * Convert an instance of FileImage to an JSON string
    *
    * @return JSON string
    */

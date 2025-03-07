@@ -28,105 +28,32 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Structure is used to store information about the numeric field (4 bytes) that is a part of one of
- * the informational data groups.
- */
+/** CertificateData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class TrfFtString {
-  public static final String SERIALIZED_NAME_TYPE = "Type";
-
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
-  private Integer type;
-
-  public static final String SERIALIZED_NAME_STATUS = "Status";
-
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
-  private Integer status;
-
-  public static final String SERIALIZED_NAME_FORMAT = "Format";
-
-  @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
-  private String format;
-
+public class CertificateData {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nonnull
   private String data;
 
-  public TrfFtString() {}
+  public static final String SERIALIZED_NAME_LENGTH = "Length";
 
-  public TrfFtString type(@javax.annotation.Nullable Integer type) {
-    this.type = type;
-    return this;
-  }
+  @SerializedName(SERIALIZED_NAME_LENGTH)
+  @javax.annotation.Nonnull
+  private String length;
 
-  /**
-   * Get type
-   *
-   * @return type
-   */
-  @javax.annotation.Nullable
-  public Integer getType() {
-    return type;
-  }
+  public CertificateData() {}
 
-  public void setType(@javax.annotation.Nullable Integer type) {
-    this.type = type;
-  }
-
-  public TrfFtString status(@javax.annotation.Nullable Integer status) {
-    this.status = status;
-    return this;
-  }
-
-  /**
-   * Result of logical analysis of compliance of the contents of the field with the requirements of
-   * the specification
-   *
-   * @return status
-   */
-  @javax.annotation.Nullable
-  public Integer getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nullable Integer status) {
-    this.status = status;
-  }
-
-  public TrfFtString format(@javax.annotation.Nullable String format) {
-    this.format = format;
-    return this;
-  }
-
-  /**
-   * Mask of format of text information (for example, «YYMMDD» for date of birth)
-   *
-   * @return format
-   */
-  @javax.annotation.Nullable
-  public String getFormat() {
-    return format;
-  }
-
-  public void setFormat(@javax.annotation.Nullable String format) {
-    this.format = format;
-  }
-
-  public TrfFtString data(@javax.annotation.Nonnull String data) {
+  public CertificateData data(@javax.annotation.Nonnull String data) {
     this.data = data;
     return this;
   }
 
   /**
-   * Numeric value.
+   * Get data
    *
    * @return data
    */
@@ -139,6 +66,25 @@ public class TrfFtString {
     this.data = data;
   }
 
+  public CertificateData length(@javax.annotation.Nonnull String length) {
+    this.length = length;
+    return this;
+  }
+
+  /**
+   * Get length
+   *
+   * @return length
+   */
+  @javax.annotation.Nonnull
+  public String getLength() {
+    return length;
+  }
+
+  public void setLength(@javax.annotation.Nonnull String length) {
+    this.length = length;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -147,26 +93,22 @@ public class TrfFtString {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TrfFtString trfFtString = (TrfFtString) o;
-    return Objects.equals(this.type, trfFtString.type)
-        && Objects.equals(this.status, trfFtString.status)
-        && Objects.equals(this.format, trfFtString.format)
-        && Objects.equals(this.data, trfFtString.data);
+    CertificateData certificateData = (CertificateData) o;
+    return Objects.equals(this.data, certificateData.data)
+        && Objects.equals(this.length, certificateData.length);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, status, format, data);
+    return Objects.hash(data, length);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TrfFtString {\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("class CertificateData {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -187,46 +129,45 @@ public class TrfFtString {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("Status");
-    openapiFields.add("Format");
     openapiFields.add("Data");
+    openapiFields.add("Length");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("Data");
+    openapiRequiredFields.add("Length");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to TrfFtString
+   * @throws IOException if the JSON Element is invalid with respect to CertificateData
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!TrfFtString.openapiRequiredFields
+      if (!CertificateData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in TrfFtString is not found in the empty JSON string",
-                TrfFtString.openapiRequiredFields.toString()));
+                "The required field(s) %s in CertificateData is not found in the empty JSON string",
+                CertificateData.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!TrfFtString.openapiFields.contains(entry.getKey())) {
+      if (!CertificateData.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `TrfFtString` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `CertificateData` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : TrfFtString.openapiRequiredFields) {
+    for (String requiredField : CertificateData.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -235,18 +176,17 @@ public class TrfFtString {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if ((jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull())
-        && !jsonObj.get("Format").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `Format` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("Format").toString()));
-    }
     if (!jsonObj.get("Data").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Data").toString()));
+    }
+    if (!jsonObj.get("Length").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `Length` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("Length").toString()));
     }
   }
 
@@ -254,23 +194,23 @@ public class TrfFtString {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!TrfFtString.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'TrfFtString' and its subtypes
+      if (!CertificateData.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'CertificateData' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<TrfFtString> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(TrfFtString.class));
+      final TypeAdapter<CertificateData> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(CertificateData.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<TrfFtString>() {
+          new TypeAdapter<CertificateData>() {
             @Override
-            public void write(JsonWriter out, TrfFtString value) throws IOException {
+            public void write(JsonWriter out, CertificateData value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public TrfFtString read(JsonReader in) throws IOException {
+            public CertificateData read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -280,18 +220,18 @@ public class TrfFtString {
   }
 
   /**
-   * Create an instance of TrfFtString given an JSON string
+   * Create an instance of CertificateData given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of TrfFtString
-   * @throws IOException if the JSON string is invalid with respect to TrfFtString
+   * @return An instance of CertificateData
+   * @throws IOException if the JSON string is invalid with respect to CertificateData
    */
-  public static TrfFtString fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, TrfFtString.class);
+  public static CertificateData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CertificateData.class);
   }
 
   /**
-   * Convert an instance of TrfFtString to an JSON string
+   * Convert an instance of CertificateData to an JSON string
    *
    * @return JSON string
    */

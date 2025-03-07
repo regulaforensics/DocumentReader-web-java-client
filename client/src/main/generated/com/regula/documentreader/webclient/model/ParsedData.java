@@ -23,43 +23,53 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** AuthenticityResult */
+/** ParsedData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class AuthenticityResult extends ResultItem {
-  public static final String SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST = "AuthenticityCheckList";
+public class ParsedData {
+  public static final String SERIALIZED_NAME_PARSING_NOTIFICATIONS = "ParsingNotifications";
 
-  @SerializedName(SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST)
-  @javax.annotation.Nonnull
-  private AuthenticityCheckList authenticityCheckList;
+  @SerializedName(SERIALIZED_NAME_PARSING_NOTIFICATIONS)
+  @javax.annotation.Nullable
+  private List<Integer> parsingNotifications;
 
-  public AuthenticityResult() {}
+  public ParsedData() {}
 
-  public AuthenticityResult authenticityCheckList(
-      @javax.annotation.Nonnull AuthenticityCheckList authenticityCheckList) {
-    this.authenticityCheckList = authenticityCheckList;
+  public ParsedData parsingNotifications(
+      @javax.annotation.Nullable List<Integer> parsingNotifications) {
+    this.parsingNotifications = parsingNotifications;
+    return this;
+  }
+
+  public ParsedData addParsingNotificationsItem(Integer parsingNotificationsItem) {
+    if (this.parsingNotifications == null) {
+      this.parsingNotifications = new ArrayList<>();
+    }
+    this.parsingNotifications.add(parsingNotificationsItem);
     return this;
   }
 
   /**
-   * Get authenticityCheckList
+   * Get parsingNotifications
    *
-   * @return authenticityCheckList
+   * @return parsingNotifications
    */
-  @javax.annotation.Nonnull
-  public AuthenticityCheckList getAuthenticityCheckList() {
-    return authenticityCheckList;
+  @javax.annotation.Nullable
+  public List<Integer> getParsingNotifications() {
+    return parsingNotifications;
   }
 
-  public void setAuthenticityCheckList(
-      @javax.annotation.Nonnull AuthenticityCheckList authenticityCheckList) {
-    this.authenticityCheckList = authenticityCheckList;
+  public void setParsingNotifications(
+      @javax.annotation.Nullable List<Integer> parsingNotifications) {
+    this.parsingNotifications = parsingNotifications;
   }
 
   @Override
@@ -70,23 +80,21 @@ public class AuthenticityResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AuthenticityResult authenticityResult = (AuthenticityResult) o;
-    return Objects.equals(this.authenticityCheckList, authenticityResult.authenticityCheckList)
-        && super.equals(o);
+    ParsedData parsedData = (ParsedData) o;
+    return Objects.equals(this.parsingNotifications, parsedData.parsingNotifications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticityCheckList, super.hashCode());
+    return Objects.hash(parsingNotifications);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticityResult {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    authenticityCheckList: ")
-        .append(toIndentedString(authenticityCheckList))
+    sb.append("class ParsedData {\n");
+    sb.append("    parsingNotifications: ")
+        .append(toIndentedString(parsingNotifications))
         .append("\n");
     sb.append("}");
     return sb.toString();
@@ -108,55 +116,48 @@ public class AuthenticityResult extends ResultItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("AuthenticityCheckList");
+    openapiFields.add("ParsingNotifications");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("AuthenticityCheckList");
-    openapiRequiredFields.add("result_type");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to AuthenticityResult
+   * @throws IOException if the JSON Element is invalid with respect to ParsedData
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!AuthenticityResult.openapiRequiredFields
+      if (!ParsedData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in AuthenticityResult is not found in the empty JSON string",
-                AuthenticityResult.openapiRequiredFields.toString()));
+                "The required field(s) %s in ParsedData is not found in the empty JSON string",
+                ParsedData.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!AuthenticityResult.openapiFields.contains(entry.getKey())) {
+      if (!ParsedData.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `AuthenticityResult` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `ParsedData` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
-
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : AuthenticityResult.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("ParsingNotifications") != null
+        && !jsonObj.get("ParsingNotifications").isJsonNull()
+        && !jsonObj.get("ParsingNotifications").isJsonArray()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `ParsingNotifications` to be an array in the JSON string but got `%s`",
+              jsonObj.get("ParsingNotifications").toString()));
     }
   }
 
@@ -164,23 +165,23 @@ public class AuthenticityResult extends ResultItem {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!AuthenticityResult.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'AuthenticityResult' and its subtypes
+      if (!ParsedData.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'ParsedData' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<AuthenticityResult> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(AuthenticityResult.class));
+      final TypeAdapter<ParsedData> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(ParsedData.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<AuthenticityResult>() {
+          new TypeAdapter<ParsedData>() {
             @Override
-            public void write(JsonWriter out, AuthenticityResult value) throws IOException {
+            public void write(JsonWriter out, ParsedData value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public AuthenticityResult read(JsonReader in) throws IOException {
+            public ParsedData read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -190,18 +191,18 @@ public class AuthenticityResult extends ResultItem {
   }
 
   /**
-   * Create an instance of AuthenticityResult given an JSON string
+   * Create an instance of ParsedData given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of AuthenticityResult
-   * @throws IOException if the JSON string is invalid with respect to AuthenticityResult
+   * @return An instance of ParsedData
+   * @throws IOException if the JSON string is invalid with respect to ParsedData
    */
-  public static AuthenticityResult fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AuthenticityResult.class);
+  public static ParsedData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ParsedData.class);
   }
 
   /**
-   * Convert an instance of AuthenticityResult to an JSON string
+   * Convert an instance of ParsedData to an JSON string
    *
    * @return JSON string
    */

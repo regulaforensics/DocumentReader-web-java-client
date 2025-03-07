@@ -35,6 +35,7 @@ src/main/generated/com/regula/documentreader/webclient/model/BcPDF417INFO.java
 src/main/generated/com/regula/documentreader/webclient/model/BcROIDETECT.java
 src/main/generated/com/regula/documentreader/webclient/model/BinaryData.java
 src/main/generated/com/regula/documentreader/webclient/model/ByteArrayResult.java
+src/main/generated/com/regula/documentreader/webclient/model/CertificateData.java
 src/main/generated/com/regula/documentreader/webclient/model/CheckDiagnose.java
 src/main/generated/com/regula/documentreader/webclient/model/CheckResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ChosenDocumentType.java
@@ -76,7 +77,9 @@ src/main/generated/com/regula/documentreader/webclient/model/FaceDetectionResult
 src/main/generated/com/regula/documentreader/webclient/model/FaceItem.java
 src/main/generated/com/regula/documentreader/webclient/model/FiberResult.java
 src/main/generated/com/regula/documentreader/webclient/model/FieldItem.java
+src/main/generated/com/regula/documentreader/webclient/model/FileImage.java
 src/main/generated/com/regula/documentreader/webclient/model/GetTransactionsByTagResponse.java
+src/main/generated/com/regula/documentreader/webclient/model/GraphData.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRect.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRfid.java
@@ -127,6 +130,7 @@ src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
 src/main/generated/com/regula/documentreader/webclient/model/OutData.java
 src/main/generated/com/regula/documentreader/webclient/model/OutDataTransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
+src/main/generated/com/regula/documentreader/webclient/model/ParsedData.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingErrorCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingNotificationCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/PerDocumentConfig.java
@@ -142,6 +146,7 @@ src/main/generated/com/regula/documentreader/webclient/model/ProcessResponse.jav
 src/main/generated/com/regula/documentreader/webclient/model/ProcessSystemInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/ProcessingStatus.java
 src/main/generated/com/regula/documentreader/webclient/model/RFIDErrorCodes.java
+src/main/generated/com/regula/documentreader/webclient/model/RFIDGraphicsInfoResult.java
 src/main/generated/com/regula/documentreader/webclient/model/RFIDPKDResourceType.java
 src/main/generated/com/regula/documentreader/webclient/model/RawImageContainerList.java
 src/main/generated/com/regula/documentreader/webclient/model/RectangleCoordinates.java
@@ -171,6 +176,7 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidLocation.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidOrigin.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidPasswordType.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidPkiExtension.java
+src/main/generated/com/regula/documentreader/webclient/model/RfidRawData.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidSecurityObject.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidSessionData.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidSignerInfoEx.java
@@ -181,6 +187,7 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidValidity.java
 src/main/generated/com/regula/documentreader/webclient/model/Scenario.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureResult.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureType.java
+src/main/generated/com/regula/documentreader/webclient/model/SecurityObjectCertificates.java
 src/main/generated/com/regula/documentreader/webclient/model/Source.java
 src/main/generated/com/regula/documentreader/webclient/model/SourceValidity.java
 src/main/generated/com/regula/documentreader/webclient/model/Status.java
@@ -192,6 +199,7 @@ src/main/generated/com/regula/documentreader/webclient/model/SymbolCandidate.jav
 src/main/generated/com/regula/documentreader/webclient/model/SymbolEstimationItem.java
 src/main/generated/com/regula/documentreader/webclient/model/SymbolRecognitionResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TDocBinaryInfo.java
+src/main/generated/com/regula/documentreader/webclient/model/TOriginalRFIDGraphicsInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/Text.java
 src/main/generated/com/regula/documentreader/webclient/model/TextAvailableSource.java
 src/main/generated/com/regula/documentreader/webclient/model/TextDataResult.java
@@ -209,8 +217,6 @@ src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessR
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytes.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytesType.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtString.java
-src/main/generated/com/regula/documentreader/webclient/model/TrfFtStringStatus.java
-src/main/generated/com/regula/documentreader/webclient/model/TrfFtStringType.java
 src/main/generated/com/regula/documentreader/webclient/model/VerificationResult.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java
 src/main/generated/com/regula/documentreader/webclient/model/Visibility.java

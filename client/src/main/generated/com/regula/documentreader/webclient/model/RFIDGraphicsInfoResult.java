@@ -13,7 +13,6 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
@@ -24,77 +23,44 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** GraphicFieldsList */
+/** RFIDGraphicsInfoResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class GraphicFieldsList {
-  public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
+public class RFIDGraphicsInfoResult extends ResultItem {
+  public static final String SERIALIZED_NAME_TORIGINAL_R_F_I_D_GRAPHICS_INFO =
+      "TOriginalRFIDGraphicsInfo";
 
-  @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
+  @SerializedName(SERIALIZED_NAME_TORIGINAL_R_F_I_D_GRAPHICS_INFO)
   @javax.annotation.Nonnull
-  private List<GraphicField> pArrayFields;
+  private TOriginalRFIDGraphicsInfo toriginalRFIDGraphicsInfo;
 
-  public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
+  public RFIDGraphicsInfoResult() {}
 
-  @SerializedName(SERIALIZED_NAME_N_FIELDS)
-  @javax.annotation.Nonnull
-  private BigDecimal nFields;
-
-  public GraphicFieldsList() {}
-
-  public GraphicFieldsList pArrayFields(@javax.annotation.Nonnull List<GraphicField> pArrayFields) {
-    this.pArrayFields = pArrayFields;
-    return this;
-  }
-
-  public GraphicFieldsList addPArrayFieldsItem(GraphicField pArrayFieldsItem) {
-    if (this.pArrayFields == null) {
-      this.pArrayFields = new ArrayList<>();
-    }
-    this.pArrayFields.add(pArrayFieldsItem);
+  public RFIDGraphicsInfoResult toriginalRFIDGraphicsInfo(
+      @javax.annotation.Nonnull TOriginalRFIDGraphicsInfo toriginalRFIDGraphicsInfo) {
+    this.toriginalRFIDGraphicsInfo = toriginalRFIDGraphicsInfo;
     return this;
   }
 
   /**
-   * Get pArrayFields
+   * Get toriginalRFIDGraphicsInfo
    *
-   * @return pArrayFields
+   * @return toriginalRFIDGraphicsInfo
    */
   @javax.annotation.Nonnull
-  public List<GraphicField> getpArrayFields() {
-    return pArrayFields;
+  public TOriginalRFIDGraphicsInfo getToriginalRFIDGraphicsInfo() {
+    return toriginalRFIDGraphicsInfo;
   }
 
-  public void setpArrayFields(@javax.annotation.Nonnull List<GraphicField> pArrayFields) {
-    this.pArrayFields = pArrayFields;
-  }
-
-  public GraphicFieldsList nFields(@javax.annotation.Nonnull BigDecimal nFields) {
-    this.nFields = nFields;
-    return this;
-  }
-
-  /**
-   * Number of pArrayFields array elements
-   *
-   * @return nFields
-   */
-  @javax.annotation.Nonnull
-  public BigDecimal getnFields() {
-    return nFields;
-  }
-
-  public void setnFields(@javax.annotation.Nonnull BigDecimal nFields) {
-    this.nFields = nFields;
+  public void setToriginalRFIDGraphicsInfo(
+      @javax.annotation.Nonnull TOriginalRFIDGraphicsInfo toriginalRFIDGraphicsInfo) {
+    this.toriginalRFIDGraphicsInfo = toriginalRFIDGraphicsInfo;
   }
 
   @Override
@@ -105,22 +71,25 @@ public class GraphicFieldsList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GraphicFieldsList graphicFieldsList = (GraphicFieldsList) o;
-    return Objects.equals(this.pArrayFields, graphicFieldsList.pArrayFields)
-        && Objects.equals(this.nFields, graphicFieldsList.nFields);
+    RFIDGraphicsInfoResult rfIDGraphicsInfoResult = (RFIDGraphicsInfoResult) o;
+    return Objects.equals(
+            this.toriginalRFIDGraphicsInfo, rfIDGraphicsInfoResult.toriginalRFIDGraphicsInfo)
+        && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pArrayFields, nFields);
+    return Objects.hash(toriginalRFIDGraphicsInfo, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GraphicFieldsList {\n");
-    sb.append("    pArrayFields: ").append(toIndentedString(pArrayFields)).append("\n");
-    sb.append("    nFields: ").append(toIndentedString(nFields)).append("\n");
+    sb.append("class RFIDGraphicsInfoResult {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    toriginalRFIDGraphicsInfo: ")
+        .append(toIndentedString(toriginalRFIDGraphicsInfo))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -141,45 +110,49 @@ public class GraphicFieldsList {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("pArrayFields");
-    openapiFields.add("nFields");
+    openapiFields.add("buf_length");
+    openapiFields.add("light");
+    openapiFields.add("list_idx");
+    openapiFields.add("page_idx");
+    openapiFields.add("result_type");
+    openapiFields.add("TOriginalRFIDGraphicsInfo");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("pArrayFields");
-    openapiRequiredFields.add("nFields");
+    openapiRequiredFields.add("TOriginalRFIDGraphicsInfo");
+    openapiRequiredFields.add("result_type");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GraphicFieldsList
+   * @throws IOException if the JSON Element is invalid with respect to RFIDGraphicsInfoResult
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!GraphicFieldsList.openapiRequiredFields
+      if (!RFIDGraphicsInfoResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in GraphicFieldsList is not found in the empty JSON string",
-                GraphicFieldsList.openapiRequiredFields.toString()));
+                "The required field(s) %s in RFIDGraphicsInfoResult is not found in the empty JSON string",
+                RFIDGraphicsInfoResult.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!GraphicFieldsList.openapiFields.contains(entry.getKey())) {
+      if (!RFIDGraphicsInfoResult.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `GraphicFieldsList` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `RFIDGraphicsInfoResult` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : GraphicFieldsList.openapiRequiredFields) {
+    for (String requiredField : RFIDGraphicsInfoResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -187,44 +160,29 @@ public class GraphicFieldsList {
                 requiredField, jsonElement.toString()));
       }
     }
-    JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // ensure the json data is an array
-    if (!jsonObj.get("pArrayFields").isJsonArray()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `pArrayFields` to be an array in the JSON string but got `%s`",
-              jsonObj.get("pArrayFields").toString()));
-    }
-
-    JsonArray jsonArraypArrayFields = jsonObj.getAsJsonArray("pArrayFields");
-    // validate the required field `pArrayFields` (array)
-    for (int i = 0; i < jsonArraypArrayFields.size(); i++) {
-      GraphicField.validateJsonElement(jsonArraypArrayFields.get(i));
-    }
-    ;
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!GraphicFieldsList.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'GraphicFieldsList' and its subtypes
+      if (!RFIDGraphicsInfoResult.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'RFIDGraphicsInfoResult' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<GraphicFieldsList> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(GraphicFieldsList.class));
+      final TypeAdapter<RFIDGraphicsInfoResult> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(RFIDGraphicsInfoResult.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<GraphicFieldsList>() {
+          new TypeAdapter<RFIDGraphicsInfoResult>() {
             @Override
-            public void write(JsonWriter out, GraphicFieldsList value) throws IOException {
+            public void write(JsonWriter out, RFIDGraphicsInfoResult value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public GraphicFieldsList read(JsonReader in) throws IOException {
+            public RFIDGraphicsInfoResult read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -234,18 +192,18 @@ public class GraphicFieldsList {
   }
 
   /**
-   * Create an instance of GraphicFieldsList given an JSON string
+   * Create an instance of RFIDGraphicsInfoResult given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GraphicFieldsList
-   * @throws IOException if the JSON string is invalid with respect to GraphicFieldsList
+   * @return An instance of RFIDGraphicsInfoResult
+   * @throws IOException if the JSON string is invalid with respect to RFIDGraphicsInfoResult
    */
-  public static GraphicFieldsList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GraphicFieldsList.class);
+  public static RFIDGraphicsInfoResult fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RFIDGraphicsInfoResult.class);
   }
 
   /**
-   * Convert an instance of GraphicFieldsList to an JSON string
+   * Convert an instance of RFIDGraphicsInfoResult to an JSON string
    *
    * @return JSON string
    */

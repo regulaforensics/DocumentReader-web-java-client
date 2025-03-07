@@ -13,6 +13,7 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
@@ -23,7 +24,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -36,12 +39,18 @@ public class TDocBinaryInfo {
   public static final String SERIALIZED_NAME_R_F_I_D_B_I_N_A_R_Y_D_A_T_A = "RFID_BINARY_DATA";
 
   @SerializedName(SERIALIZED_NAME_R_F_I_D_B_I_N_A_R_Y_D_A_T_A)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BinaryData RFID_BINARY_DATA;
+
+  public static final String SERIALIZED_NAME_R_F_I_D_R_A_W_D_A_T_A = "RFID_RAW_DATA";
+
+  @SerializedName(SERIALIZED_NAME_R_F_I_D_R_A_W_D_A_T_A)
+  @javax.annotation.Nullable
+  private List<RfidRawData> RFID_RAW_DATA;
 
   public TDocBinaryInfo() {}
 
-  public TDocBinaryInfo RFID_BINARY_DATA(@javax.annotation.Nonnull BinaryData RFID_BINARY_DATA) {
+  public TDocBinaryInfo RFID_BINARY_DATA(@javax.annotation.Nullable BinaryData RFID_BINARY_DATA) {
     this.RFID_BINARY_DATA = RFID_BINARY_DATA;
     return this;
   }
@@ -51,13 +60,40 @@ public class TDocBinaryInfo {
    *
    * @return RFID_BINARY_DATA
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BinaryData getRFIDBINARYDATA() {
     return RFID_BINARY_DATA;
   }
 
-  public void setRFIDBINARYDATA(@javax.annotation.Nonnull BinaryData RFID_BINARY_DATA) {
+  public void setRFIDBINARYDATA(@javax.annotation.Nullable BinaryData RFID_BINARY_DATA) {
     this.RFID_BINARY_DATA = RFID_BINARY_DATA;
+  }
+
+  public TDocBinaryInfo RFID_RAW_DATA(@javax.annotation.Nullable List<RfidRawData> RFID_RAW_DATA) {
+    this.RFID_RAW_DATA = RFID_RAW_DATA;
+    return this;
+  }
+
+  public TDocBinaryInfo addRFIDRAWDATAItem(RfidRawData RFID_RAW_DATAItem) {
+    if (this.RFID_RAW_DATA == null) {
+      this.RFID_RAW_DATA = new ArrayList<>();
+    }
+    this.RFID_RAW_DATA.add(RFID_RAW_DATAItem);
+    return this;
+  }
+
+  /**
+   * Get RFID_RAW_DATA
+   *
+   * @return RFID_RAW_DATA
+   */
+  @javax.annotation.Nullable
+  public List<RfidRawData> getRFIDRAWDATA() {
+    return RFID_RAW_DATA;
+  }
+
+  public void setRFIDRAWDATA(@javax.annotation.Nullable List<RfidRawData> RFID_RAW_DATA) {
+    this.RFID_RAW_DATA = RFID_RAW_DATA;
   }
 
   @Override
@@ -69,12 +105,13 @@ public class TDocBinaryInfo {
       return false;
     }
     TDocBinaryInfo tdocBinaryInfo = (TDocBinaryInfo) o;
-    return Objects.equals(this.RFID_BINARY_DATA, tdocBinaryInfo.RFID_BINARY_DATA);
+    return Objects.equals(this.RFID_BINARY_DATA, tdocBinaryInfo.RFID_BINARY_DATA)
+        && Objects.equals(this.RFID_RAW_DATA, tdocBinaryInfo.RFID_RAW_DATA);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(RFID_BINARY_DATA);
+    return Objects.hash(RFID_BINARY_DATA, RFID_RAW_DATA);
   }
 
   @Override
@@ -82,6 +119,7 @@ public class TDocBinaryInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class TDocBinaryInfo {\n");
     sb.append("    RFID_BINARY_DATA: ").append(toIndentedString(RFID_BINARY_DATA)).append("\n");
+    sb.append("    RFID_RAW_DATA: ").append(toIndentedString(RFID_RAW_DATA)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -103,10 +141,10 @@ public class TDocBinaryInfo {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("RFID_BINARY_DATA");
+    openapiFields.add("RFID_RAW_DATA");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("RFID_BINARY_DATA");
   }
 
   /**
@@ -136,19 +174,29 @@ public class TDocBinaryInfo {
                 entry.getKey(), jsonElement.toString()));
       }
     }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the optional field `RFID_BINARY_DATA`
+    if (jsonObj.get("RFID_BINARY_DATA") != null && !jsonObj.get("RFID_BINARY_DATA").isJsonNull()) {
+      BinaryData.validateJsonElement(jsonObj.get("RFID_BINARY_DATA"));
+    }
+    if (jsonObj.get("RFID_RAW_DATA") != null && !jsonObj.get("RFID_RAW_DATA").isJsonNull()) {
+      JsonArray jsonArrayRFID_RAW_DATA = jsonObj.getAsJsonArray("RFID_RAW_DATA");
+      if (jsonArrayRFID_RAW_DATA != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("RFID_RAW_DATA").isJsonArray()) {
+          throw new IllegalArgumentException(
+              String.format(
+                  "Expected the field `RFID_RAW_DATA` to be an array in the JSON string but got `%s`",
+                  jsonObj.get("RFID_RAW_DATA").toString()));
+        }
 
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : TDocBinaryInfo.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
+        // validate the optional field `RFID_RAW_DATA` (array)
+        for (int i = 0; i < jsonArrayRFID_RAW_DATA.size(); i++) {
+          RfidRawData.validateJsonElement(jsonArrayRFID_RAW_DATA.get(i));
+        }
+        ;
       }
     }
-    JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `RFID_BINARY_DATA`
-    BinaryData.validateJsonElement(jsonObj.get("RFID_BINARY_DATA"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

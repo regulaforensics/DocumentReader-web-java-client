@@ -37,12 +37,11 @@ public class ImagesResult extends ResultItem {
 
   @SerializedName(SERIALIZED_NAME_IMAGES)
   @javax.annotation.Nonnull
-  private com.regula.documentreader.webclient.model.ext.Images images;
+  private Images images;
 
   public ImagesResult() {}
 
-  public ImagesResult images(
-      @javax.annotation.Nonnull com.regula.documentreader.webclient.model.ext.Images images) {
+  public ImagesResult images(@javax.annotation.Nonnull Images images) {
     this.images = images;
     return this;
   }
@@ -53,12 +52,11 @@ public class ImagesResult extends ResultItem {
    * @return images
    */
   @javax.annotation.Nonnull
-  public com.regula.documentreader.webclient.model.ext.Images getImages() {
+  public Images getImages() {
     return images;
   }
 
-  public void setImages(
-      @javax.annotation.Nonnull com.regula.documentreader.webclient.model.ext.Images images) {
+  public void setImages(@javax.annotation.Nonnull Images images) {
     this.images = images;
   }
 

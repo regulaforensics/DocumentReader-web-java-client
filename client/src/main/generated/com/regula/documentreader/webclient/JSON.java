@@ -268,12 +268,18 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "1", com.regula.documentreader.webclient.model.DocumentImageResult.class);
                     classByDiscriminatorValue.put(
+                        "101",
+                        com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
                         "102", com.regula.documentreader.webclient.model.TextDataResult.class);
                     classByDiscriminatorValue.put(
                         "103", com.regula.documentreader.webclient.model.GraphicsResult.class);
                     classByDiscriminatorValue.put(
                         "104",
                         com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
+                        "105",
+                        com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
                     classByDiscriminatorValue.put(
                         "109", com.regula.documentreader.webclient.model.ByteArrayResult.class);
                     classByDiscriminatorValue.put(
@@ -395,6 +401,9 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "MRZTestQualityResult",
                         com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
+                    classByDiscriminatorValue.put(
+                        "RFIDGraphicsInfoResult",
+                        com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
                     classByDiscriminatorValue.put(
                         "StatusResult",
                         com.regula.documentreader.webclient.model.StatusResult.class);
@@ -713,6 +722,24 @@ public class JSON {
                   }
                 })
             .registerTypeSelector(
+                com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class,
+                new TypeSelector<
+                    com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult>() {
+                  @Override
+                  public Class<
+                          ? extends
+                              com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "RFIDGraphicsInfoResult",
+                        com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue,
+                        getDiscriminatorValue(readElement, "result_type"));
+                  }
+                })
+            .registerTypeSelector(
                 com.regula.documentreader.webclient.model.ResultItem.class,
                 new TypeSelector<com.regula.documentreader.webclient.model.ResultItem>() {
                   @Override
@@ -722,12 +749,18 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "1", com.regula.documentreader.webclient.model.DocumentImageResult.class);
                     classByDiscriminatorValue.put(
+                        "101",
+                        com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
                         "102", com.regula.documentreader.webclient.model.TextDataResult.class);
                     classByDiscriminatorValue.put(
                         "103", com.regula.documentreader.webclient.model.GraphicsResult.class);
                     classByDiscriminatorValue.put(
                         "104",
                         com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
+                    classByDiscriminatorValue.put(
+                        "105",
+                        com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
                     classByDiscriminatorValue.put(
                         "109", com.regula.documentreader.webclient.model.ByteArrayResult.class);
                     classByDiscriminatorValue.put(
@@ -926,6 +959,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ByteArrayResult.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.CertificateData.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ChosenDocumentType
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -1011,8 +1046,12 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.FieldItem.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.FileImage.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GetTransactionsByTagResponse
             .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.GraphData.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GraphicFieldRect.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -1105,6 +1144,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.PArrayField.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.ParsedData.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.PerDocumentConfig.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.PhotoIdentResult.CustomTypeAdapterFactory());
@@ -1125,6 +1166,9 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ProcessSystemInfo.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult
+            .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RawImageContainerList
             .CustomTypeAdapterFactory());
@@ -1161,6 +1205,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RfidPkiExtension.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.RfidRawData.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RfidSecurityObject
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -1173,6 +1219,9 @@ public class JSON {
         new com.regula.documentreader.webclient.model.RfidValidity.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.SecurityFeatureResult
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.SecurityObjectCertificates
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.SourceValidity.CustomTypeAdapterFactory());
@@ -1197,6 +1246,9 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TDocBinaryInfo.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.TOriginalRFIDGraphicsInfo
+            .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.Text.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -1232,10 +1284,6 @@ public class JSON {
         new com.regula.documentreader.webclient.model.TrfFtBytesType.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TrfFtString.CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.TrfFtStringStatus.CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.TrfFtStringType.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.VerifiedFieldMap.CustomTypeAdapterFactory());
     gson = gsonBuilder.create();

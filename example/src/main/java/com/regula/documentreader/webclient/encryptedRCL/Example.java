@@ -38,12 +38,11 @@ public class Example {
         var containerList = new ContainerList();
         containerList.setList(List.of(license, encryptedRCL));
 
-        var requestParams = new RecognitionParams()
-                .withScenario(Scenario.FULL_PROCESS)
-                .withDoublePageSpread(true)
-                .withMeasureSystem(MeasureSystem.METRIC)
-                .withDateFormat("M/d/yyyy")
-                .withAlreadyCropped(true);
+        var requestParams = new ProcessParams()
+                .scenario(Scenario.FULL_PROCESS)
+                .measureSystem(MeasureSystem.METRIC)
+                .dateFormat("M/d/yyyy")
+                .alreadyCropped(true);
 
         RecognitionRequest request = new RecognitionRequest(
                 requestParams, containerList);

@@ -45,7 +45,7 @@ public class Main {
         var whitePageRequestImage = new ProcessRequestImage(whitePage0, Light.WHITE, 0);
 
         var requestParams = new ProcessParams()
-            .scenario(Scenario.MRZ)
+            .scenario(Scenario.FULL_PROCESS)
             .resultTypeOutput(
                 Arrays.asList(
                     // actual results
@@ -80,7 +80,6 @@ public class Main {
             RecognitionResponse response = api.process(request);
             var requestJson = request.json();
             var responseJson = response.json();
-            System.out.println(response.text());
 
             // to send raw request(ex encrypted one) with overriding processing params here use next api
             // RecognitionResponse response = api.process(request, requestParams);

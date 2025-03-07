@@ -64,7 +64,7 @@ public class Text {
 
   @SerializedName(SERIALIZED_NAME_FIELD_LIST)
   @javax.annotation.Nonnull
-  private List<com.regula.documentreader.webclient.model.ext.TextField> fieldList;
+  private List<TextField> fieldList;
 
   public static final String SERIALIZED_NAME_AVAILABLE_SOURCE_LIST = "availableSourceList";
 
@@ -150,15 +150,12 @@ public class Text {
     this.dateFormat = dateFormat;
   }
 
-  public Text fieldList(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.ext.TextField> fieldList) {
+  public Text fieldList(@javax.annotation.Nonnull List<TextField> fieldList) {
     this.fieldList = fieldList;
     return this;
   }
 
-  public Text addFieldListItem(
-      com.regula.documentreader.webclient.model.ext.TextField fieldListItem) {
+  public Text addFieldListItem(TextField fieldListItem) {
     if (this.fieldList == null) {
       this.fieldList = new ArrayList<>();
     }
@@ -172,13 +169,11 @@ public class Text {
    * @return fieldList
    */
   @javax.annotation.Nonnull
-  public List<com.regula.documentreader.webclient.model.ext.TextField> getFieldList() {
+  public List<TextField> getFieldList() {
     return fieldList;
   }
 
-  public void setFieldList(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.ext.TextField> fieldList) {
+  public void setFieldList(@javax.annotation.Nonnull List<TextField> fieldList) {
     this.fieldList = fieldList;
   }
 
@@ -343,8 +338,7 @@ public class Text {
     JsonArray jsonArrayfieldList = jsonObj.getAsJsonArray("fieldList");
     // validate the required field `fieldList` (array)
     for (int i = 0; i < jsonArrayfieldList.size(); i++) {
-      com.regula.documentreader.webclient.model.ext.TextField.validateJsonElement(
-          jsonArrayfieldList.get(i));
+      TextField.validateJsonElement(jsonArrayfieldList.get(i));
     }
     ;
     // ensure the json data is an array

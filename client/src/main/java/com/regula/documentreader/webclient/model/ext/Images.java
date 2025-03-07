@@ -5,8 +5,13 @@ import com.regula.documentreader.webclient.model.ImagesAvailableSource;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.springframework.beans.BeanUtils;
 
 public class Images extends com.regula.documentreader.webclient.model.Images {
+
+  public Images(com.regula.documentreader.webclient.model.Images imagesContainer) {
+    BeanUtils.copyProperties(imagesContainer, this);
+  }
 
   public Images withAvailableSourceList(List<ImagesAvailableSource> availableSourceList) {
     this.setAvailableSourceList(availableSourceList);
@@ -17,7 +22,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
   public Images addAvailableSourceListItem(ImagesAvailableSource availableSourceListItem) {
     com.regula.documentreader.webclient.model.Images images =
         super.addAvailableSourceListItem(availableSourceListItem);
-    return (Images) images;
+    return new Images(images);
   }
 
   @Override
@@ -31,7 +36,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
   }
 
   public Images withFieldList(List<ImagesField> fieldList) {
-    List<ImagesField> fields = new ArrayList<>();
+    List<com.regula.documentreader.webclient.model.ImagesField> fields = new ArrayList<>();
     for (ImagesField field : fieldList) {
       fields.add(field);
     }
@@ -43,7 +48,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
   public ImagesField getField(GraphicFieldType fieldType) {
     for (com.regula.documentreader.webclient.model.ImagesField field : getFieldList()) {
       if (field.getFieldType() == fieldType) {
-        return (ImagesField) field;
+        return new ImagesField(field);
       }
     }
     return null;
@@ -53,7 +58,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
     List<ImagesField> fields = new ArrayList<>();
     for (com.regula.documentreader.webclient.model.ImagesField field : getFieldList()) {
       if (field.getFieldType().getValue() == fieldType) {
-        fields.add((ImagesField) field);
+        fields.add(new ImagesField(field));
       }
     }
     return fields;

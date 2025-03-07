@@ -44,25 +44,25 @@ public class RfidSessionData {
 
   @SerializedName(SERIALIZED_NAME_VIRTUAL_MODE)
   @javax.annotation.Nullable
-  private Object virtualMode = null;
+  private String virtualMode;
 
   public static final String SERIALIZED_NAME_SD_K_VERSION = "SDKVersion";
 
   @SerializedName(SERIALIZED_NAME_SD_K_VERSION)
   @javax.annotation.Nullable
-  private Object sdKVersion = null;
+  private String sdKVersion;
 
   public static final String SERIALIZED_NAME_DRIVER_VERSION = "DriverVersion";
 
   @SerializedName(SERIALIZED_NAME_DRIVER_VERSION)
   @javax.annotation.Nullable
-  private Object driverVersion = null;
+  private String driverVersion;
 
   public static final String SERIALIZED_NAME_FIRMWARE_VERSION = "FirmwareVersion";
 
   @SerializedName(SERIALIZED_NAME_FIRMWARE_VERSION)
   @javax.annotation.Nullable
-  private Object firmwareVersion = null;
+  private String firmwareVersion;
 
   public static final String SERIALIZED_NAME_APPLICATIONS = "Applications";
 
@@ -136,9 +136,15 @@ public class RfidSessionData {
   @javax.annotation.Nonnull
   private List<RfidSecurityObject> securityObjects;
 
+  public static final String SERIALIZED_NAME_STATUS = "Status";
+
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private CheckResult status;
+
   public RfidSessionData() {}
 
-  public RfidSessionData virtualMode(@javax.annotation.Nullable Object virtualMode) {
+  public RfidSessionData virtualMode(@javax.annotation.Nullable String virtualMode) {
     this.virtualMode = virtualMode;
     return this;
   }
@@ -150,15 +156,15 @@ public class RfidSessionData {
    * @return virtualMode
    */
   @javax.annotation.Nullable
-  public Object getVirtualMode() {
+  public String getVirtualMode() {
     return virtualMode;
   }
 
-  public void setVirtualMode(@javax.annotation.Nullable Object virtualMode) {
+  public void setVirtualMode(@javax.annotation.Nullable String virtualMode) {
     this.virtualMode = virtualMode;
   }
 
-  public RfidSessionData sdKVersion(@javax.annotation.Nullable Object sdKVersion) {
+  public RfidSessionData sdKVersion(@javax.annotation.Nullable String sdKVersion) {
     this.sdKVersion = sdKVersion;
     return this;
   }
@@ -169,15 +175,15 @@ public class RfidSessionData {
    * @return sdKVersion
    */
   @javax.annotation.Nullable
-  public Object getSdKVersion() {
+  public String getSdKVersion() {
     return sdKVersion;
   }
 
-  public void setSdKVersion(@javax.annotation.Nullable Object sdKVersion) {
+  public void setSdKVersion(@javax.annotation.Nullable String sdKVersion) {
     this.sdKVersion = sdKVersion;
   }
 
-  public RfidSessionData driverVersion(@javax.annotation.Nullable Object driverVersion) {
+  public RfidSessionData driverVersion(@javax.annotation.Nullable String driverVersion) {
     this.driverVersion = driverVersion;
     return this;
   }
@@ -188,15 +194,15 @@ public class RfidSessionData {
    * @return driverVersion
    */
   @javax.annotation.Nullable
-  public Object getDriverVersion() {
+  public String getDriverVersion() {
     return driverVersion;
   }
 
-  public void setDriverVersion(@javax.annotation.Nullable Object driverVersion) {
+  public void setDriverVersion(@javax.annotation.Nullable String driverVersion) {
     this.driverVersion = driverVersion;
   }
 
-  public RfidSessionData firmwareVersion(@javax.annotation.Nullable Object firmwareVersion) {
+  public RfidSessionData firmwareVersion(@javax.annotation.Nullable String firmwareVersion) {
     this.firmwareVersion = firmwareVersion;
     return this;
   }
@@ -207,11 +213,11 @@ public class RfidSessionData {
    * @return firmwareVersion
    */
   @javax.annotation.Nullable
-  public Object getFirmwareVersion() {
+  public String getFirmwareVersion() {
     return firmwareVersion;
   }
 
-  public void setFirmwareVersion(@javax.annotation.Nullable Object firmwareVersion) {
+  public void setFirmwareVersion(@javax.annotation.Nullable String firmwareVersion) {
     this.firmwareVersion = firmwareVersion;
   }
 
@@ -485,6 +491,25 @@ public class RfidSessionData {
     this.securityObjects = securityObjects;
   }
 
+  public RfidSessionData status(@javax.annotation.Nullable CheckResult status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   *
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public CheckResult getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable CheckResult status) {
+    this.status = status;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -509,7 +534,8 @@ public class RfidSessionData {
         && Objects.equals(this.sessionKey, rfidSessionData.sessionKey)
         && Objects.equals(this.sessionTerminal, rfidSessionData.sessionTerminal)
         && Objects.equals(this.sessionProcedure, rfidSessionData.sessionProcedure)
-        && Objects.equals(this.securityObjects, rfidSessionData.securityObjects);
+        && Objects.equals(this.securityObjects, rfidSessionData.securityObjects)
+        && Objects.equals(this.status, rfidSessionData.status);
   }
 
   @Override
@@ -530,7 +556,8 @@ public class RfidSessionData {
         sessionKey,
         sessionTerminal,
         sessionProcedure,
-        securityObjects);
+        securityObjects,
+        status);
   }
 
   @Override
@@ -553,6 +580,7 @@ public class RfidSessionData {
     sb.append("    sessionTerminal: ").append(toIndentedString(sessionTerminal)).append("\n");
     sb.append("    sessionProcedure: ").append(toIndentedString(sessionProcedure)).append("\n");
     sb.append("    securityObjects: ").append(toIndentedString(securityObjects)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -589,13 +617,10 @@ public class RfidSessionData {
     openapiFields.add("Session_terminal");
     openapiFields.add("Session_procedure");
     openapiFields.add("SecurityObjects");
+    openapiFields.add("Status");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("VirtualMode");
-    openapiRequiredFields.add("SDKVersion");
-    openapiRequiredFields.add("DriverVersion");
-    openapiRequiredFields.add("FirmwareVersion");
     openapiRequiredFields.add("Applications");
     openapiRequiredFields.add("AccessControls");
     openapiRequiredFields.add("CardProperties");
@@ -648,6 +673,34 @@ public class RfidSessionData {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
+    if ((jsonObj.get("VirtualMode") != null && !jsonObj.get("VirtualMode").isJsonNull())
+        && !jsonObj.get("VirtualMode").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `VirtualMode` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("VirtualMode").toString()));
+    }
+    if ((jsonObj.get("SDKVersion") != null && !jsonObj.get("SDKVersion").isJsonNull())
+        && !jsonObj.get("SDKVersion").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `SDKVersion` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("SDKVersion").toString()));
+    }
+    if ((jsonObj.get("DriverVersion") != null && !jsonObj.get("DriverVersion").isJsonNull())
+        && !jsonObj.get("DriverVersion").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `DriverVersion` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("DriverVersion").toString()));
+    }
+    if ((jsonObj.get("FirmwareVersion") != null && !jsonObj.get("FirmwareVersion").isJsonNull())
+        && !jsonObj.get("FirmwareVersion").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `FirmwareVersion` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("FirmwareVersion").toString()));
+    }
     // ensure the json data is an array
     if (!jsonObj.get("Applications").isJsonArray()) {
       throw new IllegalArgumentException(
@@ -710,6 +763,10 @@ public class RfidSessionData {
       RfidSecurityObject.validateJsonElement(jsonArraysecurityObjects.get(i));
     }
     ;
+    // validate the optional field `Status`
+    if (jsonObj.get("Status") != null && !jsonObj.get("Status").isJsonNull()) {
+      CheckResult.validateJsonElement(jsonObj.get("Status"));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

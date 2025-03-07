@@ -58,7 +58,7 @@ public class Images {
 
   @SerializedName(SERIALIZED_NAME_FIELD_LIST)
   @javax.annotation.Nonnull
-  private List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList;
+  private List<ImagesField> fieldList;
 
   public Images() {}
 
@@ -129,15 +129,12 @@ public class Images {
     this.availableSourceList = availableSourceList;
   }
 
-  public Images fieldList(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList) {
+  public Images fieldList(@javax.annotation.Nonnull List<ImagesField> fieldList) {
     this.fieldList = fieldList;
     return this;
   }
 
-  public Images addFieldListItem(
-      com.regula.documentreader.webclient.model.ext.ImagesField fieldListItem) {
+  public Images addFieldListItem(ImagesField fieldListItem) {
     if (this.fieldList == null) {
       this.fieldList = new ArrayList<>();
     }
@@ -151,13 +148,11 @@ public class Images {
    * @return fieldList
    */
   @javax.annotation.Nonnull
-  public List<com.regula.documentreader.webclient.model.ext.ImagesField> getFieldList() {
+  public List<ImagesField> getFieldList() {
     return fieldList;
   }
 
-  public void setFieldList(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.ext.ImagesField> fieldList) {
+  public void setFieldList(@javax.annotation.Nonnull List<ImagesField> fieldList) {
     this.fieldList = fieldList;
   }
 
@@ -286,8 +281,7 @@ public class Images {
     JsonArray jsonArrayfieldList = jsonObj.getAsJsonArray("fieldList");
     // validate the required field `fieldList` (array)
     for (int i = 0; i < jsonArrayfieldList.size(); i++) {
-      com.regula.documentreader.webclient.model.ext.ImagesField.validateJsonElement(
-          jsonArrayfieldList.get(i));
+      ImagesField.validateJsonElement(jsonArrayfieldList.get(i));
     }
     ;
   }

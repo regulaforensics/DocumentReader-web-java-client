@@ -1,10 +1,10 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.google.gson.Gson;
+import com.regula.documentreader.webclient.model.ContainerList;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessSystemInfo;
-import com.regula.documentreader.webclient.model.ContainerList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

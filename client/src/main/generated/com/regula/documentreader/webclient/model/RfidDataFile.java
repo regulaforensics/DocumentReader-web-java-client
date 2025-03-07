@@ -67,38 +67,51 @@ public class RfidDataFile {
   public static final String SERIALIZED_NAME_READING_TIME = "ReadingTime";
 
   @SerializedName(SERIALIZED_NAME_READING_TIME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal readingTime;
 
   public static final String SERIALIZED_NAME_PA_STATUS = "PA_Status";
 
   @SerializedName(SERIALIZED_NAME_PA_STATUS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private RFIDErrorCodes paStatus;
 
   public static final String SERIALIZED_NAME_NOTIFICATIONS = "Notifications";
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_TEXT = "DocFields_Text";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_TEXT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<TextFieldType> docFieldsText;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_GRAPHICS = "DocFields_Graphics";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_GRAPHICS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<GraphicFieldType> docFieldsGraphics;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_ORIGINALS = "DocFields_Originals";
 
   @SerializedName(SERIALIZED_NAME_DOC_FIELDS_ORIGINALS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<GraphicFieldType> docFieldsOriginals;
+
+  public static final String SERIALIZED_NAME_PARSED_DATA = "ParsedData";
+
+  @SerializedName(SERIALIZED_NAME_PARSED_DATA)
+  @javax.annotation.Nullable
+  private ParsedData parsedData;
+
+  public static final String SERIALIZED_NAME_SECURITY_OBJECT_CERTIFICATES =
+      "SecurityObject_Certificates";
+
+  @SerializedName(SERIALIZED_NAME_SECURITY_OBJECT_CERTIFICATES)
+  @javax.annotation.Nullable
+  private SecurityObjectCertificates securityObjectCertificates;
 
   public RfidDataFile() {}
 
@@ -179,7 +192,7 @@ public class RfidDataFile {
     this.readingStatus = readingStatus;
   }
 
-  public RfidDataFile readingTime(@javax.annotation.Nonnull BigDecimal readingTime) {
+  public RfidDataFile readingTime(@javax.annotation.Nullable BigDecimal readingTime) {
     this.readingTime = readingTime;
     return this;
   }
@@ -189,16 +202,16 @@ public class RfidDataFile {
    *
    * @return readingTime
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getReadingTime() {
     return readingTime;
   }
 
-  public void setReadingTime(@javax.annotation.Nonnull BigDecimal readingTime) {
+  public void setReadingTime(@javax.annotation.Nullable BigDecimal readingTime) {
     this.readingTime = readingTime;
   }
 
-  public RfidDataFile paStatus(@javax.annotation.Nonnull RFIDErrorCodes paStatus) {
+  public RfidDataFile paStatus(@javax.annotation.Nullable RFIDErrorCodes paStatus) {
     this.paStatus = paStatus;
     return this;
   }
@@ -208,17 +221,17 @@ public class RfidDataFile {
    *
    * @return paStatus
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public RFIDErrorCodes getPaStatus() {
     return paStatus;
   }
 
-  public void setPaStatus(@javax.annotation.Nonnull RFIDErrorCodes paStatus) {
+  public void setPaStatus(@javax.annotation.Nullable RFIDErrorCodes paStatus) {
     this.paStatus = paStatus;
   }
 
   public RfidDataFile notifications(
-      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+      @javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
     return this;
   }
@@ -237,16 +250,16 @@ public class RfidDataFile {
    *
    * @return notifications
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<ParsingErrorCodes> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
   }
 
-  public RfidDataFile docFieldsText(@javax.annotation.Nonnull List<TextFieldType> docFieldsText) {
+  public RfidDataFile docFieldsText(@javax.annotation.Nullable List<TextFieldType> docFieldsText) {
     this.docFieldsText = docFieldsText;
     return this;
   }
@@ -264,17 +277,17 @@ public class RfidDataFile {
    *
    * @return docFieldsText
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<TextFieldType> getDocFieldsText() {
     return docFieldsText;
   }
 
-  public void setDocFieldsText(@javax.annotation.Nonnull List<TextFieldType> docFieldsText) {
+  public void setDocFieldsText(@javax.annotation.Nullable List<TextFieldType> docFieldsText) {
     this.docFieldsText = docFieldsText;
   }
 
   public RfidDataFile docFieldsGraphics(
-      @javax.annotation.Nonnull List<GraphicFieldType> docFieldsGraphics) {
+      @javax.annotation.Nullable List<GraphicFieldType> docFieldsGraphics) {
     this.docFieldsGraphics = docFieldsGraphics;
     return this;
   }
@@ -292,18 +305,18 @@ public class RfidDataFile {
    *
    * @return docFieldsGraphics
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<GraphicFieldType> getDocFieldsGraphics() {
     return docFieldsGraphics;
   }
 
   public void setDocFieldsGraphics(
-      @javax.annotation.Nonnull List<GraphicFieldType> docFieldsGraphics) {
+      @javax.annotation.Nullable List<GraphicFieldType> docFieldsGraphics) {
     this.docFieldsGraphics = docFieldsGraphics;
   }
 
   public RfidDataFile docFieldsOriginals(
-      @javax.annotation.Nonnull List<GraphicFieldType> docFieldsOriginals) {
+      @javax.annotation.Nullable List<GraphicFieldType> docFieldsOriginals) {
     this.docFieldsOriginals = docFieldsOriginals;
     return this;
   }
@@ -322,14 +335,54 @@ public class RfidDataFile {
    *
    * @return docFieldsOriginals
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<GraphicFieldType> getDocFieldsOriginals() {
     return docFieldsOriginals;
   }
 
   public void setDocFieldsOriginals(
-      @javax.annotation.Nonnull List<GraphicFieldType> docFieldsOriginals) {
+      @javax.annotation.Nullable List<GraphicFieldType> docFieldsOriginals) {
     this.docFieldsOriginals = docFieldsOriginals;
+  }
+
+  public RfidDataFile parsedData(@javax.annotation.Nullable ParsedData parsedData) {
+    this.parsedData = parsedData;
+    return this;
+  }
+
+  /**
+   * Get parsedData
+   *
+   * @return parsedData
+   */
+  @javax.annotation.Nullable
+  public ParsedData getParsedData() {
+    return parsedData;
+  }
+
+  public void setParsedData(@javax.annotation.Nullable ParsedData parsedData) {
+    this.parsedData = parsedData;
+  }
+
+  public RfidDataFile securityObjectCertificates(
+      @javax.annotation.Nullable SecurityObjectCertificates securityObjectCertificates) {
+    this.securityObjectCertificates = securityObjectCertificates;
+    return this;
+  }
+
+  /**
+   * Get securityObjectCertificates
+   *
+   * @return securityObjectCertificates
+   */
+  @javax.annotation.Nullable
+  public SecurityObjectCertificates getSecurityObjectCertificates() {
+    return securityObjectCertificates;
+  }
+
+  public void setSecurityObjectCertificates(
+      @javax.annotation.Nullable SecurityObjectCertificates securityObjectCertificates) {
+    this.securityObjectCertificates = securityObjectCertificates;
   }
 
   @Override
@@ -350,7 +403,9 @@ public class RfidDataFile {
         && Objects.equals(this.notifications, rfidDataFile.notifications)
         && Objects.equals(this.docFieldsText, rfidDataFile.docFieldsText)
         && Objects.equals(this.docFieldsGraphics, rfidDataFile.docFieldsGraphics)
-        && Objects.equals(this.docFieldsOriginals, rfidDataFile.docFieldsOriginals);
+        && Objects.equals(this.docFieldsOriginals, rfidDataFile.docFieldsOriginals)
+        && Objects.equals(this.parsedData, rfidDataFile.parsedData)
+        && Objects.equals(this.securityObjectCertificates, rfidDataFile.securityObjectCertificates);
   }
 
   @Override
@@ -365,7 +420,9 @@ public class RfidDataFile {
         notifications,
         docFieldsText,
         docFieldsGraphics,
-        docFieldsOriginals);
+        docFieldsOriginals,
+        parsedData,
+        securityObjectCertificates);
   }
 
   @Override
@@ -382,6 +439,10 @@ public class RfidDataFile {
     sb.append("    docFieldsText: ").append(toIndentedString(docFieldsText)).append("\n");
     sb.append("    docFieldsGraphics: ").append(toIndentedString(docFieldsGraphics)).append("\n");
     sb.append("    docFieldsOriginals: ").append(toIndentedString(docFieldsOriginals)).append("\n");
+    sb.append("    parsedData: ").append(toIndentedString(parsedData)).append("\n");
+    sb.append("    securityObjectCertificates: ")
+        .append(toIndentedString(securityObjectCertificates))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -412,17 +473,13 @@ public class RfidDataFile {
     openapiFields.add("DocFields_Text");
     openapiFields.add("DocFields_Graphics");
     openapiFields.add("DocFields_Originals");
+    openapiFields.add("ParsedData");
+    openapiFields.add("SecurityObject_Certificates");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("Type");
     openapiRequiredFields.add("ReadingStatus");
-    openapiRequiredFields.add("ReadingTime");
-    openapiRequiredFields.add("PA_Status");
-    openapiRequiredFields.add("Notifications");
-    openapiRequiredFields.add("DocFields_Text");
-    openapiRequiredFields.add("DocFields_Graphics");
-    openapiRequiredFields.add("DocFields_Originals");
   }
 
   /**
@@ -478,47 +535,54 @@ public class RfidDataFile {
     }
     // validate the required field `ReadingStatus`
     RFIDErrorCodes.validateJsonElement(jsonObj.get("ReadingStatus"));
-    // validate the required field `PA_Status`
-    RFIDErrorCodes.validateJsonElement(jsonObj.get("PA_Status"));
-    // ensure the required json array is present
-    if (jsonObj.get("Notifications") == null) {
-      throw new IllegalArgumentException(
-          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-    } else if (!jsonObj.get("Notifications").isJsonArray()) {
+    // validate the optional field `PA_Status`
+    if (jsonObj.get("PA_Status") != null && !jsonObj.get("PA_Status").isJsonNull()) {
+      RFIDErrorCodes.validateJsonElement(jsonObj.get("PA_Status"));
+    }
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("Notifications") != null
+        && !jsonObj.get("Notifications").isJsonNull()
+        && !jsonObj.get("Notifications").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `Notifications` to be an array in the JSON string but got `%s`",
               jsonObj.get("Notifications").toString()));
     }
-    // ensure the required json array is present
-    if (jsonObj.get("DocFields_Text") == null) {
-      throw new IllegalArgumentException(
-          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-    } else if (!jsonObj.get("DocFields_Text").isJsonArray()) {
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("DocFields_Text") != null
+        && !jsonObj.get("DocFields_Text").isJsonNull()
+        && !jsonObj.get("DocFields_Text").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `DocFields_Text` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Text").toString()));
     }
-    // ensure the required json array is present
-    if (jsonObj.get("DocFields_Graphics") == null) {
-      throw new IllegalArgumentException(
-          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-    } else if (!jsonObj.get("DocFields_Graphics").isJsonArray()) {
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("DocFields_Graphics") != null
+        && !jsonObj.get("DocFields_Graphics").isJsonNull()
+        && !jsonObj.get("DocFields_Graphics").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `DocFields_Graphics` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Graphics").toString()));
     }
-    // ensure the required json array is present
-    if (jsonObj.get("DocFields_Originals") == null) {
-      throw new IllegalArgumentException(
-          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-    } else if (!jsonObj.get("DocFields_Originals").isJsonArray()) {
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("DocFields_Originals") != null
+        && !jsonObj.get("DocFields_Originals").isJsonNull()
+        && !jsonObj.get("DocFields_Originals").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `DocFields_Originals` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Originals").toString()));
+    }
+    // validate the optional field `ParsedData`
+    if (jsonObj.get("ParsedData") != null && !jsonObj.get("ParsedData").isJsonNull()) {
+      ParsedData.validateJsonElement(jsonObj.get("ParsedData"));
+    }
+    // validate the optional field `SecurityObject_Certificates`
+    if (jsonObj.get("SecurityObject_Certificates") != null
+        && !jsonObj.get("SecurityObject_Certificates").isJsonNull()) {
+      SecurityObjectCertificates.validateJsonElement(jsonObj.get("SecurityObject_Certificates"));
     }
   }
 

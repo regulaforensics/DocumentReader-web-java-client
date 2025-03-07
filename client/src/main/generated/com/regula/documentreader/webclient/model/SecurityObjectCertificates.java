@@ -28,38 +28,37 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** AuthenticityResult */
+/** SecurityObjectCertificates */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class AuthenticityResult extends ResultItem {
-  public static final String SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST = "AuthenticityCheckList";
+public class SecurityObjectCertificates {
+  public static final String SERIALIZED_NAME_CERTIFICATE_DATA = "Certificate_Data";
 
-  @SerializedName(SERIALIZED_NAME_AUTHENTICITY_CHECK_LIST)
-  @javax.annotation.Nonnull
-  private AuthenticityCheckList authenticityCheckList;
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE_DATA)
+  @javax.annotation.Nullable
+  private CertificateData certificateData;
 
-  public AuthenticityResult() {}
+  public SecurityObjectCertificates() {}
 
-  public AuthenticityResult authenticityCheckList(
-      @javax.annotation.Nonnull AuthenticityCheckList authenticityCheckList) {
-    this.authenticityCheckList = authenticityCheckList;
+  public SecurityObjectCertificates certificateData(
+      @javax.annotation.Nullable CertificateData certificateData) {
+    this.certificateData = certificateData;
     return this;
   }
 
   /**
-   * Get authenticityCheckList
+   * Get certificateData
    *
-   * @return authenticityCheckList
+   * @return certificateData
    */
-  @javax.annotation.Nonnull
-  public AuthenticityCheckList getAuthenticityCheckList() {
-    return authenticityCheckList;
+  @javax.annotation.Nullable
+  public CertificateData getCertificateData() {
+    return certificateData;
   }
 
-  public void setAuthenticityCheckList(
-      @javax.annotation.Nonnull AuthenticityCheckList authenticityCheckList) {
-    this.authenticityCheckList = authenticityCheckList;
+  public void setCertificateData(@javax.annotation.Nullable CertificateData certificateData) {
+    this.certificateData = certificateData;
   }
 
   @Override
@@ -70,24 +69,20 @@ public class AuthenticityResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AuthenticityResult authenticityResult = (AuthenticityResult) o;
-    return Objects.equals(this.authenticityCheckList, authenticityResult.authenticityCheckList)
-        && super.equals(o);
+    SecurityObjectCertificates securityObjectCertificates = (SecurityObjectCertificates) o;
+    return Objects.equals(this.certificateData, securityObjectCertificates.certificateData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authenticityCheckList, super.hashCode());
+    return Objects.hash(certificateData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AuthenticityResult {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    authenticityCheckList: ")
-        .append(toIndentedString(authenticityCheckList))
-        .append("\n");
+    sb.append("class SecurityObjectCertificates {\n");
+    sb.append("    certificateData: ").append(toIndentedString(certificateData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,55 +103,43 @@ public class AuthenticityResult extends ResultItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("AuthenticityCheckList");
+    openapiFields.add("Certificate_Data");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("AuthenticityCheckList");
-    openapiRequiredFields.add("result_type");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to AuthenticityResult
+   * @throws IOException if the JSON Element is invalid with respect to SecurityObjectCertificates
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!AuthenticityResult.openapiRequiredFields
+      if (!SecurityObjectCertificates.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in AuthenticityResult is not found in the empty JSON string",
-                AuthenticityResult.openapiRequiredFields.toString()));
+                "The required field(s) %s in SecurityObjectCertificates is not found in the empty JSON string",
+                SecurityObjectCertificates.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!AuthenticityResult.openapiFields.contains(entry.getKey())) {
+      if (!SecurityObjectCertificates.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `AuthenticityResult` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `SecurityObjectCertificates` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
-
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : AuthenticityResult.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the optional field `Certificate_Data`
+    if (jsonObj.get("Certificate_Data") != null && !jsonObj.get("Certificate_Data").isJsonNull()) {
+      CertificateData.validateJsonElement(jsonObj.get("Certificate_Data"));
     }
   }
 
@@ -164,23 +147,23 @@ public class AuthenticityResult extends ResultItem {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!AuthenticityResult.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'AuthenticityResult' and its subtypes
+      if (!SecurityObjectCertificates.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'SecurityObjectCertificates' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<AuthenticityResult> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(AuthenticityResult.class));
+      final TypeAdapter<SecurityObjectCertificates> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(SecurityObjectCertificates.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<AuthenticityResult>() {
+          new TypeAdapter<SecurityObjectCertificates>() {
             @Override
-            public void write(JsonWriter out, AuthenticityResult value) throws IOException {
+            public void write(JsonWriter out, SecurityObjectCertificates value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public AuthenticityResult read(JsonReader in) throws IOException {
+            public SecurityObjectCertificates read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -190,18 +173,18 @@ public class AuthenticityResult extends ResultItem {
   }
 
   /**
-   * Create an instance of AuthenticityResult given an JSON string
+   * Create an instance of SecurityObjectCertificates given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of AuthenticityResult
-   * @throws IOException if the JSON string is invalid with respect to AuthenticityResult
+   * @return An instance of SecurityObjectCertificates
+   * @throws IOException if the JSON string is invalid with respect to SecurityObjectCertificates
    */
-  public static AuthenticityResult fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AuthenticityResult.class);
+  public static SecurityObjectCertificates fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SecurityObjectCertificates.class);
   }
 
   /**
-   * Convert an instance of AuthenticityResult to an JSON string
+   * Convert an instance of SecurityObjectCertificates to an JSON string
    *
    * @return JSON string
    */

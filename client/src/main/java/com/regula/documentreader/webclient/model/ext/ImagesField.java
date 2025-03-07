@@ -6,8 +6,13 @@ import com.regula.documentreader.webclient.model.ImagesFieldValue;
 import com.regula.documentreader.webclient.model.Source;
 import java.util.List;
 import javax.annotation.Nullable;
+import org.springframework.beans.BeanUtils;
 
 public class ImagesField extends com.regula.documentreader.webclient.model.ImagesField {
+
+  public ImagesField(com.regula.documentreader.webclient.model.ImagesField field) {
+    BeanUtils.copyProperties(field, this);
+  }
 
   public ImagesField withFieldName(String fieldName) {
     this.setFieldName(fieldName);
@@ -28,7 +33,7 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
   public ImagesField addValueListItem(ImagesFieldValue valueListItem) {
     com.regula.documentreader.webclient.model.ImagesField field =
         super.addValueListItem(valueListItem);
-    return (ImagesField) field;
+    return new ImagesField(field);
   }
 
   @Override
