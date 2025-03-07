@@ -41,7 +41,7 @@ public class TrfFtBytes {
 
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  private TrfFtBytesType type;
+  private Integer type;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
 
@@ -63,22 +63,22 @@ public class TrfFtBytes {
 
   public TrfFtBytes() {}
 
-  public TrfFtBytes type(@javax.annotation.Nonnull TrfFtBytesType type) {
+  public TrfFtBytes type(@javax.annotation.Nonnull Integer type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * Logical type of the field
    *
    * @return type
    */
   @javax.annotation.Nonnull
-  public TrfFtBytesType getType() {
+  public Integer getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TrfFtBytesType type) {
+  public void setType(@javax.annotation.Nonnull Integer type) {
     this.type = type;
   }
 
@@ -239,8 +239,6 @@ public class TrfFtBytes {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `Type`
-    TrfFtBytesType.validateJsonElement(jsonObj.get("Type"));
     if ((jsonObj.get("Data") != null && !jsonObj.get("Data").isJsonNull())
         && !jsonObj.get("Data").isJsonPrimitive()) {
       throw new IllegalArgumentException(

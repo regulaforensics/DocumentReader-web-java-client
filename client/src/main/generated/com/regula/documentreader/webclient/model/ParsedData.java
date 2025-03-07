@@ -39,17 +39,17 @@ public class ParsedData {
 
   @SerializedName(SERIALIZED_NAME_PARSING_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<Integer> parsingNotifications;
+  private List<Long> parsingNotifications;
 
   public ParsedData() {}
 
   public ParsedData parsingNotifications(
-      @javax.annotation.Nullable List<Integer> parsingNotifications) {
+      @javax.annotation.Nullable List<Long> parsingNotifications) {
     this.parsingNotifications = parsingNotifications;
     return this;
   }
 
-  public ParsedData addParsingNotificationsItem(Integer parsingNotificationsItem) {
+  public ParsedData addParsingNotificationsItem(Long parsingNotificationsItem) {
     if (this.parsingNotifications == null) {
       this.parsingNotifications = new ArrayList<>();
     }
@@ -63,12 +63,11 @@ public class ParsedData {
    * @return parsingNotifications
    */
   @javax.annotation.Nullable
-  public List<Integer> getParsingNotifications() {
+  public List<Long> getParsingNotifications() {
     return parsingNotifications;
   }
 
-  public void setParsingNotifications(
-      @javax.annotation.Nullable List<Integer> parsingNotifications) {
+  public void setParsingNotifications(@javax.annotation.Nullable List<Long> parsingNotifications) {
     this.parsingNotifications = parsingNotifications;
   }
 

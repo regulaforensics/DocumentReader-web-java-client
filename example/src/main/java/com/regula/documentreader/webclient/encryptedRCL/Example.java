@@ -20,7 +20,7 @@ public class Example {
     public static final String API_BASE_PATH = "API_BASE_PATH";
     public static final String TEST_LICENSE = "TEST_LICENSE";
 
-    public static void main(String[] args) throws IOException, UnsupportedEncodingException {
+    public static void main(String[] args) throws IOException {
 
         var apiBaseUrl = System.getenv(API_BASE_PATH);
         if (apiBaseUrl == null) {

@@ -111,7 +111,7 @@ public class RfidSignerInfoEx {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private ParsingErrorCodes notifications;
+  private List<ParsingNotificationCodes> notifications;
 
   public RfidSignerInfoEx() {}
 
@@ -346,8 +346,17 @@ public class RfidSignerInfoEx {
     this.dataToHash = dataToHash;
   }
 
-  public RfidSignerInfoEx notifications(@javax.annotation.Nonnull ParsingErrorCodes notifications) {
+  public RfidSignerInfoEx notifications(
+      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
     this.notifications = notifications;
+    return this;
+  }
+
+  public RfidSignerInfoEx addNotificationsItem(ParsingNotificationCodes notificationsItem) {
+    if (this.notifications == null) {
+      this.notifications = new ArrayList<>();
+    }
+    this.notifications.add(notificationsItem);
     return this;
   }
 
@@ -357,11 +366,12 @@ public class RfidSignerInfoEx {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public ParsingErrorCodes getNotifications() {
+  public List<ParsingNotificationCodes> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull ParsingErrorCodes notifications) {
+  public void setNotifications(
+      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
     this.notifications = notifications;
   }
 
@@ -566,8 +576,16 @@ public class RfidSignerInfoEx {
               "Expected the field `DataToHash` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DataToHash").toString()));
     }
-    // validate the required field `Notifications`
-    ParsingErrorCodes.validateJsonElement(jsonObj.get("Notifications"));
+    // ensure the required json array is present
+    if (jsonObj.get("Notifications") == null) {
+      throw new IllegalArgumentException(
+          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+    } else if (!jsonObj.get("Notifications").isJsonArray()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `Notifications` to be an array in the JSON string but got `%s`",
+              jsonObj.get("Notifications").toString()));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

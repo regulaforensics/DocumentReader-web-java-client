@@ -131,7 +131,6 @@ src/main/generated/com/regula/documentreader/webclient/model/OutData.java
 src/main/generated/com/regula/documentreader/webclient/model/OutDataTransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsedData.java
-src/main/generated/com/regula/documentreader/webclient/model/ParsingErrorCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingNotificationCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/PerDocumentConfig.java
 src/main/generated/com/regula/documentreader/webclient/model/PhotoIdentResult.java
@@ -215,7 +214,6 @@ src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessR
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResponse.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytes.java
-src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytesType.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtString.java
 src/main/generated/com/regula/documentreader/webclient/model/VerificationResult.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java

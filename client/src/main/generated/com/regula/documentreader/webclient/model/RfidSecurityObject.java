@@ -62,7 +62,7 @@ public class RfidSecurityObject {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications;
+  private List<ParsingNotificationCodes> notifications;
 
   public static final String SERIALIZED_NAME_SIGNER_INFOS = "SignerInfos";
 
@@ -130,12 +130,12 @@ public class RfidSecurityObject {
   }
 
   public RfidSecurityObject notifications(
-      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidSecurityObject addNotificationsItem(ParsingErrorCodes notificationsItem) {
+  public RfidSecurityObject addNotificationsItem(ParsingNotificationCodes notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -149,11 +149,12 @@ public class RfidSecurityObject {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<ParsingErrorCodes> getNotifications() {
+  public List<ParsingNotificationCodes> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public void setNotifications(
+      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
     this.notifications = notifications;
   }
 

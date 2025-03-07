@@ -1281,8 +1281,6 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TrfFtBytes.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.TrfFtBytesType.CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TrfFtString.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.VerifiedFieldMap.CustomTypeAdapterFactory());
