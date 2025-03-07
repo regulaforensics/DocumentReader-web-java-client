@@ -909,6 +909,9 @@ public class JSON {
         new com.regula.documentreader.webclient.model.AuthenticityCheckList
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.AuthenticityCheckResult
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.AuthenticityCheckResultListInner
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
@@ -928,6 +931,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ChosenDocumentTypeResult
             .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.ContainerList.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ContainerListListInner
             .CustomTypeAdapterFactory());
@@ -952,6 +957,9 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.DocVisualExtendedFieldRfid
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.DocVisualExtendedInfo
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.DocVisualExtendedInfoPArrayFieldsInner
@@ -1009,6 +1017,8 @@ public class JSON {
         new com.regula.documentreader.webclient.model.GraphicFieldRect.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GraphicFieldRfid.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.GraphicFieldsList.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GraphicFieldsListPArrayFieldsInner
             .CustomTypeAdapterFactory());

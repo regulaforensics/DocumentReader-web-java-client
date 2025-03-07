@@ -65,7 +65,7 @@ public class TransactionProcessRequest {
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_LIST)
   @javax.annotation.Nullable
-  private com.regula.documentreader.webclient.model.changed.ContainerList containerList;
+  private ContainerList containerList;
 
   public static final String SERIALIZED_NAME_SYSTEM_INFO = "systemInfo";
 
@@ -173,8 +173,7 @@ public class TransactionProcessRequest {
   }
 
   public TransactionProcessRequest containerList(
-      @javax.annotation.Nullable
-          com.regula.documentreader.webclient.model.changed.ContainerList containerList) {
+      @javax.annotation.Nullable ContainerList containerList) {
     this.containerList = containerList;
     return this;
   }
@@ -185,13 +184,11 @@ public class TransactionProcessRequest {
    * @return containerList
    */
   @javax.annotation.Nullable
-  public com.regula.documentreader.webclient.model.changed.ContainerList getContainerList() {
+  public ContainerList getContainerList() {
     return containerList;
   }
 
-  public void setContainerList(
-      @javax.annotation.Nullable
-          com.regula.documentreader.webclient.model.changed.ContainerList containerList) {
+  public void setContainerList(@javax.annotation.Nullable ContainerList containerList) {
     this.containerList = containerList;
   }
 
@@ -415,8 +412,7 @@ public class TransactionProcessRequest {
     }
     // validate the optional field `ContainerList`
     if (jsonObj.get("ContainerList") != null && !jsonObj.get("ContainerList").isJsonNull()) {
-      com.regula.documentreader.webclient.model.changed.ContainerList.validateJsonElement(
-          jsonObj.get("ContainerList"));
+      ContainerList.validateJsonElement(jsonObj.get("ContainerList"));
     }
     // validate the optional field `systemInfo`
     if (jsonObj.get("systemInfo") != null && !jsonObj.get("systemInfo").isJsonNull()) {

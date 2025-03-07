@@ -6,20 +6,22 @@ import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_N
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.model.CheckResult;
+import com.regula.documentreader.webclient.model.GraphicFieldType;
 import com.regula.documentreader.webclient.model.LexicalAnalysisResult;
 import com.regula.documentreader.webclient.model.Light;
+import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.Result;
 import com.regula.documentreader.webclient.model.Scenario;
 import com.regula.documentreader.webclient.model.Source;
 import com.regula.documentreader.webclient.model.TextField;
 import com.regula.documentreader.webclient.model.ext.ProcessRequestImage;
-import com.regula.documentreader.webclient.model.ext.RecognitionParams;
 import com.regula.documentreader.webclient.model.ext.RecognitionRequest;
 import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -42,24 +44,23 @@ public class Main {
 
         var whitePageRequestImage = new ProcessRequestImage(whitePage0, Light.WHITE, 0);
 
-        var requestParams = new RecognitionParams()
-                .withScenario(Scenario.FULL_PROCESS)
-//                    .withResultTypeOutput(
-//                            // actual results
-//                            Result.STATUS, Result.TEXT, Result.IMAGES,
-//                            Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
-//                            Result.DOCUMENT_POSITION,
-//                            // legacy results
-//                            Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
-//                            Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
-//                            Result.LEXICAL_ANALYSIS
-//                    )
-                .withAlreadyCropped(true);
+        var requestParams = new ProcessParams()
+            .scenario(Scenario.MRZ)
+            .resultTypeOutput(
+                Arrays.asList(
+                    // actual results
+                    Result.STATUS, Result.TEXT, Result.IMAGES,
+                    Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
+                    Result.DOCUMENT_POSITION,
+                    // legacy results
+                    Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
+                    Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
+                    Result.LEXICAL_ANALYSIS
+                )
+            )
+            .alreadyCropped(true);
 
-        RecognitionRequest request = new RecognitionRequest(
-                requestParams, List.of(whitePageRequestImage)
-        );
-
+        RecognitionRequest request = new RecognitionRequest(requestParams, List.of(whitePageRequestImage));
 
         String finalApiBaseUrl = apiBaseUrl;
 
@@ -79,6 +80,7 @@ public class Main {
             RecognitionResponse response = api.process(request);
             var requestJson = request.json();
             var responseJson = response.json();
+            System.out.println(response.text());
 
             // to send raw request(ex encrypted one) with overriding processing params here use next api
             // RecognitionResponse response = api.process(request, requestParams);
@@ -98,14 +100,7 @@ public class Main {
             var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
             var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
 
-//                var docAuthenticity = response.authenticity();
-
-//                var docIRB900 = docAuthenticity.irB900Checks();
-//                var docIRB900Blank = docIRB900.checksByElement(SecurityFeatureType.BLANK);
-
-//                var docImagePattern = docAuthenticity.imagePatternChecks();
-//                var docImagePatternBlank = docImagePattern.checksByElement(SecurityFeatureType.BLANK);
-
+            System.out.println();
             System.out.format("-----------------------------------------------------------------" + "\n"
                     + "Document Type: " + docType + "\n"
                     + "Document Overall Status: " + docOverallStatus + "\n"
@@ -115,6 +110,7 @@ public class Main {
                     + "Validity Of Document Number MRZ: " + docNumberMrzValidity + "\n"
                     + "MRZ-Visual values comparison: " + docNumberMrzVisualMatching + "\n"
                     + "-----------------------------------------------------------------");
+            System.out.println();
 
             if (response.text() != null) {
                 for (TextField field : response.text().getFieldList()) {
@@ -132,19 +128,26 @@ public class Main {
                 System.out.format("---------------------------------------------------------------");
             }
 
-//                var documentImage = response.images().getField(DOCUMENT_FRONT).getValue();
-//                var portraitField = response.images().getField(PORTRAIT);
-//                var portraitFromVisual = portraitField.getValue(Source.VISUAL);
-//                saveFile("document-image.jpg", documentImage);
-//                saveFile("portrait.jpg", portraitFromVisual);
+            var documentImage = response.images().getField(GraphicFieldType.DOCUMENT_FRONT).getValue();
+            var portraitField = response.images().getField(GraphicFieldType.PORTRAIT);
+            var portraitFromVisual = portraitField.getValue(Source.VISUAL);
+
+            try {
+                saveFile("document-image.jpg", documentImage);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                saveFile("portrait.jpg", portraitFromVisual);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
             // how to get low lvl individual results
             LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-
         }).start();
 
-
-//        System.exit(0);
+        System.exit(0);
     }
 
     @Nullable

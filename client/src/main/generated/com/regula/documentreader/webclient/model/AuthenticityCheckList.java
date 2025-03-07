@@ -46,7 +46,7 @@ public class AuthenticityCheckList {
 
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nonnull
-  private List<com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult> list;
+  private List<AuthenticityCheckResult> list;
 
   public AuthenticityCheckList() {}
 
@@ -69,15 +69,12 @@ public class AuthenticityCheckList {
     this.count = count;
   }
 
-  public AuthenticityCheckList list(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult> list) {
+  public AuthenticityCheckList list(@javax.annotation.Nonnull List<AuthenticityCheckResult> list) {
     this.list = list;
     return this;
   }
 
-  public AuthenticityCheckList addListItem(
-      com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult listItem) {
+  public AuthenticityCheckList addListItem(AuthenticityCheckResult listItem) {
     if (this.list == null) {
       this.list = new ArrayList<>();
     }
@@ -91,13 +88,11 @@ public class AuthenticityCheckList {
    * @return list
    */
   @javax.annotation.Nonnull
-  public List<com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult> getList() {
+  public List<AuthenticityCheckResult> getList() {
     return list;
   }
 
-  public void setList(
-      @javax.annotation.Nonnull
-          List<com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult> list) {
+  public void setList(@javax.annotation.Nonnull List<AuthenticityCheckResult> list) {
     this.list = list;
   }
 
@@ -203,8 +198,7 @@ public class AuthenticityCheckList {
     JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
     // validate the required field `List` (array)
     for (int i = 0; i < jsonArraylist.size(); i++) {
-      com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult.validateJsonElement(
-          jsonArraylist.get(i));
+      AuthenticityCheckResult.validateJsonElement(jsonArraylist.get(i));
     }
     ;
   }

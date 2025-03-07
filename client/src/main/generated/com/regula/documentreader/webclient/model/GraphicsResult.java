@@ -40,13 +40,12 @@ public class GraphicsResult extends ResultItem {
 
   @SerializedName(SERIALIZED_NAME_DOC_GRAPHICS_INFO)
   @javax.annotation.Nonnull
-  private com.regula.documentreader.webclient.model.changed.GraphicFieldsList docGraphicsInfo;
+  private GraphicFieldsList docGraphicsInfo;
 
   public GraphicsResult() {}
 
   public GraphicsResult docGraphicsInfo(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.GraphicFieldsList docGraphicsInfo) {
+      @javax.annotation.Nonnull GraphicFieldsList docGraphicsInfo) {
     this.docGraphicsInfo = docGraphicsInfo;
     return this;
   }
@@ -57,13 +56,11 @@ public class GraphicsResult extends ResultItem {
    * @return docGraphicsInfo
    */
   @javax.annotation.Nonnull
-  public com.regula.documentreader.webclient.model.changed.GraphicFieldsList getDocGraphicsInfo() {
+  public GraphicFieldsList getDocGraphicsInfo() {
     return docGraphicsInfo;
   }
 
-  public void setDocGraphicsInfo(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.GraphicFieldsList docGraphicsInfo) {
+  public void setDocGraphicsInfo(@javax.annotation.Nonnull GraphicFieldsList docGraphicsInfo) {
     this.docGraphicsInfo = docGraphicsInfo;
   }
 

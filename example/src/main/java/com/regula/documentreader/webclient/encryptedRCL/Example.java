@@ -2,6 +2,7 @@ package com.regula.documentreader.webclient.encryptedRCL;
 
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.example.Main;
+import com.regula.documentreader.webclient.model.*;
 import com.regula.documentreader.webclient.model.ext.*;
 
 import javax.annotation.Nullable;
@@ -40,7 +41,7 @@ public class Example {
         var requestParams = new RecognitionParams()
                 .withScenario(Scenario.FULL_PROCESS)
                 .withDoublePageSpread(true)
-                .withMeasureSystem(0)
+                .withMeasureSystem(MeasureSystem.METRIC)
                 .withDateFormat("M/d/yyyy")
                 .withAlreadyCropped(true);
 

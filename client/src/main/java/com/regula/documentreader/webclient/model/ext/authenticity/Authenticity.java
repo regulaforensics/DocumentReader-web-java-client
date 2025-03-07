@@ -2,7 +2,7 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckList;
 import com.regula.documentreader.webclient.model.AuthenticityResultType;
-import com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult;
+import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import java.util.List;
 import javax.annotation.Nullable;
 

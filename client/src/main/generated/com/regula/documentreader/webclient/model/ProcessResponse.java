@@ -49,7 +49,7 @@ public class ProcessResponse {
 
   @SerializedName(SERIALIZED_NAME_CONTAINER_LIST)
   @javax.annotation.Nonnull
-  private com.regula.documentreader.webclient.model.changed.ContainerList containerList;
+  private ContainerList containerList;
 
   public static final String SERIALIZED_NAME_TRANSACTION_INFO = "TransactionInfo";
 
@@ -147,9 +147,7 @@ public class ProcessResponse {
     this.processingFinished = processingFinished;
   }
 
-  public ProcessResponse containerList(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.ContainerList containerList) {
+  public ProcessResponse containerList(@javax.annotation.Nonnull ContainerList containerList) {
     this.containerList = containerList;
     return this;
   }
@@ -160,13 +158,11 @@ public class ProcessResponse {
    * @return containerList
    */
   @javax.annotation.Nonnull
-  public com.regula.documentreader.webclient.model.changed.ContainerList getContainerList() {
+  public ContainerList getContainerList() {
     return containerList;
   }
 
-  public void setContainerList(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.ContainerList containerList) {
+  public void setContainerList(@javax.annotation.Nonnull ContainerList containerList) {
     this.containerList = containerList;
   }
 
@@ -415,8 +411,7 @@ public class ProcessResponse {
     // validate the required field `ProcessingFinished`
     ProcessingStatus.validateJsonElement(jsonObj.get("ProcessingFinished"));
     // validate the required field `ContainerList`
-    com.regula.documentreader.webclient.model.changed.ContainerList.validateJsonElement(
-        jsonObj.get("ContainerList"));
+    ContainerList.validateJsonElement(jsonObj.get("ContainerList"));
     // validate the required field `TransactionInfo`
     TransactionInfo.validateJsonElement(jsonObj.get("TransactionInfo"));
     if ((jsonObj.get("log") != null && !jsonObj.get("log").isJsonNull())

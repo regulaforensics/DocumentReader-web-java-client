@@ -15,13 +15,11 @@
     "ImagesField" : "com.regula.documentreader.webclient.model.ext.ImagesField",
     "Text": "com.regula.documentreader.webclient.model.ext.Text",
     "Images" : "com.regula.documentreader.webclient.model.ext.Images",
-    "AuthenticityCheckList" : "com.regula.documentreader.webclient.model.ext.authenticity.Authenticity"
-  },
-  "schemaMappings": {
-    "ContainerList": "com.regula.documentreader.webclient.model.changed.ContainerList",
-    "AuthenticityCheckResult": "com.regula.documentreader.webclient.model.changed.AuthenticityCheckResult",
-    "DocVisualExtendedInfo": "com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo",
-    "GraphicFieldsList": "com.regula.documentreader.webclient.model.changed.GraphicFieldsList"
+    "AuthenticityCheckList" : "com.regula.documentreader.webclient.model.ext.authenticity.Authenticity",
+    "ContainerListListInner": "ResultItem",
+    "AuthenticityCheckResultListInner": "AuthenticityCheckResultItem",
+    "DocVisualExtendedInfoPArrayFieldsInner": "DocVisualExtendedInfo",
+    "GraphicFieldsListPArrayFieldsInner": "GraphicFieldsList"
   },
   "nameMappings": {
     "List": "list"

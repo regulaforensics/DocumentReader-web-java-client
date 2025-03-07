@@ -40,15 +40,12 @@ public class TextDataResult extends ResultItem {
 
   @SerializedName(SERIALIZED_NAME_DOC_VISUAL_EXTENDED_INFO)
   @javax.annotation.Nonnull
-  private com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo
-      docVisualExtendedInfo;
+  private DocVisualExtendedInfo docVisualExtendedInfo;
 
   public TextDataResult() {}
 
   public TextDataResult docVisualExtendedInfo(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo
-              docVisualExtendedInfo) {
+      @javax.annotation.Nonnull DocVisualExtendedInfo docVisualExtendedInfo) {
     this.docVisualExtendedInfo = docVisualExtendedInfo;
     return this;
   }
@@ -59,15 +56,12 @@ public class TextDataResult extends ResultItem {
    * @return docVisualExtendedInfo
    */
   @javax.annotation.Nonnull
-  public com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo
-      getDocVisualExtendedInfo() {
+  public DocVisualExtendedInfo getDocVisualExtendedInfo() {
     return docVisualExtendedInfo;
   }
 
   public void setDocVisualExtendedInfo(
-      @javax.annotation.Nonnull
-          com.regula.documentreader.webclient.model.changed.DocVisualExtendedInfo
-              docVisualExtendedInfo) {
+      @javax.annotation.Nonnull DocVisualExtendedInfo docVisualExtendedInfo) {
     this.docVisualExtendedInfo = docVisualExtendedInfo;
   }
 
