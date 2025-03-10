@@ -57,7 +57,9 @@ src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfoItem.
 src/main/generated/com/regula/documentreader/webclient/model/DocGraphicsInfoItem.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedField.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedFieldRect.java
+src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedFieldRectItem.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedFieldRfid.java
+src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedFieldRfidItem.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedInfoItem.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedInfoPArrayFieldsInner.java
@@ -84,6 +86,7 @@ src/main/generated/com/regula/documentreader/webclient/model/FaceDetection.java
 src/main/generated/com/regula/documentreader/webclient/model/FaceDetectionItem.java
 src/main/generated/com/regula/documentreader/webclient/model/FaceDetectionResult.java
 src/main/generated/com/regula/documentreader/webclient/model/FaceItem.java
+src/main/generated/com/regula/documentreader/webclient/model/FiberItem.java
 src/main/generated/com/regula/documentreader/webclient/model/FiberResult.java
 src/main/generated/com/regula/documentreader/webclient/model/FieldItem.java
 src/main/generated/com/regula/documentreader/webclient/model/FileImage.java
@@ -91,13 +94,16 @@ src/main/generated/com/regula/documentreader/webclient/model/GetTransactionsByTa
 src/main/generated/com/regula/documentreader/webclient/model/GraphData.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRect.java
+src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRectItem.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRfid.java
+src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldRfidItem.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldType.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldsList.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldsListPArrayFieldsInner.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicsResult.java
 src/main/generated/com/regula/documentreader/webclient/model/Healthcheck.java
 src/main/generated/com/regula/documentreader/webclient/model/HealthcheckDocumentsDatabase.java
+src/main/generated/com/regula/documentreader/webclient/model/IdentItem.java
 src/main/generated/com/regula/documentreader/webclient/model/IdentResult.java
 src/main/generated/com/regula/documentreader/webclient/model/ImageData.java
 src/main/generated/com/regula/documentreader/webclient/model/ImageQA.java
@@ -139,6 +145,7 @@ src/main/generated/com/regula/documentreader/webclient/model/MeasureSystem.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzDetectModeEnum.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzPosition.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzPositionItem.java
+src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextItem.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidate.java
 src/main/generated/com/regula/documentreader/webclient/model/OneCandidateItem.java
@@ -149,6 +156,7 @@ src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsedData.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingNotificationCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/PerDocumentConfig.java
+src/main/generated/com/regula/documentreader/webclient/model/PhotoIdentItem.java
 src/main/generated/com/regula/documentreader/webclient/model/PhotoIdentResult.java
 src/main/generated/com/regula/documentreader/webclient/model/Point.java
 src/main/generated/com/regula/documentreader/webclient/model/PointArray.java
@@ -202,6 +210,7 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidTerminalType.ja
 src/main/generated/com/regula/documentreader/webclient/model/RfidType.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidValidity.java
 src/main/generated/com/regula/documentreader/webclient/model/Scenario.java
+src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureItem.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureResult.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityFeatureType.java
 src/main/generated/com/regula/documentreader/webclient/model/SecurityObjectCertificates.java
