@@ -23,45 +23,42 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Structure is used to store the data reading results from the RFID-chip in a form of a list of the
- * logically separated data groups.
- */
+/** LicenseItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class DocumentBinaryInfoResult extends ResultItem {
-  public static final String SERIALIZED_NAME_TDOC_BINARY_INFO = "TDocBinaryInfo";
+public class LicenseItem {
+  public static final String SERIALIZED_NAME_LICENSE = "License";
 
-  @SerializedName(SERIALIZED_NAME_TDOC_BINARY_INFO)
+  @SerializedName(SERIALIZED_NAME_LICENSE)
   @javax.annotation.Nonnull
-  private TDocBinaryInfo tdocBinaryInfo;
+  private byte[] license;
 
-  public DocumentBinaryInfoResult() {}
+  public LicenseItem() {}
 
-  public DocumentBinaryInfoResult tdocBinaryInfo(
-      @javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public LicenseItem license(@javax.annotation.Nonnull byte[] license) {
+    this.license = license;
     return this;
   }
 
   /**
-   * Get tdocBinaryInfo
+   * Base64 encoded data
    *
-   * @return tdocBinaryInfo
+   * @return license
    */
   @javax.annotation.Nonnull
-  public TDocBinaryInfo getTdocBinaryInfo() {
-    return tdocBinaryInfo;
+  public byte[] getLicense() {
+    return license;
   }
 
-  public void setTdocBinaryInfo(@javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public void setLicense(@javax.annotation.Nonnull byte[] license) {
+    this.license = license;
   }
 
   @Override
@@ -72,22 +69,20 @@ public class DocumentBinaryInfoResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentBinaryInfoResult documentBinaryInfoResult = (DocumentBinaryInfoResult) o;
-    return Objects.equals(this.tdocBinaryInfo, documentBinaryInfoResult.tdocBinaryInfo)
-        && super.equals(o);
+    LicenseItem licenseItem = (LicenseItem) o;
+    return Arrays.equals(this.license, licenseItem.license);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tdocBinaryInfo, super.hashCode());
+    return Objects.hash(Arrays.hashCode(license));
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentBinaryInfoResult {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    tdocBinaryInfo: ").append(toIndentedString(tdocBinaryInfo)).append("\n");
+    sb.append("class LicenseItem {\n");
+    sb.append("    license: ").append(toIndentedString(license)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,49 +103,43 @@ public class DocumentBinaryInfoResult extends ResultItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("TDocBinaryInfo");
+    openapiFields.add("License");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("TDocBinaryInfo");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields.add("License");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentBinaryInfoResult
+   * @throws IOException if the JSON Element is invalid with respect to LicenseItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!DocumentBinaryInfoResult.openapiRequiredFields
+      if (!LicenseItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in DocumentBinaryInfoResult is not found in the empty JSON string",
-                DocumentBinaryInfoResult.openapiRequiredFields.toString()));
+                "The required field(s) %s in LicenseItem is not found in the empty JSON string",
+                LicenseItem.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentBinaryInfoResult.openapiFields.contains(entry.getKey())) {
+      if (!LicenseItem.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentBinaryInfoResult` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `LicenseItem` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : DocumentBinaryInfoResult.openapiRequiredFields) {
+    for (String requiredField : LicenseItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -158,29 +147,30 @@ public class DocumentBinaryInfoResult extends ResultItem {
                 requiredField, jsonElement.toString()));
       }
     }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!DocumentBinaryInfoResult.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'DocumentBinaryInfoResult' and its subtypes
+      if (!LicenseItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'LicenseItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<DocumentBinaryInfoResult> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(DocumentBinaryInfoResult.class));
+      final TypeAdapter<LicenseItem> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(LicenseItem.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<DocumentBinaryInfoResult>() {
+          new TypeAdapter<LicenseItem>() {
             @Override
-            public void write(JsonWriter out, DocumentBinaryInfoResult value) throws IOException {
+            public void write(JsonWriter out, LicenseItem value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public DocumentBinaryInfoResult read(JsonReader in) throws IOException {
+            public LicenseItem read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -190,18 +180,18 @@ public class DocumentBinaryInfoResult extends ResultItem {
   }
 
   /**
-   * Create an instance of DocumentBinaryInfoResult given an JSON string
+   * Create an instance of LicenseItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentBinaryInfoResult
-   * @throws IOException if the JSON string is invalid with respect to DocumentBinaryInfoResult
+   * @return An instance of LicenseItem
+   * @throws IOException if the JSON string is invalid with respect to LicenseItem
    */
-  public static DocumentBinaryInfoResult fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentBinaryInfoResult.class);
+  public static LicenseItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, LicenseItem.class);
   }
 
   /**
-   * Convert an instance of DocumentBinaryInfoResult to an JSON string
+   * Convert an instance of LicenseItem to an JSON string
    *
    * @return JSON string
    */

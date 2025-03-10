@@ -28,40 +28,37 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Structure is used to store the data reading results from the RFID-chip in a form of a list of the
- * logically separated data groups.
- */
+/** DocumentPositionItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class DocumentBinaryInfoResult extends ResultItem {
-  public static final String SERIALIZED_NAME_TDOC_BINARY_INFO = "TDocBinaryInfo";
+public class DocumentPositionItem {
+  public static final String SERIALIZED_NAME_DOCUMENT_POSITION = "DocumentPosition";
 
-  @SerializedName(SERIALIZED_NAME_TDOC_BINARY_INFO)
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_POSITION)
   @javax.annotation.Nonnull
-  private TDocBinaryInfo tdocBinaryInfo;
+  private DocumentPosition documentPosition;
 
-  public DocumentBinaryInfoResult() {}
+  public DocumentPositionItem() {}
 
-  public DocumentBinaryInfoResult tdocBinaryInfo(
-      @javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public DocumentPositionItem documentPosition(
+      @javax.annotation.Nonnull DocumentPosition documentPosition) {
+    this.documentPosition = documentPosition;
     return this;
   }
 
   /**
-   * Get tdocBinaryInfo
+   * Get documentPosition
    *
-   * @return tdocBinaryInfo
+   * @return documentPosition
    */
   @javax.annotation.Nonnull
-  public TDocBinaryInfo getTdocBinaryInfo() {
-    return tdocBinaryInfo;
+  public DocumentPosition getDocumentPosition() {
+    return documentPosition;
   }
 
-  public void setTdocBinaryInfo(@javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public void setDocumentPosition(@javax.annotation.Nonnull DocumentPosition documentPosition) {
+    this.documentPosition = documentPosition;
   }
 
   @Override
@@ -72,22 +69,20 @@ public class DocumentBinaryInfoResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentBinaryInfoResult documentBinaryInfoResult = (DocumentBinaryInfoResult) o;
-    return Objects.equals(this.tdocBinaryInfo, documentBinaryInfoResult.tdocBinaryInfo)
-        && super.equals(o);
+    DocumentPositionItem documentPositionItem = (DocumentPositionItem) o;
+    return Objects.equals(this.documentPosition, documentPositionItem.documentPosition);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tdocBinaryInfo, super.hashCode());
+    return Objects.hash(documentPosition);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentBinaryInfoResult {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    tdocBinaryInfo: ").append(toIndentedString(tdocBinaryInfo)).append("\n");
+    sb.append("class DocumentPositionItem {\n");
+    sb.append("    documentPosition: ").append(toIndentedString(documentPosition)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,49 +103,43 @@ public class DocumentBinaryInfoResult extends ResultItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("TDocBinaryInfo");
+    openapiFields.add("DocumentPosition");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("TDocBinaryInfo");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields.add("DocumentPosition");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentBinaryInfoResult
+   * @throws IOException if the JSON Element is invalid with respect to DocumentPositionItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!DocumentBinaryInfoResult.openapiRequiredFields
+      if (!DocumentPositionItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in DocumentBinaryInfoResult is not found in the empty JSON string",
-                DocumentBinaryInfoResult.openapiRequiredFields.toString()));
+                "The required field(s) %s in DocumentPositionItem is not found in the empty JSON string",
+                DocumentPositionItem.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentBinaryInfoResult.openapiFields.contains(entry.getKey())) {
+      if (!DocumentPositionItem.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentBinaryInfoResult` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `DocumentPositionItem` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : DocumentBinaryInfoResult.openapiRequiredFields) {
+    for (String requiredField : DocumentPositionItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -158,29 +147,32 @@ public class DocumentBinaryInfoResult extends ResultItem {
                 requiredField, jsonElement.toString()));
       }
     }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the required field `DocumentPosition`
+    DocumentPosition.validateJsonElement(jsonObj.get("DocumentPosition"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!DocumentBinaryInfoResult.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'DocumentBinaryInfoResult' and its subtypes
+      if (!DocumentPositionItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'DocumentPositionItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<DocumentBinaryInfoResult> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(DocumentBinaryInfoResult.class));
+      final TypeAdapter<DocumentPositionItem> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(DocumentPositionItem.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<DocumentBinaryInfoResult>() {
+          new TypeAdapter<DocumentPositionItem>() {
             @Override
-            public void write(JsonWriter out, DocumentBinaryInfoResult value) throws IOException {
+            public void write(JsonWriter out, DocumentPositionItem value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public DocumentBinaryInfoResult read(JsonReader in) throws IOException {
+            public DocumentPositionItem read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -190,18 +182,18 @@ public class DocumentBinaryInfoResult extends ResultItem {
   }
 
   /**
-   * Create an instance of DocumentBinaryInfoResult given an JSON string
+   * Create an instance of DocumentPositionItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentBinaryInfoResult
-   * @throws IOException if the JSON string is invalid with respect to DocumentBinaryInfoResult
+   * @return An instance of DocumentPositionItem
+   * @throws IOException if the JSON string is invalid with respect to DocumentPositionItem
    */
-  public static DocumentBinaryInfoResult fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentBinaryInfoResult.class);
+  public static DocumentPositionItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocumentPositionItem.class);
   }
 
   /**
-   * Convert an instance of DocumentBinaryInfoResult to an JSON string
+   * Convert an instance of DocumentPositionItem to an JSON string
    *
    * @return JSON string
    */

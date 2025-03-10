@@ -28,40 +28,37 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Structure is used to store the data reading results from the RFID-chip in a form of a list of the
- * logically separated data groups.
- */
+/** MRZTestQualityItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class DocumentBinaryInfoResult extends ResultItem {
-  public static final String SERIALIZED_NAME_TDOC_BINARY_INFO = "TDocBinaryInfo";
+public class MRZTestQualityItem {
+  public static final String SERIALIZED_NAME_MR_Z_TEST_QUALITY = "MRZTestQuality";
 
-  @SerializedName(SERIALIZED_NAME_TDOC_BINARY_INFO)
+  @SerializedName(SERIALIZED_NAME_MR_Z_TEST_QUALITY)
   @javax.annotation.Nonnull
-  private TDocBinaryInfo tdocBinaryInfo;
+  private MRZTestQuality mrZTestQuality;
 
-  public DocumentBinaryInfoResult() {}
+  public MRZTestQualityItem() {}
 
-  public DocumentBinaryInfoResult tdocBinaryInfo(
-      @javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public MRZTestQualityItem mrZTestQuality(
+      @javax.annotation.Nonnull MRZTestQuality mrZTestQuality) {
+    this.mrZTestQuality = mrZTestQuality;
     return this;
   }
 
   /**
-   * Get tdocBinaryInfo
+   * Get mrZTestQuality
    *
-   * @return tdocBinaryInfo
+   * @return mrZTestQuality
    */
   @javax.annotation.Nonnull
-  public TDocBinaryInfo getTdocBinaryInfo() {
-    return tdocBinaryInfo;
+  public MRZTestQuality getMrZTestQuality() {
+    return mrZTestQuality;
   }
 
-  public void setTdocBinaryInfo(@javax.annotation.Nonnull TDocBinaryInfo tdocBinaryInfo) {
-    this.tdocBinaryInfo = tdocBinaryInfo;
+  public void setMrZTestQuality(@javax.annotation.Nonnull MRZTestQuality mrZTestQuality) {
+    this.mrZTestQuality = mrZTestQuality;
   }
 
   @Override
@@ -72,22 +69,20 @@ public class DocumentBinaryInfoResult extends ResultItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentBinaryInfoResult documentBinaryInfoResult = (DocumentBinaryInfoResult) o;
-    return Objects.equals(this.tdocBinaryInfo, documentBinaryInfoResult.tdocBinaryInfo)
-        && super.equals(o);
+    MRZTestQualityItem mrZTestQualityItem = (MRZTestQualityItem) o;
+    return Objects.equals(this.mrZTestQuality, mrZTestQualityItem.mrZTestQuality);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tdocBinaryInfo, super.hashCode());
+    return Objects.hash(mrZTestQuality);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentBinaryInfoResult {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    tdocBinaryInfo: ").append(toIndentedString(tdocBinaryInfo)).append("\n");
+    sb.append("class MRZTestQualityItem {\n");
+    sb.append("    mrZTestQuality: ").append(toIndentedString(mrZTestQuality)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,49 +103,43 @@ public class DocumentBinaryInfoResult extends ResultItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("TDocBinaryInfo");
+    openapiFields.add("MRZTestQuality");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("TDocBinaryInfo");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields.add("MRZTestQuality");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DocumentBinaryInfoResult
+   * @throws IOException if the JSON Element is invalid with respect to MRZTestQualityItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!DocumentBinaryInfoResult.openapiRequiredFields
+      if (!MRZTestQualityItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in DocumentBinaryInfoResult is not found in the empty JSON string",
-                DocumentBinaryInfoResult.openapiRequiredFields.toString()));
+                "The required field(s) %s in MRZTestQualityItem is not found in the empty JSON string",
+                MRZTestQualityItem.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentBinaryInfoResult.openapiFields.contains(entry.getKey())) {
+      if (!MRZTestQualityItem.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentBinaryInfoResult` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `MRZTestQualityItem` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : DocumentBinaryInfoResult.openapiRequiredFields) {
+    for (String requiredField : MRZTestQualityItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -158,29 +147,32 @@ public class DocumentBinaryInfoResult extends ResultItem {
                 requiredField, jsonElement.toString()));
       }
     }
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the required field `MRZTestQuality`
+    MRZTestQuality.validateJsonElement(jsonObj.get("MRZTestQuality"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!DocumentBinaryInfoResult.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'DocumentBinaryInfoResult' and its subtypes
+      if (!MRZTestQualityItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'MRZTestQualityItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<DocumentBinaryInfoResult> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(DocumentBinaryInfoResult.class));
+      final TypeAdapter<MRZTestQualityItem> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(MRZTestQualityItem.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<DocumentBinaryInfoResult>() {
+          new TypeAdapter<MRZTestQualityItem>() {
             @Override
-            public void write(JsonWriter out, DocumentBinaryInfoResult value) throws IOException {
+            public void write(JsonWriter out, MRZTestQualityItem value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public DocumentBinaryInfoResult read(JsonReader in) throws IOException {
+            public MRZTestQualityItem read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -190,18 +182,18 @@ public class DocumentBinaryInfoResult extends ResultItem {
   }
 
   /**
-   * Create an instance of DocumentBinaryInfoResult given an JSON string
+   * Create an instance of MRZTestQualityItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DocumentBinaryInfoResult
-   * @throws IOException if the JSON string is invalid with respect to DocumentBinaryInfoResult
+   * @return An instance of MRZTestQualityItem
+   * @throws IOException if the JSON string is invalid with respect to MRZTestQualityItem
    */
-  public static DocumentBinaryInfoResult fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DocumentBinaryInfoResult.class);
+  public static MRZTestQualityItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, MRZTestQualityItem.class);
   }
 
   /**
-   * Convert an instance of DocumentBinaryInfoResult to an JSON string
+   * Convert an instance of MRZTestQualityItem to an JSON string
    *
    * @return JSON string
    */
