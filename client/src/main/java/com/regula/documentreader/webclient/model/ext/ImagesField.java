@@ -48,7 +48,8 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
 
   @Override
   public ImagesField addValueListItem(ImagesFieldValue valueListItem) {
-    com.regula.documentreader.webclient.model.ImagesField field = super.addValueListItem(valueListItem);
+    com.regula.documentreader.webclient.model.ImagesField field =
+        super.addValueListItem(valueListItem);
     return (ImagesField) field;
   }
 
