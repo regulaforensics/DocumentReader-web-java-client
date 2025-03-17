@@ -12,7 +12,5 @@ pom.xml
 gradle/**
 api/**
 src/test/**
-
+.github/**
 src/main/AndroidManifest.xml
-
-# classes, modified after generation

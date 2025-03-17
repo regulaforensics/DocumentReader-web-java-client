@@ -1,4 +1,3 @@
-.github/workflows/maven.yml
 src/main/generated/com/regula/documentreader/webclient/ApiCallback.java
 src/main/generated/com/regula/documentreader/webclient/ApiClient.java
 src/main/generated/com/regula/documentreader/webclient/ApiException.java
