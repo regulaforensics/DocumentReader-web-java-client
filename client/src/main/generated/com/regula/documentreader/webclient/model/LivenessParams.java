@@ -37,6 +37,11 @@ public class LivenessParams {
   @SerializedName(SERIALIZED_NAME_CHECK_E_D)
   private Boolean checkED;
 
+  public static final String SERIALIZED_NAME_CHECK_BLACK_AND_WHITE_COPY = "checkBlackAndWhiteCopy";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_BLACK_AND_WHITE_COPY)
+  private Boolean checkBlackAndWhiteCopy;
+
   public LivenessParams withCheckOVI(Boolean checkOVI) {
     this.checkOVI = checkOVI;
     return this;
@@ -113,6 +118,25 @@ public class LivenessParams {
     this.checkED = checkED;
   }
 
+  public LivenessParams withCheckBlackAndWhiteCopy(Boolean checkBlackAndWhiteCopy) {
+    this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Black and white copy check
+   *
+   * @return checkBlackAndWhiteCopy
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckBlackAndWhiteCopy() {
+    return checkBlackAndWhiteCopy;
+  }
+
+  public void setCheckBlackAndWhiteCopy(Boolean checkBlackAndWhiteCopy) {
+    this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -125,12 +149,13 @@ public class LivenessParams {
     return Objects.equals(this.checkOVI, livenessParams.checkOVI)
         && Objects.equals(this.checkMLI, livenessParams.checkMLI)
         && Objects.equals(this.checkHolo, livenessParams.checkHolo)
-        && Objects.equals(this.checkED, livenessParams.checkED);
+        && Objects.equals(this.checkED, livenessParams.checkED)
+        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED);
+    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy);
   }
 
   @Override
@@ -141,6 +166,9 @@ public class LivenessParams {
     sb.append("    checkMLI: ").append(toIndentedString(checkMLI)).append("\n");
     sb.append("    checkHolo: ").append(toIndentedString(checkHolo)).append("\n");
     sb.append("    checkED: ").append(toIndentedString(checkED)).append("\n");
+    sb.append("    checkBlackAndWhiteCopy: ")
+        .append(toIndentedString(checkBlackAndWhiteCopy))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }

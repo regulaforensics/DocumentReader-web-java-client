@@ -92,6 +92,11 @@ public class AuthParams {
   @SerializedName(SERIALIZED_NAME_CHECK_LETTER_SCREEN)
   private Boolean checkLetterScreen;
 
+  public static final String SERIALIZED_NAME_CHECK_SECURITY_TEXT = "checkSecurityText";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_SECURITY_TEXT)
+  private Boolean checkSecurityText;
+
   public AuthParams withCheckLiveness(Boolean checkLiveness) {
     this.checkLiveness = checkLiveness;
     return this;
@@ -379,6 +384,25 @@ public class AuthParams {
     this.checkLetterScreen = checkLetterScreen;
   }
 
+  public AuthParams withCheckSecurityText(Boolean checkSecurityText) {
+    this.checkSecurityText = checkSecurityText;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Security text check
+   *
+   * @return checkSecurityText
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckSecurityText() {
+    return checkSecurityText;
+  }
+
+  public void setCheckSecurityText(Boolean checkSecurityText) {
+    this.checkSecurityText = checkSecurityText;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -402,7 +426,8 @@ public class AuthParams {
         && Objects.equals(this.checkIPI, authParams.checkIPI)
         && Objects.equals(this.checkPhotoEmbedding, authParams.checkPhotoEmbedding)
         && Objects.equals(this.checkPhotoComparison, authParams.checkPhotoComparison)
-        && Objects.equals(this.checkLetterScreen, authParams.checkLetterScreen);
+        && Objects.equals(this.checkLetterScreen, authParams.checkLetterScreen)
+        && Objects.equals(this.checkSecurityText, authParams.checkSecurityText);
   }
 
   @Override
@@ -422,7 +447,8 @@ public class AuthParams {
         checkIPI,
         checkPhotoEmbedding,
         checkPhotoComparison,
-        checkLetterScreen);
+        checkLetterScreen,
+        checkSecurityText);
   }
 
   @Override
@@ -450,6 +476,7 @@ public class AuthParams {
         .append(toIndentedString(checkPhotoComparison))
         .append("\n");
     sb.append("    checkLetterScreen: ").append(toIndentedString(checkLetterScreen)).append("\n");
+    sb.append("    checkSecurityText: ").append(toIndentedString(checkSecurityText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
