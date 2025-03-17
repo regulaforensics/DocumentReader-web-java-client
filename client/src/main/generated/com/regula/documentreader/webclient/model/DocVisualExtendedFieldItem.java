@@ -28,38 +28,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** Information about one graphic field - abstract class */
+/** DocVisualExtendedFieldItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class GraphicField {
+public class DocVisualExtendedFieldItem {
   public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
 
   @SerializedName(SERIALIZED_NAME_FIELD_RECT)
   @javax.annotation.Nonnull
   private RectangleCoordinates fieldRect;
 
-  public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
+  public DocVisualExtendedFieldItem() {}
 
-  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  @javax.annotation.Nonnull
-  private GraphicFieldType fieldType;
-
-  public static final String SERIALIZED_NAME_FIELD_NAME = "FieldName";
-
-  @SerializedName(SERIALIZED_NAME_FIELD_NAME)
-  @javax.annotation.Nonnull
-  private String fieldName;
-
-  public static final String SERIALIZED_NAME_IMAGE = "image";
-
-  @SerializedName(SERIALIZED_NAME_IMAGE)
-  @javax.annotation.Nonnull
-  private ImageData image;
-
-  public GraphicField() {}
-
-  public GraphicField fieldRect(@javax.annotation.Nonnull RectangleCoordinates fieldRect) {
+  public DocVisualExtendedFieldItem fieldRect(
+      @javax.annotation.Nonnull RectangleCoordinates fieldRect) {
     this.fieldRect = fieldRect;
     return this;
   }
@@ -78,63 +61,6 @@ public class GraphicField {
     this.fieldRect = fieldRect;
   }
 
-  public GraphicField fieldType(@javax.annotation.Nonnull GraphicFieldType fieldType) {
-    this.fieldType = fieldType;
-    return this;
-  }
-
-  /**
-   * Get fieldType
-   *
-   * @return fieldType
-   */
-  @javax.annotation.Nonnull
-  public GraphicFieldType getFieldType() {
-    return fieldType;
-  }
-
-  public void setFieldType(@javax.annotation.Nonnull GraphicFieldType fieldType) {
-    this.fieldType = fieldType;
-  }
-
-  public GraphicField fieldName(@javax.annotation.Nonnull String fieldName) {
-    this.fieldName = fieldName;
-    return this;
-  }
-
-  /**
-   * Graphic field symbolic name
-   *
-   * @return fieldName
-   */
-  @javax.annotation.Nonnull
-  public String getFieldName() {
-    return fieldName;
-  }
-
-  public void setFieldName(@javax.annotation.Nonnull String fieldName) {
-    this.fieldName = fieldName;
-  }
-
-  public GraphicField image(@javax.annotation.Nonnull ImageData image) {
-    this.image = image;
-    return this;
-  }
-
-  /**
-   * Get image
-   *
-   * @return image
-   */
-  @javax.annotation.Nonnull
-  public ImageData getImage() {
-    return image;
-  }
-
-  public void setImage(@javax.annotation.Nonnull ImageData image) {
-    this.image = image;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -143,26 +69,20 @@ public class GraphicField {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GraphicField graphicField = (GraphicField) o;
-    return Objects.equals(this.fieldRect, graphicField.fieldRect)
-        && Objects.equals(this.fieldType, graphicField.fieldType)
-        && Objects.equals(this.fieldName, graphicField.fieldName)
-        && Objects.equals(this.image, graphicField.image);
+    DocVisualExtendedFieldItem docVisualExtendedFieldItem = (DocVisualExtendedFieldItem) o;
+    return Objects.equals(this.fieldRect, docVisualExtendedFieldItem.fieldRect);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fieldRect, fieldType, fieldName, image);
+    return Objects.hash(fieldRect);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GraphicField {\n");
+    sb.append("class DocVisualExtendedFieldItem {\n");
     sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
-    sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
-    sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -184,48 +104,42 @@ public class GraphicField {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("FieldRect");
-    openapiFields.add("FieldType");
-    openapiFields.add("FieldName");
-    openapiFields.add("image");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("FieldType");
-    openapiRequiredFields.add("FieldName");
-    openapiRequiredFields.add("image");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GraphicField
+   * @throws IOException if the JSON Element is invalid with respect to DocVisualExtendedFieldItem
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!GraphicField.openapiRequiredFields
+      if (!DocVisualExtendedFieldItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in GraphicField is not found in the empty JSON string",
-                GraphicField.openapiRequiredFields.toString()));
+                "The required field(s) %s in DocVisualExtendedFieldItem is not found in the empty JSON string",
+                DocVisualExtendedFieldItem.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!GraphicField.openapiFields.contains(entry.getKey())) {
+      if (!DocVisualExtendedFieldItem.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `GraphicField` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `DocVisualExtendedFieldItem` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : GraphicField.openapiRequiredFields) {
+    for (String requiredField : DocVisualExtendedFieldItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -236,39 +150,29 @@ public class GraphicField {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the required field `FieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("FieldRect"));
-    // validate the required field `FieldType`
-    GraphicFieldType.validateJsonElement(jsonObj.get("FieldType"));
-    if (!jsonObj.get("FieldName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `FieldName` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("FieldName").toString()));
-    }
-    // validate the required field `image`
-    ImageData.validateJsonElement(jsonObj.get("image"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!GraphicField.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'GraphicField' and its subtypes
+      if (!DocVisualExtendedFieldItem.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'DocVisualExtendedFieldItem' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<GraphicField> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(GraphicField.class));
+      final TypeAdapter<DocVisualExtendedFieldItem> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(DocVisualExtendedFieldItem.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<GraphicField>() {
+          new TypeAdapter<DocVisualExtendedFieldItem>() {
             @Override
-            public void write(JsonWriter out, GraphicField value) throws IOException {
+            public void write(JsonWriter out, DocVisualExtendedFieldItem value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public GraphicField read(JsonReader in) throws IOException {
+            public DocVisualExtendedFieldItem read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -278,18 +182,18 @@ public class GraphicField {
   }
 
   /**
-   * Create an instance of GraphicField given an JSON string
+   * Create an instance of DocVisualExtendedFieldItem given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of GraphicField
-   * @throws IOException if the JSON string is invalid with respect to GraphicField
+   * @return An instance of DocVisualExtendedFieldItem
+   * @throws IOException if the JSON string is invalid with respect to DocVisualExtendedFieldItem
    */
-  public static GraphicField fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GraphicField.class);
+  public static DocVisualExtendedFieldItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DocVisualExtendedFieldItem.class);
   }
 
   /**
-   * Convert an instance of GraphicField to an JSON string
+   * Convert an instance of DocVisualExtendedFieldItem to an JSON string
    *
    * @return JSON string
    */

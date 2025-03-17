@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -101,25 +102,25 @@ public class StringItem {
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_A_L_I_G_N_M_E_N_T)
   @javax.annotation.Nonnull
-  private Integer sizeErrorALIGNMENT;
+  private BigDecimal sizeErrorALIGNMENT;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_D_I_S_T_A_N_C_E = "SizeError_DISTANCE";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_D_I_S_T_A_N_C_E)
   @javax.annotation.Nonnull
-  private Integer sizeErrorDISTANCE;
+  private BigDecimal sizeErrorDISTANCE;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_I_N_T_E_R_V_A_L = "SizeError_INTERVAL";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_I_N_T_E_R_V_A_L)
   @javax.annotation.Nonnull
-  private Integer sizeErrorINTERVAL;
+  private BigDecimal sizeErrorINTERVAL;
 
   public static final String SERIALIZED_NAME_STRING_ANGLE = "StringAngle";
 
   @SerializedName(SERIALIZED_NAME_STRING_ANGLE)
   @javax.annotation.Nonnull
-  private Integer stringAngle;
+  private BigDecimal stringAngle;
 
   public static final String SERIALIZED_NAME_STRING_BORDERS = "StringBorders";
 
@@ -341,7 +342,7 @@ public class StringItem {
     this.SYMBOLS_PARAM = SYMBOLS_PARAM;
   }
 
-  public StringItem sizeErrorALIGNMENT(@javax.annotation.Nonnull Integer sizeErrorALIGNMENT) {
+  public StringItem sizeErrorALIGNMENT(@javax.annotation.Nonnull BigDecimal sizeErrorALIGNMENT) {
     this.sizeErrorALIGNMENT = sizeErrorALIGNMENT;
     return this;
   }
@@ -352,15 +353,15 @@ public class StringItem {
    * @return sizeErrorALIGNMENT
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorALIGNMENT() {
+  public BigDecimal getSizeErrorALIGNMENT() {
     return sizeErrorALIGNMENT;
   }
 
-  public void setSizeErrorALIGNMENT(@javax.annotation.Nonnull Integer sizeErrorALIGNMENT) {
+  public void setSizeErrorALIGNMENT(@javax.annotation.Nonnull BigDecimal sizeErrorALIGNMENT) {
     this.sizeErrorALIGNMENT = sizeErrorALIGNMENT;
   }
 
-  public StringItem sizeErrorDISTANCE(@javax.annotation.Nonnull Integer sizeErrorDISTANCE) {
+  public StringItem sizeErrorDISTANCE(@javax.annotation.Nonnull BigDecimal sizeErrorDISTANCE) {
     this.sizeErrorDISTANCE = sizeErrorDISTANCE;
     return this;
   }
@@ -371,15 +372,15 @@ public class StringItem {
    * @return sizeErrorDISTANCE
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorDISTANCE() {
+  public BigDecimal getSizeErrorDISTANCE() {
     return sizeErrorDISTANCE;
   }
 
-  public void setSizeErrorDISTANCE(@javax.annotation.Nonnull Integer sizeErrorDISTANCE) {
+  public void setSizeErrorDISTANCE(@javax.annotation.Nonnull BigDecimal sizeErrorDISTANCE) {
     this.sizeErrorDISTANCE = sizeErrorDISTANCE;
   }
 
-  public StringItem sizeErrorINTERVAL(@javax.annotation.Nonnull Integer sizeErrorINTERVAL) {
+  public StringItem sizeErrorINTERVAL(@javax.annotation.Nonnull BigDecimal sizeErrorINTERVAL) {
     this.sizeErrorINTERVAL = sizeErrorINTERVAL;
     return this;
   }
@@ -390,15 +391,15 @@ public class StringItem {
    * @return sizeErrorINTERVAL
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorINTERVAL() {
+  public BigDecimal getSizeErrorINTERVAL() {
     return sizeErrorINTERVAL;
   }
 
-  public void setSizeErrorINTERVAL(@javax.annotation.Nonnull Integer sizeErrorINTERVAL) {
+  public void setSizeErrorINTERVAL(@javax.annotation.Nonnull BigDecimal sizeErrorINTERVAL) {
     this.sizeErrorINTERVAL = sizeErrorINTERVAL;
   }
 
-  public StringItem stringAngle(@javax.annotation.Nonnull Integer stringAngle) {
+  public StringItem stringAngle(@javax.annotation.Nonnull BigDecimal stringAngle) {
     this.stringAngle = stringAngle;
     return this;
   }
@@ -409,11 +410,11 @@ public class StringItem {
    * @return stringAngle
    */
   @javax.annotation.Nonnull
-  public Integer getStringAngle() {
+  public BigDecimal getStringAngle() {
     return stringAngle;
   }
 
-  public void setStringAngle(@javax.annotation.Nonnull Integer stringAngle) {
+  public void setStringAngle(@javax.annotation.Nonnull BigDecimal stringAngle) {
     this.stringAngle = stringAngle;
   }
 

@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
@@ -37,29 +38,29 @@ public class ErrorCoordinates {
 
   @SerializedName(SERIALIZED_NAME_LEFT)
   @javax.annotation.Nullable
-  private Integer left;
+  private BigDecimal left;
 
   public static final String SERIALIZED_NAME_TOP = "Top";
 
   @SerializedName(SERIALIZED_NAME_TOP)
   @javax.annotation.Nullable
-  private Integer top;
+  private BigDecimal top;
 
   public static final String SERIALIZED_NAME_RIGHT = "Right";
 
   @SerializedName(SERIALIZED_NAME_RIGHT)
   @javax.annotation.Nullable
-  private Integer right;
+  private BigDecimal right;
 
   public static final String SERIALIZED_NAME_BOTTOM = "Bottom";
 
   @SerializedName(SERIALIZED_NAME_BOTTOM)
   @javax.annotation.Nullable
-  private Integer bottom;
+  private BigDecimal bottom;
 
   public ErrorCoordinates() {}
 
-  public ErrorCoordinates left(@javax.annotation.Nullable Integer left) {
+  public ErrorCoordinates left(@javax.annotation.Nullable BigDecimal left) {
     this.left = left;
     return this;
   }
@@ -70,15 +71,15 @@ public class ErrorCoordinates {
    * @return left
    */
   @javax.annotation.Nullable
-  public Integer getLeft() {
+  public BigDecimal getLeft() {
     return left;
   }
 
-  public void setLeft(@javax.annotation.Nullable Integer left) {
+  public void setLeft(@javax.annotation.Nullable BigDecimal left) {
     this.left = left;
   }
 
-  public ErrorCoordinates top(@javax.annotation.Nullable Integer top) {
+  public ErrorCoordinates top(@javax.annotation.Nullable BigDecimal top) {
     this.top = top;
     return this;
   }
@@ -89,15 +90,15 @@ public class ErrorCoordinates {
    * @return top
    */
   @javax.annotation.Nullable
-  public Integer getTop() {
+  public BigDecimal getTop() {
     return top;
   }
 
-  public void setTop(@javax.annotation.Nullable Integer top) {
+  public void setTop(@javax.annotation.Nullable BigDecimal top) {
     this.top = top;
   }
 
-  public ErrorCoordinates right(@javax.annotation.Nullable Integer right) {
+  public ErrorCoordinates right(@javax.annotation.Nullable BigDecimal right) {
     this.right = right;
     return this;
   }
@@ -108,15 +109,15 @@ public class ErrorCoordinates {
    * @return right
    */
   @javax.annotation.Nullable
-  public Integer getRight() {
+  public BigDecimal getRight() {
     return right;
   }
 
-  public void setRight(@javax.annotation.Nullable Integer right) {
+  public void setRight(@javax.annotation.Nullable BigDecimal right) {
     this.right = right;
   }
 
-  public ErrorCoordinates bottom(@javax.annotation.Nullable Integer bottom) {
+  public ErrorCoordinates bottom(@javax.annotation.Nullable BigDecimal bottom) {
     this.bottom = bottom;
     return this;
   }
@@ -127,11 +128,11 @@ public class ErrorCoordinates {
    * @return bottom
    */
   @javax.annotation.Nullable
-  public Integer getBottom() {
+  public BigDecimal getBottom() {
     return bottom;
   }
 
-  public void setBottom(@javax.annotation.Nullable Integer bottom) {
+  public void setBottom(@javax.annotation.Nullable BigDecimal bottom) {
     this.bottom = bottom;
   }
 

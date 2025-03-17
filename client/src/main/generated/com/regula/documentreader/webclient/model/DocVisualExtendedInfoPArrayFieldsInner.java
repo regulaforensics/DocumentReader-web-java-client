@@ -40,7 +40,7 @@ public class DocVisualExtendedInfoPArrayFieldsInner extends AbstractOpenApiSchem
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       if (!DocVisualExtendedInfoPArrayFieldsInner.class.isAssignableFrom(type.getRawType())) {
         return null; // this class only serializes 'DocVisualExtendedInfoPArrayFieldsInner' and its
-                     // subtypes
+        // subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
       final TypeAdapter<DocVisualExtendedFieldRect> adapterDocVisualExtendedFieldRect =

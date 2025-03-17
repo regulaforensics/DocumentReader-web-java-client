@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
@@ -98,39 +99,39 @@ public class SymbolEstimationItem {
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_ALIGN_WITH_NEXT)
   @javax.annotation.Nonnull
-  private Integer sizeErrorAlignWithNext;
+  private BigDecimal sizeErrorAlignWithNext;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_ALIGN_WITH_PREV = "SizeErrorAlignWithPrev";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_ALIGN_WITH_PREV)
   @javax.annotation.Nonnull
-  private Integer sizeErrorAlignWithPrev;
+  private BigDecimal sizeErrorAlignWithPrev;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_INTERV_WITH_NEXT =
       "SizeErrorIntervWithNext";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_INTERV_WITH_NEXT)
   @javax.annotation.Nonnull
-  private Integer sizeErrorIntervWithNext;
+  private BigDecimal sizeErrorIntervWithNext;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_INTERV_WITH_PREV =
       "SizeErrorIntervWithPrev";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_INTERV_WITH_PREV)
   @javax.annotation.Nonnull
-  private Integer sizeErrorIntervWithPrev;
+  private BigDecimal sizeErrorIntervWithPrev;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_SYMBOL_HEIGHT = "SizeErrorSymbolHeight";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_SYMBOL_HEIGHT)
   @javax.annotation.Nonnull
-  private Integer sizeErrorSymbolHeight;
+  private BigDecimal sizeErrorSymbolHeight;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_SYMBOL_WIDTH = "SizeErrorSymbolWidth";
 
   @SerializedName(SERIALIZED_NAME_SIZE_ERROR_SYMBOL_WIDTH)
   @javax.annotation.Nonnull
-  private Integer sizeErrorSymbolWidth;
+  private BigDecimal sizeErrorSymbolWidth;
 
   public static final String SERIALIZED_NAME_SYMBOL_BOUNDS = "SymbolBounds";
 
@@ -333,7 +334,7 @@ public class SymbolEstimationItem {
   }
 
   public SymbolEstimationItem sizeErrorAlignWithNext(
-      @javax.annotation.Nonnull Integer sizeErrorAlignWithNext) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorAlignWithNext) {
     this.sizeErrorAlignWithNext = sizeErrorAlignWithNext;
     return this;
   }
@@ -344,16 +345,17 @@ public class SymbolEstimationItem {
    * @return sizeErrorAlignWithNext
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorAlignWithNext() {
+  public BigDecimal getSizeErrorAlignWithNext() {
     return sizeErrorAlignWithNext;
   }
 
-  public void setSizeErrorAlignWithNext(@javax.annotation.Nonnull Integer sizeErrorAlignWithNext) {
+  public void setSizeErrorAlignWithNext(
+      @javax.annotation.Nonnull BigDecimal sizeErrorAlignWithNext) {
     this.sizeErrorAlignWithNext = sizeErrorAlignWithNext;
   }
 
   public SymbolEstimationItem sizeErrorAlignWithPrev(
-      @javax.annotation.Nonnull Integer sizeErrorAlignWithPrev) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorAlignWithPrev) {
     this.sizeErrorAlignWithPrev = sizeErrorAlignWithPrev;
     return this;
   }
@@ -364,16 +366,17 @@ public class SymbolEstimationItem {
    * @return sizeErrorAlignWithPrev
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorAlignWithPrev() {
+  public BigDecimal getSizeErrorAlignWithPrev() {
     return sizeErrorAlignWithPrev;
   }
 
-  public void setSizeErrorAlignWithPrev(@javax.annotation.Nonnull Integer sizeErrorAlignWithPrev) {
+  public void setSizeErrorAlignWithPrev(
+      @javax.annotation.Nonnull BigDecimal sizeErrorAlignWithPrev) {
     this.sizeErrorAlignWithPrev = sizeErrorAlignWithPrev;
   }
 
   public SymbolEstimationItem sizeErrorIntervWithNext(
-      @javax.annotation.Nonnull Integer sizeErrorIntervWithNext) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorIntervWithNext) {
     this.sizeErrorIntervWithNext = sizeErrorIntervWithNext;
     return this;
   }
@@ -384,17 +387,17 @@ public class SymbolEstimationItem {
    * @return sizeErrorIntervWithNext
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorIntervWithNext() {
+  public BigDecimal getSizeErrorIntervWithNext() {
     return sizeErrorIntervWithNext;
   }
 
   public void setSizeErrorIntervWithNext(
-      @javax.annotation.Nonnull Integer sizeErrorIntervWithNext) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorIntervWithNext) {
     this.sizeErrorIntervWithNext = sizeErrorIntervWithNext;
   }
 
   public SymbolEstimationItem sizeErrorIntervWithPrev(
-      @javax.annotation.Nonnull Integer sizeErrorIntervWithPrev) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorIntervWithPrev) {
     this.sizeErrorIntervWithPrev = sizeErrorIntervWithPrev;
     return this;
   }
@@ -405,17 +408,17 @@ public class SymbolEstimationItem {
    * @return sizeErrorIntervWithPrev
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorIntervWithPrev() {
+  public BigDecimal getSizeErrorIntervWithPrev() {
     return sizeErrorIntervWithPrev;
   }
 
   public void setSizeErrorIntervWithPrev(
-      @javax.annotation.Nonnull Integer sizeErrorIntervWithPrev) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorIntervWithPrev) {
     this.sizeErrorIntervWithPrev = sizeErrorIntervWithPrev;
   }
 
   public SymbolEstimationItem sizeErrorSymbolHeight(
-      @javax.annotation.Nonnull Integer sizeErrorSymbolHeight) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorSymbolHeight) {
     this.sizeErrorSymbolHeight = sizeErrorSymbolHeight;
     return this;
   }
@@ -426,16 +429,16 @@ public class SymbolEstimationItem {
    * @return sizeErrorSymbolHeight
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorSymbolHeight() {
+  public BigDecimal getSizeErrorSymbolHeight() {
     return sizeErrorSymbolHeight;
   }
 
-  public void setSizeErrorSymbolHeight(@javax.annotation.Nonnull Integer sizeErrorSymbolHeight) {
+  public void setSizeErrorSymbolHeight(@javax.annotation.Nonnull BigDecimal sizeErrorSymbolHeight) {
     this.sizeErrorSymbolHeight = sizeErrorSymbolHeight;
   }
 
   public SymbolEstimationItem sizeErrorSymbolWidth(
-      @javax.annotation.Nonnull Integer sizeErrorSymbolWidth) {
+      @javax.annotation.Nonnull BigDecimal sizeErrorSymbolWidth) {
     this.sizeErrorSymbolWidth = sizeErrorSymbolWidth;
     return this;
   }
@@ -446,11 +449,11 @@ public class SymbolEstimationItem {
    * @return sizeErrorSymbolWidth
    */
   @javax.annotation.Nonnull
-  public Integer getSizeErrorSymbolWidth() {
+  public BigDecimal getSizeErrorSymbolWidth() {
     return sizeErrorSymbolWidth;
   }
 
-  public void setSizeErrorSymbolWidth(@javax.annotation.Nonnull Integer sizeErrorSymbolWidth) {
+  public void setSizeErrorSymbolWidth(@javax.annotation.Nonnull BigDecimal sizeErrorSymbolWidth) {
     this.sizeErrorSymbolWidth = sizeErrorSymbolWidth;
   }
 

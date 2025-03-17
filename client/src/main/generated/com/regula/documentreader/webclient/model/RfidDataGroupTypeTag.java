@@ -187,10 +187,10 @@ public enum RfidDataGroupTypeTag {
   EDL_DG12(113),
 
   /** Extended Length Data, Data Group 13 */
-  EDL_DG14(111),
+  EDL_DG13(111),
 
   /** Extended Length Data, Data Group 14 */
-  NUMBER_1103(110);
+  EDL_DG14(110);
 
   private Integer value;
 

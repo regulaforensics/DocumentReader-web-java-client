@@ -238,7 +238,7 @@ public class ResultItem {
         DocumentBinaryInfoResult.validateJsonElement(jsonElement);
         break;
       case "102":
-        TextDataResult.validateJsonElement(jsonElement);
+        RFIDTextDataResult.validateJsonElement(jsonElement);
         break;
       case "103":
         GraphicsResult.validateJsonElement(jsonElement);

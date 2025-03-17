@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,69 +32,72 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-/** List with various objects, containing processing results */
+/** Container for extracted text fields. Fields are identified by type and language */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class ContainerList {
-  public static final String SERIALIZED_NAME_COUNT = "Count";
+public class RFIDDocVisualExtendedInfo {
+  public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
 
-  @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
-  private Integer count;
-
-  public static final String SERIALIZED_NAME_LIST = "List";
-
-  @SerializedName(SERIALIZED_NAME_LIST)
+  @SerializedName(SERIALIZED_NAME_N_FIELDS)
   @javax.annotation.Nonnull
-  private List<ResultItem> list;
+  private BigDecimal nFields;
 
-  public ContainerList() {}
+  public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
 
-  public ContainerList count(@javax.annotation.Nullable Integer count) {
-    this.count = count;
+  @SerializedName(SERIALIZED_NAME_P_ARRAY_FIELDS)
+  @javax.annotation.Nonnull
+  private List<RFIDDocVisualExtendedField> pArrayFields;
+
+  public RFIDDocVisualExtendedInfo() {}
+
+  public RFIDDocVisualExtendedInfo nFields(@javax.annotation.Nonnull BigDecimal nFields) {
+    this.nFields = nFields;
     return this;
   }
 
   /**
-   * Length of list (Count for items)
+   * Number of pArrayFields array elements
    *
-   * @return count
+   * @return nFields
    */
-  @javax.annotation.Nullable
-  public Integer getCount() {
-    return count;
+  @javax.annotation.Nonnull
+  public BigDecimal getnFields() {
+    return nFields;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
-    this.count = count;
+  public void setnFields(@javax.annotation.Nonnull BigDecimal nFields) {
+    this.nFields = nFields;
   }
 
-  public ContainerList list(@javax.annotation.Nonnull List<ResultItem> list) {
-    this.list = list;
+  public RFIDDocVisualExtendedInfo pArrayFields(
+      @javax.annotation.Nonnull List<RFIDDocVisualExtendedField> pArrayFields) {
+    this.pArrayFields = pArrayFields;
     return this;
   }
 
-  public ContainerList addListItem(ResultItem listItem) {
-    if (this.list == null) {
-      this.list = new ArrayList<>();
+  public RFIDDocVisualExtendedInfo addPArrayFieldsItem(
+      RFIDDocVisualExtendedField pArrayFieldsItem) {
+    if (this.pArrayFields == null) {
+      this.pArrayFields = new ArrayList<>();
     }
-    this.list.add(listItem);
+    this.pArrayFields.add(pArrayFieldsItem);
     return this;
   }
 
   /**
-   * Get list
+   * Get pArrayFields
    *
-   * @return list
+   * @return pArrayFields
    */
   @javax.annotation.Nonnull
-  public List<ResultItem> getList() {
-    return list;
+  public List<RFIDDocVisualExtendedField> getpArrayFields() {
+    return pArrayFields;
   }
 
-  public void setList(@javax.annotation.Nonnull List<ResultItem> list) {
-    this.list = list;
+  public void setpArrayFields(
+      @javax.annotation.Nonnull List<RFIDDocVisualExtendedField> pArrayFields) {
+    this.pArrayFields = pArrayFields;
   }
 
   @Override
@@ -104,22 +108,22 @@ public class ContainerList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ContainerList containerList = (ContainerList) o;
-    return Objects.equals(this.count, containerList.count)
-        && Objects.equals(this.list, containerList.list);
+    RFIDDocVisualExtendedInfo rfIDDocVisualExtendedInfo = (RFIDDocVisualExtendedInfo) o;
+    return Objects.equals(this.nFields, rfIDDocVisualExtendedInfo.nFields)
+        && Objects.equals(this.pArrayFields, rfIDDocVisualExtendedInfo.pArrayFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count, list);
+    return Objects.hash(nFields, pArrayFields);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ContainerList {\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("class RFIDDocVisualExtendedInfo {\n");
+    sb.append("    nFields: ").append(toIndentedString(nFields)).append("\n");
+    sb.append("    pArrayFields: ").append(toIndentedString(pArrayFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -140,44 +144,45 @@ public class ContainerList {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("Count");
-    openapiFields.add("List");
+    openapiFields.add("nFields");
+    openapiFields.add("pArrayFields");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("List");
+    openapiRequiredFields.add("nFields");
+    openapiRequiredFields.add("pArrayFields");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContainerList
+   * @throws IOException if the JSON Element is invalid with respect to RFIDDocVisualExtendedInfo
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
-      if (!ContainerList.openapiRequiredFields
+      if (!RFIDDocVisualExtendedInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
         throw new IllegalArgumentException(
             String.format(
-                "The required field(s) %s in ContainerList is not found in the empty JSON string",
-                ContainerList.openapiRequiredFields.toString()));
+                "The required field(s) %s in RFIDDocVisualExtendedInfo is not found in the empty JSON string",
+                RFIDDocVisualExtendedInfo.openapiRequiredFields.toString()));
       }
     }
 
     Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
     // check to see if the JSON string contains additional fields
     for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!ContainerList.openapiFields.contains(entry.getKey())) {
+      if (!RFIDDocVisualExtendedInfo.openapiFields.contains(entry.getKey())) {
         throw new IllegalArgumentException(
             String.format(
-                "The field `%s` in the JSON string is not defined in the `ContainerList` properties. JSON: %s",
+                "The field `%s` in the JSON string is not defined in the `RFIDDocVisualExtendedInfo` properties. JSON: %s",
                 entry.getKey(), jsonElement.toString()));
       }
     }
 
     // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : ContainerList.openapiRequiredFields) {
+    for (String requiredField : RFIDDocVisualExtendedInfo.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
         throw new IllegalArgumentException(
             String.format(
@@ -187,17 +192,17 @@ public class ContainerList {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
-    if (!jsonObj.get("List").isJsonArray()) {
+    if (!jsonObj.get("pArrayFields").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
-              "Expected the field `List` to be an array in the JSON string but got `%s`",
-              jsonObj.get("List").toString()));
+              "Expected the field `pArrayFields` to be an array in the JSON string but got `%s`",
+              jsonObj.get("pArrayFields").toString()));
     }
 
-    JsonArray jsonArraylist = jsonObj.getAsJsonArray("List");
-    // validate the required field `List` (array)
-    for (int i = 0; i < jsonArraylist.size(); i++) {
-      ResultItem.validateJsonElement(jsonArraylist.get(i));
+    JsonArray jsonArraypArrayFields = jsonObj.getAsJsonArray("pArrayFields");
+    // validate the required field `pArrayFields` (array)
+    for (int i = 0; i < jsonArraypArrayFields.size(); i++) {
+      RFIDDocVisualExtendedField.validateJsonElement(jsonArraypArrayFields.get(i));
     }
     ;
   }
@@ -206,23 +211,23 @@ public class ContainerList {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-      if (!ContainerList.class.isAssignableFrom(type.getRawType())) {
-        return null; // this class only serializes 'ContainerList' and its subtypes
+      if (!RFIDDocVisualExtendedInfo.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'RFIDDocVisualExtendedInfo' and its subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-      final TypeAdapter<ContainerList> thisAdapter =
-          gson.getDelegateAdapter(this, TypeToken.get(ContainerList.class));
+      final TypeAdapter<RFIDDocVisualExtendedInfo> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(RFIDDocVisualExtendedInfo.class));
 
       return (TypeAdapter<T>)
-          new TypeAdapter<ContainerList>() {
+          new TypeAdapter<RFIDDocVisualExtendedInfo>() {
             @Override
-            public void write(JsonWriter out, ContainerList value) throws IOException {
+            public void write(JsonWriter out, RFIDDocVisualExtendedInfo value) throws IOException {
               JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
               elementAdapter.write(out, obj);
             }
 
             @Override
-            public ContainerList read(JsonReader in) throws IOException {
+            public RFIDDocVisualExtendedInfo read(JsonReader in) throws IOException {
               JsonElement jsonElement = elementAdapter.read(in);
               validateJsonElement(jsonElement);
               return thisAdapter.fromJsonTree(jsonElement);
@@ -232,18 +237,18 @@ public class ContainerList {
   }
 
   /**
-   * Create an instance of ContainerList given an JSON string
+   * Create an instance of RFIDDocVisualExtendedInfo given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ContainerList
-   * @throws IOException if the JSON string is invalid with respect to ContainerList
+   * @return An instance of RFIDDocVisualExtendedInfo
+   * @throws IOException if the JSON string is invalid with respect to RFIDDocVisualExtendedInfo
    */
-  public static ContainerList fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ContainerList.class);
+  public static RFIDDocVisualExtendedInfo fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RFIDDocVisualExtendedInfo.class);
   }
 
   /**
-   * Convert an instance of ContainerList to an JSON string
+   * Convert an instance of RFIDDocVisualExtendedInfo to an JSON string
    *
    * @return JSON string
    */

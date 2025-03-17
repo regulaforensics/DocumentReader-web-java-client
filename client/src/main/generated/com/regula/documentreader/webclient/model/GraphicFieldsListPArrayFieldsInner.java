@@ -40,7 +40,7 @@ public class GraphicFieldsListPArrayFieldsInner extends AbstractOpenApiSchema {
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
       if (!GraphicFieldsListPArrayFieldsInner.class.isAssignableFrom(type.getRawType())) {
         return null; // this class only serializes 'GraphicFieldsListPArrayFieldsInner' and its
-                     // subtypes
+        // subtypes
       }
       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
       final TypeAdapter<GraphicFieldRect> adapterGraphicFieldRect =

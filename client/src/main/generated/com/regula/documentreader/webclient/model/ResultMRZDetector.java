@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -58,7 +59,7 @@ public class ResultMRZDetector {
 
   @SerializedName(SERIALIZED_NAME_BOUNDING_QUADRANGLE)
   @javax.annotation.Nonnull
-  private List<Integer> boundingQuadrangle;
+  private List<BigDecimal> boundingQuadrangle;
 
   public ResultMRZDetector() {}
 
@@ -128,12 +129,12 @@ public class ResultMRZDetector {
   }
 
   public ResultMRZDetector boundingQuadrangle(
-      @javax.annotation.Nonnull List<Integer> boundingQuadrangle) {
+      @javax.annotation.Nonnull List<BigDecimal> boundingQuadrangle) {
     this.boundingQuadrangle = boundingQuadrangle;
     return this;
   }
 
-  public ResultMRZDetector addBoundingQuadrangleItem(Integer boundingQuadrangleItem) {
+  public ResultMRZDetector addBoundingQuadrangleItem(BigDecimal boundingQuadrangleItem) {
     if (this.boundingQuadrangle == null) {
       this.boundingQuadrangle = new ArrayList<>();
     }
@@ -147,11 +148,11 @@ public class ResultMRZDetector {
    * @return boundingQuadrangle
    */
   @javax.annotation.Nonnull
-  public List<Integer> getBoundingQuadrangle() {
+  public List<BigDecimal> getBoundingQuadrangle() {
     return boundingQuadrangle;
   }
 
-  public void setBoundingQuadrangle(@javax.annotation.Nonnull List<Integer> boundingQuadrangle) {
+  public void setBoundingQuadrangle(@javax.annotation.Nonnull List<BigDecimal> boundingQuadrangle) {
     this.boundingQuadrangle = boundingQuadrangle;
   }
 

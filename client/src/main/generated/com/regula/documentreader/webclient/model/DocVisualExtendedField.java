@@ -12,360 +12,53 @@
 
 package com.regula.documentreader.webclient.model;
 
-import com.google.gson.JsonArray;
+import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 /** DocVisualExtendedField */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.12.0")
-public class DocVisualExtendedField {
-  public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
+public class DocVisualExtendedField extends VisualExtendedFieldItem {
+  public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
 
-  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
+  @SerializedName(SERIALIZED_NAME_FIELD_RECT)
   @javax.annotation.Nonnull
-  private Integer fieldType;
-
-  public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
-
-  @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
-  @javax.annotation.Nonnull
-  private TextFieldType wFieldType;
-
-  public static final String SERIALIZED_NAME_FIELD_NAME = "FieldName";
-
-  @SerializedName(SERIALIZED_NAME_FIELD_NAME)
-  @javax.annotation.Nonnull
-  private String fieldName;
-
-  public static final String SERIALIZED_NAME_STRINGS_COUNT = "StringsCount";
-
-  @SerializedName(SERIALIZED_NAME_STRINGS_COUNT)
-  @javax.annotation.Nonnull
-  private BigDecimal stringsCount;
-
-  public static final String SERIALIZED_NAME_STRINGS_RESULT = "StringsResult";
-
-  @SerializedName(SERIALIZED_NAME_STRINGS_RESULT)
-  @javax.annotation.Nonnull
-  private List<StringRecognitionResult> stringsResult;
-
-  public static final String SERIALIZED_NAME_BUF_LENGTH = "Buf_Length";
-
-  @SerializedName(SERIALIZED_NAME_BUF_LENGTH)
-  @javax.annotation.Nonnull
-  private BigDecimal bufLength;
-
-  public static final String SERIALIZED_NAME_BUF_TEXT = "Buf_Text";
-
-  @SerializedName(SERIALIZED_NAME_BUF_TEXT)
-  @javax.annotation.Nonnull
-  private String bufText;
-
-  public static final String SERIALIZED_NAME_FIELD_MASK = "FieldMask";
-
-  @SerializedName(SERIALIZED_NAME_FIELD_MASK)
-  @javax.annotation.Nullable
-  private String fieldMask;
-
-  public static final String SERIALIZED_NAME_VALIDITY = "Validity";
-
-  @SerializedName(SERIALIZED_NAME_VALIDITY)
-  @javax.annotation.Nullable
-  private Integer validity;
-
-  public static final String SERIALIZED_NAME_IN_COMPARISON = "InComparison";
-
-  @SerializedName(SERIALIZED_NAME_IN_COMPARISON)
-  @javax.annotation.Nullable
-  private Integer inComparison;
-
-  public static final String SERIALIZED_NAME_W_L_C_I_D = "wLCID";
-
-  @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
-  @javax.annotation.Nullable
-  private Integer wLCID;
-
-  public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED2)
-  @javax.annotation.Nullable
-  private Integer reserved2;
-
-  public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED3)
-  @javax.annotation.Nullable
-  private Integer reserved3;
+  private RectangleCoordinates fieldRect;
 
   public DocVisualExtendedField() {}
 
-  public DocVisualExtendedField fieldType(@javax.annotation.Nonnull Integer fieldType) {
-    this.fieldType = fieldType;
+  public DocVisualExtendedField fieldRect(
+      @javax.annotation.Nonnull RectangleCoordinates fieldRect) {
+    this.fieldRect = fieldRect;
     return this;
   }
 
   /**
-   * Get fieldType
+   * Get fieldRect
    *
-   * @return fieldType
+   * @return fieldRect
    */
   @javax.annotation.Nonnull
-  public Integer getFieldType() {
-    return fieldType;
+  public RectangleCoordinates getFieldRect() {
+    return fieldRect;
   }
 
-  public void setFieldType(@javax.annotation.Nonnull Integer fieldType) {
-    this.fieldType = fieldType;
-  }
-
-  public DocVisualExtendedField wFieldType(@javax.annotation.Nonnull TextFieldType wFieldType) {
-    this.wFieldType = wFieldType;
-    return this;
-  }
-
-  /**
-   * Get wFieldType
-   *
-   * @return wFieldType
-   */
-  @javax.annotation.Nonnull
-  public TextFieldType getwFieldType() {
-    return wFieldType;
-  }
-
-  public void setwFieldType(@javax.annotation.Nonnull TextFieldType wFieldType) {
-    this.wFieldType = wFieldType;
-  }
-
-  public DocVisualExtendedField fieldName(@javax.annotation.Nonnull String fieldName) {
-    this.fieldName = fieldName;
-    return this;
-  }
-
-  /**
-   * Field symbolic name (null-terminated string)
-   *
-   * @return fieldName
-   */
-  @javax.annotation.Nonnull
-  public String getFieldName() {
-    return fieldName;
-  }
-
-  public void setFieldName(@javax.annotation.Nonnull String fieldName) {
-    this.fieldName = fieldName;
-  }
-
-  public DocVisualExtendedField stringsCount(@javax.annotation.Nonnull BigDecimal stringsCount) {
-    this.stringsCount = stringsCount;
-    return this;
-  }
-
-  /**
-   * Number of StringsResult array elements
-   *
-   * @return stringsCount
-   */
-  @javax.annotation.Nonnull
-  public BigDecimal getStringsCount() {
-    return stringsCount;
-  }
-
-  public void setStringsCount(@javax.annotation.Nonnull BigDecimal stringsCount) {
-    this.stringsCount = stringsCount;
-  }
-
-  public DocVisualExtendedField stringsResult(
-      @javax.annotation.Nonnull List<StringRecognitionResult> stringsResult) {
-    this.stringsResult = stringsResult;
-    return this;
-  }
-
-  public DocVisualExtendedField addStringsResultItem(StringRecognitionResult stringsResultItem) {
-    if (this.stringsResult == null) {
-      this.stringsResult = new ArrayList<>();
-    }
-    this.stringsResult.add(stringsResultItem);
-    return this;
-  }
-
-  /**
-   * Array of recognizing probabilities for a each line of text field. Only for Result.VISUAL_TEXT
-   * and Result.MRZ_TEXT results.
-   *
-   * @return stringsResult
-   */
-  @javax.annotation.Nonnull
-  public List<StringRecognitionResult> getStringsResult() {
-    return stringsResult;
-  }
-
-  public void setStringsResult(
-      @javax.annotation.Nonnull List<StringRecognitionResult> stringsResult) {
-    this.stringsResult = stringsResult;
-  }
-
-  public DocVisualExtendedField bufLength(@javax.annotation.Nonnull BigDecimal bufLength) {
-    this.bufLength = bufLength;
-    return this;
-  }
-
-  /**
-   * Buf_Text text string length
-   *
-   * @return bufLength
-   */
-  @javax.annotation.Nonnull
-  public BigDecimal getBufLength() {
-    return bufLength;
-  }
-
-  public void setBufLength(@javax.annotation.Nonnull BigDecimal bufLength) {
-    this.bufLength = bufLength;
-  }
-
-  public DocVisualExtendedField bufText(@javax.annotation.Nonnull String bufText) {
-    this.bufText = bufText;
-    return this;
-  }
-
-  /**
-   * Text field data in UTF8 format. Results of reading different lines of a multi-line field are
-   * separated by &#39;^&#39;
-   *
-   * @return bufText
-   */
-  @javax.annotation.Nonnull
-  public String getBufText() {
-    return bufText;
-  }
-
-  public void setBufText(@javax.annotation.Nonnull String bufText) {
-    this.bufText = bufText;
-  }
-
-  public DocVisualExtendedField fieldMask(@javax.annotation.Nullable String fieldMask) {
-    this.fieldMask = fieldMask;
-    return this;
-  }
-
-  /**
-   * Get fieldMask
-   *
-   * @return fieldMask
-   */
-  @javax.annotation.Nullable
-  public String getFieldMask() {
-    return fieldMask;
-  }
-
-  public void setFieldMask(@javax.annotation.Nullable String fieldMask) {
-    this.fieldMask = fieldMask;
-  }
-
-  public DocVisualExtendedField validity(@javax.annotation.Nullable Integer validity) {
-    this.validity = validity;
-    return this;
-  }
-
-  /**
-   * Get validity
-   *
-   * @return validity
-   */
-  @javax.annotation.Nullable
-  public Integer getValidity() {
-    return validity;
-  }
-
-  public void setValidity(@javax.annotation.Nullable Integer validity) {
-    this.validity = validity;
-  }
-
-  public DocVisualExtendedField inComparison(@javax.annotation.Nullable Integer inComparison) {
-    this.inComparison = inComparison;
-    return this;
-  }
-
-  /**
-   * Get inComparison
-   *
-   * @return inComparison
-   */
-  @javax.annotation.Nullable
-  public Integer getInComparison() {
-    return inComparison;
-  }
-
-  public void setInComparison(@javax.annotation.Nullable Integer inComparison) {
-    this.inComparison = inComparison;
-  }
-
-  public DocVisualExtendedField wLCID(@javax.annotation.Nullable Integer wLCID) {
-    this.wLCID = wLCID;
-    return this;
-  }
-
-  /**
-   * Get wLCID
-   *
-   * @return wLCID
-   */
-  @javax.annotation.Nullable
-  public Integer getwLCID() {
-    return wLCID;
-  }
-
-  public void setwLCID(@javax.annotation.Nullable Integer wLCID) {
-    this.wLCID = wLCID;
-  }
-
-  public DocVisualExtendedField reserved2(@javax.annotation.Nullable Integer reserved2) {
-    this.reserved2 = reserved2;
-    return this;
-  }
-
-  /**
-   * Get reserved2
-   *
-   * @return reserved2
-   */
-  @javax.annotation.Nullable
-  public Integer getReserved2() {
-    return reserved2;
-  }
-
-  public void setReserved2(@javax.annotation.Nullable Integer reserved2) {
-    this.reserved2 = reserved2;
-  }
-
-  public DocVisualExtendedField reserved3(@javax.annotation.Nullable Integer reserved3) {
-    this.reserved3 = reserved3;
-    return this;
-  }
-
-  /**
-   * Get reserved3
-   *
-   * @return reserved3
-   */
-  @javax.annotation.Nullable
-  public Integer getReserved3() {
-    return reserved3;
-  }
-
-  public void setReserved3(@javax.annotation.Nullable Integer reserved3) {
-    this.reserved3 = reserved3;
+  public void setFieldRect(@javax.annotation.Nonnull RectangleCoordinates fieldRect) {
+    this.fieldRect = fieldRect;
   }
 
   @Override
@@ -377,56 +70,20 @@ public class DocVisualExtendedField {
       return false;
     }
     DocVisualExtendedField docVisualExtendedField = (DocVisualExtendedField) o;
-    return Objects.equals(this.fieldType, docVisualExtendedField.fieldType)
-        && Objects.equals(this.wFieldType, docVisualExtendedField.wFieldType)
-        && Objects.equals(this.fieldName, docVisualExtendedField.fieldName)
-        && Objects.equals(this.stringsCount, docVisualExtendedField.stringsCount)
-        && Objects.equals(this.stringsResult, docVisualExtendedField.stringsResult)
-        && Objects.equals(this.bufLength, docVisualExtendedField.bufLength)
-        && Objects.equals(this.bufText, docVisualExtendedField.bufText)
-        && Objects.equals(this.fieldMask, docVisualExtendedField.fieldMask)
-        && Objects.equals(this.validity, docVisualExtendedField.validity)
-        && Objects.equals(this.inComparison, docVisualExtendedField.inComparison)
-        && Objects.equals(this.wLCID, docVisualExtendedField.wLCID)
-        && Objects.equals(this.reserved2, docVisualExtendedField.reserved2)
-        && Objects.equals(this.reserved3, docVisualExtendedField.reserved3);
+    return Objects.equals(this.fieldRect, docVisualExtendedField.fieldRect) && super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-        fieldType,
-        wFieldType,
-        fieldName,
-        stringsCount,
-        stringsResult,
-        bufLength,
-        bufText,
-        fieldMask,
-        validity,
-        inComparison,
-        wLCID,
-        reserved2,
-        reserved3);
+    return Objects.hash(fieldRect, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocVisualExtendedField {\n");
-    sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
-    sb.append("    wFieldType: ").append(toIndentedString(wFieldType)).append("\n");
-    sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
-    sb.append("    stringsCount: ").append(toIndentedString(stringsCount)).append("\n");
-    sb.append("    stringsResult: ").append(toIndentedString(stringsResult)).append("\n");
-    sb.append("    bufLength: ").append(toIndentedString(bufLength)).append("\n");
-    sb.append("    bufText: ").append(toIndentedString(bufText)).append("\n");
-    sb.append("    fieldMask: ").append(toIndentedString(fieldMask)).append("\n");
-    sb.append("    validity: ").append(toIndentedString(validity)).append("\n");
-    sb.append("    inComparison: ").append(toIndentedString(inComparison)).append("\n");
-    sb.append("    wLCID: ").append(toIndentedString(wLCID)).append("\n");
-    sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
-    sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    fieldRect: ").append(toIndentedString(fieldRect)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -460,9 +117,11 @@ public class DocVisualExtendedField {
     openapiFields.add("wLCID");
     openapiFields.add("Reserved2");
     openapiFields.add("Reserved3");
+    openapiFields.add("FieldRect");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("FieldRect");
     openapiRequiredFields.add("FieldType");
     openapiRequiredFields.add("wFieldType");
     openapiRequiredFields.add("FieldName");
@@ -488,41 +147,58 @@ public class DocVisualExtendedField {
                 DocVisualExtendedField.openapiRequiredFields.toString()));
       }
     }
-    JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `wFieldType`
-    TextFieldType.validateJsonElement(jsonObj.get("wFieldType"));
-    if (!jsonObj.get("FieldName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `FieldName` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("FieldName").toString()));
-    }
-    // ensure the json data is an array
-    if (!jsonObj.get("StringsResult").isJsonArray()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `StringsResult` to be an array in the JSON string but got `%s`",
-              jsonObj.get("StringsResult").toString()));
+
+    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+    // check to see if the JSON string contains additional fields
+    for (Map.Entry<String, JsonElement> entry : entries) {
+      if (!DocVisualExtendedField.openapiFields.contains(entry.getKey())) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The field `%s` in the JSON string is not defined in the `DocVisualExtendedField` properties. JSON: %s",
+                entry.getKey(), jsonElement.toString()));
+      }
     }
 
-    JsonArray jsonArraystringsResult = jsonObj.getAsJsonArray("StringsResult");
-    // validate the required field `StringsResult` (array)
-    for (int i = 0; i < jsonArraystringsResult.size(); i++) {
-      StringRecognitionResult.validateJsonElement(jsonArraystringsResult.get(i));
+    // check to make sure all required properties/fields are present in the JSON string
+    for (String requiredField : DocVisualExtendedField.openapiRequiredFields) {
+      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The required field `%s` is not found in the JSON string: %s",
+                requiredField, jsonElement.toString()));
+      }
     }
-    ;
-    if (!jsonObj.get("Buf_Text").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `Buf_Text` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("Buf_Text").toString()));
-    }
-    if ((jsonObj.get("FieldMask") != null && !jsonObj.get("FieldMask").isJsonNull())
-        && !jsonObj.get("FieldMask").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `FieldMask` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("FieldMask").toString()));
+    JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the required field `FieldRect`
+    RectangleCoordinates.validateJsonElement(jsonObj.get("FieldRect"));
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+      if (!DocVisualExtendedField.class.isAssignableFrom(type.getRawType())) {
+        return null; // this class only serializes 'DocVisualExtendedField' and its subtypes
+      }
+      final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+      final TypeAdapter<DocVisualExtendedField> thisAdapter =
+          gson.getDelegateAdapter(this, TypeToken.get(DocVisualExtendedField.class));
+
+      return (TypeAdapter<T>)
+          new TypeAdapter<DocVisualExtendedField>() {
+            @Override
+            public void write(JsonWriter out, DocVisualExtendedField value) throws IOException {
+              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+              elementAdapter.write(out, obj);
+            }
+
+            @Override
+            public DocVisualExtendedField read(JsonReader in) throws IOException {
+              JsonElement jsonElement = elementAdapter.read(in);
+              validateJsonElement(jsonElement);
+              return thisAdapter.fromJsonTree(jsonElement);
+            }
+          }.nullSafe();
     }
   }
 
