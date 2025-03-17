@@ -65,8 +65,8 @@ public class DocumentReaderApi {
     return defaultApi.healthz("", null);
   }
 
-  public Healthcheck ping(String xRequestID, HashMap<String, String> headers) throws ApiException {
-    return defaultApi.healthz(xRequestID, headers);
+  public Healthcheck ping(String xRequestID) throws ApiException {
+    return defaultApi.healthz(xRequestID, null);
   }
 
   /**
