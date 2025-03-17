@@ -78,7 +78,8 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call healthzCall(String xRequestID, final ApiCallback _callback)
+  public okhttp3.Call healthzCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -121,6 +122,11 @@ public class HealthcheckApi {
       localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
     }
 
+    if (headers != null) {
+      for (String key : headers.keySet()) {
+        localVarHeaderParams.put(key, headers.get(key));
+      }
+    }
     String[] localVarAuthNames = new String[] {};
     return localVarApiClient.buildCall(
         basePath,
@@ -137,9 +143,10 @@ public class HealthcheckApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call healthzValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call healthzValidateBeforeCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
       throws ApiException {
-    return healthzCall(xRequestID, _callback);
+    return healthzCall(xRequestID, headers, _callback);
   }
 
   /**
@@ -156,8 +163,9 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public Healthcheck healthz(String xRequestID) throws ApiException {
-    ApiResponse<Healthcheck> localVarResp = healthzWithHttpInfo(xRequestID);
+  public Healthcheck healthz(String xRequestID, HashMap<String, String> headers)
+      throws ApiException {
+    ApiResponse<Healthcheck> localVarResp = healthzWithHttpInfo(xRequestID, headers);
     return localVarResp.getData();
   }
 
@@ -175,8 +183,9 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<Healthcheck> healthzWithHttpInfo(String xRequestID) throws ApiException {
-    okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, null);
+  public ApiResponse<Healthcheck> healthzWithHttpInfo(
+      String xRequestID, HashMap<String, String> headers) throws ApiException {
+    okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, headers, null);
     Type localVarReturnType = new TypeToken<Healthcheck>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -195,10 +204,11 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call healthzAsync(String xRequestID, final ApiCallback<Healthcheck> _callback)
+  public okhttp3.Call healthzAsync(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback<Healthcheck> _callback)
       throws ApiException {
 
-    okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, _callback);
+    okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, headers, _callback);
     Type localVarReturnType = new TypeToken<Healthcheck>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
@@ -220,7 +230,9 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public okhttp3.Call pingCall(String xRequestID, final ApiCallback _callback) throws ApiException {
+  public okhttp3.Call pingCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
+      throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -262,6 +274,11 @@ public class HealthcheckApi {
       localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
     }
 
+    if (headers != null) {
+      for (String key : headers.keySet()) {
+        localVarHeaderParams.put(key, headers.get(key));
+      }
+    }
     String[] localVarAuthNames = new String[] {};
     return localVarApiClient.buildCall(
         basePath,
@@ -279,9 +296,10 @@ public class HealthcheckApi {
 
   @Deprecated
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call pingValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call pingValidateBeforeCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
       throws ApiException {
-    return pingCall(xRequestID, _callback);
+    return pingCall(xRequestID, headers, _callback);
   }
 
   /**
@@ -301,8 +319,8 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public DeviceInfo ping(String xRequestID) throws ApiException {
-    ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo(xRequestID);
+  public DeviceInfo ping(String xRequestID, HashMap<String, String> headers) throws ApiException {
+    ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo(xRequestID, headers);
     return localVarResp.getData();
   }
 
@@ -323,8 +341,9 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<DeviceInfo> pingWithHttpInfo(String xRequestID) throws ApiException {
-    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, null);
+  public ApiResponse<DeviceInfo> pingWithHttpInfo(
+      String xRequestID, HashMap<String, String> headers) throws ApiException {
+    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, headers, null);
     Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -346,10 +365,11 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public okhttp3.Call pingAsync(String xRequestID, final ApiCallback<DeviceInfo> _callback)
+  public okhttp3.Call pingAsync(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback<DeviceInfo> _callback)
       throws ApiException {
 
-    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, _callback);
+    okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, headers, _callback);
     Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
@@ -369,7 +389,8 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call readyzCall(String xRequestID, final ApiCallback _callback)
+  public okhttp3.Call readyzCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -412,6 +433,11 @@ public class HealthcheckApi {
       localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
     }
 
+    if (headers != null) {
+      for (String key : headers.keySet()) {
+        localVarHeaderParams.put(key, headers.get(key));
+      }
+    }
     String[] localVarAuthNames = new String[] {};
     return localVarApiClient.buildCall(
         basePath,
@@ -428,9 +454,10 @@ public class HealthcheckApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call readyzValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call readyzValidateBeforeCall(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback _callback)
       throws ApiException {
-    return readyzCall(xRequestID, _callback);
+    return readyzCall(xRequestID, headers, _callback);
   }
 
   /**
@@ -447,8 +474,8 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public void readyz(String xRequestID) throws ApiException {
-    readyzWithHttpInfo(xRequestID);
+  public void readyz(String xRequestID, HashMap<String, String> headers) throws ApiException {
+    readyzWithHttpInfo(xRequestID, headers);
   }
 
   /**
@@ -466,8 +493,9 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<Void> readyzWithHttpInfo(String xRequestID) throws ApiException {
-    okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, null);
+  public ApiResponse<Void> readyzWithHttpInfo(String xRequestID, HashMap<String, String> headers)
+      throws ApiException {
+    okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, headers, null);
     return localVarApiClient.execute(localVarCall);
   }
 
@@ -486,10 +514,11 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call readyzAsync(String xRequestID, final ApiCallback<Void> _callback)
+  public okhttp3.Call readyzAsync(
+      String xRequestID, HashMap<String, String> headers, final ApiCallback<Void> _callback)
       throws ApiException {
 
-    okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, _callback);
+    okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, headers, _callback);
     localVarApiClient.executeAsync(localVarCall, _callback);
     return localVarCall;
   }

@@ -82,7 +82,10 @@ public class ProcessApi {
    * </table>
    */
   public okhttp3.Call apiProcessCall(
-      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
+      ProcessRequest processRequest,
+      String xRequestID,
+      HashMap<String, String> headers,
+      final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -125,6 +128,11 @@ public class ProcessApi {
       localVarHeaderParams.put("X-RequestID", localVarApiClient.parameterToString(xRequestID));
     }
 
+    if (headers != null) {
+      for (String key : headers.keySet()) {
+        localVarHeaderParams.put(key, headers.get(key));
+      }
+    }
     String[] localVarAuthNames = new String[] {};
     return localVarApiClient.buildCall(
         basePath,
@@ -142,7 +150,10 @@ public class ProcessApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiProcessValidateBeforeCall(
-      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
+      ProcessRequest processRequest,
+      String xRequestID,
+      HashMap<String, String> headers,
+      final ApiCallback _callback)
       throws ApiException {
     // verify the required parameter 'processRequest' is set
     if (processRequest == null) {
@@ -150,7 +161,7 @@ public class ProcessApi {
           "Missing the required parameter 'processRequest' when calling apiProcess(Async)");
     }
 
-    return apiProcessCall(processRequest, xRequestID, _callback);
+    return apiProcessCall(processRequest, xRequestID, headers, _callback);
   }
 
   /**
@@ -170,9 +181,11 @@ public class ProcessApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ProcessResponse apiProcess(ProcessRequest processRequest, String xRequestID)
+  public ProcessResponse apiProcess(
+      ProcessRequest processRequest, String xRequestID, HashMap<String, String> headers)
       throws ApiException {
-    ApiResponse<ProcessResponse> localVarResp = apiProcessWithHttpInfo(processRequest, xRequestID);
+    ApiResponse<ProcessResponse> localVarResp =
+        apiProcessWithHttpInfo(processRequest, xRequestID, headers);
     return localVarResp.getData();
   }
 
@@ -194,8 +207,10 @@ public class ProcessApi {
    * </table>
    */
   public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(
-      ProcessRequest processRequest, String xRequestID) throws ApiException {
-    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, xRequestID, null);
+      ProcessRequest processRequest, String xRequestID, HashMap<String, String> headers)
+      throws ApiException {
+    okhttp3.Call localVarCall =
+        apiProcessValidateBeforeCall(processRequest, xRequestID, headers, null);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -220,10 +235,12 @@ public class ProcessApi {
   public okhttp3.Call apiProcessAsync(
       ProcessRequest processRequest,
       String xRequestID,
+      HashMap<String, String> headers,
       final ApiCallback<ProcessResponse> _callback)
       throws ApiException {
 
-    okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, xRequestID, _callback);
+    okhttp3.Call localVarCall =
+        apiProcessValidateBeforeCall(processRequest, xRequestID, headers, _callback);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;

@@ -62,11 +62,11 @@ public class DocumentReaderApi {
    *     response body
    */
   public Healthcheck ping() throws ApiException {
-    return defaultApi.healthz("");
+    return defaultApi.healthz("", null);
   }
 
-  public Healthcheck ping(String xRequestID) throws ApiException {
-    return defaultApi.healthz(xRequestID);
+  public Healthcheck ping(String xRequestID, HashMap<String, String> headers) throws ApiException {
+    return defaultApi.healthz(xRequestID, headers);
   }
 
   /**
@@ -79,13 +79,14 @@ public class DocumentReaderApi {
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
     processRequest.getSystemInfo().setLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest, "");
+    ProcessResponse response = processApi.apiProcess(processRequest, "", null);
     return new RecognitionResponse(response);
   }
 
-  public RecognitionResponse process(ProcessRequest processRequest, String xRequestID) {
+  public RecognitionResponse process(
+      ProcessRequest processRequest, String xRequestID, HashMap<String, String> headers) {
     processRequest.getSystemInfo().setLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest, xRequestID);
+    ProcessResponse response = processApi.apiProcess(processRequest, xRequestID, headers);
     return new RecognitionResponse(response);
   }
 
