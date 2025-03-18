@@ -12,9 +12,7 @@
   "legacyDiscriminatorBehavior": false,
   "typeMappings" : {
     "ContainerListListInner": "ResultItem",
-    "AuthenticityCheckResultListInner": "AuthenticityCheckResultItem",
-    "DocVisualExtendedInfoPArrayFieldsInner": "DocVisualExtendedField",
-    "GraphicFieldsListPArrayFieldsInner": "GraphicField"
+    "AuthenticityCheckResultListInner": "AuthenticityCheckResultItem"
   },
   "nameMappings": {
     "List": "list"
