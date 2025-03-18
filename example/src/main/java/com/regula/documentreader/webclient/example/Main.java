@@ -45,106 +45,104 @@ public class Main {
         var whitePageRequestImage = new ProcessRequestImage(whitePage0, Light.WHITE, 0);
 
         var requestParams = new ProcessParams()
-            .scenario(Scenario.FULL_PROCESS)
-            .resultTypeOutput(
-                Arrays.asList(
-                    // actual results
-                    Result.STATUS, Result.TEXT, Result.IMAGES,
-                    Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
-                    Result.DOCUMENT_POSITION,
-                    // legacy results
-                    Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
-                    Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
-                    Result.LEXICAL_ANALYSIS
+                .scenario(Scenario.FULL_PROCESS)
+                .resultTypeOutput(
+                        Arrays.asList(
+                                // actual results
+                                Result.STATUS, Result.TEXT, Result.IMAGES,
+                                Result.DOCUMENT_TYPE, Result.DOCUMENT_TYPE_CANDIDATES, Result.IMAGE_QUALITY,
+                                Result.DOCUMENT_POSITION,
+                                // legacy results
+                                Result.MRZ_TEXT, Result.VISUAL_TEXT, Result.BARCODE_TEXT, Result.RFID_TEXT,
+                                Result.VISUAL_GRAPHICS, Result.BARCODE_GRAPHICS, Result.RFID_GRAPHICS,
+                                Result.LEXICAL_ANALYSIS
+                        )
                 )
-            )
-            .alreadyCropped(true);
+                .alreadyCropped(true);
 
         RecognitionRequest request = new RecognitionRequest(requestParams, List.of(whitePageRequestImage));
 
         String finalApiBaseUrl = apiBaseUrl;
 
-        new Thread(() -> {
-            var api = new DocumentReaderApi(finalApiBaseUrl);
+        var api = new DocumentReaderApi(finalApiBaseUrl);
 
-            // Uncomment one of the lines below if you want to transfer the license with each request
+        // Uncomment one of the lines below if you want to transfer the license with each request
 //                if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
 //                if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
-            var info = api.ping();
-            System.out.println();
-            System.out.format(
-                    "-----------------------------------------------------------------" + "\n"
-                            + "Web API version: " + info.getVersion() + "\n"
-                            + "-----------------------------------------------------------------");
-            RecognitionResponse response = api.process(request);
-            var requestJson = request.json();
-            var responseJson = response.json();
+        var info = api.ping();
+        System.out.println();
+        System.out.format(
+                "-----------------------------------------------------------------" + "\n"
+                        + "Web API version: " + info.getVersion() + "\n"
+                        + "-----------------------------------------------------------------");
+        RecognitionResponse response = api.process(request);
+        var requestJson = request.json();
+        var responseJson = response.json();
 
-            // to send raw request(ex encrypted one) with overriding processing params here use next api
-            // RecognitionResponse response = api.process(request, requestParams);
+        // to send raw request(ex encrypted one) with overriding processing params here use next api
+        // RecognitionResponse response = api.process(request, requestParams);
 
-            var status = response.status();
-            var docOverallStatus = status.getOverallStatus() == CheckResult.OK ? "valid" : "not valid";
-            var docOpticalTextStatus = status.getDetailsOptical().getText();
+        var status = response.status();
+        var docOverallStatus = status.getOverallStatus() == CheckResult.OK ? "valid" : "not valid";
+        var docOpticalTextStatus = status.getDetailsOptical().getText();
 
-            var docType = response.documentType() == null ? "Unknown" : response.documentType().getDocumentName();
+        var docType = response.documentType() == null ? "Unknown" : response.documentType().getDocumentName();
 
-            var docNumberField = response.text().getField(DOCUMENT_NUMBER);
-            var docNumberFieldByName = response.text().getField("Document Number");
+        var docNumberField = response.text().getField(DOCUMENT_NUMBER);
+        var docNumberFieldByName = response.text().getField("Document Number");
 
-            var docNumberVisual = docNumberField.getValue(Source.VISUAL);
-            var docNumberMrz = docNumberField.getValue(Source.MRZ);
-            var docNumberVisualValidity = docNumberField.sourceValidity(Source.VISUAL);
-            var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
-            var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
+        var docNumberVisual = docNumberField.getValue(Source.VISUAL);
+        var docNumberMrz = docNumberField.getValue(Source.MRZ);
+        var docNumberVisualValidity = docNumberField.sourceValidity(Source.VISUAL);
+        var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
+        var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
 
-            System.out.println();
-            System.out.format("-----------------------------------------------------------------" + "\n"
-                    + "Document Type: " + docType + "\n"
-                    + "Document Overall Status: " + docOverallStatus + "\n"
-                    + "Document Number Visual: " + docNumberVisual + "\n"
-                    + "Document Number MRZ: " + docNumberMrz + "\n"
-                    + "Validity Of Document Number Visual: " + docNumberVisualValidity + "\n"
-                    + "Validity Of Document Number MRZ: " + docNumberMrzValidity + "\n"
-                    + "MRZ-Visual values comparison: " + docNumberMrzVisualMatching + "\n"
-                    + "-----------------------------------------------------------------");
-            System.out.println();
+        System.out.println();
+        System.out.format("-----------------------------------------------------------------" + "\n"
+                + "Document Type: " + docType + "\n"
+                + "Document Overall Status: " + docOverallStatus + "\n"
+                + "Document Number Visual: " + docNumberVisual + "\n"
+                + "Document Number MRZ: " + docNumberMrz + "\n"
+                + "Validity Of Document Number Visual: " + docNumberVisualValidity + "\n"
+                + "Validity Of Document Number MRZ: " + docNumberMrzValidity + "\n"
+                + "MRZ-Visual values comparison: " + docNumberMrzVisualMatching + "\n"
+                + "-----------------------------------------------------------------");
+        System.out.println();
 
-            if (response.text() != null) {
-                for (TextField field : response.text().getFieldList()) {
-                    System.out.format(
-                            "Field: " + " "
-                                    + field.getFieldName() + " "
-                                    + "Value: " + " "
-                                    + field.getValueList().get(0).getValue() + " "
-                                    + "Source: " + field.getValueList().get(0).getSource()
-                                    + "\n");
-                }
-                System.out.format("---------------------------------------------------------------");
-            } else {
-                System.out.format("                       NO TEXT DATA");
-                System.out.format("---------------------------------------------------------------");
+        if (response.text() != null) {
+            for (TextField field : response.text().getFieldList()) {
+                System.out.format(
+                        "Field: " + " "
+                                + field.getFieldName() + " "
+                                + "Value: " + " "
+                                + field.getValueList().get(0).getValue() + " "
+                                + "Source: " + field.getValueList().get(0).getSource()
+                                + "\n");
             }
+            System.out.format("---------------------------------------------------------------");
+        } else {
+            System.out.format("                       NO TEXT DATA");
+            System.out.format("---------------------------------------------------------------");
+        }
 
-            var documentImage = response.images().getField(GraphicFieldType.DOCUMENT_FRONT).getValue();
-            var portraitField = response.images().getField(GraphicFieldType.PORTRAIT);
-            var portraitFromVisual = portraitField.getValue(Source.VISUAL);
+        var documentImage = response.images().getField(GraphicFieldType.DOCUMENT_FRONT).getValue();
+        var portraitField = response.images().getField(GraphicFieldType.PORTRAIT);
+        var portraitFromVisual = portraitField.getValue(Source.VISUAL);
 
-            try {
-                saveFile("document-image.jpg", documentImage);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                saveFile("portrait.jpg", portraitFromVisual);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            saveFile("document-image.jpg", documentImage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            saveFile("portrait.jpg", portraitFromVisual);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-            // how to get low lvl individual results
-            LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-        }).start();
+        // how to get low lvl individual results
+        LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
 
         System.exit(0);
     }
