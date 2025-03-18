@@ -57,6 +57,12 @@ public class LivenessParams {
   @javax.annotation.Nullable
   private Boolean checkED;
 
+  public static final String SERIALIZED_NAME_CHECK_BLACK_AND_WHITE_COPY = "checkBlackAndWhiteCopy";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_BLACK_AND_WHITE_COPY)
+  @javax.annotation.Nullable
+  private Boolean checkBlackAndWhiteCopy;
+
   public LivenessParams() {}
 
   public LivenessParams checkOVI(@javax.annotation.Nullable Boolean checkOVI) {
@@ -135,6 +141,26 @@ public class LivenessParams {
     this.checkED = checkED;
   }
 
+  public LivenessParams checkBlackAndWhiteCopy(
+      @javax.annotation.Nullable Boolean checkBlackAndWhiteCopy) {
+    this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Black and white copy check
+   *
+   * @return checkBlackAndWhiteCopy
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckBlackAndWhiteCopy() {
+    return checkBlackAndWhiteCopy;
+  }
+
+  public void setCheckBlackAndWhiteCopy(@javax.annotation.Nullable Boolean checkBlackAndWhiteCopy) {
+    this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -147,12 +173,13 @@ public class LivenessParams {
     return Objects.equals(this.checkOVI, livenessParams.checkOVI)
         && Objects.equals(this.checkMLI, livenessParams.checkMLI)
         && Objects.equals(this.checkHolo, livenessParams.checkHolo)
-        && Objects.equals(this.checkED, livenessParams.checkED);
+        && Objects.equals(this.checkED, livenessParams.checkED)
+        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED);
+    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy);
   }
 
   @Override
@@ -163,6 +190,9 @@ public class LivenessParams {
     sb.append("    checkMLI: ").append(toIndentedString(checkMLI)).append("\n");
     sb.append("    checkHolo: ").append(toIndentedString(checkHolo)).append("\n");
     sb.append("    checkED: ").append(toIndentedString(checkED)).append("\n");
+    sb.append("    checkBlackAndWhiteCopy: ")
+        .append(toIndentedString(checkBlackAndWhiteCopy))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -187,6 +217,7 @@ public class LivenessParams {
     openapiFields.add("checkMLI");
     openapiFields.add("checkHolo");
     openapiFields.add("checkED");
+    openapiFields.add("checkBlackAndWhiteCopy");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

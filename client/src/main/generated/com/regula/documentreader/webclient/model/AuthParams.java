@@ -123,6 +123,12 @@ public class AuthParams {
   @javax.annotation.Nullable
   private Boolean checkLetterScreen;
 
+  public static final String SERIALIZED_NAME_CHECK_SECURITY_TEXT = "checkSecurityText";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_SECURITY_TEXT)
+  @javax.annotation.Nullable
+  private Boolean checkSecurityText;
+
   public AuthParams() {}
 
   public AuthParams checkLiveness(@javax.annotation.Nullable Boolean checkLiveness) {
@@ -412,6 +418,25 @@ public class AuthParams {
     this.checkLetterScreen = checkLetterScreen;
   }
 
+  public AuthParams checkSecurityText(@javax.annotation.Nullable Boolean checkSecurityText) {
+    this.checkSecurityText = checkSecurityText;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Security text check
+   *
+   * @return checkSecurityText
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckSecurityText() {
+    return checkSecurityText;
+  }
+
+  public void setCheckSecurityText(@javax.annotation.Nullable Boolean checkSecurityText) {
+    this.checkSecurityText = checkSecurityText;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -435,7 +460,8 @@ public class AuthParams {
         && Objects.equals(this.checkIPI, authParams.checkIPI)
         && Objects.equals(this.checkPhotoEmbedding, authParams.checkPhotoEmbedding)
         && Objects.equals(this.checkPhotoComparison, authParams.checkPhotoComparison)
-        && Objects.equals(this.checkLetterScreen, authParams.checkLetterScreen);
+        && Objects.equals(this.checkLetterScreen, authParams.checkLetterScreen)
+        && Objects.equals(this.checkSecurityText, authParams.checkSecurityText);
   }
 
   @Override
@@ -455,7 +481,8 @@ public class AuthParams {
         checkIPI,
         checkPhotoEmbedding,
         checkPhotoComparison,
-        checkLetterScreen);
+        checkLetterScreen,
+        checkSecurityText);
   }
 
   @Override
@@ -483,6 +510,7 @@ public class AuthParams {
         .append(toIndentedString(checkPhotoComparison))
         .append("\n");
     sb.append("    checkLetterScreen: ").append(toIndentedString(checkLetterScreen)).append("\n");
+    sb.append("    checkSecurityText: ").append(toIndentedString(checkSecurityText)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -518,6 +546,7 @@ public class AuthParams {
     openapiFields.add("checkPhotoEmbedding");
     openapiFields.add("checkPhotoComparison");
     openapiFields.add("checkLetterScreen");
+    openapiFields.add("checkSecurityText");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
