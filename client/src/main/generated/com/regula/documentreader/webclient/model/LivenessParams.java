@@ -42,6 +42,11 @@ public class LivenessParams {
   @SerializedName(SERIALIZED_NAME_CHECK_BLACK_AND_WHITE_COPY)
   private Boolean checkBlackAndWhiteCopy;
 
+  public static final String SERIALIZED_NAME_CHECK_DYNAPRINT = "checkDynaprint";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_DYNAPRINT)
+  private Boolean checkDynaprint;
+
   public LivenessParams withCheckOVI(Boolean checkOVI) {
     this.checkOVI = checkOVI;
     return this;
@@ -137,6 +142,25 @@ public class LivenessParams {
     this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
   }
 
+  public LivenessParams withCheckDynaprint(Boolean checkDynaprint) {
+    this.checkDynaprint = checkDynaprint;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Dynaprint check
+   *
+   * @return checkDynaprint
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckDynaprint() {
+    return checkDynaprint;
+  }
+
+  public void setCheckDynaprint(Boolean checkDynaprint) {
+    this.checkDynaprint = checkDynaprint;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -150,12 +174,14 @@ public class LivenessParams {
         && Objects.equals(this.checkMLI, livenessParams.checkMLI)
         && Objects.equals(this.checkHolo, livenessParams.checkHolo)
         && Objects.equals(this.checkED, livenessParams.checkED)
-        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy);
+        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy)
+        && Objects.equals(this.checkDynaprint, livenessParams.checkDynaprint);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy);
+    return Objects.hash(
+        checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy, checkDynaprint);
   }
 
   @Override
@@ -169,6 +195,7 @@ public class LivenessParams {
     sb.append("    checkBlackAndWhiteCopy: ")
         .append(toIndentedString(checkBlackAndWhiteCopy))
         .append("\n");
+    sb.append("    checkDynaprint: ").append(toIndentedString(checkDynaprint)).append("\n");
     sb.append("}");
     return sb.toString();
   }
