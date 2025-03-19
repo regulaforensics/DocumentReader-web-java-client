@@ -63,6 +63,12 @@ public class LivenessParams {
   @javax.annotation.Nullable
   private Boolean checkBlackAndWhiteCopy;
 
+  public static final String SERIALIZED_NAME_CHECK_DYNAPRINT = "checkDynaprint";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_DYNAPRINT)
+  @javax.annotation.Nullable
+  private Boolean checkDynaprint;
+
   public LivenessParams() {}
 
   public LivenessParams checkOVI(@javax.annotation.Nullable Boolean checkOVI) {
@@ -161,6 +167,25 @@ public class LivenessParams {
     this.checkBlackAndWhiteCopy = checkBlackAndWhiteCopy;
   }
 
+  public LivenessParams checkDynaprint(@javax.annotation.Nullable Boolean checkDynaprint) {
+    this.checkDynaprint = checkDynaprint;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Dynaprint check
+   *
+   * @return checkDynaprint
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckDynaprint() {
+    return checkDynaprint;
+  }
+
+  public void setCheckDynaprint(@javax.annotation.Nullable Boolean checkDynaprint) {
+    this.checkDynaprint = checkDynaprint;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -174,12 +199,14 @@ public class LivenessParams {
         && Objects.equals(this.checkMLI, livenessParams.checkMLI)
         && Objects.equals(this.checkHolo, livenessParams.checkHolo)
         && Objects.equals(this.checkED, livenessParams.checkED)
-        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy);
+        && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy)
+        && Objects.equals(this.checkDynaprint, livenessParams.checkDynaprint);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy);
+    return Objects.hash(
+        checkOVI, checkMLI, checkHolo, checkED, checkBlackAndWhiteCopy, checkDynaprint);
   }
 
   @Override
@@ -193,6 +220,7 @@ public class LivenessParams {
     sb.append("    checkBlackAndWhiteCopy: ")
         .append(toIndentedString(checkBlackAndWhiteCopy))
         .append("\n");
+    sb.append("    checkDynaprint: ").append(toIndentedString(checkDynaprint)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -218,6 +246,7 @@ public class LivenessParams {
     openapiFields.add("checkHolo");
     openapiFields.add("checkED");
     openapiFields.add("checkBlackAndWhiteCopy");
+    openapiFields.add("checkDynaprint");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

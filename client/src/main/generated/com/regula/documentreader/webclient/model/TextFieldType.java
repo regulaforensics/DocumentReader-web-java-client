@@ -1947,7 +1947,13 @@ public enum TextFieldType {
   FT_DATE_OF_FIRST_POSITIVE_TEST_RESULT(691),
 
   /** EF.CardAccess */
-  EF_CARD_ACCESS(692);
+  EF_CARD_ACCESS(692),
+
+  /** Short flight number */
+  SHORT_FLIGHT_NUMBER(693),
+
+  /** Airline code */
+  AIRLINE_CODE(694);
 
   private Integer value;
 
