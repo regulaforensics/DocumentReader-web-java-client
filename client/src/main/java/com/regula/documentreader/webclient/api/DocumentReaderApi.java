@@ -90,6 +90,13 @@ public class DocumentReaderApi {
     return new RecognitionResponse(response);
   }
 
+  public RecognitionResponse process(
+          ProcessRequest processRequest, HashMap<String, String> headers) {
+    processRequest.getSystemInfo().setLicense(this.license);
+    ProcessResponse response = processApi.apiProcess(processRequest, "", headers);
+    return new RecognitionResponse(response);
+  }
+
   public RecognitionResponse process(byte[] processRequest, ProcessParams processParams) {
     if (processParams != null) {
       Gson converter = processApi.getApiClient().getJSON().getGson();
