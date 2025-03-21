@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
@@ -50,7 +49,7 @@ public class HealthcheckDocumentsDatabase {
 
   @SerializedName(SERIALIZED_NAME_EXPORT_DATE)
   @javax.annotation.Nullable
-  private LocalDate exportDate;
+  private String exportDate;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
 
@@ -98,7 +97,7 @@ public class HealthcheckDocumentsDatabase {
     this.version = version;
   }
 
-  public HealthcheckDocumentsDatabase exportDate(@javax.annotation.Nullable LocalDate exportDate) {
+  public HealthcheckDocumentsDatabase exportDate(@javax.annotation.Nullable String exportDate) {
     this.exportDate = exportDate;
     return this;
   }
@@ -109,11 +108,11 @@ public class HealthcheckDocumentsDatabase {
    * @return exportDate
    */
   @javax.annotation.Nullable
-  public LocalDate getExportDate() {
+  public String getExportDate() {
     return exportDate;
   }
 
-  public void setExportDate(@javax.annotation.Nullable LocalDate exportDate) {
+  public void setExportDate(@javax.annotation.Nullable String exportDate) {
     this.exportDate = exportDate;
   }
 
@@ -248,6 +247,13 @@ public class HealthcheckDocumentsDatabase {
           String.format(
               "Expected the field `version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("version").toString()));
+    }
+    if ((jsonObj.get("exportDate") != null && !jsonObj.get("exportDate").isJsonNull())
+        && !jsonObj.get("exportDate").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `exportDate` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("exportDate").toString()));
     }
     if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull())
         && !jsonObj.get("description").isJsonPrimitive()) {

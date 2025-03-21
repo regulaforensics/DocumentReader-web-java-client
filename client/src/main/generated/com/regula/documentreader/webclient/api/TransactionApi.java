@@ -20,9 +20,9 @@ import com.regula.documentreader.webclient.ApiResponse;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
 import com.regula.documentreader.webclient.model.ListTransactionsByTagResponse;
+import com.regula.documentreader.webclient.model.ProcessResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessGetResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessRequest;
-import com.regula.documentreader.webclient.model.TransactionProcessResponse;
 import com.regula.documentreader.webclient.model.TransactionProcessResult;
 import java.io.File;
 import java.lang.reflect.Type;
@@ -1043,7 +1043,7 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param withImages With base64 images or url (optional)
-   * @return TransactionProcessResponse
+   * @return ProcessResponse
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
@@ -1055,9 +1055,9 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public TransactionProcessResponse apiV2TransactionTransactionIdResultsGet(
+  public ProcessResponse apiV2TransactionTransactionIdResultsGet(
       UUID transactionId, Boolean withImages, HashMap<String, String> headers) throws ApiException {
-    ApiResponse<TransactionProcessResponse> localVarResp =
+    ApiResponse<ProcessResponse> localVarResp =
         apiV2TransactionTransactionIdResultsGetWithHttpInfo(transactionId, withImages, headers);
     return localVarResp.getData();
   }
@@ -1067,7 +1067,7 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param withImages With base64 images or url (optional)
-   * @return ApiResponse&lt;TransactionProcessResponse&gt;
+   * @return ApiResponse&lt;ProcessResponse&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    * @http.response.details
@@ -1079,14 +1079,12 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<TransactionProcessResponse>
-      apiV2TransactionTransactionIdResultsGetWithHttpInfo(
-          UUID transactionId, Boolean withImages, HashMap<String, String> headers)
-          throws ApiException {
+  public ApiResponse<ProcessResponse> apiV2TransactionTransactionIdResultsGetWithHttpInfo(
+      UUID transactionId, Boolean withImages, HashMap<String, String> headers) throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdResultsGetValidateBeforeCall(
             transactionId, withImages, headers, null);
-    Type localVarReturnType = new TypeToken<TransactionProcessResponse>() {}.getType();
+    Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
 
@@ -1111,13 +1109,13 @@ public class TransactionApi {
       UUID transactionId,
       Boolean withImages,
       HashMap<String, String> headers,
-      final ApiCallback<TransactionProcessResponse> _callback)
+      final ApiCallback<ProcessResponse> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdResultsGetValidateBeforeCall(
             transactionId, withImages, headers, _callback);
-    Type localVarReturnType = new TypeToken<TransactionProcessResponse>() {}.getType();
+    Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;
   }

@@ -91,7 +91,7 @@ public class DocumentReaderApi {
   }
 
   public RecognitionResponse process(
-          ProcessRequest processRequest, HashMap<String, String> headers) {
+      ProcessRequest processRequest, HashMap<String, String> headers) {
     processRequest.getSystemInfo().setLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest, "", headers);
     return new RecognitionResponse(response);

@@ -1226,6 +1226,8 @@ public class JSON {
         new com.regula.documentreader.webclient.model.ProcessRequestImage
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.ProcessResponse.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ProcessSystemInfo.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RFIDDocVisualExtendedField
@@ -1366,12 +1368,6 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TransactionProcessRequest
-            .CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.TransactionProcessResponse
-            .CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.TransactionProcessResponseItem
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.TransactionProcessResult

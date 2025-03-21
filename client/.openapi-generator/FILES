@@ -237,8 +237,6 @@ src/main/generated/com/regula/documentreader/webclient/model/TransactionImage.ja
 src/main/generated/com/regula/documentreader/webclient/model/TransactionInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessGetResponse.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessRequest.java
-src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResponse.java
-src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResponseItem.java
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytes.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtString.java
