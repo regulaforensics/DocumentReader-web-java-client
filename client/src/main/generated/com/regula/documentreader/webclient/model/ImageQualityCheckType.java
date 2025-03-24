@@ -37,4 +37,7 @@ public class ImageQualityCheckType {
 
   /** Signals if the document image is bright enough */
   public static final int Brightness = 9;
+
+  /** Signals if the document image has occlusion */
+  public static final int Occlusion = 10;
 }
