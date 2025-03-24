@@ -9,6 +9,7 @@ import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
 import com.regula.documentreader.webclient.model.DeviceInfo;
+import com.regula.documentreader.webclient.model.Healthcheck;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
 import com.regula.documentreader.webclient.model.ProcessResponse;
@@ -21,6 +22,7 @@ import okio.ByteString;
 public class DocumentReaderApi {
 
   private final DefaultApi defaultApi;
+  private final HealthcheckApi healthcheckApi;
   private final ProcessApi processApi;
 
   private String license;
@@ -31,6 +33,7 @@ public class DocumentReaderApi {
 
   public DocumentReaderApi(ApiClient apiClient) {
     this.defaultApi = new DefaultApi(apiClient);
+    this.healthcheckApi = new HealthcheckApi(apiClient);
     this.processApi = new ProcessApi(apiClient);
   }
 
@@ -68,6 +71,15 @@ public class DocumentReaderApi {
   public DeviceInfo ping(String xRequestID) throws ApiException {
     return defaultApi.ping(xRequestID);
   }
+
+  public Healthcheck health() throws ApiException {
+    return healthcheckApi.healthz("");
+  }
+
+  public Healthcheck health(String xRequestID) throws ApiException {
+    return healthcheckApi.healthz(xRequestID);
+  }
+
 
   /**
    * Reads list of documents and return extracted data
