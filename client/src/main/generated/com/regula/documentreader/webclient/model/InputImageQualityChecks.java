@@ -37,4 +37,7 @@ public class InputImageQualityChecks {
 
   /** Signals if the document image is bright enough */
   public static final String Brightness = "brightnessCheck";
+
+  /** Signals if the document image has occlusion */
+  public static final String Occlusion = "occlusionCheck";
 }
