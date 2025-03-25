@@ -51,7 +51,7 @@ public class Example {
         if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
         if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
-        var info = api.ping();
+        var info = api.health();
         System.out.println("-----------------------------------------------------------------");
         System.out.format("Web API version %s%n", info.getVersion());
 

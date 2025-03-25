@@ -8,6 +8,7 @@ import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
+import com.regula.documentreader.webclient.model.DeviceInfo;
 import com.regula.documentreader.webclient.model.Healthcheck;
 import com.regula.documentreader.webclient.model.ProcessParams;
 import com.regula.documentreader.webclient.model.ProcessRequest;
@@ -61,11 +62,19 @@ public class DocumentReaderApi {
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
    */
-  public Healthcheck ping() throws ApiException {
+  public DeviceInfo ping() throws ApiException {
+    return defaultApi.ping("", null);
+  }
+
+  public DeviceInfo ping(String xRequestID) throws ApiException {
+    return defaultApi.ping(xRequestID, null);
+  }
+
+  public Healthcheck health() throws ApiException {
     return defaultApi.healthz("", null);
   }
 
-  public Healthcheck ping(String xRequestID) throws ApiException {
+  public Healthcheck health(String xRequestID) throws ApiException {
     return defaultApi.healthz(xRequestID, null);
   }
 
