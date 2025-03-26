@@ -70,7 +70,7 @@ public class Main {
 //                if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
 //                if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
-            var info = api.ping();
+            var info = api.health();
             System.out.println();
             System.out.format(
                     "-----------------------------------------------------------------" + "\n"
@@ -144,7 +144,7 @@ public class Main {
         }).start();
 
 
-//        System.exit(0);
+        System.exit(0);
     }
 
     @Nullable
