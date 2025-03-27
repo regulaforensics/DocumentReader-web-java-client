@@ -232,7 +232,7 @@ public class FaceApi {
   }
 
   /**
-   * Minimum age of a child, at which portrait comparison result will be effective. Default: 13.
+   * The age threshold for the portrait comparison. Default: 13.
    *
    * @return childAgeThreshold
    */

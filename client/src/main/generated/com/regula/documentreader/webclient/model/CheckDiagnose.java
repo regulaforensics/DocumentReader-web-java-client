@@ -242,6 +242,8 @@ public class CheckDiagnose {
 
   public static final int LASINK_INVALID_LINES_FREQUENCY = 230;
 
+  public static final int DOC_LIVENESS_DOCUMENT_NOT_LIVE = 238;
+
   public static final int DOC_LIVENESS_BLACK_AND_WHITE_COPY_DETECTED = 239;
 
   public static final int DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED = 240;

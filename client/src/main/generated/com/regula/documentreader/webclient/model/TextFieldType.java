@@ -1939,4 +1939,10 @@ public class TextFieldType {
 
   /** EF.CardAccess */
   public static final int EF_CARD_ACCESS = 692;
+
+  /** Short flight number */
+  public static final int SHORT_FLIGHT_NUMBER = 693;
+
+  /** Airline code */
+  public static final int AIRLINE_CODE = 694;
 }
