@@ -142,9 +142,6 @@ public class Main {
             LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
 
         }).start();
-
-
-        System.exit(0);
     }
 
     @Nullable
