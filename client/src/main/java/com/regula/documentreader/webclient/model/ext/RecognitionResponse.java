@@ -110,7 +110,7 @@ public class RecognitionResponse {
   }
 
   public OneCandidate documentType() {
-    int defaultPageIdx = 1;
+    int defaultPageIdx = 0;
     return documentType(defaultPageIdx);
   }
 
