@@ -93,7 +93,6 @@ public class Example {
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-        System.exit(0);
     }
 
     @Nullable
