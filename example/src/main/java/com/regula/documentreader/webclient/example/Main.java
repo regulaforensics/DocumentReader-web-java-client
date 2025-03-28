@@ -3,6 +3,7 @@ package com.regula.documentreader.webclient.example;
 
 import static com.regula.documentreader.webclient.model.TextFieldType.DOCUMENT_NUMBER;
 
+import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.model.CheckResult;
@@ -64,7 +65,12 @@ public class Main {
 
         String finalApiBaseUrl = apiBaseUrl;
 
-        var api = new DocumentReaderApi(finalApiBaseUrl);
+        var apiClient = new ApiClient();
+        apiClient.setBasePath(finalApiBaseUrl);
+        // Set headers
+//        apiClient.addDefaultHeader("Header", "value");
+
+        var api = new DocumentReaderApi(apiClient);
 
         // Uncomment one of the lines below if you want to transfer the license with each request
 //                if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
@@ -143,8 +149,6 @@ public class Main {
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-
-        System.exit(0);
     }
 
     @Nullable

@@ -323,7 +323,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_PROCESS_AUTH)
   @javax.annotation.Nullable
-  private Long processAuth;
+  private AuthenticityResultType processAuth;
 
   public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
 
@@ -404,6 +404,12 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_DO_BARCODES)
   @javax.annotation.Nullable
   private List<InputBarcodeType> doBarcodes;
+
+  public static final String SERIALIZED_NAME_STRICT_D_L_CATEGORY_EXPIRY = "strictDLCategoryExpiry";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_D_L_CATEGORY_EXPIRY)
+  @javax.annotation.Nullable
+  private Boolean strictDLCategoryExpiry;
 
   public ProcessParams() {}
 
@@ -1417,24 +1423,22 @@ public class ProcessParams {
     this.documentGroupFilter = documentGroupFilter;
   }
 
-  public ProcessParams processAuth(@javax.annotation.Nullable Long processAuth) {
+  public ProcessParams processAuth(@javax.annotation.Nullable AuthenticityResultType processAuth) {
     this.processAuth = processAuth;
     return this;
   }
 
   /**
-   * Authenticity checks that should be performed regardless of the document type. The available
-   * checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license
-   * checks can be added.
+   * Get processAuth
    *
    * @return processAuth
    */
   @javax.annotation.Nullable
-  public Long getProcessAuth() {
+  public AuthenticityResultType getProcessAuth() {
     return processAuth;
   }
 
-  public void setProcessAuth(@javax.annotation.Nullable Long processAuth) {
+  public void setProcessAuth(@javax.annotation.Nullable AuthenticityResultType processAuth) {
     this.processAuth = processAuth;
   }
 
@@ -1714,6 +1718,28 @@ public class ProcessParams {
     this.doBarcodes = doBarcodes;
   }
 
+  public ProcessParams strictDLCategoryExpiry(
+      @javax.annotation.Nullable Boolean strictDLCategoryExpiry) {
+    this.strictDLCategoryExpiry = strictDLCategoryExpiry;
+    return this;
+  }
+
+  /**
+   * Set to force DL categories expiry date to affect the overall status or not. As documents
+   * usually have their own date of expiry, which might be less or greater than category expiry
+   * date, this might be handy for specific cases.
+   *
+   * @return strictDLCategoryExpiry
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictDLCategoryExpiry() {
+    return strictDLCategoryExpiry;
+  }
+
+  public void setStrictDLCategoryExpiry(@javax.annotation.Nullable Boolean strictDLCategoryExpiry) {
+    this.strictDLCategoryExpiry = strictDLCategoryExpiry;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1785,7 +1811,8 @@ public class ProcessParams {
             this.strictBarcodeDigitalSignatureCheck,
             processParams.strictBarcodeDigitalSignatureCheck)
         && Objects.equals(this.selectLongestNames, processParams.selectLongestNames)
-        && Objects.equals(this.doBarcodes, processParams.doBarcodes);
+        && Objects.equals(this.doBarcodes, processParams.doBarcodes)
+        && Objects.equals(this.strictDLCategoryExpiry, processParams.strictDLCategoryExpiry);
   }
 
   @Override
@@ -1850,7 +1877,8 @@ public class ProcessParams {
         generateNumericCodes,
         strictBarcodeDigitalSignatureCheck,
         selectLongestNames,
-        doBarcodes);
+        doBarcodes,
+        strictDLCategoryExpiry);
   }
 
   @Override
@@ -1947,6 +1975,9 @@ public class ProcessParams {
         .append("\n");
     sb.append("    selectLongestNames: ").append(toIndentedString(selectLongestNames)).append("\n");
     sb.append("    doBarcodes: ").append(toIndentedString(doBarcodes)).append("\n");
+    sb.append("    strictDLCategoryExpiry: ")
+        .append(toIndentedString(strictDLCategoryExpiry))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2027,6 +2058,7 @@ public class ProcessParams {
     openapiFields.add("strictBarcodeDigitalSignatureCheck");
     openapiFields.add("selectLongestNames");
     openapiFields.add("doBarcodes");
+    openapiFields.add("strictDLCategoryExpiry");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -2175,6 +2207,10 @@ public class ProcessParams {
           String.format(
               "Expected the field `documentGroupFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("documentGroupFilter").toString()));
+    }
+    // validate the optional field `processAuth`
+    if (jsonObj.get("processAuth") != null && !jsonObj.get("processAuth").isJsonNull()) {
+      AuthenticityResultType.validateJsonElement(jsonObj.get("processAuth"));
     }
     if ((jsonObj.get("deviceTypeHex") != null && !jsonObj.get("deviceTypeHex").isJsonNull())
         && !jsonObj.get("deviceTypeHex").isJsonPrimitive()) {

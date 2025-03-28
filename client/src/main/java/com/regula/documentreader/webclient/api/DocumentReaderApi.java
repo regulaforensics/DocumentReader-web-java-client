@@ -63,19 +63,19 @@ public class DocumentReaderApi {
    *     response body
    */
   public DeviceInfo ping() throws ApiException {
-    return defaultApi.ping("", null);
+    return defaultApi.ping("");
   }
 
   public DeviceInfo ping(String xRequestID) throws ApiException {
-    return defaultApi.ping(xRequestID, null);
+    return defaultApi.ping(xRequestID);
   }
 
   public Healthcheck health() throws ApiException {
-    return defaultApi.healthz("", null);
+    return defaultApi.healthz("");
   }
 
   public Healthcheck health(String xRequestID) throws ApiException {
-    return defaultApi.healthz(xRequestID, null);
+    return defaultApi.healthz(xRequestID);
   }
 
   /**
@@ -88,21 +88,13 @@ public class DocumentReaderApi {
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
     processRequest.getSystemInfo().setLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest, "", null);
+    ProcessResponse response = processApi.apiProcess(processRequest, "");
     return new RecognitionResponse(response);
   }
 
-  public RecognitionResponse process(
-      ProcessRequest processRequest, String xRequestID, HashMap<String, String> headers) {
+  public RecognitionResponse process(ProcessRequest processRequest, String xRequestID) {
     processRequest.getSystemInfo().setLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest, xRequestID, headers);
-    return new RecognitionResponse(response);
-  }
-
-  public RecognitionResponse process(
-      ProcessRequest processRequest, HashMap<String, String> headers) {
-    processRequest.getSystemInfo().setLicense(this.license);
-    ProcessResponse response = processApi.apiProcess(processRequest, "", headers);
+    ProcessResponse response = processApi.apiProcess(processRequest, xRequestID);
     return new RecognitionResponse(response);
   }
 

@@ -28,7 +28,7 @@ public class AuthenticityCheckResultItem {
 
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  protected Integer type = 0;
+  protected AuthenticityResultType type;
 
   public static final String SERIALIZED_NAME_ELEMENT_RESULT = "ElementResult";
 
@@ -50,23 +50,22 @@ public class AuthenticityCheckResultItem {
 
   public AuthenticityCheckResultItem() {}
 
-  public AuthenticityCheckResultItem type(@javax.annotation.Nonnull Integer type) {
+  public AuthenticityCheckResultItem type(@javax.annotation.Nonnull AuthenticityResultType type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Same as authenticity result type, but used for safe parsing of not-described values:
-   * https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/
+   * Get type
    *
    * @return type
    */
   @javax.annotation.Nonnull
-  public Integer getType() {
+  public AuthenticityResultType getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull Integer type) {
+  public void setType(@javax.annotation.Nonnull AuthenticityResultType type) {
     this.type = type;
   }
 

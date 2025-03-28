@@ -80,13 +80,6 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
     super();
     {{/parcelableModel}}
     {{/parent}}
-    {{#discriminator}}
-    {{#discriminator.isEnum}}
-{{#readWriteVars}}{{#isDiscriminator}}{{#defaultValue}}
-    this.{{name}} = {{defaultValue}};
-{{/defaultValue}}{{/isDiscriminator}}{{/readWriteVars}}
-    {{/discriminator.isEnum}}
-    {{/discriminator}}
   }
   {{#vendorExtensions.x-has-readonly-properties}}
   {{^withXml}}

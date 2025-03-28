@@ -1,6 +1,7 @@
 package com.regula.documentreader.webclient.model.ext;
 
 import com.regula.documentreader.webclient.model.AuthParams;
+import com.regula.documentreader.webclient.model.AuthenticityResultType;
 import com.regula.documentreader.webclient.model.DocumentFormat;
 import com.regula.documentreader.webclient.model.DocumentType;
 import com.regula.documentreader.webclient.model.FaceApi;
@@ -245,7 +246,7 @@ public class RecognitionParams extends ProcessParams {
     return this;
   }
 
-  public RecognitionParams withProcessAuth(Long processAuth) {
+  public RecognitionParams withProcessAuth(AuthenticityResultType processAuth) {
     this.setProcessAuth(processAuth);
     return this;
   }

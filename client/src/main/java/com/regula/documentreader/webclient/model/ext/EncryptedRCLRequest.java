@@ -12,7 +12,7 @@ public class EncryptedRCLRequest extends EncryptedRCLResult {
     setListIdx(list_idx);
     setPageIdx(page_idx);
     setBufLength(encryptedRCL.length);
-    setResultType(Result.ENCRYPTED_RCL.getValue());
+    setResultType(Result.ENCRYPTED_RCL);
   }
 
   public EncryptedRCLResult withEncryptedRCL(byte[] encryptedRCL) {

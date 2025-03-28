@@ -52,7 +52,7 @@ public class ResultItem {
 
   @SerializedName(SERIALIZED_NAME_RESULT_TYPE)
   @javax.annotation.Nonnull
-  protected Integer resultType = 0;
+  protected Result resultType;
 
   public ResultItem() {}
 
@@ -132,22 +132,22 @@ public class ResultItem {
     this.pageIdx = pageIdx;
   }
 
-  public ResultItem resultType(@javax.annotation.Nonnull Integer resultType) {
+  public ResultItem resultType(@javax.annotation.Nonnull Result resultType) {
     this.resultType = resultType;
     return this;
   }
 
   /**
-   * Same as Result type, but used for safe parsing of not-described values. See Result type.
+   * Get resultType
    *
    * @return resultType
    */
   @javax.annotation.Nonnull
-  public Integer getResultType() {
+  public Result getResultType() {
     return resultType;
   }
 
-  public void setResultType(@javax.annotation.Nonnull Integer resultType) {
+  public void setResultType(@javax.annotation.Nonnull Result resultType) {
     this.resultType = resultType;
   }
 

@@ -11,7 +11,7 @@ public class ProcessRequestLicense extends LicenseResult {
     setListIdx(list_idx);
     setPageIdx(page_idx);
     setBufLength(license.length);
-    setResultType(Result.LICENSE.getValue());
+    setResultType(Result.LICENSE);
   }
 
   public LicenseResult withLicense(byte[] license) {

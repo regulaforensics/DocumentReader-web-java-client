@@ -110,7 +110,7 @@ public class RecognitionResponse {
   }
 
   public OneCandidate documentType() {
-    int defaultPageIdx = 1;
+    int defaultPageIdx = 0;
     return documentType(defaultPageIdx);
   }
 
@@ -124,7 +124,7 @@ public class RecognitionResponse {
 
   public <R> R resultByType(Result type) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType().equals(type.getValue())) {
+      if (item.getResultType() == type) {
         return (R) item;
       }
     }
@@ -133,7 +133,7 @@ public class RecognitionResponse {
 
   public <R> R getResult(Result type, int page_idx) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType().equals(type.getValue()) && item.getPageIdx() == page_idx) {
+      if (item.getResultType() == type && item.getPageIdx() == page_idx) {
         return (R) item;
       }
     }
@@ -143,7 +143,7 @@ public class RecognitionResponse {
   public <R> List<R> resultsByType(Result type) {
     List<R> results = new ArrayList<>();
     for (ResultItem item : originalResponse.getContainerList().getList()) {
-      if (item.getResultType().equals(type.getValue())) {
+      if (item.getResultType() == type) {
         results.add((R) item);
       }
     }

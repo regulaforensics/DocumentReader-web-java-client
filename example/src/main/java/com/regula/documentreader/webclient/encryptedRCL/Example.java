@@ -1,5 +1,6 @@
 package com.regula.documentreader.webclient.encryptedRCL;
 
+import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.api.DocumentReaderApi;
 import com.regula.documentreader.webclient.example.Main;
 import com.regula.documentreader.webclient.model.*;
@@ -47,7 +48,13 @@ public class Example {
         RecognitionRequest request = new RecognitionRequest(
                 requestParams, containerList);
 
-        var api = new DocumentReaderApi(apiBaseUrl);
+        var apiClient = new ApiClient();
+        apiClient.setBasePath(apiBaseUrl);
+        // Set headers
+//        apiClient.addDefaultHeader("Header", "value");
+
+        var api = new DocumentReaderApi(apiClient);
+
         if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
         if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
@@ -89,7 +96,6 @@ public class Example {
 
         // how to get low lvl individual results
         LexicalAnalysisResult lexResult = response.resultByType(Result.LEXICAL_ANALYSIS);
-        System.exit(0);
     }
 
     @Nullable
