@@ -2,6 +2,7 @@ package com.regula.documentreader.webclient.model.ext.authenticity;
 
 import com.regula.documentreader.webclient.model.AuthenticityCheckResult;
 import com.regula.documentreader.webclient.model.IdentResult;
+import com.regula.documentreader.webclient.model.SecurityFeatureType;
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -22,7 +23,7 @@ public class IdentChecks extends AuthenticityResult<IdentResult> {
   }
 
   @Nullable
-  public IdentResult checksByElement(int elementType) {
+  public IdentResult checksByElement(SecurityFeatureType elementType) {
     for (IdentResult result : this.items()) {
       if (result.getElementType() == elementType) {
         return result;

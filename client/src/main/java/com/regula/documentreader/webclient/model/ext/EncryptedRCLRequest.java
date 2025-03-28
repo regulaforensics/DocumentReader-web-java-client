@@ -15,18 +15,8 @@ public class EncryptedRCLRequest extends EncryptedRCLResult {
     setResultType(Result.ENCRYPTED_RCL);
   }
 
-  @Override
   public EncryptedRCLResult withEncryptedRCL(byte[] encryptedRCL) {
-    return super.withEncryptedRCL(encryptedRCL);
-  }
-
-  @Override
-  public byte[] getEncryptedRCL() {
-    return super.getEncryptedRCL();
-  }
-
-  @Override
-  public void setEncryptedRCL(byte[] encryptedRCL) {
-    super.setEncryptedRCL(encryptedRCL);
+    this.setEncryptedRCL(encryptedRCL);
+    return this;
   }
 }

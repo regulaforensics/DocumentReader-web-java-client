@@ -23,6 +23,7 @@ dependencies {
     implementation("io.swagger:swagger-annotations:1.5.24")
     implementation("javax.annotation:javax.annotation-api:1.3.2")
     implementation("com.google.code.findbugs:jsr305:3.0.2")
+    implementation("org.springframework:spring-beans:5.3.20")
 }
 
 tasks.withType<Jar> {

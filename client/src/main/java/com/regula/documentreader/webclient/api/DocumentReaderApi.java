@@ -21,8 +21,7 @@ import okio.ByteString;
 
 public class DocumentReaderApi {
 
-  private final DefaultApi defaultApi;
-  private final HealthcheckApi healthcheckApi;
+  private final HealthcheckApi defaultApi;
   private final ProcessApi processApi;
 
   private String license;
@@ -32,8 +31,7 @@ public class DocumentReaderApi {
   }
 
   public DocumentReaderApi(ApiClient apiClient) {
-    this.defaultApi = new DefaultApi(apiClient);
-    this.healthcheckApi = new HealthcheckApi(apiClient);
+    this.defaultApi = new HealthcheckApi(apiClient);
     this.processApi = new ProcessApi(apiClient);
   }
 
@@ -73,11 +71,11 @@ public class DocumentReaderApi {
   }
 
   public Healthcheck health() throws ApiException {
-    return healthcheckApi.healthz("");
+    return defaultApi.healthz("");
   }
 
   public Healthcheck health(String xRequestID) throws ApiException {
-    return healthcheckApi.healthz(xRequestID);
+    return defaultApi.healthz(xRequestID);
   }
 
   /**
@@ -89,13 +87,13 @@ public class DocumentReaderApi {
    *     response body
    */
   public RecognitionResponse process(ProcessRequest processRequest) {
-    processRequest.getSystemInfo().withLicense(this.license);
+    processRequest.getSystemInfo().setLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest, "");
     return new RecognitionResponse(response);
   }
 
   public RecognitionResponse process(ProcessRequest processRequest, String xRequestID) {
-    processRequest.getSystemInfo().withLicense(this.license);
+    processRequest.getSystemInfo().setLicense(this.license);
     ProcessResponse response = processApi.apiProcess(processRequest, xRequestID);
     return new RecognitionResponse(response);
   }
@@ -120,7 +118,8 @@ public class DocumentReaderApi {
     return processApi
         .getApiClient()
         .buildCall(
-            "/api/process",
+            "/api",
+            "/process",
             "POST",
             new ArrayList<Pair>(),
             new ArrayList<Pair>(),
