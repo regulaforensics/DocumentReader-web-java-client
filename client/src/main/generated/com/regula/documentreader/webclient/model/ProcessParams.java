@@ -316,6 +316,16 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_SELECT_LONGEST_NAMES)
   private Boolean selectLongestNames;
 
+  public static final String SERIALIZED_NAME_DO_BARCODES = "doBarcodes";
+
+  @SerializedName(SERIALIZED_NAME_DO_BARCODES)
+  private List<InputBarcodeType> doBarcodes = null;
+
+  public static final String SERIALIZED_NAME_STRICT_D_L_CATEGORY_EXPIRY = "strictDLCategoryExpiry";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_D_L_CATEGORY_EXPIRY)
+  private Boolean strictDLCategoryExpiry;
+
   public ProcessParams withGenerateDTCVC(Boolean generateDTCVC) {
     this.generateDTCVC = generateDTCVC;
     return this;
@@ -1543,6 +1553,54 @@ public class ProcessParams {
     this.selectLongestNames = selectLongestNames;
   }
 
+  public ProcessParams withDoBarcodes(List<InputBarcodeType> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+    return this;
+  }
+
+  public ProcessParams addDoBarcodesItem(InputBarcodeType doBarcodesItem) {
+    if (this.doBarcodes == null) {
+      this.doBarcodes = new ArrayList<InputBarcodeType>();
+    }
+    this.doBarcodes.add(doBarcodesItem);
+    return this;
+  }
+
+  /**
+   * Set the types of barcodes to process.
+   *
+   * @return doBarcodes
+   */
+  @javax.annotation.Nullable
+  public List<InputBarcodeType> getDoBarcodes() {
+    return doBarcodes;
+  }
+
+  public void setDoBarcodes(List<InputBarcodeType> doBarcodes) {
+    this.doBarcodes = doBarcodes;
+  }
+
+  public ProcessParams withStrictDLCategoryExpiry(Boolean strictDLCategoryExpiry) {
+    this.strictDLCategoryExpiry = strictDLCategoryExpiry;
+    return this;
+  }
+
+  /**
+   * Set to force DL categories expiry date to affect the overall status or not. As documents
+   * usually have their own date of expiry, which might be less or greater than category expiry
+   * date, this might be handy for specific cases.
+   *
+   * @return strictDLCategoryExpiry
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictDLCategoryExpiry() {
+    return strictDLCategoryExpiry;
+  }
+
+  public void setStrictDLCategoryExpiry(Boolean strictDLCategoryExpiry) {
+    this.strictDLCategoryExpiry = strictDLCategoryExpiry;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1612,7 +1670,9 @@ public class ProcessParams {
         && Objects.equals(
             this.strictBarcodeDigitalSignatureCheck,
             processParams.strictBarcodeDigitalSignatureCheck)
-        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames);
+        && Objects.equals(this.selectLongestNames, processParams.selectLongestNames)
+        && Objects.equals(this.doBarcodes, processParams.doBarcodes)
+        && Objects.equals(this.strictDLCategoryExpiry, processParams.strictDLCategoryExpiry);
   }
 
   @Override
@@ -1675,7 +1735,9 @@ public class ProcessParams {
         mrzDetectMode,
         generateNumericCodes,
         strictBarcodeDigitalSignatureCheck,
-        selectLongestNames);
+        selectLongestNames,
+        doBarcodes,
+        strictDLCategoryExpiry);
   }
 
   @Override
@@ -1770,6 +1832,10 @@ public class ProcessParams {
         .append(toIndentedString(strictBarcodeDigitalSignatureCheck))
         .append("\n");
     sb.append("    selectLongestNames: ").append(toIndentedString(selectLongestNames)).append("\n");
+    sb.append("    doBarcodes: ").append(toIndentedString(doBarcodes)).append("\n");
+    sb.append("    strictDLCategoryExpiry: ")
+        .append(toIndentedString(strictDLCategoryExpiry))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }

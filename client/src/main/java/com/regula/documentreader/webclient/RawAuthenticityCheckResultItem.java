@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.annotations.JsonAdapter;
 import com.regula.documentreader.webclient.model.AuthenticityCheckResultItem;
 import java.util.Objects;
-
 import javax.annotation.Nullable;
 
 @JsonAdapter(RawAuthenticityCheckResultItemAdapter.class)
@@ -96,7 +95,7 @@ public class RawAuthenticityCheckResultItem extends AuthenticityCheckResultItem 
 
   @Override
   public RawAuthenticityCheckResultItem withElementResult(Integer elementResult) {
-    AuthenticityCheckResultItem item =  super.withElementResult(elementResult);
+    AuthenticityCheckResultItem item = super.withElementResult(elementResult);
     return (RawAuthenticityCheckResultItem) item;
   }
 
@@ -113,7 +112,7 @@ public class RawAuthenticityCheckResultItem extends AuthenticityCheckResultItem 
 
   @Override
   public RawAuthenticityCheckResultItem withElementDiagnose(Integer elementDiagnose) {
-    AuthenticityCheckResultItem item =  super.withElementDiagnose(elementDiagnose);
+    AuthenticityCheckResultItem item = super.withElementDiagnose(elementDiagnose);
     return (RawAuthenticityCheckResultItem) item;
   }
 
@@ -130,7 +129,7 @@ public class RawAuthenticityCheckResultItem extends AuthenticityCheckResultItem 
 
   @Override
   public RawAuthenticityCheckResultItem withPercentValue(Integer percentValue) {
-    AuthenticityCheckResultItem item =  super.withPercentValue(percentValue);
+    AuthenticityCheckResultItem item = super.withPercentValue(percentValue);
     return (RawAuthenticityCheckResultItem) item;
   }
 

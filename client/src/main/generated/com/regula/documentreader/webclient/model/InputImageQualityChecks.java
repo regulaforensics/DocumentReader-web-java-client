@@ -12,32 +12,32 @@
 
 package com.regula.documentreader.webclient.model;
 
-public class ImageQualityCheckType {
+public class InputImageQualityChecks {
 
   /** Signals glare presence on the image */
-  public static final int ImageGlares = 0;
+  public static final String Glares = "glaresCheck";
 
   /** Signals whether image is in focus */
-  public static final int ImageFocus = 1;
+  public static final String Focus = "focusCheck";
 
   /** Signals if image resolution is below threshold */
-  public static final int ImageResolution = 2;
+  public static final String Resolution = "dpiThreshold";
 
   /** Signals if image is colorless */
-  public static final int ImageColorness = 3;
+  public static final String Colorness = "colornessCheck";
 
   /** Signals if document in the image has prespective distortion above threshold */
-  public static final int Perspective = 4;
+  public static final String Perspective = "perspectiveCheck";
 
   /** Signals if document is not fully present in the image */
-  public static final int Bounds = 5;
+  public static final String Bounds = "documentPosition";
 
   /** Signals if the portrait is present */
-  public static final int Portrait = 7;
+  public static final String Portrait = "portraitCheck";
 
   /** Signals if the document image is bright enough */
-  public static final int Brightness = 9;
+  public static final String Brightness = "brightnessCheck";
 
   /** Signals if the document image has occlusion */
-  public static final int Occlusion = 10;
+  public static final String Occlusion = "occlusionCheck";
 }

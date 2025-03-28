@@ -13,6 +13,8 @@
 package com.regula.documentreader.webclient.model;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /** ImageQA */
@@ -51,6 +53,11 @@ public class ImageQA {
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_POSITION_INDENT)
   private Integer documentPositionIndent;
+
+  public static final String SERIALIZED_NAME_EXPECTED_PASS = "expectedPass";
+
+  @SerializedName(SERIALIZED_NAME_EXPECTED_PASS)
+  private List<InputImageQualityChecks> expectedPass = null;
 
   public ImageQA withBrightnessThreshold(Double brightnessThreshold) {
     this.brightnessThreshold = brightnessThreshold;
@@ -187,6 +194,34 @@ public class ImageQA {
     this.documentPositionIndent = documentPositionIndent;
   }
 
+  public ImageQA withExpectedPass(List<InputImageQualityChecks> expectedPass) {
+    this.expectedPass = expectedPass;
+    return this;
+  }
+
+  public ImageQA addExpectedPassItem(InputImageQualityChecks expectedPassItem) {
+    if (this.expectedPass == null) {
+      this.expectedPass = new ArrayList<InputImageQualityChecks>();
+    }
+    this.expectedPass.add(expectedPassItem);
+    return this;
+  }
+
+  /**
+   * This parameter controls the quality checks that the image should pass to be considered a valid
+   * input during the scanning process.
+   *
+   * @return expectedPass
+   */
+  @javax.annotation.Nullable
+  public List<InputImageQualityChecks> getExpectedPass() {
+    return expectedPass;
+  }
+
+  public void setExpectedPass(List<InputImageQualityChecks> expectedPass) {
+    this.expectedPass = expectedPass;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -202,7 +237,8 @@ public class ImageQA {
         && Objects.equals(this.focusCheck, imageQA.focusCheck)
         && Objects.equals(this.glaresCheck, imageQA.glaresCheck)
         && Objects.equals(this.colornessCheck, imageQA.colornessCheck)
-        && Objects.equals(this.documentPositionIndent, imageQA.documentPositionIndent);
+        && Objects.equals(this.documentPositionIndent, imageQA.documentPositionIndent)
+        && Objects.equals(this.expectedPass, imageQA.expectedPass);
   }
 
   @Override
@@ -214,7 +250,8 @@ public class ImageQA {
         focusCheck,
         glaresCheck,
         colornessCheck,
-        documentPositionIndent);
+        documentPositionIndent,
+        expectedPass);
   }
 
   @Override
@@ -232,6 +269,7 @@ public class ImageQA {
     sb.append("    documentPositionIndent: ")
         .append(toIndentedString(documentPositionIndent))
         .append("\n");
+    sb.append("    expectedPass: ").append(toIndentedString(expectedPass)).append("\n");
     sb.append("}");
     return sb.toString();
   }
