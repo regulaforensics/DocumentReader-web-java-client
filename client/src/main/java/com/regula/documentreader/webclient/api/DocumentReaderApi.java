@@ -80,7 +80,6 @@ public class DocumentReaderApi {
     return healthcheckApi.healthz(xRequestID);
   }
 
-
   /**
    * Reads list of documents and return extracted data
    *
