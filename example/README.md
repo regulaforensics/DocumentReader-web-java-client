@@ -45,17 +45,28 @@ API_BASE_PATH="http://127.0.0.1:8080" ./gradlew :example:run
 ```
 
 ### Output 
+
 This sample generates the following text output:
+
 ```text
-    ---------------------------------------------------------------------------
-                   Document Overall Status: not valid
-                    Document Number Visual: U0996738
-                       Document Number MRZ: U0996738
-        Validity Of Document Number Visual: 1
-           Validity Of Document Number MRZ: 1
-              MRZ-Visual values comparison: 1
-    ---------------------------------------------------------------------------
+-----------------------------------------------------------------
+Web API version: 7.5.308602.1848
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Document Type: Germany - ePassport (2017) Service
+Document Overall Status: not valid
+Document Number Visual: C01YPTNHM
+Document Number MRZ: C01YPTNHM
+Validity Of Document Number Visual: 2
+Validity Of Document Number MRZ: 1
+MRZ-Visual values comparison: 1
+-----------------------------------------------------------------
+Field:  Surname Value:  MUSTERMANN Source: VISUAL
+Field:  Surname And Given Names Value:  MUSTERMANN ERIKA Source: VISUAL
+
+...
 ```
+
 Also, it stores [portrait](portrait.jpg) and [document image](document-image.jpg) images in the current folder.
 You can modify [this example](../example/src/main/java/com/regula/documentreader/webclient/example/Main.java) 
 and re-run it to get your own results.

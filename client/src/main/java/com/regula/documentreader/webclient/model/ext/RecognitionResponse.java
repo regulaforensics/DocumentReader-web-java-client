@@ -40,7 +40,7 @@ public class RecognitionResponse {
   public Text text() {
     TextResult result = resultByType(Result.TEXT);
     if (result != null) {
-      return result.getText();
+      return new Text(result.getText());
     }
     return null;
   }
@@ -76,7 +76,7 @@ public class RecognitionResponse {
   public Images images() {
     ImagesResult result = resultByType(Result.IMAGES);
     if (result != null) {
-      return result.getImages();
+      return new Images(result.getImages());
     }
     return null;
   }
@@ -90,7 +90,7 @@ public class RecognitionResponse {
   public Authenticity authenticity(int page_idx) {
     AuthenticityResult result = getResult(Result.AUTHENTICITY, page_idx);
     if (result != null) {
-      return result.getAuthenticityCheckList();
+      return new Authenticity(result.getAuthenticityCheckList());
     }
     return null;
   }
@@ -122,7 +122,7 @@ public class RecognitionResponse {
     return null;
   }
 
-  public <R> R resultByType(int type) {
+  public <R> R resultByType(Result type) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type) {
         return (R) item;
@@ -131,7 +131,7 @@ public class RecognitionResponse {
     return null;
   }
 
-  public <R> R getResult(int type, int page_idx) {
+  public <R> R getResult(Result type, int page_idx) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type && item.getPageIdx() == page_idx) {
         return (R) item;
@@ -140,7 +140,7 @@ public class RecognitionResponse {
     return null;
   }
 
-  public <R> List<R> resultsByType(int type) {
+  public <R> List<R> resultsByType(Result type) {
     List<R> results = new ArrayList<>();
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type) {
