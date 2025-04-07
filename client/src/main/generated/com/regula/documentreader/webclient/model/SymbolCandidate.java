@@ -37,7 +37,7 @@ public class SymbolCandidate {
 
   @SerializedName(SERIALIZED_NAME_SYMBOL_CODE)
   @javax.annotation.Nonnull
-  private Integer symbolCode;
+  private Long symbolCode;
 
   public static final String SERIALIZED_NAME_SYMBOL_PROBABILITY = "SymbolProbability";
 
@@ -59,7 +59,7 @@ public class SymbolCandidate {
 
   public SymbolCandidate() {}
 
-  public SymbolCandidate symbolCode(@javax.annotation.Nonnull Integer symbolCode) {
+  public SymbolCandidate symbolCode(@javax.annotation.Nonnull Long symbolCode) {
     this.symbolCode = symbolCode;
     return this;
   }
@@ -70,11 +70,11 @@ public class SymbolCandidate {
    * @return symbolCode
    */
   @javax.annotation.Nonnull
-  public Integer getSymbolCode() {
+  public Long getSymbolCode() {
     return symbolCode;
   }
 
-  public void setSymbolCode(@javax.annotation.Nonnull Integer symbolCode) {
+  public void setSymbolCode(@javax.annotation.Nonnull Long symbolCode) {
     this.symbolCode = symbolCode;
   }
 
