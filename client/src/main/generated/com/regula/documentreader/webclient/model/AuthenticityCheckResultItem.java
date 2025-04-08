@@ -226,11 +226,20 @@ public class AuthenticityCheckResultItem {
       case "16384":
         FiberResult.validateJsonElement(jsonElement);
         break;
+      case "16777216":
+        OCRSecurityTextResult.validateJsonElement(jsonElement);
+        break;
       case "2":
         SecurityFeatureResult.validateJsonElement(jsonElement);
         break;
       case "2048":
         IdentResult.validateJsonElement(jsonElement);
+        break;
+      case "2097152":
+        IdentResult.validateJsonElement(jsonElement);
+        break;
+      case "2147483648":
+        SecurityFeatureResult.validateJsonElement(jsonElement);
         break;
       case "256":
         PhotoIdentResult.validateJsonElement(jsonElement);
@@ -248,6 +257,9 @@ public class AuthenticityCheckResultItem {
         IdentResult.validateJsonElement(jsonElement);
         break;
       case "4096":
+        SecurityFeatureResult.validateJsonElement(jsonElement);
+        break;
+      case "4194304":
         SecurityFeatureResult.validateJsonElement(jsonElement);
         break;
       case "512":
