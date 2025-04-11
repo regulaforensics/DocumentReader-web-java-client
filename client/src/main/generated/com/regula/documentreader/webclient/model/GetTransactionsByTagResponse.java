@@ -25,9 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import java.util.UUID;
 
 /** GetTransactionsByTagResponse */
@@ -184,16 +182,6 @@ public class GetTransactionsByTagResponse {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!GetTransactionsByTagResponse.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `GetTransactionsByTagResponse` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
         && !jsonObj.get("id").isJsonPrimitive()) {

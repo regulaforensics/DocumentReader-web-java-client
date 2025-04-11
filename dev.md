@@ -21,7 +21,9 @@ class with ours using typeMappings in the generator config.
 2. The generator treats the discriminator value as a string, 
 but in our case it's numbers. To solve this problem, changes 
 have been made to the pojo.mustache template.
-3. The generator replaces the list field with _list, solved 
+3. Disabled validation of additional JSON fields in 
+the pojo.mustache template.
+4. The generator replaces the list field with _list, solved 
 using nameMappings in the generator config.
 
 ## Problem solving

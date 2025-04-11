@@ -30,7 +30,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** TransactionProcessRequest */
 @javax.annotation.Generated(
@@ -48,6 +47,24 @@ public class TransactionProcessRequest {
   @SerializedName(SERIALIZED_NAME_LIST)
   @javax.annotation.Nullable
   private List<ProcessRequestImage> list;
+
+  public static final String SERIALIZED_NAME_TAG = "tag";
+
+  @SerializedName(SERIALIZED_NAME_TAG)
+  @javax.annotation.Nullable
+  private String tag;
+
+  public static final String SERIALIZED_NAME_TENANT = "tenant";
+
+  @SerializedName(SERIALIZED_NAME_TENANT)
+  @javax.annotation.Nullable
+  private String tenant;
+
+  public static final String SERIALIZED_NAME_ENV = "env";
+
+  @SerializedName(SERIALIZED_NAME_ENV)
+  @javax.annotation.Nullable
+  private String env;
 
   public static final String SERIALIZED_NAME_LIVE_PORTRAIT = "livePortrait";
 
@@ -132,6 +149,63 @@ public class TransactionProcessRequest {
 
   public void setList(@javax.annotation.Nullable List<ProcessRequestImage> list) {
     this.list = list;
+  }
+
+  public TransactionProcessRequest tag(@javax.annotation.Nullable String tag) {
+    this.tag = tag;
+    return this;
+  }
+
+  /**
+   * Session ID
+   *
+   * @return tag
+   */
+  @javax.annotation.Nullable
+  public String getTag() {
+    return tag;
+  }
+
+  public void setTag(@javax.annotation.Nullable String tag) {
+    this.tag = tag;
+  }
+
+  public TransactionProcessRequest tenant(@javax.annotation.Nullable String tenant) {
+    this.tenant = tenant;
+    return this;
+  }
+
+  /**
+   * Customer name
+   *
+   * @return tenant
+   */
+  @javax.annotation.Nullable
+  public String getTenant() {
+    return tenant;
+  }
+
+  public void setTenant(@javax.annotation.Nullable String tenant) {
+    this.tenant = tenant;
+  }
+
+  public TransactionProcessRequest env(@javax.annotation.Nullable String env) {
+    this.env = env;
+    return this;
+  }
+
+  /**
+   * Environment type
+   *
+   * @return env
+   */
+  @javax.annotation.Nullable
+  public String getEnv() {
+    return env;
+  }
+
+  public void setEnv(@javax.annotation.Nullable String env) {
+    this.env = env;
   }
 
   public TransactionProcessRequest livePortrait(@javax.annotation.Nullable String livePortrait) {
@@ -271,6 +345,9 @@ public class TransactionProcessRequest {
     TransactionProcessRequest transactionProcessRequest = (TransactionProcessRequest) o;
     return Objects.equals(this.processParam, transactionProcessRequest.processParam)
         && Objects.equals(this.list, transactionProcessRequest.list)
+        && Objects.equals(this.tag, transactionProcessRequest.tag)
+        && Objects.equals(this.tenant, transactionProcessRequest.tenant)
+        && Objects.equals(this.env, transactionProcessRequest.env)
         && Objects.equals(this.livePortrait, transactionProcessRequest.livePortrait)
         && Objects.equals(this.extPortrait, transactionProcessRequest.extPortrait)
         && Objects.equals(this.containerList, transactionProcessRequest.containerList)
@@ -284,6 +361,9 @@ public class TransactionProcessRequest {
     return Objects.hash(
         processParam,
         list,
+        tag,
+        tenant,
+        env,
         livePortrait,
         extPortrait,
         containerList,
@@ -298,6 +378,9 @@ public class TransactionProcessRequest {
     sb.append("class TransactionProcessRequest {\n");
     sb.append("    processParam: ").append(toIndentedString(processParam)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
+    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
+    sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("    livePortrait: ").append(toIndentedString(livePortrait)).append("\n");
     sb.append("    extPortrait: ").append(toIndentedString(extPortrait)).append("\n");
     sb.append("    containerList: ").append(toIndentedString(containerList)).append("\n");
@@ -326,6 +409,9 @@ public class TransactionProcessRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("processParam");
     openapiFields.add("List");
+    openapiFields.add("tag");
+    openapiFields.add("tenant");
+    openapiFields.add("env");
     openapiFields.add("livePortrait");
     openapiFields.add("extPortrait");
     openapiFields.add("ContainerList");
@@ -352,17 +438,6 @@ public class TransactionProcessRequest {
             String.format(
                 "The required field(s) %s in TransactionProcessRequest is not found in the empty JSON string",
                 TransactionProcessRequest.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!TransactionProcessRequest.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `TransactionProcessRequest` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 
@@ -395,6 +470,27 @@ public class TransactionProcessRequest {
         }
         ;
       }
+    }
+    if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull())
+        && !jsonObj.get("tag").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `tag` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("tag").toString()));
+    }
+    if ((jsonObj.get("tenant") != null && !jsonObj.get("tenant").isJsonNull())
+        && !jsonObj.get("tenant").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `tenant` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("tenant").toString()));
+    }
+    if ((jsonObj.get("env") != null && !jsonObj.get("env").isJsonNull())
+        && !jsonObj.get("env").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `env` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("env").toString()));
     }
     if ((jsonObj.get("livePortrait") != null && !jsonObj.get("livePortrait").isJsonNull())
         && !jsonObj.get("livePortrait").isJsonPrimitive()) {

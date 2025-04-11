@@ -79,21 +79,12 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "16", com.regula.documentreader.webclient.model.FiberResult.class);
                     classByDiscriminatorValue.put(
-                        "16384", com.regula.documentreader.webclient.model.FiberResult.class);
-                    classByDiscriminatorValue.put(
                         "16777216",
                         com.regula.documentreader.webclient.model.OCRSecurityTextResult.class);
                     classByDiscriminatorValue.put(
                         "2", com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
-                        "2048", com.regula.documentreader.webclient.model.IdentResult.class);
-                    classByDiscriminatorValue.put(
                         "2097152", com.regula.documentreader.webclient.model.IdentResult.class);
-                    classByDiscriminatorValue.put(
-                        "2147483648",
-                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
-                    classByDiscriminatorValue.put(
-                        "256", com.regula.documentreader.webclient.model.PhotoIdentResult.class);
                     classByDiscriminatorValue.put(
                         "262144", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(
@@ -159,21 +150,12 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "16", com.regula.documentreader.webclient.model.FiberResult.class);
                     classByDiscriminatorValue.put(
-                        "16384", com.regula.documentreader.webclient.model.FiberResult.class);
-                    classByDiscriminatorValue.put(
                         "16777216",
                         com.regula.documentreader.webclient.model.OCRSecurityTextResult.class);
                     classByDiscriminatorValue.put(
                         "2", com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
-                        "2048", com.regula.documentreader.webclient.model.IdentResult.class);
-                    classByDiscriminatorValue.put(
                         "2097152", com.regula.documentreader.webclient.model.IdentResult.class);
-                    classByDiscriminatorValue.put(
-                        "2147483648",
-                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
-                    classByDiscriminatorValue.put(
-                        "256", com.regula.documentreader.webclient.model.PhotoIdentResult.class);
                     classByDiscriminatorValue.put(
                         "262144", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(

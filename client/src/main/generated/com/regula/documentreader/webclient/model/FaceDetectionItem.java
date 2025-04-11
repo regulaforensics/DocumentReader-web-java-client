@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** FaceDetectionItem */
 @javax.annotation.Generated(
@@ -123,17 +121,6 @@ public class FaceDetectionItem {
             String.format(
                 "The required field(s) %s in FaceDetectionItem is not found in the empty JSON string",
                 FaceDetectionItem.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!FaceDetectionItem.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `FaceDetectionItem` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

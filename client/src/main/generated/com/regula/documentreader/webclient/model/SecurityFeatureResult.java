@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** SecurityFeatureResult */
 @javax.annotation.Generated(
@@ -62,6 +60,12 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
   @javax.annotation.Nullable
   private AreaContainer areaList;
+
+  public static final String SERIALIZED_NAME_RESULT = "Result";
+
+  @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
+  private Integer result;
 
   public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
 
@@ -168,6 +172,25 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
     this.areaList = areaList;
   }
 
+  public SecurityFeatureResult result(@javax.annotation.Nullable Integer result) {
+    this.result = result;
+    return this;
+  }
+
+  /**
+   * Get result
+   *
+   * @return result
+   */
+  @javax.annotation.Nullable
+  public Integer getResult() {
+    return result;
+  }
+
+  public void setResult(@javax.annotation.Nullable Integer result) {
+    this.result = result;
+  }
+
   public SecurityFeatureResult reserved2(@javax.annotation.Nullable Integer reserved2) {
     this.reserved2 = reserved2;
     return this;
@@ -201,6 +224,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.visibility, securityFeatureResult.visibility)
         && Objects.equals(this.criticalFlag, securityFeatureResult.criticalFlag)
         && Objects.equals(this.areaList, securityFeatureResult.areaList)
+        && Objects.equals(this.result, securityFeatureResult.result)
         && Objects.equals(this.reserved2, securityFeatureResult.reserved2)
         && super.equals(o);
   }
@@ -208,7 +232,14 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
   @Override
   public int hashCode() {
     return Objects.hash(
-        elementType, elementRect, visibility, criticalFlag, areaList, reserved2, super.hashCode());
+        elementType,
+        elementRect,
+        visibility,
+        criticalFlag,
+        areaList,
+        result,
+        reserved2,
+        super.hashCode());
   }
 
   @Override
@@ -221,6 +252,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    criticalFlag: ").append(toIndentedString(criticalFlag)).append("\n");
     sb.append("    areaList: ").append(toIndentedString(areaList)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -251,6 +283,7 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
     openapiFields.add("Visibility");
     openapiFields.add("CriticalFlag");
     openapiFields.add("AreaList");
+    openapiFields.add("Result");
     openapiFields.add("Reserved2");
 
     // a set of required properties/fields (JSON key names)
@@ -276,17 +309,6 @@ public class SecurityFeatureResult extends AuthenticityCheckResultItem {
             String.format(
                 "The required field(s) %s in SecurityFeatureResult is not found in the empty JSON string",
                 SecurityFeatureResult.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!SecurityFeatureResult.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `SecurityFeatureResult` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

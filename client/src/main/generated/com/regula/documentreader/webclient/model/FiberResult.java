@@ -26,9 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** FiberResult */
 @javax.annotation.Generated(
@@ -88,6 +86,12 @@ public class FiberResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_COLOR_VALUES)
   @javax.annotation.Nonnull
   private List<Integer> colorValues;
+
+  public static final String SERIALIZED_NAME_ERROR_CODE = "ErrorCode";
+
+  @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nullable
+  private Integer errorCode;
 
   public FiberResult() {}
 
@@ -302,6 +306,25 @@ public class FiberResult extends AuthenticityCheckResultItem {
     this.colorValues = colorValues;
   }
 
+  public FiberResult errorCode(@javax.annotation.Nullable Integer errorCode) {
+    this.errorCode = errorCode;
+    return this;
+  }
+
+  /**
+   * Get errorCode
+   *
+   * @return errorCode
+   */
+  @javax.annotation.Nullable
+  public Integer getErrorCode() {
+    return errorCode;
+  }
+
+  public void setErrorCode(@javax.annotation.Nullable Integer errorCode) {
+    this.errorCode = errorCode;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -320,6 +343,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.length, fiberResult.length)
         && Objects.equals(this.area, fiberResult.area)
         && Objects.equals(this.colorValues, fiberResult.colorValues)
+        && Objects.equals(this.errorCode, fiberResult.errorCode)
         && super.equals(o);
   }
 
@@ -335,6 +359,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
         length,
         area,
         colorValues,
+        errorCode,
         super.hashCode());
   }
 
@@ -352,6 +377,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
     sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    colorValues: ").append(toIndentedString(colorValues)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -385,6 +411,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
     openapiFields.add("Length");
     openapiFields.add("Area");
     openapiFields.add("ColorValues");
+    openapiFields.add("ErrorCode");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -412,17 +439,6 @@ public class FiberResult extends AuthenticityCheckResultItem {
             String.format(
                 "The required field(s) %s in FiberResult is not found in the empty JSON string",
                 FiberResult.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!FiberResult.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `FiberResult` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

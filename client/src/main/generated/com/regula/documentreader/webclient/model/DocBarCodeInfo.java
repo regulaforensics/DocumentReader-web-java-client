@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** Raw data from BarCodes */
 @javax.annotation.Generated(
@@ -131,17 +129,6 @@ public class DocBarCodeInfo extends ResultItem {
             String.format(
                 "The required field(s) %s in DocBarCodeInfo is not found in the empty JSON string",
                 DocBarCodeInfo.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocBarCodeInfo.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `DocBarCodeInfo` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

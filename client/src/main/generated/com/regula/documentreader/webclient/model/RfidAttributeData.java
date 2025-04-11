@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** Structure contains the data of one attribute of the digital signature object. */
 @javax.annotation.Generated(
@@ -153,17 +151,6 @@ public class RfidAttributeData {
             String.format(
                 "The required field(s) %s in RfidAttributeData is not found in the empty JSON string",
                 RfidAttributeData.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!RfidAttributeData.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `RfidAttributeData` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

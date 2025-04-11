@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** Contains information about document position on the input image, its center, angle, etc */
 @javax.annotation.Generated(
@@ -132,17 +130,6 @@ public class DocumentPositionResult extends ResultItem {
             String.format(
                 "The required field(s) %s in DocumentPositionResult is not found in the empty JSON string",
                 DocumentPositionResult.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentPositionResult.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentPositionResult` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

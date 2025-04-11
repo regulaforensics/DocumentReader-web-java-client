@@ -26,9 +26,6 @@ import java.io.IOException;
 @JsonAdapter(AuthenticityResultType.Adapter.class)
 public enum AuthenticityResultType {
 
-  /** No authenticity control procedure */
-  NONE(0l),
-
   /** Document luminescence check in UV light */
   UV_LUMINESCENCE(1l),
 
@@ -53,26 +50,17 @@ public enum AuthenticityResultType {
   /** Invisible Personal Information (IPI) visualization */
   IPI(128l),
 
-  /** Document photo check in IR light */
-  IR_PHOTO(256l),
-
   /** Owner&#39;s photo embedding check (is photo printed or sticked) */
   PHOTO_EMBED_TYPE(512l),
 
   /** OVI check. Deprecated, use Document liveness check instead */
   OVI(1024l),
 
-  /** IR luminescence check */
-  IR_LUMINESCENCE(2048l),
-
   /** Hologram presence check. Deprecated */
   HOLOGRAMS(4096l),
 
   /** Owner&#39;s photo area advanced check (photo shape, size, position, etc.) */
   PHOTO_AREA(8192l),
-
-  /** UV background check */
-  UV_BACKGROUND(16384l),
 
   /** Portrait comparison check (document printed vs chip vs live) */
   PORTRAIT_COMPARISON(32768l),
@@ -102,10 +90,7 @@ public enum AuthenticityResultType {
   EXTENDED_MRZ_CHECK(8388608l),
 
   /** Encrypted IPI */
-  ENCRYPTED_IPI(16777216l),
-
-  /** Flag for status-only authenticity */
-  STATUS_ONLY(2147483648l);
+  ENCRYPTED_IPI(16777216l);
 
   private Long value;
 
