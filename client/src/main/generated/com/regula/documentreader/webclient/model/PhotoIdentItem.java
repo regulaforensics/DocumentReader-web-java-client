@@ -26,9 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** PhotoIdentItem */
 @javax.annotation.Generated(
@@ -83,17 +81,11 @@ public class PhotoIdentItem {
   @javax.annotation.Nullable
   private Integer angle;
 
-  public static final String SERIALIZED_NAME_RESERVED1 = "Reserved1";
+  public static final String SERIALIZED_NAME_RESULT = "Result";
 
-  @SerializedName(SERIALIZED_NAME_RESERVED1)
+  @SerializedName(SERIALIZED_NAME_RESULT)
   @javax.annotation.Nullable
-  private Integer reserved1;
-
-  public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED2)
-  @javax.annotation.Nullable
-  private Integer reserved2;
+  private Integer result;
 
   public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
 
@@ -263,42 +255,23 @@ public class PhotoIdentItem {
     this.angle = angle;
   }
 
-  public PhotoIdentItem reserved1(@javax.annotation.Nullable Integer reserved1) {
-    this.reserved1 = reserved1;
+  public PhotoIdentItem result(@javax.annotation.Nullable Integer result) {
+    this.result = result;
     return this;
   }
 
   /**
-   * Get reserved1
+   * Get result
    *
-   * @return reserved1
+   * @return result
    */
   @javax.annotation.Nullable
-  public Integer getReserved1() {
-    return reserved1;
+  public Integer getResult() {
+    return result;
   }
 
-  public void setReserved1(@javax.annotation.Nullable Integer reserved1) {
-    this.reserved1 = reserved1;
-  }
-
-  public PhotoIdentItem reserved2(@javax.annotation.Nullable Integer reserved2) {
-    this.reserved2 = reserved2;
-    return this;
-  }
-
-  /**
-   * Get reserved2
-   *
-   * @return reserved2
-   */
-  @javax.annotation.Nullable
-  public Integer getReserved2() {
-    return reserved2;
-  }
-
-  public void setReserved2(@javax.annotation.Nullable Integer reserved2) {
-    this.reserved2 = reserved2;
+  public void setResult(@javax.annotation.Nullable Integer result) {
+    this.result = result;
   }
 
   public PhotoIdentItem reserved3(@javax.annotation.Nullable Integer reserved3) {
@@ -337,8 +310,7 @@ public class PhotoIdentItem {
         && Objects.equals(this.fieldTypesList, photoIdentItem.fieldTypesList)
         && Objects.equals(this.step, photoIdentItem.step)
         && Objects.equals(this.angle, photoIdentItem.angle)
-        && Objects.equals(this.reserved1, photoIdentItem.reserved1)
-        && Objects.equals(this.reserved2, photoIdentItem.reserved2)
+        && Objects.equals(this.result, photoIdentItem.result)
         && Objects.equals(this.reserved3, photoIdentItem.reserved3);
   }
 
@@ -353,8 +325,7 @@ public class PhotoIdentItem {
         fieldTypesList,
         step,
         angle,
-        reserved1,
-        reserved2,
+        result,
         reserved3);
   }
 
@@ -370,8 +341,7 @@ public class PhotoIdentItem {
     sb.append("    fieldTypesList: ").append(toIndentedString(fieldTypesList)).append("\n");
     sb.append("    step: ").append(toIndentedString(step)).append("\n");
     sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
-    sb.append("    reserved1: ").append(toIndentedString(reserved1)).append("\n");
-    sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -401,8 +371,7 @@ public class PhotoIdentItem {
     openapiFields.add("FieldTypesList");
     openapiFields.add("Step");
     openapiFields.add("Angle");
-    openapiFields.add("Reserved1");
-    openapiFields.add("Reserved2");
+    openapiFields.add("Result");
     openapiFields.add("Reserved3");
 
     // a set of required properties/fields (JSON key names)
@@ -427,17 +396,6 @@ public class PhotoIdentItem {
             String.format(
                 "The required field(s) %s in PhotoIdentItem is not found in the empty JSON string",
                 PhotoIdentItem.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!PhotoIdentItem.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `PhotoIdentItem` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** OutDataTransactionImagesFieldValue */
 @javax.annotation.Generated(
@@ -240,16 +238,6 @@ public class OutDataTransactionImagesFieldValue {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!OutDataTransactionImagesFieldValue.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `OutDataTransactionImagesFieldValue` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the optional field `fieldType`
     if (jsonObj.get("fieldType") != null && !jsonObj.get("fieldType").isJsonNull()) {

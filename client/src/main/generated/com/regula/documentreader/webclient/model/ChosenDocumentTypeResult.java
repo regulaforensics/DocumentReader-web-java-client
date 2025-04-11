@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Contains information about the type of document that was determined based on the analysis of the
@@ -159,17 +157,6 @@ public class ChosenDocumentTypeResult extends ResultItem {
             String.format(
                 "The required field(s) %s in ChosenDocumentTypeResult is not found in the empty JSON string",
                 ChosenDocumentTypeResult.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!ChosenDocumentTypeResult.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `ChosenDocumentTypeResult` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

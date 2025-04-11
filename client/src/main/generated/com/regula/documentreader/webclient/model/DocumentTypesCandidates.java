@@ -27,9 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** DocumentTypesCandidates */
 @javax.annotation.Generated(
@@ -166,16 +164,6 @@ public class DocumentTypesCandidates {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentTypesCandidates.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentTypesCandidates` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the optional field `RecResult`
     if (jsonObj.get("RecResult") != null && !jsonObj.get("RecResult").isJsonNull()) {

@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** IdentItem */
 @javax.annotation.Generated(
@@ -68,6 +66,12 @@ public class IdentItem {
   @SerializedName(SERIALIZED_NAME_AREA_LIST)
   @javax.annotation.Nullable
   private AreaContainer areaList;
+
+  public static final String SERIALIZED_NAME_RESULT = "Result";
+
+  @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
+  private Integer result;
 
   public IdentItem() {}
 
@@ -185,6 +189,25 @@ public class IdentItem {
     this.areaList = areaList;
   }
 
+  public IdentItem result(@javax.annotation.Nullable Integer result) {
+    this.result = result;
+    return this;
+  }
+
+  /**
+   * Get result
+   *
+   * @return result
+   */
+  @javax.annotation.Nullable
+  public Integer getResult() {
+    return result;
+  }
+
+  public void setResult(@javax.annotation.Nullable Integer result) {
+    this.result = result;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -199,12 +222,13 @@ public class IdentItem {
         && Objects.equals(this.area, identItem.area)
         && Objects.equals(this.image, identItem.image)
         && Objects.equals(this.etalonImage, identItem.etalonImage)
-        && Objects.equals(this.areaList, identItem.areaList);
+        && Objects.equals(this.areaList, identItem.areaList)
+        && Objects.equals(this.result, identItem.result);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(elementType, lightIndex, area, image, etalonImage, areaList);
+    return Objects.hash(elementType, lightIndex, area, image, etalonImage, areaList, result);
   }
 
   @Override
@@ -217,6 +241,7 @@ public class IdentItem {
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    etalonImage: ").append(toIndentedString(etalonImage)).append("\n");
     sb.append("    areaList: ").append(toIndentedString(areaList)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -243,6 +268,7 @@ public class IdentItem {
     openapiFields.add("Image");
     openapiFields.add("EtalonImage");
     openapiFields.add("AreaList");
+    openapiFields.add("Result");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -266,17 +292,6 @@ public class IdentItem {
             String.format(
                 "The required field(s) %s in IdentItem is not found in the empty JSON string",
                 IdentItem.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!IdentItem.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `IdentItem` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

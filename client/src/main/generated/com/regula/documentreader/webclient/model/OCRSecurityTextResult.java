@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** OCRSecurityTextResult */
 @javax.annotation.Generated(
@@ -86,6 +84,12 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
   @SerializedName(SERIALIZED_NAME_ETALON_RESULT_O_C_R)
   @javax.annotation.Nonnull
   private String etalonResultOCR;
+
+  public static final String SERIALIZED_NAME_RESULT_CODE = "ResultCode";
+
+  @SerializedName(SERIALIZED_NAME_RESULT_CODE)
+  @javax.annotation.Nullable
+  private Integer resultCode;
 
   public static final String SERIALIZED_NAME_RESERVED1 = "Reserved1";
 
@@ -275,6 +279,25 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
     this.etalonResultOCR = etalonResultOCR;
   }
 
+  public OCRSecurityTextResult resultCode(@javax.annotation.Nullable Integer resultCode) {
+    this.resultCode = resultCode;
+    return this;
+  }
+
+  /**
+   * Get resultCode
+   *
+   * @return resultCode
+   */
+  @javax.annotation.Nullable
+  public Integer getResultCode() {
+    return resultCode;
+  }
+
+  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
+    this.resultCode = resultCode;
+  }
+
   public OCRSecurityTextResult reserved1(@javax.annotation.Nullable Integer reserved1) {
     this.reserved1 = reserved1;
     return this;
@@ -331,6 +354,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.etalonFieldRect, ocRSecurityTextResult.etalonFieldRect)
         && Objects.equals(this.securityTextResultOCR, ocRSecurityTextResult.securityTextResultOCR)
         && Objects.equals(this.etalonResultOCR, ocRSecurityTextResult.etalonResultOCR)
+        && Objects.equals(this.resultCode, ocRSecurityTextResult.resultCode)
         && Objects.equals(this.reserved1, ocRSecurityTextResult.reserved1)
         && Objects.equals(this.reserved2, ocRSecurityTextResult.reserved2)
         && super.equals(o);
@@ -348,6 +372,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         etalonFieldRect,
         securityTextResultOCR,
         etalonResultOCR,
+        resultCode,
         reserved1,
         reserved2,
         super.hashCode());
@@ -369,6 +394,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         .append(toIndentedString(securityTextResultOCR))
         .append("\n");
     sb.append("    etalonResultOCR: ").append(toIndentedString(etalonResultOCR)).append("\n");
+    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
     sb.append("    reserved1: ").append(toIndentedString(reserved1)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
@@ -404,6 +430,7 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
     openapiFields.add("EtalonFieldRect");
     openapiFields.add("SecurityTextResultOCR");
     openapiFields.add("EtalonResultOCR");
+    openapiFields.add("ResultCode");
     openapiFields.add("Reserved1");
     openapiFields.add("Reserved2");
 
@@ -435,17 +462,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
             String.format(
                 "The required field(s) %s in OCRSecurityTextResult is not found in the empty JSON string",
                 OCRSecurityTextResult.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!OCRSecurityTextResult.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `OCRSecurityTextResult` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

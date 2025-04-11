@@ -28,9 +28,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** StringItem */
 @javax.annotation.Generated(
@@ -631,17 +629,6 @@ public class StringItem {
             String.format(
                 "The required field(s) %s in StringItem is not found in the empty JSON string",
                 StringItem.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!StringItem.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `StringItem` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

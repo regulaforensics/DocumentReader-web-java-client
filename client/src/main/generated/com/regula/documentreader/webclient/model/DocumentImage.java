@@ -24,9 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** DocumentImage */
 @javax.annotation.Generated(
@@ -36,7 +34,7 @@ public class DocumentImage {
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
   @SerializedName(SERIALIZED_NAME_IMAGE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String image;
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
@@ -47,7 +45,7 @@ public class DocumentImage {
 
   public DocumentImage() {}
 
-  public DocumentImage image(@javax.annotation.Nonnull String image) {
+  public DocumentImage image(@javax.annotation.Nullable String image) {
     this.image = image;
     return this;
   }
@@ -57,12 +55,12 @@ public class DocumentImage {
    *
    * @return image
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getImage() {
     return image;
   }
 
-  public void setImage(@javax.annotation.Nonnull String image) {
+  public void setImage(@javax.annotation.Nullable String image) {
     this.image = image;
   }
 
@@ -134,7 +132,6 @@ public class DocumentImage {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("image");
   }
 
   /**
@@ -154,28 +151,9 @@ public class DocumentImage {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!DocumentImage.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `DocumentImage` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
-
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : DocumentImage.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if (!jsonObj.get("image").isJsonPrimitive()) {
+    if ((jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull())
+        && !jsonObj.get("image").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `image` to be a primitive type in the JSON string but got `%s`",

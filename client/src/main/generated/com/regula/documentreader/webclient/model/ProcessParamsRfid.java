@@ -26,9 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** Params for the RFID chip data reprocessing */
 @javax.annotation.Generated(
@@ -140,16 +138,6 @@ public class ProcessParamsRfid {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!ProcessParamsRfid.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `ProcessParamsRfid` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the optional json data is an array if present
     if (jsonObj.get("paSensitiveCodesDisable") != null

@@ -27,9 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** TDocBinaryInfo */
 @javax.annotation.Generated(
@@ -164,16 +162,6 @@ public class TDocBinaryInfo {
       }
     }
 
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!TDocBinaryInfo.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `TDocBinaryInfo` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the optional field `RFID_BINARY_DATA`
     if (jsonObj.get("RFID_BINARY_DATA") != null && !jsonObj.get("RFID_BINARY_DATA").isJsonNull()) {

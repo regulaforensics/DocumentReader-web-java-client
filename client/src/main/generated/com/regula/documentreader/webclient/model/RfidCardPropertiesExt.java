@@ -25,9 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Structure is used to store extended information about the characteristics of the RFID-chip
@@ -522,17 +520,6 @@ public class RfidCardPropertiesExt {
             String.format(
                 "The required field(s) %s in RfidCardPropertiesExt is not found in the empty JSON string",
                 RfidCardPropertiesExt.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!RfidCardPropertiesExt.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `RfidCardPropertiesExt` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

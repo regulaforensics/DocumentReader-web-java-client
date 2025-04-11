@@ -25,9 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /** RFIDDocVisualExtendedFieldItem */
 @javax.annotation.Generated(
@@ -214,17 +212,6 @@ public class RFIDDocVisualExtendedFieldItem {
             String.format(
                 "The required field(s) %s in RFIDDocVisualExtendedFieldItem is not found in the empty JSON string",
                 RFIDDocVisualExtendedFieldItem.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!RFIDDocVisualExtendedFieldItem.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `RFIDDocVisualExtendedFieldItem` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 

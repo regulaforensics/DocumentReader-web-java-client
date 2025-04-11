@@ -27,9 +27,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * Structure is used to describe the results of a single authentication procedure or a procedure of
@@ -268,17 +266,6 @@ public class RfidAccessControlInfo {
             String.format(
                 "The required field(s) %s in RfidAccessControlInfo is not found in the empty JSON string",
                 RfidAccessControlInfo.openapiRequiredFields.toString()));
-      }
-    }
-
-    Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-    // check to see if the JSON string contains additional fields
-    for (Map.Entry<String, JsonElement> entry : entries) {
-      if (!RfidAccessControlInfo.openapiFields.contains(entry.getKey())) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The field `%s` in the JSON string is not defined in the `RfidAccessControlInfo` properties. JSON: %s",
-                entry.getKey(), jsonElement.toString()));
       }
     }
 
