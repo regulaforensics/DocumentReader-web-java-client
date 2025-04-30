@@ -34,12 +34,12 @@ public class FaceDetectionItem {
   public static final String SERIALIZED_NAME_FACE_DETECTION = "FaceDetection";
 
   @SerializedName(SERIALIZED_NAME_FACE_DETECTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private FaceDetection faceDetection;
 
   public FaceDetectionItem() {}
 
-  public FaceDetectionItem faceDetection(@javax.annotation.Nonnull FaceDetection faceDetection) {
+  public FaceDetectionItem faceDetection(@javax.annotation.Nullable FaceDetection faceDetection) {
     this.faceDetection = faceDetection;
     return this;
   }
@@ -49,12 +49,12 @@ public class FaceDetectionItem {
    *
    * @return faceDetection
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public FaceDetection getFaceDetection() {
     return faceDetection;
   }
 
-  public void setFaceDetection(@javax.annotation.Nonnull FaceDetection faceDetection) {
+  public void setFaceDetection(@javax.annotation.Nullable FaceDetection faceDetection) {
     this.faceDetection = faceDetection;
   }
 
@@ -104,7 +104,6 @@ public class FaceDetectionItem {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FaceDetection");
   }
 
   /**
@@ -124,18 +123,11 @@ public class FaceDetectionItem {
       }
     }
 
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : FaceDetectionItem.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `FaceDetection`
-    FaceDetection.validateJsonElement(jsonObj.get("FaceDetection"));
+    // validate the optional field `FaceDetection`
+    if (jsonObj.get("FaceDetection") != null && !jsonObj.get("FaceDetection").isJsonNull()) {
+      FaceDetection.validateJsonElement(jsonObj.get("FaceDetection"));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

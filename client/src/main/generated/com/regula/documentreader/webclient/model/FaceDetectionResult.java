@@ -34,12 +34,12 @@ public class FaceDetectionResult extends ResultItem {
   public static final String SERIALIZED_NAME_FACE_DETECTION = "FaceDetection";
 
   @SerializedName(SERIALIZED_NAME_FACE_DETECTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private FaceDetection faceDetection;
 
   public FaceDetectionResult() {}
 
-  public FaceDetectionResult faceDetection(@javax.annotation.Nonnull FaceDetection faceDetection) {
+  public FaceDetectionResult faceDetection(@javax.annotation.Nullable FaceDetection faceDetection) {
     this.faceDetection = faceDetection;
     return this;
   }
@@ -49,12 +49,12 @@ public class FaceDetectionResult extends ResultItem {
    *
    * @return faceDetection
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public FaceDetection getFaceDetection() {
     return faceDetection;
   }
 
-  public void setFaceDetection(@javax.annotation.Nonnull FaceDetection faceDetection) {
+  public void setFaceDetection(@javax.annotation.Nullable FaceDetection faceDetection) {
     this.faceDetection = faceDetection;
   }
 
@@ -110,7 +110,6 @@ public class FaceDetectionResult extends ResultItem {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FaceDetection");
     openapiRequiredFields.add("result_type");
   }
 
