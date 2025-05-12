@@ -65,7 +65,7 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_FD_S_I_D_LIST = "FDSIDList";
 
   @SerializedName(SERIALIZED_NAME_FD_S_I_D_LIST)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private FDSIDList fdSIDList;
 
   public static final String SERIALIZED_NAME_NECESSARY_LIGHTS = "NecessaryLights";
@@ -203,7 +203,7 @@ public class OneCandidate {
     this.rfIDPresence = rfIDPresence;
   }
 
-  public OneCandidate fdSIDList(@javax.annotation.Nonnull FDSIDList fdSIDList) {
+  public OneCandidate fdSIDList(@javax.annotation.Nullable FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
     return this;
   }
@@ -213,12 +213,12 @@ public class OneCandidate {
    *
    * @return fdSIDList
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public FDSIDList getFdSIDList() {
     return fdSIDList;
   }
 
-  public void setFdSIDList(@javax.annotation.Nonnull FDSIDList fdSIDList) {
+  public void setFdSIDList(@javax.annotation.Nullable FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
   }
 
@@ -442,7 +442,6 @@ public class OneCandidate {
     openapiRequiredFields.add("P");
     openapiRequiredFields.add("Rotated180");
     openapiRequiredFields.add("RFID_Presence");
-    openapiRequiredFields.add("FDSIDList");
     openapiRequiredFields.add("NecessaryLights");
     openapiRequiredFields.add("CheckAuthenticity");
     openapiRequiredFields.add("UVExp");
@@ -485,8 +484,10 @@ public class OneCandidate {
     }
     // validate the required field `RFID_Presence`
     RfidLocation.validateJsonElement(jsonObj.get("RFID_Presence"));
-    // validate the required field `FDSIDList`
-    FDSIDList.validateJsonElement(jsonObj.get("FDSIDList"));
+    // validate the optional field `FDSIDList`
+    if (jsonObj.get("FDSIDList") != null && !jsonObj.get("FDSIDList").isJsonNull()) {
+      FDSIDList.validateJsonElement(jsonObj.get("FDSIDList"));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

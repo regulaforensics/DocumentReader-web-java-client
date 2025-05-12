@@ -416,6 +416,12 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean generateAlpha2Codes;
 
+  public static final String SERIALIZED_NAME_PDF_PAGES_LIMIT = "pdfPagesLimit";
+
+  @SerializedName(SERIALIZED_NAME_PDF_PAGES_LIMIT)
+  @javax.annotation.Nullable
+  private Integer pdfPagesLimit;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1764,6 +1770,25 @@ public class ProcessParams {
     this.generateAlpha2Codes = generateAlpha2Codes;
   }
 
+  public ProcessParams pdfPagesLimit(@javax.annotation.Nullable Integer pdfPagesLimit) {
+    this.pdfPagesLimit = pdfPagesLimit;
+    return this;
+  }
+
+  /**
+   * Limits the number of pages to be processed from a PDF file.
+   *
+   * @return pdfPagesLimit
+   */
+  @javax.annotation.Nullable
+  public Integer getPdfPagesLimit() {
+    return pdfPagesLimit;
+  }
+
+  public void setPdfPagesLimit(@javax.annotation.Nullable Integer pdfPagesLimit) {
+    this.pdfPagesLimit = pdfPagesLimit;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1837,7 +1862,8 @@ public class ProcessParams {
         && Objects.equals(this.selectLongestNames, processParams.selectLongestNames)
         && Objects.equals(this.doBarcodes, processParams.doBarcodes)
         && Objects.equals(this.strictDLCategoryExpiry, processParams.strictDLCategoryExpiry)
-        && Objects.equals(this.generateAlpha2Codes, processParams.generateAlpha2Codes);
+        && Objects.equals(this.generateAlpha2Codes, processParams.generateAlpha2Codes)
+        && Objects.equals(this.pdfPagesLimit, processParams.pdfPagesLimit);
   }
 
   @Override
@@ -1904,7 +1930,8 @@ public class ProcessParams {
         selectLongestNames,
         doBarcodes,
         strictDLCategoryExpiry,
-        generateAlpha2Codes);
+        generateAlpha2Codes,
+        pdfPagesLimit);
   }
 
   @Override
@@ -2007,6 +2034,7 @@ public class ProcessParams {
     sb.append("    generateAlpha2Codes: ")
         .append(toIndentedString(generateAlpha2Codes))
         .append("\n");
+    sb.append("    pdfPagesLimit: ").append(toIndentedString(pdfPagesLimit)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2089,6 +2117,7 @@ public class ProcessParams {
     openapiFields.add("doBarcodes");
     openapiFields.add("strictDLCategoryExpiry");
     openapiFields.add("generateAlpha2Codes");
+    openapiFields.add("pdfPagesLimit");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
