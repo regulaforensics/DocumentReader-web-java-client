@@ -35,7 +35,7 @@ public class ChosenDocumentType {
   public static final String SERIALIZED_NAME_DOCUMENT_NAME = "DocumentName";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NAME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String documentName;
 
   public static final String SERIALIZED_NAME_I_D = "ID";
@@ -65,7 +65,7 @@ public class ChosenDocumentType {
   public static final String SERIALIZED_NAME_FD_S_I_D_LIST = "FDSIDList";
 
   @SerializedName(SERIALIZED_NAME_FD_S_I_D_LIST)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private FDSIDList fdSIDList;
 
   public static final String SERIALIZED_NAME_NECESSARY_LIGHTS = "NecessaryLights";
@@ -107,7 +107,7 @@ public class ChosenDocumentType {
 
   public ChosenDocumentType() {}
 
-  public ChosenDocumentType documentName(@javax.annotation.Nonnull String documentName) {
+  public ChosenDocumentType documentName(@javax.annotation.Nullable String documentName) {
     this.documentName = documentName;
     return this;
   }
@@ -117,12 +117,12 @@ public class ChosenDocumentType {
    *
    * @return documentName
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDocumentName() {
     return documentName;
   }
 
-  public void setDocumentName(@javax.annotation.Nonnull String documentName) {
+  public void setDocumentName(@javax.annotation.Nullable String documentName) {
     this.documentName = documentName;
   }
 
@@ -203,7 +203,7 @@ public class ChosenDocumentType {
     this.rfIDPresence = rfIDPresence;
   }
 
-  public ChosenDocumentType fdSIDList(@javax.annotation.Nonnull FDSIDList fdSIDList) {
+  public ChosenDocumentType fdSIDList(@javax.annotation.Nullable FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
     return this;
   }
@@ -213,12 +213,12 @@ public class ChosenDocumentType {
    *
    * @return fdSIDList
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public FDSIDList getFdSIDList() {
     return fdSIDList;
   }
 
-  public void setFdSIDList(@javax.annotation.Nonnull FDSIDList fdSIDList) {
+  public void setFdSIDList(@javax.annotation.Nullable FDSIDList fdSIDList) {
     this.fdSIDList = fdSIDList;
   }
 
@@ -437,12 +437,10 @@ public class ChosenDocumentType {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("DocumentName");
     openapiRequiredFields.add("ID");
     openapiRequiredFields.add("P");
     openapiRequiredFields.add("Rotated180");
     openapiRequiredFields.add("RFID_Presence");
-    openapiRequiredFields.add("FDSIDList");
     openapiRequiredFields.add("NecessaryLights");
     openapiRequiredFields.add("CheckAuthenticity");
     openapiRequiredFields.add("UVExp");
@@ -477,7 +475,8 @@ public class ChosenDocumentType {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if (!jsonObj.get("DocumentName").isJsonPrimitive()) {
+    if ((jsonObj.get("DocumentName") != null && !jsonObj.get("DocumentName").isJsonNull())
+        && !jsonObj.get("DocumentName").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `DocumentName` to be a primitive type in the JSON string but got `%s`",
@@ -485,8 +484,10 @@ public class ChosenDocumentType {
     }
     // validate the required field `RFID_Presence`
     RfidLocation.validateJsonElement(jsonObj.get("RFID_Presence"));
-    // validate the required field `FDSIDList`
-    FDSIDList.validateJsonElement(jsonObj.get("FDSIDList"));
+    // validate the optional field `FDSIDList`
+    if (jsonObj.get("FDSIDList") != null && !jsonObj.get("FDSIDList").isJsonNull()) {
+      FDSIDList.validateJsonElement(jsonObj.get("FDSIDList"));
+    }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

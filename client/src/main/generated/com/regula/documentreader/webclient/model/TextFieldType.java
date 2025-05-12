@@ -1953,7 +1953,16 @@ public enum TextFieldType {
   SHORT_FLIGHT_NUMBER(693),
 
   /** Airline code */
-  AIRLINE_CODE(694);
+  AIRLINE_CODE(694),
+
+  /** MVC Agency */
+  FT_MVC_AGENCY(695),
+
+  /** Issuing state code alpha */
+  FT_ISSUING_STATE_CODE_ALPHA2(696),
+
+  /** Nationality code alpha */
+  FT_NATIONALITY_CODE_ALPHA2(697);
 
   private Integer value;
 
