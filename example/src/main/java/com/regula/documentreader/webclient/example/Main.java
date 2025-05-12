@@ -29,7 +29,6 @@ import javax.annotation.Nullable;
 
 public class Main {
     public static final String API_BASE_PATH = "API_BASE_PATH";
-    public static final String TEST_LICENSE = "TEST_LICENSE";
 
     public static void main(String[] args) throws IOException, ApiException {
 
@@ -37,9 +36,6 @@ public class Main {
         if (apiBaseUrl == null) {
             apiBaseUrl = "https://api.regulaforensics.com";
         }
-        var licenseFromEnv = System.getenv(TEST_LICENSE); // optional, used here only for smoke test purposes
-        var licenseFromFile = readFile("regula.license");
-
 
         byte[] whitePage0 = readFile("WHITE.jpg");
 
@@ -71,10 +67,6 @@ public class Main {
 //        apiClient.addDefaultHeader("Header", "value");
 
         var api = new DocumentReaderApi(apiClient);
-
-        // Uncomment one of the lines below if you want to transfer the license with each request
-//                if (licenseFromEnv != null) api.setLicense(licenseFromEnv);
-//                if (licenseFromFile != null) api.setLicense(licenseFromFile);
 
         var info = api.health();
         System.out.println();
