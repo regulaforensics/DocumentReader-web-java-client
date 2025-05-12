@@ -35,7 +35,7 @@ public class OneCandidate {
   public static final String SERIALIZED_NAME_DOCUMENT_NAME = "DocumentName";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENT_NAME)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String documentName;
 
   public static final String SERIALIZED_NAME_I_D = "ID";
@@ -107,7 +107,7 @@ public class OneCandidate {
 
   public OneCandidate() {}
 
-  public OneCandidate documentName(@javax.annotation.Nonnull String documentName) {
+  public OneCandidate documentName(@javax.annotation.Nullable String documentName) {
     this.documentName = documentName;
     return this;
   }
@@ -117,12 +117,12 @@ public class OneCandidate {
    *
    * @return documentName
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDocumentName() {
     return documentName;
   }
 
-  public void setDocumentName(@javax.annotation.Nonnull String documentName) {
+  public void setDocumentName(@javax.annotation.Nullable String documentName) {
     this.documentName = documentName;
   }
 
@@ -437,7 +437,6 @@ public class OneCandidate {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("DocumentName");
     openapiRequiredFields.add("ID");
     openapiRequiredFields.add("P");
     openapiRequiredFields.add("Rotated180");
@@ -476,7 +475,8 @@ public class OneCandidate {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if (!jsonObj.get("DocumentName").isJsonPrimitive()) {
+    if ((jsonObj.get("DocumentName") != null && !jsonObj.get("DocumentName").isJsonNull())
+        && !jsonObj.get("DocumentName").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `DocumentName` to be a primitive type in the JSON string but got `%s`",
