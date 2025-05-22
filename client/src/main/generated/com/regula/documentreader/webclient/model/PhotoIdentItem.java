@@ -31,7 +31,7 @@ import java.util.Objects;
 /** PhotoIdentItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class PhotoIdentItem {
   public static final String SERIALIZED_NAME_LIGHT_INDEX = "LightIndex";
 

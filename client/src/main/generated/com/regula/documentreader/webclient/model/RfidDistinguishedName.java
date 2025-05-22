@@ -32,7 +32,7 @@ import java.util.Objects;
 /** Contents of the identifier in binary form. Base64 encoded. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class RfidDistinguishedName {
   public static final String SERIALIZED_NAME_DATA = "Data";
 

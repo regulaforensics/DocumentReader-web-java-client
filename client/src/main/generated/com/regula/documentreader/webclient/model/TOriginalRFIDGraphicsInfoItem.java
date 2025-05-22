@@ -29,7 +29,7 @@ import java.util.Objects;
 /** TOriginalRFIDGraphicsInfoItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class TOriginalRFIDGraphicsInfoItem {
   public static final String SERIALIZED_NAME_TORIGINAL_R_F_I_D_GRAPHICS_INFO =
       "TOriginalRFIDGraphicsInfo";

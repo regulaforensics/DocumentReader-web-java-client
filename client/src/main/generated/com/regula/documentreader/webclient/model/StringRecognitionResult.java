@@ -33,7 +33,7 @@ import java.util.Objects;
 /** Describes single row recognition results in multi-line text field of a document */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class StringRecognitionResult {
   public static final String SERIALIZED_NAME_SYMBOLS_COUNT = "SymbolsCount";
 

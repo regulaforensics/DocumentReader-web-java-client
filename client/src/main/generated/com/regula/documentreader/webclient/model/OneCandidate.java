@@ -30,7 +30,7 @@ import java.util.Objects;
 /** Contains information about one document type candidate */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class OneCandidate {
   public static final String SERIALIZED_NAME_DOCUMENT_NAME = "DocumentName";
 

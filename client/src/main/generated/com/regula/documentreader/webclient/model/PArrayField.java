@@ -32,7 +32,7 @@ import java.util.Objects;
 /** PArrayField */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class PArrayField {
   public static final String SERIALIZED_NAME_BC_ANGLE_D_E_T_E_C_T = "bcAngle_DETECT";
 

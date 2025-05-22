@@ -31,7 +31,7 @@ import java.util.Objects;
 /** Params for the RFID chip data reprocessing */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class ProcessParamsRfid {
   public static final String SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE = "paSensitiveCodesDisable";
 

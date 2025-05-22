@@ -32,7 +32,7 @@ import java.util.Objects;
 /** PointsContainer */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class PointsContainer {
   public static final String SERIALIZED_NAME_POINT_COUNT = "PointCount";
 

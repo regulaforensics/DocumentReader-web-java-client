@@ -29,7 +29,7 @@ import java.util.Objects;
 /** GraphData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class GraphData {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
 

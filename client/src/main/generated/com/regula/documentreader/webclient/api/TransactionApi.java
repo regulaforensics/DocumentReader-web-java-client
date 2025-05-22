@@ -85,8 +85,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call apiV2TagTagIdDeleteCall(UUID tagId, final ApiCallback _callback)
-      throws ApiException {
+  public okhttp3.Call apiV2TagTagIdDeleteCall(
+      @javax.annotation.Nonnull UUID tagId, final ApiCallback _callback) throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -143,7 +143,7 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TagTagIdDeleteValidateBeforeCall(
-      UUID tagId, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID tagId, final ApiCallback _callback) throws ApiException {
     // verify the required parameter 'tagId' is set
     if (tagId == null) {
       throw new ApiException(
@@ -169,7 +169,7 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public Object apiV2TagTagIdDelete(UUID tagId) throws ApiException {
+  public Object apiV2TagTagIdDelete(@javax.annotation.Nonnull UUID tagId) throws ApiException {
     ApiResponse<Object> localVarResp = apiV2TagTagIdDeleteWithHttpInfo(tagId);
     return localVarResp.getData();
   }
@@ -190,7 +190,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<Object> apiV2TagTagIdDeleteWithHttpInfo(UUID tagId) throws ApiException {
+  public ApiResponse<Object> apiV2TagTagIdDeleteWithHttpInfo(@javax.annotation.Nonnull UUID tagId)
+      throws ApiException {
     okhttp3.Call localVarCall = apiV2TagTagIdDeleteValidateBeforeCall(tagId, null);
     Type localVarReturnType = new TypeToken<Object>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -212,7 +213,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call apiV2TagTagIdDeleteAsync(UUID tagId, final ApiCallback<Object> _callback)
+  public okhttp3.Call apiV2TagTagIdDeleteAsync(
+      @javax.annotation.Nonnull UUID tagId, final ApiCallback<Object> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = apiV2TagTagIdDeleteValidateBeforeCall(tagId, _callback);
@@ -236,8 +238,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call apiV2TagTagIdTransactionsGetCall(String tagId, final ApiCallback _callback)
-      throws ApiException {
+  public okhttp3.Call apiV2TagTagIdTransactionsGetCall(
+      @javax.annotation.Nonnull String tagId, final ApiCallback _callback) throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -294,7 +296,7 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TagTagIdTransactionsGetValidateBeforeCall(
-      String tagId, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull String tagId, final ApiCallback _callback) throws ApiException {
     // verify the required parameter 'tagId' is set
     if (tagId == null) {
       throw new ApiException(
@@ -320,8 +322,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ListTransactionsByTagResponse apiV2TagTagIdTransactionsGet(String tagId)
-      throws ApiException {
+  public ListTransactionsByTagResponse apiV2TagTagIdTransactionsGet(
+      @javax.annotation.Nonnull String tagId) throws ApiException {
     ApiResponse<ListTransactionsByTagResponse> localVarResp =
         apiV2TagTagIdTransactionsGetWithHttpInfo(tagId);
     return localVarResp.getData();
@@ -344,7 +346,7 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<ListTransactionsByTagResponse> apiV2TagTagIdTransactionsGetWithHttpInfo(
-      String tagId) throws ApiException {
+      @javax.annotation.Nonnull String tagId) throws ApiException {
     okhttp3.Call localVarCall = apiV2TagTagIdTransactionsGetValidateBeforeCall(tagId, null);
     Type localVarReturnType = new TypeToken<ListTransactionsByTagResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -367,7 +369,8 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TagTagIdTransactionsGetAsync(
-      String tagId, final ApiCallback<ListTransactionsByTagResponse> _callback)
+      @javax.annotation.Nonnull String tagId,
+      final ApiCallback<ListTransactionsByTagResponse> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = apiV2TagTagIdTransactionsGetValidateBeforeCall(tagId, _callback);
@@ -392,7 +395,10 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdFileGetCall(
-      UUID transactionId, String name, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull String name,
+      final ApiCallback _callback)
+      throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -455,7 +461,10 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdFileGetValidateBeforeCall(
-      UUID transactionId, String name, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull String name,
+      final ApiCallback _callback)
+      throws ApiException {
     // verify the required parameter 'transactionId' is set
     if (transactionId == null) {
       throw new ApiException(
@@ -487,7 +496,8 @@ public class TransactionApi {
    * <tr><td> 404 </td><td> File not found </td><td>  -  </td></tr>
    * </table>
    */
-  public File apiV2TransactionTransactionIdFileGet(UUID transactionId, String name)
+  public File apiV2TransactionTransactionIdFileGet(
+      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nonnull String name)
       throws ApiException {
     ApiResponse<File> localVarResp =
         apiV2TransactionTransactionIdFileGetWithHttpInfo(transactionId, name);
@@ -511,7 +521,8 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<File> apiV2TransactionTransactionIdFileGetWithHttpInfo(
-      UUID transactionId, String name) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nonnull String name)
+      throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdFileGetValidateBeforeCall(transactionId, name, null);
     Type localVarReturnType = new TypeToken<File>() {}.getType();
@@ -535,7 +546,10 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdFileGetAsync(
-      UUID transactionId, String name, final ApiCallback<File> _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull String name,
+      final ApiCallback<File> _callback)
+      throws ApiException {
 
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdFileGetValidateBeforeCall(transactionId, name, _callback);
@@ -560,7 +574,8 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdGetCall(
-      UUID transactionId, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId, final ApiCallback _callback)
+      throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -619,7 +634,8 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdGetValidateBeforeCall(
-      UUID transactionId, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId, final ApiCallback _callback)
+      throws ApiException {
     // verify the required parameter 'transactionId' is set
     if (transactionId == null) {
       throw new ApiException(
@@ -645,8 +661,8 @@ public class TransactionApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public TransactionProcessGetResponse apiV2TransactionTransactionIdGet(UUID transactionId)
-      throws ApiException {
+  public TransactionProcessGetResponse apiV2TransactionTransactionIdGet(
+      @javax.annotation.Nonnull UUID transactionId) throws ApiException {
     ApiResponse<TransactionProcessGetResponse> localVarResp =
         apiV2TransactionTransactionIdGetWithHttpInfo(transactionId);
     return localVarResp.getData();
@@ -669,7 +685,7 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<TransactionProcessGetResponse> apiV2TransactionTransactionIdGetWithHttpInfo(
-      UUID transactionId) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId) throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdGetValidateBeforeCall(transactionId, null);
     Type localVarReturnType = new TypeToken<TransactionProcessGetResponse>() {}.getType();
@@ -693,7 +709,8 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdGetAsync(
-      UUID transactionId, final ApiCallback<TransactionProcessGetResponse> _callback)
+      @javax.annotation.Nonnull UUID transactionId,
+      final ApiCallback<TransactionProcessGetResponse> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall =
@@ -720,8 +737,8 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostCall(
-      UUID transactionId,
-      TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
       final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
@@ -782,8 +799,8 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
-      UUID transactionId,
-      TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
       final ApiCallback _callback)
       throws ApiException {
     // verify the required parameter 'transactionId' is set
@@ -820,7 +837,9 @@ public class TransactionApi {
    * </table>
    */
   public TransactionProcessResult apiV2TransactionTransactionIdProcessPost(
-      UUID transactionId, TransactionProcessRequest transactionProcessRequest) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest)
+      throws ApiException {
     ApiResponse<TransactionProcessResult> localVarResp =
         apiV2TransactionTransactionIdProcessPostWithHttpInfo(
             transactionId, transactionProcessRequest);
@@ -845,7 +864,9 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<TransactionProcessResult> apiV2TransactionTransactionIdProcessPostWithHttpInfo(
-      UUID transactionId, TransactionProcessRequest transactionProcessRequest) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest)
+      throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
             transactionId, transactionProcessRequest, null);
@@ -871,8 +892,8 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostAsync(
-      UUID transactionId,
-      TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
       final ApiCallback<TransactionProcessResult> _callback)
       throws ApiException {
 
@@ -901,7 +922,10 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdResultsGetCall(
-      UUID transactionId, Boolean withImages, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nullable Boolean withImages,
+      final ApiCallback _callback)
+      throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -964,7 +988,10 @@ public class TransactionApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiV2TransactionTransactionIdResultsGetValidateBeforeCall(
-      UUID transactionId, Boolean withImages, final ApiCallback _callback) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nullable Boolean withImages,
+      final ApiCallback _callback)
+      throws ApiException {
     // verify the required parameter 'transactionId' is set
     if (transactionId == null) {
       throw new ApiException(
@@ -992,7 +1019,8 @@ public class TransactionApi {
    * </table>
    */
   public ProcessResponse apiV2TransactionTransactionIdResultsGet(
-      UUID transactionId, Boolean withImages) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nullable Boolean withImages)
+      throws ApiException {
     ApiResponse<ProcessResponse> localVarResp =
         apiV2TransactionTransactionIdResultsGetWithHttpInfo(transactionId, withImages);
     return localVarResp.getData();
@@ -1016,7 +1044,8 @@ public class TransactionApi {
    * </table>
    */
   public ApiResponse<ProcessResponse> apiV2TransactionTransactionIdResultsGetWithHttpInfo(
-      UUID transactionId, Boolean withImages) throws ApiException {
+      @javax.annotation.Nonnull UUID transactionId, @javax.annotation.Nullable Boolean withImages)
+      throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdResultsGetValidateBeforeCall(transactionId, withImages, null);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
@@ -1041,7 +1070,9 @@ public class TransactionApi {
    * </table>
    */
   public okhttp3.Call apiV2TransactionTransactionIdResultsGetAsync(
-      UUID transactionId, Boolean withImages, final ApiCallback<ProcessResponse> _callback)
+      @javax.annotation.Nonnull UUID transactionId,
+      @javax.annotation.Nullable Boolean withImages,
+      final ApiCallback<ProcessResponse> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall =

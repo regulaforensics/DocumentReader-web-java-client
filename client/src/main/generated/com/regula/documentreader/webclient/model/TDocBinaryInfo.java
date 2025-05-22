@@ -32,7 +32,7 @@ import java.util.Objects;
 /** TDocBinaryInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class TDocBinaryInfo {
   public static final String SERIALIZED_NAME_R_F_I_D_B_I_N_A_R_Y_D_A_T_A = "RFID_BINARY_DATA";
 

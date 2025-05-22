@@ -33,7 +33,7 @@ import java.util.Objects;
 /** StringItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class StringItem {
   public static final String SERIALIZED_NAME_A_L_I_G_N_M_E_N_T_S_Y_M_B_O_L_S_I_N_S_T_R_I_N_G =
       "ALIGNMENT_SYMBOLS_IN_STRING";

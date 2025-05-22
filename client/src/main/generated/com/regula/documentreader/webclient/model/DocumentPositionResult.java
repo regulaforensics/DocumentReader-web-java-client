@@ -29,7 +29,7 @@ import java.util.Objects;
 /** Contains information about document position on the input image, its center, angle, etc */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class DocumentPositionResult extends ResultItem {
   public static final String SERIALIZED_NAME_DOCUMENT_POSITION = "DocumentPosition";
 

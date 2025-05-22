@@ -29,7 +29,7 @@ import java.util.Objects;
 /** AuthParams */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class AuthParams {
   public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
 

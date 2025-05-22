@@ -31,7 +31,7 @@ import java.util.Objects;
 /** ParsedData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class ParsedData {
   public static final String SERIALIZED_NAME_PARSING_NOTIFICATIONS = "ParsingNotifications";
 

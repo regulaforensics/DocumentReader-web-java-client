@@ -29,7 +29,7 @@ import java.util.Objects;
 /** Structure contains information on a certificate validity. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class RfidValidity {
   public static final String SERIALIZED_NAME_NOT_BEFORE = "NotBefore";
 

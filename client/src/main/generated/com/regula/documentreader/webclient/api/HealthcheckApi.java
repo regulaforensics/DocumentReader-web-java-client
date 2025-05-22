@@ -78,7 +78,8 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call healthzCall(String xRequestID, final ApiCallback _callback)
+  public okhttp3.Call healthzCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -137,7 +138,8 @@ public class HealthcheckApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call healthzValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call healthzValidateBeforeCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
       throws ApiException {
     return healthzCall(xRequestID, _callback);
   }
@@ -156,7 +158,7 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public Healthcheck healthz(String xRequestID) throws ApiException {
+  public Healthcheck healthz(@javax.annotation.Nullable String xRequestID) throws ApiException {
     ApiResponse<Healthcheck> localVarResp = healthzWithHttpInfo(xRequestID);
     return localVarResp.getData();
   }
@@ -175,7 +177,8 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<Healthcheck> healthzWithHttpInfo(String xRequestID) throws ApiException {
+  public ApiResponse<Healthcheck> healthzWithHttpInfo(@javax.annotation.Nullable String xRequestID)
+      throws ApiException {
     okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, null);
     Type localVarReturnType = new TypeToken<Healthcheck>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -195,7 +198,8 @@ public class HealthcheckApi {
    * <tr><td> 200 </td><td> Device info. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call healthzAsync(String xRequestID, final ApiCallback<Healthcheck> _callback)
+  public okhttp3.Call healthzAsync(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback<Healthcheck> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = healthzValidateBeforeCall(xRequestID, _callback);
@@ -220,7 +224,9 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public okhttp3.Call pingCall(String xRequestID, final ApiCallback _callback) throws ApiException {
+  public okhttp3.Call pingCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
+      throws ApiException {
     String basePath = null;
     // Operation Servers
     String[] localBasePaths = new String[] {};
@@ -279,7 +285,8 @@ public class HealthcheckApi {
 
   @Deprecated
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call pingValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call pingValidateBeforeCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
       throws ApiException {
     return pingCall(xRequestID, _callback);
   }
@@ -301,7 +308,7 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public DeviceInfo ping(String xRequestID) throws ApiException {
+  public DeviceInfo ping(@javax.annotation.Nullable String xRequestID) throws ApiException {
     ApiResponse<DeviceInfo> localVarResp = pingWithHttpInfo(xRequestID);
     return localVarResp.getData();
   }
@@ -323,7 +330,8 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<DeviceInfo> pingWithHttpInfo(String xRequestID) throws ApiException {
+  public ApiResponse<DeviceInfo> pingWithHttpInfo(@javax.annotation.Nullable String xRequestID)
+      throws ApiException {
     okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, null);
     Type localVarReturnType = new TypeToken<DeviceInfo>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -346,7 +354,8 @@ public class HealthcheckApi {
    * @deprecated
    */
   @Deprecated
-  public okhttp3.Call pingAsync(String xRequestID, final ApiCallback<DeviceInfo> _callback)
+  public okhttp3.Call pingAsync(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback<DeviceInfo> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = pingValidateBeforeCall(xRequestID, _callback);
@@ -369,7 +378,8 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call readyzCall(String xRequestID, final ApiCallback _callback)
+  public okhttp3.Call readyzCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -428,7 +438,8 @@ public class HealthcheckApi {
   }
 
   @SuppressWarnings("rawtypes")
-  private okhttp3.Call readyzValidateBeforeCall(String xRequestID, final ApiCallback _callback)
+  private okhttp3.Call readyzValidateBeforeCall(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback _callback)
       throws ApiException {
     return readyzCall(xRequestID, _callback);
   }
@@ -447,7 +458,7 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public void readyz(String xRequestID) throws ApiException {
+  public void readyz(@javax.annotation.Nullable String xRequestID) throws ApiException {
     readyzWithHttpInfo(xRequestID);
   }
 
@@ -466,7 +477,8 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public ApiResponse<Void> readyzWithHttpInfo(String xRequestID) throws ApiException {
+  public ApiResponse<Void> readyzWithHttpInfo(@javax.annotation.Nullable String xRequestID)
+      throws ApiException {
     okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, null);
     return localVarApiClient.execute(localVarCall);
   }
@@ -486,7 +498,8 @@ public class HealthcheckApi {
    * <tr><td> 400 </td><td> The license is not valid. </td><td>  -  </td></tr>
    * </table>
    */
-  public okhttp3.Call readyzAsync(String xRequestID, final ApiCallback<Void> _callback)
+  public okhttp3.Call readyzAsync(
+      @javax.annotation.Nullable String xRequestID, final ApiCallback<Void> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall = readyzValidateBeforeCall(xRequestID, _callback);

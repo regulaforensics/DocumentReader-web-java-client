@@ -33,7 +33,7 @@ import java.util.Objects;
 /** Describes a single character recognition results in the text field line */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class SymbolRecognitionResult {
   public static final String SERIALIZED_NAME_SYMBOL_RECT = "SymbolRect";
 

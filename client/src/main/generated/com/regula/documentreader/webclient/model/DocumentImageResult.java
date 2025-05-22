@@ -29,7 +29,7 @@ import java.util.Objects;
 /** Contains document image. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class DocumentImageResult extends ResultItem {
   public static final String SERIALIZED_NAME_RAW_IMAGE_CONTAINER = "RawImageContainer";
 

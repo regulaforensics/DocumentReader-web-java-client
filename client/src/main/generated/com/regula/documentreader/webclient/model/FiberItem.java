@@ -32,7 +32,7 @@ import java.util.Objects;
 /** FiberItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class FiberItem {
   public static final String SERIALIZED_NAME_RECT_COUNT = "RectCount";
 

@@ -34,7 +34,7 @@ import java.util.Objects;
 /** ProcessParams */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class ProcessParams {
   public static final String SERIALIZED_NAME_GENERATE_D_T_C_V_C = "generateDTCVC";
 

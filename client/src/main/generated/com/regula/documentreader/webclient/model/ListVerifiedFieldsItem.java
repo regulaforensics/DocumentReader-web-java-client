@@ -29,7 +29,7 @@ import java.util.Objects;
 /** ListVerifiedFieldsItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class ListVerifiedFieldsItem {
   public static final String SERIALIZED_NAME_LIST_VERIFIED_FIELDS = "ListVerifiedFields";
 

@@ -29,7 +29,7 @@ import java.util.Objects;
 /** MrzPositionItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class MrzPositionItem {
   public static final String SERIALIZED_NAME_MRZ_POSITION = "MrzPosition";
 
