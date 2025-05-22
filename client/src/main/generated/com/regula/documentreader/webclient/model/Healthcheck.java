@@ -34,7 +34,7 @@ import java.util.Objects;
 /** Healthcheck */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class Healthcheck {
   public static final String SERIALIZED_NAME_APP = "app";
 

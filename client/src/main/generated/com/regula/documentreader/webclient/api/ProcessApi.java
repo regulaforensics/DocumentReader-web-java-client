@@ -82,7 +82,9 @@ public class ProcessApi {
    * </table>
    */
   public okhttp3.Call apiProcessCall(
-      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
+      @javax.annotation.Nonnull ProcessRequest processRequest,
+      @javax.annotation.Nullable String xRequestID,
+      final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
     // Operation Servers
@@ -142,7 +144,9 @@ public class ProcessApi {
 
   @SuppressWarnings("rawtypes")
   private okhttp3.Call apiProcessValidateBeforeCall(
-      ProcessRequest processRequest, String xRequestID, final ApiCallback _callback)
+      @javax.annotation.Nonnull ProcessRequest processRequest,
+      @javax.annotation.Nullable String xRequestID,
+      final ApiCallback _callback)
       throws ApiException {
     // verify the required parameter 'processRequest' is set
     if (processRequest == null) {
@@ -170,7 +174,9 @@ public class ProcessApi {
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
    * </table>
    */
-  public ProcessResponse apiProcess(ProcessRequest processRequest, String xRequestID)
+  public ProcessResponse apiProcess(
+      @javax.annotation.Nonnull ProcessRequest processRequest,
+      @javax.annotation.Nullable String xRequestID)
       throws ApiException {
     ApiResponse<ProcessResponse> localVarResp = apiProcessWithHttpInfo(processRequest, xRequestID);
     return localVarResp.getData();
@@ -194,7 +200,9 @@ public class ProcessApi {
    * </table>
    */
   public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(
-      ProcessRequest processRequest, String xRequestID) throws ApiException {
+      @javax.annotation.Nonnull ProcessRequest processRequest,
+      @javax.annotation.Nullable String xRequestID)
+      throws ApiException {
     okhttp3.Call localVarCall = apiProcessValidateBeforeCall(processRequest, xRequestID, null);
     Type localVarReturnType = new TypeToken<ProcessResponse>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,8 +226,8 @@ public class ProcessApi {
    * </table>
    */
   public okhttp3.Call apiProcessAsync(
-      ProcessRequest processRequest,
-      String xRequestID,
+      @javax.annotation.Nonnull ProcessRequest processRequest,
+      @javax.annotation.Nullable String xRequestID,
       final ApiCallback<ProcessResponse> _callback)
       throws ApiException {
 

@@ -30,7 +30,7 @@ import java.util.UUID;
 /** TransactionProcessGetResponse */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class TransactionProcessGetResponse {
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
 

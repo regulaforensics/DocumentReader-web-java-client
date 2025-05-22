@@ -32,7 +32,7 @@ import java.util.Objects;
 /** List with various objects, containing processing results */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class ContainerList {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 

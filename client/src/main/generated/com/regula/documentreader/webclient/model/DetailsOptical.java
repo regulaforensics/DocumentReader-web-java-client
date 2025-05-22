@@ -29,7 +29,7 @@ import java.util.Objects;
 /** Details on performed optical checks */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class DetailsOptical {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 

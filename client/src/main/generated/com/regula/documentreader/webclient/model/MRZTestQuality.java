@@ -32,7 +32,7 @@ import java.util.Objects;
 /** MRZTestQuality */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class MRZTestQuality {
   public static final String SERIALIZED_NAME_C_H_E_C_K_S_U_M_S = "CHECK_SUMS";
 

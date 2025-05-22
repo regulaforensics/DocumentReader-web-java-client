@@ -29,7 +29,7 @@ import java.util.Objects;
 /** RFIDTextDataResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class RFIDTextDataResult extends ResultItem {
   public static final String SERIALIZED_NAME_DOC_VISUAL_EXTENDED_INFO = "DocVisualExtendedInfo";
 

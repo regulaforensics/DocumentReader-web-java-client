@@ -29,7 +29,7 @@ import java.util.Objects;
 /** MRZDetectorResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class MRZDetectorResult extends ResultItem {
   public static final String SERIALIZED_NAME_RESULT_M_R_Z_DETECTOR = "ResultMRZDetector";
 

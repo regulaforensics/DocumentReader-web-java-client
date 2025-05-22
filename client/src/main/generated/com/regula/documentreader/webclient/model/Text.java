@@ -32,7 +32,7 @@ import java.util.Objects;
 /** Contains all document text fields data with validity and cross-source compare checks */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class Text {
   public static final String SERIALIZED_NAME_STATUS = "status";
 

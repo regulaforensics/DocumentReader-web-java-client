@@ -34,7 +34,7 @@ import java.util.Objects;
 /** TransactionProcessRequest */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class TransactionProcessRequest {
   public static final String SERIALIZED_NAME_PROCESS_PARAM = "processParam";
 

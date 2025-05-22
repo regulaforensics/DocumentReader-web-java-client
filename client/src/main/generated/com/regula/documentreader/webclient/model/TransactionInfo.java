@@ -29,7 +29,7 @@ import java.util.Objects;
 /** TransactionInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class TransactionInfo {
   public static final String SERIALIZED_NAME_COMPUTER_NAME = "ComputerName";
 

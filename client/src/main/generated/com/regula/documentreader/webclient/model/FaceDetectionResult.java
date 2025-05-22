@@ -29,7 +29,7 @@ import java.util.Objects;
 /** FaceDetectionResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class FaceDetectionResult extends ResultItem {
   public static final String SERIALIZED_NAME_FACE_DETECTION = "FaceDetection";
 

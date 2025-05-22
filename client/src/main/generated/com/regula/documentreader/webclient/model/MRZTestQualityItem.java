@@ -29,7 +29,7 @@ import java.util.Objects;
 /** MRZTestQualityItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class MRZTestQualityItem {
   public static final String SERIALIZED_NAME_MR_Z_TEST_QUALITY = "MRZTestQuality";
 

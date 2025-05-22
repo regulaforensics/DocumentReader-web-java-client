@@ -32,7 +32,7 @@ import java.util.Objects;
 /** DocumentTypesCandidates */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class DocumentTypesCandidates {
   public static final String SERIALIZED_NAME_REC_RESULT = "RecResult";
 

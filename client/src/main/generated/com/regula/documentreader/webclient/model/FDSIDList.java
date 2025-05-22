@@ -32,7 +32,7 @@ import java.util.Objects;
 /** Extended document type info and Regula&#39;s &#39;Information Reference Systems&#39; links */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class FDSIDList {
   public static final String SERIALIZED_NAME_IC_A_O_CODE = "ICAOCode";
 

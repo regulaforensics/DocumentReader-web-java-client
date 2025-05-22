@@ -33,7 +33,7 @@ import java.util.Objects;
 /** Container for extracted text fields. Fields are identified by type and language */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class DocVisualExtendedInfo {
   public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
 

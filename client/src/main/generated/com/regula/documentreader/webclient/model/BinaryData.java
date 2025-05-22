@@ -33,7 +33,7 @@ import java.util.Objects;
 /** Structure is used for storing the results of one bar-code module reading. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class BinaryData {
   public static final String SERIALIZED_NAME_RF_I_D_AUTHENTICATION_INFO =
       "RFID_Authentication_Info";

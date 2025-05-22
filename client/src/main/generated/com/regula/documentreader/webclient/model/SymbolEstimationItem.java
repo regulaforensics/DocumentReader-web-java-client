@@ -30,7 +30,7 @@ import java.util.Objects;
 /** SymbolEstimationItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class SymbolEstimationItem {
   public static final String SERIALIZED_NAME_A_L_I_G_N_M_E_N_T_N_E_A_R_E_S_T_S_Y_M_B_O_L_S =
       "ALIGNMENT_NEAREST_SYMBOLS";

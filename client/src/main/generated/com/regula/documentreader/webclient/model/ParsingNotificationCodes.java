@@ -690,7 +690,13 @@ public enum ParsingNotificationCodes {
   ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching(139289l),
 
   /** Country Codes from certificate and DG1 MRZ don&#39;t match */
-  ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching(2415919698l);
+  ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching(2415919698l),
+
+  /** ICAO certificate: Issuer country non upper case */
+  ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase(2415919699l),
+
+  /** ICAO certificate: Subject country non upper case */
+  ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase(2415919700l);
 
   private Long value;
 

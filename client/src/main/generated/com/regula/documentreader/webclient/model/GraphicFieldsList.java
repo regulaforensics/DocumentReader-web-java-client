@@ -33,7 +33,7 @@ import java.util.Objects;
 /** GraphicFieldsList */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.12.0")
+    comments = "Generator version: 7.13.0")
 public class GraphicFieldsList {
   public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
 
