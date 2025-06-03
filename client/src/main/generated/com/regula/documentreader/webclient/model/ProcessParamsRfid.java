@@ -33,42 +33,43 @@ import java.util.Objects;
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.13.0")
 public class ProcessParamsRfid {
-  public static final String SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE = "paSensitiveCodesDisable";
+  public static final String SERIALIZED_NAME_PA_IGNORE_NOTIFICATION_CODES =
+      "paIgnoreNotificationCodes";
 
-  @SerializedName(SERIALIZED_NAME_PA_SENSITIVE_CODES_DISABLE)
+  @SerializedName(SERIALIZED_NAME_PA_IGNORE_NOTIFICATION_CODES)
   @javax.annotation.Nullable
-  private List<ParsingNotificationCodes> paSensitiveCodesDisable;
+  private List<ParsingNotificationCodes> paIgnoreNotificationCodes;
 
   public ProcessParamsRfid() {}
 
-  public ProcessParamsRfid paSensitiveCodesDisable(
-      @javax.annotation.Nullable List<ParsingNotificationCodes> paSensitiveCodesDisable) {
-    this.paSensitiveCodesDisable = paSensitiveCodesDisable;
+  public ProcessParamsRfid paIgnoreNotificationCodes(
+      @javax.annotation.Nullable List<ParsingNotificationCodes> paIgnoreNotificationCodes) {
+    this.paIgnoreNotificationCodes = paIgnoreNotificationCodes;
     return this;
   }
 
-  public ProcessParamsRfid addPaSensitiveCodesDisableItem(
-      ParsingNotificationCodes paSensitiveCodesDisableItem) {
-    if (this.paSensitiveCodesDisable == null) {
-      this.paSensitiveCodesDisable = new ArrayList<>();
+  public ProcessParamsRfid addPaIgnoreNotificationCodesItem(
+      ParsingNotificationCodes paIgnoreNotificationCodesItem) {
+    if (this.paIgnoreNotificationCodes == null) {
+      this.paIgnoreNotificationCodes = new ArrayList<>();
     }
-    this.paSensitiveCodesDisable.add(paSensitiveCodesDisableItem);
+    this.paIgnoreNotificationCodes.add(paIgnoreNotificationCodesItem);
     return this;
   }
 
   /**
    * A list of notification codes that should be ignored during passive authentication (PA)
    *
-   * @return paSensitiveCodesDisable
+   * @return paIgnoreNotificationCodes
    */
   @javax.annotation.Nullable
-  public List<ParsingNotificationCodes> getPaSensitiveCodesDisable() {
-    return paSensitiveCodesDisable;
+  public List<ParsingNotificationCodes> getPaIgnoreNotificationCodes() {
+    return paIgnoreNotificationCodes;
   }
 
-  public void setPaSensitiveCodesDisable(
-      @javax.annotation.Nullable List<ParsingNotificationCodes> paSensitiveCodesDisable) {
-    this.paSensitiveCodesDisable = paSensitiveCodesDisable;
+  public void setPaIgnoreNotificationCodes(
+      @javax.annotation.Nullable List<ParsingNotificationCodes> paIgnoreNotificationCodes) {
+    this.paIgnoreNotificationCodes = paIgnoreNotificationCodes;
   }
 
   @Override
@@ -80,20 +81,21 @@ public class ProcessParamsRfid {
       return false;
     }
     ProcessParamsRfid processParamsRfid = (ProcessParamsRfid) o;
-    return Objects.equals(this.paSensitiveCodesDisable, processParamsRfid.paSensitiveCodesDisable);
+    return Objects.equals(
+        this.paIgnoreNotificationCodes, processParamsRfid.paIgnoreNotificationCodes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(paSensitiveCodesDisable);
+    return Objects.hash(paIgnoreNotificationCodes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProcessParamsRfid {\n");
-    sb.append("    paSensitiveCodesDisable: ")
-        .append(toIndentedString(paSensitiveCodesDisable))
+    sb.append("    paIgnoreNotificationCodes: ")
+        .append(toIndentedString(paIgnoreNotificationCodes))
         .append("\n");
     sb.append("}");
     return sb.toString();
@@ -115,7 +117,7 @@ public class ProcessParamsRfid {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("paSensitiveCodesDisable");
+    openapiFields.add("paIgnoreNotificationCodes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -140,13 +142,13 @@ public class ProcessParamsRfid {
 
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the optional json data is an array if present
-    if (jsonObj.get("paSensitiveCodesDisable") != null
-        && !jsonObj.get("paSensitiveCodesDisable").isJsonNull()
-        && !jsonObj.get("paSensitiveCodesDisable").isJsonArray()) {
+    if (jsonObj.get("paIgnoreNotificationCodes") != null
+        && !jsonObj.get("paIgnoreNotificationCodes").isJsonNull()
+        && !jsonObj.get("paIgnoreNotificationCodes").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
-              "Expected the field `paSensitiveCodesDisable` to be an array in the JSON string but got `%s`",
-              jsonObj.get("paSensitiveCodesDisable").toString()));
+              "Expected the field `paIgnoreNotificationCodes` to be an array in the JSON string but got `%s`",
+              jsonObj.get("paIgnoreNotificationCodes").toString()));
     }
   }
 

@@ -24,7 +24,11 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /** DeviceInfo */
@@ -56,6 +60,12 @@ public class DeviceInfo {
   @javax.annotation.Nullable
   private String licenseSerial;
 
+  public static final String SERIALIZED_NAME_LICENSE_TYPE = "license-type";
+
+  @SerializedName(SERIALIZED_NAME_LICENSE_TYPE)
+  @javax.annotation.Nullable
+  private String licenseType;
+
   public static final String SERIALIZED_NAME_VALID_UNTIL = "valid-until";
 
   @SerializedName(SERIALIZED_NAME_VALID_UNTIL)
@@ -66,7 +76,25 @@ public class DeviceInfo {
 
   @SerializedName(SERIALIZED_NAME_SERVER_TIME)
   @javax.annotation.Nullable
-  private OffsetDateTime serverTime;
+  private String serverTime;
+
+  public static final String SERIALIZED_NAME_SUPPORTED_SCENARIOS = "supported-scenarios";
+
+  @SerializedName(SERIALIZED_NAME_SUPPORTED_SCENARIOS)
+  @javax.annotation.Nullable
+  private List<String> supportedScenarios;
+
+  public static final String SERIALIZED_NAME_METADATA = "metadata";
+
+  @SerializedName(SERIALIZED_NAME_METADATA)
+  @javax.annotation.Nullable
+  private Map<String, Object> metadata;
+
+  public static final String SERIALIZED_NAME_DOCUMENTS_DATABASE = "documents-database";
+
+  @SerializedName(SERIALIZED_NAME_DOCUMENTS_DATABASE)
+  @javax.annotation.Nullable
+  private DeviceInfoDocumentsDatabase documentsDatabase;
 
   public DeviceInfo() {}
 
@@ -76,7 +104,7 @@ public class DeviceInfo {
   }
 
   /**
-   * Get appName
+   * Application name.
    *
    * @return appName
    */
@@ -95,7 +123,7 @@ public class DeviceInfo {
   }
 
   /**
-   * Get version
+   * Product version.
    *
    * @return version
    */
@@ -114,7 +142,7 @@ public class DeviceInfo {
   }
 
   /**
-   * Get licenseId
+   * Unique license identifier.
    *
    * @return licenseId
    */
@@ -133,7 +161,7 @@ public class DeviceInfo {
   }
 
   /**
-   * Get licenseSerial
+   * License serial number.
    *
    * @return licenseSerial
    */
@@ -146,13 +174,32 @@ public class DeviceInfo {
     this.licenseSerial = licenseSerial;
   }
 
+  public DeviceInfo licenseType(@javax.annotation.Nullable String licenseType) {
+    this.licenseType = licenseType;
+    return this;
+  }
+
+  /**
+   * Get licenseType
+   *
+   * @return licenseType
+   */
+  @javax.annotation.Nullable
+  public String getLicenseType() {
+    return licenseType;
+  }
+
+  public void setLicenseType(@javax.annotation.Nullable String licenseType) {
+    this.licenseType = licenseType;
+  }
+
   public DeviceInfo validUntil(@javax.annotation.Nullable OffsetDateTime validUntil) {
     this.validUntil = validUntil;
     return this;
   }
 
   /**
-   * Get validUntil
+   * License validity date.
    *
    * @return validUntil
    */
@@ -165,7 +212,7 @@ public class DeviceInfo {
     this.validUntil = validUntil;
   }
 
-  public DeviceInfo serverTime(@javax.annotation.Nullable OffsetDateTime serverTime) {
+  public DeviceInfo serverTime(@javax.annotation.Nullable String serverTime) {
     this.serverTime = serverTime;
     return this;
   }
@@ -176,12 +223,87 @@ public class DeviceInfo {
    * @return serverTime
    */
   @javax.annotation.Nullable
-  public OffsetDateTime getServerTime() {
+  public String getServerTime() {
     return serverTime;
   }
 
-  public void setServerTime(@javax.annotation.Nullable OffsetDateTime serverTime) {
+  public void setServerTime(@javax.annotation.Nullable String serverTime) {
     this.serverTime = serverTime;
+  }
+
+  public DeviceInfo supportedScenarios(@javax.annotation.Nullable List<String> supportedScenarios) {
+    this.supportedScenarios = supportedScenarios;
+    return this;
+  }
+
+  public DeviceInfo addSupportedScenariosItem(String supportedScenariosItem) {
+    if (this.supportedScenarios == null) {
+      this.supportedScenarios = new ArrayList<>();
+    }
+    this.supportedScenarios.add(supportedScenariosItem);
+    return this;
+  }
+
+  /**
+   * List of supported scenarios.
+   *
+   * @return supportedScenarios
+   */
+  @javax.annotation.Nullable
+  public List<String> getSupportedScenarios() {
+    return supportedScenarios;
+  }
+
+  public void setSupportedScenarios(@javax.annotation.Nullable List<String> supportedScenarios) {
+    this.supportedScenarios = supportedScenarios;
+  }
+
+  public DeviceInfo metadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public DeviceInfo putMetadataItem(String key, Object metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
+  /**
+   * Get metadata
+   *
+   * @return metadata
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getMetadata() {
+    return metadata;
+  }
+
+  public void setMetadata(@javax.annotation.Nullable Map<String, Object> metadata) {
+    this.metadata = metadata;
+  }
+
+  public DeviceInfo documentsDatabase(
+      @javax.annotation.Nullable DeviceInfoDocumentsDatabase documentsDatabase) {
+    this.documentsDatabase = documentsDatabase;
+    return this;
+  }
+
+  /**
+   * Get documentsDatabase
+   *
+   * @return documentsDatabase
+   */
+  @javax.annotation.Nullable
+  public DeviceInfoDocumentsDatabase getDocumentsDatabase() {
+    return documentsDatabase;
+  }
+
+  public void setDocumentsDatabase(
+      @javax.annotation.Nullable DeviceInfoDocumentsDatabase documentsDatabase) {
+    this.documentsDatabase = documentsDatabase;
   }
 
   @Override
@@ -197,13 +319,27 @@ public class DeviceInfo {
         && Objects.equals(this.version, deviceInfo.version)
         && Objects.equals(this.licenseId, deviceInfo.licenseId)
         && Objects.equals(this.licenseSerial, deviceInfo.licenseSerial)
+        && Objects.equals(this.licenseType, deviceInfo.licenseType)
         && Objects.equals(this.validUntil, deviceInfo.validUntil)
-        && Objects.equals(this.serverTime, deviceInfo.serverTime);
+        && Objects.equals(this.serverTime, deviceInfo.serverTime)
+        && Objects.equals(this.supportedScenarios, deviceInfo.supportedScenarios)
+        && Objects.equals(this.metadata, deviceInfo.metadata)
+        && Objects.equals(this.documentsDatabase, deviceInfo.documentsDatabase);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(appName, version, licenseId, licenseSerial, validUntil, serverTime);
+    return Objects.hash(
+        appName,
+        version,
+        licenseId,
+        licenseSerial,
+        licenseType,
+        validUntil,
+        serverTime,
+        supportedScenarios,
+        metadata,
+        documentsDatabase);
   }
 
   @Override
@@ -214,8 +350,12 @@ public class DeviceInfo {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
     sb.append("    licenseSerial: ").append(toIndentedString(licenseSerial)).append("\n");
+    sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
     sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
     sb.append("    serverTime: ").append(toIndentedString(serverTime)).append("\n");
+    sb.append("    supportedScenarios: ").append(toIndentedString(supportedScenarios)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    documentsDatabase: ").append(toIndentedString(documentsDatabase)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,8 +380,12 @@ public class DeviceInfo {
     openapiFields.add("version");
     openapiFields.add("license-id");
     openapiFields.add("license-serial");
+    openapiFields.add("license-type");
     openapiFields.add("valid-until");
     openapiFields.add("server-time");
+    openapiFields.add("supported-scenarios");
+    openapiFields.add("metadata");
+    openapiFields.add("documents-database");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -292,6 +436,34 @@ public class DeviceInfo {
           String.format(
               "Expected the field `license-serial` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("license-serial").toString()));
+    }
+    if ((jsonObj.get("license-type") != null && !jsonObj.get("license-type").isJsonNull())
+        && !jsonObj.get("license-type").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `license-type` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("license-type").toString()));
+    }
+    if ((jsonObj.get("server-time") != null && !jsonObj.get("server-time").isJsonNull())
+        && !jsonObj.get("server-time").isJsonPrimitive()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `server-time` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("server-time").toString()));
+    }
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("supported-scenarios") != null
+        && !jsonObj.get("supported-scenarios").isJsonNull()
+        && !jsonObj.get("supported-scenarios").isJsonArray()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Expected the field `supported-scenarios` to be an array in the JSON string but got `%s`",
+              jsonObj.get("supported-scenarios").toString()));
+    }
+    // validate the optional field `documents-database`
+    if (jsonObj.get("documents-database") != null
+        && !jsonObj.get("documents-database").isJsonNull()) {
+      DeviceInfoDocumentsDatabase.validateJsonElement(jsonObj.get("documents-database"));
     }
   }
 
