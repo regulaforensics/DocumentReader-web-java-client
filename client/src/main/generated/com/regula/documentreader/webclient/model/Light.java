@@ -23,157 +23,28 @@ import java.io.IOException;
 @JsonAdapter(Light.Adapter.class)
 public enum Light {
 
-  /** Lighting schemes are off */
-  OFF(0l),
+  /** No Light */
+  OFF(0),
 
-  /** OVI scheme */
-  OVI(1l),
+  /** White */
+  WHITE(6),
 
-  /** Upper/lower lighters of white light scheme */
-  WHITE_TOP(2l),
+  /** Infrared */
+  IR(24),
 
-  /** Side lighters of white light scheme */
-  WHITE_SIDE(4l),
-
-  /** General white light without separate control of side and upper/lower lighters scheme */
-  WHITE_FRONT(8388608l),
-
-  /** Upper/lower and side lighters of white light scheme */
-  WHITE(6l),
-
-  /** Upper/lower lighters of IR light scheme */
-  IR_TOP(8l),
-
-  /** Side lighters of IR light scheme */
-  IR_SIDE(16l),
-
-  /** General IR light without separate control of side and upper/lower lighters scheme */
-  IR_FRONT(16777216l),
-
-  /** Upper/lower and side lighters of IR light scheme */
-  IR(24l),
-
-  /** general white image converted to grayscale */
-  WHITE_GRAY(33554432l),
-
-  /** General UV light scheme */
-  UV(128l),
-
-  /** OVD light for hologram visualization */
-  OVD(67108864l),
-
-  /** Video detection light for internal use only */
-  VIDEODETECTION(134217728l),
-
-  /** Light IR 870 oblique */
-  IR_870_OBL(268435456l),
-
-  /** IR luminescence */
-  IR_LUMINESCENCE(256l),
-
-  /** Left lighter of white coaxial light scheme */
-  AXIAL_WHITE_LEFT(1024l),
-
-  /** Right lighter of white coaxial light scheme */
-  AXIAL_WHITE_RIGHT(2048l),
-
-  /** Coaxial white light without separate control of left and right lighters scheme */
-  AXIAL_WHITE_FRONT(512l),
-
-  /** IR720 */
-  IR_720(4096l),
-
-  /** IR940 */
-  IR_940(8192l),
+  /** Ultraviolet */
+  UV(128),
 
   /** Right and left lighters of white coaxial light scheme */
-  AXIAL_WHITE_FULL(3072l),
+  AXIAL_WHITE_FULL(3072);
 
-  /** For internal use */
-  RAW_DATA(2147483648l),
+  private Integer value;
 
-  /** For internal use */
-  RAW_DATA_GRBG(2415919104l),
-
-  /** For internal use */
-  RAW_DATA_GBGR(2684354560l),
-
-  /** For internal use */
-  RAW_DATA_RGGB(2952790016l),
-
-  /** For internal use */
-  RAW_DATA_BGGR(3221225472l),
-
-  /** Transmitted */
-  TRANSMITTED(32l),
-
-  /** Transmitted IR */
-  TRANSMITTED_IR(64l),
-
-  /** Transmitted AntiStokes */
-  ANTI_STOKES(65536l),
-
-  /** Transmitted IR940 */
-  TRANSMITTED_IR940(16384l),
-
-  /** OVD right */
-  OVD_RIGHT(262144l),
-
-  /** OVD left */
-  OVD_LEFT(131072l),
-
-  /** IR 700 */
-  IR_700(32768l),
-
-  /** Front IR870 (mod. 8803) */
-  IR_870(16777216l),
-
-  /** OVD light (hologram visualization) (mod. 8850) */
-  HOLO(67108864l),
-
-  /** For internal use */
-  IR_BOTTOM(64l),
-
-  /** For internal use */
-  WHITE_BOTTOM(32l),
-
-  /** UVС 254 (mod. 88X0) */
-  UVC(524288l),
-
-  /** UVB 313 (mod. 88X0) */
-  UVB(1048576l),
-
-  /** White oblique light */
-  WHITE_OBL(2097152l),
-
-  /** For internal use */
-  WHITE_SPECIAL(4194304l),
-
-  /** White UV */
-  WHITE_UV(134l),
-
-  /** White full hologram */
-  WHITE_FULL_HOLO(67108870l),
-
-  /** HR light */
-  HR_LIGHT(1073741824l),
-
-  /** HR white */
-  HR_WHITE(1073741830l),
-
-  /** HR UV */
-  HR_UV(1073741952l),
-
-  /** HR IR */
-  HR_IR(1073741848l);
-
-  private Long value;
-
-  Light(Long value) {
+  Light(Integer value) {
     this.value = value;
   }
 
-  public Long getValue() {
+  public Integer getValue() {
     return value;
   }
 
@@ -182,7 +53,7 @@ public enum Light {
     return String.valueOf(value);
   }
 
-  public static Light fromValue(Long value) {
+  public static Light fromValue(Integer value) {
     for (Light b : Light.values()) {
       if (b.value.equals(value)) {
         return b;
@@ -199,13 +70,13 @@ public enum Light {
 
     @Override
     public Light read(final JsonReader jsonReader) throws IOException {
-      Long value = jsonReader.nextLong();
+      Integer value = jsonReader.nextInt();
       return Light.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-    Long value = jsonElement.getAsLong();
+    Integer value = jsonElement.getAsInt();
     Light.fromValue(value);
   }
 }

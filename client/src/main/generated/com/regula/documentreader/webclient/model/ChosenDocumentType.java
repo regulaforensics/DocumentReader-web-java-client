@@ -171,7 +171,7 @@ public class ChosenDocumentType {
   }
 
   /**
-   * true if the document of the given type is rotated by 180 degrees
+   * Indicates if the document of the given type is rotated by 180 degrees
    *
    * @return rotated180
    */
