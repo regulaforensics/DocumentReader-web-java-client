@@ -80,7 +80,7 @@ public class PArrayField {
 
   @SerializedName(SERIALIZED_NAME_BC_TEXT_FIELD_TYPE)
   @javax.annotation.Nullable
-  private Integer bcTextFieldType;
+  private TextFieldType bcTextFieldType;
 
   public static final String SERIALIZED_NAME_BC_TYPE_D_E_C_O_D_E = "bcType_DECODE";
 
@@ -237,7 +237,7 @@ public class PArrayField {
     this.bcTextDecoderTypes = bcTextDecoderTypes;
   }
 
-  public PArrayField bcTextFieldType(@javax.annotation.Nullable Integer bcTextFieldType) {
+  public PArrayField bcTextFieldType(@javax.annotation.Nullable TextFieldType bcTextFieldType) {
     this.bcTextFieldType = bcTextFieldType;
     return this;
   }
@@ -248,11 +248,11 @@ public class PArrayField {
    * @return bcTextFieldType
    */
   @javax.annotation.Nullable
-  public Integer getBcTextFieldType() {
+  public TextFieldType getBcTextFieldType() {
     return bcTextFieldType;
   }
 
-  public void setBcTextFieldType(@javax.annotation.Nullable Integer bcTextFieldType) {
+  public void setBcTextFieldType(@javax.annotation.Nullable TextFieldType bcTextFieldType) {
     this.bcTextFieldType = bcTextFieldType;
   }
 
@@ -433,6 +433,10 @@ public class PArrayField {
     }
     // validate the required field `bcROI_DETECT`
     BcROIDETECT.validateJsonElement(jsonObj.get("bcROI_DETECT"));
+    // validate the optional field `bcTextFieldType`
+    if (jsonObj.get("bcTextFieldType") != null && !jsonObj.get("bcTextFieldType").isJsonNull()) {
+      TextFieldType.validateJsonElement(jsonObj.get("bcTextFieldType"));
+    }
     // validate the required field `bcType_DECODE`
     BarcodeType.validateJsonElement(jsonObj.get("bcType_DECODE"));
   }

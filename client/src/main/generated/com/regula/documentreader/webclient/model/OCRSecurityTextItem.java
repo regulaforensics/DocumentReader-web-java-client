@@ -53,19 +53,19 @@ public class OCRSecurityTextItem {
 
   @SerializedName(SERIALIZED_NAME_ETALON_RESULT_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonResultType;
+  private Integer etalonResultType = 0;
 
   public static final String SERIALIZED_NAME_ETALON_FIELD_TYPE = "EtalonFieldType";
 
   @SerializedName(SERIALIZED_NAME_ETALON_FIELD_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonFieldType;
+  private TextFieldType etalonFieldType;
 
   public static final String SERIALIZED_NAME_ETALON_LIGHT_TYPE = "EtalonLightType";
 
   @SerializedName(SERIALIZED_NAME_ETALON_LIGHT_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonLightType;
+  private Light etalonLightType;
 
   public static final String SERIALIZED_NAME_ETALON_FIELD_RECT = "EtalonFieldRect";
 
@@ -168,7 +168,7 @@ public class OCRSecurityTextItem {
   }
 
   /**
-   * Get etalonResultType
+   * Same as Result type, but used for safe parsing of not-described values. See Result type.
    *
    * @return etalonResultType
    */
@@ -181,7 +181,8 @@ public class OCRSecurityTextItem {
     this.etalonResultType = etalonResultType;
   }
 
-  public OCRSecurityTextItem etalonFieldType(@javax.annotation.Nonnull Integer etalonFieldType) {
+  public OCRSecurityTextItem etalonFieldType(
+      @javax.annotation.Nonnull TextFieldType etalonFieldType) {
     this.etalonFieldType = etalonFieldType;
     return this;
   }
@@ -192,15 +193,15 @@ public class OCRSecurityTextItem {
    * @return etalonFieldType
    */
   @javax.annotation.Nonnull
-  public Integer getEtalonFieldType() {
+  public TextFieldType getEtalonFieldType() {
     return etalonFieldType;
   }
 
-  public void setEtalonFieldType(@javax.annotation.Nonnull Integer etalonFieldType) {
+  public void setEtalonFieldType(@javax.annotation.Nonnull TextFieldType etalonFieldType) {
     this.etalonFieldType = etalonFieldType;
   }
 
-  public OCRSecurityTextItem etalonLightType(@javax.annotation.Nonnull Integer etalonLightType) {
+  public OCRSecurityTextItem etalonLightType(@javax.annotation.Nonnull Light etalonLightType) {
     this.etalonLightType = etalonLightType;
     return this;
   }
@@ -211,11 +212,11 @@ public class OCRSecurityTextItem {
    * @return etalonLightType
    */
   @javax.annotation.Nonnull
-  public Integer getEtalonLightType() {
+  public Light getEtalonLightType() {
     return etalonLightType;
   }
 
-  public void setEtalonLightType(@javax.annotation.Nonnull Integer etalonLightType) {
+  public void setEtalonLightType(@javax.annotation.Nonnull Light etalonLightType) {
     this.etalonLightType = etalonLightType;
   }
 
@@ -472,6 +473,10 @@ public class OCRSecurityTextItem {
     Light.validateJsonElement(jsonObj.get("LightType"));
     // validate the required field `FieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("FieldRect"));
+    // validate the required field `EtalonFieldType`
+    TextFieldType.validateJsonElement(jsonObj.get("EtalonFieldType"));
+    // validate the required field `EtalonLightType`
+    Light.validateJsonElement(jsonObj.get("EtalonLightType"));
     // validate the required field `EtalonFieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("EtalonFieldRect"));
     if (!jsonObj.get("SecurityTextResultOCR").isJsonPrimitive()) {
