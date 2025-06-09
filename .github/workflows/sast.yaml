@@ -17,7 +17,7 @@ env:
   # List of paths (space separated) to ignore
   # Supports PATTERNS
   # EXCLUDE_PATHS: 'foo bar/baz file.txt dir/*.yml'
-  EXCLUDE_PATHS: 'client/generator-templates src/main/generated'
+  EXCLUDE_PATHS: 'client/generator-templates client/src/main/generated'
   # List of rules (space separated) to ignore
   # EXCLUDE_RULES: 'generic.secrets.security.detected-aws-account-id.detected-aws-account-id'
   # See https://github.com/semgrep/semgrep-rules for rules registry
