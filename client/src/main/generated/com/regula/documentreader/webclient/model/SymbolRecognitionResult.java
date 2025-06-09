@@ -65,12 +65,6 @@ public class SymbolRecognitionResult {
   @javax.annotation.Nullable
   private Integer baseLineTop;
 
-  public static final String SERIALIZED_NAME_RESERVED = "Reserved";
-
-  @SerializedName(SERIALIZED_NAME_RESERVED)
-  @javax.annotation.Nullable
-  private Integer reserved;
-
   public SymbolRecognitionResult() {}
 
   public SymbolRecognitionResult symbolRect(
@@ -181,25 +175,6 @@ public class SymbolRecognitionResult {
     this.baseLineTop = baseLineTop;
   }
 
-  public SymbolRecognitionResult reserved(@javax.annotation.Nullable Integer reserved) {
-    this.reserved = reserved;
-    return this;
-  }
-
-  /**
-   * Get reserved
-   *
-   * @return reserved
-   */
-  @javax.annotation.Nullable
-  public Integer getReserved() {
-    return reserved;
-  }
-
-  public void setReserved(@javax.annotation.Nullable Integer reserved) {
-    this.reserved = reserved;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -213,14 +188,12 @@ public class SymbolRecognitionResult {
         && Objects.equals(this.candidatesCount, symbolRecognitionResult.candidatesCount)
         && Objects.equals(this.listOfCandidates, symbolRecognitionResult.listOfCandidates)
         && Objects.equals(this.baseLineBottom, symbolRecognitionResult.baseLineBottom)
-        && Objects.equals(this.baseLineTop, symbolRecognitionResult.baseLineTop)
-        && Objects.equals(this.reserved, symbolRecognitionResult.reserved);
+        && Objects.equals(this.baseLineTop, symbolRecognitionResult.baseLineTop);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-        symbolRect, candidatesCount, listOfCandidates, baseLineBottom, baseLineTop, reserved);
+    return Objects.hash(symbolRect, candidatesCount, listOfCandidates, baseLineBottom, baseLineTop);
   }
 
   @Override
@@ -232,7 +205,6 @@ public class SymbolRecognitionResult {
     sb.append("    listOfCandidates: ").append(toIndentedString(listOfCandidates)).append("\n");
     sb.append("    baseLineBottom: ").append(toIndentedString(baseLineBottom)).append("\n");
     sb.append("    baseLineTop: ").append(toIndentedString(baseLineTop)).append("\n");
-    sb.append("    reserved: ").append(toIndentedString(reserved)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -258,7 +230,6 @@ public class SymbolRecognitionResult {
     openapiFields.add("ListOfCandidates");
     openapiFields.add("BaseLineBottom");
     openapiFields.add("BaseLineTop");
-    openapiFields.add("Reserved");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

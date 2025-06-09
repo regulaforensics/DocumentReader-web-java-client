@@ -85,12 +85,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
   @javax.annotation.Nonnull
   private String etalonResultOCR;
 
-  public static final String SERIALIZED_NAME_RESULT_CODE = "ResultCode";
-
-  @SerializedName(SERIALIZED_NAME_RESULT_CODE)
-  @javax.annotation.Nullable
-  private Integer resultCode;
-
   public static final String SERIALIZED_NAME_RESERVED1 = "Reserved1";
 
   @SerializedName(SERIALIZED_NAME_RESERVED1)
@@ -280,25 +274,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
     this.etalonResultOCR = etalonResultOCR;
   }
 
-  public OCRSecurityTextResult resultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-    return this;
-  }
-
-  /**
-   * Get resultCode
-   *
-   * @return resultCode
-   */
-  @javax.annotation.Nullable
-  public Integer getResultCode() {
-    return resultCode;
-  }
-
-  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-  }
-
   public OCRSecurityTextResult reserved1(@javax.annotation.Nullable Integer reserved1) {
     this.reserved1 = reserved1;
     return this;
@@ -355,7 +330,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.etalonFieldRect, ocRSecurityTextResult.etalonFieldRect)
         && Objects.equals(this.securityTextResultOCR, ocRSecurityTextResult.securityTextResultOCR)
         && Objects.equals(this.etalonResultOCR, ocRSecurityTextResult.etalonResultOCR)
-        && Objects.equals(this.resultCode, ocRSecurityTextResult.resultCode)
         && Objects.equals(this.reserved1, ocRSecurityTextResult.reserved1)
         && Objects.equals(this.reserved2, ocRSecurityTextResult.reserved2)
         && super.equals(o);
@@ -373,7 +347,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         etalonFieldRect,
         securityTextResultOCR,
         etalonResultOCR,
-        resultCode,
         reserved1,
         reserved2,
         super.hashCode());
@@ -395,7 +368,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
         .append(toIndentedString(securityTextResultOCR))
         .append("\n");
     sb.append("    etalonResultOCR: ").append(toIndentedString(etalonResultOCR)).append("\n");
-    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
     sb.append("    reserved1: ").append(toIndentedString(reserved1)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
@@ -431,7 +403,6 @@ public class OCRSecurityTextResult extends AuthenticityCheckResultItem {
     openapiFields.add("EtalonFieldRect");
     openapiFields.add("SecurityTextResultOCR");
     openapiFields.add("EtalonResultOCR");
-    openapiFields.add("ResultCode");
     openapiFields.add("Reserved1");
     openapiFields.add("Reserved2");
 

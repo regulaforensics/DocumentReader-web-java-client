@@ -1440,7 +1440,9 @@ public class ProcessParams {
   }
 
   /**
-   * Get processAuth
+   * Authenticity checks that should be performed regardless of the document type. The available
+   * checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license
+   * checks can be added.
    *
    * @return processAuth
    */

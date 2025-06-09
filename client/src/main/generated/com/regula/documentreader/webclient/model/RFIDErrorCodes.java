@@ -357,13 +357,19 @@ public enum RFIDErrorCodes {
   RFID_ERROR_LAYER6_GENERAL_AUTH_FAILURE(2248147721l),
 
   /** RFID: Failed */
-  RFID_ERROR_FAILED(-1l),
+  RFID_ERROR_FAILED(4294967295l),
 
   /** RFID: No error */
   RFID_ERROR_NO_ERROR(1l),
 
   /** RFID: The requested operation is already performed */
-  RFID_ERROR_ALREADY_DONE(2l);
+  RFID_ERROR_ALREADY_DONE(2l),
+
+  /** RFID: Not enough data */
+  RFID_ERROR_NOT_ENOUGH_DATA(2147549191l),
+
+  /** RFID: Layer 6 - Wrong data length */
+  RFID_LAYER6_WRONG_LENGTH(2147510016l);
 
   private Long value;
 

@@ -48,7 +48,19 @@ public enum RfidCertificateType {
   DEF_LS(6),
 
   /** Black List signer */
-  BLS(7);
+  BLS(7),
+
+  /** LDS 2 */
+  LDS2(8),
+
+  /** Barcode signer (VDS) */
+  BCS(9),
+
+  /** Barcode signer (VDS for non-constrained environment) */
+  BCS_NC(10),
+
+  /** DTC signer */
+  DTCS(11);
 
   private Integer value;
 

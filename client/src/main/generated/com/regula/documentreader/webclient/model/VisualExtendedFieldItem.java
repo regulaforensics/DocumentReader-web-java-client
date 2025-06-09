@@ -29,12 +29,6 @@ import java.util.Objects;
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.13.0")
 public class VisualExtendedFieldItem {
-  public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
-
-  @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
-  @javax.annotation.Nonnull
-  private Integer fieldType;
-
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
   @SerializedName(SERIALIZED_NAME_W_FIELD_TYPE)
@@ -108,25 +102,6 @@ public class VisualExtendedFieldItem {
   private Integer reserved3;
 
   public VisualExtendedFieldItem() {}
-
-  public VisualExtendedFieldItem fieldType(@javax.annotation.Nonnull Integer fieldType) {
-    this.fieldType = fieldType;
-    return this;
-  }
-
-  /**
-   * Get fieldType
-   *
-   * @return fieldType
-   */
-  @javax.annotation.Nonnull
-  public Integer getFieldType() {
-    return fieldType;
-  }
-
-  public void setFieldType(@javax.annotation.Nonnull Integer fieldType) {
-    this.fieldType = fieldType;
-  }
 
   public VisualExtendedFieldItem wFieldType(@javax.annotation.Nonnull TextFieldType wFieldType) {
     this.wFieldType = wFieldType;
@@ -377,8 +352,7 @@ public class VisualExtendedFieldItem {
       return false;
     }
     VisualExtendedFieldItem visualExtendedFieldItem = (VisualExtendedFieldItem) o;
-    return Objects.equals(this.fieldType, visualExtendedFieldItem.fieldType)
-        && Objects.equals(this.wFieldType, visualExtendedFieldItem.wFieldType)
+    return Objects.equals(this.wFieldType, visualExtendedFieldItem.wFieldType)
         && Objects.equals(this.fieldName, visualExtendedFieldItem.fieldName)
         && Objects.equals(this.stringsCount, visualExtendedFieldItem.stringsCount)
         && Objects.equals(this.stringsResult, visualExtendedFieldItem.stringsResult)
@@ -395,7 +369,6 @@ public class VisualExtendedFieldItem {
   @Override
   public int hashCode() {
     return Objects.hash(
-        fieldType,
         wFieldType,
         fieldName,
         stringsCount,
@@ -414,7 +387,6 @@ public class VisualExtendedFieldItem {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class VisualExtendedFieldItem {\n");
-    sb.append("    fieldType: ").append(toIndentedString(fieldType)).append("\n");
     sb.append("    wFieldType: ").append(toIndentedString(wFieldType)).append("\n");
     sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
     sb.append("    stringsCount: ").append(toIndentedString(stringsCount)).append("\n");
@@ -447,7 +419,6 @@ public class VisualExtendedFieldItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("FieldType");
     openapiFields.add("wFieldType");
     openapiFields.add("FieldName");
     openapiFields.add("StringsCount");
@@ -463,7 +434,6 @@ public class VisualExtendedFieldItem {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FieldType");
     openapiRequiredFields.add("wFieldType");
     openapiRequiredFields.add("FieldName");
     openapiRequiredFields.add("StringsCount");

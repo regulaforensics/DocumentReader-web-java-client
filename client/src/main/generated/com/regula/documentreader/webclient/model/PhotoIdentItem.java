@@ -81,12 +81,6 @@ public class PhotoIdentItem {
   @javax.annotation.Nullable
   private Integer angle;
 
-  public static final String SERIALIZED_NAME_RESULT = "Result";
-
-  @SerializedName(SERIALIZED_NAME_RESULT)
-  @javax.annotation.Nullable
-  private Integer result;
-
   public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
 
   @SerializedName(SERIALIZED_NAME_RESERVED3)
@@ -255,25 +249,6 @@ public class PhotoIdentItem {
     this.angle = angle;
   }
 
-  public PhotoIdentItem result(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-    return this;
-  }
-
-  /**
-   * Get result
-   *
-   * @return result
-   */
-  @javax.annotation.Nullable
-  public Integer getResult() {
-    return result;
-  }
-
-  public void setResult(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-  }
-
   public PhotoIdentItem reserved3(@javax.annotation.Nullable Integer reserved3) {
     this.reserved3 = reserved3;
     return this;
@@ -310,7 +285,6 @@ public class PhotoIdentItem {
         && Objects.equals(this.fieldTypesList, photoIdentItem.fieldTypesList)
         && Objects.equals(this.step, photoIdentItem.step)
         && Objects.equals(this.angle, photoIdentItem.angle)
-        && Objects.equals(this.result, photoIdentItem.result)
         && Objects.equals(this.reserved3, photoIdentItem.reserved3);
   }
 
@@ -325,7 +299,6 @@ public class PhotoIdentItem {
         fieldTypesList,
         step,
         angle,
-        result,
         reserved3);
   }
 
@@ -341,7 +314,6 @@ public class PhotoIdentItem {
     sb.append("    fieldTypesList: ").append(toIndentedString(fieldTypesList)).append("\n");
     sb.append("    step: ").append(toIndentedString(step)).append("\n");
     sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -371,7 +343,6 @@ public class PhotoIdentItem {
     openapiFields.add("FieldTypesList");
     openapiFields.add("Step");
     openapiFields.add("Angle");
-    openapiFields.add("Result");
     openapiFields.add("Reserved3");
 
     // a set of required properties/fields (JSON key names)

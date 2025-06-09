@@ -85,12 +85,6 @@ public class OCRSecurityTextItem {
   @javax.annotation.Nonnull
   private String etalonResultOCR;
 
-  public static final String SERIALIZED_NAME_RESULT_CODE = "ResultCode";
-
-  @SerializedName(SERIALIZED_NAME_RESULT_CODE)
-  @javax.annotation.Nullable
-  private Integer resultCode;
-
   public static final String SERIALIZED_NAME_RESERVED1 = "Reserved1";
 
   @SerializedName(SERIALIZED_NAME_RESERVED1)
@@ -279,25 +273,6 @@ public class OCRSecurityTextItem {
     this.etalonResultOCR = etalonResultOCR;
   }
 
-  public OCRSecurityTextItem resultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-    return this;
-  }
-
-  /**
-   * Get resultCode
-   *
-   * @return resultCode
-   */
-  @javax.annotation.Nullable
-  public Integer getResultCode() {
-    return resultCode;
-  }
-
-  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-  }
-
   public OCRSecurityTextItem reserved1(@javax.annotation.Nullable Integer reserved1) {
     this.reserved1 = reserved1;
     return this;
@@ -354,7 +329,6 @@ public class OCRSecurityTextItem {
         && Objects.equals(this.etalonFieldRect, ocRSecurityTextItem.etalonFieldRect)
         && Objects.equals(this.securityTextResultOCR, ocRSecurityTextItem.securityTextResultOCR)
         && Objects.equals(this.etalonResultOCR, ocRSecurityTextItem.etalonResultOCR)
-        && Objects.equals(this.resultCode, ocRSecurityTextItem.resultCode)
         && Objects.equals(this.reserved1, ocRSecurityTextItem.reserved1)
         && Objects.equals(this.reserved2, ocRSecurityTextItem.reserved2);
   }
@@ -371,7 +345,6 @@ public class OCRSecurityTextItem {
         etalonFieldRect,
         securityTextResultOCR,
         etalonResultOCR,
-        resultCode,
         reserved1,
         reserved2);
   }
@@ -391,7 +364,6 @@ public class OCRSecurityTextItem {
         .append(toIndentedString(securityTextResultOCR))
         .append("\n");
     sb.append("    etalonResultOCR: ").append(toIndentedString(etalonResultOCR)).append("\n");
-    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
     sb.append("    reserved1: ").append(toIndentedString(reserved1)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
@@ -423,7 +395,6 @@ public class OCRSecurityTextItem {
     openapiFields.add("EtalonFieldRect");
     openapiFields.add("SecurityTextResultOCR");
     openapiFields.add("EtalonResultOCR");
-    openapiFields.add("ResultCode");
     openapiFields.add("Reserved1");
     openapiFields.add("Reserved2");
 
