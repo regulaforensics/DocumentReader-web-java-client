@@ -50,7 +50,7 @@ public enum ParsingNotificationCodes {
   /** ASN certificate: Forced default CSCA role */
   ntfLDS_ASN_Certificate_ForcedDefaultCSCARole(2415919118l),
 
-  /** ASN certificate: Forced Default DS role */
+  /** ASN certificate: Forced default DS role */
   ntfLDS_ASN_Certificate_ForcedDefaultDSRole(2415919119l),
 
   /** ASN certificate: Incorrect issuer subject DS */
@@ -143,10 +143,10 @@ public enum ParsingNotificationCodes {
   /** ICAO certificate extension Auth key: ID missed */
   ntfLDS_ICAO_Certificate_Ext_AuthKeyID_Missed(2415919643l),
 
-  /** ICAO certificate extension Auth key: Incorrect data */
+  /** ICAO certificate extension Auth key: ID incorrect data */
   ntfLDS_ICAO_Certificate_Ext_AuthKeyID_IncorrectData(2415919644l),
 
-  /** ICAO certificate extension Auth key: Key ID missed */
+  /** ICAO certificate extension Auth key: ID key ID missed */
   ntfLDS_ICAO_Certificate_Ext_AuthKeyID_KeyID_Missed(2415919645l),
 
   /** ICAO certificate extension: Subject key ID missed */
@@ -227,7 +227,7 @@ public enum ParsingNotificationCodes {
   /** ICAO certificate extension Doc type list: Doc types empty */
   ntfLDS_ICAO_Certificate_Ext_DocTypeList_DocTypes_Empty(2415919673l),
 
-  /** ICAO certificate extension: Dert policies incorrect data */
+  /** ICAO certificate extension: Cert policies incorrect data */
   ntfLDS_ICAO_Certificate_Ext_CertPolicies_IncorrectData(2415919674l),
 
   /** ICAO certificate extension: Cert policies empty */
@@ -278,7 +278,7 @@ public enum ParsingNotificationCodes {
   /** ICAO certificate extension: Name change critical */
   ntfLDS_ICAO_Certificate_Ext_NameChange_Critical(2415919690l),
 
-  /** ICAO certificate extension Doc type list: non-compliant */
+  /** ICAO certificate extension Doc type list: Non-compliant */
   ntfLDS_ICAO_Certificate_Ext_DocTypeList_NonCompliant(2415919691l),
 
   /** ICAO certificate extension Doc type list: Critical */
@@ -292,6 +292,21 @@ public enum ParsingNotificationCodes {
 
   /** ICAO certificate: Subject common name non-compliant */
   ntfLDS_ICAO_Certificate_Subject_CommonNameNonCompliant(2415919695l),
+
+  /** ICAO certificate: Chain country non-matching */
+  ntfLDS_ICAO_Certificate_Chain_Country_NonMatching(2415919696l),
+
+  /** ICAO certificate: Visual MRZ country non-matching */
+  ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching(2415919697l),
+
+  /** ICAO certificate: MRZ country non-matching */
+  ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching(2415919698l),
+
+  /** ICAO certificate: Issuer country non-uppercase */
+  ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase(2415919699l),
+
+  /** ICAO certificate: Subject country non-uppercase */
+  ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase(2415919700l),
 
   /** ICAO COM: LDS version incorrect */
   ntfLDS_ICAO_COM_LDS_Version_Incorrect(2415919136l),
@@ -374,7 +389,7 @@ public enum ParsingNotificationCodes {
   /** ICAO master list: Version incorrect */
   ntfLDS_ICAO_MasterList_Version_Incorrect(2415919552l),
 
-  /** ICAO Deviation list: Version incorrect */
+  /** ICAO deviation list: Version incorrect */
   ntfLDS_ICAO_DeviationList_Version_Incorrect(2415919560l),
 
   /** BSI: Defect list version incorrect */
@@ -488,6 +503,9 @@ public enum ParsingNotificationCodes {
   /** MRZ: Incorrect */
   ntfLDS_MRZ_Incorrect(139288l),
 
+  /** MRZ: Country code visual MRZ non-matching */
+  ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching(139289l),
+
   /** Biometrics: Format owner missing */
   ntfLDS_Biometrics_FormatOwner_Missing(2415984640l),
 
@@ -521,67 +539,364 @@ public enum ParsingNotificationCodes {
   /** Biometrics: BDB data length incorrect */
   ntfLDS_Biometrics_BDB_DataLength_Incorrect(2416640000l),
 
-  /** Biometrics: BDB Data Gender */
+  /** Biometrics: BDB data incorrect */
+  ntfLDS_Biometrics_BDB_Data_Incorrect(2416705536l),
+
+  /** Biometrics: BDB data gender */
   ntfLDS_Biometrics_BDB_Data_Gender(2416967680l),
 
-  /** Biometrics: BDB Data Eye Color */
+  /** Biometrics: BDB data eye color */
   ntfLDS_Biometrics_BDB_Data_EyeColor(2417033216l),
 
-  /** Biometrics: BDB Data Hair Color */
+  /** Biometrics: BDB data hair color */
   ntfLDS_Biometrics_BDB_Data_HairColor(2417098752l),
 
-  /** Biometrics: BDB Data Pose Angle Yaw */
+  /** Biometrics: BDB data pose angle yaw */
   ntfLDS_Biometrics_BDB_Data_PoseAngle_Yaw(2417164288l),
 
-  /** Biometrics: BDB Data Pose Angle Pitch */
+  /** Biometrics: BDB data pose angle pitch */
   ntfLDS_Biometrics_BDB_Data_PoseAngle_Pitch(2417229824l),
 
-  /** Biometrics: BDB Data Pose Angle Roll */
+  /** Biometrics: BDB data pose angle roll */
   ntfLDS_Biometrics_BDB_Data_PoseAngle_Roll(2417295360l),
 
-  /** Biometrics: BDB Data Pose Angle U Yaw */
+  /** Biometrics: BDB data pose angle U yaw */
   ntfLDS_Biometrics_BDB_Data_PoseAngleU_Yaw(2417360896l),
 
-  /** Biometrics: BDB Data Pose Angle U Pitch */
+  /** Biometrics: BDB data pose angle U pitch */
   ntfLDS_Biometrics_BDB_Data_PoseAngleU_Pitch(2417426432l),
 
-  /** Biometrics: BDB Data Pose Angle U Roll */
+  /** Biometrics: BDB data pose angle U roll */
   ntfLDS_Biometrics_BDB_Data_PoseAngleU_Roll(2417491968l),
 
-  /** Biometrics: BDB Data Face Image Type */
+  /** Biometrics: BDB data face image type */
   ntfLDS_Biometrics_BDB_Data_FaceImageType(2417557504l),
 
-  /** Biometrics: BDB Data Image Data Type */
+  /** Biometrics: BDB data image data type */
   ntfLDS_Biometrics_BDB_Data_ImageDataType(2417623040l),
 
-  /** SI: PACE Info Unsupported Std Parameters */
+  /** Biometrics: RB data incorrect */
+  ntfLDS_Biometrics_RB_Data_Incorrect(2449539072l),
+
+  /** Biometrics: RB item incorrect */
+  ntfLDS_Biometrics_RB_Item_Incorrect(2449604608l),
+
+  /** Biometrics: RB item missing */
+  ntfLDS_Biometrics_RB_Item_Missing(2449670144l),
+
+  /** Biometrics: RB item unexpected */
+  ntfLDS_Biometrics_RB_Item_Unexpected(2449735680l),
+
+  /** Biometrics: RB RID incorrect */
+  ntfLDS_Biometrics_RB_RID_Incorrect(2449801232l),
+
+  /** Biometrics: RB image R incorrect */
+  ntfLDS_Biometrics_RB_ImageR_Incorrect(2449801248l),
+
+  /** Biometrics: RB image item incorrect */
+  ntfLDS_Biometrics_RB_Image_Item_Incorrect(2449801264l),
+
+  /** Biometrics: RB image item missing */
+  ntfLDS_Biometrics_RB_Image_Item_Missing(2449801265l),
+
+  /** Biometrics: RB image item unexpected */
+  ntfLDS_Biometrics_RB_Image_Item_Unexpected(2449801266l),
+
+  /** Biometrics: RB image info item incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_Item_Incorrect(2449801280l),
+
+  /** Biometrics: RB image info item missing */
+  ntfLDS_Biometrics_RB_Image_Info_Item_Missing(2449801281l),
+
+  /** Biometrics: RB image info item unexpected */
+  ntfLDS_Biometrics_RB_Image_Info_Item_Unexpected(2449801282l),
+
+  /** Biometrics: RB image info format incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_Format_Incorrect(2449801283l),
+
+  /** Biometrics: RB image info format unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_Format_Unsupported(2449801284l),
+
+  /** Biometrics: RB image info kind incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_Kind_Incorrect(2449801285l),
+
+  /** Biometrics: RB image info kind unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_Kind_Unsupported(2449801286l),
+
+  /** Biometrics: RB image info post APB incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_PostAPB_Incorrect(2449801287l),
+
+  /** Biometrics: RB image info lossy TA incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_LossyTA_Incorrect(2449801288l),
+
+  /** Biometrics: RB image info lossy TA unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_LossyTA_Unsupported(2449801289l),
+
+  /** Biometrics: RB image info cam 2 subj unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_Cam2Subj_Unsupported(2449801290l),
+
+  /** Biometrics: RB image info sens diag unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_SensDiag_Unsupported(2449801291l),
+
+  /** Biometrics: RB image info lens F unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_LensF_Unsupported(2449801292l),
+
+  /** Biometrics: RB image info im size incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_ImSize_Incorrect(2449801293l),
+
+  /** Biometrics: RB image info im size unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_ImSize_Unsupported(2449801294l),
+
+  /** Biometrics: RB image info im meas incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_ImMeas_Incorrect(2449801295l),
+
+  /** Biometrics: RB image info color incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_Color_Incorrect(2449801296l),
+
+  /** Biometrics: RB image info color unsupported */
+  ntfLDS_Biometrics_RB_Image_Info_Color_Unsupported(2449801297l),
+
+  /** Biometrics: RB image info color map incorrect */
+  ntfLDS_Biometrics_RB_Image_Info_ColorMap_Incorrect(2449801298l),
+
+  /** Biometrics: RB image capt item incorrect */
+  ntfLDS_Biometrics_RB_Image_Capt_Item_Incorrect(2449801312l),
+
+  /** Biometrics: RB image capt item unexpected */
+  ntfLDS_Biometrics_RB_Image_Capt_Item_Unexpected(2449801313l),
+
+  /** Biometrics: RB image capt spectral unsupported */
+  ntfLDS_Biometrics_RB_Image_Capt_Spectral_Unsupported(2449801314l),
+
+  /** Biometrics: RB image capt tech code incorrect */
+  ntfLDS_Biometrics_RB_Image_Capt_TechCode_Incorrect(2449801315l),
+
+  /** Biometrics: RB image capt tech code unsupported */
+  ntfLDS_Biometrics_RB_Image_Capt_TechCode_Unsupported(2449801316l),
+
+  /** Biometrics: RB date item incorrect */
+  ntfLDS_Biometrics_RB_Date_Item_Incorrect(2449801328l),
+
+  /** Biometrics: RB date item missing */
+  ntfLDS_Biometrics_RB_Date_Item_Missing(2449801329l),
+
+  /** Biometrics: RB date item unexpected */
+  ntfLDS_Biometrics_RB_Date_Item_Unexpected(2449801330l),
+
+  /** Biometrics: RB date incorrect */
+  ntfLDS_Biometrics_RB_Date_Incorrect(2449801331l),
+
+  /** Biometrics: RB quality item incorrect */
+  ntfLDS_Biometrics_RB_Quality_Item_Incorrect(2449801344l),
+
+  /** Biometrics: RB quality item missing */
+  ntfLDS_Biometrics_RB_Quality_Item_Missing(2449801345l),
+
+  /** Biometrics: RB quality item unexpected */
+  ntfLDS_Biometrics_RB_Quality_Item_Unexpected(2449801346l),
+
+  /** Biometrics: RB quality alg ID item incorrect */
+  ntfLDS_Biometrics_RB_Quality_AlgID_Item_Incorrect(2449801347l),
+
+  /** Biometrics: RB quality SoE item incorrect */
+  ntfLDS_Biometrics_RB_Quality_SoE_Item_Incorrect(2449801348l),
+
+  /** Biometrics: RB quality score item incorrect */
+  ntfLDS_Biometrics_RB_Quality_Score_Item_Incorrect(2449801349l),
+
+  /** Biometrics: RB quality error item incorrect */
+  ntfLDS_Biometrics_RB_Quality_Error_Item_Incorrect(2449801350l),
+
+  /** Biometrics: RB quality error item unsupported */
+  ntfLDS_Biometrics_RB_Quality_Error_Item_Unsupported(2449801351l),
+
+  /** Biometrics: RB PAD item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Item_Incorrect(2449801360l),
+
+  /** Biometrics: RB PAD item unexpected */
+  ntfLDS_Biometrics_RB_PAD_Item_Unexpected(2449801361l),
+
+  /** Biometrics: RB PAD decision item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Decision_Item_Incorrect(2449801362l),
+
+  /** Biometrics: RB PAD decision item unsupported */
+  ntfLDS_Biometrics_RB_PAD_Decision_Item_Unsupported(2449801363l),
+
+  /** Biometrics: RB PAD score item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Score_Item_Incorrect(2449801364l),
+
+  /** Biometrics: RB PAD score reg ID item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Score_RegID_Item_Incorrect(2449801365l),
+
+  /** Biometrics: RB PAD SoE item incorrect */
+  ntfLDS_Biometrics_RB_PAD_SoE_Item_Incorrect(2449801366l),
+
+  /** Biometrics: RB PAD SoE score item incorrect */
+  ntfLDS_Biometrics_RB_PAD_SoE_Score_Item_Incorrect(2449801367l),
+
+  /** Biometrics: RB PAD SoE error item incorrect */
+  ntfLDS_Biometrics_RB_PAD_SoE_Error_Item_Incorrect(2449801368l),
+
+  /** Biometrics: RB PAD SoE error item unsupported */
+  ntfLDS_Biometrics_RB_PAD_SoE_Error_Item_Unsupported(2449801369l),
+
+  /** Biometrics: RB PAD external data item incorrect */
+  ntfLDS_Biometrics_RB_PAD_ExtData_Item_Incorrect(2449801370l),
+
+  /** Biometrics: RB PAD external data type item incorrect */
+  ntfLDS_Biometrics_RB_PAD_ExtData_Type_Item_Incorrect(2449801371l),
+
+  /** Biometrics: RB PAD context item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Context_Item_Incorrect(2449801372l),
+
+  /** Biometrics: RB PAD context item unsupported */
+  ntfLDS_Biometrics_RB_PAD_Context_Item_Unsupported(2449801373l),
+
+  /** Biometrics: RB PAD S level item incorrect */
+  ntfLDS_Biometrics_RB_PAD_SLevel_Item_Incorrect(2449801374l),
+
+  /** Biometrics: RB PAD S level item unsupported */
+  ntfLDS_Biometrics_RB_PAD_SLevel_Item_Unsupported(2449801375l),
+
+  /** Biometrics: RB PAD risk level item incorrect */
+  ntfLDS_Biometrics_RB_PAD_RiskLevel_Item_Incorrect(2449801376l),
+
+  /** Biometrics: RB PAD criteria item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Criteria_Item_Incorrect(2449801377l),
+
+  /** Biometrics: RB PAD criteria item unsupported */
+  ntfLDS_Biometrics_RB_PAD_Criteria_Item_Unsupported(2449801378l),
+
+  /** Biometrics: RB PAD date item incorrect */
+  ntfLDS_Biometrics_RB_PAD_Date_Item_Incorrect(2449801379l),
+
+  /** Biometrics: RB PAD date item missing */
+  ntfLDS_Biometrics_RB_PAD_Date_Item_Missing(2449801380l),
+
+  /** Biometrics: RB PAD date item unexpected */
+  ntfLDS_Biometrics_RB_PAD_Date_Item_Unexpected(2449801381l),
+
+  /** Biometrics: RB PAD date incorrect */
+  ntfLDS_Biometrics_RB_PAD_Date_Incorrect(2449801382l),
+
+  /** Biometrics: RB session ID incorrect */
+  ntfLDS_Biometrics_RB_SessionID_Incorrect(2449801392l),
+
+  /** Biometrics: RB derived incorrect */
+  ntfLDS_Biometrics_RB_Derived_Incorrect(2449801408l),
+
+  /** Biometrics: RB device incorrect */
+  ntfLDS_Biometrics_RB_Device_Incorrect(2449801424l),
+
+  /** Biometrics: RB device item unexpected */
+  ntfLDS_Biometrics_RB_Device_Item_Unexpected(2449801425l),
+
+  /** Biometrics: RB device model ID item incorrect */
+  ntfLDS_Biometrics_RB_Device_ModelID_Item_Incorrect(2449801426l),
+
+  /** Biometrics: RB device cert ID item incorrect */
+  ntfLDS_Biometrics_RB_Device_CertID_Item_Incorrect(2449801427l),
+
+  /** Biometrics: RB metadata item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Item_Incorrect(2449801440l),
+
+  /** Biometrics: RB metadata item unexpected */
+  ntfLDS_Biometrics_RB_Metadata_Item_Unexpected(2449801441l),
+
+  /** Biometrics: RB metadata gender item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Gender_Item_Incorrect(2449801442l),
+
+  /** Biometrics: RB metadata gender item unsupported */
+  ntfLDS_Biometrics_RB_Metadata_Gender_Item_Unsupported(2449801443l),
+
+  /** Biometrics: RB metadata eye item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Eye_Item_Incorrect(2449801444l),
+
+  /** Biometrics: RB metadata eye item unsupported */
+  ntfLDS_Biometrics_RB_Metadata_Eye_Item_Unsupported(2449801445l),
+
+  /** Biometrics: RB metadata hair item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Hair_Item_Incorrect(2449801446l),
+
+  /** Biometrics: RB metadata hair item unsupported */
+  ntfLDS_Biometrics_RB_Metadata_Hair_Item_Unsupported(2449801447l),
+
+  /** Biometrics: RB metadata height item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Height_Item_Incorrect(2449801448l),
+
+  /** Biometrics: RB metadata props item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Props_Item_Incorrect(2449801449l),
+
+  /** Biometrics: RB metadata props item unexpected */
+  ntfLDS_Biometrics_RB_Metadata_Props_Item_Unexpected(2449801450l),
+
+  /** Biometrics: RB metadata express item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Express_Item_Incorrect(2449801451l),
+
+  /** Biometrics: RB metadata express item unexpected */
+  ntfLDS_Biometrics_RB_Metadata_Express_Item_Unexpected(2449801452l),
+
+  /** Biometrics: RB metadata pose item incorrect */
+  ntfLDS_Biometrics_RB_Metadata_Pose_Item_Incorrect(2449801453l),
+
+  /** Biometrics: RB metadata pose item unexpected */
+  ntfLDS_Biometrics_RB_Metadata_Pose_Item_Unexpected(2449801454l),
+
+  /** Biometrics: RB landmark item incorrect */
+  ntfLDS_Biometrics_RB_LandMark_Item_Incorrect(2449801456l),
+
+  /** Biometrics: RB landmark item missing */
+  ntfLDS_Biometrics_RB_LandMark_Item_Missing(2449801457l),
+
+  /** Biometrics: RB landmark item unexpected */
+  ntfLDS_Biometrics_RB_LandMark_Item_Unexpected(2449801458l),
+
+  /** Biometrics: RB landmark kind item incorrect */
+  ntfLDS_Biometrics_RB_LandMark_Kind_Item_Incorrect(2449801459l),
+
+  /** Biometrics: RB landmark mpeg4 item incorrect */
+  ntfLDS_Biometrics_RB_LandMark_Mpeg4_Item_Incorrect(2449801460l),
+
+  /** Biometrics: RB landmark mpeg4 item unsupported */
+  ntfLDS_Biometrics_RB_LandMark_Mpeg4_Item_Unsupported(2449801461l),
+
+  /** Biometrics: RB landmark antr L item incorrect */
+  ntfLDS_Biometrics_RB_LandMark_AntrL_Item_Incorrect(2449801462l),
+
+  /** Biometrics: RB landmark coordinate item incorrect */
+  ntfLDS_Biometrics_RB_LandMark_Coord_Item_Incorrect(2449801463l),
+
+  /** DTC content info: Version incorrect */
+  ntfLDS_DTC_ContentInfo_Version_Incorrect(2415919872l),
+
+  /** SI: PACE info unsupported std parameters */
   ntfLDS_SI_PACE_Info_UnsupportedStdParameters(2432696320l),
 
-  /** SI: PACE Info Deprecated Version */
+  /** SI: PACE info deprecated version */
   ntfLDS_SI_PACE_Info_DeprecatedVersion(2432696321l),
 
-  /** SI: PACE Domain Params Using Std Ref */
+  /** SI: PACE domain params using std ref */
   ntfLDS_SI_PACE_DomainParams_UsingStdRef(2432696322l),
 
-  /** SI: PACE Domain Params Unsupported Algorithm */
+  /** SI: PACE domain params unsupported algorithm */
   ntfLDS_SI_PACE_DomainParams_UnsupportedAlgorithm(2432696323l),
 
-  /** SI: CA Info Incorrect Version */
+  /** SI: CA info incorrect version */
   ntfLDS_SI_CA_Info_IncorrectVersion(2432696324l),
 
-  /** SI: CA PublicKey Unsupported Algorithm */
+  /** SI: CA public key unsupported algorithm */
   ntfLDS_SI_CA_PublicKey_UnsupportedAlgorithm(2432696325l),
 
-  /** SI: CA Domain Params Unsupported Algorithm */
+  /** SI: CA domain params unsupported algorithm */
   ntfLDS_SI_CA_DomainParams_UnsupportedAlgorithm(2432696326l),
 
-  /** SI: TA Info Incorrect Version */
+  /** SI: TA info incorrect version */
   ntfLDS_SI_TA_Info_IncorrectVersion(2432696327l),
 
-  /** SI: TA Info File ID For Version 2 */
+  /** SI: TA info file ID for version 2 */
   ntfLDS_SI_TA_Info_FileIDForVersion2(2432696328l),
 
-  /** SI: eID Security Unsupported Digest Algorithm */
+  /** SI: eID security unsupported digest algorithm */
   ntfLDS_SI_eIDSecurity_UnsupportedDigestAlgorithm(2432696329l),
 
   /** SI: RI info incorrect version */
@@ -599,67 +914,67 @@ public enum ParsingNotificationCodes {
   /** SI: AA info inconsistent algorithm reference */
   ntfLDS_SI_AA_Info_InconsistentAlgorithmReference(2432696334l),
 
-  /** SI: PACE Info Not Available */
+  /** SI: storage PACE info not available */
   ntfLDS_SI_Storage_PACE_Info_NotAvailable(2432696576l),
 
-  /** SI: PACE Info No Std Parameters */
+  /** SI: storage PACE info no std parameters */
   ntfLDS_SI_Storage_PACE_Info_NoStdParameters(2432696577l),
 
-  /** SI: PACE Info No Matching Domain Params */
+  /** SI: storage PACE info no matching domain params */
   ntfLDS_SI_Storage_PACE_Info_NoMatchingDomainParams(2432696578l),
 
-  /** SI: CA Info Not Available */
+  /** SI: storage CA info not available */
   ntfLDS_SI_Storage_CA_Info_NotAvailable(2432696579l),
 
-  /** SI: CA Domain Params No Required Option */
+  /** SI: storage CA domain params no required option */
   ntfLDS_SI_Storage_CA_DomainParams_NoRequiredOption(2432696580l),
 
-  /** SI: CA Domain Params Not Available */
+  /** SI: storage CA domain params not available */
   ntfLDS_SI_Storage_CA_DomainParams_NotAvailable(2432696581l),
 
-  /** SI: CA Anonymous Infos */
+  /** SI: storage CA anonymous infos */
   ntfLDS_SI_Storage_CA_AnonymousInfos(2432696582l),
 
-  /** SI: CA Info No Matching Domain Params */
+  /** SI: storage CA info no matching domain params */
   ntfLDS_SI_Storage_CA_Info_NoMatchingDomainParams(2432696583l),
 
-  /** SI: CA Info No Matching Public Key */
+  /** SI: storage CA info no matching public key */
   ntfLDS_SI_Storage_CA_Info_NoMatchingPublicKey(2432696584l),
 
-  /** SI: CA Incorrect Infos Quantity */
+  /** SI: storage CA incorrect infos quantity */
   ntfLDS_SI_Storage_CA_IncorrectInfosQuantity(2432696585l),
 
-  /** SI: TA Info Not Available */
+  /** SI: storage TA info not available */
   ntfLDS_SI_Storage_TA_Info_NotAvailable(2432696586l),
 
-  /** SI: Card Info Locator Multiple Entries */
+  /** SI: storage card info locator multiple entries */
   ntfLDS_SI_Storage_CardInfoLocator_MultipleEntries(2432696587l),
 
-  /** SI: eID Security Info Multiple Entries */
+  /** SI: storage eID security info multiple entries */
   ntfLDS_SI_Storage_eIDSecurityInfo_MultipleEntries(2432696588l),
 
-  /** SI: Privileged TI Multiple Entries */
+  /** SI: storage privileged TI multiple entries */
   ntfLDS_SI_Storage_PrivilegedTI_MultipleEntries(2432696589l),
 
-  /** SI: Privileged TI Incorrect Usage */
+  /** SI: storage privileged TI incorrect usage */
   ntfLDS_SI_Storage_PrivilegedTI_IncorrectUsage(2432696590l),
 
-  /** SI: RI domain params multiple entries */
+  /** SI: storage RI domain params multiple entries */
   ntfLDS_SI_Storage_RI_DomainParams_MultipleEntries(2432696591l),
 
-  /** SI: Storage PACE Info Non Consistant */
+  /** SI: storage PACE infos non consistent */
   ntfLDS_SI_Storage_PACEInfos_NonConsistant(2432696592l),
 
-  /** CV Certificate: Profile incorrect version */
+  /** CV certificate: Profile incorrect version */
   ntfLDS_CVCertificate_Profile_IncorrectVersion(2432696833l),
 
-  /** CV Certificate: Validity */
+  /** CV certificate: Validity */
   ntfLDS_CVCertificate_Validity(2432696834l),
 
-  /** CV Certificate: Non CVCA domain parameters */
+  /** CV certificate: non CVCA domain parameters */
   ntfLDS_CVCertificate_NonCVCADomainParameters(2432696835l),
 
-  /** CV Certificate: Private key incorrect version */
+  /** CV certificate: private key incorrect version */
   ntfLDS_CV_Certificate_PrivateKey_IncorrectVersion(2432696836l),
 
   /** TA: PACE static binding used */
@@ -671,32 +986,14 @@ public enum ParsingNotificationCodes {
   /** Auth ML signer info: Certificate root is not trusted */
   ntfLDS_Auth_MLSignerInfo_Certificate_RootIsNotTrusted(2449473814l),
 
-  /** Auth ML signer info: Certificate cannot find CSCA */
+  /** Auth ML signer info: Certificate can&#39;t find CSCA */
   ntfLDS_Auth_MLSignerInfo_Certificate_CantFindCSCA(2449473815l),
 
   /** Auth ML signer info: Certificate revoked */
   ntfLDS_Auth_MLSignerInfo_Certificate_Revoked(2449473816l),
 
   /** Auth ML signer info: Certificate signature invalid */
-  ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid(2449473817l),
-
-  /** Country Codes from certificate chain don&#39;t match */
-  ntfLDS_ICAO_Certificate_Chain_Country_NonMatching(2415919696l),
-
-  /** Country Codes from certificate and visual MRZ don&#39;t match */
-  ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching(2415919697l),
-
-  /** Incorrect MRZ, country code doesn&#39;t match codes from Visual MRZ */
-  ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching(139289l),
-
-  /** Country Codes from certificate and DG1 MRZ don&#39;t match */
-  ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching(2415919698l),
-
-  /** ICAO certificate: Issuer country non upper case */
-  ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase(2415919699l),
-
-  /** ICAO certificate: Subject country non upper case */
-  ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase(2415919700l);
+  ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid(2449473817l);
 
   private Long value;
 
