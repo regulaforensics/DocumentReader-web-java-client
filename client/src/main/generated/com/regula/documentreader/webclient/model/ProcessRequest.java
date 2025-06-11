@@ -108,12 +108,6 @@ public class ProcessRequest {
   @javax.annotation.Nullable
   private List<String> imageUrls;
 
-  public static final String SERIALIZED_NAME_LCID_FILTER = "lcidFilter";
-
-  @SerializedName(SERIALIZED_NAME_LCID_FILTER)
-  @javax.annotation.Nullable
-  private List<LCID> lcidFilter;
-
   public ProcessRequest() {}
 
   public ProcessRequest processParam(@javax.annotation.Nonnull ProcessParams processParam) {
@@ -370,34 +364,6 @@ public class ProcessRequest {
     this.imageUrls = imageUrls;
   }
 
-  public ProcessRequest lcidFilter(@javax.annotation.Nullable List<LCID> lcidFilter) {
-    this.lcidFilter = lcidFilter;
-    return this;
-  }
-
-  public ProcessRequest addLcidFilterItem(LCID lcidFilterItem) {
-    if (this.lcidFilter == null) {
-      this.lcidFilter = new ArrayList<>();
-    }
-    this.lcidFilter.add(lcidFilterItem);
-    return this;
-  }
-
-  /**
-   * The list of LCID types to recognize. If empty, values with all LCID types will be extracted.
-   * Empty by default.
-   *
-   * @return lcidFilter
-   */
-  @javax.annotation.Nullable
-  public List<LCID> getLcidFilter() {
-    return lcidFilter;
-  }
-
-  public void setLcidFilter(@javax.annotation.Nullable List<LCID> lcidFilter) {
-    this.lcidFilter = lcidFilter;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -418,8 +384,7 @@ public class ProcessRequest {
         && Objects.equals(this.systemInfo, processRequest.systemInfo)
         && Objects.equals(this.passBackObject, processRequest.passBackObject)
         && Objects.equals(this.dtc, processRequest.dtc)
-        && Objects.equals(this.imageUrls, processRequest.imageUrls)
-        && Objects.equals(this.lcidFilter, processRequest.lcidFilter);
+        && Objects.equals(this.imageUrls, processRequest.imageUrls);
   }
 
   @Override
@@ -436,8 +401,7 @@ public class ProcessRequest {
         systemInfo,
         passBackObject,
         dtc,
-        imageUrls,
-        lcidFilter);
+        imageUrls);
   }
 
   @Override
@@ -456,7 +420,6 @@ public class ProcessRequest {
     sb.append("    passBackObject: ").append(toIndentedString(passBackObject)).append("\n");
     sb.append("    dtc: ").append(toIndentedString(dtc)).append("\n");
     sb.append("    imageUrls: ").append(toIndentedString(imageUrls)).append("\n");
-    sb.append("    lcidFilter: ").append(toIndentedString(lcidFilter)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -489,7 +452,6 @@ public class ProcessRequest {
     openapiFields.add("passBackObject");
     openapiFields.add("dtc");
     openapiFields.add("ImageUrls");
-    openapiFields.add("lcidFilter");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -601,15 +563,6 @@ public class ProcessRequest {
           String.format(
               "Expected the field `ImageUrls` to be an array in the JSON string but got `%s`",
               jsonObj.get("ImageUrls").toString()));
-    }
-    // ensure the optional json data is an array if present
-    if (jsonObj.get("lcidFilter") != null
-        && !jsonObj.get("lcidFilter").isJsonNull()
-        && !jsonObj.get("lcidFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `lcidFilter` to be an array in the JSON string but got `%s`",
-              jsonObj.get("lcidFilter").toString()));
     }
   }
 

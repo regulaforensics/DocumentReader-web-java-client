@@ -322,7 +322,7 @@ public class ProcessParams {
 
   @SerializedName(SERIALIZED_NAME_PROCESS_AUTH)
   @javax.annotation.Nullable
-  private AuthenticityResultType processAuth;
+  private Long processAuth;
 
   public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
 
@@ -1434,22 +1434,24 @@ public class ProcessParams {
     this.documentGroupFilter = documentGroupFilter;
   }
 
-  public ProcessParams processAuth(@javax.annotation.Nullable AuthenticityResultType processAuth) {
+  public ProcessParams processAuth(@javax.annotation.Nullable Long processAuth) {
     this.processAuth = processAuth;
     return this;
   }
 
   /**
-   * Get processAuth
+   * Authenticity checks that should be performed regardless of the document type. The available
+   * checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license
+   * checks can be added.
    *
    * @return processAuth
    */
   @javax.annotation.Nullable
-  public AuthenticityResultType getProcessAuth() {
+  public Long getProcessAuth() {
     return processAuth;
   }
 
-  public void setProcessAuth(@javax.annotation.Nullable AuthenticityResultType processAuth) {
+  public void setProcessAuth(@javax.annotation.Nullable Long processAuth) {
     this.processAuth = processAuth;
   }
 
@@ -2255,10 +2257,6 @@ public class ProcessParams {
           String.format(
               "Expected the field `documentGroupFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("documentGroupFilter").toString()));
-    }
-    // validate the optional field `processAuth`
-    if (jsonObj.get("processAuth") != null && !jsonObj.get("processAuth").isJsonNull()) {
-      AuthenticityResultType.validateJsonElement(jsonObj.get("processAuth"));
     }
     if ((jsonObj.get("deviceTypeHex") != null && !jsonObj.get("deviceTypeHex").isJsonNull())
         && !jsonObj.get("deviceTypeHex").isJsonPrimitive()) {

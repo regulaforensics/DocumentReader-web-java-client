@@ -61,12 +61,6 @@ public class SecurityFeatureItem {
   @javax.annotation.Nullable
   private AreaContainer areaList;
 
-  public static final String SERIALIZED_NAME_RESULT = "Result";
-
-  @SerializedName(SERIALIZED_NAME_RESULT)
-  @javax.annotation.Nullable
-  private Integer result;
-
   public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
 
   @SerializedName(SERIALIZED_NAME_RESERVED2)
@@ -172,25 +166,6 @@ public class SecurityFeatureItem {
     this.areaList = areaList;
   }
 
-  public SecurityFeatureItem result(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-    return this;
-  }
-
-  /**
-   * Get result
-   *
-   * @return result
-   */
-  @javax.annotation.Nullable
-  public Integer getResult() {
-    return result;
-  }
-
-  public void setResult(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-  }
-
   public SecurityFeatureItem reserved2(@javax.annotation.Nullable Integer reserved2) {
     this.reserved2 = reserved2;
     return this;
@@ -224,14 +199,12 @@ public class SecurityFeatureItem {
         && Objects.equals(this.visibility, securityFeatureItem.visibility)
         && Objects.equals(this.criticalFlag, securityFeatureItem.criticalFlag)
         && Objects.equals(this.areaList, securityFeatureItem.areaList)
-        && Objects.equals(this.result, securityFeatureItem.result)
         && Objects.equals(this.reserved2, securityFeatureItem.reserved2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(
-        elementType, elementRect, visibility, criticalFlag, areaList, result, reserved2);
+    return Objects.hash(elementType, elementRect, visibility, criticalFlag, areaList, reserved2);
   }
 
   @Override
@@ -243,7 +216,6 @@ public class SecurityFeatureItem {
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    criticalFlag: ").append(toIndentedString(criticalFlag)).append("\n");
     sb.append("    areaList: ").append(toIndentedString(areaList)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -270,7 +242,6 @@ public class SecurityFeatureItem {
     openapiFields.add("Visibility");
     openapiFields.add("CriticalFlag");
     openapiFields.add("AreaList");
-    openapiFields.add("Result");
     openapiFields.add("Reserved2");
 
     // a set of required properties/fields (JSON key names)
