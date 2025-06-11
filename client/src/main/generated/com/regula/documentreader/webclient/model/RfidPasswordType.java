@@ -45,7 +45,10 @@ public enum RfidPasswordType {
   PIN_E_SIGN(5),
 
   /** Scanning Area Identifier (for eDL application) */
-  SAI(6);
+  SAI(6),
+
+  /** MRZ hash */
+  MRZ_HASH(7);
 
   private Integer value;
 

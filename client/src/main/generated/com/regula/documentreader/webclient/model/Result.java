@@ -109,10 +109,10 @@ public enum Result {
   /** Contains license */
   LICENSE(50),
 
-  /** Contains result of DocumentPosition */
+  /** Contains result of MRZ position */
   MRZ_POSITION(61),
 
-  /** Contains result of DocumentPosition */
+  /** Contains result of barcode position */
   BARCODE_POSITION(62),
 
   /** Contains information about document position on the input image, its center, angle, etc */

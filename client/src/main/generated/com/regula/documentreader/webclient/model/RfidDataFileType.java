@@ -175,6 +175,8 @@ public enum RfidDataFileType {
 
   ATR(400),
 
+  DIR(401),
+
   _E_SIGN_PK(500),
 
   _E_SIGN_SIGNED_DATA(501),
@@ -185,7 +187,9 @@ public enum RfidDataFileType {
 
   DEFECT_LIST(602),
 
-  BLACK_LIST(603),
+  DEVIATION_LIST(603),
+
+  BLACK_LIST(604),
 
   APP_DIRECTORY(700),
 
@@ -194,6 +198,8 @@ public enum RfidDataFileType {
   LOG_DATA(702),
 
   CHIP_PROPERTIES(703),
+
+  DTC_INFO(704),
 
   POST_CA_RESPONSE(710),
 
@@ -206,6 +212,16 @@ public enum RfidDataFileType {
   POST_CA_CHECK_PK(714),
 
   POST_CA_CHECK_SK(715),
+
+  SAM_DATA(800),
+
+  SAM_DATA_MAX(832),
+
+  VDS(900),
+
+  VDS_NC(901),
+
+  DS(902),
 
   USER_DEFINED(1000);
 

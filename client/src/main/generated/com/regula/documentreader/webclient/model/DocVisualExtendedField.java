@@ -102,7 +102,6 @@ public class DocVisualExtendedField extends VisualExtendedFieldItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("FieldType");
     openapiFields.add("wFieldType");
     openapiFields.add("FieldName");
     openapiFields.add("StringsCount");
@@ -120,7 +119,6 @@ public class DocVisualExtendedField extends VisualExtendedFieldItem {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("FieldType");
     openapiRequiredFields.add("wFieldType");
     openapiRequiredFields.add("FieldName");
     openapiRequiredFields.add("StringsCount");

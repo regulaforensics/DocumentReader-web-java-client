@@ -39,7 +39,16 @@ public enum RfidBaudRate {
   RFBR_424(4),
 
   /** 848 bits/s */
-  RFBR_848(8);
+  RFBR_848(8),
+
+  /** 1695 bits/s */
+  RFBR_1695(16),
+
+  /** 3390 bits/s */
+  RFBR_3390(32),
+
+  /** 6780 bits/s */
+  RFBR_6780(64);
 
   private Integer value;
 

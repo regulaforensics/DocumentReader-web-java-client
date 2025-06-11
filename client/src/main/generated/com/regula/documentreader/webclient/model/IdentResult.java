@@ -73,12 +73,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
   @javax.annotation.Nullable
   private Integer elementID;
 
-  public static final String SERIALIZED_NAME_RESULT = "Result";
-
-  @SerializedName(SERIALIZED_NAME_RESULT)
-  @javax.annotation.Nullable
-  private Integer result;
-
   public IdentResult() {}
 
   public IdentResult elementType(@javax.annotation.Nonnull SecurityFeatureType elementType) {
@@ -214,25 +208,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
     this.elementID = elementID;
   }
 
-  public IdentResult result(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-    return this;
-  }
-
-  /**
-   * Get result
-   *
-   * @return result
-   */
-  @javax.annotation.Nullable
-  public Integer getResult() {
-    return result;
-  }
-
-  public void setResult(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -249,22 +224,13 @@ public class IdentResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.etalonImage, identResult.etalonImage)
         && Objects.equals(this.areaList, identResult.areaList)
         && Objects.equals(this.elementID, identResult.elementID)
-        && Objects.equals(this.result, identResult.result)
         && super.equals(o);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        elementType,
-        lightIndex,
-        area,
-        image,
-        etalonImage,
-        areaList,
-        elementID,
-        result,
-        super.hashCode());
+        elementType, lightIndex, area, image, etalonImage, areaList, elementID, super.hashCode());
   }
 
   @Override
@@ -279,7 +245,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
     sb.append("    etalonImage: ").append(toIndentedString(etalonImage)).append("\n");
     sb.append("    areaList: ").append(toIndentedString(areaList)).append("\n");
     sb.append("    elementID: ").append(toIndentedString(elementID)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -311,7 +276,6 @@ public class IdentResult extends AuthenticityCheckResultItem {
     openapiFields.add("EtalonImage");
     openapiFields.add("AreaList");
     openapiFields.add("ElementID");
-    openapiFields.add("Result");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

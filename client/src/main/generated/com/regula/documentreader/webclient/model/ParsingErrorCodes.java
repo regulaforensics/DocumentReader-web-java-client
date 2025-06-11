@@ -113,6 +113,30 @@ public enum ParsingErrorCodes {
   /** ASN Signer info: Unsigned attributes incorrect data */
   errLDS_ASN_SignerInfo_UnsignedAttrs_IncorrectData(2147483687l),
 
+  /** ASN DTC Signer info: Incorrect data */
+  errLDS_ASN_DTC_SignerInfo_IncorrectData(2147483712l),
+
+  /** ASN DTC Signer info: Certificate incorrect data */
+  errLDS_ASN_DTC_SignerInfo_Certificate_IncorrectData(2147483713l),
+
+  /** ASN DTC Signer info: Digest algorithms incorrect data */
+  errLDS_ASN_DTC_SignerInfo_DigestAlg_IncorrectData(2147483714l),
+
+  /** ASN DTC Signer info: Signed attributes incorrect data */
+  errLDS_ASN_DTC_SignerInfo_SignedAttrs_IncorrectData(2147483715l),
+
+  /** ASN DTC Signer info: Sign algorithms incorrect data */
+  errLDS_ASN_DTC_SignerInfo_SignAlg_IncorrectData(2147483716l),
+
+  /** ASN DTC Signer info: Signature incorrect data */
+  errLDS_ASN_DTC_SignerInfo_Signature_IncorrectData(2147483717l),
+
+  /** ASN DTC Security info: Incorrect data */
+  errLDS_ASN_DTC_SecurityInfo_IncorrectData(2147483718l),
+
+  /** ASN DTC Content info: Incorrect data */
+  errLDS_ASN_DTC_ContentInfo_IncorrectData(2147483719l),
+
   /** ICAO LDS object: Unsupported digest algorithm */
   errLDS_ICAO_LDSObject_UnsupportedDigestAlgorithm(2147483696l),
 

@@ -186,7 +186,6 @@ public class RFIDDocVisualExtendedField extends VisualExtendedFieldItem {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("FieldType");
     openapiFields.add("wFieldType");
     openapiFields.add("FieldName");
     openapiFields.add("StringsCount");
@@ -208,7 +207,6 @@ public class RFIDDocVisualExtendedField extends VisualExtendedFieldItem {
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("OriginDG");
     openapiRequiredFields.add("OriginTagEntry");
-    openapiRequiredFields.add("FieldType");
     openapiRequiredFields.add("wFieldType");
     openapiRequiredFields.add("FieldName");
     openapiRequiredFields.add("StringsCount");

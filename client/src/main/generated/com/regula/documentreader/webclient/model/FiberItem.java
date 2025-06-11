@@ -88,12 +88,6 @@ public class FiberItem {
   @javax.annotation.Nonnull
   private List<Integer> colorValues;
 
-  public static final String SERIALIZED_NAME_ERROR_CODE = "ErrorCode";
-
-  @SerializedName(SERIALIZED_NAME_ERROR_CODE)
-  @javax.annotation.Nullable
-  private Integer errorCode;
-
   public FiberItem() {}
 
   public FiberItem rectCount(@javax.annotation.Nonnull Integer rectCount) {
@@ -307,25 +301,6 @@ public class FiberItem {
     this.colorValues = colorValues;
   }
 
-  public FiberItem errorCode(@javax.annotation.Nullable Integer errorCode) {
-    this.errorCode = errorCode;
-    return this;
-  }
-
-  /**
-   * Get errorCode
-   *
-   * @return errorCode
-   */
-  @javax.annotation.Nullable
-  public Integer getErrorCode() {
-    return errorCode;
-  }
-
-  public void setErrorCode(@javax.annotation.Nullable Integer errorCode) {
-    this.errorCode = errorCode;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -343,8 +318,7 @@ public class FiberItem {
         && Objects.equals(this.width, fiberItem.width)
         && Objects.equals(this.length, fiberItem.length)
         && Objects.equals(this.area, fiberItem.area)
-        && Objects.equals(this.colorValues, fiberItem.colorValues)
-        && Objects.equals(this.errorCode, fiberItem.errorCode);
+        && Objects.equals(this.colorValues, fiberItem.colorValues);
   }
 
   @Override
@@ -358,8 +332,7 @@ public class FiberItem {
         width,
         length,
         area,
-        colorValues,
-        errorCode);
+        colorValues);
   }
 
   @Override
@@ -375,7 +348,6 @@ public class FiberItem {
     sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    area: ").append(toIndentedString(area)).append("\n");
     sb.append("    colorValues: ").append(toIndentedString(colorValues)).append("\n");
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -405,7 +377,6 @@ public class FiberItem {
     openapiFields.add("Length");
     openapiFields.add("Area");
     openapiFields.add("ColorValues");
-    openapiFields.add("ErrorCode");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

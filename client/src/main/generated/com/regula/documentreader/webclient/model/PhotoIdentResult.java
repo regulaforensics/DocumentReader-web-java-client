@@ -81,12 +81,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
   @javax.annotation.Nullable
   private Integer angle;
 
-  public static final String SERIALIZED_NAME_RESULT = "Result";
-
-  @SerializedName(SERIALIZED_NAME_RESULT)
-  @javax.annotation.Nullable
-  private Integer result;
-
   public static final String SERIALIZED_NAME_RESERVED3 = "Reserved3";
 
   @SerializedName(SERIALIZED_NAME_RESERVED3)
@@ -256,25 +250,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
     this.angle = angle;
   }
 
-  public PhotoIdentResult result(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-    return this;
-  }
-
-  /**
-   * Get result
-   *
-   * @return result
-   */
-  @javax.annotation.Nullable
-  public Integer getResult() {
-    return result;
-  }
-
-  public void setResult(@javax.annotation.Nullable Integer result) {
-    this.result = result;
-  }
-
   public PhotoIdentResult reserved3(@javax.annotation.Nullable Integer reserved3) {
     this.reserved3 = reserved3;
     return this;
@@ -311,7 +286,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
         && Objects.equals(this.fieldTypesList, photoIdentResult.fieldTypesList)
         && Objects.equals(this.step, photoIdentResult.step)
         && Objects.equals(this.angle, photoIdentResult.angle)
-        && Objects.equals(this.result, photoIdentResult.result)
         && Objects.equals(this.reserved3, photoIdentResult.reserved3)
         && super.equals(o);
   }
@@ -327,7 +301,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
         fieldTypesList,
         step,
         angle,
-        result,
         reserved3,
         super.hashCode());
   }
@@ -345,7 +318,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
     sb.append("    fieldTypesList: ").append(toIndentedString(fieldTypesList)).append("\n");
     sb.append("    step: ").append(toIndentedString(step)).append("\n");
     sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    reserved3: ").append(toIndentedString(reserved3)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -379,7 +351,6 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
     openapiFields.add("FieldTypesList");
     openapiFields.add("Step");
     openapiFields.add("Angle");
-    openapiFields.add("Result");
     openapiFields.add("Reserved3");
 
     // a set of required properties/fields (JSON key names)

@@ -48,7 +48,10 @@ public enum RfidAccessControlProcedureType {
   RI(6),
 
   /** Card info */
-  CARD_INFO(10);
+  CARD_INFO(10),
+
+  /** DTC info */
+  DTC_INFO(11);
 
   private Integer value;
 

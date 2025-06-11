@@ -41,7 +41,7 @@ public class CertificateData {
 
   @SerializedName(SERIALIZED_NAME_LENGTH)
   @javax.annotation.Nonnull
-  private String length;
+  private Integer length;
 
   public CertificateData() {}
 
@@ -64,7 +64,7 @@ public class CertificateData {
     this.data = data;
   }
 
-  public CertificateData length(@javax.annotation.Nonnull String length) {
+  public CertificateData length(@javax.annotation.Nonnull Integer length) {
     this.length = length;
     return this;
   }
@@ -75,11 +75,11 @@ public class CertificateData {
    * @return length
    */
   @javax.annotation.Nonnull
-  public String getLength() {
+  public Integer getLength() {
     return length;
   }
 
-  public void setLength(@javax.annotation.Nonnull String length) {
+  public void setLength(@javax.annotation.Nonnull Integer length) {
     this.length = length;
   }
 
@@ -168,12 +168,6 @@ public class CertificateData {
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Data").toString()));
-    }
-    if (!jsonObj.get("Length").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `Length` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("Length").toString()));
     }
   }
 

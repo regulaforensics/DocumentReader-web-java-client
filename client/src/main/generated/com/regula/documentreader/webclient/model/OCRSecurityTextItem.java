@@ -53,19 +53,19 @@ public class OCRSecurityTextItem {
 
   @SerializedName(SERIALIZED_NAME_ETALON_RESULT_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonResultType;
+  private Integer etalonResultType = 0;
 
   public static final String SERIALIZED_NAME_ETALON_FIELD_TYPE = "EtalonFieldType";
 
   @SerializedName(SERIALIZED_NAME_ETALON_FIELD_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonFieldType;
+  private TextFieldType etalonFieldType;
 
   public static final String SERIALIZED_NAME_ETALON_LIGHT_TYPE = "EtalonLightType";
 
   @SerializedName(SERIALIZED_NAME_ETALON_LIGHT_TYPE)
   @javax.annotation.Nonnull
-  private Integer etalonLightType;
+  private Light etalonLightType;
 
   public static final String SERIALIZED_NAME_ETALON_FIELD_RECT = "EtalonFieldRect";
 
@@ -84,12 +84,6 @@ public class OCRSecurityTextItem {
   @SerializedName(SERIALIZED_NAME_ETALON_RESULT_O_C_R)
   @javax.annotation.Nonnull
   private String etalonResultOCR;
-
-  public static final String SERIALIZED_NAME_RESULT_CODE = "ResultCode";
-
-  @SerializedName(SERIALIZED_NAME_RESULT_CODE)
-  @javax.annotation.Nullable
-  private Integer resultCode;
 
   public static final String SERIALIZED_NAME_RESERVED1 = "Reserved1";
 
@@ -168,7 +162,7 @@ public class OCRSecurityTextItem {
   }
 
   /**
-   * Get etalonResultType
+   * Same as Result type, but used for safe parsing of not-described values. See Result type.
    *
    * @return etalonResultType
    */
@@ -181,7 +175,8 @@ public class OCRSecurityTextItem {
     this.etalonResultType = etalonResultType;
   }
 
-  public OCRSecurityTextItem etalonFieldType(@javax.annotation.Nonnull Integer etalonFieldType) {
+  public OCRSecurityTextItem etalonFieldType(
+      @javax.annotation.Nonnull TextFieldType etalonFieldType) {
     this.etalonFieldType = etalonFieldType;
     return this;
   }
@@ -192,15 +187,15 @@ public class OCRSecurityTextItem {
    * @return etalonFieldType
    */
   @javax.annotation.Nonnull
-  public Integer getEtalonFieldType() {
+  public TextFieldType getEtalonFieldType() {
     return etalonFieldType;
   }
 
-  public void setEtalonFieldType(@javax.annotation.Nonnull Integer etalonFieldType) {
+  public void setEtalonFieldType(@javax.annotation.Nonnull TextFieldType etalonFieldType) {
     this.etalonFieldType = etalonFieldType;
   }
 
-  public OCRSecurityTextItem etalonLightType(@javax.annotation.Nonnull Integer etalonLightType) {
+  public OCRSecurityTextItem etalonLightType(@javax.annotation.Nonnull Light etalonLightType) {
     this.etalonLightType = etalonLightType;
     return this;
   }
@@ -211,11 +206,11 @@ public class OCRSecurityTextItem {
    * @return etalonLightType
    */
   @javax.annotation.Nonnull
-  public Integer getEtalonLightType() {
+  public Light getEtalonLightType() {
     return etalonLightType;
   }
 
-  public void setEtalonLightType(@javax.annotation.Nonnull Integer etalonLightType) {
+  public void setEtalonLightType(@javax.annotation.Nonnull Light etalonLightType) {
     this.etalonLightType = etalonLightType;
   }
 
@@ -278,25 +273,6 @@ public class OCRSecurityTextItem {
     this.etalonResultOCR = etalonResultOCR;
   }
 
-  public OCRSecurityTextItem resultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-    return this;
-  }
-
-  /**
-   * Get resultCode
-   *
-   * @return resultCode
-   */
-  @javax.annotation.Nullable
-  public Integer getResultCode() {
-    return resultCode;
-  }
-
-  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
-    this.resultCode = resultCode;
-  }
-
   public OCRSecurityTextItem reserved1(@javax.annotation.Nullable Integer reserved1) {
     this.reserved1 = reserved1;
     return this;
@@ -353,7 +329,6 @@ public class OCRSecurityTextItem {
         && Objects.equals(this.etalonFieldRect, ocRSecurityTextItem.etalonFieldRect)
         && Objects.equals(this.securityTextResultOCR, ocRSecurityTextItem.securityTextResultOCR)
         && Objects.equals(this.etalonResultOCR, ocRSecurityTextItem.etalonResultOCR)
-        && Objects.equals(this.resultCode, ocRSecurityTextItem.resultCode)
         && Objects.equals(this.reserved1, ocRSecurityTextItem.reserved1)
         && Objects.equals(this.reserved2, ocRSecurityTextItem.reserved2);
   }
@@ -370,7 +345,6 @@ public class OCRSecurityTextItem {
         etalonFieldRect,
         securityTextResultOCR,
         etalonResultOCR,
-        resultCode,
         reserved1,
         reserved2);
   }
@@ -390,7 +364,6 @@ public class OCRSecurityTextItem {
         .append(toIndentedString(securityTextResultOCR))
         .append("\n");
     sb.append("    etalonResultOCR: ").append(toIndentedString(etalonResultOCR)).append("\n");
-    sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
     sb.append("    reserved1: ").append(toIndentedString(reserved1)).append("\n");
     sb.append("    reserved2: ").append(toIndentedString(reserved2)).append("\n");
     sb.append("}");
@@ -422,7 +395,6 @@ public class OCRSecurityTextItem {
     openapiFields.add("EtalonFieldRect");
     openapiFields.add("SecurityTextResultOCR");
     openapiFields.add("EtalonResultOCR");
-    openapiFields.add("ResultCode");
     openapiFields.add("Reserved1");
     openapiFields.add("Reserved2");
 
@@ -472,6 +444,10 @@ public class OCRSecurityTextItem {
     Light.validateJsonElement(jsonObj.get("LightType"));
     // validate the required field `FieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("FieldRect"));
+    // validate the required field `EtalonFieldType`
+    TextFieldType.validateJsonElement(jsonObj.get("EtalonFieldType"));
+    // validate the required field `EtalonLightType`
+    Light.validateJsonElement(jsonObj.get("EtalonLightType"));
     // validate the required field `EtalonFieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("EtalonFieldRect"));
     if (!jsonObj.get("SecurityTextResultOCR").isJsonPrimitive()) {
