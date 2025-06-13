@@ -40,13 +40,13 @@ public class StringItem {
 
   @SerializedName(SERIALIZED_NAME_A_L_I_G_N_M_E_N_T_S_Y_M_B_O_L_S_I_N_S_T_R_I_N_G)
   @javax.annotation.Nonnull
-  private Integer ALIGNMENT_SYMBOLS_IN_STRING;
+  private CheckResult ALIGNMENT_SYMBOLS_IN_STRING;
 
   public static final String SERIALIZED_NAME_C_H_E_C_K_S_U_M_S = "CHECK_SUMS";
 
   @SerializedName(SERIALIZED_NAME_C_H_E_C_K_S_U_M_S)
   @javax.annotation.Nonnull
-  private Integer CHECK_SUMS;
+  private CheckResult CHECK_SUMS;
 
   public static final String SERIALIZED_NAME_ERROR_P_O_S_I_T_I_O_N = "ErrorPOSITION";
 
@@ -70,31 +70,31 @@ public class StringItem {
 
   @SerializedName(SERIALIZED_NAME_S_T_R_I_N_G_S_D_I_S_T_A_N_C_E)
   @javax.annotation.Nonnull
-  private Integer STRINGS_DISTANCE;
+  private CheckResult STRINGS_DISTANCE;
 
   public static final String SERIALIZED_NAME_S_T_R_I_N_G_S_I_N_T_E_R_V_A_L = "STRINGS_INTERVAL";
 
   @SerializedName(SERIALIZED_NAME_S_T_R_I_N_G_S_I_N_T_E_R_V_A_L)
   @javax.annotation.Nonnull
-  private Integer STRINGS_INTERVAL;
+  private CheckResult STRINGS_INTERVAL;
 
   public static final String SERIALIZED_NAME_S_T_R_I_N_G_F_I_L_L_I_N_G = "STRING_FILLING";
 
   @SerializedName(SERIALIZED_NAME_S_T_R_I_N_G_F_I_L_L_I_N_G)
   @javax.annotation.Nonnull
-  private Integer STRING_FILLING;
+  private CheckResult STRING_FILLING;
 
-  public static final String SERIALIZED_NAME_S_T_R_I_N_G_P_O_S_I_T_I_O_N = "STRING_POSITION";
+  public static final String SERIALIZED_NAME_S_T_R_I_N_G_S_P_O_S_I_T_I_O_N = "STRINGS_POSITION";
 
-  @SerializedName(SERIALIZED_NAME_S_T_R_I_N_G_P_O_S_I_T_I_O_N)
-  @javax.annotation.Nonnull
-  private Integer STRING_POSITION;
+  @SerializedName(SERIALIZED_NAME_S_T_R_I_N_G_S_P_O_S_I_T_I_O_N)
+  @javax.annotation.Nullable
+  private CheckResult STRINGS_POSITION;
 
   public static final String SERIALIZED_NAME_S_Y_M_B_O_L_S_P_A_R_A_M = "SYMBOLS_PARAM";
 
   @SerializedName(SERIALIZED_NAME_S_Y_M_B_O_L_S_P_A_R_A_M)
   @javax.annotation.Nonnull
-  private Integer SYMBOLS_PARAM;
+  private CheckResult SYMBOLS_PARAM;
 
   public static final String SERIALIZED_NAME_SIZE_ERROR_A_L_I_G_N_M_E_N_T = "SizeError_ALIGNMENT";
 
@@ -141,7 +141,7 @@ public class StringItem {
   public StringItem() {}
 
   public StringItem ALIGNMENT_SYMBOLS_IN_STRING(
-      @javax.annotation.Nonnull Integer ALIGNMENT_SYMBOLS_IN_STRING) {
+      @javax.annotation.Nonnull CheckResult ALIGNMENT_SYMBOLS_IN_STRING) {
     this.ALIGNMENT_SYMBOLS_IN_STRING = ALIGNMENT_SYMBOLS_IN_STRING;
     return this;
   }
@@ -152,16 +152,16 @@ public class StringItem {
    * @return ALIGNMENT_SYMBOLS_IN_STRING
    */
   @javax.annotation.Nonnull
-  public Integer getALIGNMENTSYMBOLSINSTRING() {
+  public CheckResult getALIGNMENTSYMBOLSINSTRING() {
     return ALIGNMENT_SYMBOLS_IN_STRING;
   }
 
   public void setALIGNMENTSYMBOLSINSTRING(
-      @javax.annotation.Nonnull Integer ALIGNMENT_SYMBOLS_IN_STRING) {
+      @javax.annotation.Nonnull CheckResult ALIGNMENT_SYMBOLS_IN_STRING) {
     this.ALIGNMENT_SYMBOLS_IN_STRING = ALIGNMENT_SYMBOLS_IN_STRING;
   }
 
-  public StringItem CHECK_SUMS(@javax.annotation.Nonnull Integer CHECK_SUMS) {
+  public StringItem CHECK_SUMS(@javax.annotation.Nonnull CheckResult CHECK_SUMS) {
     this.CHECK_SUMS = CHECK_SUMS;
     return this;
   }
@@ -172,11 +172,11 @@ public class StringItem {
    * @return CHECK_SUMS
    */
   @javax.annotation.Nonnull
-  public Integer getCHECKSUMS() {
+  public CheckResult getCHECKSUMS() {
     return CHECK_SUMS;
   }
 
-  public void setCHECKSUMS(@javax.annotation.Nonnull Integer CHECK_SUMS) {
+  public void setCHECKSUMS(@javax.annotation.Nonnull CheckResult CHECK_SUMS) {
     this.CHECK_SUMS = CHECK_SUMS;
   }
 
@@ -245,7 +245,7 @@ public class StringItem {
     this.fields = fields;
   }
 
-  public StringItem STRINGS_DISTANCE(@javax.annotation.Nonnull Integer STRINGS_DISTANCE) {
+  public StringItem STRINGS_DISTANCE(@javax.annotation.Nonnull CheckResult STRINGS_DISTANCE) {
     this.STRINGS_DISTANCE = STRINGS_DISTANCE;
     return this;
   }
@@ -256,15 +256,15 @@ public class StringItem {
    * @return STRINGS_DISTANCE
    */
   @javax.annotation.Nonnull
-  public Integer getSTRINGSDISTANCE() {
+  public CheckResult getSTRINGSDISTANCE() {
     return STRINGS_DISTANCE;
   }
 
-  public void setSTRINGSDISTANCE(@javax.annotation.Nonnull Integer STRINGS_DISTANCE) {
+  public void setSTRINGSDISTANCE(@javax.annotation.Nonnull CheckResult STRINGS_DISTANCE) {
     this.STRINGS_DISTANCE = STRINGS_DISTANCE;
   }
 
-  public StringItem STRINGS_INTERVAL(@javax.annotation.Nonnull Integer STRINGS_INTERVAL) {
+  public StringItem STRINGS_INTERVAL(@javax.annotation.Nonnull CheckResult STRINGS_INTERVAL) {
     this.STRINGS_INTERVAL = STRINGS_INTERVAL;
     return this;
   }
@@ -275,15 +275,15 @@ public class StringItem {
    * @return STRINGS_INTERVAL
    */
   @javax.annotation.Nonnull
-  public Integer getSTRINGSINTERVAL() {
+  public CheckResult getSTRINGSINTERVAL() {
     return STRINGS_INTERVAL;
   }
 
-  public void setSTRINGSINTERVAL(@javax.annotation.Nonnull Integer STRINGS_INTERVAL) {
+  public void setSTRINGSINTERVAL(@javax.annotation.Nonnull CheckResult STRINGS_INTERVAL) {
     this.STRINGS_INTERVAL = STRINGS_INTERVAL;
   }
 
-  public StringItem STRING_FILLING(@javax.annotation.Nonnull Integer STRING_FILLING) {
+  public StringItem STRING_FILLING(@javax.annotation.Nonnull CheckResult STRING_FILLING) {
     this.STRING_FILLING = STRING_FILLING;
     return this;
   }
@@ -294,34 +294,34 @@ public class StringItem {
    * @return STRING_FILLING
    */
   @javax.annotation.Nonnull
-  public Integer getSTRINGFILLING() {
+  public CheckResult getSTRINGFILLING() {
     return STRING_FILLING;
   }
 
-  public void setSTRINGFILLING(@javax.annotation.Nonnull Integer STRING_FILLING) {
+  public void setSTRINGFILLING(@javax.annotation.Nonnull CheckResult STRING_FILLING) {
     this.STRING_FILLING = STRING_FILLING;
   }
 
-  public StringItem STRING_POSITION(@javax.annotation.Nonnull Integer STRING_POSITION) {
-    this.STRING_POSITION = STRING_POSITION;
+  public StringItem STRINGS_POSITION(@javax.annotation.Nullable CheckResult STRINGS_POSITION) {
+    this.STRINGS_POSITION = STRINGS_POSITION;
     return this;
   }
 
   /**
-   * Get STRING_POSITION
+   * Get STRINGS_POSITION
    *
-   * @return STRING_POSITION
+   * @return STRINGS_POSITION
    */
-  @javax.annotation.Nonnull
-  public Integer getSTRINGPOSITION() {
-    return STRING_POSITION;
+  @javax.annotation.Nullable
+  public CheckResult getSTRINGSPOSITION() {
+    return STRINGS_POSITION;
   }
 
-  public void setSTRINGPOSITION(@javax.annotation.Nonnull Integer STRING_POSITION) {
-    this.STRING_POSITION = STRING_POSITION;
+  public void setSTRINGSPOSITION(@javax.annotation.Nullable CheckResult STRINGS_POSITION) {
+    this.STRINGS_POSITION = STRINGS_POSITION;
   }
 
-  public StringItem SYMBOLS_PARAM(@javax.annotation.Nonnull Integer SYMBOLS_PARAM) {
+  public StringItem SYMBOLS_PARAM(@javax.annotation.Nonnull CheckResult SYMBOLS_PARAM) {
     this.SYMBOLS_PARAM = SYMBOLS_PARAM;
     return this;
   }
@@ -332,11 +332,11 @@ public class StringItem {
    * @return SYMBOLS_PARAM
    */
   @javax.annotation.Nonnull
-  public Integer getSYMBOLSPARAM() {
+  public CheckResult getSYMBOLSPARAM() {
     return SYMBOLS_PARAM;
   }
 
-  public void setSYMBOLSPARAM(@javax.annotation.Nonnull Integer SYMBOLS_PARAM) {
+  public void setSYMBOLSPARAM(@javax.annotation.Nonnull CheckResult SYMBOLS_PARAM) {
     this.SYMBOLS_PARAM = SYMBOLS_PARAM;
   }
 
@@ -500,7 +500,7 @@ public class StringItem {
         && Objects.equals(this.STRINGS_DISTANCE, stringItem.STRINGS_DISTANCE)
         && Objects.equals(this.STRINGS_INTERVAL, stringItem.STRINGS_INTERVAL)
         && Objects.equals(this.STRING_FILLING, stringItem.STRING_FILLING)
-        && Objects.equals(this.STRING_POSITION, stringItem.STRING_POSITION)
+        && Objects.equals(this.STRINGS_POSITION, stringItem.STRINGS_POSITION)
         && Objects.equals(this.SYMBOLS_PARAM, stringItem.SYMBOLS_PARAM)
         && Objects.equals(this.sizeErrorALIGNMENT, stringItem.sizeErrorALIGNMENT)
         && Objects.equals(this.sizeErrorDISTANCE, stringItem.sizeErrorDISTANCE)
@@ -522,7 +522,7 @@ public class StringItem {
         STRINGS_DISTANCE,
         STRINGS_INTERVAL,
         STRING_FILLING,
-        STRING_POSITION,
+        STRINGS_POSITION,
         SYMBOLS_PARAM,
         sizeErrorALIGNMENT,
         sizeErrorDISTANCE,
@@ -547,7 +547,7 @@ public class StringItem {
     sb.append("    STRINGS_DISTANCE: ").append(toIndentedString(STRINGS_DISTANCE)).append("\n");
     sb.append("    STRINGS_INTERVAL: ").append(toIndentedString(STRINGS_INTERVAL)).append("\n");
     sb.append("    STRING_FILLING: ").append(toIndentedString(STRING_FILLING)).append("\n");
-    sb.append("    STRING_POSITION: ").append(toIndentedString(STRING_POSITION)).append("\n");
+    sb.append("    STRINGS_POSITION: ").append(toIndentedString(STRINGS_POSITION)).append("\n");
     sb.append("    SYMBOLS_PARAM: ").append(toIndentedString(SYMBOLS_PARAM)).append("\n");
     sb.append("    sizeErrorALIGNMENT: ").append(toIndentedString(sizeErrorALIGNMENT)).append("\n");
     sb.append("    sizeErrorDISTANCE: ").append(toIndentedString(sizeErrorDISTANCE)).append("\n");
@@ -584,7 +584,7 @@ public class StringItem {
     openapiFields.add("STRINGS_DISTANCE");
     openapiFields.add("STRINGS_INTERVAL");
     openapiFields.add("STRING_FILLING");
-    openapiFields.add("STRING_POSITION");
+    openapiFields.add("STRINGS_POSITION");
     openapiFields.add("SYMBOLS_PARAM");
     openapiFields.add("SizeError_ALIGNMENT");
     openapiFields.add("SizeError_DISTANCE");
@@ -604,7 +604,6 @@ public class StringItem {
     openapiRequiredFields.add("STRINGS_DISTANCE");
     openapiRequiredFields.add("STRINGS_INTERVAL");
     openapiRequiredFields.add("STRING_FILLING");
-    openapiRequiredFields.add("STRING_POSITION");
     openapiRequiredFields.add("SYMBOLS_PARAM");
     openapiRequiredFields.add("SizeError_ALIGNMENT");
     openapiRequiredFields.add("SizeError_DISTANCE");
@@ -642,6 +641,10 @@ public class StringItem {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the required field `ALIGNMENT_SYMBOLS_IN_STRING`
+    CheckResult.validateJsonElement(jsonObj.get("ALIGNMENT_SYMBOLS_IN_STRING"));
+    // validate the required field `CHECK_SUMS`
+    CheckResult.validateJsonElement(jsonObj.get("CHECK_SUMS"));
     // validate the required field `ErrorPOSITION`
     ErrorCoordinates.validateJsonElement(jsonObj.get("ErrorPOSITION"));
     // ensure the json data is an array
@@ -658,6 +661,18 @@ public class StringItem {
       FieldItem.validateJsonElement(jsonArrayfields.get(i));
     }
     ;
+    // validate the required field `STRINGS_DISTANCE`
+    CheckResult.validateJsonElement(jsonObj.get("STRINGS_DISTANCE"));
+    // validate the required field `STRINGS_INTERVAL`
+    CheckResult.validateJsonElement(jsonObj.get("STRINGS_INTERVAL"));
+    // validate the required field `STRING_FILLING`
+    CheckResult.validateJsonElement(jsonObj.get("STRING_FILLING"));
+    // validate the optional field `STRINGS_POSITION`
+    if (jsonObj.get("STRINGS_POSITION") != null && !jsonObj.get("STRINGS_POSITION").isJsonNull()) {
+      CheckResult.validateJsonElement(jsonObj.get("STRINGS_POSITION"));
+    }
+    // validate the required field `SYMBOLS_PARAM`
+    CheckResult.validateJsonElement(jsonObj.get("SYMBOLS_PARAM"));
     // validate the required field `StringBorders`
     RectangleCoordinates.validateJsonElement(jsonObj.get("StringBorders"));
     // ensure the json data is an array

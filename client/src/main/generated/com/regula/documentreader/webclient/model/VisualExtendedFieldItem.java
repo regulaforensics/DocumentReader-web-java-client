@@ -87,7 +87,7 @@ public class VisualExtendedFieldItem {
 
   @SerializedName(SERIALIZED_NAME_W_L_C_I_D)
   @javax.annotation.Nullable
-  private Integer wLCID;
+  private LCID wLCID;
 
   public static final String SERIALIZED_NAME_RESERVED2 = "Reserved2";
 
@@ -286,7 +286,7 @@ public class VisualExtendedFieldItem {
     this.inComparison = inComparison;
   }
 
-  public VisualExtendedFieldItem wLCID(@javax.annotation.Nullable Integer wLCID) {
+  public VisualExtendedFieldItem wLCID(@javax.annotation.Nullable LCID wLCID) {
     this.wLCID = wLCID;
     return this;
   }
@@ -297,11 +297,11 @@ public class VisualExtendedFieldItem {
    * @return wLCID
    */
   @javax.annotation.Nullable
-  public Integer getwLCID() {
+  public LCID getwLCID() {
     return wLCID;
   }
 
-  public void setwLCID(@javax.annotation.Nullable Integer wLCID) {
+  public void setwLCID(@javax.annotation.Nullable LCID wLCID) {
     this.wLCID = wLCID;
   }
 
@@ -493,6 +493,10 @@ public class VisualExtendedFieldItem {
           String.format(
               "Expected the field `FieldMask` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FieldMask").toString()));
+    }
+    // validate the optional field `wLCID`
+    if (jsonObj.get("wLCID") != null && !jsonObj.get("wLCID").isJsonNull()) {
+      LCID.validateJsonElement(jsonObj.get("wLCID"));
     }
   }
 
