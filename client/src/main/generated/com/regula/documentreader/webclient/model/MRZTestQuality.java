@@ -38,13 +38,13 @@ public class MRZTestQuality {
 
   @SerializedName(SERIALIZED_NAME_C_H_E_C_K_S_U_M_S)
   @javax.annotation.Nonnull
-  private Integer CHECK_SUMS;
+  private CheckResult CHECK_SUMS;
 
   public static final String SERIALIZED_NAME_C_O_N_T_R_A_S_T_P_R_I_N_T = "CONTRAST_PRINT";
 
   @SerializedName(SERIALIZED_NAME_C_O_N_T_R_A_S_T_P_R_I_N_T)
   @javax.annotation.Nonnull
-  private Integer CONTRAST_PRINT;
+  private CheckResult CONTRAST_PRINT;
 
   public static final String SERIALIZED_NAME_D_O_C_F_O_R_M_A_T = "DOC_FORMAT";
 
@@ -62,19 +62,19 @@ public class MRZTestQuality {
 
   @SerializedName(SERIALIZED_NAME_P_R_I_N_T_P_O_S_I_T_I_O_N)
   @javax.annotation.Nonnull
-  private Integer PRINT_POSITION;
+  private CheckResult PRINT_POSITION;
 
   public static final String SERIALIZED_NAME_S_T_A_I_N_M_R_Z = "STAIN_MRZ";
 
   @SerializedName(SERIALIZED_NAME_S_T_A_I_N_M_R_Z)
   @javax.annotation.Nonnull
-  private Integer STAIN_MRZ;
+  private CheckResult STAIN_MRZ;
 
   public static final String SERIALIZED_NAME_S_Y_M_B_O_L_S_P_A_R_A_M = "SYMBOLS_PARAM";
 
   @SerializedName(SERIALIZED_NAME_S_Y_M_B_O_L_S_P_A_R_A_M)
   @javax.annotation.Nonnull
-  private Integer SYMBOLS_PARAM;
+  private CheckResult SYMBOLS_PARAM;
 
   public static final String SERIALIZED_NAME_STR_COUNT = "StrCount";
 
@@ -92,11 +92,11 @@ public class MRZTestQuality {
 
   @SerializedName(SERIALIZED_NAME_T_E_X_T_U_A_L_F_I_L_L_I_N_G)
   @javax.annotation.Nonnull
-  private Integer TEXTUAL_FILLING;
+  private CheckResult TEXTUAL_FILLING;
 
   public MRZTestQuality() {}
 
-  public MRZTestQuality CHECK_SUMS(@javax.annotation.Nonnull Integer CHECK_SUMS) {
+  public MRZTestQuality CHECK_SUMS(@javax.annotation.Nonnull CheckResult CHECK_SUMS) {
     this.CHECK_SUMS = CHECK_SUMS;
     return this;
   }
@@ -107,15 +107,15 @@ public class MRZTestQuality {
    * @return CHECK_SUMS
    */
   @javax.annotation.Nonnull
-  public Integer getCHECKSUMS() {
+  public CheckResult getCHECKSUMS() {
     return CHECK_SUMS;
   }
 
-  public void setCHECKSUMS(@javax.annotation.Nonnull Integer CHECK_SUMS) {
+  public void setCHECKSUMS(@javax.annotation.Nonnull CheckResult CHECK_SUMS) {
     this.CHECK_SUMS = CHECK_SUMS;
   }
 
-  public MRZTestQuality CONTRAST_PRINT(@javax.annotation.Nonnull Integer CONTRAST_PRINT) {
+  public MRZTestQuality CONTRAST_PRINT(@javax.annotation.Nonnull CheckResult CONTRAST_PRINT) {
     this.CONTRAST_PRINT = CONTRAST_PRINT;
     return this;
   }
@@ -126,11 +126,11 @@ public class MRZTestQuality {
    * @return CONTRAST_PRINT
    */
   @javax.annotation.Nonnull
-  public Integer getCONTRASTPRINT() {
+  public CheckResult getCONTRASTPRINT() {
     return CONTRAST_PRINT;
   }
 
-  public void setCONTRASTPRINT(@javax.annotation.Nonnull Integer CONTRAST_PRINT) {
+  public void setCONTRASTPRINT(@javax.annotation.Nonnull CheckResult CONTRAST_PRINT) {
     this.CONTRAST_PRINT = CONTRAST_PRINT;
   }
 
@@ -172,7 +172,7 @@ public class MRZTestQuality {
     this.MRZ_FORMAT = MRZ_FORMAT;
   }
 
-  public MRZTestQuality PRINT_POSITION(@javax.annotation.Nonnull Integer PRINT_POSITION) {
+  public MRZTestQuality PRINT_POSITION(@javax.annotation.Nonnull CheckResult PRINT_POSITION) {
     this.PRINT_POSITION = PRINT_POSITION;
     return this;
   }
@@ -183,15 +183,15 @@ public class MRZTestQuality {
    * @return PRINT_POSITION
    */
   @javax.annotation.Nonnull
-  public Integer getPRINTPOSITION() {
+  public CheckResult getPRINTPOSITION() {
     return PRINT_POSITION;
   }
 
-  public void setPRINTPOSITION(@javax.annotation.Nonnull Integer PRINT_POSITION) {
+  public void setPRINTPOSITION(@javax.annotation.Nonnull CheckResult PRINT_POSITION) {
     this.PRINT_POSITION = PRINT_POSITION;
   }
 
-  public MRZTestQuality STAIN_MRZ(@javax.annotation.Nonnull Integer STAIN_MRZ) {
+  public MRZTestQuality STAIN_MRZ(@javax.annotation.Nonnull CheckResult STAIN_MRZ) {
     this.STAIN_MRZ = STAIN_MRZ;
     return this;
   }
@@ -202,15 +202,15 @@ public class MRZTestQuality {
    * @return STAIN_MRZ
    */
   @javax.annotation.Nonnull
-  public Integer getSTAINMRZ() {
+  public CheckResult getSTAINMRZ() {
     return STAIN_MRZ;
   }
 
-  public void setSTAINMRZ(@javax.annotation.Nonnull Integer STAIN_MRZ) {
+  public void setSTAINMRZ(@javax.annotation.Nonnull CheckResult STAIN_MRZ) {
     this.STAIN_MRZ = STAIN_MRZ;
   }
 
-  public MRZTestQuality SYMBOLS_PARAM(@javax.annotation.Nonnull Integer SYMBOLS_PARAM) {
+  public MRZTestQuality SYMBOLS_PARAM(@javax.annotation.Nonnull CheckResult SYMBOLS_PARAM) {
     this.SYMBOLS_PARAM = SYMBOLS_PARAM;
     return this;
   }
@@ -221,11 +221,11 @@ public class MRZTestQuality {
    * @return SYMBOLS_PARAM
    */
   @javax.annotation.Nonnull
-  public Integer getSYMBOLSPARAM() {
+  public CheckResult getSYMBOLSPARAM() {
     return SYMBOLS_PARAM;
   }
 
-  public void setSYMBOLSPARAM(@javax.annotation.Nonnull Integer SYMBOLS_PARAM) {
+  public void setSYMBOLSPARAM(@javax.annotation.Nonnull CheckResult SYMBOLS_PARAM) {
     this.SYMBOLS_PARAM = SYMBOLS_PARAM;
   }
 
@@ -275,7 +275,7 @@ public class MRZTestQuality {
     this.strings = strings;
   }
 
-  public MRZTestQuality TEXTUAL_FILLING(@javax.annotation.Nonnull Integer TEXTUAL_FILLING) {
+  public MRZTestQuality TEXTUAL_FILLING(@javax.annotation.Nonnull CheckResult TEXTUAL_FILLING) {
     this.TEXTUAL_FILLING = TEXTUAL_FILLING;
     return this;
   }
@@ -286,11 +286,11 @@ public class MRZTestQuality {
    * @return TEXTUAL_FILLING
    */
   @javax.annotation.Nonnull
-  public Integer getTEXTUALFILLING() {
+  public CheckResult getTEXTUALFILLING() {
     return TEXTUAL_FILLING;
   }
 
-  public void setTEXTUALFILLING(@javax.annotation.Nonnull Integer TEXTUAL_FILLING) {
+  public void setTEXTUALFILLING(@javax.annotation.Nonnull CheckResult TEXTUAL_FILLING) {
     this.TEXTUAL_FILLING = TEXTUAL_FILLING;
   }
 
@@ -416,6 +416,16 @@ public class MRZTestQuality {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
+    // validate the required field `CHECK_SUMS`
+    CheckResult.validateJsonElement(jsonObj.get("CHECK_SUMS"));
+    // validate the required field `CONTRAST_PRINT`
+    CheckResult.validateJsonElement(jsonObj.get("CONTRAST_PRINT"));
+    // validate the required field `PRINT_POSITION`
+    CheckResult.validateJsonElement(jsonObj.get("PRINT_POSITION"));
+    // validate the required field `STAIN_MRZ`
+    CheckResult.validateJsonElement(jsonObj.get("STAIN_MRZ"));
+    // validate the required field `SYMBOLS_PARAM`
+    CheckResult.validateJsonElement(jsonObj.get("SYMBOLS_PARAM"));
     // ensure the json data is an array
     if (!jsonObj.get("Strings").isJsonArray()) {
       throw new IllegalArgumentException(
@@ -430,6 +440,8 @@ public class MRZTestQuality {
       StringItem.validateJsonElement(jsonArraystrings.get(i));
     }
     ;
+    // validate the required field `TEXTUAL_FILLING`
+    CheckResult.validateJsonElement(jsonObj.get("TEXTUAL_FILLING"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

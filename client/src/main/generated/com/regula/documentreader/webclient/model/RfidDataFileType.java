@@ -177,9 +177,9 @@ public enum RfidDataFileType {
 
   DIR(401),
 
-  _E_SIGN_PK(500),
+  E_SIGN_PK(500),
 
-  _E_SIGN_SIGNED_DATA(501),
+  E_SIGN_SIGNED_DATA(501),
 
   CERTIFICATE(600),
 

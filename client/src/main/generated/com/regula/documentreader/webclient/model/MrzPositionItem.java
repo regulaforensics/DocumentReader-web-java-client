@@ -35,11 +35,11 @@ public class MrzPositionItem {
 
   @SerializedName(SERIALIZED_NAME_MRZ_POSITION)
   @javax.annotation.Nonnull
-  private MrzPosition mrzPosition;
+  private DocumentPosition mrzPosition;
 
   public MrzPositionItem() {}
 
-  public MrzPositionItem mrzPosition(@javax.annotation.Nonnull MrzPosition mrzPosition) {
+  public MrzPositionItem mrzPosition(@javax.annotation.Nonnull DocumentPosition mrzPosition) {
     this.mrzPosition = mrzPosition;
     return this;
   }
@@ -50,11 +50,11 @@ public class MrzPositionItem {
    * @return mrzPosition
    */
   @javax.annotation.Nonnull
-  public MrzPosition getMrzPosition() {
+  public DocumentPosition getMrzPosition() {
     return mrzPosition;
   }
 
-  public void setMrzPosition(@javax.annotation.Nonnull MrzPosition mrzPosition) {
+  public void setMrzPosition(@javax.annotation.Nonnull DocumentPosition mrzPosition) {
     this.mrzPosition = mrzPosition;
   }
 
@@ -135,7 +135,7 @@ public class MrzPositionItem {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // validate the required field `MrzPosition`
-    MrzPosition.validateJsonElement(jsonObj.get("MrzPosition"));
+    DocumentPosition.validateJsonElement(jsonObj.get("MrzPosition"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

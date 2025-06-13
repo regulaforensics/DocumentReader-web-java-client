@@ -134,7 +134,6 @@ src/main/generated/com/regula/documentreader/webclient/model/MRZTestQualityItem.
 src/main/generated/com/regula/documentreader/webclient/model/MRZTestQualityResult.java
 src/main/generated/com/regula/documentreader/webclient/model/MeasureSystem.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzDetectModeEnum.java
-src/main/generated/com/regula/documentreader/webclient/model/MrzPosition.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzPositionItem.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextItem.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextResult.java

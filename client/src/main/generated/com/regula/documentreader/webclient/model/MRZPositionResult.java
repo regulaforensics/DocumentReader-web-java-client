@@ -35,11 +35,11 @@ public class MRZPositionResult extends ResultItem {
 
   @SerializedName(SERIALIZED_NAME_MRZ_POSITION)
   @javax.annotation.Nonnull
-  private MrzPosition mrzPosition;
+  private DocumentPosition mrzPosition;
 
   public MRZPositionResult() {}
 
-  public MRZPositionResult mrzPosition(@javax.annotation.Nonnull MrzPosition mrzPosition) {
+  public MRZPositionResult mrzPosition(@javax.annotation.Nonnull DocumentPosition mrzPosition) {
     this.mrzPosition = mrzPosition;
     return this;
   }
@@ -50,11 +50,11 @@ public class MRZPositionResult extends ResultItem {
    * @return mrzPosition
    */
   @javax.annotation.Nonnull
-  public MrzPosition getMrzPosition() {
+  public DocumentPosition getMrzPosition() {
     return mrzPosition;
   }
 
-  public void setMrzPosition(@javax.annotation.Nonnull MrzPosition mrzPosition) {
+  public void setMrzPosition(@javax.annotation.Nonnull DocumentPosition mrzPosition) {
     this.mrzPosition = mrzPosition;
   }
 
