@@ -1190,8 +1190,6 @@ public class JSON {
         new com.regula.documentreader.webclient.model.MRZTestQualityResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
-        new com.regula.documentreader.webclient.model.MrzPosition.CustomTypeAdapterFactory());
-    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.MrzPositionItem.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.OCRSecurityTextItem
