@@ -43,13 +43,13 @@ public class FDSIDList {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal count;
 
   public static final String SERIALIZED_NAME_LIST = "List";
 
   @SerializedName(SERIALIZED_NAME_LIST)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<Integer> list;
 
   public static final String SERIALIZED_NAME_D_TYPE = "dType";
@@ -79,7 +79,7 @@ public class FDSIDList {
   public static final String SERIALIZED_NAME_D_YEAR = "dYear";
 
   @SerializedName(SERIALIZED_NAME_D_YEAR)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String dYear;
 
   public static final String SERIALIZED_NAME_D_COUNTRY_NAME = "dCountryName";
@@ -127,7 +127,7 @@ public class FDSIDList {
     this.icAOCode = icAOCode;
   }
 
-  public FDSIDList count(@javax.annotation.Nonnull BigDecimal count) {
+  public FDSIDList count(@javax.annotation.Nullable BigDecimal count) {
     this.count = count;
     return this;
   }
@@ -137,16 +137,16 @@ public class FDSIDList {
    *
    * @return count
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nonnull BigDecimal count) {
+  public void setCount(@javax.annotation.Nullable BigDecimal count) {
     this.count = count;
   }
 
-  public FDSIDList list(@javax.annotation.Nonnull List<Integer> list) {
+  public FDSIDList list(@javax.annotation.Nullable List<Integer> list) {
     this.list = list;
     return this;
   }
@@ -164,12 +164,12 @@ public class FDSIDList {
    *
    * @return list
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<Integer> getList() {
     return list;
   }
 
-  public void setList(@javax.annotation.Nonnull List<Integer> list) {
+  public void setList(@javax.annotation.Nullable List<Integer> list) {
     this.list = list;
   }
 
@@ -249,7 +249,7 @@ public class FDSIDList {
     this.dDescription = dDescription;
   }
 
-  public FDSIDList dYear(@javax.annotation.Nonnull String dYear) {
+  public FDSIDList dYear(@javax.annotation.Nullable String dYear) {
     this.dYear = dYear;
     return this;
   }
@@ -259,12 +259,12 @@ public class FDSIDList {
    *
    * @return dYear
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getdYear() {
     return dYear;
   }
 
-  public void setdYear(@javax.annotation.Nonnull String dYear) {
+  public void setdYear(@javax.annotation.Nullable String dYear) {
     this.dYear = dYear;
   }
 
@@ -436,12 +436,9 @@ public class FDSIDList {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("ICAOCode");
-    openapiRequiredFields.add("Count");
-    openapiRequiredFields.add("List");
     openapiRequiredFields.add("dType");
     openapiRequiredFields.add("dFormat");
     openapiRequiredFields.add("dMRZ");
-    openapiRequiredFields.add("dYear");
     openapiRequiredFields.add("dCountryName");
     openapiRequiredFields.add("isDeprecated");
   }
@@ -479,11 +476,10 @@ public class FDSIDList {
               "Expected the field `ICAOCode` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ICAOCode").toString()));
     }
-    // ensure the required json array is present
-    if (jsonObj.get("List") == null) {
-      throw new IllegalArgumentException(
-          "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-    } else if (!jsonObj.get("List").isJsonArray()) {
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("List") != null
+        && !jsonObj.get("List").isJsonNull()
+        && !jsonObj.get("List").isJsonArray()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `List` to be an array in the JSON string but got `%s`",
@@ -500,7 +496,8 @@ public class FDSIDList {
               "Expected the field `dDescription` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dDescription").toString()));
     }
-    if (!jsonObj.get("dYear").isJsonPrimitive()) {
+    if ((jsonObj.get("dYear") != null && !jsonObj.get("dYear").isJsonNull())
+        && !jsonObj.get("dYear").isJsonPrimitive()) {
       throw new IllegalArgumentException(
           String.format(
               "Expected the field `dYear` to be a primitive type in the JSON string but got `%s`",
