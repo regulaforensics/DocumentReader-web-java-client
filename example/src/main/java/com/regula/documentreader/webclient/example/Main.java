@@ -126,17 +126,21 @@ public class Main {
 
         var documentImage = response.images().getField(GraphicFieldType.DOCUMENT_FRONT).getValue();
         var portraitField = response.images().getField(GraphicFieldType.PORTRAIT);
-        var portraitFromVisual = portraitField.getValue(Source.VISUAL);
+        var portraitFromVisual = portraitField != null ? portraitField.getValue(Source.VISUAL) : null;
 
-        try {
-            saveFile("document-image.jpg", documentImage);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (documentImage != null) {
+            try {
+                saveFile("document-image.jpg", documentImage);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
-        try {
-            saveFile("portrait.jpg", portraitFromVisual);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (portraitFromVisual != null) {
+            try {
+                saveFile("portrait.jpg", portraitFromVisual);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         // how to get low lvl individual results
