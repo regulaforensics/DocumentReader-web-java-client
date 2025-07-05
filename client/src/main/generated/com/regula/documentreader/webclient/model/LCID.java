@@ -183,8 +183,8 @@ public enum LCID {
   /** Estonian */
   ESTONIAN(1061),
 
-  /** Faeroese */
-  FAEROESE(1080),
+  /** Faroese */
+  FAROESE(1080),
 
   /** Farsi */
   FARSI(1065),
