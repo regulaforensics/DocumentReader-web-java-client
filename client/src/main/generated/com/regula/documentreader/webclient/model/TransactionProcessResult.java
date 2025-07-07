@@ -32,13 +32,13 @@ import java.util.UUID;
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
     comments = "Generator version: 7.13.0")
 public class TransactionProcessResult {
-  public static final String SERIALIZED_NAME_OUT_DATA = "OutData";
+  public static final String SERIALIZED_NAME_OUT_DATA = "outData";
 
   @SerializedName(SERIALIZED_NAME_OUT_DATA)
   @javax.annotation.Nullable
   private OutData outData;
 
-  public static final String SERIALIZED_NAME_IN_DATA = "InData";
+  public static final String SERIALIZED_NAME_IN_DATA = "inData";
 
   @SerializedName(SERIALIZED_NAME_IN_DATA)
   @javax.annotation.Nullable
@@ -182,8 +182,8 @@ public class TransactionProcessResult {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("OutData");
-    openapiFields.add("InData");
+    openapiFields.add("outData");
+    openapiFields.add("inData");
     openapiFields.add("tag");
     openapiFields.add("transactionId");
 
@@ -209,13 +209,13 @@ public class TransactionProcessResult {
     }
 
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the optional field `OutData`
-    if (jsonObj.get("OutData") != null && !jsonObj.get("OutData").isJsonNull()) {
-      OutData.validateJsonElement(jsonObj.get("OutData"));
+    // validate the optional field `outData`
+    if (jsonObj.get("outData") != null && !jsonObj.get("outData").isJsonNull()) {
+      OutData.validateJsonElement(jsonObj.get("outData"));
     }
-    // validate the optional field `InData`
-    if (jsonObj.get("InData") != null && !jsonObj.get("InData").isJsonNull()) {
-      InData.validateJsonElement(jsonObj.get("InData"));
+    // validate the optional field `inData`
+    if (jsonObj.get("inData") != null && !jsonObj.get("inData").isJsonNull()) {
+      InData.validateJsonElement(jsonObj.get("inData"));
     }
     if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull())
         && !jsonObj.get("tag").isJsonPrimitive()) {
