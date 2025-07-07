@@ -422,6 +422,13 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Integer pdfPagesLimit;
 
+  public static final String SERIALIZED_NAME_DISABLE_AUTH_RESOLUTION_FILTER =
+      "disableAuthResolutionFilter";
+
+  @SerializedName(SERIALIZED_NAME_DISABLE_AUTH_RESOLUTION_FILTER)
+  @javax.annotation.Nullable
+  private Boolean disableAuthResolutionFilter;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1791,6 +1798,28 @@ public class ProcessParams {
     this.pdfPagesLimit = pdfPagesLimit;
   }
 
+  public ProcessParams disableAuthResolutionFilter(
+      @javax.annotation.Nullable Boolean disableAuthResolutionFilter) {
+    this.disableAuthResolutionFilter = disableAuthResolutionFilter;
+    return this;
+  }
+
+  /**
+   * This parameter if enabled will ignore the minimum barcode resolution needed to start
+   * processing.
+   *
+   * @return disableAuthResolutionFilter
+   */
+  @javax.annotation.Nullable
+  public Boolean getDisableAuthResolutionFilter() {
+    return disableAuthResolutionFilter;
+  }
+
+  public void setDisableAuthResolutionFilter(
+      @javax.annotation.Nullable Boolean disableAuthResolutionFilter) {
+    this.disableAuthResolutionFilter = disableAuthResolutionFilter;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1865,7 +1894,9 @@ public class ProcessParams {
         && Objects.equals(this.doBarcodes, processParams.doBarcodes)
         && Objects.equals(this.strictDLCategoryExpiry, processParams.strictDLCategoryExpiry)
         && Objects.equals(this.generateAlpha2Codes, processParams.generateAlpha2Codes)
-        && Objects.equals(this.pdfPagesLimit, processParams.pdfPagesLimit);
+        && Objects.equals(this.pdfPagesLimit, processParams.pdfPagesLimit)
+        && Objects.equals(
+            this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter);
   }
 
   @Override
@@ -1933,7 +1964,8 @@ public class ProcessParams {
         doBarcodes,
         strictDLCategoryExpiry,
         generateAlpha2Codes,
-        pdfPagesLimit);
+        pdfPagesLimit,
+        disableAuthResolutionFilter);
   }
 
   @Override
@@ -2037,6 +2069,9 @@ public class ProcessParams {
         .append(toIndentedString(generateAlpha2Codes))
         .append("\n");
     sb.append("    pdfPagesLimit: ").append(toIndentedString(pdfPagesLimit)).append("\n");
+    sb.append("    disableAuthResolutionFilter: ")
+        .append(toIndentedString(disableAuthResolutionFilter))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2120,6 +2155,7 @@ public class ProcessParams {
     openapiFields.add("strictDLCategoryExpiry");
     openapiFields.add("generateAlpha2Codes");
     openapiFields.add("pdfPagesLimit");
+    openapiFields.add("disableAuthResolutionFilter");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
