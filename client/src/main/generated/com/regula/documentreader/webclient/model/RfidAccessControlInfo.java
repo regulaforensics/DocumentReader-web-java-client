@@ -59,7 +59,7 @@ public class RfidAccessControlInfo {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingNotificationCodes> notifications;
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_ACCESS_CONTROL_OPTIONS = "AccessControlOptions";
 
@@ -128,12 +128,12 @@ public class RfidAccessControlInfo {
   }
 
   public RfidAccessControlInfo notifications(
-      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
+      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidAccessControlInfo addNotificationsItem(ParsingNotificationCodes notificationsItem) {
+  public RfidAccessControlInfo addNotificationsItem(ParsingErrorCodes notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -147,12 +147,11 @@ public class RfidAccessControlInfo {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<ParsingNotificationCodes> getNotifications() {
+  public List<ParsingErrorCodes> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(
-      @javax.annotation.Nonnull List<ParsingNotificationCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
   }
 
