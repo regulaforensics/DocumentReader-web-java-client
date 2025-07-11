@@ -78,7 +78,7 @@ public class RfidDataFile {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<ParsingNotificationCodes> notifications;
+  private List<ParsingErrorCodes> notifications;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_TEXT = "DocFields_Text";
 
@@ -229,12 +229,12 @@ public class RfidDataFile {
   }
 
   public RfidDataFile notifications(
-      @javax.annotation.Nullable List<ParsingNotificationCodes> notifications) {
+      @javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidDataFile addNotificationsItem(ParsingNotificationCodes notificationsItem) {
+  public RfidDataFile addNotificationsItem(ParsingErrorCodes notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -249,12 +249,11 @@ public class RfidDataFile {
    * @return notifications
    */
   @javax.annotation.Nullable
-  public List<ParsingNotificationCodes> getNotifications() {
+  public List<ParsingErrorCodes> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(
-      @javax.annotation.Nullable List<ParsingNotificationCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
     this.notifications = notifications;
   }
 
