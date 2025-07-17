@@ -78,7 +78,7 @@ public class RfidDataFile {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<ParsingErrorCodes> notifications;
+  private List<Integer> notifications;
 
   public static final String SERIALIZED_NAME_DOC_FIELDS_TEXT = "DocFields_Text";
 
@@ -228,13 +228,12 @@ public class RfidDataFile {
     this.paStatus = paStatus;
   }
 
-  public RfidDataFile notifications(
-      @javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
+  public RfidDataFile notifications(@javax.annotation.Nullable List<Integer> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidDataFile addNotificationsItem(ParsingErrorCodes notificationsItem) {
+  public RfidDataFile addNotificationsItem(Integer notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -244,16 +243,16 @@ public class RfidDataFile {
 
   /**
    * List of remarks arisen when reading data from the memory of the chip and analysing their
-   * ASN.1-structure.
+   * ASN.1-structure. Can be ParsingErrorCodes or ParsingNotificationCodes enum.
    *
    * @return notifications
    */
   @javax.annotation.Nullable
-  public List<ParsingErrorCodes> getNotifications() {
+  public List<Integer> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nullable List<ParsingErrorCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<Integer> notifications) {
     this.notifications = notifications;
   }
 

@@ -59,7 +59,7 @@ public class RfidAccessControlInfo {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications;
+  private List<Integer> notifications;
 
   public static final String SERIALIZED_NAME_ACCESS_CONTROL_OPTIONS = "AccessControlOptions";
 
@@ -128,12 +128,12 @@ public class RfidAccessControlInfo {
   }
 
   public RfidAccessControlInfo notifications(
-      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+      @javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidAccessControlInfo addNotificationsItem(ParsingErrorCodes notificationsItem) {
+  public RfidAccessControlInfo addNotificationsItem(Integer notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -142,16 +142,17 @@ public class RfidAccessControlInfo {
   }
 
   /**
-   * List of remarks arisen during the procedure.
+   * List of remarks arisen during the procedure. Can be ParsingErrorCodes or
+   * ParsingNotificationCodes enum.
    *
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<ParsingErrorCodes> getNotifications() {
+  public List<Integer> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
   }
 
