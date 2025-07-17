@@ -91,7 +91,7 @@ public class RfidCertificateEx {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications;
+  private List<Integer> notifications;
 
   public static final String SERIALIZED_NAME_ORIGIN = "Origin";
 
@@ -281,13 +281,12 @@ public class RfidCertificateEx {
     this.extensions = extensions;
   }
 
-  public RfidCertificateEx notifications(
-      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public RfidCertificateEx notifications(@javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidCertificateEx addNotificationsItem(ParsingErrorCodes notificationsItem) {
+  public RfidCertificateEx addNotificationsItem(Integer notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -297,16 +296,16 @@ public class RfidCertificateEx {
 
   /**
    * List of remarks arisen during the analysis of the certificate data structure and its validity
-   * verification.
+   * verification. Can be ParsingErrorCodes or ParsingNotificationCodes enum.
    *
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<ParsingErrorCodes> getNotifications() {
+  public List<Integer> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
   }
 
