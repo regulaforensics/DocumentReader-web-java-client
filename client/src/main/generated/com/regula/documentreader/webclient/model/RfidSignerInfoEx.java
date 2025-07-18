@@ -109,7 +109,7 @@ public class RfidSignerInfoEx {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<ParsingErrorCodes> notifications;
+  private List<Integer> notifications;
 
   public RfidSignerInfoEx() {}
 
@@ -344,13 +344,12 @@ public class RfidSignerInfoEx {
     this.dataToHash = dataToHash;
   }
 
-  public RfidSignerInfoEx notifications(
-      @javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public RfidSignerInfoEx notifications(@javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidSignerInfoEx addNotificationsItem(ParsingErrorCodes notificationsItem) {
+  public RfidSignerInfoEx addNotificationsItem(Integer notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -359,16 +358,16 @@ public class RfidSignerInfoEx {
   }
 
   /**
-   * Get notifications
+   * Can be ParsingErrorCodes or ParsingNotificationCodes enum.
    *
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<ParsingErrorCodes> getNotifications() {
+  public List<Integer> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<ParsingErrorCodes> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
     this.notifications = notifications;
   }
 
