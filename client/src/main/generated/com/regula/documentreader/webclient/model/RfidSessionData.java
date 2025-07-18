@@ -42,7 +42,7 @@ public class RfidSessionData {
 
   @SerializedName(SERIALIZED_NAME_VIRTUAL_MODE)
   @javax.annotation.Nullable
-  private String virtualMode;
+  private Boolean virtualMode;
 
   public static final String SERIALIZED_NAME_SD_K_VERSION = "SDKVersion";
 
@@ -142,7 +142,7 @@ public class RfidSessionData {
 
   public RfidSessionData() {}
 
-  public RfidSessionData virtualMode(@javax.annotation.Nullable String virtualMode) {
+  public RfidSessionData virtualMode(@javax.annotation.Nullable Boolean virtualMode) {
     this.virtualMode = virtualMode;
     return this;
   }
@@ -154,11 +154,11 @@ public class RfidSessionData {
    * @return virtualMode
    */
   @javax.annotation.Nullable
-  public String getVirtualMode() {
+  public Boolean getVirtualMode() {
     return virtualMode;
   }
 
-  public void setVirtualMode(@javax.annotation.Nullable String virtualMode) {
+  public void setVirtualMode(@javax.annotation.Nullable Boolean virtualMode) {
     this.virtualMode = virtualMode;
   }
 
@@ -660,13 +660,6 @@ public class RfidSessionData {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    if ((jsonObj.get("VirtualMode") != null && !jsonObj.get("VirtualMode").isJsonNull())
-        && !jsonObj.get("VirtualMode").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Expected the field `VirtualMode` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("VirtualMode").toString()));
-    }
     if ((jsonObj.get("SDKVersion") != null && !jsonObj.get("SDKVersion").isJsonNull())
         && !jsonObj.get("SDKVersion").isJsonPrimitive()) {
       throw new IllegalArgumentException(
