@@ -45,7 +45,13 @@ public enum RFIDPKDResourceType {
   DEVL(6),
 
   /** Black List (.bl, .bls) */
-  BL(7);
+  BL(7),
+
+  /** LDIF file contents for TA */
+  LDIF_TA(8),
+
+  /** Master List with CV certificates for TA */
+  ML_TA(9);
 
   private Integer value;
 
