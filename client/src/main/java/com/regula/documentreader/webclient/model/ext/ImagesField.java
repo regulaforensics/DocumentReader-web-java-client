@@ -20,7 +20,7 @@ public class ImagesField extends com.regula.documentreader.webclient.model.Image
   }
 
   public ImagesField withFieldType(GraphicFieldType fieldType) {
-    this.setFieldType(fieldType);
+    this.setFieldType(fieldType.getValue());
     return this;
   }
 

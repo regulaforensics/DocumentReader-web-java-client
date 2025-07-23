@@ -45,7 +45,7 @@ public class ImagesField {
 
   @SerializedName(SERIALIZED_NAME_FIELD_TYPE)
   @javax.annotation.Nonnull
-  private GraphicFieldType fieldType;
+  private Integer fieldType;
 
   public static final String SERIALIZED_NAME_VALUE_LIST = "valueList";
 
@@ -80,22 +80,22 @@ public class ImagesField {
     this.fieldName = fieldName;
   }
 
-  public ImagesField fieldType(@javax.annotation.Nonnull GraphicFieldType fieldType) {
+  public ImagesField fieldType(@javax.annotation.Nonnull Integer fieldType) {
     this.fieldType = fieldType;
     return this;
   }
 
   /**
-   * Get fieldType
+   * The value can be from GraphicFieldType or TextFieldType enum.
    *
    * @return fieldType
    */
   @javax.annotation.Nonnull
-  public GraphicFieldType getFieldType() {
+  public Integer getFieldType() {
     return fieldType;
   }
 
-  public void setFieldType(@javax.annotation.Nonnull GraphicFieldType fieldType) {
+  public void setFieldType(@javax.annotation.Nonnull Integer fieldType) {
     this.fieldType = fieldType;
   }
 
@@ -238,8 +238,6 @@ public class ImagesField {
               "Expected the field `fieldName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("fieldName").toString()));
     }
-    // validate the required field `fieldType`
-    GraphicFieldType.validateJsonElement(jsonObj.get("fieldType"));
     // ensure the json data is an array
     if (!jsonObj.get("valueList").isJsonArray()) {
       throw new IllegalArgumentException(
