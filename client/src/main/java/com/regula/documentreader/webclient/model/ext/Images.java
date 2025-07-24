@@ -47,7 +47,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
   @Nullable
   public ImagesField getField(GraphicFieldType fieldType) {
     for (com.regula.documentreader.webclient.model.ImagesField field : getFieldList()) {
-      if (field.getFieldType().equals(fieldType.getValue())) {
+      if (field.getFieldType() == fieldType) {
         return new ImagesField(field);
       }
     }
@@ -57,7 +57,7 @@ public class Images extends com.regula.documentreader.webclient.model.Images {
   public List<ImagesField> getFields(int fieldType) {
     List<ImagesField> fields = new ArrayList<>();
     for (com.regula.documentreader.webclient.model.ImagesField field : getFieldList()) {
-      if (field.getFieldType() == fieldType) {
+      if (field.getFieldType().getValue() == fieldType) {
         fields.add(new ImagesField(field));
       }
     }
