@@ -44,6 +44,9 @@ public enum ImageQualityCheckType {
   /** Signals if the portrait is present */
   Portrait(7),
 
+  /** Signals if the document contains handwritten text in the scanned fields */
+  Handwritten(8),
+
   /** Signals if the document image is bright enough */
   Brightness(9),
 
