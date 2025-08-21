@@ -429,6 +429,12 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean disableAuthResolutionFilter;
 
+  public static final String SERIALIZED_NAME_STRICT_SECURITY_CHECKS = "strictSecurityChecks";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_SECURITY_CHECKS)
+  @javax.annotation.Nullable
+  private Boolean strictSecurityChecks;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1820,6 +1826,28 @@ public class ProcessParams {
     this.disableAuthResolutionFilter = disableAuthResolutionFilter;
   }
 
+  public ProcessParams strictSecurityChecks(
+      @javax.annotation.Nullable Boolean strictSecurityChecks) {
+    this.strictSecurityChecks = strictSecurityChecks;
+    return this;
+  }
+
+  /**
+   * When enabled, this parameter marks security checks that don’t meet minimum requirements as
+   * &#39;Failed&#39; (instead of &#39;WasNotDone&#39;), which causes the overall security status to
+   * be &#39;Failed&#39;.
+   *
+   * @return strictSecurityChecks
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictSecurityChecks() {
+    return strictSecurityChecks;
+  }
+
+  public void setStrictSecurityChecks(@javax.annotation.Nullable Boolean strictSecurityChecks) {
+    this.strictSecurityChecks = strictSecurityChecks;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1896,7 +1924,8 @@ public class ProcessParams {
         && Objects.equals(this.generateAlpha2Codes, processParams.generateAlpha2Codes)
         && Objects.equals(this.pdfPagesLimit, processParams.pdfPagesLimit)
         && Objects.equals(
-            this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter);
+            this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter)
+        && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks);
   }
 
   @Override
@@ -1965,7 +1994,8 @@ public class ProcessParams {
         strictDLCategoryExpiry,
         generateAlpha2Codes,
         pdfPagesLimit,
-        disableAuthResolutionFilter);
+        disableAuthResolutionFilter,
+        strictSecurityChecks);
   }
 
   @Override
@@ -2072,6 +2102,9 @@ public class ProcessParams {
     sb.append("    disableAuthResolutionFilter: ")
         .append(toIndentedString(disableAuthResolutionFilter))
         .append("\n");
+    sb.append("    strictSecurityChecks: ")
+        .append(toIndentedString(strictSecurityChecks))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2156,6 +2189,7 @@ public class ProcessParams {
     openapiFields.add("generateAlpha2Codes");
     openapiFields.add("pdfPagesLimit");
     openapiFields.add("disableAuthResolutionFilter");
+    openapiFields.add("strictSecurityChecks");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
