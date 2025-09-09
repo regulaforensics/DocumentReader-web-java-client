@@ -41,7 +41,7 @@ public class RfidApplication {
 
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  private RfidApplicationType type;
+  private Integer type;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
 
@@ -81,7 +81,7 @@ public class RfidApplication {
 
   public RfidApplication() {}
 
-  public RfidApplication type(@javax.annotation.Nonnull RfidApplicationType type) {
+  public RfidApplication type(@javax.annotation.Nonnull Integer type) {
     this.type = type;
     return this;
   }
@@ -92,11 +92,11 @@ public class RfidApplication {
    * @return type
    */
   @javax.annotation.Nonnull
-  public RfidApplicationType getType() {
+  public Integer getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull RfidApplicationType type) {
+  public void setType(@javax.annotation.Nonnull Integer type) {
     this.type = type;
   }
 
@@ -323,8 +323,6 @@ public class RfidApplication {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `Type`
-    RfidApplicationType.validateJsonElement(jsonObj.get("Type"));
     // validate the required field `Status`
     RFIDErrorCodes.validateJsonElement(jsonObj.get("Status"));
     if (!jsonObj.get("ApplicationID").isJsonPrimitive()) {

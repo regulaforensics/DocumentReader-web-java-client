@@ -179,7 +179,6 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidAccessControlIn
 src/main/generated/com/regula/documentreader/webclient/model/RfidAccessControlProcedureType.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidAccessKey.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidApplication.java
-src/main/generated/com/regula/documentreader/webclient/model/RfidApplicationType.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidAttributeData.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidAttributeName.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidAuthenticationProcedureType.java
@@ -191,7 +190,6 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidCertificateType
 src/main/generated/com/regula/documentreader/webclient/model/RfidDG1.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDataFile.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDataFileType.java
-src/main/generated/com/regula/documentreader/webclient/model/RfidDataGroupTypeTag.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDistinguishedName.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidLocation.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidOrigin.java
