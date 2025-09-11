@@ -26,8 +26,8 @@ import java.io.IOException;
 @JsonAdapter(RfidApplicationType.Adapter.class)
 public enum RfidApplicationType {
 
-  /** Not defined */
-  UNSPECIFIED(0),
+  /** Root files */
+  ROOT_FILES(0),
 
   /** ePassport application */
   E_PASSPORT(1),
@@ -51,10 +51,7 @@ public enum RfidApplicationType {
   LDS2_AddBiometrics(7),
 
   /** Digital Travel Credentials */
-  eDTC_PC(8),
-
-  /** Master File */
-  ROOT_FILES(0);
+  eDTC_PC(8);
 
   private Integer value;
 

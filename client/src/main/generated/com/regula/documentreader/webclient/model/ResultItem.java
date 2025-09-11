@@ -319,7 +319,7 @@ public class ResultItem {
         MRZPositionResult.validateJsonElement(jsonElement);
         break;
       case "62":
-        DocumentPositionResult.validateJsonElement(jsonElement);
+        BarcodePositionResult.validateJsonElement(jsonElement);
         break;
       case "7":
         MRZTestQualityResult.validateJsonElement(jsonElement);
