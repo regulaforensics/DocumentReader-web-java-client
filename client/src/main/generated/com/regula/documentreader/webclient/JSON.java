@@ -230,6 +230,23 @@ public class JSON {
                   }
                 })
             .registerTypeSelector(
+                com.regula.documentreader.webclient.model.BarcodePositionResult.class,
+                new TypeSelector<
+                    com.regula.documentreader.webclient.model.BarcodePositionResult>() {
+                  @Override
+                  public Class<
+                          ? extends com.regula.documentreader.webclient.model.BarcodePositionResult>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "BarcodePositionResult",
+                        com.regula.documentreader.webclient.model.BarcodePositionResult.class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue,
+                        getDiscriminatorValue(readElement, "result_type"));
+                  }
+                })
+            .registerTypeSelector(
                 com.regula.documentreader.webclient.model.ByteArrayResult.class,
                 new TypeSelector<com.regula.documentreader.webclient.model.ByteArrayResult>() {
                   @Override
@@ -336,7 +353,7 @@ public class JSON {
                         "61", com.regula.documentreader.webclient.model.MRZPositionResult.class);
                     classByDiscriminatorValue.put(
                         "62",
-                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                        com.regula.documentreader.webclient.model.BarcodePositionResult.class);
                     classByDiscriminatorValue.put(
                         "7", com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
                     classByDiscriminatorValue.put(
@@ -356,6 +373,9 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "AuthenticityResult",
                         com.regula.documentreader.webclient.model.AuthenticityResult.class);
+                    classByDiscriminatorValue.put(
+                        "BarcodePositionResult",
+                        com.regula.documentreader.webclient.model.BarcodePositionResult.class);
                     classByDiscriminatorValue.put(
                         "ByteArrayResult",
                         com.regula.documentreader.webclient.model.ByteArrayResult.class);
@@ -836,7 +856,7 @@ public class JSON {
                         "61", com.regula.documentreader.webclient.model.MRZPositionResult.class);
                     classByDiscriminatorValue.put(
                         "62",
-                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
+                        com.regula.documentreader.webclient.model.BarcodePositionResult.class);
                     classByDiscriminatorValue.put(
                         "7", com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
                     classByDiscriminatorValue.put(
@@ -978,6 +998,12 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.AuthenticityResult
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.BarcodePositionItem
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.BarcodePositionResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.BcPDF417INFO.CustomTypeAdapterFactory());

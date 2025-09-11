@@ -63,6 +63,8 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           gson.getDelegateAdapter(this, TypeToken.get(AuthenticityResult.class));
       final TypeAdapter<ImageQualityResult> adapterImageQualityResult =
           gson.getDelegateAdapter(this, TypeToken.get(ImageQualityResult.class));
+      final TypeAdapter<BarcodePositionResult> adapterBarcodePositionResult =
+          gson.getDelegateAdapter(this, TypeToken.get(BarcodePositionResult.class));
       final TypeAdapter<DocumentPositionResult> adapterDocumentPositionResult =
           gson.getDelegateAdapter(this, TypeToken.get(DocumentPositionResult.class));
       final TypeAdapter<DocBarCodeInfo> adapterDocBarCodeInfo =
@@ -180,6 +182,14 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                 elementAdapter.write(out, element);
                 return;
               }
+              // check if the actual instance is of the type `BarcodePositionResult`
+              if (value.getActualInstance() instanceof BarcodePositionResult) {
+                JsonElement element =
+                    adapterBarcodePositionResult.toJsonTree(
+                        (BarcodePositionResult) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
               // check if the actual instance is of the type `DocumentPositionResult`
               if (value.getActualInstance() instanceof DocumentPositionResult) {
                 JsonElement element =
@@ -274,7 +284,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                 return;
               }
               throw new IOException(
-                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult");
+                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult");
             }
 
             @Override
@@ -449,6 +459,21 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                         "Deserialization for ImageQualityResult failed with `%s`.",
                         e.getMessage()));
                 log.log(Level.FINER, "Input data does not match schema 'ImageQualityResult'", e);
+              }
+              // deserialize BarcodePositionResult
+              try {
+                // validate the JSON object to see if any exception is thrown
+                BarcodePositionResult.validateJsonElement(jsonElement);
+                actualAdapter = adapterBarcodePositionResult;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'BarcodePositionResult'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for BarcodePositionResult failed with `%s`.",
+                        e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'BarcodePositionResult'", e);
               }
               // deserialize DocumentPositionResult
               try {
@@ -668,6 +693,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     schemas.put("LexicalAnalysisResult", LexicalAnalysisResult.class);
     schemas.put("AuthenticityResult", AuthenticityResult.class);
     schemas.put("ImageQualityResult", ImageQualityResult.class);
+    schemas.put("BarcodePositionResult", BarcodePositionResult.class);
     schemas.put("DocumentPositionResult", DocumentPositionResult.class);
     schemas.put("DocBarCodeInfo", DocBarCodeInfo.class);
     schemas.put("LicenseResult", LicenseResult.class);
@@ -689,12 +715,12 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
 
   /**
    * Set the instance that matches the oneOf child schema, check the instance parameter is valid
-   * against the oneOf child schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult,
-   * DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult,
-   * DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult,
-   * ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult,
-   * MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult,
-   * StatusResult, TextDataResult, TextResult
+   * against the oneOf child schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult,
+   * ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
+   * DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult,
+   * GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult,
+   * MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult,
+   * RFIDTextDataResult, StatusResult, TextDataResult, TextResult
    *
    * <p>It could be an instance of the 'oneOf' schemas.
    */
@@ -751,6 +777,11 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     }
 
     if (instance instanceof ImageQualityResult) {
+      super.setActualInstance(instance);
+      return;
+    }
+
+    if (instance instanceof BarcodePositionResult) {
       super.setActualInstance(instance);
       return;
     }
@@ -816,23 +847,24 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     }
 
     throw new RuntimeException(
-        "Invalid instance type. Must be AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult");
+        "Invalid instance type. Must be AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult");
   }
 
   /**
-   * Get the actual instance, which can be the following: AuthenticityResult, ByteArrayResult,
-   * ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
-   * DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult,
-   * GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult,
-   * MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult,
-   * RFIDTextDataResult, StatusResult, TextDataResult, TextResult
+   * Get the actual instance, which can be the following: AuthenticityResult, BarcodePositionResult,
+   * ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult,
+   * DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult,
+   * FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult,
+   * LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult,
+   * RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult
    *
-   * @return The actual instance (AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult,
-   *     DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult,
-   *     DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult,
-   *     ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult,
-   *     MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult,
-   *     StatusResult, TextDataResult, TextResult)
+   * @return The actual instance (AuthenticityResult, BarcodePositionResult, ByteArrayResult,
+   *     ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
+   *     DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult,
+   *     FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult,
+   *     LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult,
+   *     MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult,
+   *     TextDataResult, TextResult)
    */
   @SuppressWarnings("unchecked")
   @Override
@@ -960,6 +992,17 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
    */
   public ImageQualityResult getImageQualityResult() throws ClassCastException {
     return (ImageQualityResult) super.getActualInstance();
+  }
+
+  /**
+   * Get the actual instance of `BarcodePositionResult`. If the actual instance is not
+   * `BarcodePositionResult`, the ClassCastException will be thrown.
+   *
+   * @return The actual instance of `BarcodePositionResult`
+   * @throws ClassCastException if the instance is not `BarcodePositionResult`
+   */
+  public BarcodePositionResult getBarcodePositionResult() throws ClassCastException {
+    return (BarcodePositionResult) super.getActualInstance();
   }
 
   /**
@@ -1210,6 +1253,16 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
               "Deserialization for ImageQualityResult failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
+    // validate the json string with BarcodePositionResult
+    try {
+      BarcodePositionResult.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format(
+              "Deserialization for BarcodePositionResult failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
     // validate the json string with DocumentPositionResult
     try {
       DocumentPositionResult.validateJsonElement(jsonElement);
@@ -1328,7 +1381,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     if (validCount != 1) {
       throw new IOException(
           String.format(
-              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
               validCount, errorMessages, jsonElement.toString()));
     }
   }
