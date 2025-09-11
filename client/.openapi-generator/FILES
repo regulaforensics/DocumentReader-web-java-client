@@ -30,6 +30,8 @@ src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckRe
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResult.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResultType.java
 src/main/generated/com/regula/documentreader/webclient/model/BarCodeModuleType.java
+src/main/generated/com/regula/documentreader/webclient/model/BarcodePositionItem.java
+src/main/generated/com/regula/documentreader/webclient/model/BarcodePositionResult.java
 src/main/generated/com/regula/documentreader/webclient/model/BarcodeType.java
 src/main/generated/com/regula/documentreader/webclient/model/BcPDF417INFO.java
 src/main/generated/com/regula/documentreader/webclient/model/BcROIDETECT.java
@@ -191,7 +193,6 @@ src/main/generated/com/regula/documentreader/webclient/model/RfidCertificateType
 src/main/generated/com/regula/documentreader/webclient/model/RfidDG1.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDataFile.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDataFileType.java
-src/main/generated/com/regula/documentreader/webclient/model/RfidDataGroupTypeTag.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidDistinguishedName.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidLocation.java
 src/main/generated/com/regula/documentreader/webclient/model/RfidOrigin.java

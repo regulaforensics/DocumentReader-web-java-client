@@ -39,7 +39,7 @@ public class RfidDG1 {
 
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
-  private RfidDataGroupTypeTag type;
+  private Integer type;
 
   public static final String SERIALIZED_NAME_DOCUMENT_I_D = "DocumentID";
 
@@ -134,7 +134,7 @@ public class RfidDG1 {
 
   public RfidDG1() {}
 
-  public RfidDG1 type(@javax.annotation.Nonnull RfidDataGroupTypeTag type) {
+  public RfidDG1 type(@javax.annotation.Nonnull Integer type) {
     this.type = type;
     return this;
   }
@@ -145,11 +145,11 @@ public class RfidDG1 {
    * @return type
    */
   @javax.annotation.Nonnull
-  public RfidDataGroupTypeTag getType() {
+  public Integer getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull RfidDataGroupTypeTag type) {
+  public void setType(@javax.annotation.Nonnull Integer type) {
     this.type = type;
   }
 
@@ -602,8 +602,6 @@ public class RfidDG1 {
       }
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
-    // validate the required field `Type`
-    RfidDataGroupTypeTag.validateJsonElement(jsonObj.get("Type"));
     // validate the required field `DocumentID`
     DocumentFormat.validateJsonElement(jsonObj.get("DocumentID"));
     if (!jsonObj.get("DocumentType").isJsonPrimitive()) {
