@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidAccessKey {
   public static final String SERIALIZED_NAME_ACCESS_KEY = "AccessKey";
 
@@ -188,18 +189,14 @@ public class RfidAccessKey {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("AccessKey");
-    openapiFields.add("KeyType");
-    openapiFields.add("AccessType");
-    openapiFields.add("CheckFullKeyMatching");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("AccessKey", "KeyType", "AccessType", "CheckFullKeyMatching"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("AccessKey");
-    openapiRequiredFields.add("KeyType");
-    openapiRequiredFields.add("AccessType");
-    openapiRequiredFields.add("CheckFullKeyMatching");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("AccessKey", "KeyType", "AccessType", "CheckFullKeyMatching"));
   }
 
   /**
@@ -212,7 +209,7 @@ public class RfidAccessKey {
     if (jsonElement == null) {
       if (!RfidAccessKey.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidAccessKey is not found in the empty JSON string",
                 RfidAccessKey.openapiRequiredFields.toString()));
@@ -222,7 +219,7 @@ public class RfidAccessKey {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidAccessKey.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -230,7 +227,7 @@ public class RfidAccessKey {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("AccessKey").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `AccessKey` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("AccessKey").toString()));

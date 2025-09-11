@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** RawImageContainerList */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RawImageContainerList {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
@@ -137,14 +138,10 @@ public class RawImageContainerList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Count");
-    openapiFields.add("Images");
+    openapiFields = new HashSet<String>(Arrays.asList("Count", "Images"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Count");
-    openapiRequiredFields.add("Images");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Count", "Images"));
   }
 
   /**
@@ -157,7 +154,7 @@ public class RawImageContainerList {
     if (jsonElement == null) {
       if (!RawImageContainerList.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RawImageContainerList is not found in the empty JSON string",
                 RawImageContainerList.openapiRequiredFields.toString()));
@@ -167,7 +164,7 @@ public class RawImageContainerList {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RawImageContainerList.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -176,7 +173,7 @@ public class RawImageContainerList {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("Images").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Images` to be an array in the JSON string but got `%s`",
               jsonObj.get("Images").toString()));

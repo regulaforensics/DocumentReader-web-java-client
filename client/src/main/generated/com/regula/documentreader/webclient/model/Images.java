@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** Images */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class Images {
   public static final String SERIALIZED_NAME_FIELD_COUNT = "fieldCount";
 
@@ -205,16 +206,13 @@ public class Images {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("fieldCount");
-    openapiFields.add("availableSourceCount");
-    openapiFields.add("availableSourceList");
-    openapiFields.add("fieldList");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "fieldCount", "availableSourceCount", "availableSourceList", "fieldList"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("availableSourceList");
-    openapiRequiredFields.add("fieldList");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("availableSourceList", "fieldList"));
   }
 
   /**
@@ -226,7 +224,7 @@ public class Images {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
       if (!Images.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in Images is not found in the empty JSON string",
                 Images.openapiRequiredFields.toString()));
@@ -236,7 +234,7 @@ public class Images {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : Images.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -245,7 +243,7 @@ public class Images {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("availableSourceList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `availableSourceList` to be an array in the JSON string but got `%s`",
               jsonObj.get("availableSourceList").toString()));
@@ -259,7 +257,7 @@ public class Images {
     ;
     // ensure the json data is an array
     if (!jsonObj.get("fieldList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `fieldList` to be an array in the JSON string but got `%s`",
               jsonObj.get("fieldList").toString()));

@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** TOriginalRFIDGraphicsInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TOriginalRFIDGraphicsInfo {
   public static final String SERIALIZED_NAME_R_F_I_D_O_R_I_G_I_N_A_L_G_R_A_P_H_D_A_T_A =
       "RFID_ORIGINAL_GRAPH_DATA";
@@ -117,12 +118,10 @@ public class TOriginalRFIDGraphicsInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RFID_ORIGINAL_GRAPH_DATA");
+    openapiFields = new HashSet<String>(Arrays.asList("RFID_ORIGINAL_GRAPH_DATA"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("RFID_ORIGINAL_GRAPH_DATA");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("RFID_ORIGINAL_GRAPH_DATA"));
   }
 
   /**
@@ -135,7 +134,7 @@ public class TOriginalRFIDGraphicsInfo {
     if (jsonElement == null) {
       if (!TOriginalRFIDGraphicsInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TOriginalRFIDGraphicsInfo is not found in the empty JSON string",
                 TOriginalRFIDGraphicsInfo.openapiRequiredFields.toString()));
@@ -145,7 +144,7 @@ public class TOriginalRFIDGraphicsInfo {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : TOriginalRFIDGraphicsInfo.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -154,7 +153,7 @@ public class TOriginalRFIDGraphicsInfo {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("RFID_ORIGINAL_GRAPH_DATA").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `RFID_ORIGINAL_GRAPH_DATA` to be an array in the JSON string but got `%s`",
               jsonObj.get("RFID_ORIGINAL_GRAPH_DATA").toString()));

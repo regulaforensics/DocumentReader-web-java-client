@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -33,7 +34,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidCardPropertiesExt {
   public static final String SERIALIZED_NAME_RF_I_D_TYPE = "RFID_Type";
 
@@ -472,38 +473,42 @@ public class RfidCardPropertiesExt {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RFID_Type");
-    openapiFields.add("Baudrate1");
-    openapiFields.add("Baudrate2");
-    openapiFields.add("Support_4");
-    openapiFields.add("ChipType_A");
-    openapiFields.add("Support_Mifare");
-    openapiFields.add("MifareMemory");
-    openapiFields.add("UID");
-    openapiFields.add("ATQ_A");
-    openapiFields.add("SAK");
-    openapiFields.add("ATQ_B");
-    openapiFields.add("BitRateS");
-    openapiFields.add("BitRateR");
-    openapiFields.add("ATR");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RFID_Type",
+                "Baudrate1",
+                "Baudrate2",
+                "Support_4",
+                "ChipType_A",
+                "Support_Mifare",
+                "MifareMemory",
+                "UID",
+                "ATQ_A",
+                "SAK",
+                "ATQ_B",
+                "BitRateS",
+                "BitRateR",
+                "ATR"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("RFID_Type");
-    openapiRequiredFields.add("Baudrate1");
-    openapiRequiredFields.add("Baudrate2");
-    openapiRequiredFields.add("Support_4");
-    openapiRequiredFields.add("ChipType_A");
-    openapiRequiredFields.add("Support_Mifare");
-    openapiRequiredFields.add("MifareMemory");
-    openapiRequiredFields.add("UID");
-    openapiRequiredFields.add("ATQ_A");
-    openapiRequiredFields.add("SAK");
-    openapiRequiredFields.add("ATQ_B");
-    openapiRequiredFields.add("BitRateS");
-    openapiRequiredFields.add("BitRateR");
-    openapiRequiredFields.add("ATR");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RFID_Type",
+                "Baudrate1",
+                "Baudrate2",
+                "Support_4",
+                "ChipType_A",
+                "Support_Mifare",
+                "MifareMemory",
+                "UID",
+                "ATQ_A",
+                "SAK",
+                "ATQ_B",
+                "BitRateS",
+                "BitRateR",
+                "ATR"));
   }
 
   /**
@@ -516,7 +521,7 @@ public class RfidCardPropertiesExt {
     if (jsonElement == null) {
       if (!RfidCardPropertiesExt.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidCardPropertiesExt is not found in the empty JSON string",
                 RfidCardPropertiesExt.openapiRequiredFields.toString()));
@@ -526,7 +531,7 @@ public class RfidCardPropertiesExt {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidCardPropertiesExt.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -536,13 +541,13 @@ public class RfidCardPropertiesExt {
     // validate the required field `RFID_Type`
     RfidType.validateJsonElement(jsonObj.get("RFID_Type"));
     if (!jsonObj.get("Baudrate1").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Baudrate1` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Baudrate1").toString()));
     }
     if (!jsonObj.get("Baudrate2").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Baudrate2` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Baudrate2").toString()));
@@ -550,7 +555,7 @@ public class RfidCardPropertiesExt {
     // validate the required field `ChipType_A`
     RfidAChip.validateJsonElement(jsonObj.get("ChipType_A"));
     if (!jsonObj.get("UID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `UID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("UID").toString()));
@@ -560,7 +565,7 @@ public class RfidCardPropertiesExt {
     // validate the required field `BitRateR`
     RfidBaudRate.validateJsonElement(jsonObj.get("BitRateR"));
     if (!jsonObj.get("ATR").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ATR` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ATR").toString()));

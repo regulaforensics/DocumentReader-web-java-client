@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** Extended document type info and Regula&#39;s &#39;Information Reference Systems&#39; links */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FDSIDList {
   public static final String SERIALIZED_NAME_IC_A_O_CODE = "ICAOCode";
 
@@ -419,28 +420,26 @@ public class FDSIDList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ICAOCode");
-    openapiFields.add("Count");
-    openapiFields.add("List");
-    openapiFields.add("dType");
-    openapiFields.add("dFormat");
-    openapiFields.add("dMRZ");
-    openapiFields.add("dDescription");
-    openapiFields.add("dYear");
-    openapiFields.add("dCountryName");
-    openapiFields.add("dStateCode");
-    openapiFields.add("dStateName");
-    openapiFields.add("isDeprecated");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ICAOCode",
+                "Count",
+                "List",
+                "dType",
+                "dFormat",
+                "dMRZ",
+                "dDescription",
+                "dYear",
+                "dCountryName",
+                "dStateCode",
+                "dStateName",
+                "isDeprecated"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ICAOCode");
-    openapiRequiredFields.add("dType");
-    openapiRequiredFields.add("dFormat");
-    openapiRequiredFields.add("dMRZ");
-    openapiRequiredFields.add("dCountryName");
-    openapiRequiredFields.add("isDeprecated");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("ICAOCode", "dType", "dFormat", "dMRZ", "dCountryName", "isDeprecated"));
   }
 
   /**
@@ -453,7 +452,7 @@ public class FDSIDList {
     if (jsonElement == null) {
       if (!FDSIDList.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FDSIDList is not found in the empty JSON string",
                 FDSIDList.openapiRequiredFields.toString()));
@@ -463,7 +462,7 @@ public class FDSIDList {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : FDSIDList.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -471,7 +470,7 @@ public class FDSIDList {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("ICAOCode").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ICAOCode` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ICAOCode").toString()));
@@ -480,7 +479,7 @@ public class FDSIDList {
     if (jsonObj.get("List") != null
         && !jsonObj.get("List").isJsonNull()
         && !jsonObj.get("List").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `List` to be an array in the JSON string but got `%s`",
               jsonObj.get("List").toString()));
@@ -491,34 +490,34 @@ public class FDSIDList {
     DocumentFormat.validateJsonElement(jsonObj.get("dFormat"));
     if ((jsonObj.get("dDescription") != null && !jsonObj.get("dDescription").isJsonNull())
         && !jsonObj.get("dDescription").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dDescription` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dDescription").toString()));
     }
     if ((jsonObj.get("dYear") != null && !jsonObj.get("dYear").isJsonNull())
         && !jsonObj.get("dYear").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dYear` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dYear").toString()));
     }
     if (!jsonObj.get("dCountryName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dCountryName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dCountryName").toString()));
     }
     if ((jsonObj.get("dStateCode") != null && !jsonObj.get("dStateCode").isJsonNull())
         && !jsonObj.get("dStateCode").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dStateCode` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dStateCode").toString()));
     }
     if ((jsonObj.get("dStateName") != null && !jsonObj.get("dStateName").isJsonNull())
         && !jsonObj.get("dStateName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dStateName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dStateName").toString()));

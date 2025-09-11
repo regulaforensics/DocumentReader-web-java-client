@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** FaceItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FaceItem {
   public static final String SERIALIZED_NAME_COINCIDENCE_TO_PHOTO_AREA = "CoincidenceToPhotoArea";
 
@@ -309,26 +310,30 @@ public class FaceItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("CoincidenceToPhotoArea");
-    openapiFields.add("FaceRect");
-    openapiFields.add("FieldRect");
-    openapiFields.add("GraphFieldNumber");
-    openapiFields.add("Landmarks");
-    openapiFields.add("LightType");
-    openapiFields.add("Orientation");
-    openapiFields.add("Probability");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "CoincidenceToPhotoArea",
+                "FaceRect",
+                "FieldRect",
+                "GraphFieldNumber",
+                "Landmarks",
+                "LightType",
+                "Orientation",
+                "Probability"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("CoincidenceToPhotoArea");
-    openapiRequiredFields.add("FaceRect");
-    openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("GraphFieldNumber");
-    openapiRequiredFields.add("Landmarks");
-    openapiRequiredFields.add("LightType");
-    openapiRequiredFields.add("Orientation");
-    openapiRequiredFields.add("Probability");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "CoincidenceToPhotoArea",
+                "FaceRect",
+                "FieldRect",
+                "GraphFieldNumber",
+                "Landmarks",
+                "LightType",
+                "Orientation",
+                "Probability"));
   }
 
   /**
@@ -341,7 +346,7 @@ public class FaceItem {
     if (jsonElement == null) {
       if (!FaceItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FaceItem is not found in the empty JSON string",
                 FaceItem.openapiRequiredFields.toString()));
@@ -351,7 +356,7 @@ public class FaceItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : FaceItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -364,7 +369,7 @@ public class FaceItem {
     RectangleCoordinates.validateJsonElement(jsonObj.get("FieldRect"));
     // ensure the json data is an array
     if (!jsonObj.get("Landmarks").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Landmarks` to be an array in the JSON string but got `%s`",
               jsonObj.get("Landmarks").toString()));

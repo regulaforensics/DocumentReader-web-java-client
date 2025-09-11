@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** PhotoIdentResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class PhotoIdentResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_LIGHT_INDEX = "LightIndex";
 
@@ -338,28 +339,27 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("ElementResult");
-    openapiFields.add("ElementDiagnose");
-    openapiFields.add("PercentValue");
-    openapiFields.add("LightIndex");
-    openapiFields.add("Area");
-    openapiFields.add("SourceImage");
-    openapiFields.add("ResultImages");
-    openapiFields.add("FieldTypesCount");
-    openapiFields.add("FieldTypesList");
-    openapiFields.add("Step");
-    openapiFields.add("Angle");
-    openapiFields.add("Reserved3");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "ElementResult",
+                "ElementDiagnose",
+                "PercentValue",
+                "LightIndex",
+                "Area",
+                "SourceImage",
+                "ResultImages",
+                "FieldTypesCount",
+                "FieldTypesList",
+                "Step",
+                "Angle",
+                "Reserved3"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("LightIndex");
-    openapiRequiredFields.add("Area");
-    openapiRequiredFields.add("SourceImage");
-    openapiRequiredFields.add("ResultImages");
-    openapiRequiredFields.add("Type");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("LightIndex", "Area", "SourceImage", "ResultImages", "Type"));
   }
 
   /**
@@ -372,7 +372,7 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
     if (jsonElement == null) {
       if (!PhotoIdentResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in PhotoIdentResult is not found in the empty JSON string",
                 PhotoIdentResult.openapiRequiredFields.toString()));
@@ -382,7 +382,7 @@ public class PhotoIdentResult extends AuthenticityCheckResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : PhotoIdentResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** CandidatesListItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class CandidatesListItem {
   public static final String SERIALIZED_NAME_CANDIDATES_LIST = "CandidatesList";
 
@@ -101,11 +102,10 @@ public class CandidatesListItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("CandidatesList");
+    openapiFields = new HashSet<String>(Arrays.asList("CandidatesList"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -118,7 +118,7 @@ public class CandidatesListItem {
     if (jsonElement == null) {
       if (!CandidatesListItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in CandidatesListItem is not found in the empty JSON string",
                 CandidatesListItem.openapiRequiredFields.toString()));

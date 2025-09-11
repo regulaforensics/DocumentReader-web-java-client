@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Details on performed RFID checks */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DetailsRFID {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
@@ -261,24 +262,12 @@ public class DetailsRFID {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("overallStatus");
-    openapiFields.add("AA");
-    openapiFields.add("BAC");
-    openapiFields.add("CA");
-    openapiFields.add("PA");
-    openapiFields.add("PACE");
-    openapiFields.add("TA");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("overallStatus", "AA", "BAC", "CA", "PA", "PACE", "TA"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("overallStatus");
-    openapiRequiredFields.add("AA");
-    openapiRequiredFields.add("BAC");
-    openapiRequiredFields.add("CA");
-    openapiRequiredFields.add("PA");
-    openapiRequiredFields.add("PACE");
-    openapiRequiredFields.add("TA");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("overallStatus", "AA", "BAC", "CA", "PA", "PACE", "TA"));
   }
 
   /**
@@ -291,7 +280,7 @@ public class DetailsRFID {
     if (jsonElement == null) {
       if (!DetailsRFID.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DetailsRFID is not found in the empty JSON string",
                 DetailsRFID.openapiRequiredFields.toString()));
@@ -301,7 +290,7 @@ public class DetailsRFID {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DetailsRFID.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +37,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidSessionData {
   public static final String SERIALIZED_NAME_VIRTUAL_MODE = "VirtualMode";
 
@@ -598,39 +599,43 @@ public class RfidSessionData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("VirtualMode");
-    openapiFields.add("SDKVersion");
-    openapiFields.add("DriverVersion");
-    openapiFields.add("FirmwareVersion");
-    openapiFields.add("Applications");
-    openapiFields.add("AccessControls");
-    openapiFields.add("CardProperties");
-    openapiFields.add("ExtLeSupport");
-    openapiFields.add("ProcessTime");
-    openapiFields.add("RootFiles");
-    openapiFields.add("TotalBytesSent");
-    openapiFields.add("TotalBytesReceived");
-    openapiFields.add("Session_key");
-    openapiFields.add("Session_terminal");
-    openapiFields.add("Session_procedure");
-    openapiFields.add("SecurityObjects");
-    openapiFields.add("Status");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "VirtualMode",
+                "SDKVersion",
+                "DriverVersion",
+                "FirmwareVersion",
+                "Applications",
+                "AccessControls",
+                "CardProperties",
+                "ExtLeSupport",
+                "ProcessTime",
+                "RootFiles",
+                "TotalBytesSent",
+                "TotalBytesReceived",
+                "Session_key",
+                "Session_terminal",
+                "Session_procedure",
+                "SecurityObjects",
+                "Status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Applications");
-    openapiRequiredFields.add("AccessControls");
-    openapiRequiredFields.add("CardProperties");
-    openapiRequiredFields.add("ExtLeSupport");
-    openapiRequiredFields.add("ProcessTime");
-    openapiRequiredFields.add("RootFiles");
-    openapiRequiredFields.add("TotalBytesSent");
-    openapiRequiredFields.add("TotalBytesReceived");
-    openapiRequiredFields.add("Session_key");
-    openapiRequiredFields.add("Session_terminal");
-    openapiRequiredFields.add("Session_procedure");
-    openapiRequiredFields.add("SecurityObjects");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Applications",
+                "AccessControls",
+                "CardProperties",
+                "ExtLeSupport",
+                "ProcessTime",
+                "RootFiles",
+                "TotalBytesSent",
+                "TotalBytesReceived",
+                "Session_key",
+                "Session_terminal",
+                "Session_procedure",
+                "SecurityObjects"));
   }
 
   /**
@@ -643,7 +648,7 @@ public class RfidSessionData {
     if (jsonElement == null) {
       if (!RfidSessionData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidSessionData is not found in the empty JSON string",
                 RfidSessionData.openapiRequiredFields.toString()));
@@ -653,7 +658,7 @@ public class RfidSessionData {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidSessionData.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -662,28 +667,28 @@ public class RfidSessionData {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("SDKVersion") != null && !jsonObj.get("SDKVersion").isJsonNull())
         && !jsonObj.get("SDKVersion").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SDKVersion` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("SDKVersion").toString()));
     }
     if ((jsonObj.get("DriverVersion") != null && !jsonObj.get("DriverVersion").isJsonNull())
         && !jsonObj.get("DriverVersion").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DriverVersion` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DriverVersion").toString()));
     }
     if ((jsonObj.get("FirmwareVersion") != null && !jsonObj.get("FirmwareVersion").isJsonNull())
         && !jsonObj.get("FirmwareVersion").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `FirmwareVersion` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FirmwareVersion").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("Applications").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Applications` to be an array in the JSON string but got `%s`",
               jsonObj.get("Applications").toString()));
@@ -697,7 +702,7 @@ public class RfidSessionData {
     ;
     // ensure the json data is an array
     if (!jsonObj.get("AccessControls").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `AccessControls` to be an array in the JSON string but got `%s`",
               jsonObj.get("AccessControls").toString()));
@@ -715,10 +720,10 @@ public class RfidSessionData {
     RFIDErrorCodes.validateJsonElement(jsonObj.get("ExtLeSupport"));
     // ensure the required json array is present
     if (jsonObj.get("RootFiles") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("RootFiles").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `RootFiles` to be an array in the JSON string but got `%s`",
               jsonObj.get("RootFiles").toString()));
@@ -731,7 +736,7 @@ public class RfidSessionData {
     RfidAuthenticationProcedureType.validateJsonElement(jsonObj.get("Session_procedure"));
     // ensure the json data is an array
     if (!jsonObj.get("SecurityObjects").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SecurityObjects` to be an array in the JSON string but got `%s`",
               jsonObj.get("SecurityObjects").toString()));

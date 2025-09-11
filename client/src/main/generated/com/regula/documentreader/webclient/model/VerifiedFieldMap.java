@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** VerifiedFieldMap */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class VerifiedFieldMap {
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
@@ -282,20 +283,19 @@ public class VerifiedFieldMap {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("wFieldType");
-    openapiFields.add("wLCID");
-    openapiFields.add("Field_MRZ");
-    openapiFields.add("Field_Visual");
-    openapiFields.add("Field_Barcode");
-    openapiFields.add("Field_RFID");
-    openapiFields.add("Matrix");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "wFieldType",
+                "wLCID",
+                "Field_MRZ",
+                "Field_Visual",
+                "Field_Barcode",
+                "Field_RFID",
+                "Matrix"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("wFieldType");
-    openapiRequiredFields.add("wLCID");
-    openapiRequiredFields.add("Matrix");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("wFieldType", "wLCID", "Matrix"));
   }
 
   /**
@@ -308,7 +308,7 @@ public class VerifiedFieldMap {
     if (jsonElement == null) {
       if (!VerifiedFieldMap.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in VerifiedFieldMap is not found in the empty JSON string",
                 VerifiedFieldMap.openapiRequiredFields.toString()));
@@ -318,7 +318,7 @@ public class VerifiedFieldMap {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : VerifiedFieldMap.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -331,38 +331,38 @@ public class VerifiedFieldMap {
     LCID.validateJsonElement(jsonObj.get("wLCID"));
     if ((jsonObj.get("Field_MRZ") != null && !jsonObj.get("Field_MRZ").isJsonNull())
         && !jsonObj.get("Field_MRZ").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Field_MRZ` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Field_MRZ").toString()));
     }
     if ((jsonObj.get("Field_Visual") != null && !jsonObj.get("Field_Visual").isJsonNull())
         && !jsonObj.get("Field_Visual").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Field_Visual` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Field_Visual").toString()));
     }
     if ((jsonObj.get("Field_Barcode") != null && !jsonObj.get("Field_Barcode").isJsonNull())
         && !jsonObj.get("Field_Barcode").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Field_Barcode` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Field_Barcode").toString()));
     }
     if ((jsonObj.get("Field_RFID") != null && !jsonObj.get("Field_RFID").isJsonNull())
         && !jsonObj.get("Field_RFID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Field_RFID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Field_RFID").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("Matrix") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Matrix").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Matrix` to be an array in the JSON string but got `%s`",
               jsonObj.get("Matrix").toString()));

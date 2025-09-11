@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** GraphicFieldsList */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class GraphicFieldsList {
   public static final String SERIALIZED_NAME_P_ARRAY_FIELDS = "pArrayFields";
 
@@ -138,14 +139,10 @@ public class GraphicFieldsList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("pArrayFields");
-    openapiFields.add("nFields");
+    openapiFields = new HashSet<String>(Arrays.asList("pArrayFields", "nFields"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("pArrayFields");
-    openapiRequiredFields.add("nFields");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("pArrayFields", "nFields"));
   }
 
   /**
@@ -158,7 +155,7 @@ public class GraphicFieldsList {
     if (jsonElement == null) {
       if (!GraphicFieldsList.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in GraphicFieldsList is not found in the empty JSON string",
                 GraphicFieldsList.openapiRequiredFields.toString()));
@@ -168,7 +165,7 @@ public class GraphicFieldsList {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : GraphicFieldsList.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -177,7 +174,7 @@ public class GraphicFieldsList {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("pArrayFields").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `pArrayFields` to be an array in the JSON string but got `%s`",
               jsonObj.get("pArrayFields").toString()));

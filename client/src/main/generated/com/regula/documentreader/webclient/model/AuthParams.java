@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** AuthParams */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class AuthParams {
   public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
 
@@ -528,26 +529,28 @@ public class AuthParams {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("checkLiveness");
-    openapiFields.add("livenessParams");
-    openapiFields.add("checkUVLuminiscence");
-    openapiFields.add("checkIRB900");
-    openapiFields.add("checkImagePatterns");
-    openapiFields.add("checkFibers");
-    openapiFields.add("checkExtMRZ");
-    openapiFields.add("checkExtOCR");
-    openapiFields.add("checkAxial");
-    openapiFields.add("checkBarcodeFormat");
-    openapiFields.add("checkIRVisibility");
-    openapiFields.add("checkIPI");
-    openapiFields.add("checkPhotoEmbedding");
-    openapiFields.add("checkPhotoComparison");
-    openapiFields.add("checkLetterScreen");
-    openapiFields.add("checkSecurityText");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "checkLiveness",
+                "livenessParams",
+                "checkUVLuminiscence",
+                "checkIRB900",
+                "checkImagePatterns",
+                "checkFibers",
+                "checkExtMRZ",
+                "checkExtOCR",
+                "checkAxial",
+                "checkBarcodeFormat",
+                "checkIRVisibility",
+                "checkIPI",
+                "checkPhotoEmbedding",
+                "checkPhotoComparison",
+                "checkLetterScreen",
+                "checkSecurityText"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -560,7 +563,7 @@ public class AuthParams {
     if (jsonElement == null) {
       if (!AuthParams.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in AuthParams is not found in the empty JSON string",
                 AuthParams.openapiRequiredFields.toString()));

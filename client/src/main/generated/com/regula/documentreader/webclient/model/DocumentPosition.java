@@ -24,13 +24,14 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** DocumentPosition */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocumentPosition {
   public static final String SERIALIZED_NAME_DOC_FORMAT = "docFormat";
 
@@ -493,35 +494,39 @@ public class DocumentPosition {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("docFormat");
-    openapiFields.add("Angle");
-    openapiFields.add("Width");
-    openapiFields.add("Height");
-    openapiFields.add("Center");
-    openapiFields.add("LeftBottom");
-    openapiFields.add("LeftTop");
-    openapiFields.add("RightBottom");
-    openapiFields.add("RightTop");
-    openapiFields.add("Dpi");
-    openapiFields.add("Inverse");
-    openapiFields.add("ObjArea");
-    openapiFields.add("ObjIntAngleDev");
-    openapiFields.add("PerspectiveTr");
-    openapiFields.add("ResultStatus");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "docFormat",
+                "Angle",
+                "Width",
+                "Height",
+                "Center",
+                "LeftBottom",
+                "LeftTop",
+                "RightBottom",
+                "RightTop",
+                "Dpi",
+                "Inverse",
+                "ObjArea",
+                "ObjIntAngleDev",
+                "PerspectiveTr",
+                "ResultStatus"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("docFormat");
-    openapiRequiredFields.add("Angle");
-    openapiRequiredFields.add("Width");
-    openapiRequiredFields.add("Height");
-    openapiRequiredFields.add("Center");
-    openapiRequiredFields.add("LeftBottom");
-    openapiRequiredFields.add("LeftTop");
-    openapiRequiredFields.add("RightBottom");
-    openapiRequiredFields.add("RightTop");
-    openapiRequiredFields.add("Dpi");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "docFormat",
+                "Angle",
+                "Width",
+                "Height",
+                "Center",
+                "LeftBottom",
+                "LeftTop",
+                "RightBottom",
+                "RightTop",
+                "Dpi"));
   }
 
   /**
@@ -534,7 +539,7 @@ public class DocumentPosition {
     if (jsonElement == null) {
       if (!DocumentPosition.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocumentPosition is not found in the empty JSON string",
                 DocumentPosition.openapiRequiredFields.toString()));
@@ -544,7 +549,7 @@ public class DocumentPosition {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DocumentPosition.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

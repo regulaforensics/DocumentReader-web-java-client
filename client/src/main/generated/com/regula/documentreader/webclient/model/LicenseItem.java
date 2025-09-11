@@ -30,7 +30,7 @@ import java.util.Objects;
 /** LicenseItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class LicenseItem {
   public static final String SERIALIZED_NAME_LICENSE = "License";
 
@@ -100,12 +100,10 @@ public class LicenseItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("License");
+    openapiFields = new HashSet<String>(Arrays.asList("License"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("License");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("License"));
   }
 
   /**
@@ -118,7 +116,7 @@ public class LicenseItem {
     if (jsonElement == null) {
       if (!LicenseItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in LicenseItem is not found in the empty JSON string",
                 LicenseItem.openapiRequiredFields.toString()));
@@ -128,7 +126,7 @@ public class LicenseItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : LicenseItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

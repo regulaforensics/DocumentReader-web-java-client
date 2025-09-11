@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** FaceDetection */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FaceDetection {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
@@ -220,18 +221,13 @@ public class FaceDetection {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Count");
-    openapiFields.add("CountFalseDetection");
-    openapiFields.add("Res");
-    openapiFields.add("Reserved1");
-    openapiFields.add("Reserved2");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("Count", "CountFalseDetection", "Res", "Reserved1", "Reserved2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Count");
-    openapiRequiredFields.add("CountFalseDetection");
-    openapiRequiredFields.add("Res");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("Count", "CountFalseDetection", "Res"));
   }
 
   /**
@@ -244,7 +240,7 @@ public class FaceDetection {
     if (jsonElement == null) {
       if (!FaceDetection.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FaceDetection is not found in the empty JSON string",
                 FaceDetection.openapiRequiredFields.toString()));
@@ -254,7 +250,7 @@ public class FaceDetection {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : FaceDetection.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -263,7 +259,7 @@ public class FaceDetection {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("Res").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Res` to be an array in the JSON string but got `%s`",
               jsonObj.get("Res").toString()));

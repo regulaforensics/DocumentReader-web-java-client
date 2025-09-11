@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Describes an individual character recognition candidate */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class SymbolCandidate {
   public static final String SERIALIZED_NAME_SYMBOL_CODE = "SymbolCode";
 
@@ -180,16 +181,11 @@ public class SymbolCandidate {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("SymbolCode");
-    openapiFields.add("SymbolProbability");
-    openapiFields.add("Class");
-    openapiFields.add("SubClass");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("SymbolCode", "SymbolProbability", "Class", "SubClass"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("SymbolCode");
-    openapiRequiredFields.add("SymbolProbability");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("SymbolCode", "SymbolProbability"));
   }
 
   /**
@@ -202,7 +198,7 @@ public class SymbolCandidate {
     if (jsonElement == null) {
       if (!SymbolCandidate.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in SymbolCandidate is not found in the empty JSON string",
                 SymbolCandidate.openapiRequiredFields.toString()));
@@ -212,7 +208,7 @@ public class SymbolCandidate {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : SymbolCandidate.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

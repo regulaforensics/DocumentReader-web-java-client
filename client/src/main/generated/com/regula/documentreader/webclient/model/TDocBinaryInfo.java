@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** TDocBinaryInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TDocBinaryInfo {
   public static final String SERIALIZED_NAME_R_F_I_D_B_I_N_A_R_Y_D_A_T_A = "RFID_BINARY_DATA";
 
@@ -137,12 +138,10 @@ public class TDocBinaryInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RFID_BINARY_DATA");
-    openapiFields.add("RFID_RAW_DATA");
+    openapiFields = new HashSet<String>(Arrays.asList("RFID_BINARY_DATA", "RFID_RAW_DATA"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -155,7 +154,7 @@ public class TDocBinaryInfo {
     if (jsonElement == null) {
       if (!TDocBinaryInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TDocBinaryInfo is not found in the empty JSON string",
                 TDocBinaryInfo.openapiRequiredFields.toString()));
@@ -172,7 +171,7 @@ public class TDocBinaryInfo {
       if (jsonArrayRFID_RAW_DATA != null) {
         // ensure the json data is an array
         if (!jsonObj.get("RFID_RAW_DATA").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `RFID_RAW_DATA` to be an array in the JSON string but got `%s`",
                   jsonObj.get("RFID_RAW_DATA").toString()));

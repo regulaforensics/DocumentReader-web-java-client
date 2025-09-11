@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Objects;
 /** Healthcheck */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class Healthcheck {
   public static final String SERIALIZED_NAME_APP = "app";
 
@@ -348,26 +349,30 @@ public class Healthcheck {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("app");
-    openapiFields.add("licenseId");
-    openapiFields.add("licenseType");
-    openapiFields.add("licenseSerial");
-    openapiFields.add("licenseValidUntil");
-    openapiFields.add("scenarios");
-    openapiFields.add("version");
-    openapiFields.add("metadata");
-    openapiFields.add("documentsDatabase");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "app",
+                "licenseId",
+                "licenseType",
+                "licenseSerial",
+                "licenseValidUntil",
+                "scenarios",
+                "version",
+                "metadata",
+                "documentsDatabase"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("app");
-    openapiRequiredFields.add("licenseId");
-    openapiRequiredFields.add("licenseType");
-    openapiRequiredFields.add("licenseSerial");
-    openapiRequiredFields.add("licenseValidUntil");
-    openapiRequiredFields.add("scenarios");
-    openapiRequiredFields.add("version");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "app",
+                "licenseId",
+                "licenseType",
+                "licenseSerial",
+                "licenseValidUntil",
+                "scenarios",
+                "version"));
   }
 
   /**
@@ -380,7 +385,7 @@ public class Healthcheck {
     if (jsonElement == null) {
       if (!Healthcheck.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in Healthcheck is not found in the empty JSON string",
                 Healthcheck.openapiRequiredFields.toString()));
@@ -390,7 +395,7 @@ public class Healthcheck {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : Healthcheck.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -398,45 +403,45 @@ public class Healthcheck {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("app").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `app` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("app").toString()));
     }
     if ((jsonObj.get("licenseId") != null && !jsonObj.get("licenseId").isJsonNull())
         && !jsonObj.get("licenseId").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `licenseId` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("licenseId").toString()));
     }
     if ((jsonObj.get("licenseType") != null && !jsonObj.get("licenseType").isJsonNull())
         && !jsonObj.get("licenseType").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `licenseType` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("licenseType").toString()));
     }
     if ((jsonObj.get("licenseSerial") != null && !jsonObj.get("licenseSerial").isJsonNull())
         && !jsonObj.get("licenseSerial").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `licenseSerial` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("licenseSerial").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("scenarios") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("scenarios").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `scenarios` to be an array in the JSON string but got `%s`",
               jsonObj.get("scenarios").toString()));
     }
     if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull())
         && !jsonObj.get("version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("version").toString()));

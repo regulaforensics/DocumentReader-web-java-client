@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Objects;
 /** ProcessParams */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ProcessParams {
   public static final String SERIALIZED_NAME_GENERATE_D_T_C_V_C = "generateDTCVC";
 
@@ -2124,76 +2125,77 @@ public class ProcessParams {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("generateDTCVC");
-    openapiFields.add("lcidFilter");
-    openapiFields.add("checkLiveness");
-    openapiFields.add("lcidIgnoreFilter");
-    openapiFields.add("oneShotIdentification");
-    openapiFields.add("useFaceApi");
-    openapiFields.add("faceApi");
-    openapiFields.add("doDetectCan");
-    openapiFields.add("imageOutputMaxHeight");
-    openapiFields.add("imageOutputMaxWidth");
-    openapiFields.add("scenario");
-    openapiFields.add("resultTypeOutput");
-    openapiFields.add("doublePageSpread");
-    openapiFields.add("generateDoublePageSpreadImage");
-    openapiFields.add("fieldTypesFilter");
-    openapiFields.add("dateFormat");
-    openapiFields.add("measureSystem");
-    openapiFields.add("imageDpiOutMax");
-    openapiFields.add("alreadyCropped");
-    openapiFields.add("customParams");
-    openapiFields.add("config");
-    openapiFields.add("log");
-    openapiFields.add("logLevel");
-    openapiFields.add("forceDocID");
-    openapiFields.add("matchTextFieldMask");
-    openapiFields.add("fastDocDetect");
-    openapiFields.add("updateOCRValidityByGlare");
-    openapiFields.add("checkRequiredTextFields");
-    openapiFields.add("returnCroppedBarcode");
-    openapiFields.add("imageQa");
-    openapiFields.add("strictImageQuality");
-    openapiFields.add("respectImageQuality");
-    openapiFields.add("forceDocFormat");
-    openapiFields.add("noGraphics");
-    openapiFields.add("depersonalizeLog");
-    openapiFields.add("multiDocOnImage");
-    openapiFields.add("shiftExpiryDate");
-    openapiFields.add("minimalHolderAge");
-    openapiFields.add("returnUncroppedImage");
-    openapiFields.add("mrzFormatsFilter");
-    openapiFields.add("forceReadMrzBeforeLocate");
-    openapiFields.add("parseBarcodes");
-    openapiFields.add("convertCase");
-    openapiFields.add("splitNames");
-    openapiFields.add("disablePerforationOCR");
-    openapiFields.add("documentGroupFilter");
-    openapiFields.add("processAuth");
-    openapiFields.add("deviceId");
-    openapiFields.add("deviceType");
-    openapiFields.add("deviceTypeHex");
-    openapiFields.add("ignoreDeviceIdFromImage");
-    openapiFields.add("documentIdList");
-    openapiFields.add("rfid");
-    openapiFields.add("checkAuth");
-    openapiFields.add("authParams");
-    openapiFields.add("mrzDetectMode");
-    openapiFields.add("generateNumericCodes");
-    openapiFields.add("strictBarcodeDigitalSignatureCheck");
-    openapiFields.add("selectLongestNames");
-    openapiFields.add("doBarcodes");
-    openapiFields.add("strictDLCategoryExpiry");
-    openapiFields.add("generateAlpha2Codes");
-    openapiFields.add("pdfPagesLimit");
-    openapiFields.add("disableAuthResolutionFilter");
-    openapiFields.add("strictSecurityChecks");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "generateDTCVC",
+                "lcidFilter",
+                "checkLiveness",
+                "lcidIgnoreFilter",
+                "oneShotIdentification",
+                "useFaceApi",
+                "faceApi",
+                "doDetectCan",
+                "imageOutputMaxHeight",
+                "imageOutputMaxWidth",
+                "scenario",
+                "resultTypeOutput",
+                "doublePageSpread",
+                "generateDoublePageSpreadImage",
+                "fieldTypesFilter",
+                "dateFormat",
+                "measureSystem",
+                "imageDpiOutMax",
+                "alreadyCropped",
+                "customParams",
+                "config",
+                "log",
+                "logLevel",
+                "forceDocID",
+                "matchTextFieldMask",
+                "fastDocDetect",
+                "updateOCRValidityByGlare",
+                "checkRequiredTextFields",
+                "returnCroppedBarcode",
+                "imageQa",
+                "strictImageQuality",
+                "respectImageQuality",
+                "forceDocFormat",
+                "noGraphics",
+                "depersonalizeLog",
+                "multiDocOnImage",
+                "shiftExpiryDate",
+                "minimalHolderAge",
+                "returnUncroppedImage",
+                "mrzFormatsFilter",
+                "forceReadMrzBeforeLocate",
+                "parseBarcodes",
+                "convertCase",
+                "splitNames",
+                "disablePerforationOCR",
+                "documentGroupFilter",
+                "processAuth",
+                "deviceId",
+                "deviceType",
+                "deviceTypeHex",
+                "ignoreDeviceIdFromImage",
+                "documentIdList",
+                "rfid",
+                "checkAuth",
+                "authParams",
+                "mrzDetectMode",
+                "generateNumericCodes",
+                "strictBarcodeDigitalSignatureCheck",
+                "selectLongestNames",
+                "doBarcodes",
+                "strictDLCategoryExpiry",
+                "generateAlpha2Codes",
+                "pdfPagesLimit",
+                "disableAuthResolutionFilter",
+                "strictSecurityChecks"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("scenario");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
   }
 
   /**
@@ -2206,7 +2208,7 @@ public class ProcessParams {
     if (jsonElement == null) {
       if (!ProcessParams.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ProcessParams is not found in the empty JSON string",
                 ProcessParams.openapiRequiredFields.toString()));
@@ -2216,7 +2218,7 @@ public class ProcessParams {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ProcessParams.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -2227,7 +2229,7 @@ public class ProcessParams {
     if (jsonObj.get("lcidFilter") != null
         && !jsonObj.get("lcidFilter").isJsonNull()
         && !jsonObj.get("lcidFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `lcidFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("lcidFilter").toString()));
@@ -2236,7 +2238,7 @@ public class ProcessParams {
     if (jsonObj.get("lcidIgnoreFilter") != null
         && !jsonObj.get("lcidIgnoreFilter").isJsonNull()
         && !jsonObj.get("lcidIgnoreFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `lcidIgnoreFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("lcidIgnoreFilter").toString()));
@@ -2251,7 +2253,7 @@ public class ProcessParams {
     if (jsonObj.get("resultTypeOutput") != null
         && !jsonObj.get("resultTypeOutput").isJsonNull()
         && !jsonObj.get("resultTypeOutput").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `resultTypeOutput` to be an array in the JSON string but got `%s`",
               jsonObj.get("resultTypeOutput").toString()));
@@ -2260,14 +2262,14 @@ public class ProcessParams {
     if (jsonObj.get("fieldTypesFilter") != null
         && !jsonObj.get("fieldTypesFilter").isJsonNull()
         && !jsonObj.get("fieldTypesFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `fieldTypesFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("fieldTypesFilter").toString()));
     }
     if ((jsonObj.get("dateFormat") != null && !jsonObj.get("dateFormat").isJsonNull())
         && !jsonObj.get("dateFormat").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dateFormat` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dateFormat").toString()));
@@ -2281,7 +2283,7 @@ public class ProcessParams {
       if (jsonArrayconfig != null) {
         // ensure the json data is an array
         if (!jsonObj.get("config").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `config` to be an array in the JSON string but got `%s`",
                   jsonObj.get("config").toString()));
@@ -2310,7 +2312,7 @@ public class ProcessParams {
     if (jsonObj.get("mrzFormatsFilter") != null
         && !jsonObj.get("mrzFormatsFilter").isJsonNull()
         && !jsonObj.get("mrzFormatsFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `mrzFormatsFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("mrzFormatsFilter").toString()));
@@ -2323,14 +2325,14 @@ public class ProcessParams {
     if (jsonObj.get("documentGroupFilter") != null
         && !jsonObj.get("documentGroupFilter").isJsonNull()
         && !jsonObj.get("documentGroupFilter").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `documentGroupFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("documentGroupFilter").toString()));
     }
     if ((jsonObj.get("deviceTypeHex") != null && !jsonObj.get("deviceTypeHex").isJsonNull())
         && !jsonObj.get("deviceTypeHex").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `deviceTypeHex` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("deviceTypeHex").toString()));
@@ -2339,7 +2341,7 @@ public class ProcessParams {
     if (jsonObj.get("documentIdList") != null
         && !jsonObj.get("documentIdList").isJsonNull()
         && !jsonObj.get("documentIdList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `documentIdList` to be an array in the JSON string but got `%s`",
               jsonObj.get("documentIdList").toString()));
@@ -2360,7 +2362,7 @@ public class ProcessParams {
     if (jsonObj.get("doBarcodes") != null
         && !jsonObj.get("doBarcodes").isJsonNull()
         && !jsonObj.get("doBarcodes").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `doBarcodes` to be an array in the JSON string but got `%s`",
               jsonObj.get("doBarcodes").toString()));

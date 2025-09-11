@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** Contents of the identifier in binary form. Base64 encoded. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidDistinguishedName {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
@@ -165,16 +166,11 @@ public class RfidDistinguishedName {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Data");
-    openapiFields.add("FriendlyName");
-    openapiFields.add("Attributes");
+    openapiFields = new HashSet<String>(Arrays.asList("Data", "FriendlyName", "Attributes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Data");
-    openapiRequiredFields.add("FriendlyName");
-    openapiRequiredFields.add("Attributes");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("Data", "FriendlyName", "Attributes"));
   }
 
   /**
@@ -187,7 +183,7 @@ public class RfidDistinguishedName {
     if (jsonElement == null) {
       if (!RfidDistinguishedName.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidDistinguishedName is not found in the empty JSON string",
                 RfidDistinguishedName.openapiRequiredFields.toString()));
@@ -197,7 +193,7 @@ public class RfidDistinguishedName {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidDistinguishedName.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -205,7 +201,7 @@ public class RfidDistinguishedName {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("Data").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Data").toString()));
@@ -214,7 +210,7 @@ public class RfidDistinguishedName {
     TrfFtString.validateJsonElement(jsonObj.get("FriendlyName"));
     // ensure the json data is an array
     if (!jsonObj.get("Attributes").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Attributes` to be an array in the JSON string but got `%s`",
               jsonObj.get("Attributes").toString()));

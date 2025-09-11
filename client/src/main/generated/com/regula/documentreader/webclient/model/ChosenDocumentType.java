@@ -24,13 +24,14 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Contains information about one document type candidate */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ChosenDocumentType {
   public static final String SERIALIZED_NAME_DOCUMENT_NAME = "DocumentName";
 
@@ -421,31 +422,35 @@ public class ChosenDocumentType {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("DocumentName");
-    openapiFields.add("ID");
-    openapiFields.add("P");
-    openapiFields.add("Rotated180");
-    openapiFields.add("RFID_Presence");
-    openapiFields.add("FDSIDList");
-    openapiFields.add("NecessaryLights");
-    openapiFields.add("CheckAuthenticity");
-    openapiFields.add("UVExp");
-    openapiFields.add("AuthenticityNecessaryLights");
-    openapiFields.add("OVIExp");
-    openapiFields.add("RotationAngle");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "DocumentName",
+                "ID",
+                "P",
+                "Rotated180",
+                "RFID_Presence",
+                "FDSIDList",
+                "NecessaryLights",
+                "CheckAuthenticity",
+                "UVExp",
+                "AuthenticityNecessaryLights",
+                "OVIExp",
+                "RotationAngle"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ID");
-    openapiRequiredFields.add("P");
-    openapiRequiredFields.add("Rotated180");
-    openapiRequiredFields.add("RFID_Presence");
-    openapiRequiredFields.add("NecessaryLights");
-    openapiRequiredFields.add("CheckAuthenticity");
-    openapiRequiredFields.add("UVExp");
-    openapiRequiredFields.add("AuthenticityNecessaryLights");
-    openapiRequiredFields.add("OVIExp");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ID",
+                "P",
+                "Rotated180",
+                "RFID_Presence",
+                "NecessaryLights",
+                "CheckAuthenticity",
+                "UVExp",
+                "AuthenticityNecessaryLights",
+                "OVIExp"));
   }
 
   /**
@@ -458,7 +463,7 @@ public class ChosenDocumentType {
     if (jsonElement == null) {
       if (!ChosenDocumentType.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ChosenDocumentType is not found in the empty JSON string",
                 ChosenDocumentType.openapiRequiredFields.toString()));
@@ -468,7 +473,7 @@ public class ChosenDocumentType {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ChosenDocumentType.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -477,7 +482,7 @@ public class ChosenDocumentType {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("DocumentName") != null && !jsonObj.get("DocumentName").isJsonNull())
         && !jsonObj.get("DocumentName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocumentName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DocumentName").toString()));

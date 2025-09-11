@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** SecurityObjectCertificates */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class SecurityObjectCertificates {
   public static final String SERIALIZED_NAME_CERTIFICATE_DATA = "Certificate_Data";
 
@@ -100,11 +101,10 @@ public class SecurityObjectCertificates {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Certificate_Data");
+    openapiFields = new HashSet<String>(Arrays.asList("Certificate_Data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -117,7 +117,7 @@ public class SecurityObjectCertificates {
     if (jsonElement == null) {
       if (!SecurityObjectCertificates.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in SecurityObjectCertificates is not found in the empty JSON string",
                 SecurityObjectCertificates.openapiRequiredFields.toString()));

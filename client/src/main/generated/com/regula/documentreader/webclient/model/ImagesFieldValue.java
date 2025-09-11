@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ImagesFieldValue */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ImagesFieldValue {
   public static final String SERIALIZED_NAME_SOURCE = "source";
 
@@ -324,23 +325,22 @@ public class ImagesFieldValue {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("source");
-    openapiFields.add("value");
-    openapiFields.add("originalValue");
-    openapiFields.add("originalPageIndex");
-    openapiFields.add("pageIndex");
-    openapiFields.add("lightIndex");
-    openapiFields.add("containerType");
-    openapiFields.add("fieldRect");
-    openapiFields.add("rfidOrigin");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "source",
+                "value",
+                "originalValue",
+                "originalPageIndex",
+                "pageIndex",
+                "lightIndex",
+                "containerType",
+                "fieldRect",
+                "rfidOrigin"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("source");
-    openapiRequiredFields.add("pageIndex");
-    openapiRequiredFields.add("lightIndex");
-    openapiRequiredFields.add("containerType");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("source", "pageIndex", "lightIndex", "containerType"));
   }
 
   /**
@@ -353,7 +353,7 @@ public class ImagesFieldValue {
     if (jsonElement == null) {
       if (!ImagesFieldValue.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ImagesFieldValue is not found in the empty JSON string",
                 ImagesFieldValue.openapiRequiredFields.toString()));
@@ -363,7 +363,7 @@ public class ImagesFieldValue {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ImagesFieldValue.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -374,14 +374,14 @@ public class ImagesFieldValue {
     Source.validateJsonElement(jsonObj.get("source"));
     if ((jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull())
         && !jsonObj.get("value").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `value` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("value").toString()));
     }
     if ((jsonObj.get("originalValue") != null && !jsonObj.get("originalValue").isJsonNull())
         && !jsonObj.get("originalValue").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `originalValue` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("originalValue").toString()));

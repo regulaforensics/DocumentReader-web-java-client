@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** Describes a single character recognition results in the text field line */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class SymbolRecognitionResult {
   public static final String SERIALIZED_NAME_SYMBOL_RECT = "SymbolRect";
 
@@ -224,17 +225,18 @@ public class SymbolRecognitionResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("SymbolRect");
-    openapiFields.add("CandidatesCount");
-    openapiFields.add("ListOfCandidates");
-    openapiFields.add("BaseLineBottom");
-    openapiFields.add("BaseLineTop");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "SymbolRect",
+                "CandidatesCount",
+                "ListOfCandidates",
+                "BaseLineBottom",
+                "BaseLineTop"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("CandidatesCount");
-    openapiRequiredFields.add("ListOfCandidates");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("CandidatesCount", "ListOfCandidates"));
   }
 
   /**
@@ -247,7 +249,7 @@ public class SymbolRecognitionResult {
     if (jsonElement == null) {
       if (!SymbolRecognitionResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in SymbolRecognitionResult is not found in the empty JSON string",
                 SymbolRecognitionResult.openapiRequiredFields.toString()));
@@ -257,7 +259,7 @@ public class SymbolRecognitionResult {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : SymbolRecognitionResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -270,7 +272,7 @@ public class SymbolRecognitionResult {
     }
     // ensure the json data is an array
     if (!jsonObj.get("ListOfCandidates").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ListOfCandidates` to be an array in the JSON string but got `%s`",
               jsonObj.get("ListOfCandidates").toString()));

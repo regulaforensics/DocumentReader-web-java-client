@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** RfidRawData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidRawData {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
@@ -126,14 +127,10 @@ public class RfidRawData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Data");
-    openapiFields.add("FieldType");
+    openapiFields = new HashSet<String>(Arrays.asList("Data", "FieldType"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Data");
-    openapiRequiredFields.add("FieldType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Data", "FieldType"));
   }
 
   /**
@@ -146,7 +143,7 @@ public class RfidRawData {
     if (jsonElement == null) {
       if (!RfidRawData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidRawData is not found in the empty JSON string",
                 RfidRawData.openapiRequiredFields.toString()));
@@ -156,7 +153,7 @@ public class RfidRawData {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidRawData.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -164,7 +161,7 @@ public class RfidRawData {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("Data").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Data").toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** MRZTestQualityItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class MRZTestQualityItem {
   public static final String SERIALIZED_NAME_MR_Z_TEST_QUALITY = "MRZTestQuality";
 
@@ -100,12 +101,10 @@ public class MRZTestQualityItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MRZTestQuality");
+    openapiFields = new HashSet<String>(Arrays.asList("MRZTestQuality"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MRZTestQuality");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("MRZTestQuality"));
   }
 
   /**
@@ -118,7 +117,7 @@ public class MRZTestQualityItem {
     if (jsonElement == null) {
       if (!MRZTestQualityItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in MRZTestQualityItem is not found in the empty JSON string",
                 MRZTestQualityItem.openapiRequiredFields.toString()));
@@ -128,7 +127,7 @@ public class MRZTestQualityItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : MRZTestQualityItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** DocVisualExtendedField */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocVisualExtendedField extends VisualExtendedFieldItem {
   public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
 
@@ -101,30 +102,34 @@ public class DocVisualExtendedField extends VisualExtendedFieldItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("wFieldType");
-    openapiFields.add("FieldName");
-    openapiFields.add("StringsCount");
-    openapiFields.add("StringsResult");
-    openapiFields.add("Buf_Length");
-    openapiFields.add("Buf_Text");
-    openapiFields.add("FieldMask");
-    openapiFields.add("Validity");
-    openapiFields.add("InComparison");
-    openapiFields.add("wLCID");
-    openapiFields.add("Reserved2");
-    openapiFields.add("Reserved3");
-    openapiFields.add("FieldRect");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "wFieldType",
+                "FieldName",
+                "StringsCount",
+                "StringsResult",
+                "Buf_Length",
+                "Buf_Text",
+                "FieldMask",
+                "Validity",
+                "InComparison",
+                "wLCID",
+                "Reserved2",
+                "Reserved3",
+                "FieldRect"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("wFieldType");
-    openapiRequiredFields.add("FieldName");
-    openapiRequiredFields.add("StringsCount");
-    openapiRequiredFields.add("StringsResult");
-    openapiRequiredFields.add("Buf_Length");
-    openapiRequiredFields.add("Buf_Text");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "FieldRect",
+                "wFieldType",
+                "FieldName",
+                "StringsCount",
+                "StringsResult",
+                "Buf_Length",
+                "Buf_Text"));
   }
 
   /**
@@ -137,7 +142,7 @@ public class DocVisualExtendedField extends VisualExtendedFieldItem {
     if (jsonElement == null) {
       if (!DocVisualExtendedField.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocVisualExtendedField is not found in the empty JSON string",
                 DocVisualExtendedField.openapiRequiredFields.toString()));
@@ -147,7 +152,7 @@ public class DocVisualExtendedField extends VisualExtendedFieldItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DocVisualExtendedField.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

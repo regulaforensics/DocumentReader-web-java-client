@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -37,7 +38,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FaceApiSearch {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
 
@@ -169,13 +170,10 @@ public class FaceApiSearch {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("limit");
-    openapiFields.add("threshold");
-    openapiFields.add("group_ids");
+    openapiFields = new HashSet<String>(Arrays.asList("limit", "threshold", "group_ids"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -188,7 +186,7 @@ public class FaceApiSearch {
     if (jsonElement == null) {
       if (!FaceApiSearch.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FaceApiSearch is not found in the empty JSON string",
                 FaceApiSearch.openapiRequiredFields.toString()));
@@ -200,7 +198,7 @@ public class FaceApiSearch {
     if (jsonObj.get("group_ids") != null
         && !jsonObj.get("group_ids").isJsonNull()
         && !jsonObj.get("group_ids").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `group_ids` to be an array in the JSON string but got `%s`",
               jsonObj.get("group_ids").toString()));

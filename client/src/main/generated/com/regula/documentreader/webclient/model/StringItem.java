@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** StringItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class StringItem {
   public static final String SERIALIZED_NAME_A_L_I_G_N_M_E_N_T_S_Y_M_B_O_L_S_I_N_S_T_R_I_N_G =
       "ALIGNMENT_SYMBOLS_IN_STRING";
@@ -575,43 +576,47 @@ public class StringItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ALIGNMENT_SYMBOLS_IN_STRING");
-    openapiFields.add("CHECK_SUMS");
-    openapiFields.add("ErrorPOSITION");
-    openapiFields.add("FieldCount");
-    openapiFields.add("Fields");
-    openapiFields.add("STRINGS_DISTANCE");
-    openapiFields.add("STRINGS_INTERVAL");
-    openapiFields.add("STRING_FILLING");
-    openapiFields.add("STRINGS_POSITION");
-    openapiFields.add("SYMBOLS_PARAM");
-    openapiFields.add("SizeError_ALIGNMENT");
-    openapiFields.add("SizeError_DISTANCE");
-    openapiFields.add("SizeError_INTERVAL");
-    openapiFields.add("StringAngle");
-    openapiFields.add("StringBorders");
-    openapiFields.add("SymbolsCount");
-    openapiFields.add("SymbolsEstimations");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ALIGNMENT_SYMBOLS_IN_STRING",
+                "CHECK_SUMS",
+                "ErrorPOSITION",
+                "FieldCount",
+                "Fields",
+                "STRINGS_DISTANCE",
+                "STRINGS_INTERVAL",
+                "STRING_FILLING",
+                "STRINGS_POSITION",
+                "SYMBOLS_PARAM",
+                "SizeError_ALIGNMENT",
+                "SizeError_DISTANCE",
+                "SizeError_INTERVAL",
+                "StringAngle",
+                "StringBorders",
+                "SymbolsCount",
+                "SymbolsEstimations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ALIGNMENT_SYMBOLS_IN_STRING");
-    openapiRequiredFields.add("CHECK_SUMS");
-    openapiRequiredFields.add("ErrorPOSITION");
-    openapiRequiredFields.add("FieldCount");
-    openapiRequiredFields.add("Fields");
-    openapiRequiredFields.add("STRINGS_DISTANCE");
-    openapiRequiredFields.add("STRINGS_INTERVAL");
-    openapiRequiredFields.add("STRING_FILLING");
-    openapiRequiredFields.add("SYMBOLS_PARAM");
-    openapiRequiredFields.add("SizeError_ALIGNMENT");
-    openapiRequiredFields.add("SizeError_DISTANCE");
-    openapiRequiredFields.add("SizeError_INTERVAL");
-    openapiRequiredFields.add("StringAngle");
-    openapiRequiredFields.add("StringBorders");
-    openapiRequiredFields.add("SymbolsCount");
-    openapiRequiredFields.add("SymbolsEstimations");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ALIGNMENT_SYMBOLS_IN_STRING",
+                "CHECK_SUMS",
+                "ErrorPOSITION",
+                "FieldCount",
+                "Fields",
+                "STRINGS_DISTANCE",
+                "STRINGS_INTERVAL",
+                "STRING_FILLING",
+                "SYMBOLS_PARAM",
+                "SizeError_ALIGNMENT",
+                "SizeError_DISTANCE",
+                "SizeError_INTERVAL",
+                "StringAngle",
+                "StringBorders",
+                "SymbolsCount",
+                "SymbolsEstimations"));
   }
 
   /**
@@ -624,7 +629,7 @@ public class StringItem {
     if (jsonElement == null) {
       if (!StringItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in StringItem is not found in the empty JSON string",
                 StringItem.openapiRequiredFields.toString()));
@@ -634,7 +639,7 @@ public class StringItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : StringItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -649,7 +654,7 @@ public class StringItem {
     ErrorCoordinates.validateJsonElement(jsonObj.get("ErrorPOSITION"));
     // ensure the json data is an array
     if (!jsonObj.get("Fields").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Fields` to be an array in the JSON string but got `%s`",
               jsonObj.get("Fields").toString()));
@@ -677,7 +682,7 @@ public class StringItem {
     RectangleCoordinates.validateJsonElement(jsonObj.get("StringBorders"));
     // ensure the json data is an array
     if (!jsonObj.get("SymbolsEstimations").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SymbolsEstimations` to be an array in the JSON string but got `%s`",
               jsonObj.get("SymbolsEstimations").toString()));

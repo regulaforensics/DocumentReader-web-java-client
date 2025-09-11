@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Database information. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class HealthcheckDocumentsDatabase {
   public static final String SERIALIZED_NAME_ID = "id";
 
@@ -180,18 +181,12 @@ public class HealthcheckDocumentsDatabase {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("version");
-    openapiFields.add("exportDate");
-    openapiFields.add("description");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("id", "version", "exportDate", "description"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("version");
-    openapiRequiredFields.add("exportDate");
-    openapiRequiredFields.add("description");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("id", "version", "exportDate", "description"));
   }
 
   /**
@@ -204,7 +199,7 @@ public class HealthcheckDocumentsDatabase {
     if (jsonElement == null) {
       if (!HealthcheckDocumentsDatabase.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in HealthcheckDocumentsDatabase is not found in the empty JSON string",
                 HealthcheckDocumentsDatabase.openapiRequiredFields.toString()));
@@ -214,7 +209,7 @@ public class HealthcheckDocumentsDatabase {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : HealthcheckDocumentsDatabase.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -223,28 +218,28 @@ public class HealthcheckDocumentsDatabase {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
         && !jsonObj.get("id").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `id` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("id").toString()));
     }
     if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull())
         && !jsonObj.get("version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("version").toString()));
     }
     if ((jsonObj.get("exportDate") != null && !jsonObj.get("exportDate").isJsonNull())
         && !jsonObj.get("exportDate").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `exportDate` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("exportDate").toString()));
     }
     if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull())
         && !jsonObj.get("description").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `description` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("description").toString()));

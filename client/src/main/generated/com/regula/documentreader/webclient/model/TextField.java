@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** TextField */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TextField {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "fieldType";
 
@@ -412,31 +413,35 @@ public class TextField {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("fieldType");
-    openapiFields.add("fieldName");
-    openapiFields.add("lcid");
-    openapiFields.add("lcidName");
-    openapiFields.add("status");
-    openapiFields.add("validityStatus");
-    openapiFields.add("comparisonStatus");
-    openapiFields.add("value");
-    openapiFields.add("valueList");
-    openapiFields.add("validityList");
-    openapiFields.add("comparisonList");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "fieldType",
+                "fieldName",
+                "lcid",
+                "lcidName",
+                "status",
+                "validityStatus",
+                "comparisonStatus",
+                "value",
+                "valueList",
+                "validityList",
+                "comparisonList"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("fieldType");
-    openapiRequiredFields.add("fieldName");
-    openapiRequiredFields.add("lcid");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("validityStatus");
-    openapiRequiredFields.add("comparisonStatus");
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("valueList");
-    openapiRequiredFields.add("validityList");
-    openapiRequiredFields.add("comparisonList");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "fieldType",
+                "fieldName",
+                "lcid",
+                "status",
+                "validityStatus",
+                "comparisonStatus",
+                "value",
+                "valueList",
+                "validityList",
+                "comparisonList"));
   }
 
   /**
@@ -449,7 +454,7 @@ public class TextField {
     if (jsonElement == null) {
       if (!TextField.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TextField is not found in the empty JSON string",
                 TextField.openapiRequiredFields.toString()));
@@ -459,7 +464,7 @@ public class TextField {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : TextField.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -469,7 +474,7 @@ public class TextField {
     // validate the required field `fieldType`
     TextFieldType.validateJsonElement(jsonObj.get("fieldType"));
     if (!jsonObj.get("fieldName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `fieldName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("fieldName").toString()));
@@ -478,7 +483,7 @@ public class TextField {
     LCID.validateJsonElement(jsonObj.get("lcid"));
     if ((jsonObj.get("lcidName") != null && !jsonObj.get("lcidName").isJsonNull())
         && !jsonObj.get("lcidName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `lcidName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("lcidName").toString()));
@@ -490,14 +495,14 @@ public class TextField {
     // validate the required field `comparisonStatus`
     CheckResult.validateJsonElement(jsonObj.get("comparisonStatus"));
     if (!jsonObj.get("value").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `value` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("value").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("valueList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `valueList` to be an array in the JSON string but got `%s`",
               jsonObj.get("valueList").toString()));
@@ -511,7 +516,7 @@ public class TextField {
     ;
     // ensure the json data is an array
     if (!jsonObj.get("validityList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `validityList` to be an array in the JSON string but got `%s`",
               jsonObj.get("validityList").toString()));
@@ -525,7 +530,7 @@ public class TextField {
     ;
     // ensure the json data is an array
     if (!jsonObj.get("comparisonList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `comparisonList` to be an array in the JSON string but got `%s`",
               jsonObj.get("comparisonList").toString()));

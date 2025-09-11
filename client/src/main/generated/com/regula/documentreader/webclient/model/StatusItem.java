@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** StatusItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class StatusItem {
   public static final String SERIALIZED_NAME_STATUS = "Status";
 
@@ -99,12 +100,10 @@ public class StatusItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Status");
+    openapiFields = new HashSet<String>(Arrays.asList("Status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Status");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Status"));
   }
 
   /**
@@ -117,7 +116,7 @@ public class StatusItem {
     if (jsonElement == null) {
       if (!StatusItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in StatusItem is not found in the empty JSON string",
                 StatusItem.openapiRequiredFields.toString()));
@@ -127,7 +126,7 @@ public class StatusItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : StatusItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

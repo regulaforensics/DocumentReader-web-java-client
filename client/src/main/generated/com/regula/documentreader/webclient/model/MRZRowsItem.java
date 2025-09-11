@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** MRZRowsItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class MRZRowsItem {
   public static final String SERIALIZED_NAME_LENGTH = "length";
 
@@ -164,16 +165,10 @@ public class MRZRowsItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("length");
-    openapiFields.add("maxLength");
-    openapiFields.add("symbols");
+    openapiFields = new HashSet<String>(Arrays.asList("length", "maxLength", "symbols"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("length");
-    openapiRequiredFields.add("maxLength");
-    openapiRequiredFields.add("symbols");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("length", "maxLength", "symbols"));
   }
 
   /**
@@ -186,7 +181,7 @@ public class MRZRowsItem {
     if (jsonElement == null) {
       if (!MRZRowsItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in MRZRowsItem is not found in the empty JSON string",
                 MRZRowsItem.openapiRequiredFields.toString()));
@@ -196,7 +191,7 @@ public class MRZRowsItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : MRZRowsItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -205,7 +200,7 @@ public class MRZRowsItem {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("symbols").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `symbols` to be an array in the JSON string but got `%s`",
               jsonObj.get("symbols").toString()));

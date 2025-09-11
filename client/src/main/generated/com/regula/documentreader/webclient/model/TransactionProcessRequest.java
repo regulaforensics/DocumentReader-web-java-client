@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Objects;
 /** TransactionProcessRequest */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TransactionProcessRequest {
   public static final String SERIALIZED_NAME_PROCESS_PARAM = "processParam";
 
@@ -406,22 +407,23 @@ public class TransactionProcessRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("processParam");
-    openapiFields.add("List");
-    openapiFields.add("tag");
-    openapiFields.add("tenant");
-    openapiFields.add("env");
-    openapiFields.add("livePortrait");
-    openapiFields.add("extPortrait");
-    openapiFields.add("ContainerList");
-    openapiFields.add("systemInfo");
-    openapiFields.add("passBackObject");
-    openapiFields.add("dtc");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "processParam",
+                "List",
+                "tag",
+                "tenant",
+                "env",
+                "livePortrait",
+                "extPortrait",
+                "ContainerList",
+                "systemInfo",
+                "passBackObject",
+                "dtc"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("processParam");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("processParam"));
   }
 
   /**
@@ -434,7 +436,7 @@ public class TransactionProcessRequest {
     if (jsonElement == null) {
       if (!TransactionProcessRequest.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TransactionProcessRequest is not found in the empty JSON string",
                 TransactionProcessRequest.openapiRequiredFields.toString()));
@@ -444,7 +446,7 @@ public class TransactionProcessRequest {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : TransactionProcessRequest.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -458,7 +460,7 @@ public class TransactionProcessRequest {
       if (jsonArraylist != null) {
         // ensure the json data is an array
         if (!jsonObj.get("List").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `List` to be an array in the JSON string but got `%s`",
                   jsonObj.get("List").toString()));
@@ -473,35 +475,35 @@ public class TransactionProcessRequest {
     }
     if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull())
         && !jsonObj.get("tag").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `tag` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("tag").toString()));
     }
     if ((jsonObj.get("tenant") != null && !jsonObj.get("tenant").isJsonNull())
         && !jsonObj.get("tenant").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `tenant` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("tenant").toString()));
     }
     if ((jsonObj.get("env") != null && !jsonObj.get("env").isJsonNull())
         && !jsonObj.get("env").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `env` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("env").toString()));
     }
     if ((jsonObj.get("livePortrait") != null && !jsonObj.get("livePortrait").isJsonNull())
         && !jsonObj.get("livePortrait").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `livePortrait` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("livePortrait").toString()));
     }
     if ((jsonObj.get("extPortrait") != null && !jsonObj.get("extPortrait").isJsonNull())
         && !jsonObj.get("extPortrait").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `extPortrait` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("extPortrait").toString()));
@@ -516,7 +518,7 @@ public class TransactionProcessRequest {
     }
     if ((jsonObj.get("dtc") != null && !jsonObj.get("dtc").isJsonNull())
         && !jsonObj.get("dtc").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dtc` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dtc").toString()));

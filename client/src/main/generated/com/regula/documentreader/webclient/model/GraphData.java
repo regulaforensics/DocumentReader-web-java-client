@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** GraphData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class GraphData {
   public static final String SERIALIZED_NAME_FIELD_TYPE = "FieldType";
 
@@ -262,24 +263,28 @@ public class GraphData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("FieldType");
-    openapiFields.add("File_Image");
-    openapiFields.add("GraphicsType");
-    openapiFields.add("OriginDG");
-    openapiFields.add("OriginDGTag");
-    openapiFields.add("OriginEntryView");
-    openapiFields.add("OriginTagEntry");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "FieldType",
+                "File_Image",
+                "GraphicsType",
+                "OriginDG",
+                "OriginDGTag",
+                "OriginEntryView",
+                "OriginTagEntry"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FieldType");
-    openapiRequiredFields.add("File_Image");
-    openapiRequiredFields.add("GraphicsType");
-    openapiRequiredFields.add("OriginDG");
-    openapiRequiredFields.add("OriginDGTag");
-    openapiRequiredFields.add("OriginEntryView");
-    openapiRequiredFields.add("OriginTagEntry");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "FieldType",
+                "File_Image",
+                "GraphicsType",
+                "OriginDG",
+                "OriginDGTag",
+                "OriginEntryView",
+                "OriginTagEntry"));
   }
 
   /**
@@ -292,7 +297,7 @@ public class GraphData {
     if (jsonElement == null) {
       if (!GraphData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in GraphData is not found in the empty JSON string",
                 GraphData.openapiRequiredFields.toString()));
@@ -302,7 +307,7 @@ public class GraphData {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : GraphData.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

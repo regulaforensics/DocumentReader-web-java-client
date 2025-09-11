@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** ResultMRZDetector */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ResultMRZDetector {
   public static final String SERIALIZED_NAME_MR_Z_FORMAT = "MRZFormat";
 
@@ -201,18 +202,14 @@ public class ResultMRZDetector {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("MRZFormat");
-    openapiFields.add("MRZRows");
-    openapiFields.add("MRZRowsNum");
-    openapiFields.add("boundingQuadrangle");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("MRZFormat", "MRZRows", "MRZRowsNum", "boundingQuadrangle"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("MRZFormat");
-    openapiRequiredFields.add("MRZRows");
-    openapiRequiredFields.add("MRZRowsNum");
-    openapiRequiredFields.add("boundingQuadrangle");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("MRZFormat", "MRZRows", "MRZRowsNum", "boundingQuadrangle"));
   }
 
   /**
@@ -225,7 +222,7 @@ public class ResultMRZDetector {
     if (jsonElement == null) {
       if (!ResultMRZDetector.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ResultMRZDetector is not found in the empty JSON string",
                 ResultMRZDetector.openapiRequiredFields.toString()));
@@ -235,7 +232,7 @@ public class ResultMRZDetector {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ResultMRZDetector.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -244,7 +241,7 @@ public class ResultMRZDetector {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("MRZRows").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `MRZRows` to be an array in the JSON string but got `%s`",
               jsonObj.get("MRZRows").toString()));
@@ -258,10 +255,10 @@ public class ResultMRZDetector {
     ;
     // ensure the required json array is present
     if (jsonObj.get("boundingQuadrangle") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("boundingQuadrangle").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `boundingQuadrangle` to be an array in the JSON string but got `%s`",
               jsonObj.get("boundingQuadrangle").toString()));

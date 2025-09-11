@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Information about one graphic field - abstract class */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class GraphicField {
   public static final String SERIALIZED_NAME_FIELD_RECT = "FieldRect";
 
@@ -180,18 +181,12 @@ public class GraphicField {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("FieldRect");
-    openapiFields.add("FieldType");
-    openapiFields.add("FieldName");
-    openapiFields.add("image");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("FieldRect", "FieldType", "FieldName", "image"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("FieldType");
-    openapiRequiredFields.add("FieldName");
-    openapiRequiredFields.add("image");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("FieldRect", "FieldType", "FieldName", "image"));
   }
 
   /**
@@ -204,7 +199,7 @@ public class GraphicField {
     if (jsonElement == null) {
       if (!GraphicField.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in GraphicField is not found in the empty JSON string",
                 GraphicField.openapiRequiredFields.toString()));
@@ -214,7 +209,7 @@ public class GraphicField {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : GraphicField.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -226,7 +221,7 @@ public class GraphicField {
     // validate the required field `FieldType`
     GraphicFieldType.validateJsonElement(jsonObj.get("FieldType"));
     if (!jsonObj.get("FieldName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `FieldName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FieldName").toString()));

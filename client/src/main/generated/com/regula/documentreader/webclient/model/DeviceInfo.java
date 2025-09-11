@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Objects;
 /** DeviceInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DeviceInfo {
   public static final String SERIALIZED_NAME_APP_NAME = "app-name";
 
@@ -375,20 +376,22 @@ public class DeviceInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("app-name");
-    openapiFields.add("version");
-    openapiFields.add("license-id");
-    openapiFields.add("license-serial");
-    openapiFields.add("license-type");
-    openapiFields.add("valid-until");
-    openapiFields.add("server-time");
-    openapiFields.add("supported-scenarios");
-    openapiFields.add("metadata");
-    openapiFields.add("documents-database");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "app-name",
+                "version",
+                "license-id",
+                "license-serial",
+                "license-type",
+                "valid-until",
+                "server-time",
+                "supported-scenarios",
+                "metadata",
+                "documents-database"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -401,7 +404,7 @@ public class DeviceInfo {
     if (jsonElement == null) {
       if (!DeviceInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DeviceInfo is not found in the empty JSON string",
                 DeviceInfo.openapiRequiredFields.toString()));
@@ -411,42 +414,42 @@ public class DeviceInfo {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("app-name") != null && !jsonObj.get("app-name").isJsonNull())
         && !jsonObj.get("app-name").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `app-name` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("app-name").toString()));
     }
     if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull())
         && !jsonObj.get("version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("version").toString()));
     }
     if ((jsonObj.get("license-id") != null && !jsonObj.get("license-id").isJsonNull())
         && !jsonObj.get("license-id").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `license-id` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("license-id").toString()));
     }
     if ((jsonObj.get("license-serial") != null && !jsonObj.get("license-serial").isJsonNull())
         && !jsonObj.get("license-serial").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `license-serial` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("license-serial").toString()));
     }
     if ((jsonObj.get("license-type") != null && !jsonObj.get("license-type").isJsonNull())
         && !jsonObj.get("license-type").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `license-type` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("license-type").toString()));
     }
     if ((jsonObj.get("server-time") != null && !jsonObj.get("server-time").isJsonNull())
         && !jsonObj.get("server-time").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `server-time` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("server-time").toString()));
@@ -455,7 +458,7 @@ public class DeviceInfo {
     if (jsonObj.get("supported-scenarios") != null
         && !jsonObj.get("supported-scenarios").isJsonNull()
         && !jsonObj.get("supported-scenarios").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `supported-scenarios` to be an array in the JSON string but got `%s`",
               jsonObj.get("supported-scenarios").toString()));

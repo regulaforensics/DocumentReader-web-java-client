@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ListVerifiedFieldsItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ListVerifiedFieldsItem {
   public static final String SERIALIZED_NAME_LIST_VERIFIED_FIELDS = "ListVerifiedFields";
 
@@ -101,12 +102,10 @@ public class ListVerifiedFieldsItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ListVerifiedFields");
+    openapiFields = new HashSet<String>(Arrays.asList("ListVerifiedFields"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ListVerifiedFields");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("ListVerifiedFields"));
   }
 
   /**
@@ -119,7 +118,7 @@ public class ListVerifiedFieldsItem {
     if (jsonElement == null) {
       if (!ListVerifiedFieldsItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ListVerifiedFieldsItem is not found in the empty JSON string",
                 ListVerifiedFieldsItem.openapiRequiredFields.toString()));
@@ -129,7 +128,7 @@ public class ListVerifiedFieldsItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ListVerifiedFieldsItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
