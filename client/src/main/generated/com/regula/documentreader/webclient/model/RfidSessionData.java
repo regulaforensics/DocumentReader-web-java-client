@@ -113,7 +113,7 @@ public class RfidSessionData {
   public static final String SERIALIZED_NAME_SESSION_KEY = "Session_key";
 
   @SerializedName(SERIALIZED_NAME_SESSION_KEY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private RfidAccessKey sessionKey;
 
   public static final String SERIALIZED_NAME_SESSION_TERMINAL = "Session_terminal";
@@ -401,7 +401,7 @@ public class RfidSessionData {
     this.totalBytesReceived = totalBytesReceived;
   }
 
-  public RfidSessionData sessionKey(@javax.annotation.Nonnull RfidAccessKey sessionKey) {
+  public RfidSessionData sessionKey(@javax.annotation.Nullable RfidAccessKey sessionKey) {
     this.sessionKey = sessionKey;
     return this;
   }
@@ -411,12 +411,12 @@ public class RfidSessionData {
    *
    * @return sessionKey
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public RfidAccessKey getSessionKey() {
     return sessionKey;
   }
 
-  public void setSessionKey(@javax.annotation.Nonnull RfidAccessKey sessionKey) {
+  public void setSessionKey(@javax.annotation.Nullable RfidAccessKey sessionKey) {
     this.sessionKey = sessionKey;
   }
 
@@ -627,7 +627,6 @@ public class RfidSessionData {
     openapiRequiredFields.add("RootFiles");
     openapiRequiredFields.add("TotalBytesSent");
     openapiRequiredFields.add("TotalBytesReceived");
-    openapiRequiredFields.add("Session_key");
     openapiRequiredFields.add("Session_terminal");
     openapiRequiredFields.add("Session_procedure");
     openapiRequiredFields.add("SecurityObjects");
@@ -723,8 +722,10 @@ public class RfidSessionData {
               "Expected the field `RootFiles` to be an array in the JSON string but got `%s`",
               jsonObj.get("RootFiles").toString()));
     }
-    // validate the required field `Session_key`
-    RfidAccessKey.validateJsonElement(jsonObj.get("Session_key"));
+    // validate the optional field `Session_key`
+    if (jsonObj.get("Session_key") != null && !jsonObj.get("Session_key").isJsonNull()) {
+      RfidAccessKey.validateJsonElement(jsonObj.get("Session_key"));
+    }
     // validate the required field `Session_terminal`
     RfidTerminal.validateJsonElement(jsonObj.get("Session_terminal"));
     // validate the required field `Session_procedure`

@@ -39,7 +39,13 @@ public enum Source {
   MAGNETIC("MAGNETIC"),
 
   /** External */
-  EXTERNAL("EXTERNAL");
+  EXTERNAL("EXTERNAL"),
+
+  /** Live */
+  LIVE("LIVE"),
+
+  /** Fingerprint */
+  FINGERPRINT("FINGERPRINT");
 
   private String value;
 
