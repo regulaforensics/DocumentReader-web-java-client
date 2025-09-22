@@ -216,8 +216,7 @@ public class RFIDDocVisualExtendedField extends VisualExtendedFieldItem {
                 "FieldName",
                 "StringsCount",
                 "StringsResult",
-                "Buf_Length",
-                "Buf_Text"));
+                "Buf_Length"));
   }
 
   /**

@@ -63,7 +63,7 @@ public class VisualExtendedFieldItem {
   public static final String SERIALIZED_NAME_BUF_TEXT = "Buf_Text";
 
   @SerializedName(SERIALIZED_NAME_BUF_TEXT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String bufText;
 
   public static final String SERIALIZED_NAME_FIELD_MASK = "FieldMask";
@@ -210,7 +210,7 @@ public class VisualExtendedFieldItem {
     this.bufLength = bufLength;
   }
 
-  public VisualExtendedFieldItem bufText(@javax.annotation.Nonnull String bufText) {
+  public VisualExtendedFieldItem bufText(@javax.annotation.Nullable String bufText) {
     this.bufText = bufText;
     return this;
   }
@@ -221,12 +221,12 @@ public class VisualExtendedFieldItem {
    *
    * @return bufText
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getBufText() {
     return bufText;
   }
 
-  public void setBufText(@javax.annotation.Nonnull String bufText) {
+  public void setBufText(@javax.annotation.Nullable String bufText) {
     this.bufText = bufText;
   }
 
@@ -439,12 +439,7 @@ public class VisualExtendedFieldItem {
     openapiRequiredFields =
         new HashSet<String>(
             Arrays.asList(
-                "wFieldType",
-                "FieldName",
-                "StringsCount",
-                "StringsResult",
-                "Buf_Length",
-                "Buf_Text"));
+                "wFieldType", "FieldName", "StringsCount", "StringsResult", "Buf_Length"));
   }
 
   /**
@@ -486,7 +481,8 @@ public class VisualExtendedFieldItem {
       StringRecognitionResult.validateJsonElement(jsonArraystringsResult.get(i));
     }
     ;
-    if (!jsonObj.get("Buf_Text").isJsonPrimitive()) {
+    if ((jsonObj.get("Buf_Text") != null && !jsonObj.get("Buf_Text").isJsonNull())
+        && !jsonObj.get("Buf_Text").isJsonPrimitive()) {
       System.err.println(
           String.format(
               "Expected the field `Buf_Text` to be a primitive type in the JSON string but got `%s`",
