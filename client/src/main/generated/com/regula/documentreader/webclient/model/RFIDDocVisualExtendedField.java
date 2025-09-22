@@ -212,7 +212,6 @@ public class RFIDDocVisualExtendedField extends VisualExtendedFieldItem {
     openapiRequiredFields.add("StringsCount");
     openapiRequiredFields.add("StringsResult");
     openapiRequiredFields.add("Buf_Length");
-    openapiRequiredFields.add("Buf_Text");
   }
 
   /**
