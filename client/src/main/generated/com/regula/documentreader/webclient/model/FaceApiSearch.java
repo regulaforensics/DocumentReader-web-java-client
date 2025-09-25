@@ -56,7 +56,7 @@ public class FaceApiSearch {
 
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   @javax.annotation.Nullable
-  private List<Integer> groupIds;
+  private List<String> groupIds;
 
   public FaceApiSearch() {}
 
@@ -98,12 +98,12 @@ public class FaceApiSearch {
     this.threshold = threshold;
   }
 
-  public FaceApiSearch groupIds(@javax.annotation.Nullable List<Integer> groupIds) {
+  public FaceApiSearch groupIds(@javax.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
 
-  public FaceApiSearch addGroupIdsItem(Integer groupIdsItem) {
+  public FaceApiSearch addGroupIdsItem(String groupIdsItem) {
     if (this.groupIds == null) {
       this.groupIds = new ArrayList<>();
     }
@@ -117,11 +117,11 @@ public class FaceApiSearch {
    * @return groupIds
    */
   @javax.annotation.Nullable
-  public List<Integer> getGroupIds() {
+  public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<Integer> groupIds) {
+  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
