@@ -61,7 +61,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
                 val releasesRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient")
                 val betaRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient/Beta")
                 val rcRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient/RC")
-                val nightlyRepoUrl = uri("sftp://ftp.regula.local:22/RegulaDocumentReaderWebClient")
+                val nightlyRepoUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient/Nightly")
 
                 name = "regulaforensics"
                 url = if (version.toString().contains("beta")) betaRepoUrl
