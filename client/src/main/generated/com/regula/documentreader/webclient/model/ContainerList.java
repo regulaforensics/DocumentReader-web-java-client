@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** List with various objects, containing processing results */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ContainerList {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
@@ -137,13 +138,10 @@ public class ContainerList {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Count");
-    openapiFields.add("List");
+    openapiFields = new HashSet<String>(Arrays.asList("Count", "List"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("List");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("List"));
   }
 
   /**
@@ -156,7 +154,7 @@ public class ContainerList {
     if (jsonElement == null) {
       if (!ContainerList.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ContainerList is not found in the empty JSON string",
                 ContainerList.openapiRequiredFields.toString()));
@@ -166,7 +164,7 @@ public class ContainerList {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ContainerList.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -175,7 +173,7 @@ public class ContainerList {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("List").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `List` to be an array in the JSON string but got `%s`",
               jsonObj.get("List").toString()));

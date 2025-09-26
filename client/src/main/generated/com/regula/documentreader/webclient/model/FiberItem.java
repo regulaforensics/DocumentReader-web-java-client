@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** FiberItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FiberItem {
   public static final String SERIALIZED_NAME_RECT_COUNT = "RectCount";
 
@@ -367,26 +368,30 @@ public class FiberItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RectCount");
-    openapiFields.add("ExpectedCount");
-    openapiFields.add("LightValue");
-    openapiFields.add("LightDisp");
-    openapiFields.add("RectArray");
-    openapiFields.add("Width");
-    openapiFields.add("Length");
-    openapiFields.add("Area");
-    openapiFields.add("ColorValues");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RectCount",
+                "ExpectedCount",
+                "LightValue",
+                "LightDisp",
+                "RectArray",
+                "Width",
+                "Length",
+                "Area",
+                "ColorValues"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("RectCount");
-    openapiRequiredFields.add("ExpectedCount");
-    openapiRequiredFields.add("RectArray");
-    openapiRequiredFields.add("Width");
-    openapiRequiredFields.add("Length");
-    openapiRequiredFields.add("Area");
-    openapiRequiredFields.add("ColorValues");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RectCount",
+                "ExpectedCount",
+                "RectArray",
+                "Width",
+                "Length",
+                "Area",
+                "ColorValues"));
   }
 
   /**
@@ -399,7 +404,7 @@ public class FiberItem {
     if (jsonElement == null) {
       if (!FiberItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FiberItem is not found in the empty JSON string",
                 FiberItem.openapiRequiredFields.toString()));
@@ -409,7 +414,7 @@ public class FiberItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : FiberItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -422,7 +427,7 @@ public class FiberItem {
     }
     // ensure the json data is an array
     if (!jsonObj.get("RectArray").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `RectArray` to be an array in the JSON string but got `%s`",
               jsonObj.get("RectArray").toString()));
@@ -436,40 +441,40 @@ public class FiberItem {
     ;
     // ensure the required json array is present
     if (jsonObj.get("Width") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Width").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Width` to be an array in the JSON string but got `%s`",
               jsonObj.get("Width").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("Length") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Length").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Length` to be an array in the JSON string but got `%s`",
               jsonObj.get("Length").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("Area") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Area").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Area` to be an array in the JSON string but got `%s`",
               jsonObj.get("Area").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("ColorValues") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("ColorValues").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ColorValues` to be an array in the JSON string but got `%s`",
               jsonObj.get("ColorValues").toString()));

@@ -20,6 +20,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +28,7 @@ import java.util.Objects;
 /** VisualExtendedFieldItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class VisualExtendedFieldItem {
   public static final String SERIALIZED_NAME_W_FIELD_TYPE = "wFieldType";
 
@@ -418,27 +419,27 @@ public class VisualExtendedFieldItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("wFieldType");
-    openapiFields.add("FieldName");
-    openapiFields.add("StringsCount");
-    openapiFields.add("StringsResult");
-    openapiFields.add("Buf_Length");
-    openapiFields.add("Buf_Text");
-    openapiFields.add("FieldMask");
-    openapiFields.add("Validity");
-    openapiFields.add("InComparison");
-    openapiFields.add("wLCID");
-    openapiFields.add("Reserved2");
-    openapiFields.add("Reserved3");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "wFieldType",
+                "FieldName",
+                "StringsCount",
+                "StringsResult",
+                "Buf_Length",
+                "Buf_Text",
+                "FieldMask",
+                "Validity",
+                "InComparison",
+                "wLCID",
+                "Reserved2",
+                "Reserved3"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("wFieldType");
-    openapiRequiredFields.add("FieldName");
-    openapiRequiredFields.add("StringsCount");
-    openapiRequiredFields.add("StringsResult");
-    openapiRequiredFields.add("Buf_Length");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "wFieldType", "FieldName", "StringsCount", "StringsResult", "Buf_Length"));
   }
 
   /**
@@ -451,7 +452,7 @@ public class VisualExtendedFieldItem {
     if (jsonElement == null) {
       if (!VisualExtendedFieldItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in VisualExtendedFieldItem is not found in the empty JSON string",
                 VisualExtendedFieldItem.openapiRequiredFields.toString()));
@@ -461,14 +462,14 @@ public class VisualExtendedFieldItem {
     // validate the required field `wFieldType`
     TextFieldType.validateJsonElement(jsonObj.get("wFieldType"));
     if (!jsonObj.get("FieldName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `FieldName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FieldName").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("StringsResult").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `StringsResult` to be an array in the JSON string but got `%s`",
               jsonObj.get("StringsResult").toString()));
@@ -482,14 +483,14 @@ public class VisualExtendedFieldItem {
     ;
     if ((jsonObj.get("Buf_Text") != null && !jsonObj.get("Buf_Text").isJsonNull())
         && !jsonObj.get("Buf_Text").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Buf_Text` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Buf_Text").toString()));
     }
     if ((jsonObj.get("FieldMask") != null && !jsonObj.get("FieldMask").isJsonNull())
         && !jsonObj.get("FieldMask").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `FieldMask` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FieldMask").toString()));

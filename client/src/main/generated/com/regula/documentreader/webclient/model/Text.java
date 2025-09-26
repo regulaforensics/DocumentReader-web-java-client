@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** Contains all document text fields data with validity and cross-source compare checks */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class Text {
   public static final String SERIALIZED_NAME_STATUS = "status";
 
@@ -258,22 +259,26 @@ public class Text {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("status");
-    openapiFields.add("validityStatus");
-    openapiFields.add("comparisonStatus");
-    openapiFields.add("dateFormat");
-    openapiFields.add("fieldList");
-    openapiFields.add("availableSourceList");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "status",
+                "validityStatus",
+                "comparisonStatus",
+                "dateFormat",
+                "fieldList",
+                "availableSourceList"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("validityStatus");
-    openapiRequiredFields.add("comparisonStatus");
-    openapiRequiredFields.add("dateFormat");
-    openapiRequiredFields.add("fieldList");
-    openapiRequiredFields.add("availableSourceList");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "status",
+                "validityStatus",
+                "comparisonStatus",
+                "dateFormat",
+                "fieldList",
+                "availableSourceList"));
   }
 
   /**
@@ -285,7 +290,7 @@ public class Text {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
       if (!Text.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in Text is not found in the empty JSON string",
                 Text.openapiRequiredFields.toString()));
@@ -295,7 +300,7 @@ public class Text {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : Text.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -309,14 +314,14 @@ public class Text {
     // validate the required field `comparisonStatus`
     CheckResult.validateJsonElement(jsonObj.get("comparisonStatus"));
     if (!jsonObj.get("dateFormat").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `dateFormat` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("dateFormat").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("fieldList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `fieldList` to be an array in the JSON string but got `%s`",
               jsonObj.get("fieldList").toString()));
@@ -330,7 +335,7 @@ public class Text {
     ;
     // ensure the json data is an array
     if (!jsonObj.get("availableSourceList").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `availableSourceList` to be an array in the JSON string but got `%s`",
               jsonObj.get("availableSourceList").toString()));

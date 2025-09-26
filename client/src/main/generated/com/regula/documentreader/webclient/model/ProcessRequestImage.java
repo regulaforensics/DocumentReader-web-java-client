@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ProcessRequestImage */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ProcessRequestImage {
   public static final String SERIALIZED_NAME_IMAGE_DATA = "ImageData";
 
@@ -153,13 +154,10 @@ public class ProcessRequestImage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ImageData");
-    openapiFields.add("light");
-    openapiFields.add("page_idx");
+    openapiFields = new HashSet<String>(Arrays.asList("ImageData", "light", "page_idx"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -172,7 +170,7 @@ public class ProcessRequestImage {
     if (jsonElement == null) {
       if (!ProcessRequestImage.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ProcessRequestImage is not found in the empty JSON string",
                 ProcessRequestImage.openapiRequiredFields.toString()));

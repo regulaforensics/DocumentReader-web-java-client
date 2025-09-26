@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RectangleCoordinates {
   public static final String SERIALIZED_NAME_LEFT = "left";
 
@@ -183,18 +184,10 @@ public class RectangleCoordinates {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("left");
-    openapiFields.add("top");
-    openapiFields.add("right");
-    openapiFields.add("bottom");
+    openapiFields = new HashSet<String>(Arrays.asList("left", "top", "right", "bottom"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("left");
-    openapiRequiredFields.add("top");
-    openapiRequiredFields.add("right");
-    openapiRequiredFields.add("bottom");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("left", "top", "right", "bottom"));
   }
 
   /**
@@ -207,7 +200,7 @@ public class RectangleCoordinates {
     if (jsonElement == null) {
       if (!RectangleCoordinates.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RectangleCoordinates is not found in the empty JSON string",
                 RectangleCoordinates.openapiRequiredFields.toString()));
@@ -217,7 +210,7 @@ public class RectangleCoordinates {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RectangleCoordinates.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

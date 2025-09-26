@@ -53,7 +53,7 @@ import okio.Okio;
 /** ApiClient class. */
 public class ApiClient {
 
-  private String basePath = "https://api.regulaforensics.com";
+  protected String basePath = "https://api.regulaforensics.com";
   protected List<ServerConfiguration> servers =
       new ArrayList<ServerConfiguration>(
           Arrays.asList(
@@ -71,26 +71,26 @@ public class ApiClient {
                   new HashMap<String, ServerVariable>())));
   protected Integer serverIndex = 0;
   protected Map<String, String> serverVariables = null;
-  private boolean debugging = false;
-  private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  private Map<String, String> defaultCookieMap = new HashMap<String, String>();
-  private String tempFolderPath = null;
+  protected boolean debugging = false;
+  protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
+  protected Map<String, String> defaultCookieMap = new HashMap<String, String>();
+  protected String tempFolderPath = null;
 
-  private Map<String, Authentication> authentications;
+  protected Map<String, Authentication> authentications;
 
-  private DateFormat dateFormat;
-  private DateFormat datetimeFormat;
-  private boolean lenientDatetimeFormat;
-  private int dateLength;
+  protected DateFormat dateFormat;
+  protected DateFormat datetimeFormat;
+  protected boolean lenientDatetimeFormat;
+  protected int dateLength;
 
-  private InputStream sslCaCert;
-  private boolean verifyingSsl;
-  private KeyManager[] keyManagers;
+  protected InputStream sslCaCert;
+  protected boolean verifyingSsl;
+  protected KeyManager[] keyManagers;
 
-  private OkHttpClient httpClient;
-  private JSON json;
+  protected OkHttpClient httpClient;
+  protected JSON json;
 
-  private HttpLoggingInterceptor loggingInterceptor;
+  protected HttpLoggingInterceptor loggingInterceptor;
 
   /** Basic constructor for ApiClient */
   public ApiClient() {
@@ -117,11 +117,11 @@ public class ApiClient {
     authentications = Collections.unmodifiableMap(authentications);
   }
 
-  private void initHttpClient() {
+  protected void initHttpClient() {
     initHttpClient(Collections.<Interceptor>emptyList());
   }
 
-  private void initHttpClient(List<Interceptor> interceptors) {
+  protected void initHttpClient(List<Interceptor> interceptors) {
     OkHttpClient.Builder builder = new OkHttpClient.Builder();
     builder.addNetworkInterceptor(getProgressInterceptor());
     for (Interceptor interceptor : interceptors) {
@@ -131,7 +131,7 @@ public class ApiClient {
     httpClient = builder.build();
   }
 
-  private void init() {
+  protected void init() {
     verifyingSsl = true;
 
     json = new JSON();
@@ -690,7 +690,7 @@ public class ApiClient {
    * @param value The value of the parameter.
    * @return A list of {@code Pair} objects.
    */
-  public List<Pair> parameterToPairs(String collectionFormat, String name, Collection value) {
+  public List<Pair> parameterToPairs(String collectionFormat, String name, Collection<?> value) {
     List<Pair> params = new ArrayList<Pair>();
 
     // preconditions
@@ -795,7 +795,7 @@ public class ApiClient {
    * @return The sanitized filename
    */
   public String sanitizeFilename(String filename) {
-    return filename.replaceAll(".*[/\\\\]", "");
+    return filename.replaceFirst("^.*[/\\\\]", "");
   }
 
   /**
@@ -1483,7 +1483,7 @@ public class ApiClient {
    * @param key The key of the Header element
    * @param file The file to add to the Header
    */
-  private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, File file) {
+  protected void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, File file) {
     Headers partHeaders =
         Headers.of(
             "Content-Disposition",
@@ -1500,7 +1500,8 @@ public class ApiClient {
    * @param key The key of the Header element
    * @param obj The complex object to add to the Header
    */
-  private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, Object obj) {
+  protected void addPartToMultiPartBuilder(
+      MultipartBody.Builder mpBuilder, String key, Object obj) {
     RequestBody requestBody;
     if (obj instanceof String) {
       requestBody = RequestBody.create((String) obj, MediaType.parse("text/plain"));
@@ -1522,7 +1523,7 @@ public class ApiClient {
    * Get network interceptor to add it to the httpClient to track download progress for async
    * requests.
    */
-  private Interceptor getProgressInterceptor() {
+  protected Interceptor getProgressInterceptor() {
     return new Interceptor() {
       @Override
       public Response intercept(Interceptor.Chain chain) throws IOException {
@@ -1544,7 +1545,7 @@ public class ApiClient {
    * Apply SSL related settings to httpClient according to the current values of verifyingSsl and
    * sslCaCert.
    */
-  private void applySslSettings() {
+  protected void applySslSettings() {
     try {
       TrustManager[] trustManagers;
       HostnameVerifier hostnameVerifier;
@@ -1614,7 +1615,7 @@ public class ApiClient {
     }
   }
 
-  private KeyStore newEmptyKeyStore(char[] password) throws GeneralSecurityException {
+  protected KeyStore newEmptyKeyStore(char[] password) throws GeneralSecurityException {
     try {
       KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
       keyStore.load(null, password);
@@ -1632,7 +1633,7 @@ public class ApiClient {
    * @throws com.regula.documentreader.webclient.ApiException If fail to serialize the request body
    *     object into a string
    */
-  private String requestBodyToString(RequestBody requestBody) throws ApiException {
+  protected String requestBodyToString(RequestBody requestBody) throws ApiException {
     if (requestBody != null) {
       try {
         final Buffer buffer = new Buffer();

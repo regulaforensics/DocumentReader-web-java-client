@@ -24,13 +24,14 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** SymbolEstimationItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class SymbolEstimationItem {
   public static final String SERIALIZED_NAME_A_L_I_G_N_M_E_N_T_N_E_A_R_E_S_T_S_Y_M_B_O_L_S =
       "ALIGNMENT_NEAREST_SYMBOLS";
@@ -582,44 +583,48 @@ public class SymbolEstimationItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ALIGNMENT_NEAREST_SYMBOLS");
-    openapiFields.add("CONTRAST_PRINT");
-    openapiFields.add("CONTRAST_SYMBOL");
-    openapiFields.add("CharSymbol");
-    openapiFields.add("EDGE");
-    openapiFields.add("EMPTINESS");
-    openapiFields.add("STAIN");
-    openapiFields.add("SYMBOLS_INTERVAL");
-    openapiFields.add("SYMBOL_PARAM");
-    openapiFields.add("SYMBOL_SIZE");
-    openapiFields.add("SizeErrorAlignWithNext");
-    openapiFields.add("SizeErrorAlignWithPrev");
-    openapiFields.add("SizeErrorIntervWithNext");
-    openapiFields.add("SizeErrorIntervWithPrev");
-    openapiFields.add("SizeErrorSymbolHeight");
-    openapiFields.add("SizeErrorSymbolWidth");
-    openapiFields.add("SymbolBounds");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ALIGNMENT_NEAREST_SYMBOLS",
+                "CONTRAST_PRINT",
+                "CONTRAST_SYMBOL",
+                "CharSymbol",
+                "EDGE",
+                "EMPTINESS",
+                "STAIN",
+                "SYMBOLS_INTERVAL",
+                "SYMBOL_PARAM",
+                "SYMBOL_SIZE",
+                "SizeErrorAlignWithNext",
+                "SizeErrorAlignWithPrev",
+                "SizeErrorIntervWithNext",
+                "SizeErrorIntervWithPrev",
+                "SizeErrorSymbolHeight",
+                "SizeErrorSymbolWidth",
+                "SymbolBounds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ALIGNMENT_NEAREST_SYMBOLS");
-    openapiRequiredFields.add("CONTRAST_PRINT");
-    openapiRequiredFields.add("CONTRAST_SYMBOL");
-    openapiRequiredFields.add("CharSymbol");
-    openapiRequiredFields.add("EDGE");
-    openapiRequiredFields.add("EMPTINESS");
-    openapiRequiredFields.add("STAIN");
-    openapiRequiredFields.add("SYMBOLS_INTERVAL");
-    openapiRequiredFields.add("SYMBOL_PARAM");
-    openapiRequiredFields.add("SYMBOL_SIZE");
-    openapiRequiredFields.add("SizeErrorAlignWithNext");
-    openapiRequiredFields.add("SizeErrorAlignWithPrev");
-    openapiRequiredFields.add("SizeErrorIntervWithNext");
-    openapiRequiredFields.add("SizeErrorIntervWithPrev");
-    openapiRequiredFields.add("SizeErrorSymbolHeight");
-    openapiRequiredFields.add("SizeErrorSymbolWidth");
-    openapiRequiredFields.add("SymbolBounds");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ALIGNMENT_NEAREST_SYMBOLS",
+                "CONTRAST_PRINT",
+                "CONTRAST_SYMBOL",
+                "CharSymbol",
+                "EDGE",
+                "EMPTINESS",
+                "STAIN",
+                "SYMBOLS_INTERVAL",
+                "SYMBOL_PARAM",
+                "SYMBOL_SIZE",
+                "SizeErrorAlignWithNext",
+                "SizeErrorAlignWithPrev",
+                "SizeErrorIntervWithNext",
+                "SizeErrorIntervWithPrev",
+                "SizeErrorSymbolHeight",
+                "SizeErrorSymbolWidth",
+                "SymbolBounds"));
   }
 
   /**
@@ -632,7 +637,7 @@ public class SymbolEstimationItem {
     if (jsonElement == null) {
       if (!SymbolEstimationItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in SymbolEstimationItem is not found in the empty JSON string",
                 SymbolEstimationItem.openapiRequiredFields.toString()));
@@ -642,7 +647,7 @@ public class SymbolEstimationItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : SymbolEstimationItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

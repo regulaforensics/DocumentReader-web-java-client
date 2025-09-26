@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** BarcodePositionItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class BarcodePositionItem {
   public static final String SERIALIZED_NAME_BARCODE_POSITION = "BarcodePosition";
 
@@ -100,12 +101,10 @@ public class BarcodePositionItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("BarcodePosition");
+    openapiFields = new HashSet<String>(Arrays.asList("BarcodePosition"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("BarcodePosition");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("BarcodePosition"));
   }
 
   /**
@@ -118,7 +117,7 @@ public class BarcodePositionItem {
     if (jsonElement == null) {
       if (!BarcodePositionItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in BarcodePositionItem is not found in the empty JSON string",
                 BarcodePositionItem.openapiRequiredFields.toString()));
@@ -128,7 +127,7 @@ public class BarcodePositionItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : BarcodePositionItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

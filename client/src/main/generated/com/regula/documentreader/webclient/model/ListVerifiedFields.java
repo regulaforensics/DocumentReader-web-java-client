@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** ListVerifiedFields */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ListVerifiedFields {
   public static final String SERIALIZED_NAME_COUNT = "Count";
 
@@ -166,15 +167,10 @@ public class ListVerifiedFields {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Count");
-    openapiFields.add("pFieldMaps");
-    openapiFields.add("pDateFormat");
+    openapiFields = new HashSet<String>(Arrays.asList("Count", "pFieldMaps", "pDateFormat"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Count");
-    openapiRequiredFields.add("pFieldMaps");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Count", "pFieldMaps"));
   }
 
   /**
@@ -187,7 +183,7 @@ public class ListVerifiedFields {
     if (jsonElement == null) {
       if (!ListVerifiedFields.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ListVerifiedFields is not found in the empty JSON string",
                 ListVerifiedFields.openapiRequiredFields.toString()));
@@ -197,7 +193,7 @@ public class ListVerifiedFields {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ListVerifiedFields.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -206,7 +202,7 @@ public class ListVerifiedFields {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("pFieldMaps").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `pFieldMaps` to be an array in the JSON string but got `%s`",
               jsonObj.get("pFieldMaps").toString()));
@@ -220,7 +216,7 @@ public class ListVerifiedFields {
     ;
     if ((jsonObj.get("pDateFormat") != null && !jsonObj.get("pDateFormat").isJsonNull())
         && !jsonObj.get("pDateFormat").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `pDateFormat` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("pDateFormat").toString()));

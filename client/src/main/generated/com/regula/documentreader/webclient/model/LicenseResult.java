@@ -30,7 +30,7 @@ import java.util.Objects;
 /** Contains license */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class LicenseResult extends ResultItem {
   public static final String SERIALIZED_NAME_LICENSE = "License";
 
@@ -101,18 +101,12 @@ public class LicenseResult extends ResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("License");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("buf_length", "light", "list_idx", "page_idx", "result_type", "License"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("License");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("License", "result_type"));
   }
 
   /**
@@ -125,7 +119,7 @@ public class LicenseResult extends ResultItem {
     if (jsonElement == null) {
       if (!LicenseResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in LicenseResult is not found in the empty JSON string",
                 LicenseResult.openapiRequiredFields.toString()));
@@ -135,7 +129,7 @@ public class LicenseResult extends ResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : LicenseResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

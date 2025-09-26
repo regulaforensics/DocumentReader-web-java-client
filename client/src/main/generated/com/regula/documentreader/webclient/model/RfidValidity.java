@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Structure contains information on a certificate validity. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidValidity {
   public static final String SERIALIZED_NAME_NOT_BEFORE = "NotBefore";
 
@@ -126,14 +127,10 @@ public class RfidValidity {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("NotBefore");
-    openapiFields.add("NotAfter");
+    openapiFields = new HashSet<String>(Arrays.asList("NotBefore", "NotAfter"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("NotBefore");
-    openapiRequiredFields.add("NotAfter");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("NotBefore", "NotAfter"));
   }
 
   /**
@@ -146,7 +143,7 @@ public class RfidValidity {
     if (jsonElement == null) {
       if (!RfidValidity.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidValidity is not found in the empty JSON string",
                 RfidValidity.openapiRequiredFields.toString()));
@@ -156,7 +153,7 @@ public class RfidValidity {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidValidity.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

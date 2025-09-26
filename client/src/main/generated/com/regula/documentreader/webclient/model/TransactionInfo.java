@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** TransactionInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TransactionInfo {
   public static final String SERIALIZED_NAME_COMPUTER_NAME = "ComputerName";
 
@@ -297,18 +298,20 @@ public class TransactionInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ComputerName");
-    openapiFields.add("DateTime");
-    openapiFields.add("DocumentsDatabase");
-    openapiFields.add("SystemInfo");
-    openapiFields.add("Tag");
-    openapiFields.add("TransactionID");
-    openapiFields.add("UserName");
-    openapiFields.add("Version");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ComputerName",
+                "DateTime",
+                "DocumentsDatabase",
+                "SystemInfo",
+                "Tag",
+                "TransactionID",
+                "UserName",
+                "Version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -321,7 +324,7 @@ public class TransactionInfo {
     if (jsonElement == null) {
       if (!TransactionInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TransactionInfo is not found in the empty JSON string",
                 TransactionInfo.openapiRequiredFields.toString()));
@@ -331,14 +334,14 @@ public class TransactionInfo {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("ComputerName") != null && !jsonObj.get("ComputerName").isJsonNull())
         && !jsonObj.get("ComputerName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ComputerName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ComputerName").toString()));
     }
     if ((jsonObj.get("DateTime") != null && !jsonObj.get("DateTime").isJsonNull())
         && !jsonObj.get("DateTime").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DateTime` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DateTime").toString()));
@@ -350,35 +353,35 @@ public class TransactionInfo {
     }
     if ((jsonObj.get("SystemInfo") != null && !jsonObj.get("SystemInfo").isJsonNull())
         && !jsonObj.get("SystemInfo").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SystemInfo` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("SystemInfo").toString()));
     }
     if ((jsonObj.get("Tag") != null && !jsonObj.get("Tag").isJsonNull())
         && !jsonObj.get("Tag").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Tag` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Tag").toString()));
     }
     if ((jsonObj.get("TransactionID") != null && !jsonObj.get("TransactionID").isJsonNull())
         && !jsonObj.get("TransactionID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `TransactionID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("TransactionID").toString()));
     }
     if ((jsonObj.get("UserName") != null && !jsonObj.get("UserName").isJsonNull())
         && !jsonObj.get("UserName").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `UserName` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("UserName").toString()));
     }
     if ((jsonObj.get("Version") != null && !jsonObj.get("Version").isJsonNull())
         && !jsonObj.get("Version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Version").toString()));

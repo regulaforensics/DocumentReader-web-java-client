@@ -49,10 +49,12 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
     {{#isEnum}}
     {{^isContainer}}
 {{>modelInnerEnum}}
+
     {{/isContainer}}
     {{#isContainer}}
     {{#mostInnerItems}}
 {{>modelInnerEnum}}
+
     {{/mostInnerItems}}
     {{/isContainer}}
     {{/isEnum}}
@@ -70,7 +72,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
   {{#vendorExtensions.x-field-extra-annotation}}
   {{{vendorExtensions.x-field-extra-annotation}}}
   {{/vendorExtensions.x-field-extra-annotation}}
-  {{>nullable_var_annotations}}
+  {{>nullable_var_annotations}}{{! prevent indent}}
   {{#isDiscriminator}}protected{{/isDiscriminator}}{{^isDiscriminator}}private{{/isDiscriminator}} {{{datatypeWithEnum}}} {{name}}{{#defaultValue}} = {{{.}}}{{/defaultValue}};
 
   {{/vars}}
@@ -149,9 +151,10 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
 {{#deprecated}}
   @Deprecated
 {{/deprecated}}
-  {{>nullable_var_annotations}}
+  {{>nullable_var_annotations}}{{! prevent indent}}
 {{#useBeanValidation}}
 {{>beanValidation}}
+
 {{/useBeanValidation}}
 {{#swagger1AnnotationLibrary}}
   @ApiModelProperty({{#example}}example = "{{{.}}}", {{/example}}{{#required}}required = {{required}}, {{/required}}value = "{{{description}}}")
@@ -176,6 +179,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
 
   {{/vars}}
 {{>libraries/okhttp-gson/additional_properties}}
+
 
   @Override
   public boolean equals(Object o) {
@@ -312,16 +316,20 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    {{#allVars}}
-    openapiFields.add("{{baseName}}");
-    {{/allVars}}
+    {{#hasVars}}
+    openapiFields = new HashSet<String>(Arrays.asList({{#allVars}}"{{baseName}}"{{^-last}}, {{/-last}}{{/allVars}}));
+    {{/hasVars}}
+    {{^hasVars}}
+    openapiFields = new HashSet<String>(0);
+    {{/hasVars}}
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    {{#requiredVars}}
-    openapiRequiredFields.add("{{baseName}}");
-    {{/requiredVars}}
+    {{#hasRequired}}
+    openapiRequiredFields = new HashSet<String>(Arrays.asList({{#requiredVars}}"{{baseName}}"{{^-last}}, {{/-last}}{{/requiredVars}}));
+    {{/hasRequired}}
+    {{^hasRequired}}
+    openapiRequiredFields = new HashSet<String>(0);
+    {{/hasRequired}}
   }
 
   /**
@@ -333,7 +341,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!{{classname}}.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in {{{classname}}} is not found in the empty JSON string", {{classname}}.openapiRequiredFields.toString()));
+          System.err.println(String.format("The required field(s) %s in {{{classname}}} is not found in the empty JSON string", {{classname}}.openapiRequiredFields.toString()));
         }
       }
       {{^hasChildren}}
@@ -344,7 +352,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : {{classname}}.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          System.err.println(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
       {{/-first}}
@@ -360,7 +368,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
       {{#required}}
       // ensure the json data is an array
       if (!jsonObj.get("{{{baseName}}}").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
+        System.err.println(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
       }
 
       JsonArray jsonArray{{name}} = jsonObj.getAsJsonArray("{{{baseName}}}");
@@ -375,7 +383,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
         if (jsonArray{{name}} != null) {
           // ensure the json data is an array
           if (!jsonObj.get("{{{baseName}}}").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
+            System.err.println(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
           }
 
           // validate the optional field `{{{baseName}}}` (array)
@@ -390,15 +398,15 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
       {{^required}}
       // ensure the optional json data is an array if present
       if (jsonObj.get("{{{baseName}}}") != null && !jsonObj.get("{{{baseName}}}").isJsonNull() && !jsonObj.get("{{{baseName}}}").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
+        System.err.println(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
       }
       {{/required}}
       {{#required}}
       // ensure the required json array is present
       if (jsonObj.get("{{{baseName}}}") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+        System.err.println("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("{{{baseName}}}").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
+        System.err.println(String.format("Expected the field `{{{baseName}}}` to be an array in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
       }
       {{/required}}
       {{/items.isModel}}
@@ -406,7 +414,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
       {{^isContainer}}
       {{#isString}}
       if ({{#notRequiredOrIsNullable}}(jsonObj.get("{{{baseName}}}") != null && !jsonObj.get("{{{baseName}}}").isJsonNull()) && {{/notRequiredOrIsNullable}}!jsonObj.get("{{{baseName}}}").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `{{{baseName}}}` to be a primitive type in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
+        System.err.println(String.format("Expected the field `{{{baseName}}}` to be a primitive type in the JSON string but got `%s`", jsonObj.get("{{{baseName}}}").toString()));
       }
       {{/isString}}
       {{#isModel}}
@@ -459,7 +467,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtens
           break;
       {{/mappedModels}}
         default:
-          throw new IllegalArgumentException(String.format("The value of the `{{{propertyBaseName}}}` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
+          System.err.println(String.format("The value of the `{{{propertyBaseName}}}` field `%s` does not match any key defined in the discriminator's mapping.", discriminatorValue));
       }
       {{/discriminator}}
       {{/hasChildren}}

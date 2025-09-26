@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Details on performed optical checks */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DetailsOptical {
   public static final String SERIALIZED_NAME_OVERALL_STATUS = "overallStatus";
 
@@ -316,27 +317,31 @@ public class DetailsOptical {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("overallStatus");
-    openapiFields.add("docType");
-    openapiFields.add("expiry");
-    openapiFields.add("imageQA");
-    openapiFields.add("mrz");
-    openapiFields.add("pagesCount");
-    openapiFields.add("security");
-    openapiFields.add("text");
-    openapiFields.add("vds");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "overallStatus",
+                "docType",
+                "expiry",
+                "imageQA",
+                "mrz",
+                "pagesCount",
+                "security",
+                "text",
+                "vds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("overallStatus");
-    openapiRequiredFields.add("docType");
-    openapiRequiredFields.add("expiry");
-    openapiRequiredFields.add("imageQA");
-    openapiRequiredFields.add("mrz");
-    openapiRequiredFields.add("pagesCount");
-    openapiRequiredFields.add("security");
-    openapiRequiredFields.add("text");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "overallStatus",
+                "docType",
+                "expiry",
+                "imageQA",
+                "mrz",
+                "pagesCount",
+                "security",
+                "text"));
   }
 
   /**
@@ -349,7 +354,7 @@ public class DetailsOptical {
     if (jsonElement == null) {
       if (!DetailsOptical.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DetailsOptical is not found in the empty JSON string",
                 DetailsOptical.openapiRequiredFields.toString()));
@@ -359,7 +364,7 @@ public class DetailsOptical {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DetailsOptical.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** DataModule */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DataModule {
   public static final String SERIALIZED_NAME_M_DATA = "mData";
 
@@ -207,18 +208,11 @@ public class DataModule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("mData");
-    openapiFields.add("mLength");
-    openapiFields.add("mReserved1");
-    openapiFields.add("mReserver2");
-    openapiFields.add("mType");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("mData", "mLength", "mReserved1", "mReserver2", "mType"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("mData");
-    openapiRequiredFields.add("mLength");
-    openapiRequiredFields.add("mType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("mData", "mLength", "mType"));
   }
 
   /**
@@ -231,7 +225,7 @@ public class DataModule {
     if (jsonElement == null) {
       if (!DataModule.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DataModule is not found in the empty JSON string",
                 DataModule.openapiRequiredFields.toString()));
@@ -241,7 +235,7 @@ public class DataModule {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DataModule.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -249,7 +243,7 @@ public class DataModule {
     }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if (!jsonObj.get("mData").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `mData` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("mData").toString()));

@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** FiberResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FiberResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_RECT_COUNT = "RectCount";
 
@@ -369,31 +370,35 @@ public class FiberResult extends AuthenticityCheckResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("ElementResult");
-    openapiFields.add("ElementDiagnose");
-    openapiFields.add("PercentValue");
-    openapiFields.add("RectCount");
-    openapiFields.add("ExpectedCount");
-    openapiFields.add("LightValue");
-    openapiFields.add("LightDisp");
-    openapiFields.add("RectArray");
-    openapiFields.add("Width");
-    openapiFields.add("Length");
-    openapiFields.add("Area");
-    openapiFields.add("ColorValues");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "ElementResult",
+                "ElementDiagnose",
+                "PercentValue",
+                "RectCount",
+                "ExpectedCount",
+                "LightValue",
+                "LightDisp",
+                "RectArray",
+                "Width",
+                "Length",
+                "Area",
+                "ColorValues"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("RectCount");
-    openapiRequiredFields.add("ExpectedCount");
-    openapiRequiredFields.add("RectArray");
-    openapiRequiredFields.add("Width");
-    openapiRequiredFields.add("Length");
-    openapiRequiredFields.add("Area");
-    openapiRequiredFields.add("ColorValues");
-    openapiRequiredFields.add("Type");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RectCount",
+                "ExpectedCount",
+                "RectArray",
+                "Width",
+                "Length",
+                "Area",
+                "ColorValues",
+                "Type"));
   }
 
   /**
@@ -406,7 +411,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
     if (jsonElement == null) {
       if (!FiberResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FiberResult is not found in the empty JSON string",
                 FiberResult.openapiRequiredFields.toString()));
@@ -416,7 +421,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : FiberResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

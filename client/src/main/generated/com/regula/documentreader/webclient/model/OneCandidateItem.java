@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** OneCandidateItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class OneCandidateItem {
   public static final String SERIALIZED_NAME_ONE_CANDIDATE = "OneCandidate";
 
@@ -122,13 +123,10 @@ public class OneCandidateItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("OneCandidate");
-    openapiFields.add("XML_buffer");
+    openapiFields = new HashSet<String>(Arrays.asList("OneCandidate", "XML_buffer"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("OneCandidate");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("OneCandidate"));
   }
 
   /**
@@ -141,7 +139,7 @@ public class OneCandidateItem {
     if (jsonElement == null) {
       if (!OneCandidateItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in OneCandidateItem is not found in the empty JSON string",
                 OneCandidateItem.openapiRequiredFields.toString()));
@@ -151,7 +149,7 @@ public class OneCandidateItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : OneCandidateItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -162,7 +160,7 @@ public class OneCandidateItem {
     OneCandidate.validateJsonElement(jsonObj.get("OneCandidate"));
     if ((jsonObj.get("XML_buffer") != null && !jsonObj.get("XML_buffer").isJsonNull())
         && !jsonObj.get("XML_buffer").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `XML_buffer` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("XML_buffer").toString()));

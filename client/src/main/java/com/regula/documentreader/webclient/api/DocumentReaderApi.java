@@ -17,6 +17,7 @@ import com.regula.documentreader.webclient.model.ext.RecognitionResponse;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import okio.ByteString;
 
 public class DocumentReaderApi {
@@ -115,20 +116,23 @@ public class DocumentReaderApi {
   }
 
   private okhttp3.Call newProcessCall(byte[] processRequest) {
-    return processApi
-        .getApiClient()
-        .buildCall(
-            "/api",
-            "/process",
-            "POST",
-            new ArrayList<Pair>(),
-            new ArrayList<Pair>(),
-            processRequest,
-            new HashMap<String, String>(),
-            new HashMap<String, String>(),
-            new HashMap<String, Object>(),
-            new String[] {},
-            null);
+    Map<String, String> headerParams = new HashMap<>();
+    headerParams.put("Content-Type", "application/json");
+    ApiClient apiClient = processApi.getApiClient();
+    String baseUrl = apiClient.getBasePath();
+
+    return apiClient.buildCall(
+        baseUrl + "/api",
+        "/process",
+        "POST",
+        new ArrayList<Pair>(),
+        new ArrayList<Pair>(),
+        processRequest,
+        headerParams,
+        new HashMap<String, String>(),
+        new HashMap<String, Object>(),
+        new String[] {},
+        null);
   }
 
   public DocumentReaderApi withLicense(String license) {

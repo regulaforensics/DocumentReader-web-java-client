@@ -19,7 +19,7 @@ import java.util.Map;
 @SuppressWarnings("serial")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ApiException extends RuntimeException {
   private static final long serialVersionUID = 1L;
 

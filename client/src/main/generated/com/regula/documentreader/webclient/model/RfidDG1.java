@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -33,7 +34,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidDG1 {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
@@ -537,42 +538,46 @@ public class RfidDG1 {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("DocumentID");
-    openapiFields.add("DocumentType");
-    openapiFields.add("State");
-    openapiFields.add("Holder");
-    openapiFields.add("DocumentNumber");
-    openapiFields.add("CheckDigitDocumentNumber");
-    openapiFields.add("Nationality");
-    openapiFields.add("Birthday");
-    openapiFields.add("CheckDigitBirthday");
-    openapiFields.add("Sex");
-    openapiFields.add("ExpiryDate");
-    openapiFields.add("CheckDigitExpiryDate");
-    openapiFields.add("OptionalData");
-    openapiFields.add("CheckDigitOptionalData");
-    openapiFields.add("CheckDigitComposite");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "DocumentID",
+                "DocumentType",
+                "State",
+                "Holder",
+                "DocumentNumber",
+                "CheckDigitDocumentNumber",
+                "Nationality",
+                "Birthday",
+                "CheckDigitBirthday",
+                "Sex",
+                "ExpiryDate",
+                "CheckDigitExpiryDate",
+                "OptionalData",
+                "CheckDigitOptionalData",
+                "CheckDigitComposite"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("DocumentID");
-    openapiRequiredFields.add("DocumentType");
-    openapiRequiredFields.add("State");
-    openapiRequiredFields.add("Holder");
-    openapiRequiredFields.add("DocumentNumber");
-    openapiRequiredFields.add("CheckDigitDocumentNumber");
-    openapiRequiredFields.add("Nationality");
-    openapiRequiredFields.add("Birthday");
-    openapiRequiredFields.add("CheckDigitBirthday");
-    openapiRequiredFields.add("Sex");
-    openapiRequiredFields.add("ExpiryDate");
-    openapiRequiredFields.add("CheckDigitExpiryDate");
-    openapiRequiredFields.add("OptionalData");
-    openapiRequiredFields.add("CheckDigitOptionalData");
-    openapiRequiredFields.add("CheckDigitComposite");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "DocumentID",
+                "DocumentType",
+                "State",
+                "Holder",
+                "DocumentNumber",
+                "CheckDigitDocumentNumber",
+                "Nationality",
+                "Birthday",
+                "CheckDigitBirthday",
+                "Sex",
+                "ExpiryDate",
+                "CheckDigitExpiryDate",
+                "OptionalData",
+                "CheckDigitOptionalData",
+                "CheckDigitComposite"));
   }
 
   /**
@@ -585,7 +590,7 @@ public class RfidDG1 {
     if (jsonElement == null) {
       if (!RfidDG1.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidDG1 is not found in the empty JSON string",
                 RfidDG1.openapiRequiredFields.toString()));
@@ -595,7 +600,7 @@ public class RfidDG1 {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidDG1.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -605,55 +610,55 @@ public class RfidDG1 {
     // validate the required field `DocumentID`
     DocumentFormat.validateJsonElement(jsonObj.get("DocumentID"));
     if (!jsonObj.get("DocumentType").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocumentType` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DocumentType").toString()));
     }
     if (!jsonObj.get("State").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `State` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("State").toString()));
     }
     if (!jsonObj.get("Holder").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Holder` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Holder").toString()));
     }
     if (!jsonObj.get("DocumentNumber").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocumentNumber` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DocumentNumber").toString()));
     }
     if (!jsonObj.get("Nationality").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Nationality` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Nationality").toString()));
     }
     if (!jsonObj.get("Birthday").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Birthday` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Birthday").toString()));
     }
     if (!jsonObj.get("Sex").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Sex` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Sex").toString()));
     }
     if (!jsonObj.get("ExpiryDate").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ExpiryDate` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ExpiryDate").toString()));
     }
     if (!jsonObj.get("OptionalData").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `OptionalData` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("OptionalData").toString()));

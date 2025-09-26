@@ -14,16 +14,23 @@ and use next command from the project root.
 
 ## Generator configuration Features
 
-1. When generating oneOf schemas, the generator creates its 
+1. Two client generation modes have been added: 
+strict (for client testing) and lenient (for release). 
+In strict mode, the client will throw an exception if the 
+types do not match or the required fields are missing; 
+in lenient mode, error data will be output as a warning to 
+the console. The templates for generating these modes 
+are located in the generator-templates folder.
+2. When generating oneOf schemas, the generator creates its 
 own abstract class, which does not look like it would like. 
 The problem was solved by replacing the abstract generator 
 class with ours using typeMappings in the generator config.
-2. The generator treats the discriminator value as a string, 
+3. The generator treats the discriminator value as a string, 
 but in our case it's numbers. To solve this problem, changes 
-have been made to the pojo.mustache template.
-3. Disabled validation of additional JSON fields in 
-the pojo.mustache template.
-4. The generator replaces the list field with _list, solved 
+have been made to the pojo.mustache template (for both modes).
+4. Disabled validation of additional JSON fields in 
+the pojo.mustache template (for both modes).
+5. The generator replaces the list field with _list, solved 
 using nameMappings in the generator config.
 
 ## Problem solving

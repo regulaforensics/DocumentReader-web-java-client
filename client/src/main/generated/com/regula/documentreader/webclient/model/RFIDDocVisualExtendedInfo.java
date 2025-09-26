@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** Container for extracted text fields. Fields are identified by type and language */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RFIDDocVisualExtendedInfo {
   public static final String SERIALIZED_NAME_N_FIELDS = "nFields";
 
@@ -141,14 +142,10 @@ public class RFIDDocVisualExtendedInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("nFields");
-    openapiFields.add("pArrayFields");
+    openapiFields = new HashSet<String>(Arrays.asList("nFields", "pArrayFields"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("nFields");
-    openapiRequiredFields.add("pArrayFields");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("nFields", "pArrayFields"));
   }
 
   /**
@@ -161,7 +158,7 @@ public class RFIDDocVisualExtendedInfo {
     if (jsonElement == null) {
       if (!RFIDDocVisualExtendedInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RFIDDocVisualExtendedInfo is not found in the empty JSON string",
                 RFIDDocVisualExtendedInfo.openapiRequiredFields.toString()));
@@ -171,7 +168,7 @@ public class RFIDDocVisualExtendedInfo {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RFIDDocVisualExtendedInfo.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -180,7 +177,7 @@ public class RFIDDocVisualExtendedInfo {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("pArrayFields").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `pArrayFields` to be an array in the JSON string but got `%s`",
               jsonObj.get("pArrayFields").toString()));

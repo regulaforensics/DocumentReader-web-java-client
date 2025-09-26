@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +37,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidDataFile {
   public static final String SERIALIZED_NAME_FILE_I_D = "FileID";
 
@@ -459,24 +460,24 @@ public class RfidDataFile {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("FileID");
-    openapiFields.add("Type");
-    openapiFields.add("FileData");
-    openapiFields.add("ReadingStatus");
-    openapiFields.add("ReadingTime");
-    openapiFields.add("PA_Status");
-    openapiFields.add("Notifications");
-    openapiFields.add("DocFields_Text");
-    openapiFields.add("DocFields_Graphics");
-    openapiFields.add("DocFields_Originals");
-    openapiFields.add("ParsedData");
-    openapiFields.add("SecurityObject_Certificates");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "FileID",
+                "Type",
+                "FileData",
+                "ReadingStatus",
+                "ReadingTime",
+                "PA_Status",
+                "Notifications",
+                "DocFields_Text",
+                "DocFields_Graphics",
+                "DocFields_Originals",
+                "ParsedData",
+                "SecurityObject_Certificates"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("ReadingStatus");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Type", "ReadingStatus"));
   }
 
   /**
@@ -489,7 +490,7 @@ public class RfidDataFile {
     if (jsonElement == null) {
       if (!RfidDataFile.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidDataFile is not found in the empty JSON string",
                 RfidDataFile.openapiRequiredFields.toString()));
@@ -499,7 +500,7 @@ public class RfidDataFile {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidDataFile.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -508,7 +509,7 @@ public class RfidDataFile {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("FileID") != null && !jsonObj.get("FileID").isJsonNull())
         && !jsonObj.get("FileID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `FileID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("FileID").toString()));
@@ -529,7 +530,7 @@ public class RfidDataFile {
     if (jsonObj.get("Notifications") != null
         && !jsonObj.get("Notifications").isJsonNull()
         && !jsonObj.get("Notifications").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Notifications` to be an array in the JSON string but got `%s`",
               jsonObj.get("Notifications").toString()));
@@ -538,7 +539,7 @@ public class RfidDataFile {
     if (jsonObj.get("DocFields_Text") != null
         && !jsonObj.get("DocFields_Text").isJsonNull()
         && !jsonObj.get("DocFields_Text").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocFields_Text` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Text").toString()));
@@ -547,7 +548,7 @@ public class RfidDataFile {
     if (jsonObj.get("DocFields_Graphics") != null
         && !jsonObj.get("DocFields_Graphics").isJsonNull()
         && !jsonObj.get("DocFields_Graphics").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocFields_Graphics` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Graphics").toString()));
@@ -556,7 +557,7 @@ public class RfidDataFile {
     if (jsonObj.get("DocFields_Originals") != null
         && !jsonObj.get("DocFields_Originals").isJsonNull()
         && !jsonObj.get("DocFields_Originals").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DocFields_Originals` to be an array in the JSON string but got `%s`",
               jsonObj.get("DocFields_Originals").toString()));

@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidApplication {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
@@ -276,24 +277,28 @@ public class RfidApplication {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("Status");
-    openapiFields.add("ApplicationID");
-    openapiFields.add("Version");
-    openapiFields.add("UnicodeVersion");
-    openapiFields.add("DataHashAlgorithm");
-    openapiFields.add("Files");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "Status",
+                "ApplicationID",
+                "Version",
+                "UnicodeVersion",
+                "DataHashAlgorithm",
+                "Files"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("Status");
-    openapiRequiredFields.add("ApplicationID");
-    openapiRequiredFields.add("Version");
-    openapiRequiredFields.add("UnicodeVersion");
-    openapiRequiredFields.add("DataHashAlgorithm");
-    openapiRequiredFields.add("Files");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "Status",
+                "ApplicationID",
+                "Version",
+                "UnicodeVersion",
+                "DataHashAlgorithm",
+                "Files"));
   }
 
   /**
@@ -306,7 +311,7 @@ public class RfidApplication {
     if (jsonElement == null) {
       if (!RfidApplication.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidApplication is not found in the empty JSON string",
                 RfidApplication.openapiRequiredFields.toString()));
@@ -316,7 +321,7 @@ public class RfidApplication {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidApplication.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -328,32 +333,32 @@ public class RfidApplication {
     // validate the required field `Status`
     RFIDErrorCodes.validateJsonElement(jsonObj.get("Status"));
     if (!jsonObj.get("ApplicationID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ApplicationID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ApplicationID").toString()));
     }
     if (!jsonObj.get("Version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Version").toString()));
     }
     if (!jsonObj.get("UnicodeVersion").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `UnicodeVersion` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("UnicodeVersion").toString()));
     }
     if (!jsonObj.get("DataHashAlgorithm").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DataHashAlgorithm` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DataHashAlgorithm").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("Files").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Files` to be an array in the JSON string but got `%s`",
               jsonObj.get("Files").toString()));

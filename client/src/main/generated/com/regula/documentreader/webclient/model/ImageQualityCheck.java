@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ImageQualityCheck */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ImageQualityCheck {
   public static final String SERIALIZED_NAME_TYPE = "type";
 
@@ -261,23 +262,15 @@ public class ImageQualityCheck {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("type");
-    openapiFields.add("result");
-    openapiFields.add("featureType");
-    openapiFields.add("areas");
-    openapiFields.add("mean");
-    openapiFields.add("std_dev");
-    openapiFields.add("probability");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "type", "result", "featureType", "areas", "mean", "std_dev", "probability"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("result");
-    openapiRequiredFields.add("featureType");
-    openapiRequiredFields.add("mean");
-    openapiRequiredFields.add("std_dev");
-    openapiRequiredFields.add("probability");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("type", "result", "featureType", "mean", "std_dev", "probability"));
   }
 
   /**
@@ -290,7 +283,7 @@ public class ImageQualityCheck {
     if (jsonElement == null) {
       if (!ImageQualityCheck.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ImageQualityCheck is not found in the empty JSON string",
                 ImageQualityCheck.openapiRequiredFields.toString()));
@@ -300,7 +293,7 @@ public class ImageQualityCheck {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ImageQualityCheck.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

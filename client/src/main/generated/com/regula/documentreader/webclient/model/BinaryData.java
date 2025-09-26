@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** Structure is used for storing the results of one bar-code module reading. */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class BinaryData {
   public static final String SERIALIZED_NAME_RF_I_D_AUTHENTICATION_INFO =
       "RFID_Authentication_Info";
@@ -2382,74 +2383,76 @@ public class BinaryData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RFID_Authentication_Info");
-    openapiFields.add("RFID_MIFARE_Data_Validity");
-    openapiFields.add("RFID_MIFARE_Data");
-    openapiFields.add("RFID_EF_COM");
-    openapiFields.add("RFID_DG1");
-    openapiFields.add("RFID_DG2");
-    openapiFields.add("RFID_DG3");
-    openapiFields.add("RFID_DG4");
-    openapiFields.add("RFID_DG5");
-    openapiFields.add("RFID_DG6");
-    openapiFields.add("RFID_DG7");
-    openapiFields.add("RFID_DG8");
-    openapiFields.add("RFID_DG9");
-    openapiFields.add("RFID_DG10");
-    openapiFields.add("RFID_DG11");
-    openapiFields.add("RFID_DG12");
-    openapiFields.add("RFID_DG13");
-    openapiFields.add("RFID_DG14");
-    openapiFields.add("RFID_DG15");
-    openapiFields.add("RFID_DG16");
-    openapiFields.add("RFID_EF_SOD");
-    openapiFields.add("eID_DG1");
-    openapiFields.add("eID_DG2");
-    openapiFields.add("eID_DG3");
-    openapiFields.add("eID_DG4");
-    openapiFields.add("eID_DG5");
-    openapiFields.add("eID_DG6");
-    openapiFields.add("eID_DG7");
-    openapiFields.add("eID_DG8");
-    openapiFields.add("eID_DG9");
-    openapiFields.add("eID_DG10");
-    openapiFields.add("eID_DG11");
-    openapiFields.add("eID_DG12");
-    openapiFields.add("eID_DG13");
-    openapiFields.add("eID_DG14");
-    openapiFields.add("eID_DG15");
-    openapiFields.add("eID_DG16");
-    openapiFields.add("eID_DG17");
-    openapiFields.add("eID_DG18");
-    openapiFields.add("eID_DG19");
-    openapiFields.add("eID_DG20");
-    openapiFields.add("eID_DG21");
-    openapiFields.add("eDL_COM");
-    openapiFields.add("eDL_SOD");
-    openapiFields.add("eDL_DG1");
-    openapiFields.add("eDL_DG2");
-    openapiFields.add("eDL_DG3");
-    openapiFields.add("eDL_DG4");
-    openapiFields.add("eDL_DG5");
-    openapiFields.add("eDL_DG6");
-    openapiFields.add("eDL_DG7");
-    openapiFields.add("eDL_DG8");
-    openapiFields.add("eDL_DG9");
-    openapiFields.add("eDL_DG10");
-    openapiFields.add("eDL_DG11");
-    openapiFields.add("eDL_DG12");
-    openapiFields.add("eDL_DG13");
-    openapiFields.add("eDL_DG14");
-    openapiFields.add("Visible_Digital_Seal");
-    openapiFields.add("Visible_Digital_Seal_NC");
-    openapiFields.add("Digital_Signature");
-    openapiFields.add("RFID_Session_Data");
-    openapiFields.add("RFID_Session_Data_Status");
-    openapiFields.add("RFID_ePassp_Directory");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "RFID_Authentication_Info",
+                "RFID_MIFARE_Data_Validity",
+                "RFID_MIFARE_Data",
+                "RFID_EF_COM",
+                "RFID_DG1",
+                "RFID_DG2",
+                "RFID_DG3",
+                "RFID_DG4",
+                "RFID_DG5",
+                "RFID_DG6",
+                "RFID_DG7",
+                "RFID_DG8",
+                "RFID_DG9",
+                "RFID_DG10",
+                "RFID_DG11",
+                "RFID_DG12",
+                "RFID_DG13",
+                "RFID_DG14",
+                "RFID_DG15",
+                "RFID_DG16",
+                "RFID_EF_SOD",
+                "eID_DG1",
+                "eID_DG2",
+                "eID_DG3",
+                "eID_DG4",
+                "eID_DG5",
+                "eID_DG6",
+                "eID_DG7",
+                "eID_DG8",
+                "eID_DG9",
+                "eID_DG10",
+                "eID_DG11",
+                "eID_DG12",
+                "eID_DG13",
+                "eID_DG14",
+                "eID_DG15",
+                "eID_DG16",
+                "eID_DG17",
+                "eID_DG18",
+                "eID_DG19",
+                "eID_DG20",
+                "eID_DG21",
+                "eDL_COM",
+                "eDL_SOD",
+                "eDL_DG1",
+                "eDL_DG2",
+                "eDL_DG3",
+                "eDL_DG4",
+                "eDL_DG5",
+                "eDL_DG6",
+                "eDL_DG7",
+                "eDL_DG8",
+                "eDL_DG9",
+                "eDL_DG10",
+                "eDL_DG11",
+                "eDL_DG12",
+                "eDL_DG13",
+                "eDL_DG14",
+                "Visible_Digital_Seal",
+                "Visible_Digital_Seal_NC",
+                "Digital_Signature",
+                "RFID_Session_Data",
+                "RFID_Session_Data_Status",
+                "RFID_ePassp_Directory"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -2462,7 +2465,7 @@ public class BinaryData {
     if (jsonElement == null) {
       if (!BinaryData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in BinaryData is not found in the empty JSON string",
                 BinaryData.openapiRequiredFields.toString()));
@@ -2488,7 +2491,7 @@ public class BinaryData {
     if (jsonObj.get("RFID_ePassp_Directory") != null
         && !jsonObj.get("RFID_ePassp_Directory").isJsonNull()
         && !jsonObj.get("RFID_ePassp_Directory").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `RFID_ePassp_Directory` to be an array in the JSON string but got `%s`",
               jsonObj.get("RFID_ePassp_Directory").toString()));

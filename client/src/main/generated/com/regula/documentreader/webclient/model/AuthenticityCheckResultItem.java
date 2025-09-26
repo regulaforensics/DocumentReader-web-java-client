@@ -16,13 +16,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.annotations.SerializedName;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Common fields for all authenticity result objects */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
@@ -175,15 +176,12 @@ public class AuthenticityCheckResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("ElementResult");
-    openapiFields.add("ElementDiagnose");
-    openapiFields.add("PercentValue");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("Type", "ElementResult", "ElementDiagnose", "PercentValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Type"));
   }
 
   /**
@@ -196,7 +194,7 @@ public class AuthenticityCheckResultItem {
     if (jsonElement == null) {
       if (!AuthenticityCheckResultItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in AuthenticityCheckResultItem is not found in the empty JSON string",
                 AuthenticityCheckResultItem.openapiRequiredFields.toString()));
@@ -272,7 +270,7 @@ public class AuthenticityCheckResultItem {
         SecurityFeatureResult.validateJsonElement(jsonElement);
         break;
       default:
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The value of the `Type` field `%s` does not match any key defined in the discriminator's mapping.",
                 discriminatorValue));

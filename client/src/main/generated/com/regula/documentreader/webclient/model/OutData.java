@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** OutData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class OutData {
   public static final String SERIALIZED_NAME_URL = "url";
 
@@ -138,12 +139,10 @@ public class OutData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("url");
-    openapiFields.add("images");
+    openapiFields = new HashSet<String>(Arrays.asList("url", "images"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -156,7 +155,7 @@ public class OutData {
     if (jsonElement == null) {
       if (!OutData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in OutData is not found in the empty JSON string",
                 OutData.openapiRequiredFields.toString()));
@@ -166,7 +165,7 @@ public class OutData {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull())
         && !jsonObj.get("url").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `url` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("url").toString()));
@@ -176,7 +175,7 @@ public class OutData {
       if (jsonArrayimages != null) {
         // ensure the json data is an array
         if (!jsonObj.get("images").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `images` to be an array in the JSON string but got `%s`",
                   jsonObj.get("images").toString()));
