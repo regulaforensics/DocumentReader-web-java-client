@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Document database information */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocumentsDatabase {
   public static final String SERIALIZED_NAME_DESCRIPTION = "Description";
 
@@ -180,14 +181,11 @@ public class DocumentsDatabase {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Description");
-    openapiFields.add("ExportDate");
-    openapiFields.add("ID");
-    openapiFields.add("Version");
+    openapiFields =
+        new HashSet<String>(Arrays.asList("Description", "ExportDate", "ID", "Version"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -200,7 +198,7 @@ public class DocumentsDatabase {
     if (jsonElement == null) {
       if (!DocumentsDatabase.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocumentsDatabase is not found in the empty JSON string",
                 DocumentsDatabase.openapiRequiredFields.toString()));
@@ -210,28 +208,28 @@ public class DocumentsDatabase {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("Description") != null && !jsonObj.get("Description").isJsonNull())
         && !jsonObj.get("Description").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Description` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Description").toString()));
     }
     if ((jsonObj.get("ExportDate") != null && !jsonObj.get("ExportDate").isJsonNull())
         && !jsonObj.get("ExportDate").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ExportDate` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ExportDate").toString()));
     }
     if ((jsonObj.get("ID") != null && !jsonObj.get("ID").isJsonNull())
         && !jsonObj.get("ID").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ID` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("ID").toString()));
     }
     if ((jsonObj.get("Version") != null && !jsonObj.get("Version").isJsonNull())
         && !jsonObj.get("Version").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Version").toString()));

@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -37,7 +38,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidSignerInfoEx {
   public static final String SERIALIZED_NAME_VERSION = "Version";
 
@@ -448,34 +449,38 @@ public class RfidSignerInfoEx {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Version");
-    openapiFields.add("Issuer");
-    openapiFields.add("SerialNumber");
-    openapiFields.add("SubjectKeyIdentifier");
-    openapiFields.add("DigestAlgorithm");
-    openapiFields.add("SignedAttributes");
-    openapiFields.add("SignatureAlgorithm");
-    openapiFields.add("Signature");
-    openapiFields.add("PA_Status");
-    openapiFields.add("CertificateChain");
-    openapiFields.add("DataToHash");
-    openapiFields.add("Notifications");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Version",
+                "Issuer",
+                "SerialNumber",
+                "SubjectKeyIdentifier",
+                "DigestAlgorithm",
+                "SignedAttributes",
+                "SignatureAlgorithm",
+                "Signature",
+                "PA_Status",
+                "CertificateChain",
+                "DataToHash",
+                "Notifications"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Version");
-    openapiRequiredFields.add("Issuer");
-    openapiRequiredFields.add("SerialNumber");
-    openapiRequiredFields.add("SubjectKeyIdentifier");
-    openapiRequiredFields.add("DigestAlgorithm");
-    openapiRequiredFields.add("SignedAttributes");
-    openapiRequiredFields.add("SignatureAlgorithm");
-    openapiRequiredFields.add("Signature");
-    openapiRequiredFields.add("PA_Status");
-    openapiRequiredFields.add("CertificateChain");
-    openapiRequiredFields.add("DataToHash");
-    openapiRequiredFields.add("Notifications");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Version",
+                "Issuer",
+                "SerialNumber",
+                "SubjectKeyIdentifier",
+                "DigestAlgorithm",
+                "SignedAttributes",
+                "SignatureAlgorithm",
+                "Signature",
+                "PA_Status",
+                "CertificateChain",
+                "DataToHash",
+                "Notifications"));
   }
 
   /**
@@ -488,7 +493,7 @@ public class RfidSignerInfoEx {
     if (jsonElement == null) {
       if (!RfidSignerInfoEx.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidSignerInfoEx is not found in the empty JSON string",
                 RfidSignerInfoEx.openapiRequiredFields.toString()));
@@ -498,7 +503,7 @@ public class RfidSignerInfoEx {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidSignerInfoEx.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -512,14 +517,14 @@ public class RfidSignerInfoEx {
     // validate the required field `SubjectKeyIdentifier`
     TrfFtBytes.validateJsonElement(jsonObj.get("SubjectKeyIdentifier"));
     if (!jsonObj.get("DigestAlgorithm").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DigestAlgorithm` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DigestAlgorithm").toString()));
     }
     // ensure the json data is an array
     if (!jsonObj.get("SignedAttributes").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SignedAttributes` to be an array in the JSON string but got `%s`",
               jsonObj.get("SignedAttributes").toString()));
@@ -532,7 +537,7 @@ public class RfidSignerInfoEx {
     }
     ;
     if (!jsonObj.get("SignatureAlgorithm").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SignatureAlgorithm` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("SignatureAlgorithm").toString()));
@@ -543,7 +548,7 @@ public class RfidSignerInfoEx {
     RFIDErrorCodes.validateJsonElement(jsonObj.get("PA_Status"));
     // ensure the json data is an array
     if (!jsonObj.get("CertificateChain").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `CertificateChain` to be an array in the JSON string but got `%s`",
               jsonObj.get("CertificateChain").toString()));
@@ -556,17 +561,17 @@ public class RfidSignerInfoEx {
     }
     ;
     if (!jsonObj.get("DataToHash").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `DataToHash` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("DataToHash").toString()));
     }
     // ensure the required json array is present
     if (jsonObj.get("Notifications") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Notifications").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Notifications` to be an array in the JSON string but got `%s`",
               jsonObj.get("Notifications").toString()));

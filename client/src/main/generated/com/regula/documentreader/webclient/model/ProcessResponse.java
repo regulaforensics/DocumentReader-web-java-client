@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** ProcessResponse */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ProcessResponse {
   public static final String SERIALIZED_NAME_CHIP_PAGE = "ChipPage";
 
@@ -373,26 +374,30 @@ public class ProcessResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ChipPage");
-    openapiFields.add("CoreLibResultCode");
-    openapiFields.add("ProcessingFinished");
-    openapiFields.add("ContainerList");
-    openapiFields.add("TransactionInfo");
-    openapiFields.add("log");
-    openapiFields.add("passBackObject");
-    openapiFields.add("morePagesAvailable");
-    openapiFields.add("elapsedTime");
-    openapiFields.add("metadata");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ChipPage",
+                "CoreLibResultCode",
+                "ProcessingFinished",
+                "ContainerList",
+                "TransactionInfo",
+                "log",
+                "passBackObject",
+                "morePagesAvailable",
+                "elapsedTime",
+                "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ChipPage");
-    openapiRequiredFields.add("ProcessingFinished");
-    openapiRequiredFields.add("ContainerList");
-    openapiRequiredFields.add("TransactionInfo");
-    openapiRequiredFields.add("morePagesAvailable");
-    openapiRequiredFields.add("elapsedTime");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "ChipPage",
+                "ProcessingFinished",
+                "ContainerList",
+                "TransactionInfo",
+                "morePagesAvailable",
+                "elapsedTime"));
   }
 
   /**
@@ -405,7 +410,7 @@ public class ProcessResponse {
     if (jsonElement == null) {
       if (!ProcessResponse.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ProcessResponse is not found in the empty JSON string",
                 ProcessResponse.openapiRequiredFields.toString()));
@@ -415,7 +420,7 @@ public class ProcessResponse {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : ProcessResponse.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -432,7 +437,7 @@ public class ProcessResponse {
     TransactionInfo.validateJsonElement(jsonObj.get("TransactionInfo"));
     if ((jsonObj.get("log") != null && !jsonObj.get("log").isJsonNull())
         && !jsonObj.get("log").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `log` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("log").toString()));

@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** ParsedData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ParsedData {
   public static final String SERIALIZED_NAME_PARSING_NOTIFICATIONS = "ParsingNotifications";
 
@@ -113,11 +114,10 @@ public class ParsedData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("ParsingNotifications");
+    openapiFields = new HashSet<String>(Arrays.asList("ParsingNotifications"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -130,7 +130,7 @@ public class ParsedData {
     if (jsonElement == null) {
       if (!ParsedData.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ParsedData is not found in the empty JSON string",
                 ParsedData.openapiRequiredFields.toString()));
@@ -142,7 +142,7 @@ public class ParsedData {
     if (jsonObj.get("ParsingNotifications") != null
         && !jsonObj.get("ParsingNotifications").isJsonNull()
         && !jsonObj.get("ParsingNotifications").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `ParsingNotifications` to be an array in the JSON string but got `%s`",
               jsonObj.get("ParsingNotifications").toString()));

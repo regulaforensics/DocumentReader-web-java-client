@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** Symbol */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class Symbol {
   public static final String SERIALIZED_NAME_BOUNDING_RECT = "boundingRect";
 
@@ -109,12 +110,10 @@ public class Symbol {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("boundingRect");
+    openapiFields = new HashSet<String>(Arrays.asList("boundingRect"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("boundingRect");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("boundingRect"));
   }
 
   /**
@@ -126,7 +125,7 @@ public class Symbol {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
       if (!Symbol.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in Symbol is not found in the empty JSON string",
                 Symbol.openapiRequiredFields.toString()));
@@ -136,7 +135,7 @@ public class Symbol {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : Symbol.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -145,10 +144,10 @@ public class Symbol {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the required json array is present
     if (jsonObj.get("boundingRect") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("boundingRect").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `boundingRect` to be an array in the JSON string but got `%s`",
               jsonObj.get("boundingRect").toString()));

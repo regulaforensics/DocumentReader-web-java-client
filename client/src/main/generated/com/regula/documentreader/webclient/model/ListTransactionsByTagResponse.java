@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +35,7 @@ import java.util.Objects;
 /** ListTransactionsByTagResponse */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ListTransactionsByTagResponse {
   public static final String SERIALIZED_NAME_ITEMS = "items";
 
@@ -149,12 +150,10 @@ public class ListTransactionsByTagResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("items");
-    openapiFields.add("metadata");
+    openapiFields = new HashSet<String>(Arrays.asList("items", "metadata"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -168,7 +167,7 @@ public class ListTransactionsByTagResponse {
     if (jsonElement == null) {
       if (!ListTransactionsByTagResponse.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ListTransactionsByTagResponse is not found in the empty JSON string",
                 ListTransactionsByTagResponse.openapiRequiredFields.toString()));
@@ -181,7 +180,7 @@ public class ListTransactionsByTagResponse {
       if (jsonArrayitems != null) {
         // ensure the json data is an array
         if (!jsonObj.get("items").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `items` to be an array in the JSON string but got `%s`",
                   jsonObj.get("items").toString()));

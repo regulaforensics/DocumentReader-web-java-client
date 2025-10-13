@@ -17,7 +17,9 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.bind.util.ISO8601Utils;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.gsonfire.GsonFireBuilder;
@@ -54,6 +56,32 @@ public class JSON {
       new OffsetDateTimeTypeAdapter();
   private static LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
   private static ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
+
+  private static class LenientTypeAdapterFactory implements TypeAdapterFactory {
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+      final TypeAdapter<T> delegate = gson.getDelegateAdapter(this, type);
+
+      return new TypeAdapter<T>() {
+        @Override
+        public void write(JsonWriter out, T value) throws IOException {
+          delegate.write(out, value);
+        }
+
+        @Override
+        public T read(JsonReader in) throws IOException {
+          try {
+            return delegate.read(in);
+          } catch (Exception e) {
+            System.err.println(
+                "Warning: failed to parse field of type " + type + ", reason: " + e.getMessage());
+            in.skipValue();
+            return null;
+          }
+        }
+      };
+    }
+  }
 
   @SuppressWarnings("unchecked")
   public static GsonBuilder createGson() {
@@ -191,19 +219,6 @@ public class JSON {
                         com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
                         "8388608",
-                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
-                    classByDiscriminatorValue.put(
-                        "FiberResult", com.regula.documentreader.webclient.model.FiberResult.class);
-                    classByDiscriminatorValue.put(
-                        "IdentResult", com.regula.documentreader.webclient.model.IdentResult.class);
-                    classByDiscriminatorValue.put(
-                        "OCRSecurityTextResult",
-                        com.regula.documentreader.webclient.model.OCRSecurityTextResult.class);
-                    classByDiscriminatorValue.put(
-                        "PhotoIdentResult",
-                        com.regula.documentreader.webclient.model.PhotoIdentResult.class);
-                    classByDiscriminatorValue.put(
-                        "SecurityFeatureResult",
                         com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
                         "AuthenticityCheckResult_List_inner",
@@ -370,78 +385,6 @@ public class JSON {
                         com.regula.documentreader.webclient.model.ChosenDocumentTypeResult.class);
                     classByDiscriminatorValue.put(
                         "97", com.regula.documentreader.webclient.model.FaceDetectionResult.class);
-                    classByDiscriminatorValue.put(
-                        "AuthenticityResult",
-                        com.regula.documentreader.webclient.model.AuthenticityResult.class);
-                    classByDiscriminatorValue.put(
-                        "BarcodePositionResult",
-                        com.regula.documentreader.webclient.model.BarcodePositionResult.class);
-                    classByDiscriminatorValue.put(
-                        "ByteArrayResult",
-                        com.regula.documentreader.webclient.model.ByteArrayResult.class);
-                    classByDiscriminatorValue.put(
-                        "ChosenDocumentTypeResult",
-                        com.regula.documentreader.webclient.model.ChosenDocumentTypeResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocBarCodeInfo",
-                        com.regula.documentreader.webclient.model.DocBarCodeInfo.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentBinaryInfoResult",
-                        com.regula.documentreader.webclient.model.DocumentBinaryInfoResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentImageResult",
-                        com.regula.documentreader.webclient.model.DocumentImageResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentPositionResult",
-                        com.regula.documentreader.webclient.model.DocumentPositionResult.class);
-                    classByDiscriminatorValue.put(
-                        "DocumentTypesCandidatesResult",
-                        com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
-                            .class);
-                    classByDiscriminatorValue.put(
-                        "EncryptedRCLResult",
-                        com.regula.documentreader.webclient.model.EncryptedRCLResult.class);
-                    classByDiscriminatorValue.put(
-                        "FaceDetectionResult",
-                        com.regula.documentreader.webclient.model.FaceDetectionResult.class);
-                    classByDiscriminatorValue.put(
-                        "GraphicsResult",
-                        com.regula.documentreader.webclient.model.GraphicsResult.class);
-                    classByDiscriminatorValue.put(
-                        "ImageQualityResult",
-                        com.regula.documentreader.webclient.model.ImageQualityResult.class);
-                    classByDiscriminatorValue.put(
-                        "ImagesResult",
-                        com.regula.documentreader.webclient.model.ImagesResult.class);
-                    classByDiscriminatorValue.put(
-                        "LexicalAnalysisResult",
-                        com.regula.documentreader.webclient.model.LexicalAnalysisResult.class);
-                    classByDiscriminatorValue.put(
-                        "LicenseResult",
-                        com.regula.documentreader.webclient.model.LicenseResult.class);
-                    classByDiscriminatorValue.put(
-                        "MRZDetectorResult",
-                        com.regula.documentreader.webclient.model.MRZDetectorResult.class);
-                    classByDiscriminatorValue.put(
-                        "MRZPositionResult",
-                        com.regula.documentreader.webclient.model.MRZPositionResult.class);
-                    classByDiscriminatorValue.put(
-                        "MRZTestQualityResult",
-                        com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
-                    classByDiscriminatorValue.put(
-                        "RFIDGraphicsInfoResult",
-                        com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
-                    classByDiscriminatorValue.put(
-                        "RFIDTextDataResult",
-                        com.regula.documentreader.webclient.model.RFIDTextDataResult.class);
-                    classByDiscriminatorValue.put(
-                        "StatusResult",
-                        com.regula.documentreader.webclient.model.StatusResult.class);
-                    classByDiscriminatorValue.put(
-                        "TextDataResult",
-                        com.regula.documentreader.webclient.model.TextDataResult.class);
-                    classByDiscriminatorValue.put(
-                        "TextResult", com.regula.documentreader.webclient.model.TextResult.class);
                     classByDiscriminatorValue.put(
                         "ContainerList_List_inner",
                         com.regula.documentreader.webclient.model.ContainerListListInner.class);
@@ -973,6 +916,7 @@ public class JSON {
 
   static {
     GsonBuilder gsonBuilder = createGson();
+    gsonBuilder.registerTypeAdapterFactory(new LenientTypeAdapterFactory());
     gsonBuilder.registerTypeAdapter(Date.class, dateTypeAdapter);
     gsonBuilder.registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter);
     gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);

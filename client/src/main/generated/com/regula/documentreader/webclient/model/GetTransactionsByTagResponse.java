@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.UUID;
@@ -31,7 +32,7 @@ import java.util.UUID;
 /** GetTransactionsByTagResponse */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class GetTransactionsByTagResponse {
   public static final String SERIALIZED_NAME_ID = "id";
 
@@ -156,13 +157,10 @@ public class GetTransactionsByTagResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("state");
-    openapiFields.add("updatedAt");
+    openapiFields = new HashSet<String>(Arrays.asList("id", "state", "updatedAt"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -175,7 +173,7 @@ public class GetTransactionsByTagResponse {
     if (jsonElement == null) {
       if (!GetTransactionsByTagResponse.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in GetTransactionsByTagResponse is not found in the empty JSON string",
                 GetTransactionsByTagResponse.openapiRequiredFields.toString()));
@@ -185,7 +183,7 @@ public class GetTransactionsByTagResponse {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull())
         && !jsonObj.get("id").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `id` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("id").toString()));

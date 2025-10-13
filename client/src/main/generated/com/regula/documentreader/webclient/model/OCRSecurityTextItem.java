@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** OCRSecurityTextItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class OCRSecurityTextItem {
   public static final String SERIALIZED_NAME_CRITICAL_FLAG = "CriticalFlag";
 
@@ -385,30 +386,34 @@ public class OCRSecurityTextItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("CriticalFlag");
-    openapiFields.add("LightType");
-    openapiFields.add("FieldRect");
-    openapiFields.add("EtalonResultType");
-    openapiFields.add("EtalonFieldType");
-    openapiFields.add("EtalonLightType");
-    openapiFields.add("EtalonFieldRect");
-    openapiFields.add("SecurityTextResultOCR");
-    openapiFields.add("EtalonResultOCR");
-    openapiFields.add("Reserved1");
-    openapiFields.add("Reserved2");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "CriticalFlag",
+                "LightType",
+                "FieldRect",
+                "EtalonResultType",
+                "EtalonFieldType",
+                "EtalonLightType",
+                "EtalonFieldRect",
+                "SecurityTextResultOCR",
+                "EtalonResultOCR",
+                "Reserved1",
+                "Reserved2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("CriticalFlag");
-    openapiRequiredFields.add("LightType");
-    openapiRequiredFields.add("FieldRect");
-    openapiRequiredFields.add("EtalonResultType");
-    openapiRequiredFields.add("EtalonFieldType");
-    openapiRequiredFields.add("EtalonLightType");
-    openapiRequiredFields.add("EtalonFieldRect");
-    openapiRequiredFields.add("SecurityTextResultOCR");
-    openapiRequiredFields.add("EtalonResultOCR");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "CriticalFlag",
+                "LightType",
+                "FieldRect",
+                "EtalonResultType",
+                "EtalonFieldType",
+                "EtalonLightType",
+                "EtalonFieldRect",
+                "SecurityTextResultOCR",
+                "EtalonResultOCR"));
   }
 
   /**
@@ -421,7 +426,7 @@ public class OCRSecurityTextItem {
     if (jsonElement == null) {
       if (!OCRSecurityTextItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in OCRSecurityTextItem is not found in the empty JSON string",
                 OCRSecurityTextItem.openapiRequiredFields.toString()));
@@ -431,7 +436,7 @@ public class OCRSecurityTextItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : OCRSecurityTextItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -451,13 +456,13 @@ public class OCRSecurityTextItem {
     // validate the required field `EtalonFieldRect`
     RectangleCoordinates.validateJsonElement(jsonObj.get("EtalonFieldRect"));
     if (!jsonObj.get("SecurityTextResultOCR").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `SecurityTextResultOCR` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("SecurityTextResultOCR").toString()));
     }
     if (!jsonObj.get("EtalonResultOCR").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `EtalonResultOCR` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("EtalonResultOCR").toString()));

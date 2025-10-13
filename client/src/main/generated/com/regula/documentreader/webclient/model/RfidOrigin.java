@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Location of data in RFID chip */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidOrigin {
   public static final String SERIALIZED_NAME_DG = "dg";
 
@@ -181,18 +182,11 @@ public class RfidOrigin {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dg");
-    openapiFields.add("dgTag");
-    openapiFields.add("tagEntry");
-    openapiFields.add("entryView");
+    openapiFields = new HashSet<String>(Arrays.asList("dg", "dgTag", "tagEntry", "entryView"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("dg");
-    openapiRequiredFields.add("dgTag");
-    openapiRequiredFields.add("tagEntry");
-    openapiRequiredFields.add("entryView");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("dg", "dgTag", "tagEntry", "entryView"));
   }
 
   /**
@@ -205,7 +199,7 @@ public class RfidOrigin {
     if (jsonElement == null) {
       if (!RfidOrigin.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidOrigin is not found in the empty JSON string",
                 RfidOrigin.openapiRequiredFields.toString()));
@@ -215,7 +209,7 @@ public class RfidOrigin {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidOrigin.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

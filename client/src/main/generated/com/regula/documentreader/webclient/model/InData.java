@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** InData */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class InData {
   public static final String SERIALIZED_NAME_VIDEO = "video";
 
@@ -136,12 +137,10 @@ public class InData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("video");
-    openapiFields.add("images");
+    openapiFields = new HashSet<String>(Arrays.asList("video", "images"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -153,7 +152,7 @@ public class InData {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
       if (!InData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in InData is not found in the empty JSON string",
                 InData.openapiRequiredFields.toString()));
@@ -170,7 +169,7 @@ public class InData {
       if (jsonArrayimages != null) {
         // ensure the json data is an array
         if (!jsonObj.get("images").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `images` to be an array in the JSON string but got `%s`",
                   jsonObj.get("images").toString()));

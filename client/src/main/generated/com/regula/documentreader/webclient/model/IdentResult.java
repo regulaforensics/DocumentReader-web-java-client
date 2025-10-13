@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** IdentResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class IdentResult extends AuthenticityCheckResultItem {
   public static final String SERIALIZED_NAME_ELEMENT_TYPE = "ElementType";
 
@@ -264,26 +265,25 @@ public class IdentResult extends AuthenticityCheckResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("ElementResult");
-    openapiFields.add("ElementDiagnose");
-    openapiFields.add("PercentValue");
-    openapiFields.add("ElementType");
-    openapiFields.add("LightIndex");
-    openapiFields.add("Area");
-    openapiFields.add("Image");
-    openapiFields.add("EtalonImage");
-    openapiFields.add("AreaList");
-    openapiFields.add("ElementID");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type",
+                "ElementResult",
+                "ElementDiagnose",
+                "PercentValue",
+                "ElementType",
+                "LightIndex",
+                "Area",
+                "Image",
+                "EtalonImage",
+                "AreaList",
+                "ElementID"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("ElementType");
-    openapiRequiredFields.add("LightIndex");
-    openapiRequiredFields.add("Image");
-    openapiRequiredFields.add("EtalonImage");
-    openapiRequiredFields.add("Type");
+    openapiRequiredFields =
+        new HashSet<String>(
+            Arrays.asList("ElementType", "LightIndex", "Image", "EtalonImage", "Type"));
   }
 
   /**
@@ -296,7 +296,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
     if (jsonElement == null) {
       if (!IdentResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in IdentResult is not found in the empty JSON string",
                 IdentResult.openapiRequiredFields.toString()));
@@ -306,7 +306,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : IdentResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

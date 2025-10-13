@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class GraphicsResult extends ResultItem {
   public static final String SERIALIZED_NAME_DOC_GRAPHICS_INFO = "DocGraphicsInfo";
 
@@ -104,18 +105,13 @@ public class GraphicsResult extends ResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("DocGraphicsInfo");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "buf_length", "light", "list_idx", "page_idx", "result_type", "DocGraphicsInfo"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("DocGraphicsInfo");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("DocGraphicsInfo", "result_type"));
   }
 
   /**
@@ -128,7 +124,7 @@ public class GraphicsResult extends ResultItem {
     if (jsonElement == null) {
       if (!GraphicsResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in GraphicsResult is not found in the empty JSON string",
                 GraphicsResult.openapiRequiredFields.toString()));
@@ -138,7 +134,7 @@ public class GraphicsResult extends ResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : GraphicsResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

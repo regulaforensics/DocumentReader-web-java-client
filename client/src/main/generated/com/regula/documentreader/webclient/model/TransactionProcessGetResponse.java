@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.UUID;
@@ -30,7 +31,7 @@ import java.util.UUID;
 /** TransactionProcessGetResponse */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class TransactionProcessGetResponse {
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
 
@@ -182,14 +183,10 @@ public class TransactionProcessGetResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("transactionId");
-    openapiFields.add("tag");
-    openapiFields.add("outData");
-    openapiFields.add("inData");
+    openapiFields = new HashSet<String>(Arrays.asList("transactionId", "tag", "outData", "inData"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -203,7 +200,7 @@ public class TransactionProcessGetResponse {
     if (jsonElement == null) {
       if (!TransactionProcessGetResponse.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in TransactionProcessGetResponse is not found in the empty JSON string",
                 TransactionProcessGetResponse.openapiRequiredFields.toString()));
@@ -213,14 +210,14 @@ public class TransactionProcessGetResponse {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonNull())
         && !jsonObj.get("transactionId").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("transactionId").toString()));
     }
     if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull())
         && !jsonObj.get("tag").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `tag` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("tag").toString()));

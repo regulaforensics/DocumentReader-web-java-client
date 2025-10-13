@@ -30,7 +30,7 @@ import java.util.Objects;
 /** Contains encrypted result container list */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class EncryptedRCLResult extends ResultItem {
   public static final String SERIALIZED_NAME_ENCRYPTED_R_C_L = "EncryptedRCL";
 
@@ -101,18 +101,13 @@ public class EncryptedRCLResult extends ResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("EncryptedRCL");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "buf_length", "light", "list_idx", "page_idx", "result_type", "EncryptedRCL"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("EncryptedRCL");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("EncryptedRCL", "result_type"));
   }
 
   /**
@@ -125,7 +120,7 @@ public class EncryptedRCLResult extends ResultItem {
     if (jsonElement == null) {
       if (!EncryptedRCLResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in EncryptedRCLResult is not found in the empty JSON string",
                 EncryptedRCLResult.openapiRequiredFields.toString()));
@@ -135,7 +130,7 @@ public class EncryptedRCLResult extends ResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : EncryptedRCLResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

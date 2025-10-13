@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ProcessSystemInfo */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ProcessSystemInfo {
   public static final String SERIALIZED_NAME_LICENSE = "license";
 
@@ -126,12 +127,10 @@ public class ProcessSystemInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("license");
-    openapiFields.add("recaptcha_token");
+    openapiFields = new HashSet<String>(Arrays.asList("license", "recaptcha_token"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -144,7 +143,7 @@ public class ProcessSystemInfo {
     if (jsonElement == null) {
       if (!ProcessSystemInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ProcessSystemInfo is not found in the empty JSON string",
                 ProcessSystemInfo.openapiRequiredFields.toString()));
@@ -154,14 +153,14 @@ public class ProcessSystemInfo {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("license") != null && !jsonObj.get("license").isJsonNull())
         && !jsonObj.get("license").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `license` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("license").toString()));
     }
     if ((jsonObj.get("recaptcha_token") != null && !jsonObj.get("recaptcha_token").isJsonNull())
         && !jsonObj.get("recaptcha_token").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `recaptcha_token` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("recaptcha_token").toString()));

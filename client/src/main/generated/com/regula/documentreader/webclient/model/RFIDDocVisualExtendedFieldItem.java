@@ -24,13 +24,14 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** RFIDDocVisualExtendedFieldItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RFIDDocVisualExtendedFieldItem {
   public static final String SERIALIZED_NAME_ORIGIN_D_G = "OriginDG";
 
@@ -185,16 +186,12 @@ public class RFIDDocVisualExtendedFieldItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("OriginDG");
-    openapiFields.add("OriginDGTag");
-    openapiFields.add("OriginTagEntry");
-    openapiFields.add("OriginEntryView");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("OriginDG", "OriginDGTag", "OriginTagEntry", "OriginEntryView"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("OriginDG");
-    openapiRequiredFields.add("OriginTagEntry");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("OriginDG", "OriginTagEntry"));
   }
 
   /**
@@ -208,7 +205,7 @@ public class RFIDDocVisualExtendedFieldItem {
     if (jsonElement == null) {
       if (!RFIDDocVisualExtendedFieldItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RFIDDocVisualExtendedFieldItem is not found in the empty JSON string",
                 RFIDDocVisualExtendedFieldItem.openapiRequiredFields.toString()));
@@ -218,7 +215,7 @@ public class RFIDDocVisualExtendedFieldItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RFIDDocVisualExtendedFieldItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

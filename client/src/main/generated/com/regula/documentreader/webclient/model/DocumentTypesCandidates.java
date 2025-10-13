@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** DocumentTypesCandidates */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocumentTypesCandidates {
   public static final String SERIALIZED_NAME_REC_RESULT = "RecResult";
 
@@ -139,12 +140,10 @@ public class DocumentTypesCandidates {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("RecResult");
-    openapiFields.add("Candidates");
+    openapiFields = new HashSet<String>(Arrays.asList("RecResult", "Candidates"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -157,7 +156,7 @@ public class DocumentTypesCandidates {
     if (jsonElement == null) {
       if (!DocumentTypesCandidates.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocumentTypesCandidates is not found in the empty JSON string",
                 DocumentTypesCandidates.openapiRequiredFields.toString()));
@@ -174,7 +173,7 @@ public class DocumentTypesCandidates {
       if (jsonArraycandidates != null) {
         // ensure the json data is an array
         if (!jsonObj.get("Candidates").isJsonArray()) {
-          throw new IllegalArgumentException(
+          System.err.println(
               String.format(
                   "Expected the field `Candidates` to be an array in the JSON string but got `%s`",
                   jsonObj.get("Candidates").toString()));

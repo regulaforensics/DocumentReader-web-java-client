@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** ImageQA */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ImageQA {
   public static final String SERIALIZED_NAME_BRIGHTNESS_THRESHOLD = "brightnessThreshold";
 
@@ -344,19 +345,21 @@ public class ImageQA {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("brightnessThreshold");
-    openapiFields.add("dpiThreshold");
-    openapiFields.add("angleThreshold");
-    openapiFields.add("focusCheck");
-    openapiFields.add("glaresCheck");
-    openapiFields.add("colornessCheck");
-    openapiFields.add("moireCheck");
-    openapiFields.add("documentPositionIndent");
-    openapiFields.add("expectedPass");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "brightnessThreshold",
+                "dpiThreshold",
+                "angleThreshold",
+                "focusCheck",
+                "glaresCheck",
+                "colornessCheck",
+                "moireCheck",
+                "documentPositionIndent",
+                "expectedPass"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -369,7 +372,7 @@ public class ImageQA {
     if (jsonElement == null) {
       if (!ImageQA.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ImageQA is not found in the empty JSON string",
                 ImageQA.openapiRequiredFields.toString()));
@@ -381,7 +384,7 @@ public class ImageQA {
     if (jsonObj.get("expectedPass") != null
         && !jsonObj.get("expectedPass").isJsonNull()
         && !jsonObj.get("expectedPass").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `expectedPass` to be an array in the JSON string but got `%s`",
               jsonObj.get("expectedPass").toString()));

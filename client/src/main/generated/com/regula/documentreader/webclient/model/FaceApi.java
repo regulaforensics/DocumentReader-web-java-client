@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** FaceApi */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class FaceApi {
   public static final String SERIALIZED_NAME_URL = "url";
 
@@ -361,20 +362,22 @@ public class FaceApi {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("url");
-    openapiFields.add("mode");
-    openapiFields.add("search");
-    openapiFields.add("threshold");
-    openapiFields.add("serviceTimeout");
-    openapiFields.add("proxy");
-    openapiFields.add("proxy_userpwd");
-    openapiFields.add("proxy_type");
-    openapiFields.add("childAgeThreshold");
-    openapiFields.add("childDocValidityYears");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "url",
+                "mode",
+                "search",
+                "threshold",
+                "serviceTimeout",
+                "proxy",
+                "proxy_userpwd",
+                "proxy_type",
+                "childAgeThreshold",
+                "childDocValidityYears"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -387,7 +390,7 @@ public class FaceApi {
     if (jsonElement == null) {
       if (!FaceApi.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in FaceApi is not found in the empty JSON string",
                 FaceApi.openapiRequiredFields.toString()));
@@ -397,14 +400,14 @@ public class FaceApi {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull())
         && !jsonObj.get("url").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `url` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("url").toString()));
     }
     if ((jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonNull())
         && !jsonObj.get("mode").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `mode` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("mode").toString()));
@@ -415,14 +418,14 @@ public class FaceApi {
     }
     if ((jsonObj.get("proxy") != null && !jsonObj.get("proxy").isJsonNull())
         && !jsonObj.get("proxy").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `proxy` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("proxy").toString()));
     }
     if ((jsonObj.get("proxy_userpwd") != null && !jsonObj.get("proxy_userpwd").isJsonNull())
         && !jsonObj.get("proxy_userpwd").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `proxy_userpwd` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("proxy_userpwd").toString()));

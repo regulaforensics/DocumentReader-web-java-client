@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Point */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class Point {
   public static final String SERIALIZED_NAME_X = "x";
 
@@ -125,14 +126,10 @@ public class Point {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("x");
-    openapiFields.add("y");
+    openapiFields = new HashSet<String>(Arrays.asList("x", "y"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("x");
-    openapiRequiredFields.add("y");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("x", "y"));
   }
 
   /**
@@ -144,7 +141,7 @@ public class Point {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     if (jsonElement == null) {
       if (!Point.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in Point is not found in the empty JSON string",
                 Point.openapiRequiredFields.toString()));
@@ -154,7 +151,7 @@ public class Point {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : Point.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

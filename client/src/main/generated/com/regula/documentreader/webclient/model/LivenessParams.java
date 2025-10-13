@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** LivenessParams */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class LivenessParams {
   public static final String SERIALIZED_NAME_CHECK_O_V_I = "checkOVI";
 
@@ -271,17 +272,19 @@ public class LivenessParams {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("checkOVI");
-    openapiFields.add("checkMLI");
-    openapiFields.add("checkHolo");
-    openapiFields.add("checkED");
-    openapiFields.add("checkBlackAndWhiteCopy");
-    openapiFields.add("checkDynaprint");
-    openapiFields.add("checkGeometry");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "checkOVI",
+                "checkMLI",
+                "checkHolo",
+                "checkED",
+                "checkBlackAndWhiteCopy",
+                "checkDynaprint",
+                "checkGeometry"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -294,7 +297,7 @@ public class LivenessParams {
     if (jsonElement == null) {
       if (!LivenessParams.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in LivenessParams is not found in the empty JSON string",
                 LivenessParams.openapiRequiredFields.toString()));

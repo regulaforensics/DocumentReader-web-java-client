@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** DocumentImage */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocumentImage {
   public static final String SERIALIZED_NAME_IMAGE = "image";
 
@@ -126,12 +127,10 @@ public class DocumentImage {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("image");
-    openapiFields.add("format");
+    openapiFields = new HashSet<String>(Arrays.asList("image", "format"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -144,7 +143,7 @@ public class DocumentImage {
     if (jsonElement == null) {
       if (!DocumentImage.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocumentImage is not found in the empty JSON string",
                 DocumentImage.openapiRequiredFields.toString()));
@@ -154,14 +153,14 @@ public class DocumentImage {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("image") != null && !jsonObj.get("image").isJsonNull())
         && !jsonObj.get("image").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `image` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("image").toString()));
     }
     if ((jsonObj.get("format") != null && !jsonObj.get("format").isJsonNull())
         && !jsonObj.get("format").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `format` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("format").toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** CrossSourceValueComparison */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class CrossSourceValueComparison {
   public static final String SERIALIZED_NAME_SOURCE_LEFT = "sourceLeft";
 
@@ -153,16 +154,11 @@ public class CrossSourceValueComparison {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("sourceLeft");
-    openapiFields.add("sourceRight");
-    openapiFields.add("status");
+    openapiFields = new HashSet<String>(Arrays.asList("sourceLeft", "sourceRight", "status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("sourceLeft");
-    openapiRequiredFields.add("sourceRight");
-    openapiRequiredFields.add("status");
+    openapiRequiredFields =
+        new HashSet<String>(Arrays.asList("sourceLeft", "sourceRight", "status"));
   }
 
   /**
@@ -175,7 +171,7 @@ public class CrossSourceValueComparison {
     if (jsonElement == null) {
       if (!CrossSourceValueComparison.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in CrossSourceValueComparison is not found in the empty JSON string",
                 CrossSourceValueComparison.openapiRequiredFields.toString()));
@@ -185,7 +181,7 @@ public class CrossSourceValueComparison {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : CrossSourceValueComparison.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

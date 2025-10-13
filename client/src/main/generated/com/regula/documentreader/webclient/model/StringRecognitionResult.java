@@ -26,6 +26,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,7 @@ import java.util.Objects;
 /** Describes single row recognition results in multi-line text field of a document */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class StringRecognitionResult {
   public static final String SERIALIZED_NAME_SYMBOLS_COUNT = "SymbolsCount";
 
@@ -222,17 +223,12 @@ public class StringRecognitionResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("SymbolsCount");
-    openapiFields.add("StringResult");
-    openapiFields.add("Buf_Length");
-    openapiFields.add("Buf_Text");
-    openapiFields.add("Reserved");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList("SymbolsCount", "StringResult", "Buf_Length", "Buf_Text", "Reserved"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("SymbolsCount");
-    openapiRequiredFields.add("StringResult");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("SymbolsCount", "StringResult"));
   }
 
   /**
@@ -245,7 +241,7 @@ public class StringRecognitionResult {
     if (jsonElement == null) {
       if (!StringRecognitionResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in StringRecognitionResult is not found in the empty JSON string",
                 StringRecognitionResult.openapiRequiredFields.toString()));
@@ -255,7 +251,7 @@ public class StringRecognitionResult {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : StringRecognitionResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -264,7 +260,7 @@ public class StringRecognitionResult {
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     // ensure the json data is an array
     if (!jsonObj.get("StringResult").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `StringResult` to be an array in the JSON string but got `%s`",
               jsonObj.get("StringResult").toString()));
@@ -278,7 +274,7 @@ public class StringRecognitionResult {
     ;
     if ((jsonObj.get("Buf_Text") != null && !jsonObj.get("Buf_Text").isJsonNull())
         && !jsonObj.get("Buf_Text").isJsonPrimitive()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Buf_Text` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Buf_Text").toString()));

@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** OriginalSymbol */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class OriginalSymbol {
   public static final String SERIALIZED_NAME_CODE = "code";
 
@@ -153,15 +154,10 @@ public class OriginalSymbol {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("code");
-    openapiFields.add("probability");
-    openapiFields.add("rect");
+    openapiFields = new HashSet<String>(Arrays.asList("code", "probability", "rect"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("code");
-    openapiRequiredFields.add("probability");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("code", "probability"));
   }
 
   /**
@@ -174,7 +170,7 @@ public class OriginalSymbol {
     if (jsonElement == null) {
       if (!OriginalSymbol.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in OriginalSymbol is not found in the empty JSON string",
                 OriginalSymbol.openapiRequiredFields.toString()));
@@ -184,7 +180,7 @@ public class OriginalSymbol {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : OriginalSymbol.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

@@ -25,6 +25,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -32,7 +33,7 @@ import java.util.Objects;
 /** AuthenticityCheckResult */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class AuthenticityCheckResult {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
@@ -192,17 +193,10 @@ public class AuthenticityCheckResult {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("Result");
-    openapiFields.add("Count");
-    openapiFields.add("List");
+    openapiFields = new HashSet<String>(Arrays.asList("Type", "Result", "Count", "List"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("Result");
-    openapiRequiredFields.add("List");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Type", "Result", "List"));
   }
 
   /**
@@ -215,7 +209,7 @@ public class AuthenticityCheckResult {
     if (jsonElement == null) {
       if (!AuthenticityCheckResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in AuthenticityCheckResult is not found in the empty JSON string",
                 AuthenticityCheckResult.openapiRequiredFields.toString()));
@@ -225,7 +219,7 @@ public class AuthenticityCheckResult {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : AuthenticityCheckResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -238,7 +232,7 @@ public class AuthenticityCheckResult {
     CheckResult.validateJsonElement(jsonObj.get("Result"));
     // ensure the json data is an array
     if (!jsonObj.get("List").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `List` to be an array in the JSON string but got `%s`",
               jsonObj.get("List").toString()));

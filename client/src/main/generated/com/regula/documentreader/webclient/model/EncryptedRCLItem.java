@@ -30,7 +30,7 @@ import java.util.Objects;
 /** EncryptedRCLItem */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class EncryptedRCLItem {
   public static final String SERIALIZED_NAME_ENCRYPTED_R_C_L = "EncryptedRCL";
 
@@ -100,12 +100,10 @@ public class EncryptedRCLItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("EncryptedRCL");
+    openapiFields = new HashSet<String>(Arrays.asList("EncryptedRCL"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("EncryptedRCL");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("EncryptedRCL"));
   }
 
   /**
@@ -118,7 +116,7 @@ public class EncryptedRCLItem {
     if (jsonElement == null) {
       if (!EncryptedRCLItem.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in EncryptedRCLItem is not found in the empty JSON string",
                 EncryptedRCLItem.openapiRequiredFields.toString()));
@@ -128,7 +126,7 @@ public class EncryptedRCLItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : EncryptedRCLItem.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

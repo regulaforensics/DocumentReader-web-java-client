@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ import java.util.Objects;
 /** Params for the RFID chip data reprocessing */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ProcessParamsRfid {
   public static final String SERIALIZED_NAME_PA_IGNORE_NOTIFICATION_CODES =
       "paIgnoreNotificationCodes";
@@ -116,11 +117,10 @@ public class ProcessParamsRfid {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("paIgnoreNotificationCodes");
+    openapiFields = new HashSet<String>(Arrays.asList("paIgnoreNotificationCodes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -133,7 +133,7 @@ public class ProcessParamsRfid {
     if (jsonElement == null) {
       if (!ProcessParamsRfid.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ProcessParamsRfid is not found in the empty JSON string",
                 ProcessParamsRfid.openapiRequiredFields.toString()));
@@ -145,7 +145,7 @@ public class ProcessParamsRfid {
     if (jsonObj.get("paIgnoreNotificationCodes") != null
         && !jsonObj.get("paIgnoreNotificationCodes").isJsonNull()
         && !jsonObj.get("paIgnoreNotificationCodes").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `paIgnoreNotificationCodes` to be an array in the JSON string but got `%s`",
               jsonObj.get("paIgnoreNotificationCodes").toString()));

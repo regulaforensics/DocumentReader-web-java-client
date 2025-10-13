@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** Contains information about document position on the input image, its center, angle, etc */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class DocumentPositionResult extends ResultItem {
   public static final String SERIALIZED_NAME_DOCUMENT_POSITION = "DocumentPosition";
 
@@ -102,18 +103,13 @@ public class DocumentPositionResult extends ResultItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("buf_length");
-    openapiFields.add("light");
-    openapiFields.add("list_idx");
-    openapiFields.add("page_idx");
-    openapiFields.add("result_type");
-    openapiFields.add("DocumentPosition");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "buf_length", "light", "list_idx", "page_idx", "result_type", "DocumentPosition"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("DocumentPosition");
-    openapiRequiredFields.add("result_type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("DocumentPosition", "result_type"));
   }
 
   /**
@@ -126,7 +122,7 @@ public class DocumentPositionResult extends ResultItem {
     if (jsonElement == null) {
       if (!DocumentPositionResult.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in DocumentPositionResult is not found in the empty JSON string",
                 DocumentPositionResult.openapiRequiredFields.toString()));
@@ -136,7 +132,7 @@ public class DocumentPositionResult extends ResultItem {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : DocumentPositionResult.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

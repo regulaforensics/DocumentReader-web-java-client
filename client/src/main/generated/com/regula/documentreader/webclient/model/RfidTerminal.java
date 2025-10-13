@@ -24,6 +24,7 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -33,7 +34,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidTerminal {
   public static final String SERIALIZED_NAME_TERM_TYPE = "TermType";
 
@@ -159,16 +160,10 @@ public class RfidTerminal {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("TermType");
-    openapiFields.add("AuthReq");
-    openapiFields.add("AuthReq2");
+    openapiFields = new HashSet<String>(Arrays.asList("TermType", "AuthReq", "AuthReq2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("TermType");
-    openapiRequiredFields.add("AuthReq");
-    openapiRequiredFields.add("AuthReq2");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("TermType", "AuthReq", "AuthReq2"));
   }
 
   /**
@@ -181,7 +176,7 @@ public class RfidTerminal {
     if (jsonElement == null) {
       if (!RfidTerminal.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidTerminal is not found in the empty JSON string",
                 RfidTerminal.openapiRequiredFields.toString()));
@@ -191,7 +186,7 @@ public class RfidTerminal {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidTerminal.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));

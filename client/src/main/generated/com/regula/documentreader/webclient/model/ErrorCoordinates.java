@@ -24,13 +24,14 @@ import com.google.gson.stream.JsonWriter;
 import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 
 /** ErrorCoordinates */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class ErrorCoordinates {
   public static final String SERIALIZED_NAME_LEFT = "Left";
 
@@ -181,14 +182,10 @@ public class ErrorCoordinates {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Left");
-    openapiFields.add("Top");
-    openapiFields.add("Right");
-    openapiFields.add("Bottom");
+    openapiFields = new HashSet<String>(Arrays.asList("Left", "Top", "Right", "Bottom"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -201,7 +198,7 @@ public class ErrorCoordinates {
     if (jsonElement == null) {
       if (!ErrorCoordinates.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in ErrorCoordinates is not found in the empty JSON string",
                 ErrorCoordinates.openapiRequiredFields.toString()));

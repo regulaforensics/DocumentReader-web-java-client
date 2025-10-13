@@ -25,6 +25,7 @@ import com.regula.documentreader.webclient.JSON;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -35,7 +36,7 @@ import java.util.Objects;
  */
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    comments = "Generator version: 7.13.0")
+    comments = "Generator version: 7.15.0")
 public class RfidAccessControlInfo {
   public static final String SERIALIZED_NAME_TYPE = "Type";
 
@@ -238,18 +239,13 @@ public class RfidAccessControlInfo {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("Type");
-    openapiFields.add("Status");
-    openapiFields.add("ActiveOptionIdx");
-    openapiFields.add("Notifications");
-    openapiFields.add("AccessControlOptions");
+    openapiFields =
+        new HashSet<String>(
+            Arrays.asList(
+                "Type", "Status", "ActiveOptionIdx", "Notifications", "AccessControlOptions"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("Type");
-    openapiRequiredFields.add("Status");
-    openapiRequiredFields.add("Notifications");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("Type", "Status", "Notifications"));
   }
 
   /**
@@ -262,7 +258,7 @@ public class RfidAccessControlInfo {
     if (jsonElement == null) {
       if (!RfidAccessControlInfo.openapiRequiredFields
           .isEmpty()) { // has required fields but JSON element is null
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field(s) %s in RfidAccessControlInfo is not found in the empty JSON string",
                 RfidAccessControlInfo.openapiRequiredFields.toString()));
@@ -272,7 +268,7 @@ public class RfidAccessControlInfo {
     // check to make sure all required properties/fields are present in the JSON string
     for (String requiredField : RfidAccessControlInfo.openapiRequiredFields) {
       if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        throw new IllegalArgumentException(
+        System.err.println(
             String.format(
                 "The required field `%s` is not found in the JSON string: %s",
                 requiredField, jsonElement.toString()));
@@ -285,10 +281,10 @@ public class RfidAccessControlInfo {
     RFIDErrorCodes.validateJsonElement(jsonObj.get("Status"));
     // ensure the required json array is present
     if (jsonObj.get("Notifications") == null) {
-      throw new IllegalArgumentException(
+      System.err.println(
           "Expected the field `linkedContent` to be an array in the JSON string but got `null`");
     } else if (!jsonObj.get("Notifications").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `Notifications` to be an array in the JSON string but got `%s`",
               jsonObj.get("Notifications").toString()));
@@ -297,7 +293,7 @@ public class RfidAccessControlInfo {
     if (jsonObj.get("AccessControlOptions") != null
         && !jsonObj.get("AccessControlOptions").isJsonNull()
         && !jsonObj.get("AccessControlOptions").isJsonArray()) {
-      throw new IllegalArgumentException(
+      System.err.println(
           String.format(
               "Expected the field `AccessControlOptions` to be an array in the JSON string but got `%s`",
               jsonObj.get("AccessControlOptions").toString()));
