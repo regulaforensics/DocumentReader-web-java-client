@@ -42,6 +42,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
+import com.regula.documentreader.webclient.model.ResultItem;
 
 /*
  * A JSON utility class
@@ -83,6 +84,15 @@ public class JSON {
                         System.err.println("Warning: failed to parse field of type "
                                 + type + ", reason: " + e.getMessage());
                         in.skipValue();
+
+                        if (type.getRawType() == ResultItem.class) {
+                            try {
+                                return (T) ResultItem.class.getDeclaredConstructor().newInstance();
+                            } catch (Exception ex) {
+                                throw new IOException("Failed to create default ResultItem", ex);
+                            }
+                        }
+
                         return null;
                     }
                 }
