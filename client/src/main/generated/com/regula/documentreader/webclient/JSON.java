@@ -22,6 +22,7 @@ import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.regula.documentreader.webclient.model.ResultItem;
 import io.gsonfire.GsonFireBuilder;
 import io.gsonfire.TypeSelector;
 import java.io.IOException;
@@ -76,6 +77,15 @@ public class JSON {
             System.err.println(
                 "Warning: failed to parse field of type " + type + ", reason: " + e.getMessage());
             in.skipValue();
+
+            if (type.getRawType() == ResultItem.class) {
+              try {
+                return (T) ResultItem.class.getDeclaredConstructor().newInstance();
+              } catch (Exception ex) {
+                throw new IOException("Failed to create default ResultItem", ex);
+              }
+            }
+
             return null;
           }
         }
