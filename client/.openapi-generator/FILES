@@ -89,6 +89,7 @@ src/main/generated/com/regula/documentreader/webclient/model/FiberResult.java
 src/main/generated/com/regula/documentreader/webclient/model/FieldItem.java
 src/main/generated/com/regula/documentreader/webclient/model/FileImage.java
 src/main/generated/com/regula/documentreader/webclient/model/GetTransactionsByTagResponse.java
+src/main/generated/com/regula/documentreader/webclient/model/GlaresCheckParams.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphData.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicField.java
 src/main/generated/com/regula/documentreader/webclient/model/GraphicFieldType.java
