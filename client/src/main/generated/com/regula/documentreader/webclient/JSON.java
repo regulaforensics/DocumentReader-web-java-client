@@ -1083,6 +1083,8 @@ public class JSON {
         new com.regula.documentreader.webclient.model.GetTransactionsByTagResponse
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.GlaresCheckParams.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GraphData.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.GraphicField.CustomTypeAdapterFactory());
