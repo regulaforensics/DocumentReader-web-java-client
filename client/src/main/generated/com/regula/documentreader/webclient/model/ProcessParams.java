@@ -436,6 +436,13 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean strictSecurityChecks;
 
+  public static final String SERIALIZED_NAME_RETURN_TRANSLITERATED_FIELDS =
+      "returnTransliteratedFields";
+
+  @SerializedName(SERIALIZED_NAME_RETURN_TRANSLITERATED_FIELDS)
+  @javax.annotation.Nullable
+  private Boolean returnTransliteratedFields;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1849,6 +1856,27 @@ public class ProcessParams {
     this.strictSecurityChecks = strictSecurityChecks;
   }
 
+  public ProcessParams returnTransliteratedFields(
+      @javax.annotation.Nullable Boolean returnTransliteratedFields) {
+    this.returnTransliteratedFields = returnTransliteratedFields;
+    return this;
+  }
+
+  /**
+   * Allows transliteration to be turned on or off; by default, it is enabled.
+   *
+   * @return returnTransliteratedFields
+   */
+  @javax.annotation.Nullable
+  public Boolean getReturnTransliteratedFields() {
+    return returnTransliteratedFields;
+  }
+
+  public void setReturnTransliteratedFields(
+      @javax.annotation.Nullable Boolean returnTransliteratedFields) {
+    this.returnTransliteratedFields = returnTransliteratedFields;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -1926,7 +1954,9 @@ public class ProcessParams {
         && Objects.equals(this.pdfPagesLimit, processParams.pdfPagesLimit)
         && Objects.equals(
             this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter)
-        && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks);
+        && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks)
+        && Objects.equals(
+            this.returnTransliteratedFields, processParams.returnTransliteratedFields);
   }
 
   @Override
@@ -1996,7 +2026,8 @@ public class ProcessParams {
         generateAlpha2Codes,
         pdfPagesLimit,
         disableAuthResolutionFilter,
-        strictSecurityChecks);
+        strictSecurityChecks,
+        returnTransliteratedFields);
   }
 
   @Override
@@ -2106,6 +2137,9 @@ public class ProcessParams {
     sb.append("    strictSecurityChecks: ")
         .append(toIndentedString(strictSecurityChecks))
         .append("\n");
+    sb.append("    returnTransliteratedFields: ")
+        .append(toIndentedString(returnTransliteratedFields))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2192,7 +2226,8 @@ public class ProcessParams {
                 "generateAlpha2Codes",
                 "pdfPagesLimit",
                 "disableAuthResolutionFilter",
-                "strictSecurityChecks"));
+                "strictSecurityChecks",
+                "returnTransliteratedFields"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
