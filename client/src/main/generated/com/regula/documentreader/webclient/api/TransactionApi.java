@@ -724,6 +724,8 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param transactionProcessRequest (required)
+   * @param useCache Get processed values from storage in case transaction has already processed.
+   *     (optional, default to false)
    * @param _callback Callback for upload/download progress
    * @return Call to execute
    * @throws ApiException If fail to serialize the request body object
@@ -739,6 +741,7 @@ public class TransactionApi {
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostCall(
       @javax.annotation.Nonnull UUID transactionId,
       @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nullable Boolean useCache,
       final ApiCallback _callback)
       throws ApiException {
     String basePath = null;
@@ -768,6 +771,10 @@ public class TransactionApi {
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, String> localVarCookieParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    if (useCache != null) {
+      localVarQueryParams.addAll(localVarApiClient.parameterToPair("useCache", useCache));
+    }
 
     final String[] localVarAccepts = {"application/json"};
     final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
@@ -801,6 +808,7 @@ public class TransactionApi {
   private okhttp3.Call apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
       @javax.annotation.Nonnull UUID transactionId,
       @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nullable Boolean useCache,
       final ApiCallback _callback)
       throws ApiException {
     // verify the required parameter 'transactionId' is set
@@ -816,7 +824,7 @@ public class TransactionApi {
     }
 
     return apiV2TransactionTransactionIdProcessPostCall(
-        transactionId, transactionProcessRequest, _callback);
+        transactionId, transactionProcessRequest, useCache, _callback);
   }
 
   /**
@@ -824,6 +832,8 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param transactionProcessRequest (required)
+   * @param useCache Get processed values from storage in case transaction has already processed.
+   *     (optional, default to false)
    * @return TransactionProcessResult
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -838,11 +848,12 @@ public class TransactionApi {
    */
   public TransactionProcessResult apiV2TransactionTransactionIdProcessPost(
       @javax.annotation.Nonnull UUID transactionId,
-      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest)
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nullable Boolean useCache)
       throws ApiException {
     ApiResponse<TransactionProcessResult> localVarResp =
         apiV2TransactionTransactionIdProcessPostWithHttpInfo(
-            transactionId, transactionProcessRequest);
+            transactionId, transactionProcessRequest, useCache);
     return localVarResp.getData();
   }
 
@@ -851,6 +862,8 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param transactionProcessRequest (required)
+   * @param useCache Get processed values from storage in case transaction has already processed.
+   *     (optional, default to false)
    * @return ApiResponse&lt;TransactionProcessResult&gt;
    * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
    *     response body
@@ -865,11 +878,12 @@ public class TransactionApi {
    */
   public ApiResponse<TransactionProcessResult> apiV2TransactionTransactionIdProcessPostWithHttpInfo(
       @javax.annotation.Nonnull UUID transactionId,
-      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest)
+      @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nullable Boolean useCache)
       throws ApiException {
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
-            transactionId, transactionProcessRequest, null);
+            transactionId, transactionProcessRequest, useCache, null);
     Type localVarReturnType = new TypeToken<TransactionProcessResult>() {}.getType();
     return localVarApiClient.execute(localVarCall, localVarReturnType);
   }
@@ -879,6 +893,8 @@ public class TransactionApi {
    *
    * @param transactionId Transaction id (required)
    * @param transactionProcessRequest (required)
+   * @param useCache Get processed values from storage in case transaction has already processed.
+   *     (optional, default to false)
    * @param _callback The callback to be executed when the API call finishes
    * @return The request call
    * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -894,12 +910,13 @@ public class TransactionApi {
   public okhttp3.Call apiV2TransactionTransactionIdProcessPostAsync(
       @javax.annotation.Nonnull UUID transactionId,
       @javax.annotation.Nonnull TransactionProcessRequest transactionProcessRequest,
+      @javax.annotation.Nullable Boolean useCache,
       final ApiCallback<TransactionProcessResult> _callback)
       throws ApiException {
 
     okhttp3.Call localVarCall =
         apiV2TransactionTransactionIdProcessPostValidateBeforeCall(
-            transactionId, transactionProcessRequest, _callback);
+            transactionId, transactionProcessRequest, useCache, _callback);
     Type localVarReturnType = new TypeToken<TransactionProcessResult>() {}.getType();
     localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
     return localVarCall;

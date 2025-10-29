@@ -13,6 +13,7 @@ src/main/generated/com/regula/documentreader/webclient/ServerVariable.java
 src/main/generated/com/regula/documentreader/webclient/StringUtil.java
 src/main/generated/com/regula/documentreader/webclient/api/HealthcheckApi.java
 src/main/generated/com/regula/documentreader/webclient/api/ProcessApi.java
+src/main/generated/com/regula/documentreader/webclient/api/ResourcesApi.java
 src/main/generated/com/regula/documentreader/webclient/api/TransactionApi.java
 src/main/generated/com/regula/documentreader/webclient/auth/ApiKeyAuth.java
 src/main/generated/com/regula/documentreader/webclient/auth/Authentication.java
@@ -49,6 +50,8 @@ src/main/generated/com/regula/documentreader/webclient/model/ContainerListListIn
 src/main/generated/com/regula/documentreader/webclient/model/Critical.java
 src/main/generated/com/regula/documentreader/webclient/model/CrossSourceValueComparison.java
 src/main/generated/com/regula/documentreader/webclient/model/DataModule.java
+src/main/generated/com/regula/documentreader/webclient/model/DatabaseDocument.java
+src/main/generated/com/regula/documentreader/webclient/model/DatabaseDocumentList.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsOptical.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsRFID.java
 src/main/generated/com/regula/documentreader/webclient/model/DeviceInfo.java
