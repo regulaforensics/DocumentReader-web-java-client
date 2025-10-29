@@ -32,6 +32,10 @@ have been made to the pojo.mustache template (for both modes).
 the pojo.mustache template (for both modes).
 5. The generator replaces the list field with _list, solved 
 using nameMappings in the generator config.
+6. By default, when the discriminator was unknown, the client 
+threw an error. To avoid this, such models will be skipped. 
+To solve this problem, changes have been made 
+to the JSON.mustache template.
 
 ## Problem solving
 

@@ -8,6 +8,7 @@ import com.regula.documentreader.webclient.ApiClient;
 import com.regula.documentreader.webclient.ApiException;
 import com.regula.documentreader.webclient.Configuration;
 import com.regula.documentreader.webclient.Pair;
+import com.regula.documentreader.webclient.model.DatabaseDocumentList;
 import com.regula.documentreader.webclient.model.DeviceInfo;
 import com.regula.documentreader.webclient.model.Healthcheck;
 import com.regula.documentreader.webclient.model.ProcessParams;
@@ -24,6 +25,7 @@ public class DocumentReaderApi {
 
   private final HealthcheckApi defaultApi;
   private final ProcessApi processApi;
+  private final ResourcesApi resourcesApi;
 
   private String license;
 
@@ -34,6 +36,7 @@ public class DocumentReaderApi {
   public DocumentReaderApi(ApiClient apiClient) {
     this.defaultApi = new HealthcheckApi(apiClient);
     this.processApi = new ProcessApi(apiClient);
+    this.resourcesApi = new ResourcesApi(apiClient);
   }
 
   public DocumentReaderApi(String basePath) {
@@ -77,6 +80,17 @@ public class DocumentReaderApi {
 
   public Healthcheck health(String xRequestID) throws ApiException {
     return defaultApi.healthz(xRequestID);
+  }
+
+  /**
+   * Returns the list of documents stored in the database that the Web Service API is running with.
+   *
+   * @return DatabaseDocumentList
+   * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+   *     response body
+   */
+  public DatabaseDocumentList doclist() throws ApiException {
+    return resourcesApi.doclist();
   }
 
   /**

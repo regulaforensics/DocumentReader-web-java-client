@@ -88,6 +88,12 @@ public class ImageQA {
   @javax.annotation.Nullable
   private List<InputImageQualityChecks> expectedPass;
 
+  public static final String SERIALIZED_NAME_GLARES_CHECK_PARAMS = "glaresCheckParams";
+
+  @SerializedName(SERIALIZED_NAME_GLARES_CHECK_PARAMS)
+  @javax.annotation.Nullable
+  private GlaresCheckParams glaresCheckParams;
+
   public ImageQA() {}
 
   public ImageQA brightnessThreshold(@javax.annotation.Nullable Double brightnessThreshold) {
@@ -275,6 +281,25 @@ public class ImageQA {
     this.expectedPass = expectedPass;
   }
 
+  public ImageQA glaresCheckParams(@javax.annotation.Nullable GlaresCheckParams glaresCheckParams) {
+    this.glaresCheckParams = glaresCheckParams;
+    return this;
+  }
+
+  /**
+   * Get glaresCheckParams
+   *
+   * @return glaresCheckParams
+   */
+  @javax.annotation.Nullable
+  public GlaresCheckParams getGlaresCheckParams() {
+    return glaresCheckParams;
+  }
+
+  public void setGlaresCheckParams(@javax.annotation.Nullable GlaresCheckParams glaresCheckParams) {
+    this.glaresCheckParams = glaresCheckParams;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -292,7 +317,8 @@ public class ImageQA {
         && Objects.equals(this.colornessCheck, imageQA.colornessCheck)
         && Objects.equals(this.moireCheck, imageQA.moireCheck)
         && Objects.equals(this.documentPositionIndent, imageQA.documentPositionIndent)
-        && Objects.equals(this.expectedPass, imageQA.expectedPass);
+        && Objects.equals(this.expectedPass, imageQA.expectedPass)
+        && Objects.equals(this.glaresCheckParams, imageQA.glaresCheckParams);
   }
 
   @Override
@@ -306,7 +332,8 @@ public class ImageQA {
         colornessCheck,
         moireCheck,
         documentPositionIndent,
-        expectedPass);
+        expectedPass,
+        glaresCheckParams);
   }
 
   @Override
@@ -326,6 +353,7 @@ public class ImageQA {
         .append(toIndentedString(documentPositionIndent))
         .append("\n");
     sb.append("    expectedPass: ").append(toIndentedString(expectedPass)).append("\n");
+    sb.append("    glaresCheckParams: ").append(toIndentedString(glaresCheckParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -356,7 +384,8 @@ public class ImageQA {
                 "colornessCheck",
                 "moireCheck",
                 "documentPositionIndent",
-                "expectedPass"));
+                "expectedPass",
+                "glaresCheckParams"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -388,6 +417,11 @@ public class ImageQA {
           String.format(
               "Expected the field `expectedPass` to be an array in the JSON string but got `%s`",
               jsonObj.get("expectedPass").toString()));
+    }
+    // validate the optional field `glaresCheckParams`
+    if (jsonObj.get("glaresCheckParams") != null
+        && !jsonObj.get("glaresCheckParams").isJsonNull()) {
+      GlaresCheckParams.validateJsonElement(jsonObj.get("glaresCheckParams"));
     }
   }
 
