@@ -114,6 +114,7 @@ public class RecognitionResponse {
     return documentType(defaultPageIdx);
   }
 
+  @Nullable
   public OneCandidate documentType(int pageIdx) {
     ChosenDocumentTypeResult result = getResult(Result.DOCUMENT_TYPE, pageIdx);
     if (result != null) {
@@ -122,6 +123,7 @@ public class RecognitionResponse {
     return null;
   }
 
+  @Nullable
   public <R> R resultByType(Result type) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type) {
@@ -131,6 +133,7 @@ public class RecognitionResponse {
     return null;
   }
 
+  @Nullable
   public <R> R getResult(Result type, int page_idx) {
     for (ResultItem item : originalResponse.getContainerList().getList()) {
       if (item.getResultType() == type && item.getPageIdx() == page_idx) {
@@ -140,6 +143,7 @@ public class RecognitionResponse {
     return null;
   }
 
+  @Nullable
   public <R> List<R> resultsByType(Result type) {
     List<R> results = new ArrayList<>();
     for (ResultItem item : originalResponse.getContainerList().getList()) {
