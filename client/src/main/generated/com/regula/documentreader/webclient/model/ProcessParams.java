@@ -129,6 +129,12 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private List<TextFieldType> fieldTypesFilter;
 
+  public static final String SERIALIZED_NAME_FIELD_TYPES_IGNORE_FILTER = "fieldTypesIgnoreFilter";
+
+  @SerializedName(SERIALIZED_NAME_FIELD_TYPES_IGNORE_FILTER)
+  @javax.annotation.Nullable
+  private List<TextFieldType> fieldTypesIgnoreFilter;
+
   public static final String SERIALIZED_NAME_DATE_FORMAT = "dateFormat";
 
   @SerializedName(SERIALIZED_NAME_DATE_FORMAT)
@@ -769,8 +775,11 @@ public class ProcessParams {
   }
 
   /**
-   * List of text field types to extract. If empty, all text fields from template will be extracted.
-   * Narrowing the list can shorten processing time. Empty by default.
+   * If a document contains Visual zone, you can set the list of field types to extract. In this
+   * case, other fields are skipped during the processing, i.e. document recognition becomes faster.
+   * This filter is not applicable to the MRZ, barcode or RFID. If the fieldTypesFilter is empty,
+   * all fields are extracted. Empty by default. If fieldTypesFilter and fieldTypesIgnoreFilter are
+   * used simultaneously, fieldTypesFilter takes priority.
    *
    * @return fieldTypesFilter
    */
@@ -781,6 +790,40 @@ public class ProcessParams {
 
   public void setFieldTypesFilter(@javax.annotation.Nullable List<TextFieldType> fieldTypesFilter) {
     this.fieldTypesFilter = fieldTypesFilter;
+  }
+
+  public ProcessParams fieldTypesIgnoreFilter(
+      @javax.annotation.Nullable List<TextFieldType> fieldTypesIgnoreFilter) {
+    this.fieldTypesIgnoreFilter = fieldTypesIgnoreFilter;
+    return this;
+  }
+
+  public ProcessParams addFieldTypesIgnoreFilterItem(TextFieldType fieldTypesIgnoreFilterItem) {
+    if (this.fieldTypesIgnoreFilter == null) {
+      this.fieldTypesIgnoreFilter = new ArrayList<>();
+    }
+    this.fieldTypesIgnoreFilter.add(fieldTypesIgnoreFilterItem);
+    return this;
+  }
+
+  /**
+   * If a document contains a Visual zone, you can specify a list of field types that should be
+   * excluded from extraction. All field types listed in this array are skipped during processing,
+   * while the remaining fields are recognized. This filter is not applicable to the MRZ, barcode or
+   * RFID. If the fieldTypesIgnoreFilter is empty, all fields are extracted. Empty by default. If
+   * fieldTypesFilter and fieldTypesIgnoreFilter are used simultaneously, fieldTypesFilter takes
+   * priority.
+   *
+   * @return fieldTypesIgnoreFilter
+   */
+  @javax.annotation.Nullable
+  public List<TextFieldType> getFieldTypesIgnoreFilter() {
+    return fieldTypesIgnoreFilter;
+  }
+
+  public void setFieldTypesIgnoreFilter(
+      @javax.annotation.Nullable List<TextFieldType> fieldTypesIgnoreFilter) {
+    this.fieldTypesIgnoreFilter = fieldTypesIgnoreFilter;
   }
 
   public ProcessParams dateFormat(@javax.annotation.Nullable String dateFormat) {
@@ -1902,6 +1945,7 @@ public class ProcessParams {
         && Objects.equals(
             this.generateDoublePageSpreadImage, processParams.generateDoublePageSpreadImage)
         && Objects.equals(this.fieldTypesFilter, processParams.fieldTypesFilter)
+        && Objects.equals(this.fieldTypesIgnoreFilter, processParams.fieldTypesIgnoreFilter)
         && Objects.equals(this.dateFormat, processParams.dateFormat)
         && Objects.equals(this.measureSystem, processParams.measureSystem)
         && Objects.equals(this.imageDpiOutMax, processParams.imageDpiOutMax)
@@ -1977,6 +2021,7 @@ public class ProcessParams {
         doublePageSpread,
         generateDoublePageSpreadImage,
         fieldTypesFilter,
+        fieldTypesIgnoreFilter,
         dateFormat,
         measureSystem,
         imageDpiOutMax,
@@ -2057,6 +2102,9 @@ public class ProcessParams {
         .append(toIndentedString(generateDoublePageSpreadImage))
         .append("\n");
     sb.append("    fieldTypesFilter: ").append(toIndentedString(fieldTypesFilter)).append("\n");
+    sb.append("    fieldTypesIgnoreFilter: ")
+        .append(toIndentedString(fieldTypesIgnoreFilter))
+        .append("\n");
     sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
     sb.append("    measureSystem: ").append(toIndentedString(measureSystem)).append("\n");
     sb.append("    imageDpiOutMax: ").append(toIndentedString(imageDpiOutMax)).append("\n");
@@ -2177,6 +2225,7 @@ public class ProcessParams {
                 "doublePageSpread",
                 "generateDoublePageSpreadImage",
                 "fieldTypesFilter",
+                "fieldTypesIgnoreFilter",
                 "dateFormat",
                 "measureSystem",
                 "imageDpiOutMax",
@@ -2301,6 +2350,15 @@ public class ProcessParams {
           String.format(
               "Expected the field `fieldTypesFilter` to be an array in the JSON string but got `%s`",
               jsonObj.get("fieldTypesFilter").toString()));
+    }
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("fieldTypesIgnoreFilter") != null
+        && !jsonObj.get("fieldTypesIgnoreFilter").isJsonNull()
+        && !jsonObj.get("fieldTypesIgnoreFilter").isJsonArray()) {
+      System.err.println(
+          String.format(
+              "Expected the field `fieldTypesIgnoreFilter` to be an array in the JSON string but got `%s`",
+              jsonObj.get("fieldTypesIgnoreFilter").toString()));
     }
     if ((jsonObj.get("dateFormat") != null && !jsonObj.get("dateFormat").isJsonNull())
         && !jsonObj.get("dateFormat").isJsonPrimitive()) {
