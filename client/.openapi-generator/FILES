@@ -52,6 +52,7 @@ src/main/generated/com/regula/documentreader/webclient/model/CrossSourceValueCom
 src/main/generated/com/regula/documentreader/webclient/model/DataModule.java
 src/main/generated/com/regula/documentreader/webclient/model/DatabaseDocument.java
 src/main/generated/com/regula/documentreader/webclient/model/DatabaseDocumentList.java
+src/main/generated/com/regula/documentreader/webclient/model/DetailsAge.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsOptical.java
 src/main/generated/com/regula/documentreader/webclient/model/DetailsRFID.java
 src/main/generated/com/regula/documentreader/webclient/model/DeviceInfo.java
@@ -59,6 +60,7 @@ src/main/generated/com/regula/documentreader/webclient/model/DeviceInfoDocuments
 src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfo.java
 src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfoFieldsList.java
 src/main/generated/com/regula/documentreader/webclient/model/DocBarCodeInfoItem.java
+src/main/generated/com/regula/documentreader/webclient/model/DocFeature.java
 src/main/generated/com/regula/documentreader/webclient/model/DocGraphicsInfoItem.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedField.java
 src/main/generated/com/regula/documentreader/webclient/model/DocVisualExtendedFieldItem.java
@@ -131,6 +133,9 @@ src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFields.
 src/main/generated/com/regula/documentreader/webclient/model/ListVerifiedFieldsItem.java
 src/main/generated/com/regula/documentreader/webclient/model/LivenessParams.java
 src/main/generated/com/regula/documentreader/webclient/model/LogLevel.java
+src/main/generated/com/regula/documentreader/webclient/model/MDLDeviceEngagement.java
+src/main/generated/com/regula/documentreader/webclient/model/MDLDeviceRetrieval.java
+src/main/generated/com/regula/documentreader/webclient/model/MDLServerRetrieval.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZDetectorResult.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZFormat.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZPositionResult.java
@@ -139,6 +144,7 @@ src/main/generated/com/regula/documentreader/webclient/model/MRZTestQuality.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZTestQualityItem.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZTestQualityResult.java
 src/main/generated/com/regula/documentreader/webclient/model/MeasureSystem.java
+src/main/generated/com/regula/documentreader/webclient/model/Message.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzDetectModeEnum.java
 src/main/generated/com/regula/documentreader/webclient/model/MrzPositionItem.java
 src/main/generated/com/regula/documentreader/webclient/model/OCRSecurityTextItem.java
@@ -149,6 +155,7 @@ src/main/generated/com/regula/documentreader/webclient/model/OriginalSymbol.java
 src/main/generated/com/regula/documentreader/webclient/model/OutData.java
 src/main/generated/com/regula/documentreader/webclient/model/OutDataTransactionImagesFieldValue.java
 src/main/generated/com/regula/documentreader/webclient/model/PArrayField.java
+src/main/generated/com/regula/documentreader/webclient/model/PID.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsedData.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingErrorCodes.java
 src/main/generated/com/regula/documentreader/webclient/model/ParsingNotificationCodes.java
@@ -246,6 +253,14 @@ src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessR
 src/main/generated/com/regula/documentreader/webclient/model/TransactionProcessResult.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtBytes.java
 src/main/generated/com/regula/documentreader/webclient/model/TrfFtString.java
+src/main/generated/com/regula/documentreader/webclient/model/VDItem.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSData.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSDataItem.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSDataResult.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSNCData.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSNCDataItem.java
+src/main/generated/com/regula/documentreader/webclient/model/VDSNCDataResult.java
+src/main/generated/com/regula/documentreader/webclient/model/VEItem.java
 src/main/generated/com/regula/documentreader/webclient/model/VerificationResult.java
 src/main/generated/com/regula/documentreader/webclient/model/VerifiedFieldMap.java
 src/main/generated/com/regula/documentreader/webclient/model/Visibility.java

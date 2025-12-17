@@ -74,6 +74,24 @@ public class Status {
   @javax.annotation.Nonnull
   private DetailsOptical detailsOptical;
 
+  public static final String SERIALIZED_NAME_AGE = "age";
+
+  @SerializedName(SERIALIZED_NAME_AGE)
+  @javax.annotation.Nonnull
+  private CheckResult age;
+
+  public static final String SERIALIZED_NAME_DETAILS_AGE = "detailsAge";
+
+  @SerializedName(SERIALIZED_NAME_DETAILS_AGE)
+  @javax.annotation.Nonnull
+  private DetailsAge detailsAge;
+
+  public static final String SERIALIZED_NAME_M_D_L = "mDL";
+
+  @SerializedName(SERIALIZED_NAME_M_D_L)
+  @javax.annotation.Nonnull
+  private CheckResult mDL;
+
   public Status() {}
 
   public Status overallStatus(@javax.annotation.Nonnull CheckResult overallStatus) {
@@ -209,6 +227,63 @@ public class Status {
     this.detailsOptical = detailsOptical;
   }
 
+  public Status age(@javax.annotation.Nonnull CheckResult age) {
+    this.age = age;
+    return this;
+  }
+
+  /**
+   * Get age
+   *
+   * @return age
+   */
+  @javax.annotation.Nonnull
+  public CheckResult getAge() {
+    return age;
+  }
+
+  public void setAge(@javax.annotation.Nonnull CheckResult age) {
+    this.age = age;
+  }
+
+  public Status detailsAge(@javax.annotation.Nonnull DetailsAge detailsAge) {
+    this.detailsAge = detailsAge;
+    return this;
+  }
+
+  /**
+   * Get detailsAge
+   *
+   * @return detailsAge
+   */
+  @javax.annotation.Nonnull
+  public DetailsAge getDetailsAge() {
+    return detailsAge;
+  }
+
+  public void setDetailsAge(@javax.annotation.Nonnull DetailsAge detailsAge) {
+    this.detailsAge = detailsAge;
+  }
+
+  public Status mDL(@javax.annotation.Nonnull CheckResult mDL) {
+    this.mDL = mDL;
+    return this;
+  }
+
+  /**
+   * Get mDL
+   *
+   * @return mDL
+   */
+  @javax.annotation.Nonnull
+  public CheckResult getmDL() {
+    return mDL;
+  }
+
+  public void setmDL(@javax.annotation.Nonnull CheckResult mDL) {
+    this.mDL = mDL;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -224,13 +299,25 @@ public class Status {
         && Objects.equals(this.rfid, status.rfid)
         && Objects.equals(this.stopList, status.stopList)
         && Objects.equals(this.detailsRFID, status.detailsRFID)
-        && Objects.equals(this.detailsOptical, status.detailsOptical);
+        && Objects.equals(this.detailsOptical, status.detailsOptical)
+        && Objects.equals(this.age, status.age)
+        && Objects.equals(this.detailsAge, status.detailsAge)
+        && Objects.equals(this.mDL, status.mDL);
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(
-        overallStatus, optical, portrait, rfid, stopList, detailsRFID, detailsOptical);
+        overallStatus,
+        optical,
+        portrait,
+        rfid,
+        stopList,
+        detailsRFID,
+        detailsOptical,
+        age,
+        detailsAge,
+        mDL);
   }
 
   @Override
@@ -244,6 +331,9 @@ public class Status {
     sb.append("    stopList: ").append(toIndentedString(stopList)).append("\n");
     sb.append("    detailsRFID: ").append(toIndentedString(detailsRFID)).append("\n");
     sb.append("    detailsOptical: ").append(toIndentedString(detailsOptical)).append("\n");
+    sb.append("    age: ").append(toIndentedString(age)).append("\n");
+    sb.append("    detailsAge: ").append(toIndentedString(detailsAge)).append("\n");
+    sb.append("    mDL: ").append(toIndentedString(mDL)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -272,13 +362,24 @@ public class Status {
                 "rfid",
                 "stopList",
                 "detailsRFID",
-                "detailsOptical"));
+                "detailsOptical",
+                "age",
+                "detailsAge",
+                "mDL"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields =
         new HashSet<String>(
             Arrays.asList(
-                "overallStatus", "optical", "portrait", "rfid", "stopList", "detailsOptical"));
+                "overallStatus",
+                "optical",
+                "portrait",
+                "rfid",
+                "stopList",
+                "detailsOptical",
+                "age",
+                "detailsAge",
+                "mDL"));
   }
 
   /**
@@ -323,6 +424,12 @@ public class Status {
     }
     // validate the required field `detailsOptical`
     DetailsOptical.validateJsonElement(jsonObj.get("detailsOptical"));
+    // validate the required field `age`
+    CheckResult.validateJsonElement(jsonObj.get("age"));
+    // validate the required field `detailsAge`
+    DetailsAge.validateJsonElement(jsonObj.get("detailsAge"));
+    // validate the required field `mDL`
+    CheckResult.validateJsonElement(jsonObj.get("mDL"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

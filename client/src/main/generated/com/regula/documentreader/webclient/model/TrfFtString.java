@@ -56,7 +56,7 @@ public class TrfFtString {
   public static final String SERIALIZED_NAME_DATA = "Data";
 
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String data;
 
   public TrfFtString() {}
@@ -119,7 +119,7 @@ public class TrfFtString {
     this.format = format;
   }
 
-  public TrfFtString data(@javax.annotation.Nonnull String data) {
+  public TrfFtString data(@javax.annotation.Nullable String data) {
     this.data = data;
     return this;
   }
@@ -129,12 +129,12 @@ public class TrfFtString {
    *
    * @return data
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull String data) {
+  public void setData(@javax.annotation.Nullable String data) {
     this.data = data;
   }
 
@@ -188,7 +188,7 @@ public class TrfFtString {
     openapiFields = new HashSet<String>(Arrays.asList("Type", "Status", "Format", "Data"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("Data"));
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -208,15 +208,6 @@ public class TrfFtString {
       }
     }
 
-    // check to make sure all required properties/fields are present in the JSON string
-    for (String requiredField : TrfFtString.openapiRequiredFields) {
-      if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-        System.err.println(
-            String.format(
-                "The required field `%s` is not found in the JSON string: %s",
-                requiredField, jsonElement.toString()));
-      }
-    }
     JsonObject jsonObj = jsonElement.getAsJsonObject();
     if ((jsonObj.get("Format") != null && !jsonObj.get("Format").isJsonNull())
         && !jsonObj.get("Format").isJsonPrimitive()) {
@@ -225,7 +216,8 @@ public class TrfFtString {
               "Expected the field `Format` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("Format").toString()));
     }
-    if (!jsonObj.get("Data").isJsonPrimitive()) {
+    if ((jsonObj.get("Data") != null && !jsonObj.get("Data").isJsonNull())
+        && !jsonObj.get("Data").isJsonPrimitive()) {
       System.err.println(
           String.format(
               "Expected the field `Data` to be a primitive type in the JSON string but got `%s`",
