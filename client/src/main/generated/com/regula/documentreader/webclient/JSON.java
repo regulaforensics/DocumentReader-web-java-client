@@ -996,6 +996,8 @@ public class JSON {
         new com.regula.documentreader.webclient.model.DatabaseDocumentList
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.DetailsAge.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.DetailsOptical.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.DetailsRFID.CustomTypeAdapterFactory());
