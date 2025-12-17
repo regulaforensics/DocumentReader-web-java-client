@@ -249,6 +249,12 @@ public class ResultItem {
       case "109":
         ByteArrayResult.validateJsonElement(jsonElement);
         break;
+      case "124":
+        VDSNCDataResult.validateJsonElement(jsonElement);
+        break;
+      case "125":
+        VDSDataResult.validateJsonElement(jsonElement);
+        break;
       case "15":
         LexicalAnalysisResult.validateJsonElement(jsonElement);
         break;
