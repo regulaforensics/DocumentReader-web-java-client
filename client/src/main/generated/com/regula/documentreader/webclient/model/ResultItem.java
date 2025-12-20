@@ -249,6 +249,9 @@ public class ResultItem {
       case "109":
         ByteArrayResult.validateJsonElement(jsonElement);
         break;
+      case "121":
+        MDLResult.validateJsonElement(jsonElement);
+        break;
       case "124":
         VDSNCDataResult.validateJsonElement(jsonElement);
         break;
