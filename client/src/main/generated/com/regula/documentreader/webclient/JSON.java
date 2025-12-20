@@ -332,6 +332,8 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "109", com.regula.documentreader.webclient.model.ByteArrayResult.class);
                     classByDiscriminatorValue.put(
+                        "121", com.regula.documentreader.webclient.model.MDLResult.class);
+                    classByDiscriminatorValue.put(
                         "124", com.regula.documentreader.webclient.model.VDSNCDataResult.class);
                     classByDiscriminatorValue.put(
                         "125", com.regula.documentreader.webclient.model.VDSDataResult.class);
@@ -631,6 +633,20 @@ public class JSON {
                   }
                 })
             .registerTypeSelector(
+                com.regula.documentreader.webclient.model.MDLResult.class,
+                new TypeSelector<com.regula.documentreader.webclient.model.MDLResult>() {
+                  @Override
+                  public Class<? extends com.regula.documentreader.webclient.model.MDLResult>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "MDLResult", com.regula.documentreader.webclient.model.MDLResult.class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue,
+                        getDiscriminatorValue(readElement, "result_type"));
+                  }
+                })
+            .registerTypeSelector(
                 com.regula.documentreader.webclient.model.MRZDetectorResult.class,
                 new TypeSelector<com.regula.documentreader.webclient.model.MRZDetectorResult>() {
                   @Override
@@ -766,6 +782,8 @@ public class JSON {
                         com.regula.documentreader.webclient.model.RFIDGraphicsInfoResult.class);
                     classByDiscriminatorValue.put(
                         "109", com.regula.documentreader.webclient.model.ByteArrayResult.class);
+                    classByDiscriminatorValue.put(
+                        "121", com.regula.documentreader.webclient.model.MDLResult.class);
                     classByDiscriminatorValue.put(
                         "124", com.regula.documentreader.webclient.model.VDSNCDataResult.class);
                     classByDiscriminatorValue.put(
@@ -1204,6 +1222,10 @@ public class JSON {
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.LivenessParams.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MDLItem.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.MDLResult.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.MRZDetectorResult.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
