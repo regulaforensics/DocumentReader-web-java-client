@@ -135,6 +135,8 @@ src/main/generated/com/regula/documentreader/webclient/model/LivenessParams.java
 src/main/generated/com/regula/documentreader/webclient/model/LogLevel.java
 src/main/generated/com/regula/documentreader/webclient/model/MDLDeviceEngagement.java
 src/main/generated/com/regula/documentreader/webclient/model/MDLDeviceRetrieval.java
+src/main/generated/com/regula/documentreader/webclient/model/MDLItem.java
+src/main/generated/com/regula/documentreader/webclient/model/MDLResult.java
 src/main/generated/com/regula/documentreader/webclient/model/MDLServerRetrieval.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZDetectorResult.java
 src/main/generated/com/regula/documentreader/webclient/model/MRZFormat.java
