@@ -81,7 +81,7 @@ public class VDSData {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nullable
-  private List<Integer> notifications;
+  private List<Long> notifications;
 
   public static final String SERIALIZED_NAME_SIGNATURE = "Signature";
 
@@ -266,12 +266,12 @@ public class VDSData {
     this.issuingCountry = issuingCountry;
   }
 
-  public VDSData notifications(@javax.annotation.Nullable List<Integer> notifications) {
+  public VDSData notifications(@javax.annotation.Nullable List<Long> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public VDSData addNotificationsItem(Integer notificationsItem) {
+  public VDSData addNotificationsItem(Long notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -285,11 +285,11 @@ public class VDSData {
    * @return notifications
    */
   @javax.annotation.Nullable
-  public List<Integer> getNotifications() {
+  public List<Long> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nullable List<Integer> notifications) {
+  public void setNotifications(@javax.annotation.Nullable List<Long> notifications) {
     this.notifications = notifications;
   }
 

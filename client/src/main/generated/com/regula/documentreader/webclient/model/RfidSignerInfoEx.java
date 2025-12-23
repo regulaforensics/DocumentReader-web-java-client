@@ -110,7 +110,7 @@ public class RfidSignerInfoEx {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<Integer> notifications;
+  private List<Long> notifications;
 
   public RfidSignerInfoEx() {}
 
@@ -345,12 +345,12 @@ public class RfidSignerInfoEx {
     this.dataToHash = dataToHash;
   }
 
-  public RfidSignerInfoEx notifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public RfidSignerInfoEx notifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidSignerInfoEx addNotificationsItem(Integer notificationsItem) {
+  public RfidSignerInfoEx addNotificationsItem(Long notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -364,11 +364,11 @@ public class RfidSignerInfoEx {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<Integer> getNotifications() {
+  public List<Long> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
   }
 

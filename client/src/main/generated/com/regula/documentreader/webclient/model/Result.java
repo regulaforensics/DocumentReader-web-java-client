@@ -142,17 +142,8 @@ public enum Result {
   /** Digital Travel Credential data */
   DTC_VC(109),
 
-  /** Contains mDL device raw response */
-  MDL_DEVICE_RAW_RESPONSE(120),
-
-  /** Contains mDL device parsed response */
-  MDL_DEVICE_PARSED_RESPONSE(121),
-
-  /** Contains mDL server raw response */
-  MDL_SERVER_RAW_RESPONSE(122),
-
-  /** Contains mDL server parsed response */
-  MDL_SERVER_PARSED_RESPONSE(123),
+  /** Contains mDL parsed response */
+  MDL_PARSED_RESPONSE(121),
 
   /** Contains result of VDS NC */
   VDS_NC(124),
