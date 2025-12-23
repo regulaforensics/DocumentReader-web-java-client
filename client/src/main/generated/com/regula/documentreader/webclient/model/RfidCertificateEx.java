@@ -92,7 +92,7 @@ public class RfidCertificateEx {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<Integer> notifications;
+  private List<Long> notifications;
 
   public static final String SERIALIZED_NAME_ORIGIN = "Origin";
 
@@ -282,12 +282,12 @@ public class RfidCertificateEx {
     this.extensions = extensions;
   }
 
-  public RfidCertificateEx notifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public RfidCertificateEx notifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidCertificateEx addNotificationsItem(Integer notificationsItem) {
+  public RfidCertificateEx addNotificationsItem(Long notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -302,11 +302,11 @@ public class RfidCertificateEx {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<Integer> getNotifications() {
+  public List<Long> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
   }
 

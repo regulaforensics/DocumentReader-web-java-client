@@ -60,7 +60,7 @@ public class RfidAccessControlInfo {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<Integer> notifications;
+  private List<Long> notifications;
 
   public static final String SERIALIZED_NAME_ACCESS_CONTROL_OPTIONS = "AccessControlOptions";
 
@@ -128,13 +128,12 @@ public class RfidAccessControlInfo {
     this.activeOptionIdx = activeOptionIdx;
   }
 
-  public RfidAccessControlInfo notifications(
-      @javax.annotation.Nonnull List<Integer> notifications) {
+  public RfidAccessControlInfo notifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidAccessControlInfo addNotificationsItem(Integer notificationsItem) {
+  public RfidAccessControlInfo addNotificationsItem(Long notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -149,11 +148,11 @@ public class RfidAccessControlInfo {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<Integer> getNotifications() {
+  public List<Long> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
   }
 
