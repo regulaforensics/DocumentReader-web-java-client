@@ -61,7 +61,7 @@ public class RfidSecurityObject {
 
   @SerializedName(SERIALIZED_NAME_NOTIFICATIONS)
   @javax.annotation.Nonnull
-  private List<Integer> notifications;
+  private List<Long> notifications;
 
   public static final String SERIALIZED_NAME_SIGNER_INFOS = "SignerInfos";
 
@@ -128,12 +128,12 @@ public class RfidSecurityObject {
     this.fileReference = fileReference;
   }
 
-  public RfidSecurityObject notifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public RfidSecurityObject notifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
     return this;
   }
 
-  public RfidSecurityObject addNotificationsItem(Integer notificationsItem) {
+  public RfidSecurityObject addNotificationsItem(Long notificationsItem) {
     if (this.notifications == null) {
       this.notifications = new ArrayList<>();
     }
@@ -148,11 +148,11 @@ public class RfidSecurityObject {
    * @return notifications
    */
   @javax.annotation.Nonnull
-  public List<Integer> getNotifications() {
+  public List<Long> getNotifications() {
     return notifications;
   }
 
-  public void setNotifications(@javax.annotation.Nonnull List<Integer> notifications) {
+  public void setNotifications(@javax.annotation.Nonnull List<Long> notifications) {
     this.notifications = notifications;
   }
 
