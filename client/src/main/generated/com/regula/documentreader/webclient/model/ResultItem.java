@@ -330,6 +330,9 @@ public class ResultItem {
       case "7":
         MRZTestQualityResult.validateJsonElement(jsonElement);
         break;
+      case "73":
+        BSIV2Result.validateJsonElement(jsonElement);
+        break;
       case "8":
         DocumentTypesCandidatesResult.validateJsonElement(jsonElement);
         break;
