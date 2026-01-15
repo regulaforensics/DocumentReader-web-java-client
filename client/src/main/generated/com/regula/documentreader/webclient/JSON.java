@@ -255,6 +255,20 @@ public class JSON {
                   }
                 })
             .registerTypeSelector(
+                com.regula.documentreader.webclient.model.BSIV2Result.class,
+                new TypeSelector<com.regula.documentreader.webclient.model.BSIV2Result>() {
+                  @Override
+                  public Class<? extends com.regula.documentreader.webclient.model.BSIV2Result>
+                      getClassForElement(JsonElement readElement) {
+                    Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                    classByDiscriminatorValue.put(
+                        "BSIV2Result", com.regula.documentreader.webclient.model.BSIV2Result.class);
+                    return getClassByDiscriminator(
+                        classByDiscriminatorValue,
+                        getDiscriminatorValue(readElement, "result_type"));
+                  }
+                })
+            .registerTypeSelector(
                 com.regula.documentreader.webclient.model.BarcodePositionResult.class,
                 new TypeSelector<
                     com.regula.documentreader.webclient.model.BarcodePositionResult>() {
@@ -387,6 +401,8 @@ public class JSON {
                         com.regula.documentreader.webclient.model.BarcodePositionResult.class);
                     classByDiscriminatorValue.put(
                         "7", com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
+                    classByDiscriminatorValue.put(
+                        "73", com.regula.documentreader.webclient.model.BSIV2Result.class);
                     classByDiscriminatorValue.put(
                         "8",
                         com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
@@ -839,6 +855,8 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "7", com.regula.documentreader.webclient.model.MRZTestQualityResult.class);
                     classByDiscriminatorValue.put(
+                        "73", com.regula.documentreader.webclient.model.BSIV2Result.class);
+                    classByDiscriminatorValue.put(
                         "8",
                         com.regula.documentreader.webclient.model.DocumentTypesCandidatesResult
                             .class);
@@ -1009,6 +1027,10 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.AuthenticityResult
             .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.BSIV2Item.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.BSIV2Result.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.BarcodePositionItem
             .CustomTypeAdapterFactory());

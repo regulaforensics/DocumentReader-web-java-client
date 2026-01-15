@@ -30,6 +30,8 @@ src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckRe
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityCheckResultListInner.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResult.java
 src/main/generated/com/regula/documentreader/webclient/model/AuthenticityResultType.java
+src/main/generated/com/regula/documentreader/webclient/model/BSIV2Item.java
+src/main/generated/com/regula/documentreader/webclient/model/BSIV2Result.java
 src/main/generated/com/regula/documentreader/webclient/model/BarCodeModuleType.java
 src/main/generated/com/regula/documentreader/webclient/model/BarcodePositionItem.java
 src/main/generated/com/regula/documentreader/webclient/model/BarcodePositionResult.java
