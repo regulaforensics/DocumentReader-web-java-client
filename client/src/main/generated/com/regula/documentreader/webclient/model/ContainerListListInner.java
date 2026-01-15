@@ -95,6 +95,8 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           gson.getDelegateAdapter(this, TypeToken.get(VDSDataResult.class));
       final TypeAdapter<MDLResult> adapterMDLResult =
           gson.getDelegateAdapter(this, TypeToken.get(MDLResult.class));
+      final TypeAdapter<BSIV2Result> adapterBSIV2Result =
+          gson.getDelegateAdapter(this, TypeToken.get(BSIV2Result.class));
 
       return (TypeAdapter<T>)
           new TypeAdapter<ContainerListListInner>() {
@@ -310,8 +312,15 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                 elementAdapter.write(out, element);
                 return;
               }
+              // check if the actual instance is of the type `BSIV2Result`
+              if (value.getActualInstance() instanceof BSIV2Result) {
+                JsonElement element =
+                    adapterBSIV2Result.toJsonTree((BSIV2Result) value.getActualInstance());
+                elementAdapter.write(out, element);
+                return;
+              }
               throw new IOException(
-                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult");
+                  "Failed to serialize as the type doesn't match oneOf schemas: AuthenticityResult, BSIV2Result, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult");
             }
 
             @Override
@@ -722,6 +731,20 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
                         "Deserialization for MDLResult failed with `%s`.", e.getMessage()));
                 log.log(Level.FINER, "Input data does not match schema 'MDLResult'", e);
               }
+              // deserialize BSIV2Result
+              try {
+                // validate the JSON object to see if any exception is thrown
+                BSIV2Result.validateJsonElement(jsonElement);
+                actualAdapter = adapterBSIV2Result;
+                match++;
+                log.log(Level.FINER, "Input data matches schema 'BSIV2Result'");
+              } catch (Exception e) {
+                // deserialization failed, continue
+                errorMessages.add(
+                    String.format(
+                        "Deserialization for BSIV2Result failed with `%s`.", e.getMessage()));
+                log.log(Level.FINER, "Input data does not match schema 'BSIV2Result'", e);
+              }
 
               if (match == 1) {
                 ContainerListListInner ret = new ContainerListListInner();
@@ -778,6 +801,7 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
     schemas.put("VDSNCDataResult", VDSNCDataResult.class);
     schemas.put("VDSDataResult", VDSDataResult.class);
     schemas.put("MDLResult", MDLResult.class);
+    schemas.put("BSIV2Result", BSIV2Result.class);
   }
 
   @Override
@@ -787,12 +811,13 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
 
   /**
    * Set the instance that matches the oneOf child schema, check the instance parameter is valid
-   * against the oneOf child schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult,
-   * ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
-   * DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult,
-   * GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult,
-   * MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult,
-   * RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult
+   * against the oneOf child schemas: AuthenticityResult, BSIV2Result, BarcodePositionResult,
+   * ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult,
+   * DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult,
+   * FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult,
+   * LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult,
+   * RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult,
+   * VDSDataResult, VDSNCDataResult
    *
    * <p>It could be an instance of the 'oneOf' schemas.
    */
@@ -933,23 +958,28 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
       return;
     }
 
+    if (instance instanceof BSIV2Result) {
+      super.setActualInstance(instance);
+      return;
+    }
+
     throw new RuntimeException(
-        "Invalid instance type. Must be AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult");
+        "Invalid instance type. Must be AuthenticityResult, BSIV2Result, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult");
   }
 
   /**
-   * Get the actual instance, which can be the following: AuthenticityResult, BarcodePositionResult,
-   * ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult,
-   * DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult,
-   * FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult,
-   * LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult,
-   * RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult,
-   * VDSDataResult, VDSNCDataResult
+   * Get the actual instance, which can be the following: AuthenticityResult, BSIV2Result,
+   * BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo,
+   * DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult,
+   * DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult,
+   * ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult,
+   * MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult,
+   * RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult
    *
-   * @return The actual instance (AuthenticityResult, BarcodePositionResult, ByteArrayResult,
-   *     ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult,
-   *     DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult,
-   *     FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult,
+   * @return The actual instance (AuthenticityResult, BSIV2Result, BarcodePositionResult,
+   *     ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult,
+   *     DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult,
+   *     EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult,
    *     LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult,
    *     MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult,
    *     TextDataResult, TextResult, VDSDataResult, VDSNCDataResult)
@@ -1259,6 +1289,17 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
   }
 
   /**
+   * Get the actual instance of `BSIV2Result`. If the actual instance is not `BSIV2Result`, the
+   * ClassCastException will be thrown.
+   *
+   * @return The actual instance of `BSIV2Result`
+   * @throws ClassCastException if the instance is not `BSIV2Result`
+   */
+  public BSIV2Result getBSIV2Result() throws ClassCastException {
+    return (BSIV2Result) super.getActualInstance();
+  }
+
+  /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
@@ -1526,10 +1567,19 @@ public class ContainerListListInner extends AbstractOpenApiSchema {
           String.format("Deserialization for MDLResult failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
+    // validate the json string with BSIV2Result
+    try {
+      BSIV2Result.validateJsonElement(jsonElement);
+      validCount++;
+    } catch (Exception e) {
+      errorMessages.add(
+          String.format("Deserialization for BSIV2Result failed with `%s`.", e.getMessage()));
+      // continue to the next one
+    }
     if (validCount != 1) {
       throw new IOException(
           String.format(
-              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
+              "The JSON string is invalid for ContainerListListInner with oneOf schemas: AuthenticityResult, BSIV2Result, BarcodePositionResult, ByteArrayResult, ChosenDocumentTypeResult, DocBarCodeInfo, DocumentBinaryInfoResult, DocumentImageResult, DocumentPositionResult, DocumentTypesCandidatesResult, EncryptedRCLResult, FaceDetectionResult, GraphicsResult, ImageQualityResult, ImagesResult, LexicalAnalysisResult, LicenseResult, MDLResult, MRZDetectorResult, MRZPositionResult, MRZTestQualityResult, RFIDGraphicsInfoResult, RFIDTextDataResult, StatusResult, TextDataResult, TextResult, VDSDataResult, VDSNCDataResult. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s",
               validCount, errorMessages, jsonElement.toString()));
     }
   }
