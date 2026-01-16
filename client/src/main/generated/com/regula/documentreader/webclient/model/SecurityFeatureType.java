@@ -195,7 +195,19 @@ public enum SecurityFeatureType {
   AGE_CHECK(56),
 
   /** Sex check */
-  SEX_CHECK(57);
+  SEX_CHECK(57),
+
+  /** RFID vs ghost portrait comparison */
+  PORTRAIT_COMPARISON_RFID_VS_GHOST(58),
+
+  /** Barcode vs ghost portrait comparison */
+  PORTRAIT_COMPARISON_BARCODE_VS_GHOST(59),
+
+  /** Ghost vs live camera portrait comparison */
+  PORTRAIT_COMPARISON_GHOST_VS_LIVE(60),
+
+  /** External vs ghost portrait comparison */
+  PORTRAIT_COMPARISON_EXT_VS_GHOST(61);
 
   private Integer value;
 
