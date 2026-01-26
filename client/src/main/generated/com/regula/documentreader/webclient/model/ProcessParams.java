@@ -455,12 +455,6 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean bsiTr03135Results;
 
-  public static final String SERIALIZED_NAME_CHECK_HOLDERS_SIGNATURE = "checkHoldersSignature";
-
-  @SerializedName(SERIALIZED_NAME_CHECK_HOLDERS_SIGNATURE)
-  @javax.annotation.Nullable
-  private Boolean checkHoldersSignature;
-
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1952,26 +1946,6 @@ public class ProcessParams {
     this.bsiTr03135Results = bsiTr03135Results;
   }
 
-  public ProcessParams checkHoldersSignature(
-      @javax.annotation.Nullable Boolean checkHoldersSignature) {
-    this.checkHoldersSignature = checkHoldersSignature;
-    return this;
-  }
-
-  /**
-   * When enabled, activates detection of the document holder’s signature presence.
-   *
-   * @return checkHoldersSignature
-   */
-  @javax.annotation.Nullable
-  public Boolean getCheckHoldersSignature() {
-    return checkHoldersSignature;
-  }
-
-  public void setCheckHoldersSignature(@javax.annotation.Nullable Boolean checkHoldersSignature) {
-    this.checkHoldersSignature = checkHoldersSignature;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -2052,8 +2026,7 @@ public class ProcessParams {
             this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter)
         && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks)
         && Objects.equals(this.returnTransliteratedFields, processParams.returnTransliteratedFields)
-        && Objects.equals(this.bsiTr03135Results, processParams.bsiTr03135Results)
-        && Objects.equals(this.checkHoldersSignature, processParams.checkHoldersSignature);
+        && Objects.equals(this.bsiTr03135Results, processParams.bsiTr03135Results);
   }
 
   @Override
@@ -2126,8 +2099,7 @@ public class ProcessParams {
         disableAuthResolutionFilter,
         strictSecurityChecks,
         returnTransliteratedFields,
-        bsiTr03135Results,
-        checkHoldersSignature);
+        bsiTr03135Results);
   }
 
   @Override
@@ -2244,9 +2216,6 @@ public class ProcessParams {
         .append(toIndentedString(returnTransliteratedFields))
         .append("\n");
     sb.append("    bsiTr03135Results: ").append(toIndentedString(bsiTr03135Results)).append("\n");
-    sb.append("    checkHoldersSignature: ")
-        .append(toIndentedString(checkHoldersSignature))
-        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2336,8 +2305,7 @@ public class ProcessParams {
                 "disableAuthResolutionFilter",
                 "strictSecurityChecks",
                 "returnTransliteratedFields",
-                "bsiTr03135Results",
-                "checkHoldersSignature"));
+                "bsiTr03135Results"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
