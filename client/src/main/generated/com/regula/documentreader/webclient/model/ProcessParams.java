@@ -449,11 +449,11 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean returnTransliteratedFields;
 
-  public static final String SERIALIZED_NAME_BSI_TR03135_RESULTS = "bsiTr03135Results";
+  public static final String SERIALIZED_NAME_BSI_TR03135 = "bsiTr03135";
 
-  @SerializedName(SERIALIZED_NAME_BSI_TR03135_RESULTS)
+  @SerializedName(SERIALIZED_NAME_BSI_TR03135)
   @javax.annotation.Nullable
-  private Boolean bsiTr03135Results;
+  private BsiTr03135 bsiTr03135;
 
   public ProcessParams() {}
 
@@ -1926,24 +1926,23 @@ public class ProcessParams {
     this.returnTransliteratedFields = returnTransliteratedFields;
   }
 
-  public ProcessParams bsiTr03135Results(@javax.annotation.Nullable Boolean bsiTr03135Results) {
-    this.bsiTr03135Results = bsiTr03135Results;
+  public ProcessParams bsiTr03135(@javax.annotation.Nullable BsiTr03135 bsiTr03135) {
+    this.bsiTr03135 = bsiTr03135;
     return this;
   }
 
   /**
-   * When enabled, returns processing results in accordance with the BSI TR-03135 standard in
-   * addition to the existing processing results.
+   * Get bsiTr03135
    *
-   * @return bsiTr03135Results
+   * @return bsiTr03135
    */
   @javax.annotation.Nullable
-  public Boolean getBsiTr03135Results() {
-    return bsiTr03135Results;
+  public BsiTr03135 getBsiTr03135() {
+    return bsiTr03135;
   }
 
-  public void setBsiTr03135Results(@javax.annotation.Nullable Boolean bsiTr03135Results) {
-    this.bsiTr03135Results = bsiTr03135Results;
+  public void setBsiTr03135(@javax.annotation.Nullable BsiTr03135 bsiTr03135) {
+    this.bsiTr03135 = bsiTr03135;
   }
 
   @Override
@@ -2026,7 +2025,7 @@ public class ProcessParams {
             this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter)
         && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks)
         && Objects.equals(this.returnTransliteratedFields, processParams.returnTransliteratedFields)
-        && Objects.equals(this.bsiTr03135Results, processParams.bsiTr03135Results);
+        && Objects.equals(this.bsiTr03135, processParams.bsiTr03135);
   }
 
   @Override
@@ -2099,7 +2098,7 @@ public class ProcessParams {
         disableAuthResolutionFilter,
         strictSecurityChecks,
         returnTransliteratedFields,
-        bsiTr03135Results);
+        bsiTr03135);
   }
 
   @Override
@@ -2215,7 +2214,7 @@ public class ProcessParams {
     sb.append("    returnTransliteratedFields: ")
         .append(toIndentedString(returnTransliteratedFields))
         .append("\n");
-    sb.append("    bsiTr03135Results: ").append(toIndentedString(bsiTr03135Results)).append("\n");
+    sb.append("    bsiTr03135: ").append(toIndentedString(bsiTr03135)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2305,7 +2304,7 @@ public class ProcessParams {
                 "disableAuthResolutionFilter",
                 "strictSecurityChecks",
                 "returnTransliteratedFields",
-                "bsiTr03135Results"));
+                "bsiTr03135"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
@@ -2488,6 +2487,10 @@ public class ProcessParams {
           String.format(
               "Expected the field `doBarcodes` to be an array in the JSON string but got `%s`",
               jsonObj.get("doBarcodes").toString()));
+    }
+    // validate the optional field `bsiTr03135`
+    if (jsonObj.get("bsiTr03135") != null && !jsonObj.get("bsiTr03135").isJsonNull()) {
+      BsiTr03135.validateJsonElement(jsonObj.get("bsiTr03135"));
     }
   }
 
