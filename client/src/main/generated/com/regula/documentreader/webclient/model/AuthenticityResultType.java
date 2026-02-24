@@ -90,7 +90,10 @@ public enum AuthenticityResultType {
   EXTENDED_MRZ_CHECK(8388608l),
 
   /** Encrypted IPI */
-  ENCRYPTED_IPI(16777216l);
+  ENCRYPTED_IPI(16777216l),
+
+  /** Document property check */
+  PROPERTY(33554432l);
 
   private Long value;
 
