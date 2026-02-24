@@ -128,6 +128,18 @@ public class AuthParams {
   @javax.annotation.Nullable
   private Boolean checkSecurityText;
 
+  public static final String SERIALIZED_NAME_CHECK_PROPERTIES = "checkProperties";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_PROPERTIES)
+  @javax.annotation.Nullable
+  private Boolean checkProperties;
+
+  public static final String SERIALIZED_NAME_PROPERTIES_PARAMS = "propertiesParams";
+
+  @SerializedName(SERIALIZED_NAME_PROPERTIES_PARAMS)
+  @javax.annotation.Nullable
+  private PropertiesParams propertiesParams;
+
   public AuthParams() {}
 
   public AuthParams checkLiveness(@javax.annotation.Nullable Boolean checkLiveness) {
@@ -436,6 +448,45 @@ public class AuthParams {
     this.checkSecurityText = checkSecurityText;
   }
 
+  public AuthParams checkProperties(@javax.annotation.Nullable Boolean checkProperties) {
+    this.checkProperties = checkProperties;
+    return this;
+  }
+
+  /**
+   * Set to true to enable detection of the document properties, such as holder&#39;s signature and
+   * other attributes.
+   *
+   * @return checkProperties
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckProperties() {
+    return checkProperties;
+  }
+
+  public void setCheckProperties(@javax.annotation.Nullable Boolean checkProperties) {
+    this.checkProperties = checkProperties;
+  }
+
+  public AuthParams propertiesParams(@javax.annotation.Nullable PropertiesParams propertiesParams) {
+    this.propertiesParams = propertiesParams;
+    return this;
+  }
+
+  /**
+   * Get propertiesParams
+   *
+   * @return propertiesParams
+   */
+  @javax.annotation.Nullable
+  public PropertiesParams getPropertiesParams() {
+    return propertiesParams;
+  }
+
+  public void setPropertiesParams(@javax.annotation.Nullable PropertiesParams propertiesParams) {
+    this.propertiesParams = propertiesParams;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -460,7 +511,9 @@ public class AuthParams {
         && Objects.equals(this.checkPhotoEmbedding, authParams.checkPhotoEmbedding)
         && Objects.equals(this.checkPhotoComparison, authParams.checkPhotoComparison)
         && Objects.equals(this.checkLetterScreen, authParams.checkLetterScreen)
-        && Objects.equals(this.checkSecurityText, authParams.checkSecurityText);
+        && Objects.equals(this.checkSecurityText, authParams.checkSecurityText)
+        && Objects.equals(this.checkProperties, authParams.checkProperties)
+        && Objects.equals(this.propertiesParams, authParams.propertiesParams);
   }
 
   @Override
@@ -481,7 +534,9 @@ public class AuthParams {
         checkPhotoEmbedding,
         checkPhotoComparison,
         checkLetterScreen,
-        checkSecurityText);
+        checkSecurityText,
+        checkProperties,
+        propertiesParams);
   }
 
   @Override
@@ -510,6 +565,8 @@ public class AuthParams {
         .append("\n");
     sb.append("    checkLetterScreen: ").append(toIndentedString(checkLetterScreen)).append("\n");
     sb.append("    checkSecurityText: ").append(toIndentedString(checkSecurityText)).append("\n");
+    sb.append("    checkProperties: ").append(toIndentedString(checkProperties)).append("\n");
+    sb.append("    propertiesParams: ").append(toIndentedString(propertiesParams)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -547,7 +604,9 @@ public class AuthParams {
                 "checkPhotoEmbedding",
                 "checkPhotoComparison",
                 "checkLetterScreen",
-                "checkSecurityText"));
+                "checkSecurityText",
+                "checkProperties",
+                "propertiesParams"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -574,6 +633,10 @@ public class AuthParams {
     // validate the optional field `livenessParams`
     if (jsonObj.get("livenessParams") != null && !jsonObj.get("livenessParams").isJsonNull()) {
       LivenessParams.validateJsonElement(jsonObj.get("livenessParams"));
+    }
+    // validate the optional field `propertiesParams`
+    if (jsonObj.get("propertiesParams") != null && !jsonObj.get("propertiesParams").isJsonNull()) {
+      PropertiesParams.validateJsonElement(jsonObj.get("propertiesParams"));
     }
   }
 
