@@ -1317,6 +1317,8 @@ public class JSON {
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.ProcessSystemInfo.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.PropertiesParams.CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.RFIDDocVisualExtendedField
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(

@@ -207,7 +207,10 @@ public enum SecurityFeatureType {
   PORTRAIT_COMPARISON_GHOST_VS_LIVE(60),
 
   /** External vs ghost portrait comparison */
-  PORTRAIT_COMPARISON_EXT_VS_GHOST(61);
+  PORTRAIT_COMPARISON_EXT_VS_GHOST(61),
+
+  /** Signature presence */
+  SIGNATURE_PRESENCE(62);
 
   private Integer value;
 

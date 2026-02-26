@@ -455,6 +455,18 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private BsiTr03135 bsiTr03135;
 
+  public static final String SERIALIZED_NAME_STRICT_EXPIRY_DATE = "strictExpiryDate";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_EXPIRY_DATE)
+  @javax.annotation.Nullable
+  private Boolean strictExpiryDate;
+
+  public static final String SERIALIZED_NAME_CHECK_V_D_S = "checkVDS";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_V_D_S)
+  @javax.annotation.Nullable
+  private Boolean checkVDS;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1945,6 +1957,44 @@ public class ProcessParams {
     this.bsiTr03135 = bsiTr03135;
   }
 
+  public ProcessParams strictExpiryDate(@javax.annotation.Nullable Boolean strictExpiryDate) {
+    this.strictExpiryDate = strictExpiryDate;
+    return this;
+  }
+
+  /**
+   * When disabled, date of expiry doesn&#39;t affect the MRZ and text statuses.
+   *
+   * @return strictExpiryDate
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictExpiryDate() {
+    return strictExpiryDate;
+  }
+
+  public void setStrictExpiryDate(@javax.annotation.Nullable Boolean strictExpiryDate) {
+    this.strictExpiryDate = strictExpiryDate;
+  }
+
+  public ProcessParams checkVDS(@javax.annotation.Nullable Boolean checkVDS) {
+    this.checkVDS = checkVDS;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Visible Digital Seal check. Disabled by default.
+   *
+   * @return checkVDS
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckVDS() {
+    return checkVDS;
+  }
+
+  public void setCheckVDS(@javax.annotation.Nullable Boolean checkVDS) {
+    this.checkVDS = checkVDS;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -2025,7 +2075,9 @@ public class ProcessParams {
             this.disableAuthResolutionFilter, processParams.disableAuthResolutionFilter)
         && Objects.equals(this.strictSecurityChecks, processParams.strictSecurityChecks)
         && Objects.equals(this.returnTransliteratedFields, processParams.returnTransliteratedFields)
-        && Objects.equals(this.bsiTr03135, processParams.bsiTr03135);
+        && Objects.equals(this.bsiTr03135, processParams.bsiTr03135)
+        && Objects.equals(this.strictExpiryDate, processParams.strictExpiryDate)
+        && Objects.equals(this.checkVDS, processParams.checkVDS);
   }
 
   @Override
@@ -2098,7 +2150,9 @@ public class ProcessParams {
         disableAuthResolutionFilter,
         strictSecurityChecks,
         returnTransliteratedFields,
-        bsiTr03135);
+        bsiTr03135,
+        strictExpiryDate,
+        checkVDS);
   }
 
   @Override
@@ -2215,6 +2269,8 @@ public class ProcessParams {
         .append(toIndentedString(returnTransliteratedFields))
         .append("\n");
     sb.append("    bsiTr03135: ").append(toIndentedString(bsiTr03135)).append("\n");
+    sb.append("    strictExpiryDate: ").append(toIndentedString(strictExpiryDate)).append("\n");
+    sb.append("    checkVDS: ").append(toIndentedString(checkVDS)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2304,7 +2360,9 @@ public class ProcessParams {
                 "disableAuthResolutionFilter",
                 "strictSecurityChecks",
                 "returnTransliteratedFields",
-                "bsiTr03135"));
+                "bsiTr03135",
+                "strictExpiryDate",
+                "checkVDS"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
