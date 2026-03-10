@@ -1970,6 +1970,9 @@ public enum TextFieldType {
   /** First issue date checksum */
   FT_FIRST_ISSUE_DATE_CHECKSUM(699),
 
+  /** Expiry time */
+  FT_EXPIRY_TIMESTAMP(700),
+
   /** Commercial indicator */
   FT_COMMERCIAL_INDICATOR(701),
 
@@ -1977,7 +1980,10 @@ public enum TextFieldType {
   FT_NON_DOMICILED_INDICATOR(702),
 
   /** Jurisdiction specific data */
-  FT_JURISDICTION_SPECIFIC_DATA(703);
+  FT_JURISDICTION_SPECIFIC_DATA(703),
+
+  /** Date of data expiry */
+  FT_DATA_DATE_OF_EXPIRY(704);
 
   private Integer value;
 
