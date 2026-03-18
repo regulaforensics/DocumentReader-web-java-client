@@ -122,6 +122,18 @@ public class DatabaseDocument {
   @javax.annotation.Nullable
   private Boolean deprecated;
 
+  public static final String SERIALIZED_NAME_ICAO_CODE = "icao_code";
+
+  @SerializedName(SERIALIZED_NAME_ICAO_CODE)
+  @javax.annotation.Nullable
+  private String icaoCode;
+
+  public static final String SERIALIZED_NAME_DOC_CODES = "doc_codes";
+
+  @SerializedName(SERIALIZED_NAME_DOC_CODES)
+  @javax.annotation.Nullable
+  private String docCodes;
+
   public DatabaseDocument() {}
 
   public DatabaseDocument barcodeFields(@javax.annotation.Nonnull Boolean barcodeFields) {
@@ -409,6 +421,44 @@ public class DatabaseDocument {
     this.deprecated = deprecated;
   }
 
+  public DatabaseDocument icaoCode(@javax.annotation.Nullable String icaoCode) {
+    this.icaoCode = icaoCode;
+    return this;
+  }
+
+  /**
+   * ICAO country code.
+   *
+   * @return icaoCode
+   */
+  @javax.annotation.Nullable
+  public String getIcaoCode() {
+    return icaoCode;
+  }
+
+  public void setIcaoCode(@javax.annotation.Nullable String icaoCode) {
+    this.icaoCode = icaoCode;
+  }
+
+  public DatabaseDocument docCodes(@javax.annotation.Nullable String docCodes) {
+    this.docCodes = docCodes;
+    return this;
+  }
+
+  /**
+   * Document codes.
+   *
+   * @return docCodes
+   */
+  @javax.annotation.Nullable
+  public String getDocCodes() {
+    return docCodes;
+  }
+
+  public void setDocCodes(@javax.annotation.Nullable String docCodes) {
+    this.docCodes = docCodes;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -432,7 +482,9 @@ public class DatabaseDocument {
         && Objects.equals(this.updated, databaseDocument.updated)
         && Objects.equals(this.year, databaseDocument.year)
         && Objects.equals(this.sovereignty, databaseDocument.sovereignty)
-        && Objects.equals(this.deprecated, databaseDocument.deprecated);
+        && Objects.equals(this.deprecated, databaseDocument.deprecated)
+        && Objects.equals(this.icaoCode, databaseDocument.icaoCode)
+        && Objects.equals(this.docCodes, databaseDocument.docCodes);
   }
 
   @Override
@@ -452,7 +504,9 @@ public class DatabaseDocument {
         updated,
         year,
         sovereignty,
-        deprecated);
+        deprecated,
+        icaoCode,
+        docCodes);
   }
 
   @Override
@@ -474,6 +528,8 @@ public class DatabaseDocument {
     sb.append("    year: ").append(toIndentedString(year)).append("\n");
     sb.append("    sovereignty: ").append(toIndentedString(sovereignty)).append("\n");
     sb.append("    deprecated: ").append(toIndentedString(deprecated)).append("\n");
+    sb.append("    icaoCode: ").append(toIndentedString(icaoCode)).append("\n");
+    sb.append("    docCodes: ").append(toIndentedString(docCodes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -510,7 +566,9 @@ public class DatabaseDocument {
                 "updated",
                 "year",
                 "sovereignty",
-                "deprecated"));
+                "deprecated",
+                "icao_code",
+                "doc_codes"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields =
@@ -602,6 +660,20 @@ public class DatabaseDocument {
           String.format(
               "Expected the field `sovereignty` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("sovereignty").toString()));
+    }
+    if ((jsonObj.get("icao_code") != null && !jsonObj.get("icao_code").isJsonNull())
+        && !jsonObj.get("icao_code").isJsonPrimitive()) {
+      System.err.println(
+          String.format(
+              "Expected the field `icao_code` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("icao_code").toString()));
+    }
+    if ((jsonObj.get("doc_codes") != null && !jsonObj.get("doc_codes").isJsonNull())
+        && !jsonObj.get("doc_codes").isJsonPrimitive()) {
+      System.err.println(
+          String.format(
+              "Expected the field `doc_codes` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("doc_codes").toString()));
     }
   }
 
