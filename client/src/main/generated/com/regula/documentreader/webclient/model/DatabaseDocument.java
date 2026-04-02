@@ -44,11 +44,11 @@ public class DatabaseDocument {
   @javax.annotation.Nonnull
   private String country;
 
-  public static final String SERIALIZED_NAME_CREATEAD = "createad";
+  public static final String SERIALIZED_NAME_CREATED = "created";
 
-  @SerializedName(SERIALIZED_NAME_CREATEAD)
+  @SerializedName(SERIALIZED_NAME_CREATED)
   @javax.annotation.Nonnull
-  private String createad;
+  private String created;
 
   public static final String SERIALIZED_NAME_DOC_TYPE = "doc_type";
 
@@ -174,23 +174,23 @@ public class DatabaseDocument {
     this.country = country;
   }
 
-  public DatabaseDocument createad(@javax.annotation.Nonnull String createad) {
-    this.createad = createad;
+  public DatabaseDocument created(@javax.annotation.Nonnull String created) {
+    this.created = created;
     return this;
   }
 
   /**
    * Date when the document description was created in the database.
    *
-   * @return createad
+   * @return created
    */
   @javax.annotation.Nonnull
-  public String getCreatead() {
-    return createad;
+  public String getCreated() {
+    return created;
   }
 
-  public void setCreatead(@javax.annotation.Nonnull String createad) {
-    this.createad = createad;
+  public void setCreated(@javax.annotation.Nonnull String created) {
+    this.created = created;
   }
 
   public DatabaseDocument docType(@javax.annotation.Nonnull DocumentType docType) {
@@ -470,7 +470,7 @@ public class DatabaseDocument {
     DatabaseDocument databaseDocument = (DatabaseDocument) o;
     return Objects.equals(this.barcodeFields, databaseDocument.barcodeFields)
         && Objects.equals(this.country, databaseDocument.country)
-        && Objects.equals(this.createad, databaseDocument.createad)
+        && Objects.equals(this.created, databaseDocument.created)
         && Objects.equals(this.docType, databaseDocument.docType)
         && Objects.equals(this.document, databaseDocument.document)
         && Objects.equals(this.graphicFields, databaseDocument.graphicFields)
@@ -492,7 +492,7 @@ public class DatabaseDocument {
     return Objects.hash(
         barcodeFields,
         country,
-        createad,
+        created,
         docType,
         document,
         graphicFields,
@@ -515,7 +515,7 @@ public class DatabaseDocument {
     sb.append("class DatabaseDocument {\n");
     sb.append("    barcodeFields: ").append(toIndentedString(barcodeFields)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    createad: ").append(toIndentedString(createad)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    docType: ").append(toIndentedString(docType)).append("\n");
     sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("    graphicFields: ").append(toIndentedString(graphicFields)).append("\n");
@@ -554,7 +554,7 @@ public class DatabaseDocument {
             Arrays.asList(
                 "barcode_fields",
                 "country",
-                "createad",
+                "created",
                 "doc_type",
                 "document",
                 "graphic_fields",
@@ -576,7 +576,7 @@ public class DatabaseDocument {
             Arrays.asList(
                 "barcode_fields",
                 "country",
-                "createad",
+                "created",
                 "doc_type",
                 "document",
                 "graphic_fields",
@@ -620,11 +620,11 @@ public class DatabaseDocument {
               "Expected the field `country` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("country").toString()));
     }
-    if (!jsonObj.get("createad").isJsonPrimitive()) {
+    if (!jsonObj.get("created").isJsonPrimitive()) {
       System.err.println(
           String.format(
-              "Expected the field `createad` to be a primitive type in the JSON string but got `%s`",
-              jsonObj.get("createad").toString()));
+              "Expected the field `created` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("created").toString()));
     }
     // validate the required field `doc_type`
     DocumentType.validateJsonElement(jsonObj.get("doc_type"));
