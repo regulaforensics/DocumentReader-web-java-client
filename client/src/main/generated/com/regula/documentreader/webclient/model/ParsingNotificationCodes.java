@@ -575,6 +575,12 @@ public enum ParsingNotificationCodes {
   /** Biometrics: BDB data image data type */
   ntfLDS_Biometrics_BDB_Data_ImageDataType(2417623040l),
 
+  /** Notification - SI: Storage CS Non Consistant */
+  ntfLDS_SI_Storage_CS_NonConsistant(2432696593l),
+
+  /** Notification - SI: Storage CS PACE CAM key missing */
+  ntfLDS_SI_Storage_CS_PACE_CAM_Key_Missing(2432696594l),
+
   /** Biometrics: RB data incorrect */
   ntfLDS_Biometrics_RB_Data_Incorrect(2449539072l),
 

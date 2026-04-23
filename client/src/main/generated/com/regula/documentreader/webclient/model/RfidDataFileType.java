@@ -125,6 +125,8 @@ public enum RfidDataFileType {
 
   ID_DG21(121),
 
+  ID_DG22(122),
+
   DL_COM(150),
 
   DL_DG1(151),

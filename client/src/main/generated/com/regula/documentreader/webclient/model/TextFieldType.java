@@ -1983,7 +1983,10 @@ public enum TextFieldType {
   FT_JURISDICTION_SPECIFIC_DATA(703),
 
   /** Date of data expiry */
-  FT_DATA_DATE_OF_EXPIRY(704);
+  FT_DATA_DATE_OF_EXPIRY(704),
+
+  /** Consul */
+  FT_CONSUL(705);
 
   private Integer value;
 
