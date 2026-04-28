@@ -215,11 +215,6 @@ public class RecognitionParams extends ProcessParams {
     return this;
   }
 
-  public RecognitionParams withForceReadMrzBeforeLocate(Boolean forceReadMrzBeforeLocate) {
-    this.setForceReadMrzBeforeLocate(forceReadMrzBeforeLocate);
-    return this;
-  }
-
   public RecognitionParams withParseBarcodes(Boolean parseBarcodes) {
     this.setParseBarcodes(parseBarcodes);
     return this;
