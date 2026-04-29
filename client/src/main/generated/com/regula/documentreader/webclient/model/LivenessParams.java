@@ -74,6 +74,12 @@ public class LivenessParams {
   @javax.annotation.Nullable
   private Boolean checkGeometry;
 
+  public static final String SERIALIZED_NAME_CHECK_BARCODE_BACKGROUND = "checkBarcodeBackground";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_BARCODE_BACKGROUND)
+  @javax.annotation.Nullable
+  private Boolean checkBarcodeBackground;
+
   public LivenessParams() {}
 
   public LivenessParams checkOVI(@javax.annotation.Nullable Boolean checkOVI) {
@@ -210,6 +216,26 @@ public class LivenessParams {
     this.checkGeometry = checkGeometry;
   }
 
+  public LivenessParams checkBarcodeBackground(
+      @javax.annotation.Nullable Boolean checkBarcodeBackground) {
+    this.checkBarcodeBackground = checkBarcodeBackground;
+    return this;
+  }
+
+  /**
+   * This parameter is used to enable Barcode background check as part of the Liveness checks
+   *
+   * @return checkBarcodeBackground
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckBarcodeBackground() {
+    return checkBarcodeBackground;
+  }
+
+  public void setCheckBarcodeBackground(@javax.annotation.Nullable Boolean checkBarcodeBackground) {
+    this.checkBarcodeBackground = checkBarcodeBackground;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -225,7 +251,8 @@ public class LivenessParams {
         && Objects.equals(this.checkED, livenessParams.checkED)
         && Objects.equals(this.checkBlackAndWhiteCopy, livenessParams.checkBlackAndWhiteCopy)
         && Objects.equals(this.checkDynaprint, livenessParams.checkDynaprint)
-        && Objects.equals(this.checkGeometry, livenessParams.checkGeometry);
+        && Objects.equals(this.checkGeometry, livenessParams.checkGeometry)
+        && Objects.equals(this.checkBarcodeBackground, livenessParams.checkBarcodeBackground);
   }
 
   @Override
@@ -237,7 +264,8 @@ public class LivenessParams {
         checkED,
         checkBlackAndWhiteCopy,
         checkDynaprint,
-        checkGeometry);
+        checkGeometry,
+        checkBarcodeBackground);
   }
 
   @Override
@@ -253,6 +281,9 @@ public class LivenessParams {
         .append("\n");
     sb.append("    checkDynaprint: ").append(toIndentedString(checkDynaprint)).append("\n");
     sb.append("    checkGeometry: ").append(toIndentedString(checkGeometry)).append("\n");
+    sb.append("    checkBarcodeBackground: ")
+        .append(toIndentedString(checkBarcodeBackground))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -281,7 +312,8 @@ public class LivenessParams {
                 "checkED",
                 "checkBlackAndWhiteCopy",
                 "checkDynaprint",
-                "checkGeometry"));
+                "checkGeometry",
+                "checkBarcodeBackground"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

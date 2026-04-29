@@ -288,13 +288,6 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private List<MRZFormat> mrzFormatsFilter;
 
-  public static final String SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE =
-      "forceReadMrzBeforeLocate";
-
-  @SerializedName(SERIALIZED_NAME_FORCE_READ_MRZ_BEFORE_LOCATE)
-  @javax.annotation.Nullable
-  private Boolean forceReadMrzBeforeLocate;
-
   public static final String SERIALIZED_NAME_PARSE_BARCODES = "parseBarcodes";
 
   @SerializedName(SERIALIZED_NAME_PARSE_BARCODES)
@@ -466,6 +459,12 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_CHECK_V_D_S)
   @javax.annotation.Nullable
   private Boolean checkVDS;
+
+  public static final String SERIALIZED_NAME_STRICT_AGE_CHECK = "strictAgeCheck";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_AGE_CHECK)
+  @javax.annotation.Nullable
+  private Boolean strictAgeCheck;
 
   public ProcessParams() {}
 
@@ -1383,30 +1382,6 @@ public class ProcessParams {
     this.mrzFormatsFilter = mrzFormatsFilter;
   }
 
-  public ProcessParams forceReadMrzBeforeLocate(
-      @javax.annotation.Nullable Boolean forceReadMrzBeforeLocate) {
-    this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
-    return this;
-  }
-
-  /**
-   * When enabled, make sure that in series processing MRZ is located fully inside the result
-   * document image, if present on the document. Enabling this option may add extra processing time,
-   * by disabling optimizations, but allows more stability in output image quality. Disabled by
-   * default.
-   *
-   * @return forceReadMrzBeforeLocate
-   */
-  @javax.annotation.Nullable
-  public Boolean getForceReadMrzBeforeLocate() {
-    return forceReadMrzBeforeLocate;
-  }
-
-  public void setForceReadMrzBeforeLocate(
-      @javax.annotation.Nullable Boolean forceReadMrzBeforeLocate) {
-    this.forceReadMrzBeforeLocate = forceReadMrzBeforeLocate;
-  }
-
   public ProcessParams parseBarcodes(@javax.annotation.Nullable Boolean parseBarcodes) {
     this.parseBarcodes = parseBarcodes;
     return this;
@@ -1995,6 +1970,25 @@ public class ProcessParams {
     this.checkVDS = checkVDS;
   }
 
+  public ProcessParams strictAgeCheck(@javax.annotation.Nullable Boolean strictAgeCheck) {
+    this.strictAgeCheck = strictAgeCheck;
+    return this;
+  }
+
+  /**
+   * When enabled, the age check status affects the overall status.
+   *
+   * @return strictAgeCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictAgeCheck() {
+    return strictAgeCheck;
+  }
+
+  public void setStrictAgeCheck(@javax.annotation.Nullable Boolean strictAgeCheck) {
+    this.strictAgeCheck = strictAgeCheck;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -2046,7 +2040,6 @@ public class ProcessParams {
         && Objects.equals(this.minimalHolderAge, processParams.minimalHolderAge)
         && Objects.equals(this.returnUncroppedImage, processParams.returnUncroppedImage)
         && Objects.equals(this.mrzFormatsFilter, processParams.mrzFormatsFilter)
-        && Objects.equals(this.forceReadMrzBeforeLocate, processParams.forceReadMrzBeforeLocate)
         && Objects.equals(this.parseBarcodes, processParams.parseBarcodes)
         && Objects.equals(this.convertCase, processParams.convertCase)
         && Objects.equals(this.splitNames, processParams.splitNames)
@@ -2077,7 +2070,8 @@ public class ProcessParams {
         && Objects.equals(this.returnTransliteratedFields, processParams.returnTransliteratedFields)
         && Objects.equals(this.bsiTr03135, processParams.bsiTr03135)
         && Objects.equals(this.strictExpiryDate, processParams.strictExpiryDate)
-        && Objects.equals(this.checkVDS, processParams.checkVDS);
+        && Objects.equals(this.checkVDS, processParams.checkVDS)
+        && Objects.equals(this.strictAgeCheck, processParams.strictAgeCheck);
   }
 
   @Override
@@ -2124,7 +2118,6 @@ public class ProcessParams {
         minimalHolderAge,
         returnUncroppedImage,
         mrzFormatsFilter,
-        forceReadMrzBeforeLocate,
         parseBarcodes,
         convertCase,
         splitNames,
@@ -2152,7 +2145,8 @@ public class ProcessParams {
         returnTransliteratedFields,
         bsiTr03135,
         strictExpiryDate,
-        checkVDS);
+        checkVDS,
+        strictAgeCheck);
   }
 
   @Override
@@ -2220,9 +2214,6 @@ public class ProcessParams {
         .append(toIndentedString(returnUncroppedImage))
         .append("\n");
     sb.append("    mrzFormatsFilter: ").append(toIndentedString(mrzFormatsFilter)).append("\n");
-    sb.append("    forceReadMrzBeforeLocate: ")
-        .append(toIndentedString(forceReadMrzBeforeLocate))
-        .append("\n");
     sb.append("    parseBarcodes: ").append(toIndentedString(parseBarcodes)).append("\n");
     sb.append("    convertCase: ").append(toIndentedString(convertCase)).append("\n");
     sb.append("    splitNames: ").append(toIndentedString(splitNames)).append("\n");
@@ -2271,6 +2262,7 @@ public class ProcessParams {
     sb.append("    bsiTr03135: ").append(toIndentedString(bsiTr03135)).append("\n");
     sb.append("    strictExpiryDate: ").append(toIndentedString(strictExpiryDate)).append("\n");
     sb.append("    checkVDS: ").append(toIndentedString(checkVDS)).append("\n");
+    sb.append("    strictAgeCheck: ").append(toIndentedString(strictAgeCheck)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2334,7 +2326,6 @@ public class ProcessParams {
                 "minimalHolderAge",
                 "returnUncroppedImage",
                 "mrzFormatsFilter",
-                "forceReadMrzBeforeLocate",
                 "parseBarcodes",
                 "convertCase",
                 "splitNames",
@@ -2362,7 +2353,8 @@ public class ProcessParams {
                 "returnTransliteratedFields",
                 "bsiTr03135",
                 "strictExpiryDate",
-                "checkVDS"));
+                "checkVDS",
+                "strictAgeCheck"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
