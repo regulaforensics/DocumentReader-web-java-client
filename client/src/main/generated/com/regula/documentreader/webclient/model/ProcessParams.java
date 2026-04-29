@@ -467,6 +467,12 @@ public class ProcessParams {
   @javax.annotation.Nullable
   private Boolean checkVDS;
 
+  public static final String SERIALIZED_NAME_STRICT_AGE_CHECK = "strictAgeCheck";
+
+  @SerializedName(SERIALIZED_NAME_STRICT_AGE_CHECK)
+  @javax.annotation.Nullable
+  private Boolean strictAgeCheck;
+
   public ProcessParams() {}
 
   public ProcessParams generateDTCVC(@javax.annotation.Nullable Boolean generateDTCVC) {
@@ -1995,6 +2001,25 @@ public class ProcessParams {
     this.checkVDS = checkVDS;
   }
 
+  public ProcessParams strictAgeCheck(@javax.annotation.Nullable Boolean strictAgeCheck) {
+    this.strictAgeCheck = strictAgeCheck;
+    return this;
+  }
+
+  /**
+   * When enabled, the age check status affects the overall status.
+   *
+   * @return strictAgeCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getStrictAgeCheck() {
+    return strictAgeCheck;
+  }
+
+  public void setStrictAgeCheck(@javax.annotation.Nullable Boolean strictAgeCheck) {
+    this.strictAgeCheck = strictAgeCheck;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -2077,7 +2102,8 @@ public class ProcessParams {
         && Objects.equals(this.returnTransliteratedFields, processParams.returnTransliteratedFields)
         && Objects.equals(this.bsiTr03135, processParams.bsiTr03135)
         && Objects.equals(this.strictExpiryDate, processParams.strictExpiryDate)
-        && Objects.equals(this.checkVDS, processParams.checkVDS);
+        && Objects.equals(this.checkVDS, processParams.checkVDS)
+        && Objects.equals(this.strictAgeCheck, processParams.strictAgeCheck);
   }
 
   @Override
@@ -2152,7 +2178,8 @@ public class ProcessParams {
         returnTransliteratedFields,
         bsiTr03135,
         strictExpiryDate,
-        checkVDS);
+        checkVDS,
+        strictAgeCheck);
   }
 
   @Override
@@ -2271,6 +2298,7 @@ public class ProcessParams {
     sb.append("    bsiTr03135: ").append(toIndentedString(bsiTr03135)).append("\n");
     sb.append("    strictExpiryDate: ").append(toIndentedString(strictExpiryDate)).append("\n");
     sb.append("    checkVDS: ").append(toIndentedString(checkVDS)).append("\n");
+    sb.append("    strictAgeCheck: ").append(toIndentedString(strictAgeCheck)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2362,7 +2390,8 @@ public class ProcessParams {
                 "returnTransliteratedFields",
                 "bsiTr03135",
                 "strictExpiryDate",
-                "checkVDS"));
+                "checkVDS",
+                "strictAgeCheck"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("scenario"));
