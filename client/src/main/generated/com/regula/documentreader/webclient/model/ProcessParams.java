@@ -1,6 +1,6 @@
 /*
  * Regula Document Reader Web API
- * Documents recognition as easy as reading two bytes.   # Clients: * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core
+ * Fast and reliable identity document verification for on-premises installation or cloud integration.   # Clients: * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android * [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client * [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core  # Documentation Go to [Regula Developer Documentation](https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service) to read the technologies description, licensing information, release notes, and instructions on the integration, installation, migration, etc.  # Technical Support To submit a request to the Support Team, visit [Regula Help Center](https://support.regulaforensics.com/hc/en-us/requests/new).  # Business Enquiries To discuss business opportunities, fill the [Enquiry Form](https://explore.regula.app/docs-support-request) and specify your scenarios, applications, and technical requirements.
  *
  * The version of the OpenAPI document: 8.1.0
  *
@@ -48,12 +48,6 @@ public class ProcessParams {
   @SerializedName(SERIALIZED_NAME_LCID_FILTER)
   @javax.annotation.Nullable
   private List<LCID> lcidFilter;
-
-  public static final String SERIALIZED_NAME_CHECK_LIVENESS = "checkLiveness";
-
-  @SerializedName(SERIALIZED_NAME_CHECK_LIVENESS)
-  @javax.annotation.Nullable
-  private Boolean checkLiveness;
 
   public static final String SERIALIZED_NAME_LCID_IGNORE_FILTER = "lcidIgnoreFilter";
 
@@ -513,25 +507,6 @@ public class ProcessParams {
 
   public void setLcidFilter(@javax.annotation.Nullable List<LCID> lcidFilter) {
     this.lcidFilter = lcidFilter;
-  }
-
-  public ProcessParams checkLiveness(@javax.annotation.Nullable Boolean checkLiveness) {
-    this.checkLiveness = checkLiveness;
-    return this;
-  }
-
-  /**
-   * This parameter is used to enable document liveness check.
-   *
-   * @return checkLiveness
-   */
-  @javax.annotation.Nullable
-  public Boolean getCheckLiveness() {
-    return checkLiveness;
-  }
-
-  public void setCheckLiveness(@javax.annotation.Nullable Boolean checkLiveness) {
-    this.checkLiveness = checkLiveness;
   }
 
   public ProcessParams lcidIgnoreFilter(@javax.annotation.Nullable List<LCID> lcidIgnoreFilter) {
@@ -2000,7 +1975,6 @@ public class ProcessParams {
     ProcessParams processParams = (ProcessParams) o;
     return Objects.equals(this.generateDTCVC, processParams.generateDTCVC)
         && Objects.equals(this.lcidFilter, processParams.lcidFilter)
-        && Objects.equals(this.checkLiveness, processParams.checkLiveness)
         && Objects.equals(this.lcidIgnoreFilter, processParams.lcidIgnoreFilter)
         && Objects.equals(this.oneShotIdentification, processParams.oneShotIdentification)
         && Objects.equals(this.useFaceApi, processParams.useFaceApi)
@@ -2079,7 +2053,6 @@ public class ProcessParams {
     return Objects.hash(
         generateDTCVC,
         lcidFilter,
-        checkLiveness,
         lcidIgnoreFilter,
         oneShotIdentification,
         useFaceApi,
@@ -2155,7 +2128,6 @@ public class ProcessParams {
     sb.append("class ProcessParams {\n");
     sb.append("    generateDTCVC: ").append(toIndentedString(generateDTCVC)).append("\n");
     sb.append("    lcidFilter: ").append(toIndentedString(lcidFilter)).append("\n");
-    sb.append("    checkLiveness: ").append(toIndentedString(checkLiveness)).append("\n");
     sb.append("    lcidIgnoreFilter: ").append(toIndentedString(lcidIgnoreFilter)).append("\n");
     sb.append("    oneShotIdentification: ")
         .append(toIndentedString(oneShotIdentification))
@@ -2287,7 +2259,6 @@ public class ProcessParams {
             Arrays.asList(
                 "generateDTCVC",
                 "lcidFilter",
-                "checkLiveness",
                 "lcidIgnoreFilter",
                 "oneShotIdentification",
                 "useFaceApi",
