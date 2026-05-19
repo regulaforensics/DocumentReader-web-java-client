@@ -60,7 +60,13 @@ public enum RfidCertificateType {
   BCS_NC(10),
 
   /** DTC signer */
-  DTCS(11);
+  DTCS(11),
+
+  /** Separate CA for Barcode signer (VDS-NC) */
+  CA(12),
+
+  /** mDL signer */
+  MDLS(13);
 
   private Integer value;
 

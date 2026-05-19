@@ -56,6 +56,9 @@ public enum ParsingNotificationCodes {
   /** ASN certificate: Incorrect issuer subject DS */
   ntfLDS_ASN_Certificate_IncorrectIssuerSubjectDS(2415919120l),
 
+  /** ASN certificate: non-matching DS role */
+  ntfLDS_ASN_Certificate_NonMatchingDSRole(2415919121l),
+
   /** ASN certificate: Duplicating extensions */
   ntfLDS_ASN_Certificate_DuplicatingExtensions(2415919127l),
 
@@ -457,6 +460,18 @@ public enum ParsingNotificationCodes {
 
   /** Notification: Unsupported image format */
   ntfLDS_UnsupportedImageFormat(2415919386l),
+
+  /** mDL certificate: Chain SoP non-matching */
+  ntfLDS_MDL_Certificate_Chain_SoP_NonMatching(2415920128l),
+
+  /** mDL certificate: Unsupported public key algorithm */
+  ntfLDS_MDL_Certificate_UnsupportedPublicKeyAlgorithm(2415920129l),
+
+  /** mDL certificate: Unsupported signature algorithm */
+  ntfLDS_MDL_Certificate_UnsupportedSignatureAlgorithm(2415920130l),
+
+  /** mDL certificate: Unsupported public key params */
+  ntfLDS_MDL_Certificate_UnsupportedPublicKeyParams(2415920131l),
 
   /** MRZ: Document type unknown */
   ntfLDS_MRZ_DocumentType_Unknown(139272l),
