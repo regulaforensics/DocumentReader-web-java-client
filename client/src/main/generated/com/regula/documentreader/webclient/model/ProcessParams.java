@@ -1422,7 +1422,7 @@ public class ProcessParams {
   }
 
   /**
-   * When enabled, OCR of perforated fields in the document template will not be performed. Disabled
+   * When enabled, OCR of perforated fields in the document template will not be performed. Enabled
    * by default.
    *
    * @return disablePerforationOCR
