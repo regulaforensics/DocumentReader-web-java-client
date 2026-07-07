@@ -92,6 +92,12 @@ public class FaceApi {
   @javax.annotation.Nullable
   private Integer childDocValidityYears;
 
+  public static final String SERIALIZED_NAME_LIVENESS_TRANSACTION_ID = "livenessTransactionId";
+
+  @SerializedName(SERIALIZED_NAME_LIVENESS_TRANSACTION_ID)
+  @javax.annotation.Nullable
+  private String livenessTransactionId;
+
   public FaceApi() {}
 
   public FaceApi url(@javax.annotation.Nullable String url) {
@@ -291,6 +297,25 @@ public class FaceApi {
     this.childDocValidityYears = childDocValidityYears;
   }
 
+  public FaceApi livenessTransactionId(@javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+    return this;
+  }
+
+  /**
+   * This parameter allows you to use a liveness transaction id instead of a selfie photo.
+   *
+   * @return livenessTransactionId
+   */
+  @javax.annotation.Nullable
+  public String getLivenessTransactionId() {
+    return livenessTransactionId;
+  }
+
+  public void setLivenessTransactionId(@javax.annotation.Nullable String livenessTransactionId) {
+    this.livenessTransactionId = livenessTransactionId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -309,7 +334,8 @@ public class FaceApi {
         && Objects.equals(this.proxyUserpwd, faceApi.proxyUserpwd)
         && Objects.equals(this.proxyType, faceApi.proxyType)
         && Objects.equals(this.childAgeThreshold, faceApi.childAgeThreshold)
-        && Objects.equals(this.childDocValidityYears, faceApi.childDocValidityYears);
+        && Objects.equals(this.childDocValidityYears, faceApi.childDocValidityYears)
+        && Objects.equals(this.livenessTransactionId, faceApi.livenessTransactionId);
   }
 
   @Override
@@ -324,7 +350,8 @@ public class FaceApi {
         proxyUserpwd,
         proxyType,
         childAgeThreshold,
-        childDocValidityYears);
+        childDocValidityYears,
+        livenessTransactionId);
   }
 
   @Override
@@ -342,6 +369,9 @@ public class FaceApi {
     sb.append("    childAgeThreshold: ").append(toIndentedString(childAgeThreshold)).append("\n");
     sb.append("    childDocValidityYears: ")
         .append(toIndentedString(childDocValidityYears))
+        .append("\n");
+    sb.append("    livenessTransactionId: ")
+        .append(toIndentedString(livenessTransactionId))
         .append("\n");
     sb.append("}");
     return sb.toString();
@@ -374,7 +404,8 @@ public class FaceApi {
                 "proxy_userpwd",
                 "proxy_type",
                 "childAgeThreshold",
-                "childDocValidityYears"));
+                "childDocValidityYears",
+                "livenessTransactionId"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -429,6 +460,14 @@ public class FaceApi {
           String.format(
               "Expected the field `proxy_userpwd` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("proxy_userpwd").toString()));
+    }
+    if ((jsonObj.get("livenessTransactionId") != null
+            && !jsonObj.get("livenessTransactionId").isJsonNull())
+        && !jsonObj.get("livenessTransactionId").isJsonPrimitive()) {
+      System.err.println(
+          String.format(
+              "Expected the field `livenessTransactionId` to be a primitive type in the JSON string but got `%s`",
+              jsonObj.get("livenessTransactionId").toString()));
     }
   }
 
