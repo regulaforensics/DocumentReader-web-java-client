@@ -85,6 +85,12 @@ public class Healthcheck {
   @javax.annotation.Nullable
   private Map<String, Object> metadata;
 
+  public static final String SERIALIZED_NAME_COUNTRY_FILTER = "countryFilter";
+
+  @SerializedName(SERIALIZED_NAME_COUNTRY_FILTER)
+  @javax.annotation.Nullable
+  private List<String> countryFilter;
+
   public static final String SERIALIZED_NAME_DOCUMENTS_DATABASE = "documentsDatabase";
 
   @SerializedName(SERIALIZED_NAME_DOCUMENTS_DATABASE)
@@ -262,6 +268,34 @@ public class Healthcheck {
     this.metadata = metadata;
   }
 
+  public Healthcheck countryFilter(@javax.annotation.Nullable List<String> countryFilter) {
+    this.countryFilter = countryFilter;
+    return this;
+  }
+
+  public Healthcheck addCountryFilterItem(String countryFilterItem) {
+    if (this.countryFilter == null) {
+      this.countryFilter = new ArrayList<>();
+    }
+    this.countryFilter.add(countryFilterItem);
+    return this;
+  }
+
+  /**
+   * The list of country identifiers that are defined for processing in the license. If the array is
+   * empty, there are no restrictions for processing.
+   *
+   * @return countryFilter
+   */
+  @javax.annotation.Nullable
+  public List<String> getCountryFilter() {
+    return countryFilter;
+  }
+
+  public void setCountryFilter(@javax.annotation.Nullable List<String> countryFilter) {
+    this.countryFilter = countryFilter;
+  }
+
   public Healthcheck documentsDatabase(
       @javax.annotation.Nullable HealthcheckDocumentsDatabase documentsDatabase) {
     this.documentsDatabase = documentsDatabase;
@@ -300,6 +334,7 @@ public class Healthcheck {
         && Objects.equals(this.scenarios, healthcheck.scenarios)
         && Objects.equals(this.version, healthcheck.version)
         && Objects.equals(this.metadata, healthcheck.metadata)
+        && Objects.equals(this.countryFilter, healthcheck.countryFilter)
         && Objects.equals(this.documentsDatabase, healthcheck.documentsDatabase);
   }
 
@@ -314,6 +349,7 @@ public class Healthcheck {
         scenarios,
         version,
         metadata,
+        countryFilter,
         documentsDatabase);
   }
 
@@ -329,6 +365,7 @@ public class Healthcheck {
     sb.append("    scenarios: ").append(toIndentedString(scenarios)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    countryFilter: ").append(toIndentedString(countryFilter)).append("\n");
     sb.append("    documentsDatabase: ").append(toIndentedString(documentsDatabase)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -360,6 +397,7 @@ public class Healthcheck {
                 "scenarios",
                 "version",
                 "metadata",
+                "countryFilter",
                 "documentsDatabase"));
 
     // a set of required properties/fields (JSON key names)
@@ -445,6 +483,15 @@ public class Healthcheck {
           String.format(
               "Expected the field `version` to be a primitive type in the JSON string but got `%s`",
               jsonObj.get("version").toString()));
+    }
+    // ensure the optional json data is an array if present
+    if (jsonObj.get("countryFilter") != null
+        && !jsonObj.get("countryFilter").isJsonNull()
+        && !jsonObj.get("countryFilter").isJsonArray()) {
+      System.err.println(
+          String.format(
+              "Expected the field `countryFilter` to be an array in the JSON string but got `%s`",
+              jsonObj.get("countryFilter").toString()));
     }
     // validate the optional field `documentsDatabase`
     if (jsonObj.get("documentsDatabase") != null
