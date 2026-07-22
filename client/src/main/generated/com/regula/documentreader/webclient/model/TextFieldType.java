@@ -1986,7 +1986,16 @@ public enum TextFieldType {
   FT_DATA_DATE_OF_EXPIRY(704),
 
   /** Consul */
-  FT_CONSUL(705);
+  FT_CONSUL(705),
+
+  /** DL category B3 valid from */
+  DL_CLASS_CODE_B3_FROM(706),
+
+  /** DL category B3 valid to */
+  DL_CLASS_CODE_B3_TO(707),
+
+  /** DL category B3 codes */
+  DL_CLASS_CODE_B3_NOTES(708);
 
   private Integer value;
 
