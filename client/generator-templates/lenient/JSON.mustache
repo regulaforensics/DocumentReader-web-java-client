@@ -81,15 +81,18 @@ public class JSON {
                     try {
                         return delegate.read(in);
                     } catch (Exception e) {
-                        System.err.println("Warning: failed to parse field of type "
-                                + type + ", reason: " + e.getMessage());
-                        in.skipValue();
+                        System.err.println("Warning: failed to parse field of type " + type.getRawType().getSimpleName()
+                                + ", reason: " + e.getMessage());
+                        try {
+                            in.skipValue();
+                        } catch (Exception ignored) {
+                        }
 
-                        if (type.getRawType() == ResultItem.class) {
+                        if (ResultItem.class.isAssignableFrom(type.getRawType())) {
                             try {
-                                return (T) ResultItem.class.getDeclaredConstructor().newInstance();
+                                return (T) type.getRawType().getDeclaredConstructor().newInstance();
                             } catch (Exception ex) {
-                                throw new IOException("Failed to create default ResultItem", ex);
+                                return null;
                             }
                         }
 
