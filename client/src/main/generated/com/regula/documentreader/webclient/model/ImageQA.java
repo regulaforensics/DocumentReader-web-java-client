@@ -94,6 +94,12 @@ public class ImageQA {
   @javax.annotation.Nullable
   private GlaresCheckParams glaresCheckParams;
 
+  public static final String SERIALIZED_NAME_OCCLUSION_CHECK = "occlusionCheck";
+
+  @SerializedName(SERIALIZED_NAME_OCCLUSION_CHECK)
+  @javax.annotation.Nullable
+  private Boolean occlusionCheck;
+
   public static final String SERIALIZED_NAME_OCCLUSION_CHECK_PARAMS = "occlusionCheckParams";
 
   @SerializedName(SERIALIZED_NAME_OCCLUSION_CHECK_PARAMS)
@@ -306,6 +312,26 @@ public class ImageQA {
     this.glaresCheckParams = glaresCheckParams;
   }
 
+  public ImageQA occlusionCheck(@javax.annotation.Nullable Boolean occlusionCheck) {
+    this.occlusionCheck = occlusionCheck;
+    return this;
+  }
+
+  /**
+   * This option enables the occlusion detection to identify cases where parts of a document are
+   * covered by fingers, hands, or other objects during image capture.
+   *
+   * @return occlusionCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getOcclusionCheck() {
+    return occlusionCheck;
+  }
+
+  public void setOcclusionCheck(@javax.annotation.Nullable Boolean occlusionCheck) {
+    this.occlusionCheck = occlusionCheck;
+  }
+
   public ImageQA occlusionCheckParams(
       @javax.annotation.Nullable OcclusionCheckParams occlusionCheckParams) {
     this.occlusionCheckParams = occlusionCheckParams;
@@ -346,6 +372,7 @@ public class ImageQA {
         && Objects.equals(this.documentPositionIndent, imageQA.documentPositionIndent)
         && Objects.equals(this.expectedPass, imageQA.expectedPass)
         && Objects.equals(this.glaresCheckParams, imageQA.glaresCheckParams)
+        && Objects.equals(this.occlusionCheck, imageQA.occlusionCheck)
         && Objects.equals(this.occlusionCheckParams, imageQA.occlusionCheckParams);
   }
 
@@ -362,6 +389,7 @@ public class ImageQA {
         documentPositionIndent,
         expectedPass,
         glaresCheckParams,
+        occlusionCheck,
         occlusionCheckParams);
   }
 
@@ -383,6 +411,7 @@ public class ImageQA {
         .append("\n");
     sb.append("    expectedPass: ").append(toIndentedString(expectedPass)).append("\n");
     sb.append("    glaresCheckParams: ").append(toIndentedString(glaresCheckParams)).append("\n");
+    sb.append("    occlusionCheck: ").append(toIndentedString(occlusionCheck)).append("\n");
     sb.append("    occlusionCheckParams: ")
         .append(toIndentedString(occlusionCheckParams))
         .append("\n");
@@ -418,6 +447,7 @@ public class ImageQA {
                 "documentPositionIndent",
                 "expectedPass",
                 "glaresCheckParams",
+                "occlusionCheck",
                 "occlusionCheckParams"));
 
     // a set of required properties/fields (JSON key names)
