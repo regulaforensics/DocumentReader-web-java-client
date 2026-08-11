@@ -1281,6 +1281,9 @@ public class JSON {
         new com.regula.documentreader.webclient.model.OCRSecurityTextResult
             .CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
+        new com.regula.documentreader.webclient.model.OcclusionCheckParams
+            .CustomTypeAdapterFactory());
+    gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.OneCandidate.CustomTypeAdapterFactory());
     gsonBuilder.registerTypeAdapterFactory(
         new com.regula.documentreader.webclient.model.OneCandidateItem.CustomTypeAdapterFactory());

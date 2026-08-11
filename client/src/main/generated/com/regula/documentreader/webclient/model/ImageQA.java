@@ -94,6 +94,18 @@ public class ImageQA {
   @javax.annotation.Nullable
   private GlaresCheckParams glaresCheckParams;
 
+  public static final String SERIALIZED_NAME_OCCLUSION_CHECK = "occlusionCheck";
+
+  @SerializedName(SERIALIZED_NAME_OCCLUSION_CHECK)
+  @javax.annotation.Nullable
+  private Boolean occlusionCheck;
+
+  public static final String SERIALIZED_NAME_OCCLUSION_CHECK_PARAMS = "occlusionCheckParams";
+
+  @SerializedName(SERIALIZED_NAME_OCCLUSION_CHECK_PARAMS)
+  @javax.annotation.Nullable
+  private OcclusionCheckParams occlusionCheckParams;
+
   public ImageQA() {}
 
   public ImageQA brightnessThreshold(@javax.annotation.Nullable Double brightnessThreshold) {
@@ -300,6 +312,47 @@ public class ImageQA {
     this.glaresCheckParams = glaresCheckParams;
   }
 
+  public ImageQA occlusionCheck(@javax.annotation.Nullable Boolean occlusionCheck) {
+    this.occlusionCheck = occlusionCheck;
+    return this;
+  }
+
+  /**
+   * This option enables the occlusion detection to identify cases where parts of a document are
+   * covered by fingers, hands, or other objects during image capture.
+   *
+   * @return occlusionCheck
+   */
+  @javax.annotation.Nullable
+  public Boolean getOcclusionCheck() {
+    return occlusionCheck;
+  }
+
+  public void setOcclusionCheck(@javax.annotation.Nullable Boolean occlusionCheck) {
+    this.occlusionCheck = occlusionCheck;
+  }
+
+  public ImageQA occlusionCheckParams(
+      @javax.annotation.Nullable OcclusionCheckParams occlusionCheckParams) {
+    this.occlusionCheckParams = occlusionCheckParams;
+    return this;
+  }
+
+  /**
+   * Get occlusionCheckParams
+   *
+   * @return occlusionCheckParams
+   */
+  @javax.annotation.Nullable
+  public OcclusionCheckParams getOcclusionCheckParams() {
+    return occlusionCheckParams;
+  }
+
+  public void setOcclusionCheckParams(
+      @javax.annotation.Nullable OcclusionCheckParams occlusionCheckParams) {
+    this.occlusionCheckParams = occlusionCheckParams;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -318,7 +371,9 @@ public class ImageQA {
         && Objects.equals(this.moireCheck, imageQA.moireCheck)
         && Objects.equals(this.documentPositionIndent, imageQA.documentPositionIndent)
         && Objects.equals(this.expectedPass, imageQA.expectedPass)
-        && Objects.equals(this.glaresCheckParams, imageQA.glaresCheckParams);
+        && Objects.equals(this.glaresCheckParams, imageQA.glaresCheckParams)
+        && Objects.equals(this.occlusionCheck, imageQA.occlusionCheck)
+        && Objects.equals(this.occlusionCheckParams, imageQA.occlusionCheckParams);
   }
 
   @Override
@@ -333,7 +388,9 @@ public class ImageQA {
         moireCheck,
         documentPositionIndent,
         expectedPass,
-        glaresCheckParams);
+        glaresCheckParams,
+        occlusionCheck,
+        occlusionCheckParams);
   }
 
   @Override
@@ -354,6 +411,10 @@ public class ImageQA {
         .append("\n");
     sb.append("    expectedPass: ").append(toIndentedString(expectedPass)).append("\n");
     sb.append("    glaresCheckParams: ").append(toIndentedString(glaresCheckParams)).append("\n");
+    sb.append("    occlusionCheck: ").append(toIndentedString(occlusionCheck)).append("\n");
+    sb.append("    occlusionCheckParams: ")
+        .append(toIndentedString(occlusionCheckParams))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -385,7 +446,9 @@ public class ImageQA {
                 "moireCheck",
                 "documentPositionIndent",
                 "expectedPass",
-                "glaresCheckParams"));
+                "glaresCheckParams",
+                "occlusionCheck",
+                "occlusionCheckParams"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -422,6 +485,11 @@ public class ImageQA {
     if (jsonObj.get("glaresCheckParams") != null
         && !jsonObj.get("glaresCheckParams").isJsonNull()) {
       GlaresCheckParams.validateJsonElement(jsonObj.get("glaresCheckParams"));
+    }
+    // validate the optional field `occlusionCheckParams`
+    if (jsonObj.get("occlusionCheckParams") != null
+        && !jsonObj.get("occlusionCheckParams").isJsonNull()) {
+      OcclusionCheckParams.validateJsonElement(jsonObj.get("occlusionCheckParams"));
     }
   }
 
