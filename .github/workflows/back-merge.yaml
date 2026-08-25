@@ -1,0 +1,16 @@
+name: Back Merge
+
+on:
+  push:
+    branches:
+      - master
+      - stable
+
+jobs:
+  back-merge:
+    uses: regulaforensics/reusable-workflows/.github/workflows/back-merge.yaml@d5ff11c5b3e91114b2ecd3bdab3422c641159826 # main
+    with:
+      source_branch: ${{ github.ref_name }}
+      merge_pairs: "master:stable,stable:develop"
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
