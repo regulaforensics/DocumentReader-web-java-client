@@ -105,7 +105,6 @@ public class ProcessParams {
 
   public static final String SERIALIZED_NAME_DOUBLE_PAGE_SPREAD = "doublePageSpread";
 
-  @Deprecated
   @SerializedName(SERIALIZED_NAME_DOUBLE_PAGE_SPREAD)
   @javax.annotation.Nullable
   private Boolean doublePageSpread;
@@ -703,28 +702,23 @@ public class ProcessParams {
     this.resultTypeOutput = resultTypeOutput;
   }
 
-  @Deprecated
   public ProcessParams doublePageSpread(@javax.annotation.Nullable Boolean doublePageSpread) {
     this.doublePageSpread = doublePageSpread;
     return this;
   }
 
   /**
-   * Enable this option if the image you provide contains double page spread of the passport and you
-   * want to process both pages in one go. It makes sense to use it for documents that have
-   * meaningful information on both pages, like Russian domestic passport, or some others. Disabled
-   * by default.
+   * This option can be set to true if the image you provide contains double page spread of the
+   * passport and you want to process both pages in one go. It makes sense to use it for documents
+   * that have meaningful information on both pages. If disabled, only one page is extracted.
    *
    * @return doublePageSpread
-   * @deprecated
    */
-  @Deprecated
   @javax.annotation.Nullable
   public Boolean getDoublePageSpread() {
     return doublePageSpread;
   }
 
-  @Deprecated
   public void setDoublePageSpread(@javax.annotation.Nullable Boolean doublePageSpread) {
     this.doublePageSpread = doublePageSpread;
   }
