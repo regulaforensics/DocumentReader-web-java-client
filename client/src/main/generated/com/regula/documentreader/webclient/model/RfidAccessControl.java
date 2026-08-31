@@ -19,43 +19,25 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/**
- * Enumeration contains a set of constants specifying the rate of data exchange between the reader
- * and the RFID-chip
- */
-@JsonAdapter(RfidPasswordType.Adapter.class)
-public enum RfidPasswordType {
+/** Gets or Sets RfidAccessControl */
+@JsonAdapter(RfidAccessControl.Adapter.class)
+public enum RfidAccessControl {
 
-  /** Unknown type */
-  UNKNOWN(0),
+  /** Default */
+  DEFAULT(0),
 
-  /** MRZ */
-  MRZ(1),
+  /** Chip access BAC */
+  CHIP_ACCESS_BAC(1),
 
-  /** CAN */
-  CAN(2),
+  /** Chip access PACE */
+  CHIP_ACCESS_PACE(2),
 
-  /** PIN */
-  PIN(3),
-
-  /** PUK */
-  PUK(4),
-
-  /** eSign-PIN */
-  PIN_E_SIGN(5),
-
-  /** Scanning Area Identifier (for eDL application) */
-  SAI(6),
-
-  /** MRZ hash */
-  MRZ_HASH(7),
-
-  /** PIN (local) */
-  PIN_LOCAL(8);
+  /** Local PIN */
+  LOCAL_PIN(3);
 
   private Integer value;
 
-  RfidPasswordType(Integer value) {
+  RfidAccessControl(Integer value) {
     this.value = value;
   }
 
@@ -68,8 +50,8 @@ public enum RfidPasswordType {
     return String.valueOf(value);
   }
 
-  public static RfidPasswordType fromValue(Integer value) {
-    for (RfidPasswordType b : RfidPasswordType.values()) {
+  public static RfidAccessControl fromValue(Integer value) {
+    for (RfidAccessControl b : RfidAccessControl.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -77,22 +59,22 @@ public enum RfidPasswordType {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<RfidPasswordType> {
+  public static class Adapter extends TypeAdapter<RfidAccessControl> {
     @Override
-    public void write(final JsonWriter jsonWriter, final RfidPasswordType enumeration)
+    public void write(final JsonWriter jsonWriter, final RfidAccessControl enumeration)
         throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public RfidPasswordType read(final JsonReader jsonReader) throws IOException {
+    public RfidAccessControl read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return RfidPasswordType.fromValue(value);
+      return RfidAccessControl.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     Integer value = jsonElement.getAsInt();
-    RfidPasswordType.fromValue(value);
+    RfidAccessControl.fromValue(value);
   }
 }
