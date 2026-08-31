@@ -19,22 +19,25 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Make better MRZ detection on complex noisy backgrounds, like BW photocopy of some documents. */
-@JsonAdapter(MrzDetectModeEnum.Adapter.class)
-public enum MrzDetectModeEnum {
+/** Gets or Sets RfidAccessControl */
+@JsonAdapter(RfidAccessControl.Adapter.class)
+public enum RfidAccessControl {
 
-  /** Default detection mode */
-  eMDM_Default(0),
+  /** Default */
+  DEFAULT(0),
 
-  /** Apply window resizing for image binarization */
-  eMDM_ResizeBinarizeWindow(1),
+  /** Chip access BAC */
+  CHIP_ACCESS_BAC(1),
 
-  /** Apply blur image processing before binarization */
-  eMDM_BlurBeforeBinarization(2);
+  /** Chip access PACE */
+  CHIP_ACCESS_PACE(2),
+
+  /** Local PIN */
+  LOCAL_PIN(3);
 
   private Integer value;
 
-  MrzDetectModeEnum(Integer value) {
+  RfidAccessControl(Integer value) {
     this.value = value;
   }
 
@@ -47,8 +50,8 @@ public enum MrzDetectModeEnum {
     return String.valueOf(value);
   }
 
-  public static MrzDetectModeEnum fromValue(Integer value) {
-    for (MrzDetectModeEnum b : MrzDetectModeEnum.values()) {
+  public static RfidAccessControl fromValue(Integer value) {
+    for (RfidAccessControl b : RfidAccessControl.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -56,22 +59,22 @@ public enum MrzDetectModeEnum {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<MrzDetectModeEnum> {
+  public static class Adapter extends TypeAdapter<RfidAccessControl> {
     @Override
-    public void write(final JsonWriter jsonWriter, final MrzDetectModeEnum enumeration)
+    public void write(final JsonWriter jsonWriter, final RfidAccessControl enumeration)
         throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public MrzDetectModeEnum read(final JsonReader jsonReader) throws IOException {
+    public RfidAccessControl read(final JsonReader jsonReader) throws IOException {
       Integer value = jsonReader.nextInt();
-      return MrzDetectModeEnum.fromValue(value);
+      return RfidAccessControl.fromValue(value);
     }
   }
 
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
     Integer value = jsonElement.getAsInt();
-    MrzDetectModeEnum.fromValue(value);
+    RfidAccessControl.fromValue(value);
   }
 }

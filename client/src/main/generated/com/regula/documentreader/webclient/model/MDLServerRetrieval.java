@@ -22,8 +22,11 @@ import java.io.IOException;
 /** Gets or Sets MDLServerRetrieval */
 @JsonAdapter(MDLServerRetrieval.Adapter.class)
 public enum MDLServerRetrieval {
+
+  /** Retrieval using the Web API */
   WEB_API(0),
 
+  /** Retrieval using OpenID Connect */
   OIDC(1);
 
   private Integer value;
