@@ -22,10 +22,14 @@ import java.io.IOException;
 /** Gets or Sets MDLDeviceRetrieval */
 @JsonAdapter(MDLDeviceRetrieval.Adapter.class)
 public enum MDLDeviceRetrieval {
+
+  /** Device Retrieval using the NFC module */
   NFC(1),
 
+  /** Device Retrieval using the Bluetooth module */
   BLE(2),
 
+  /** Device Retrieval using the Wi-Fi Aware module */
   WIFI_AWARE(3);
 
   private Integer value;

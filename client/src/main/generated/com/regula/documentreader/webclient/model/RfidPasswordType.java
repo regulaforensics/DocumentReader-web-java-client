@@ -48,7 +48,10 @@ public enum RfidPasswordType {
   SAI(6),
 
   /** MRZ hash */
-  MRZ_HASH(7);
+  MRZ_HASH(7),
+
+  /** PIN (local) */
+  PIN_LOCAL(8);
 
   private Integer value;
 
