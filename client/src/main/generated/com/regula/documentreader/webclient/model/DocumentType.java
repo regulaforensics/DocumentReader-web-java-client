@@ -503,8 +503,8 @@ public enum DocumentType {
   /** Passport card */
   PASSPORT_CARD(172),
 
-  /** Passport resident card */
-  PASSPORT_RESIDENT_CARD(173),
+  /** Permanent resident card */
+  PERMANENT_RESIDENT_CARD(173),
 
   /** Personal identification verification */
   PERSONAL_IDENTIFICATION_VERIFICATION(174),
