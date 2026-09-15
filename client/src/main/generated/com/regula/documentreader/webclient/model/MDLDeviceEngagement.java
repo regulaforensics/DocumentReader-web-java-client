@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets MDLDeviceEngagement */
+/** Enumeration contains possible data engagement methods with mDL */
 @JsonAdapter(MDLDeviceEngagement.Adapter.class)
 public enum MDLDeviceEngagement {
 

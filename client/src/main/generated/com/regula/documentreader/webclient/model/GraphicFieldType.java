@@ -19,7 +19,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets GraphicFieldType */
+/**
+ * Enumeration contains identifiers determining the logical type of the graphic data obtained while
+ * reading document filling fields or barcodes
+ */
 @JsonAdapter(GraphicFieldType.Adapter.class)
 public enum GraphicFieldType {
 
