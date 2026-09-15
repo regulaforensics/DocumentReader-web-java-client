@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets ProcessingStatus */
+/** Enumeration contains a set of constants that define scanning process completion status */
 @JsonAdapter(ProcessingStatus.Adapter.class)
 public enum ProcessingStatus {
 

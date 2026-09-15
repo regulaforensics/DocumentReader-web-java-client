@@ -19,7 +19,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets MeasureSystem */
+/**
+ * Enumeration contains a pool of constants that identify the system for measuring distances and
+ * weight
+ */
 @JsonAdapter(MeasureSystem.Adapter.class)
 public enum MeasureSystem {
 

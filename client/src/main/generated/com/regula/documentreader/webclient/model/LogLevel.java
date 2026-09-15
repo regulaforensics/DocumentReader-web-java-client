@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets LogLevel */
+/** Enumeration contains identificators which determinate the level of logs detalization */
 @JsonAdapter(LogLevel.Adapter.class)
 public enum LogLevel {
 
