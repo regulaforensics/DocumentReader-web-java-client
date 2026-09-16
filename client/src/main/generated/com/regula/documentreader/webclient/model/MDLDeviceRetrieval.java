@@ -19,7 +19,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets MDLDeviceRetrieval */
+/** Enumeration contains possible data retrieval methods from mDL */
 @JsonAdapter(MDLDeviceRetrieval.Adapter.class)
 public enum MDLDeviceRetrieval {
 

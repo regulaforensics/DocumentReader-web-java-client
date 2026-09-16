@@ -19,7 +19,10 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-/** Gets or Sets Result */
+/**
+ * Enumeration contains a pool of constants which determine the type of resulting data formed during
+ * the data scanning and processing cycle and passed to the user application
+ */
 @JsonAdapter(Result.Adapter.class)
 public enum Result {
 
