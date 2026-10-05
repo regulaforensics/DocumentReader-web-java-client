@@ -246,7 +246,8 @@ public class TextFieldValue {
   }
 
   /**
-   * Get fieldRect
+   * Only for visual and mrz results. Coordinates of the rectangle region on a document image(result
+   * type 1). Represented by two points - (left, top) + (right, bottom)
    *
    * @return fieldRect
    */
@@ -265,7 +266,7 @@ public class TextFieldValue {
   }
 
   /**
-   * Get rfidOrigin
+   * Only for RFID images. Text location in RFID chip.
    *
    * @return rfidOrigin
    */
