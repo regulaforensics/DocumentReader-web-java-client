@@ -77,7 +77,7 @@ public class TextAvailableSource {
   }
 
   /**
-   * Get validityStatus
+   * Overall status of validity from all fields for given source
    *
    * @return validityStatus
    */

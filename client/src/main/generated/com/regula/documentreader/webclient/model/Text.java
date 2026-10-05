@@ -79,7 +79,7 @@ public class Text {
   }
 
   /**
-   * Get status
+   * Overall status of all checks from all text fields
    *
    * @return status
    */
@@ -98,7 +98,7 @@ public class Text {
   }
 
   /**
-   * Get validityStatus
+   * Overall status of validity from all text fields from all sources
    *
    * @return validityStatus
    */
@@ -117,7 +117,7 @@ public class Text {
   }
 
   /**
-   * Get comparisonStatus
+   * Overall status of data comparison from different sources for each text field
    *
    * @return comparisonStatus
    */

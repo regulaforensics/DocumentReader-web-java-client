@@ -840,7 +840,8 @@ public class ProcessParams {
   }
 
   /**
-   * Get measureSystem
+   * This option allows you to set the system of measurement used for converting original values in
+   * document to output result values. Metric by default.
    *
    * @return measureSystem
    */
@@ -977,7 +978,8 @@ public class ProcessParams {
   }
 
   /**
-   * Get logLevel
+   * When used together with &#39;log&#39; parameter enabled, sets the level of logs detalization.
+   * &#39;INFO&#39; by default.
    *
    * @return logLevel
    */
@@ -1189,7 +1191,8 @@ public class ProcessParams {
   }
 
   /**
-   * Get forceDocFormat
+   * Force use of specified document format when locating and recognizing document to reduce the
+   * number of candidates.
    *
    * @return forceDocFormat
    */
@@ -1376,7 +1379,8 @@ public class ProcessParams {
   }
 
   /**
-   * Get convertCase
+   * This option allows output text case transformation. No changes applied by default to original
+   * values.
    *
    * @return convertCase
    */

@@ -135,7 +135,7 @@ public class FiberItem {
   }
 
   /**
-   * Get lightValue
+   * For UV_Background authentication result type
    *
    * @return lightValue
    */
@@ -289,7 +289,7 @@ public class FiberItem {
   }
 
   /**
-   * Fibers color value
+   * Fibers color value. Example: [BLUE, GREEN, RED]
    *
    * @return colorValues
    */
