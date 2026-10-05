@@ -82,7 +82,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get overallStatus
+   * Overall RFID checks combined status
    *
    * @return overallStatus
    */
@@ -101,7 +101,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get AA
+   * Active Authentication status
    *
    * @return AA
    */
@@ -120,7 +120,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get BAC
+   * Basic Access Control (BAC) status
    *
    * @return BAC
    */
@@ -139,7 +139,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get CA
+   * Chip Authentication status
    *
    * @return CA
    */
@@ -158,7 +158,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get PA
+   * Passive Authentication status
    *
    * @return PA
    */
@@ -177,7 +177,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get PACE
+   * Password Authenticated Connection Establishment (PACE) status
    *
    * @return PACE
    */
@@ -196,7 +196,7 @@ public class DetailsRFID {
   }
 
   /**
-   * Get TA
+   * Terminal Authentication status
    *
    * @return TA
    */

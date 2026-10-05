@@ -134,7 +134,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
   }
 
   /**
-   * Get lightValue
+   * For UV_Background authentication result type
    *
    * @return lightValue
    */
@@ -288,7 +288,7 @@ public class FiberResult extends AuthenticityCheckResultItem {
   }
 
   /**
-   * Fibers color value
+   * Fibers color value. Example: [BLUE, GREEN, RED]
    *
    * @return colorValues
    */

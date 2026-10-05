@@ -56,7 +56,7 @@ public class DocumentTypesCandidatesList {
   }
 
   /**
-   * Get recResult
+   * Overall recognition result
    *
    * @return recResult
    */
