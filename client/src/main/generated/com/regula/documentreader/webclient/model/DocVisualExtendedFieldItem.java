@@ -47,7 +47,8 @@ public class DocVisualExtendedFieldItem {
   }
 
   /**
-   * Get fieldRect
+   * Coordinates of the text field in the normalized image of the document. Only for
+   * Result.VISUAL_TEXT and Result.MRZ_TEXT results.
    *
    * @return fieldRect
    */

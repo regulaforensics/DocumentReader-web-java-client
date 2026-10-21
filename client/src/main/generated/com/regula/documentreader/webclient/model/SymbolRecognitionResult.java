@@ -75,7 +75,7 @@ public class SymbolRecognitionResult {
   }
 
   /**
-   * Get symbolRect
+   * Coordinates of the symbol in the normalized image of the document
    *
    * @return symbolRect
    */

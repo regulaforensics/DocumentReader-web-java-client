@@ -100,7 +100,7 @@ public class Status {
   }
 
   /**
-   * Get overallStatus
+   * Overall checks status. Rootx status
    *
    * @return overallStatus
    */
@@ -119,7 +119,7 @@ public class Status {
   }
 
   /**
-   * Get optical
+   * Overall optical checks combined status
    *
    * @return optical
    */
@@ -138,7 +138,7 @@ public class Status {
   }
 
   /**
-   * Get portrait
+   * Portrait comparison status
    *
    * @return portrait
    */
@@ -157,7 +157,7 @@ public class Status {
   }
 
   /**
-   * Get rfid
+   * Overall RFID checks combined status
    *
    * @return rfid
    */
@@ -176,7 +176,7 @@ public class Status {
   }
 
   /**
-   * Get stopList
+   * Stop list check status
    *
    * @return stopList
    */

@@ -132,7 +132,7 @@ public class ImagesFieldValue {
   }
 
   /**
-   * Base64 encoded image
+   * Only for images from RFID. Image as was originally stored in the RFID chip.
    *
    * @return originalValue
    */
@@ -227,7 +227,7 @@ public class ImagesFieldValue {
   }
 
   /**
-   * Get fieldRect
+   * Only for images from VISUAL. Coordinates of the image in the normalized image of the document.
    *
    * @return fieldRect
    */
@@ -246,7 +246,7 @@ public class ImagesFieldValue {
   }
 
   /**
-   * Get rfidOrigin
+   * Only for images from RFID. Image location in RFID chip.
    *
    * @return rfidOrigin
    */

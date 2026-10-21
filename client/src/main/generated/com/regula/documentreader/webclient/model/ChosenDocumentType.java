@@ -191,7 +191,7 @@ public class ChosenDocumentType {
   }
 
   /**
-   * Get rfIDPresence
+   * Indication of the presence of an RFID chip in the document (electronic document indicator)
    *
    * @return rfIDPresence
    */

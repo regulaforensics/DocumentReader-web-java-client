@@ -62,7 +62,7 @@ public class ImageQualityCheckList {
   }
 
   /**
-   * Get result
+   * Overall image quality status, combined from check statuses in the list.
    *
    * @return result
    */

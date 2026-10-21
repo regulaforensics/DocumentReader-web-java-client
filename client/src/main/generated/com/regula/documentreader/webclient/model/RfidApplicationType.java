@@ -53,10 +53,10 @@ public enum RfidApplicationType {
   /** Digital Travel Credentials */
   eDTC_PC(8),
 
-  /** Master File */
+  /** Applet root */
   APPLET_ROOT(50),
 
-  /** Applet root */
+  /** User defined */
   USER_DEFINED(100);
 
   private Integer value;

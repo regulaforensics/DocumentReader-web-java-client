@@ -186,7 +186,7 @@ public class TextField {
   }
 
   /**
-   * Get status
+   * Overall status of all checks from all values
    *
    * @return status
    */
@@ -205,7 +205,7 @@ public class TextField {
   }
 
   /**
-   * Get validityStatus
+   * Overall status of validity from all values
    *
    * @return validityStatus
    */
@@ -224,7 +224,7 @@ public class TextField {
   }
 
   /**
-   * Get comparisonStatus
+   * Overall status of data comparison from different sources
    *
    * @return comparisonStatus
    */

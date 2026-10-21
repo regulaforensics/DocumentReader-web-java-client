@@ -139,7 +139,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   }
 
   /**
-   * Get image
+   * Original image
    *
    * @return image
    */
@@ -158,7 +158,7 @@ public class IdentResult extends AuthenticityCheckResultItem {
   }
 
   /**
-   * Get etalonImage
+   * Reference image
    *
    * @return etalonImage
    */

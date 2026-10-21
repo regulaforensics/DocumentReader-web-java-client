@@ -94,7 +94,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get overallStatus
+   * Overall optical checks combined status
    *
    * @return overallStatus
    */
@@ -113,7 +113,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get docType
+   * Status of document type recognition
    *
    * @return docType
    */
@@ -132,7 +132,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get expiry
+   * Status of document expiration
    *
    * @return expiry
    */
@@ -151,7 +151,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get imageQA
+   * Status of document image quality check
    *
    * @return imageQA
    */
@@ -170,7 +170,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get mrz
+   * Status of document MRZ
    *
    * @return mrz
    */
@@ -208,7 +208,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get security
+   * Authenticity verification status
    *
    * @return security
    */
@@ -227,7 +227,7 @@ public class DetailsOptical {
   }
 
   /**
-   * Get text
+   * Status of text fields analysis
    *
    * @return text
    */

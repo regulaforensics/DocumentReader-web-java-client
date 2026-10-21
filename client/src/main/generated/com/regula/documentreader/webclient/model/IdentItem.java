@@ -139,7 +139,7 @@ public class IdentItem {
   }
 
   /**
-   * Get image
+   * Original image
    *
    * @return image
    */
@@ -158,7 +158,7 @@ public class IdentItem {
   }
 
   /**
-   * Get etalonImage
+   * Reference image
    *
    * @return etalonImage
    */
