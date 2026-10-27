@@ -38,6 +38,12 @@ public class PropertiesParams {
   @javax.annotation.Nullable
   private Boolean checkHoldersSignature;
 
+  public static final String SERIALIZED_NAME_CHECK_DOCUMENT_DAMAGE = "checkDocumentDamage";
+
+  @SerializedName(SERIALIZED_NAME_CHECK_DOCUMENT_DAMAGE)
+  @javax.annotation.Nullable
+  private Boolean checkDocumentDamage;
+
   public PropertiesParams() {}
 
   public PropertiesParams checkHoldersSignature(
@@ -60,6 +66,26 @@ public class PropertiesParams {
     this.checkHoldersSignature = checkHoldersSignature;
   }
 
+  public PropertiesParams checkDocumentDamage(
+      @javax.annotation.Nullable Boolean checkDocumentDamage) {
+    this.checkDocumentDamage = checkDocumentDamage;
+    return this;
+  }
+
+  /**
+   * Set to true to enable detection of damaged or defaced documents.
+   *
+   * @return checkDocumentDamage
+   */
+  @javax.annotation.Nullable
+  public Boolean getCheckDocumentDamage() {
+    return checkDocumentDamage;
+  }
+
+  public void setCheckDocumentDamage(@javax.annotation.Nullable Boolean checkDocumentDamage) {
+    this.checkDocumentDamage = checkDocumentDamage;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -69,12 +95,13 @@ public class PropertiesParams {
       return false;
     }
     PropertiesParams propertiesParams = (PropertiesParams) o;
-    return Objects.equals(this.checkHoldersSignature, propertiesParams.checkHoldersSignature);
+    return Objects.equals(this.checkHoldersSignature, propertiesParams.checkHoldersSignature)
+        && Objects.equals(this.checkDocumentDamage, propertiesParams.checkDocumentDamage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(checkHoldersSignature);
+    return Objects.hash(checkHoldersSignature, checkDocumentDamage);
   }
 
   @Override
@@ -83,6 +110,9 @@ public class PropertiesParams {
     sb.append("class PropertiesParams {\n");
     sb.append("    checkHoldersSignature: ")
         .append(toIndentedString(checkHoldersSignature))
+        .append("\n");
+    sb.append("    checkDocumentDamage: ")
+        .append(toIndentedString(checkDocumentDamage))
         .append("\n");
     sb.append("}");
     return sb.toString();
@@ -103,7 +133,8 @@ public class PropertiesParams {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("checkHoldersSignature"));
+    openapiFields =
+        new HashSet<String>(Arrays.asList("checkHoldersSignature", "checkDocumentDamage"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
