@@ -210,7 +210,10 @@ public enum SecurityFeatureType {
   PORTRAIT_COMPARISON_EXT_VS_GHOST(61),
 
   /** Signature presence */
-  SIGNATURE_PRESENCE(62);
+  SIGNATURE_PRESENCE(62),
+
+  /** Damage check */
+  DAMAGE_CHECK(63);
 
   private Integer value;
 

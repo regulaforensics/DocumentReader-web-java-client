@@ -421,7 +421,13 @@ public enum CheckDiagnose {
   PROPERTY_TEXT_AS_SIGNATURE(261),
 
   /** Fingerprint as signature */
-  PROPERTY_FINGERPRINT_AS_SIGNATURE(262);
+  PROPERTY_FINGERPRINT_AS_SIGNATURE(262),
+
+  /** Document damaged */
+  PROPERTY_DOCUMENT_DAMAGED(263),
+
+  /** Document cancelled */
+  PROPERTY_DOCUMENT_CANCELLED(264);
 
   private Integer value;
 
