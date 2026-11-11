@@ -97,7 +97,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     }
 
     tasks.register("runMavenClean") {
-        val typeParam = (project.findProperty("type") as? String) ?: ""
+        val typeParam = (project.findProperty("Type") as? String) ?: ""
         val regulaforensicsMavenPassword: String by project
         val regulaforensicsMavenUser: String by project
         val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
