@@ -19,6 +19,7 @@ fi
     FTP_HOST="maven-master.regulaforensics.com"
     FTP_USER="$LOGIN"
     FTP_PASS="$PASSW"
+    echo "LOGIN ${LOGIN}"
     FTP_BASE_URL="https://maven-master.regulaforensics.com/RegulaDocumentReaderWebClient/$TYPE"
     FTP_PATH="RegulaDocumentReaderWebClient/$TYPE/"
 
