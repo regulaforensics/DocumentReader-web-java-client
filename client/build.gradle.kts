@@ -48,6 +48,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     val regulaforensicsMavenPassword: String by project
     val regulaforensicsMavenUser: String by project
     val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
+    println("Bunny: ${bunnyCreds}")
 
     val type = when {
         version.toString().contains("beta", ignoreCase = true) -> "Beta"
@@ -100,6 +101,8 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
         val regulaforensicsMavenPassword: String by project
         val regulaforensicsMavenUser: String by project
         val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
+
+        println("Bunny: ${bunnyCreds}")
 
         val scriptDir = project.rootProject.file("scripts")
 
