@@ -157,7 +157,7 @@ process_ftp_storage() {
                 echo "FTP Version: $version | Age: $age days"
 
                 if [ "$age" -gt "$DELETE_OLDER" ]; then
-                    echo "delete_ftp_version "$version""
+                    delete_ftp_version "$version"
                 fi
             fi
         fi
@@ -183,7 +183,7 @@ process_bunny_storage() {
                 echo "Bunny Version: $version | Age: $age days"
 
                 if [ "$age" -gt "$DELETE_OLDER" ]; then
-                    echo "delete_bunny_version "$version""
+                    delete_bunny_version "$version"
                 fi
             fi
         fi

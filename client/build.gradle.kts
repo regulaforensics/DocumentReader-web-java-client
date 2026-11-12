@@ -57,7 +57,6 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     }
 
     val finalUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient/$type")
-    println("DEBUG: The AccessKey length is ${bunnyCreds?.length}")
     publishing {
         publications {
             create<MavenPublication>("client") {
