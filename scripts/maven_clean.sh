@@ -13,12 +13,12 @@ DELETE_OLDER=15
 if [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "release" ]; then
     echo "Release packages cannot be cleaned."
     exit 0
-elif ["$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "nightly" ]; then
-    $TYPE="Nightly"
-elif ["$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "rc" ]; then
-        $TYPE="RC"
-elif ["$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "beta" ]; then
-        $TYPE="Beta"
+elif [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "nightly" ]; then
+    TYPE="Nightly"
+elif [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "rc" ]; then
+    TYPE="RC"
+elif [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "beta" ]; then
+    TYPE="Beta"
 fi
 
 # --- Server Environments ---
