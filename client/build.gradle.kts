@@ -48,7 +48,6 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     val regulaforensicsMavenPassword: String by project
     val regulaforensicsMavenUser: String by project
     val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
-    println("Bunny: ${bunnyCreds}")
 
     val type = when {
         version.toString().contains("beta", ignoreCase = true) -> "Beta"
@@ -58,7 +57,7 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
     }
 
     val finalUrl = uri("sftp://maven-master.regulaforensics.com:22/RegulaDocumentReaderWebClient/$type")
-
+    println("DEBUG: The AccessKey length is ${bunnyCreds?.length}")
     publishing {
         publications {
             create<MavenPublication>("client") {
@@ -85,8 +84,8 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
                     uri("https://storage.bunnycdn.com/maven-production-regulaforensics-sz/RegulaDocumentReaderWebClient/$type/")
 
                 credentials(HttpHeaderCredentials::class) {
-                    name = "AccessKey"
-                    value = bunnyCreds
+                    this.name = "AccessKey"
+                    this.value = bunnyCreds
                 }
 
                 authentication {
@@ -101,9 +100,6 @@ if (project.hasProperty("regulaforensicsMavenUser")) {
         val regulaforensicsMavenPassword: String by project
         val regulaforensicsMavenUser: String by project
         val bunnyCreds = (project.findProperty("BunnyCdn") as? String) ?: ""
-
-        println("Bunny: ${bunnyCreds}")
-
         val scriptDir = project.rootProject.file("scripts")
 
         doLast {
