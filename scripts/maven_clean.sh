@@ -8,6 +8,7 @@ LOGIN=$2
 PASSW=$3
 BUNNY_CREDS=$4
 DELETE_OLDER=15
+PACKAGE="com/regula/documentreader/webclient/"
 
 # Protect Release builds
 if [ "$(echo "$TYPE" | tr '[:upper:]' '[:lower:]')" == "release" ]; then
@@ -26,9 +27,9 @@ fi
     FTP_USER="$LOGIN"
     FTP_PASS="$PASSW"
     FTP_BASE_URL="https://maven-master.regulaforensics.com/RegulaDocumentReaderWebClient/$TYPE"
-    FTP_PATH="RegulaDocumentReaderWebClient/$TYPE/"
+    FTP_PATH="RegulaDocumentReaderWebClient/$TYPE/$PACKAGE"
 
-BUNNY_BASE_URL="https://storage.bunnycdn.com/maven-production-regulaforensics-sz/RegulaDocumentReaderWebClient/${TYPE}"
+BUNNY_BASE_URL="https://storage.bunnycdn.com/maven-production-regulaforensics-sz/RegulaDocumentReaderWebClient/${TYPE}/${PACKAGE}"
 
 
 # --- Update XML & Generate Hashes ---
