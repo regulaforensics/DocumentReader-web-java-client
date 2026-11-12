@@ -7,7 +7,7 @@ TYPE=$1
 LOGIN=$2
 PASSW=$3
 BUNNY_CREDS=$4
-DELETE_OLDER=15
+DELETE_OLDER=7
 PACKAGE="com/regula/documentreader/webclient/"
 
 # Protect Release builds
