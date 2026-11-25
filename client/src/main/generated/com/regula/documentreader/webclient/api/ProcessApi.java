@@ -79,6 +79,7 @@ public class ProcessApi {
    * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
    * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * <tr><td> 413 </td><td> Request limits exceeded. The request was rejected by configured limits. </td><td>  -  </td></tr>
    * </table>
    */
   public okhttp3.Call apiProcessCall(
@@ -172,6 +173,7 @@ public class ProcessApi {
    * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
    * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * <tr><td> 413 </td><td> Request limits exceeded. The request was rejected by configured limits. </td><td>  -  </td></tr>
    * </table>
    */
   public ProcessResponse apiProcess(
@@ -197,6 +199,7 @@ public class ProcessApi {
    * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
    * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * <tr><td> 413 </td><td> Request limits exceeded. The request was rejected by configured limits. </td><td>  -  </td></tr>
    * </table>
    */
   public ApiResponse<ProcessResponse> apiProcessWithHttpInfo(
@@ -223,6 +226,7 @@ public class ProcessApi {
    * <tr><td> 200 </td><td> Document reading result </td><td>  -  </td></tr>
    * <tr><td> 400 </td><td> Bad request. Check your input data. </td><td>  -  </td></tr>
    * <tr><td> 403 </td><td> Bad license. Either server or request does not contain valid license. </td><td>  -  </td></tr>
+   * <tr><td> 413 </td><td> Request limits exceeded. The request was rejected by configured limits. </td><td>  -  </td></tr>
    * </table>
    */
   public okhttp3.Call apiProcessAsync(
