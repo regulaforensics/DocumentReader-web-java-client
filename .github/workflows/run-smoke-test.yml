@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6
         with:
           distribution: temurin
-          java-version: 11.0.33+10
+          java-version: 11.0.33+100000001
           java-package: jdk
       - run: ./gradlew clean :example:run
         env:
