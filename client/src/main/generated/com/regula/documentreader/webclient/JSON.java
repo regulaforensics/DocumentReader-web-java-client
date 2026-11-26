@@ -139,6 +139,9 @@ public class JSON {
                     classByDiscriminatorValue.put(
                         "32768", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(
+                        "33554432",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
+                    classByDiscriminatorValue.put(
                         "4", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(
                         "4096",
@@ -209,6 +212,9 @@ public class JSON {
                         "32", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(
                         "32768", com.regula.documentreader.webclient.model.IdentResult.class);
+                    classByDiscriminatorValue.put(
+                        "33554432",
+                        com.regula.documentreader.webclient.model.SecurityFeatureResult.class);
                     classByDiscriminatorValue.put(
                         "4", com.regula.documentreader.webclient.model.IdentResult.class);
                     classByDiscriminatorValue.put(
