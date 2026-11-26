@@ -239,6 +239,9 @@ public class AuthenticityCheckResultItem {
       case "32768":
         IdentResult.validateJsonElement(jsonElement);
         break;
+      case "33554432":
+        SecurityFeatureResult.validateJsonElement(jsonElement);
+        break;
       case "4":
         IdentResult.validateJsonElement(jsonElement);
         break;
